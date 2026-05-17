@@ -400,7 +400,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <div class="hero-inner">
     <div>
       <div class="pill"><div class="pill-dot"></div><span class="pill-text">Live Multi-Streaming Studio</span></div>
-      <h1 class="hero-title"><span class="h1-promise">Go live everywhere.</span><br>Your free <span class="blue">streaming studio</span><br>for <span class="hero-cyc" data-cyc></span>.</h1>
+      <h1 class="hero-title"><span class="h1-promise">Go live everywhere.</span><br>Your free <span class="blue">streaming studio</span><br>for <span class="hero-cyc" data-cyc></span></h1>
       <p class="hero-desc"><strong style="color:var(--text);font-weight:600">Mix scenes, switch sources, broadcast live</strong> to Twitch, YouTube, Facebook, Kick + more — all from one desktop app. Free forever, no watermark.</p>
       <div class="hero-btns">
         <span class="dl">
@@ -784,7 +784,7 @@ function setTab(id,btn){
 (function(){
   var slot = document.querySelector('[data-cyc]');
   if (!slot) return;
-  var words = ['creators','streamers','gamers','VTubers','podcasters','educators'];
+  var words = ['creators.','streamers.','gamers.','VTubers.','podcasters.','educators.'];
   slot.textContent = words[0];
   /* Reserve width for longest word so layout doesn't jump */
   var measure = document.createElement('span');
