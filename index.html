@@ -50,9 +50,9 @@ nav {
 .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; transition: opacity .2s; }
 .nav-logo:hover { opacity: 0.85; }
 .nav-logo-icon { height: 28.6px; width: 28.6px; flex-shrink: 0; }
-.nav-logo-text { display: flex; flex-direction: column; gap: 1px; line-height: 1; }
-.nav-logo-wordmark { font-size: 21.6px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; font-family: 'Geist', sans-serif; line-height: 1; }
-.nav-logo-slogan { font-size: 8px; font-weight: 500; color: var(--text-sub); letter-spacing: 0.4px; font-family: 'Geist', sans-serif; text-transform: uppercase; }
+.nav-logo-text { display: flex; flex-direction: column; gap: 2px; line-height: 1; }
+.nav-logo-wordmark { font-size: 26px; font-weight: 700; color: var(--text); letter-spacing: -0.6px; font-family: 'Geist', sans-serif; line-height: 1; }
+.nav-logo-slogan { font-size: 8.5px; font-weight: 600; color: var(--text-sub); letter-spacing: 1.3px; font-family: 'Geist', sans-serif; text-transform: uppercase; line-height: 1; text-align: justify; text-align-last: justify; width: 100%; }
 .nav-links { display: flex; gap: 28px; list-style: none; }
 .nav-links a { font-size: 13.5px; font-weight: 500; color: var(--text-sub); text-decoration: none; transition: color .18s; }
 .nav-links a:hover { color: var(--text); }
@@ -67,13 +67,13 @@ nav {
 .hero-glow { position: absolute; pointer-events: none; width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(40,120,252,.07) 0%, transparent 70%); right: -120px; top: 50%; transform: translateY(-50%); }
 .hero-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 490px; gap: 72px; align-items: center; }
 
-.pill { display: inline-flex; align-items: center; gap: 9px; padding: 5px 13px 5px 10px; background: rgba(46,204,113,.10); border: 1px solid rgba(46,204,113,.35); border-radius: 20px; margin-bottom: 22px; }
+.pill { display: inline-flex; align-items: center; gap: 9px; padding: 5px 13px 5px 10px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.35); border-radius: 20px; margin-bottom: 22px; }
 .pill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); position: relative; box-shadow: 0 0 8px rgba(46,204,113,.7); }
 .pill-dot::before, .pill-dot::after { content:''; position: absolute; inset: 0; border-radius: 50%; background: var(--green); animation: live-pulse 1.8s cubic-bezier(.6,0,.4,1) infinite; }
 .pill-dot::after { animation-delay: .9s; }
 @keyframes blink { 0%,100%{opacity:1}50%{opacity:.35} }
 @keyframes live-pulse { 0%{transform:scale(1);opacity:.65} 100%{transform:scale(3.4);opacity:0} }
-.pill-text { font-size: 11.5px; font-weight: 600; color: var(--green); letter-spacing: .4px; }
+.pill-text { font-size: 11.5px; font-weight: 600; color: var(--blue); letter-spacing: .4px; }
 
 h1.hero-title { font-size: clamp(38px, 5vw, 64px); font-weight: 700; line-height: 1.05; letter-spacing: -2.5px; color: var(--text); margin-bottom: 22px; }
 h1.hero-title .blue { color: var(--blue); }
@@ -401,7 +401,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <div>
       <div class="pill"><div class="pill-dot"></div><span class="pill-text">Free Live Multi-Streaming Studio</span></div>
       <h1 class="hero-title">Go live on <span class="blue">every platform.</span> All at once.</h1>
-      <p class="hero-desc"><strong style="color:var(--text);font-weight:600">Send one feed to Twitch, YouTube, Facebook and Kick — simultaneously.</strong> Five-minute setup. Free forever, no watermark, no card.</p>
+      <p class="hero-desc"><strong style="color:var(--text);font-weight:600">One stream to Twitch, YouTube, Facebook and Kick — simultaneously.</strong> Five-minute setup. Free forever, no watermark.</p>
       <div class="hero-btns">
         <span class="dl">
           <a href="#" class="btn-primary" data-dl-primary><svg class="ico ico-sm"><use href="#i-dl"/></svg> <span data-dl-label>Download for Windows</span></a>
