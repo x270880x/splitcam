@@ -65,7 +65,7 @@ nav {
 /* HERO */
 .hero { min-height: 100vh; padding: 100px 40px 80px; display: flex; align-items: center; position: relative; overflow: hidden; }
 .hero-glow { position: absolute; pointer-events: none; width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(40,120,252,.07) 0%, transparent 70%); right: -120px; top: 50%; transform: translateY(-50%); }
-.hero-inner { position: relative; z-index: 1; max-width: 1260px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 660px; gap: 60px; align-items: center; }
+.hero-inner { position: relative; z-index: 1; max-width: 1320px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 726px; gap: 60px; align-items: center; }
 
 .pill { display: inline-flex; align-items: center; gap: 9px; padding: 5px 13px 5px 10px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.35); border-radius: 20px; margin-bottom: 16px; }
 .pill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); position: relative; box-shadow: 0 0 8px rgba(46,204,113,.7); }
@@ -400,7 +400,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <div class="hero-inner">
     <div>
       <div class="pill"><div class="pill-dot"></div><span class="pill-text">Live Multi-Streaming Studio</span></div>
-      <h1 class="hero-title"><span class="h1-promise">Go live everywhere.</span><br>Your free <span class="blue">streaming studio</span> for <span class="hero-cyc" data-cyc></span></h1>
+      <h1 class="hero-title"><span class="h1-promise">Go live everywhere.</span><br>Your free <span class="blue">streaming studio</span><br>for <span class="hero-cyc" data-cyc></span></h1>
       <p class="hero-desc"><strong style="color:var(--text);font-weight:600">Mix scenes, switch sources, broadcast live</strong> to Twitch, YouTube, Facebook, Kick + more — all from one desktop app. Free forever, no watermark.</p>
       <div class="hero-btns">
         <span class="dl">
@@ -416,7 +416,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
 
     <div class="app-window">
       <div class="app-shot">
-        <video src="assets/hero-spotlight.mp4" poster="assets/hero-spotlight-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
+        <video src="assets/hero-spotlight.mp4" poster="assets/hero-spotlight-poster.jpg" autoplay loop muted playsinline preload="metadata" onloadedmetadata="this.playbackRate=2"></video>
         <div class="app-shot-glow"></div>
       </div>
     </div>
