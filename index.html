@@ -775,6 +775,28 @@ function setTab(id,btn){
 </div>
 
 <script>
+/* Hero video — pause when off-screen or tab hidden (saves CPU/battery) */
+(function(){
+  var v = document.querySelector('.app-shot video');
+  if (!v) return;
+  var onScreen = true;
+  var tabVisible = true;
+  function apply(){
+    if (onScreen && tabVisible) { v.play().catch(function(){}); }
+    else { v.pause(); }
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries){
+      onScreen = entries[0].isIntersecting;
+      apply();
+    }, { threshold: 0.1 }).observe(v);
+  }
+  document.addEventListener('visibilitychange', function(){
+    tabVisible = (document.visibilityState === 'visible');
+    apply();
+  });
+})();
+
 /* Hero audience cycler — fade transition with pause between words */
 (function(){
   var slot = document.querySelector('[data-cyc]');
