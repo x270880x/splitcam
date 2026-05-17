@@ -75,8 +75,12 @@ nav {
 @keyframes live-pulse { 0%{transform:scale(1);opacity:.65} 100%{transform:scale(3.4);opacity:0} }
 .pill-text { font-size: 11.5px; font-weight: 600; color: var(--blue); letter-spacing: .4px; }
 
-h1.hero-title { font-size: clamp(38px, 5vw, 64px); font-weight: 700; line-height: 1.05; letter-spacing: -2.5px; color: var(--text); margin-bottom: 14px; }
+h1.hero-title { font-size: clamp(38px, 5vw, 64px); font-weight: 700; line-height: 1.1; letter-spacing: -2.5px; color: var(--text); margin-bottom: 14px; }
 h1.hero-title .blue { color: var(--blue); }
+.hero-cyc { display: inline-block; overflow: hidden; vertical-align: bottom; height: 1.1em; line-height: 1.1; position: relative; }
+.hero-cyc .words { display: block; will-change: transform; }
+.hero-cyc.go .words { transition: transform .65s cubic-bezier(.22,.84,.24,1); }
+.hero-cyc .words > span { display: block; height: 1.1em; line-height: 1.1; white-space: nowrap; color: var(--blue); font-weight: 700; letter-spacing: inherit; }
 .hero-desc { font-size: 16px; color: var(--text-sub); line-height: 1.55; max-width: 480px; margin-bottom: 24px; letter-spacing: -0.1px; }
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; background: var(--blue); color: #fff; border: none; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background .18s, transform .15s, box-shadow .2s; font-family: inherit; }
@@ -400,7 +404,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <div class="hero-inner">
     <div>
       <div class="pill"><div class="pill-dot"></div><span class="pill-text">Set the scene. Go live.</span></div>
-      <h1 class="hero-title">Your free <span class="blue">streaming studio.</span><br>Go live everywhere.</h1>
+      <h1 class="hero-title">Your free <span class="blue">streaming studio</span> for <span class="hero-cyc" data-cyc><span class="words"></span></span>.<br>Go live everywhere.</h1>
       <p class="hero-desc"><strong style="color:var(--text);font-weight:600">Mix scenes, switch sources, broadcast live</strong> to Twitch, YouTube, Facebook, Kick + more — all from one desktop app. Free forever, no watermark.</p>
       <div class="hero-btns">
         <span class="dl">
@@ -785,6 +789,44 @@ function setTab(id,btn){
 </div>
 
 <script>
+/* Hero audience cycler */
+(function(){
+  var slot = document.querySelector('[data-cyc]');
+  if (!slot) return;
+  var inner = slot.querySelector('.words');
+  var words = ['creators','streamers','gamers','VTubers','podcasters','educators'];
+  words.concat([words[0]]).forEach(function(w){
+    var s = document.createElement('span');
+    s.textContent = w;
+    inner.appendChild(s);
+  });
+  var measure = document.createElement('span');
+  var cs = getComputedStyle(inner.firstChild);
+  measure.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap';
+  measure.style.font = cs.font;
+  measure.style.letterSpacing = cs.letterSpacing;
+  document.body.appendChild(measure);
+  var maxW = 0;
+  words.forEach(function(w){ measure.textContent = w; maxW = Math.max(maxW, measure.offsetWidth); });
+  document.body.removeChild(measure);
+  slot.style.width = (maxW + 4) + 'px';
+  requestAnimationFrame(function(){ slot.classList.add('go'); });
+  var i = 0;
+  setInterval(function(){
+    i++;
+    inner.style.transform = 'translateY(-' + (i * 100) + '%)';
+    if (i === words.length) {
+      setTimeout(function(){
+        slot.classList.remove('go');
+        inner.style.transform = 'translateY(0)';
+        i = 0;
+        void inner.offsetWidth;
+        requestAnimationFrame(function(){ slot.classList.add('go'); });
+      }, 700);
+    }
+  }, 2400);
+})();
+
 (function(){
   var ICO = {
     windows: '<svg viewBox="0 0 24 24"><path d="M3 5.5l8-1.1V12H3V5.5zm0 8.5h8v7.6l-8-1.1V14zm9-9.7l9-1.3V12h-9V4.3zm0 9.7h9v9.3l-9-1.3V14z"/></svg>',
