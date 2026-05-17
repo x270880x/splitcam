@@ -65,7 +65,7 @@ nav {
 /* HERO */
 .hero { min-height: 100vh; padding: 100px 40px 80px; display: flex; align-items: center; position: relative; overflow: hidden; }
 .hero-glow { position: absolute; pointer-events: none; width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(40,120,252,.07) 0%, transparent 70%); right: -120px; top: 50%; transform: translateY(-50%); }
-.hero-inner { position: relative; z-index: 1; max-width: 1320px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 735px; gap: 60px; align-items: center; }
+.hero-inner { position: relative; z-index: 1; max-width: 1260px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 660px; gap: 60px; align-items: center; }
 
 .pill { display: inline-flex; align-items: center; gap: 9px; padding: 5px 13px 5px 10px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.35); border-radius: 20px; margin-bottom: 16px; }
 .pill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); position: relative; box-shadow: 0 0 8px rgba(46,204,113,.7); }
@@ -410,7 +410,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
           </button>
           <div class="dl-menu" data-dl-menu></div>
         </span>
-        <a href="#streaming" class="btn-ghost">How streaming works <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+        <a href="#streaming" class="btn-ghost">How it works <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
       </div>
     </div>
 
@@ -804,7 +804,7 @@ function setTab(id,btn){
         slot.classList.remove('fading');
       }, 200);
     }, 450);
-  }, 3500);
+  }, 2000);
 })();
 
 (function(){
