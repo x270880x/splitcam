@@ -98,7 +98,7 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .app-titlebar-name { flex: 1; text-align: center; font-size: 11px; color: var(--text-dim); margin-right: 29px; font-family: 'Geist Mono', monospace; }
 .app-canvas { background: #0a0a14; height: 190px; position: relative; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--app-border); }
 .app-shot { position: relative; overflow: hidden; }
-.app-shot img { display: block; width: 100%; height: auto; }
+.app-shot img, .app-shot video { display: block; width: 100%; height: auto; }
 .app-shot-glow { position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 80px rgba(40,120,252,.08), inset 0 0 0 1px rgba(255,255,255,.04); }
 .app-shot-pulse { position: absolute; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; background: rgba(231,76,60,.92); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 1px; border-radius: 5px; font-family: 'Geist Mono', monospace; box-shadow: 0 4px 16px rgba(231,76,60,.4); backdrop-filter: blur(4px); }
 .app-shot-pulse .pulse-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: blink 1.4s infinite; }
@@ -420,7 +420,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         <span class="app-titlebar-name">SplitCam · LIVE</span>
       </div>
       <div class="app-shot">
-        <img src="assets/gui-hero.jpg" alt="SplitCam interface — live multistreaming to Twitch, YouTube, Facebook and Kick simultaneously" />
+        <video src="assets/hero-spotlight.mp4" poster="assets/hero-spotlight-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
         <div class="app-shot-glow"></div>
         <div class="app-shot-pulse"><span class="pulse-dot"></span>LIVE</div>
       </div>
