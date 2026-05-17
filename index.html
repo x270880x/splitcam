@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SplitCam — Live Multi-Streaming Studio. Free.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --app-base:    #141420;
+  --app-panel:   #1c1c2e;
+  --app-surface: #22223a;
+  --app-raised:  #2a2a48;
+  --app-border:  rgba(255,255,255,0.08);
+  --app-border2: rgba(255,255,255,0.14);
+  --blue:        #2878fc;
+  --blue-hover:  #4d8eff;
+  --blue-dim:    rgba(40,120,252,0.13);
+  --blue-glow:   rgba(40,120,252,0.28);
+  --green:  #2ecc71;
+  --green-dim: rgba(46,204,113,0.12);
+  --red:    #e74c3c;
+  --amber:  #f39c12;
+  --purple: #a78bfa;
+  --text:        #eeeeff;
+  --text-sub:    #9090bb;
+  --text-dim:    #50506a;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Geist', sans-serif; background: var(--app-base); color: var(--text); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+.ico { width: 18px; height: 18px; stroke-width: 1.75; stroke: currentColor; fill: none; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.ico-lg { width: 20px; height: 20px; }
+.ico-xl { width: 22px; height: 22px; }
+.ico-sm { width: 14px; height: 14px; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 56px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px;
+  background: rgba(20,20,32,0.92); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--app-border);
+}
+.nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; transition: opacity .2s; }
+.nav-logo:hover { opacity: 0.85; }
+.nav-logo-icon { height: 26px; width: 26px; flex-shrink: 0; }
+.nav-logo-wordmark { font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; font-family: 'Geist', sans-serif; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { font-size: 13.5px; font-weight: 500; color: var(--text-sub); text-decoration: none; transition: color .18s; }
+.nav-links a:hover { color: var(--text); }
+.nav-right { display: flex; gap: 10px; align-items: center; }
+.btn-ghost-sm { padding: 7px 16px; border-radius: 7px; border: 1px solid var(--app-border2); background: transparent; color: var(--text-sub); font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all .18s; font-family: inherit; }
+.btn-ghost-sm:hover { color: var(--text); border-color: rgba(255,255,255,.25); }
+.btn-blue-sm { padding: 7px 16px; border-radius: 7px; background: var(--blue); color: #fff; border: none; font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background .18s; display: inline-flex; align-items: center; gap: 6px; font-family: inherit; }
+.btn-blue-sm:hover { background: var(--blue-hover); }
+
+/* HERO */
+.hero { min-height: 100vh; padding: 100px 40px 80px; display: flex; align-items: center; position: relative; overflow: hidden; }
+.hero-glow { position: absolute; pointer-events: none; width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(40,120,252,.07) 0%, transparent 70%); right: -120px; top: 50%; transform: translateY(-50%); }
+.hero-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 490px; gap: 72px; align-items: center; }
+
+.pill { display: inline-flex; align-items: center; gap: 8px; padding: 5px 13px 5px 8px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.35); border-radius: 20px; margin-bottom: 22px; }
+.pill-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); animation: blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1}50%{opacity:.35} }
+.pill-text { font-size: 11.5px; font-weight: 600; color: var(--blue); letter-spacing: .4px; }
+
+h1.hero-title { font-size: clamp(38px, 5vw, 64px); font-weight: 700; line-height: 1.05; letter-spacing: -2.5px; color: var(--text); margin-bottom: 22px; }
+h1.hero-title .blue { color: var(--blue); }
+.hero-desc { font-size: 16px; color: var(--text-sub); line-height: 1.65; max-width: 480px; margin-bottom: 32px; letter-spacing: -0.1px; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; background: var(--blue); color: #fff; border: none; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background .18s, transform .15s, box-shadow .2s; font-family: inherit; }
+.btn-primary:hover { background: var(--blue-hover); transform: translateY(-1px); box-shadow: 0 8px 24px var(--blue-glow); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 8px; border: 1px solid var(--app-border2); background: transparent; color: var(--text-sub); font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all .18s; font-family: inherit; }
+.btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,.25); }
+.hero-kpis { display: flex; gap: 36px; margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--app-border); }
+.kpi-num { font-size: 26px; font-weight: 700; color: var(--text); letter-spacing: -1px; }
+.kpi-lbl { font-size: 12px; font-weight: 500; color: var(--text-sub); margin-top: 2px; }
+
+/* APP WINDOW */
+.app-window { background: var(--app-panel); border: 1px solid var(--app-border2); border-radius: 12px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,.5); }
+.app-titlebar { height: 34px; background: var(--app-base); border-bottom: 1px solid var(--app-border); display: flex; align-items: center; padding: 0 12px; gap: 6px; }
+.wdot { width: 11px; height: 11px; border-radius: 50%; }
+.wd-r { background:#ff5f56; } .wd-y { background:#febc2e; } .wd-g { background:#28c840; }
+.app-titlebar-name { flex: 1; text-align: center; font-size: 11px; color: var(--text-dim); margin-right: 29px; font-family: 'Geist Mono', monospace; }
+.app-canvas { background: #0a0a14; height: 190px; position: relative; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--app-border); }
+.canvas-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px); background-size: 24px 24px; }
+.canvas-cam { width: 96px; height: 70px; border: 1.5px dashed rgba(40,120,252,.45); border-radius: 8px; z-index: 1; display: flex; align-items: center; justify-content: center; color: var(--blue); }
+.canvas-badge { position: absolute; top: 10px; left: 10px; background: var(--red); color: #fff; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 8px; border-radius: 4px; font-family: 'Geist Mono', monospace; display: flex; align-items: center; gap: 5px; }
+.canvas-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:#fff; animation: blink 1.5s infinite; }
+.canvas-fps { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,.65); color: var(--green); font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px; font-family: 'Geist Mono', monospace; }
+.canvas-scene-label { position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,.65); color: var(--text-sub); font-size: 10px; font-weight: 500; padding: 4px 10px; border-radius: 4px; font-family: 'Geist Mono', monospace; }
+
+.scenes-row { display: flex; gap: 6px; padding: 10px; border-bottom: 1px solid var(--app-border); background: var(--app-base); overflow-x: auto; }
+.scene-item { display: flex; flex-direction: column; align-items: center; gap: 3px; flex-shrink: 0; }
+.scene-thumb { width: 64px; height: 40px; border-radius: 5px; background: var(--app-surface); border: 1px solid var(--app-border); display: flex; align-items: center; justify-content: center; color: var(--text-sub); cursor: pointer; }
+.scene-thumb.active { border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); color: var(--blue); }
+.scene-lbl { font-size: 9.5px; color: var(--text-dim); font-weight: 500; }
+
+.channels-list { padding: 10px; display: flex; flex-direction: column; gap: 6px; }
+.ch-row { display: flex; align-items: center; gap: 10px; background: var(--app-surface); border-radius: 6px; padding: 8px 12px; border: 1px solid var(--app-border); }
+.ch-icon { width: 22px; height: 22px; border-radius: 5px; display: flex; align-items: center; justify-content: center; }
+.ch-tw { background: rgba(145,70,255,.18); color: #b48aff; } .ch-yt { background: rgba(255,0,0,.15); color: #ff6b6b; } .ch-fb { background: rgba(24,119,242,.2); color: #5e9bff; } .ch-rt { background: rgba(255,107,53,.15); color: #ffa372; }
+.ch-name { font-size: 12px; font-weight: 500; flex: 1; }
+.ch-status { display: flex; align-items: center; gap: 5px; }
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 1.5s infinite; }
+.live-txt { font-size: 9.5px; font-weight: 700; color: var(--green); letter-spacing: .5px; font-family: 'Geist Mono', monospace; }
+.ch-kbps { font-size: 10px; color: var(--text-dim); font-family: 'Geist Mono', monospace; }
+
+/* STRIP */
+.strip { border-top: 1px solid var(--app-border); border-bottom: 1px solid var(--app-border); padding: 24px 40px; background: var(--app-panel); }
+.strip-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 36px; }
+.strip-lbl { font-size: 11px; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.2px; white-space: nowrap; }
+.strip-div { width: 1px; height: 26px; background: var(--app-border2); }
+.strip-logos { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+.pchip { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 500; color: var(--text-sub); }
+.pchip svg { color: var(--text-dim); }
+
+/* SECTION */
+.section { padding: 96px 40px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.sec-bg { background: var(--app-panel); }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+.eyebrow::before { content:''; width: 18px; height: 1px; background: var(--blue); }
+.sec-h { font-size: clamp(30px,3.4vw,46px); font-weight: 700; letter-spacing: -1.6px; color: var(--text); margin-bottom: 14px; line-height: 1.08; max-width: 760px; }
+.sec-p { font-size: 16px; color: var(--text-sub); max-width: 560px; line-height: 1.7; margin-bottom: 56px; letter-spacing: -0.1px; }
+
+/* QUICKSTART (5-minute setup) */
+.quickstart-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--app-border); border: 1px solid var(--app-border); border-radius: 14px; overflow: hidden; }
+.qs-step { background: var(--app-panel); padding: 32px 28px; position: relative; }
+.qs-num { font-size: 12px; font-weight: 600; color: var(--blue); letter-spacing: 1px; font-family: 'Geist Mono', monospace; margin-bottom: 18px; }
+.qs-time { font-size: 11px; color: var(--text-dim); font-family: 'Geist Mono', monospace; margin-top: 4px; }
+.qs-h { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; letter-spacing: -0.2px; }
+.qs-p { font-size: 13.5px; color: var(--text-sub); line-height: 1.6; }
+.qs-step:not(:last-child)::after { content: ''; position: absolute; top: 38px; right: -8px; width: 16px; height: 16px; background: var(--app-panel); border-right: 1px solid var(--app-border); border-bottom: 1px solid var(--app-border); transform: rotate(-45deg); z-index: 2; }
+
+/* TABS */
+.tabs-row { display: flex; gap: 2px; background: var(--app-base); border: 1px solid var(--app-border); border-radius: 8px; padding: 3px; width: fit-content; margin-bottom: 44px; flex-wrap: wrap; }
+.tab { padding: 8px 18px; border-radius: 6px; font-size: 13.5px; font-weight: 500; color: var(--text-sub); background: transparent; border: none; cursor: pointer; font-family: 'Geist', sans-serif; transition: all .18s; display: inline-flex; align-items: center; gap: 7px; }
+.tab.active { background: var(--app-raised); color: var(--text); box-shadow: inset 0 0 0 1px var(--app-border2); }
+
+.feat-panel { display: none; }
+.feat-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.feat-h { font-size: 32px; font-weight: 700; letter-spacing: -1.2px; color: var(--text); margin-bottom: 14px; line-height: 1.1; }
+.feat-p { font-size: 15.5px; color: var(--text-sub); line-height: 1.75; margin-bottom: 26px; letter-spacing: -0.1px; }
+.feat-ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+.feat-ul li { display: flex; align-items: flex-start; gap: 11px; font-size: 14px; color: var(--text-sub); line-height: 1.55; }
+.feat-ul li svg { color: var(--blue); margin-top: 2px; }
+
+.feat-vis { background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 14px; padding: 28px; min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+
+/* BC vis */
+.bc-rows { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.bc-row { display: flex; align-items: center; gap: 12px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 7px; padding: 10px 14px; }
+.bc-nm { font-size: 12.5px; font-weight: 600; width: 110px; }
+.bc-line { flex: 1; height: 2px; background: var(--app-raised); border-radius: 1px; overflow: hidden; position: relative; }
+.bc-pulse { position: absolute; top: 0; left: -60%; width: 60%; height: 100%; background: linear-gradient(90deg,transparent,var(--blue),transparent); animation: pl 2s linear infinite; }
+.bc-row:nth-child(2) .bc-pulse{animation-delay:.5s} .bc-row:nth-child(3) .bc-pulse{animation-delay:1s} .bc-row:nth-child(4) .bc-pulse{animation-delay:1.5s}
+@keyframes pl{to{left:110%}}
+.bc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: blink 1.5s infinite; }
+.bc-kbps { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; width: 70px; text-align: right; }
+
+/* Sources vis */
+.src-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; width: 100%; }
+.src-item { background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 8px; padding: 14px; display: flex; align-items: center; gap: 12px; }
+.src-ico { width: 32px; height: 32px; border-radius: 7px; background: var(--blue-dim); display: flex; align-items: center; justify-content: center; color: var(--blue); flex-shrink: 0; }
+.src-nm { font-size: 12.5px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+.src-meta { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; }
+
+/* Tip Notifier vis */
+.tip-stack { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.tip-row { background: linear-gradient(135deg, var(--app-panel), var(--app-surface)); border: 1px solid var(--app-border); border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; position: relative; overflow: hidden; }
+.tip-row::before { content:''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--blue); }
+.tip-row.green::before { background: var(--green); }
+.tip-row.amber::before { background: var(--amber); }
+.tip-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--blue-dim); display: flex; align-items: center; justify-content: center; color: var(--blue); font-weight: 700; font-size: 13px; flex-shrink: 0; }
+.tip-avatar.green { background: rgba(46,204,113,.15); color: var(--green); }
+.tip-avatar.amber { background: rgba(243,156,18,.15); color: var(--amber); }
+.tip-text { flex: 1; min-width: 0; }
+.tip-name { font-size: 12.5px; font-weight: 600; color: var(--text); }
+.tip-msg { font-size: 11px; color: var(--text-sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tip-amount { font-size: 13.5px; font-weight: 700; color: var(--blue); font-family: 'Geist Mono', monospace; }
+.tip-row.green .tip-amount { color: var(--green); }
+.tip-row.amber .tip-amount { color: var(--amber); }
+
+/* Audio vis */
+.mix-rows { display: flex; flex-direction: column; gap: 9px; width: 100%; }
+.mix-row { display: flex; align-items: center; gap: 12px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 7px; padding: 10px 14px; }
+.mix-nm { font-size: 12.5px; color: var(--text-sub); width: 110px; display: flex; align-items: center; gap: 7px; font-weight: 500; }
+.mix-track { flex: 1; height: 4px; background: var(--app-raised); border-radius: 2px; }
+.mix-fill { height: 100%; border-radius: 2px; }
+.fb { background: var(--blue); } .fg { background: var(--green); } .fa { background: var(--amber); }
+.mix-db { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; }
+
+/* WHAT'S NEW */
+.new-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.new-card { background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 12px; padding: 28px 26px; position: relative; transition: border-color .2s, transform .2s; }
+.new-card:hover { border-color: rgba(40,120,252,.35); transform: translateY(-2px); }
+.new-badge { position: absolute; top: 16px; right: 16px; font-size: 9.5px; font-weight: 700; color: var(--blue); background: var(--blue-dim); padding: 3px 8px; border-radius: 4px; letter-spacing: .6px; font-family: 'Geist Mono', monospace; }
+.new-ico { width: 40px; height: 40px; border-radius: 9px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.28); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; color: var(--blue); }
+.new-h { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; letter-spacing: -0.3px; }
+.new-p { font-size: 13.5px; color: var(--text-sub); line-height: 1.65; }
+
+/* BONUS / virtual camera */
+.bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.bonus-h { font-size: 32px; font-weight: 700; letter-spacing: -1.2px; color: var(--text); margin-bottom: 14px; line-height: 1.1; }
+.bonus-p { font-size: 15.5px; color: var(--text-sub); line-height: 1.75; margin-bottom: 26px; }
+.bonus-vis { background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 14px; padding: 32px; position: relative; overflow: hidden; }
+.bonus-vis::before { content:''; position:absolute; top:-50px; right:-50px; width:200px; height:200px; background: radial-gradient(circle, rgba(40,120,252,.06), transparent 70%); }
+.bonus-row { display: flex; align-items: center; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--app-border); position: relative; }
+.bonus-row:last-child { border-bottom: none; }
+.bonus-app { display: flex; align-items: center; gap: 10px; flex: 1; }
+.bonus-app-ico { width: 32px; height: 32px; border-radius: 7px; background: var(--app-surface); border: 1px solid var(--app-border); display: flex; align-items: center; justify-content: center; color: var(--text-sub); }
+.bonus-app-name { font-size: 13.5px; font-weight: 500; }
+.bonus-status { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 5px; font-family: 'Geist Mono', monospace; background: rgba(46,204,113,.12); color: var(--green); }
+.bonus-divider { display: flex; align-items: center; gap: 12px; padding: 10px 0; }
+.bonus-divider-line { flex: 1; height: 1px; background: var(--app-border2); }
+.bonus-divider-text { font-size: 11px; color: var(--blue); font-weight: 600; letter-spacing: 1px; font-family: 'Geist Mono', monospace; }
+
+/* FEAT GRID */
+.feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--app-border); border: 1px solid var(--app-border); border-radius: 12px; overflow: hidden; }
+.feat-cell { background: var(--app-panel); padding: 30px 26px; transition: background .18s; }
+.feat-cell:hover { background: var(--app-surface); }
+.cell-ico { width: 40px; height: 40px; border-radius: 9px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.25); display: flex; align-items: center; justify-content: center; color: var(--blue); margin-bottom: 18px; }
+.cell-ico.g { background: var(--green-dim); border-color: rgba(46,204,113,.22); color: var(--green); }
+.cell-ico.p { background: rgba(167,139,250,.12); border-color: rgba(167,139,250,.22); color: var(--purple); }
+.cell-h2 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; letter-spacing: -0.2px; }
+.cell-p2 { font-size: 13.5px; color: var(--text-sub); line-height: 1.65; }
+
+/* STATS */
+.stats-wrap { padding: 88px 40px; background: var(--app-panel); text-align: center; }
+.stats-inner { max-width: 960px; margin: 0 auto; }
+.stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--app-border); border: 1px solid var(--app-border); border-radius: 12px; overflow: hidden; margin-top: 56px; }
+.stat-box { background: var(--app-surface); padding: 44px 28px; }
+.stat-n { font-size: 50px; font-weight: 700; letter-spacing: -2.2px; color: var(--text); line-height: 1; }
+.stat-n .u { color: var(--blue); font-weight: 600; }
+.stat-l { font-size: 13px; color: var(--text-sub); margin-top: 10px; }
+.center-h { text-align: center; margin: 0 auto; }
+.center-p { font-size: 16px; color: var(--text-sub); text-align: center; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+/* CTA */
+.cta-wrap { padding: 96px 40px; }
+.cta-box { max-width: 1200px; margin: 0 auto; background: var(--app-panel); border: 1px solid var(--app-border2); border-radius: 16px; padding: 72px 56px; text-align: center; position: relative; overflow: hidden; }
+.cta-box::before { content: ''; position: absolute; top: 0; left: 25%; right: 25%; height: 1px; background: linear-gradient(90deg,transparent,rgba(40,120,252,.55),transparent); }
+.cta-h { font-size: clamp(32px,4vw,52px); font-weight: 700; letter-spacing: -1.8px; color: var(--text); margin-bottom: 14px; line-height: 1.1; }
+.cta-p { font-size: 16px; color: var(--text-sub); margin-bottom: 32px; }
+.cta-btns { display: flex; gap: 12px; justify-content: center; }
+.cta-note { margin-top: 22px; font-size: 12px; color: var(--text-dim); display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.cta-note span { display: inline-flex; align-items: center; gap: 6px; }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.foot-logo { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; text-decoration: none; }
+.foot-logo-icon { height: 22px; width: 22px; flex-shrink: 0; }
+.foot-logo-wordmark { font-size: 16px; font-weight: 700; color: var(--text); letter-spacing: -0.4px; }
+.foot-brand p { font-size: 13.5px; color: var(--text-sub); line-height: 1.6; max-width: 220px; }
+.foot-col h5 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); margin-bottom: 14px; }
+.foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.foot-col a { font-size: 13.5px; color: var(--text-sub); text-decoration: none; transition: color .18s; }
+.foot-col a:hover { color: var(--text); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding-top: 22px; border-top: 1px solid var(--app-border); }
+.foot-copy { font-size: 12.5px; color: var(--text-dim); }
+.foot-social { display: flex; gap: 8px; }
+.soc { width: 32px; height: 32px; border-radius: 7px; background: var(--app-surface); border: 1px solid var(--app-border); display: flex; align-items: center; justify-content: center; color: var(--text-sub); text-decoration: none; transition: all .18s; }
+.soc:hover { background: var(--app-raised); color: var(--text); }
+
+@media(max-width:900px){
+  nav{padding:0 20px;} .nav-links{display:none;}
+  .hero{padding:80px 20px 60px;} .hero-inner{grid-template-columns:1fr;}
+  .app-window{display:none;}
+  .section{padding:60px 20px;}
+  .feat-panel.active{grid-template-columns:1fr; gap:32px;}
+  .feat-grid{grid-template-columns:1fr;}
+  .new-grid{grid-template-columns:1fr;}
+  .quickstart-grid{grid-template-columns:1fr;}
+  .qs-step:not(:last-child)::after{display:none;}
+  .bonus-grid{grid-template-columns:1fr; gap: 32px;}
+  .stats-grid{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr 1fr;}
+  .cta-wrap{padding:60px 20px;} .cta-box{padding:48px 24px;}
+  .strip{padding:22px 20px;} .strip-inner{flex-wrap:wrap;gap:16px;}
+  .stats-wrap{padding:60px 20px;}
+  .src-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG Icon Sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-cam" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z" stroke-width="1.6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" stroke-width="1.6" fill="none" stroke="currentColor"/></symbol>
+    <symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></symbol>
+    <symbol id="i-arr" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-twitch" viewBox="0 0 24 24"><path d="M4 4h16v10l-4 4h-4l-3 3v-3H4V4Zm7 4v6m4-6v6"/></symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h2.5V5H14a3.5 3.5 0 0 0-3.5 3.5V11H8v3h2.5v8H14v-8h2.5l.5-3H14V8.5c0-.3.2-.5.5-.5Z"/></symbol>
+    <symbol id="i-rtmp" viewBox="0 0 24 24"><path d="M5 12a7 7 0 0 1 14 0M8 12a4 4 0 0 1 8 0M12 12v9m-3 0h6"/></symbol>
+    <symbol id="i-kick" viewBox="0 0 24 24"><path d="M5 4h4v6h2l4-6h5l-6 8 6 8h-5l-4-6H9v6H5V4Z"/></symbol>
+    <symbol id="i-split" viewBox="0 0 24 24"><path d="M12 3v6m0 0-5 5v7m5-12 5 5v7M7 21h0m10 0h0M12 3h0"/></symbol>
+    <symbol id="i-broadcast" viewBox="0 0 24 24"><path d="M4.93 19.07a10 10 0 0 1 0-14.14M19.07 4.93a10 10 0 0 1 0 14.14M7.76 16.24a6 6 0 0 1 0-8.48M16.24 7.76a6 6 0 0 1 0 8.48"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-mask" viewBox="0 0 24 24"><path d="M12 3c5 0 9 4 9 9 0 6-4 9-9 9s-9-3-9-9c0-5 4-9 9-9Z"/><path d="M8.5 10.5h.01M15.5 10.5h.01M8 15c1 1.5 2.5 2 4 2s3-.5 4-2"/></symbol>
+    <symbol id="i-audio" viewBox="0 0 24 24"><path d="M3 12h2m4-5v10m4-13v16m4-13v10m4-5h2"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M19 11a7 7 0 0 1-14 0M12 18v3m-3 0h6"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Zm0 0v6h6"/></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-5-5M8 11h6m-3-3v6"/></symbol>
+    <symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></symbol>
+    <symbol id="i-trans" viewBox="0 0 24 24"><path d="M3 7h4l3 4-3 4H3m18-8h-4l-3 4 3 4h4M21 4l3 3-3 3M3 14l-3 3 3 3"/></symbol>
+    <symbol id="i-replay" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8m0 0V3m0 5h5"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5m-18 4 9 5 9-5"/></symbol>
+    <symbol id="i-color" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="13" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="17" cy="11" r="1" fill="currentColor" stroke="none"/><path d="M14 21a3 3 0 0 1-3-3c0-1.5 1.5-2 1.5-3.5 0-1-.5-1.5-1.5-1.5"/></symbol>
+    <symbol id="i-3d" viewBox="0 0 24 24"><path d="M12 3 3 8v8l9 5 9-5V8l-9-5ZM3 8l9 5m0 0 9-5m-9 5v8"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 8.4 8.4 0 0 1-3-.6L3 21l1.6-6A8.4 8.4 0 0 1 4 12a8.4 8.4 0 0 1 8-8.5 8.4 8.4 0 0 1 9 8Z"/></symbol>
+    <symbol id="i-game" viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="11" rx="3"/><path d="M7 13h2m-1-1v2m7-1h.01m2 2h.01"/></symbol>
+    <symbol id="i-screen" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="m12 8 3 3-3 3M9 11h6M8 21h8m-4-4v4"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v6m0 6v6M3 12h6m6 0h6M5.6 5.6l4 4m5 5 4 4M18.4 5.6l-4 4m-5 5-4 4"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m4 4 16 16M20 4 4 20"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 4 7 8 8 4-1 8-3 8-8V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7Z"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10m-3-7h4.5a1.5 1.5 0 0 1 0 3H10m4 0h.5a2 2 0 0 1 0 4H9"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="m12 18 8.5-8.5a2.1 2.1 0 0 0-3-3L9 15v3h3ZM15 6l3 3"/></symbol>
+    <symbol id="i-speed" viewBox="0 0 24 24"><path d="M12 14V8m0 0 6 5m-6-5L6 13M3 18a9 9 0 1 1 18 0"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M16 18a5 5 0 1 0-1.5-9.8 6 6 0 0 0-11.4 3.3A4 4 0 0 0 6 18h10Z"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9m-3 3 2 2m-5 1 2 2"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  </defs>
+</svg>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <img class="nav-logo-icon" src="data:image/png;base64,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" alt="SplitCam" />
+    <span class="nav-logo-wordmark">splitcam</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#streaming">Streaming</a></li>
+    <li><a href="#whats-new">What's New</a></li>
+    <li><a href="#virtual-cam">Virtual Camera</a></li>
+    <li><a href="#">Help</a></li>
+    <li><a href="#">Developers</a></li>
+  </ul>
+  <div class="nav-right">
+    <a class="btn-ghost-sm" href="#">Sign in</a>
+    <a class="btn-blue-sm" href="#"><svg class="ico ico-sm"><use href="#i-dl"/></svg> Download</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="pill"><div class="pill-dot"></div><span class="pill-text">v10.9 · Free Live Multi-Streaming Studio</span></div>
+      <h1 class="hero-title">Go live on <span class="blue">every platform.</span> All at once.</h1>
+      <p class="hero-desc">SplitCam is a free streaming studio that broadcasts to Twitch, YouTube, Facebook, Kick and any custom RTMP destination — simultaneously, from one click. Set up in 5 minutes. No watermarks, no subscriptions, no limits.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary"><svg class="ico ico-sm"><use href="#i-dl"/></svg> Download for Windows</a>
+        <a href="#streaming" class="btn-ghost">How streaming works <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+      </div>
+      <div class="hero-kpis">
+        <div><div class="kpi-num">1.8M+</div><div class="kpi-lbl">Streamers worldwide</div></div>
+        <div><div class="kpi-num">30+</div><div class="kpi-lbl">Stream destinations</div></div>
+        <div><div class="kpi-num">$0</div><div class="kpi-lbl">Forever free</div></div>
+      </div>
+    </div>
+
+    <div class="app-window">
+      <div class="app-titlebar">
+        <div class="wdot wd-r"></div><div class="wdot wd-y"></div><div class="wdot wd-g"></div>
+        <span class="app-titlebar-name">SplitCam 10.9 · Live</span>
+      </div>
+      <div class="app-canvas">
+        <div class="canvas-grid"></div>
+        <div class="canvas-cam"><svg class="ico" style="width:32px;height:32px"><use href="#i-cam"/></svg></div>
+        <div class="canvas-badge">LIVE</div>
+        <div class="canvas-fps">60 FPS · 1080p</div>
+        <div class="canvas-scene-label">Scene: Main Camera</div>
+      </div>
+      <div class="scenes-row">
+        <div class="scene-item"><div class="scene-thumb active"><svg class="ico ico-lg"><use href="#i-cam"/></svg></div><div class="scene-lbl">Main</div></div>
+        <div class="scene-item"><div class="scene-thumb"><svg class="ico ico-lg"><use href="#i-game"/></svg></div><div class="scene-lbl">Game</div></div>
+        <div class="scene-item"><div class="scene-thumb"><svg class="ico ico-lg"><use href="#i-screen"/></svg></div><div class="scene-lbl">Screen</div></div>
+        <div class="scene-item"><div class="scene-thumb"><svg class="ico ico-lg"><use href="#i-chat"/></svg></div><div class="scene-lbl">Chat</div></div>
+        <div class="scene-item"><div class="scene-thumb"><svg class="ico ico-lg"><use href="#i-pause"/></svg></div><div class="scene-lbl">BRB</div></div>
+      </div>
+      <div class="channels-list">
+        <div class="ch-row"><div class="ch-icon ch-tw"><svg class="ico ico-sm"><use href="#i-twitch"/></svg></div><span class="ch-name">Twitch</span><div class="ch-status"><div class="live-dot"></div><span class="live-txt">LIVE</span></div><span class="ch-kbps">6000 kbps</span></div>
+        <div class="ch-row"><div class="ch-icon ch-yt"><svg class="ico ico-sm"><use href="#i-yt"/></svg></div><span class="ch-name">YouTube Live</span><div class="ch-status"><div class="live-dot"></div><span class="live-txt">LIVE</span></div><span class="ch-kbps">4500 kbps</span></div>
+        <div class="ch-row"><div class="ch-icon ch-fb"><svg class="ico ico-sm"><use href="#i-fb"/></svg></div><span class="ch-name">Facebook Live</span><div class="ch-status"><div class="live-dot"></div><span class="live-txt">LIVE</span></div><span class="ch-kbps">3000 kbps</span></div>
+        <div class="ch-row"><div class="ch-icon ch-rt"><svg class="ico ico-sm"><use href="#i-rtmp"/></svg></div><span class="ch-name">Custom RTMP</span><div class="ch-status"><div class="live-dot"></div><span class="live-txt">LIVE</span></div><span class="ch-kbps">2500 kbps</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <span class="strip-lbl">Stream to</span>
+    <div class="strip-div"></div>
+    <div class="strip-logos">
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-twitch"/></svg> Twitch</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-yt"/></svg> YouTube</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-fb"/></svg> Facebook</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-kick"/></svg> Kick</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-game"/></svg> Steam</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-box"/></svg> LinkedIn</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-rtmp"/></svg> Custom RTMP</div>
+      <div class="pchip" style="color:var(--text-dim)">+25 more</div>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK START / 5-MIN -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow">Set up in 5 minutes</p>
+    <h2 class="sec-h">From download to live — faster than your viewers can tune in.</h2>
+    <p class="sec-p">No encoder configuration nightmares. SplitCam ships with presets for every major platform — just paste your stream key and click Go Live.</p>
+
+    <div class="quickstart-grid">
+      <div class="qs-step">
+        <div class="qs-num">STEP 01<div class="qs-time">~ 30 sec</div></div>
+        <div class="qs-h">Install</div>
+        <p class="qs-p">85 MB Microsoft-certified installer for Windows 10 and later. Signed and ready to run — no Defender warnings.</p>
+      </div>
+      <div class="qs-step">
+        <div class="qs-num">STEP 02<div class="qs-time">~ 1 min</div></div>
+        <div class="qs-h">Add sources</div>
+        <p class="qs-p">Pick from webcam, screen capture, browser, game, phone or video file. Drag, resize, layer in your scene.</p>
+      </div>
+      <div class="qs-step">
+        <div class="qs-num">STEP 03<div class="qs-time">~ 2 min</div></div>
+        <div class="qs-h">Connect platforms</div>
+        <p class="qs-p">Twitch, YouTube and Facebook are pre-configured. Paste your stream key, or add a custom RTMP endpoint.</p>
+      </div>
+      <div class="qs-step">
+        <div class="qs-num">STEP 04<div class="qs-time">~ 5 sec</div></div>
+        <div class="qs-h">Go live</div>
+        <p class="qs-p">One button starts every selected stream simultaneously. Built-in speed test checks your upload first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STREAMING FEATURES TABS -->
+<section class="section sec-bg" id="streaming">
+  <div class="section-inner">
+    <p class="eyebrow">Live streaming</p>
+    <h2 class="sec-h">Built for streamers from the ground up.</h2>
+    <p class="sec-p">Multi-platform broadcasting, deep source library, live audience tools and pro audio — in a single free download.</p>
+
+    <div class="tabs-row">
+      <button class="tab active" onclick="setTab('multi',this)"><svg class="ico ico-sm"><use href="#i-broadcast"/></svg> Multi-streaming</button>
+      <button class="tab" onclick="setTab('sources',this)"><svg class="ico ico-sm"><use href="#i-layers"/></svg> Sources & scenes</button>
+      <button class="tab" onclick="setTab('engage',this)"><svg class="ico ico-sm"><use href="#i-coin"/></svg> Audience tools</button>
+      <button class="tab" onclick="setTab('quality',this)"><svg class="ico ico-sm"><use href="#i-audio"/></svg> Stream quality</button>
+    </div>
+
+    <!-- Multi-streaming -->
+    <div class="feat-panel active" id="panel-multi">
+      <div>
+        <h3 class="feat-h">One encode, broadcast everywhere</h3>
+        <p class="feat-p">Stream to Twitch, YouTube, Facebook and any RTMP destination simultaneously from a single encode. CPU and GPU load stays low even on four-way streams. Each destination gets independent bitrate and resolution settings.</p>
+        <ul class="feat-ul">
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Pre-configured for Twitch, YouTube, Facebook, Kick, LinkedIn, Steam</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Independent bitrate per platform — 6 Mbps to Twitch, 2.5 Mbps to backup</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Hardware encoding via NVENC, QuickSync, AMF auto-detected at startup</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Auto ingest server selection picks the lowest-latency endpoint</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> RTMPS secure streaming for any platform that supports it</li>
+        </ul>
+      </div>
+      <div class="feat-vis">
+        <div class="bc-rows">
+          <div class="bc-row"><span class="bc-nm" style="color:#b48aff"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-twitch"/></svg>Twitch</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">6000 kbps</span><div class="bc-dot"></div></div>
+          <div class="bc-row"><span class="bc-nm" style="color:#ff6b6b"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-yt"/></svg>YouTube</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">4500 kbps</span><div class="bc-dot"></div></div>
+          <div class="bc-row"><span class="bc-nm" style="color:#5e9bff"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-fb"/></svg>Facebook</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">3000 kbps</span><div class="bc-dot"></div></div>
+          <div class="bc-row"><span class="bc-nm" style="color:#ffa372"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-rtmp"/></svg>Custom RTMP</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">2500 kbps</span><div class="bc-dot"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sources -->
+    <div class="feat-panel" id="panel-sources">
+      <div>
+        <h3 class="feat-h">Every source you'll ever need to stream</h3>
+        <p class="feat-p">Webcam, screen, game, browser, smartphone, IP camera, video files, images — all as drag-and-drop layers. Build unlimited scenes and switch between them mid-broadcast with hotkeys or cinematic transitions.</p>
+        <ul class="feat-ul">
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Game Capture for DirectX & OpenGL — perfect performance under heavy load</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Browser source with full JavaScript & scroll support</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Phone as a wireless camera over network — second angle without a capture card</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Unlimited scenes with custom transitions: Fade, Stinger, Luma Wipe, Slide</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Import OBS Studio projects directly — keep your existing scene setup</li>
+        </ul>
+      </div>
+      <div class="feat-vis">
+        <div class="src-grid">
+          <div class="src-item"><div class="src-ico"><svg class="ico"><use href="#i-cam"/></svg></div><div><div class="src-nm">Webcam</div><div class="src-meta">1920×1080 · 60fps</div></div></div>
+          <div class="src-item"><div class="src-ico"><svg class="ico"><use href="#i-screen"/></svg></div><div><div class="src-nm">Screen Capture</div><div class="src-meta">Display 1 · 4K</div></div></div>
+          <div class="src-item"><div class="src-ico"><svg class="ico"><use href="#i-game"/></svg></div><div><div class="src-nm">Game Capture</div><div class="src-meta">DirectX 12</div></div></div>
+          <div class="src-item"><div class="src-ico"><svg class="ico"><use href="#i-globe"/></svg></div><div><div class="src-nm">Browser Source</div><div class="src-meta">Chromium</div></div></div>
+          <div class="src-item"><div class="src-ico"><svg class="ico"><use href="#i-phone"/></svg></div><div><div class="src-nm">Phone Camera</div><div class="src-meta">Wireless</div></div></div>
+          <div class="src-item"><div class="src-ico"><svg class="ico"><use href="#i-file"/></svg></div><div><div class="src-nm">Video File</div><div class="src-meta">MP4 · MKV · MOV</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audience -->
+    <div class="feat-panel" id="panel-engage">
+      <div>
+        <h3 class="feat-h">Tools your audience actually sees</h3>
+        <p class="feat-p">Built-in Tip Notifier shows live donations on your stream — name, amount, message, animated image — no third-party services like Streamlabs required. Draw on screen live, blur sensitive content, write highlights as you stream.</p>
+        <ul class="feat-ul">
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Tip Notifier: animated alerts with custom images and thank-you text</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Live drawing — annotate your screen mid-stream for tutorials and reactions</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Real-time blur for accidentally exposed info (windows, passwords, faces)</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Logos, lower thirds, slideshows and animated stickers as scene layers</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Replay Source — instant 5-10 second highlights on a hotkey</li>
+        </ul>
+      </div>
+      <div class="feat-vis">
+        <div class="tip-stack">
+          <div class="tip-row"><div class="tip-avatar">A</div><div class="tip-text"><div class="tip-name">Alex_Streamer</div><div class="tip-msg">Keep up the great content!</div></div><span class="tip-amount">$25</span></div>
+          <div class="tip-row green"><div class="tip-avatar green">M</div><div class="tip-text"><div class="tip-name">MariaLive</div><div class="tip-msg">Love this stream ❤️</div></div><span class="tip-amount">$10</span></div>
+          <div class="tip-row amber"><div class="tip-avatar amber">J</div><div class="tip-text"><div class="tip-name">JustinFromOH</div><div class="tip-msg">For the new mic upgrade!</div></div><span class="tip-amount">$50</span></div>
+          <div class="tip-row"><div class="tip-avatar">S</div><div class="tip-text"><div class="tip-name">Sasha_404</div><div class="tip-msg">First time tipping — woo!</div></div><span class="tip-amount">$5</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quality -->
+    <div class="feat-panel" id="panel-quality">
+      <div>
+        <h3 class="feat-h">Studio-quality audio & video stack</h3>
+        <p class="feat-p">A full audio mixer with VST 2/3 plugin support — meaning any pro de-noise, EQ or compression plugin works inside SplitCam. Built-in upload speed test, A/V sync correction and audio compression keep your stream broadcast-ready.</p>
+        <ul class="feat-ul">
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Unlimited audio sources: mic, system, browser tabs, files, applications</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> VST 2 & VST 3 plugin support — bring any pro audio chain</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Sound Offset filter for perfect A/V sync per audio layer</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Accentuate Microphone auto-ducks background when you speak</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> HD up to 1920×1080 at 60 FPS preserved across every channel</li>
+        </ul>
+      </div>
+      <div class="feat-vis">
+        <div class="mix-rows">
+          <div class="mix-row"><span class="mix-nm"><svg class="ico ico-sm"><use href="#i-mic"/></svg> Microphone</span><div class="mix-track"><div class="mix-fill fb" style="width:78%"></div></div><span class="mix-db">-3 dB</span></div>
+          <div class="mix-row"><span class="mix-nm"><svg class="ico ico-sm"><use href="#i-music"/></svg> Music</span><div class="mix-track"><div class="mix-fill fg" style="width:42%"></div></div><span class="mix-db">-14 dB</span></div>
+          <div class="mix-row"><span class="mix-nm"><svg class="ico ico-sm"><use href="#i-monitor"/></svg> System audio</span><div class="mix-track"><div class="mix-fill fa" style="width:55%"></div></div><span class="mix-db">-9 dB</span></div>
+          <div class="mix-row"><span class="mix-nm"><svg class="ico ico-sm"><use href="#i-globe"/></svg> Browser</span><div class="mix-track"><div class="mix-fill fb" style="width:30%"></div></div><span class="mix-db">-18 dB</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S NEW -->
+<section class="section" id="whats-new">
+  <div class="section-inner">
+    <p class="eyebrow">v10.9 release</p>
+    <h2 class="sec-h">Six new streaming tools shipped this year.</h2>
+    <p class="sec-p">Focused on what streamers actually asked for. Highlights from the 10.9 release notes.</p>
+
+    <div class="new-grid">
+      <div class="new-card">
+        <span class="new-badge">NEW</span>
+        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-replay"/></svg></div>
+        <div class="new-h">Replay Source</div>
+        <p class="new-p">Capture the last 5–10 seconds of any scene with a hotkey. Instant slow-mo replays during gameplay or perfect highlights mid-stream.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NEW</span>
+        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-folder"/></svg></div>
+        <div class="new-h">OBS Project Import</div>
+        <p class="new-p">Bring your OBS Studio scene collections directly into SplitCam — sources, scenes and transitions are preserved. Switch without rebuilding.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NEW</span>
+        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-cloud"/></svg></div>
+        <div class="new-h">Cloud Projects</div>
+        <p class="new-p">Save your entire stream setup to the cloud. Switch laptops, travel, or stream from a guest PC — your scenes follow you.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NEW</span>
+        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-trans"/></svg></div>
+        <div class="new-h">Luma Wipe & Slide</div>
+        <p class="new-p">Three new scene transitions: Luma Wipe for cinematic mask cuts, Slide and Swipe for clean horizontal handoffs between segments.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NEW</span>
+        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-speed"/></svg></div>
+        <div class="new-h">Upload Speed Test</div>
+        <p class="new-p">Rebuilt internet speed test runs in seconds, uses less bandwidth, handles slow connections — know your real upload before you go live.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NEW</span>
+        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-save"/></svg></div>
+        <div class="new-h">Crash-Proof Recording</div>
+        <p class="new-p">Local recordings now save as fragmented MP4 — never lose a session to a crash. Recoverable up to the last written keyframe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIRTUAL CAMERA (bonus, moved down) -->
+<section class="section sec-bg" id="virtual-cam">
+  <div class="section-inner">
+    <p class="eyebrow">Bonus: Virtual Webcam</p>
+    <h2 class="sec-h">Your stream is also a webcam.</h2>
+    <p class="sec-p">SplitCam doubles as a virtual camera driver — meaning your entire stream output (with scenes, effects, overlays) shows up as a webcam in Zoom, Teams, Discord and 60+ other apps. Skip Windows' one-app-only camera lock.</p>
+
+    <div class="bonus-grid">
+      <div>
+        <h3 class="bonus-h">One physical camera, every app at once.</h3>
+        <p class="bonus-p">Windows normally locks your webcam to a single application — start a Zoom call and Teams goes dark. SplitCam installs a kernel-mode virtual camera that any number of apps can read from simultaneously, with effects and scenes from your stream applied automatically.</p>
+        <p class="bonus-p">Useful when you're streaming on Twitch and want to take a Discord call with the same camera setup, or when you need your webcam in a Zoom meeting while OBS captures the same feed.</p>
+        <ul class="feat-ul" style="margin-top: 8px">
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Works with Zoom, Teams, Google Meet, Skype, Discord, Webex, Slack</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Up to 64 simultaneous virtual outputs, zero added latency</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Stream effects (beauty filters, backgrounds, masks) apply automatically</li>
+        </ul>
+      </div>
+      <div class="bonus-vis">
+        <div class="bonus-row">
+          <div class="bonus-app"><div class="bonus-app-ico"><svg class="ico"><use href="#i-cam"/></svg></div><span class="bonus-app-name">Physical Webcam</span></div>
+          <span class="bonus-status" style="background:rgba(74,126,245,.12);color:var(--blue)">SOURCE</span>
+        </div>
+        <div class="bonus-divider">
+          <div class="bonus-divider-line"></div>
+          <span class="bonus-divider-text">SPLITCAM DRIVER</span>
+          <div class="bonus-divider-line"></div>
+        </div>
+        <div class="bonus-row">
+          <div class="bonus-app"><div class="bonus-app-ico"><svg class="ico"><use href="#i-chat"/></svg></div><span class="bonus-app-name">Zoom</span></div>
+          <span class="bonus-status">ACTIVE</span>
+        </div>
+        <div class="bonus-row">
+          <div class="bonus-app"><div class="bonus-app-ico"><svg class="ico"><use href="#i-box"/></svg></div><span class="bonus-app-name">Microsoft Teams</span></div>
+          <span class="bonus-status">ACTIVE</span>
+        </div>
+        <div class="bonus-row">
+          <div class="bonus-app"><div class="bonus-app-ico"><svg class="ico"><use href="#i-chat"/></svg></div><span class="bonus-app-name">Discord</span></div>
+          <span class="bonus-status">ACTIVE</span>
+        </div>
+        <div class="bonus-row">
+          <div class="bonus-app"><div class="bonus-app-ico"><svg class="ico"><use href="#i-globe"/></svg></div><span class="bonus-app-name">Google Meet</span></div>
+          <span class="bonus-status">ACTIVE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL FEATURES GRID -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow">Everything included</p>
+    <h2 class="sec-h">A complete studio. Free.</h2>
+    <p class="sec-p">No premium tiers, no feature locks. The free download is the full app.</p>
+    <div class="feat-grid">
+      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-broadcast"/></svg></div><div class="cell-h2">Multi-platform streaming</div><p class="cell-p2">One encode broadcasts to Twitch, YouTube, Facebook, Kick, LinkedIn, Steam and custom RTMP simultaneously.</p></div>
+      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-coin"/></svg></div><div class="cell-h2">Tip Notifier alerts</div><p class="cell-p2">Built-in donation alerts with custom images, donor name, amount and thank-you messages. No third-party widget needed.</p></div>
+      <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-replay"/></svg></div><div class="cell-h2">Instant replay</div><p class="cell-p2">Capture the last 5–10 seconds of your stream on a hotkey for instant highlights and reactions.</p></div>
+      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-screen"/></svg></div><div class="cell-h2">Game & screen capture</div><p class="cell-p2">Full desktop, specific window or Game Capture mode for DirectX & OpenGL games with proper performance.</p></div>
+      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-phone"/></svg></div><div class="cell-h2">Phone as a camera</div><p class="cell-p2">Use your smartphone as a wireless second camera over the network. Multi-cam setup without a capture card.</p></div>
+      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-pen"/></svg></div><div class="cell-h2">Live drawing</div><p class="cell-p2">Annotate your stream in real time with shapes, text and freehand drawing. Blur sensitive content on the fly.</p></div>
+      <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-mask"/></svg></div><div class="cell-h2">3D face masks</div><p class="cell-p2">Real-time face-tracked 3D masks — a feature that's rare even in paid alternatives. Free in every install.</p></div>
+      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-cloud"/></svg></div><div class="cell-h2">Cloud projects</div><p class="cell-p2">Save your stream setup to the cloud and load it from any computer. Travel-friendly streaming.</p></div>
+      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-speed"/></svg></div><div class="cell-h2">Speed test built in</div><p class="cell-p2">Run an upload speed test before going live — SplitCam picks the right bitrate for your connection.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-wrap">
+  <div class="stats-inner">
+    <p class="eyebrow center-h">Trusted worldwide</p>
+    <h2 class="sec-h center-h" style="margin: 0 auto 14px">Streaming since 2003.</h2>
+    <p class="center-p">SplitCam has powered live broadcasts since before "streaming" was a career. Today over 1.8 million people use it weekly to reach audiences across every platform.</p>
+    <div class="stats-grid">
+      <div class="stat-box"><div class="stat-n">1.8<span class="u">M</span></div><div class="stat-l">Active streamers worldwide</div></div>
+      <div class="stat-box"><div class="stat-n">2003</div><div class="stat-l">First release · still in development</div></div>
+      <div class="stat-box"><div class="stat-n">30<span class="u">+</span></div><div class="stat-l">Supported stream destinations</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <div class="cta-box">
+    <h2 class="cta-h">Stop juggling streaming tools.<br>Start broadcasting.</h2>
+    <p class="cta-p">Download SplitCam free. No trial timer, no card on file, no watermark on your stream.</p>
+    <div class="cta-btns">
+      <a href="#" class="btn-primary"><svg class="ico ico-sm"><use href="#i-dl"/></svg> Download for Windows</a>
+      <a href="#streaming" class="btn-ghost">Explore features <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+    </div>
+    <div class="cta-note">
+      <span><svg class="ico ico-sm"><use href="#i-check"/></svg> Windows 10 or later</span>
+      <span><svg class="ico ico-sm"><use href="#i-shield"/></svg> Microsoft Certified</span>
+      <span><svg class="ico ico-sm"><use href="#i-zap"/></svg> ~85 MB installer</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <a class="foot-logo" href="#">
+        <img class="foot-logo-icon" src="data:image/png;base64,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" alt="SplitCam" />
+        <span class="foot-logo-wordmark">splitcam</span>
+      </a>
+      <p>Free live multi-streaming studio for Windows. Independent software since 2003.</p>
+    </div>
+    <div class="foot-col"><h5>Streaming</h5><ul><li><a href="#">Multi-streaming</a></li><li><a href="#">Sources & scenes</a></li><li><a href="#">Tip Notifier</a></li><li><a href="#">What's new</a></li><li><a href="#">Setup guides</a></li></ul></div>
+    <div class="foot-col"><h5>Resources</h5><ul><li><a href="#">Help Center</a></li><li><a href="#">Stream key guides</a></li><li><a href="#">User forum</a></li><li><a href="#">Developer API</a></li><li><a href="#">Changelog</a></li></ul></div>
+    <div class="foot-col"><h5>Company</h5><ul><li><a href="#">About</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">License agreement</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="foot-copy">© 2003–2026 SplitCam · Microsoft Certified Partner</span>
+    <div class="foot-social">
+      <a class="soc" href="#" title="X / Twitter"><svg class="ico ico-sm"><use href="#i-x"/></svg></a>
+      <a class="soc" href="#" title="Facebook"><svg class="ico ico-sm"><use href="#i-fb"/></svg></a>
+      <a class="soc" href="#" title="YouTube"><svg class="ico ico-sm"><use href="#i-yt"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setTab(id,btn){
+  document.querySelectorAll('.feat-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
