@@ -3,7 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SplitCam — Live Multi-Streaming Studio. Free.</title>
+
+<!-- SEO (keywords prioritized by Google Trends 12-mo volume data) -->
+<title>Free Streaming Software & Virtual Camera | SplitCam</title>
+<meta name="description" content="Free streaming software with built-in virtual camera. Multi-stream to Twitch, YouTube, Facebook & Kick at once. Best for game streaming. Mac, Win, iOS, Android.">
+<meta name="keywords" content="streaming software, free streaming software, live streaming software, best streaming software, virtual camera, virtual camera for zoom, game streaming software, youtube streaming software, webcam software, broadcasting software, OBS alternative, multistreaming, streaming software for mac, streaming software for youtube, streaming software for pc, live video streaming software, free live streaming software, audio streaming software, free streaming software for facebook live, free streaming software for twitch, VTuber software, stream to multiple platforms, RTMP streaming">
+<meta name="author" content="SplitCam">
+<link rel="canonical" href="https://splitcam.com/">
+
+<!-- Open Graph (Facebook, LinkedIn, Slack previews) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://splitcam.com/">
+<meta property="og:title" content="Free Streaming Software & Virtual Camera | SplitCam">
+<meta property="og:description" content="Multi-stream to Twitch, YouTube, Facebook & Kick simultaneously. Built-in virtual camera, scene mixing, audio mixer. Mac, Windows, iOS, Android. No watermark.">
+<meta property="og:image" content="https://splitcam.com/assets/hero-spotlight-poster.jpg">
+<meta property="og:site_name" content="SplitCam">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Streaming Software & Virtual Camera | SplitCam">
+<meta name="twitter:description" content="Multi-stream to Twitch, YouTube, Facebook & Kick. Built-in virtual camera. Free, no watermark.">
+<meta name="twitter:image" content="https://splitcam.com/assets/hero-spotlight-poster.jpg">
+
+<meta name="theme-color" content="#141420">
+
+<!-- Structured data for Google rich snippets (star rating, price, OS in SERP) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SplitCam",
+  "alternateName": "SplitCam Live Multi-Streaming Studio",
+  "applicationCategory": "MultimediaApplication",
+  "applicationSubCategory": "Live Streaming Software",
+  "operatingSystem": "Windows, macOS, iOS, Android",
+  "url": "https://splitcam.com/",
+  "downloadUrl": "https://splitcam.com/download",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "ratingCount": "357",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "softwareVersion": "11",
+  "datePublished": "2003-01-01",
+  "description": "Free live streaming software with built-in virtual camera. Multi-stream to Twitch, YouTube, Facebook and Kick simultaneously. Scene mixing, chromakey, audio mixer. Cross-platform: Mac, Windows, iOS, Android.",
+  "featureList": [
+    "Multi-platform streaming (Twitch, YouTube, Facebook, Kick, RTMP)",
+    "Virtual camera for Zoom, Teams, Google Meet",
+    "Scene mixing and switching",
+    "Chromakey / green screen",
+    "Audio mixer with VST plugin support",
+    "Cross-platform: Windows, macOS, iOS, Android",
+    "Free forever, no watermark"
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -237,6 +299,13 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 
 /* FEAT GRID */
 .feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--app-border); border: 1px solid var(--app-border); border-radius: 12px; overflow: hidden; }
+.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.why-card { padding: 28px 24px; border: 1px solid var(--app-border); border-radius: 14px; background: var(--app-panel); transition: border-color .2s, transform .2s; }
+.why-card:hover { border-color: var(--app-border2); transform: translateY(-3px); }
+.why-vs { font-size: 11.5px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; font-weight: 600; }
+.why-vs strong { color: var(--text-sub); font-weight: 600; }
+.why-card h3 { font-size: 20px; font-weight: 700; letter-spacing: -.4px; margin-bottom: 12px; color: var(--text); }
+.why-card p { font-size: 14px; color: var(--text-sub); line-height: 1.6; }
 .feat-cell { background: var(--app-panel); padding: 30px 26px; transition: background .18s; }
 .feat-cell:hover { background: var(--app-surface); }
 .cell-ico { width: 40px; height: 40px; border-radius: 9px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.25); display: flex; align-items: center; justify-content: center; color: var(--blue); margin-bottom: 18px; }
@@ -290,6 +359,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .section{padding:60px 20px;}
   .feat-panel.active{grid-template-columns:1fr; gap:32px;}
   .feat-grid{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr;}
   .new-grid{grid-template-columns:1fr;}
   .quickstart-grid{grid-template-columns:1fr;}
   .qs-step:not(:last-child)::after{display:none;}
@@ -635,7 +705,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
 <section class="section sec-bg" id="virtual-cam">
   <div class="section-inner">
     <p class="eyebrow">Bonus: Virtual Webcam</p>
-    <h2 class="sec-h">Your stream is also a webcam.</h2>
+    <h2 class="sec-h">Your stream is also a virtual camera.</h2>
     <p class="sec-p">SplitCam doubles as a virtual camera driver — meaning your entire stream output (with scenes, effects, overlays) shows up as a webcam in Zoom, Teams, Discord and 60+ other apps. Skip Windows' one-app-only camera lock.</p>
 
     <div class="bonus-grid">
