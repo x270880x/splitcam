@@ -290,6 +290,24 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .stats-wrap{padding:60px 20px;}
   .src-grid{grid-template-columns:1fr;}
 }
+
+/* Split-button download */
+.dl{position:relative;display:inline-flex;align-items:stretch;font-family:inherit}
+.dl .btn-primary,.dl .btn-blue-sm{border-top-right-radius:0;border-bottom-right-radius:0}
+.dl .dl-toggle{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;border-top-right-radius:8px;border-bottom-right-radius:8px;padding:0 10px;border:none;border-left:1px solid rgba(255,255,255,.18);transition:background .18s;cursor:pointer;font-family:inherit}
+.dl .dl-toggle:hover{background:var(--blue-hover)}
+.dl .dl-toggle svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.dl-sm .dl-toggle{border-top-right-radius:7px;border-bottom-right-radius:7px;padding:0 8px}
+.dl-sm .dl-toggle svg{width:12px;height:12px}
+.dl-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:240px;background:var(--app-panel);border:1px solid var(--app-border2);border-radius:12px;box-shadow:0 24px 60px -20px rgba(0,0,0,.7);padding:6px;z-index:200;opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .15s,transform .15s}
+.dl.open .dl-menu{opacity:1;transform:translateY(0);pointer-events:auto}
+.dl-menu a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;font-size:14px;color:var(--text);font-weight:500;text-decoration:none;transition:background .12s}
+.dl-menu a:hover{background:var(--app-raised)}
+.dl-menu .os-ico{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;color:var(--text-sub);flex-shrink:0}
+.dl-menu .os-ico svg{width:18px;height:18px;fill:currentColor}
+.dl-menu .os-meta{display:flex;flex-direction:column;line-height:1.2;gap:2px}
+.dl-menu .os-name{font-weight:600;color:var(--text)}
+.dl-menu .os-sub{font-size:11px;color:var(--text-dim)}
 </style>
 </head>
 <body>
@@ -358,7 +376,13 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <li><a href="#">Developers</a></li>
   </ul>
   <div class="nav-right">
-    <a class="btn-blue-sm" href="#"><svg class="ico ico-sm"><use href="#i-dl"/></svg> Download</a>
+    <span class="dl dl-sm">
+      <a class="btn-blue-sm" href="#" data-dl-primary><svg class="ico ico-sm"><use href="#i-dl"/></svg> <span data-dl-label>Download</span></a>
+      <button class="dl-toggle" aria-label="Choose platform" data-dl-toggle>
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dl-menu" data-dl-menu></div>
+    </span>
   </div>
 </nav>
 
@@ -371,7 +395,13 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       <h1 class="hero-title">Go live on <span class="blue">every platform.</span> All at once.</h1>
       <p class="hero-desc">SplitCam is a free streaming studio that broadcasts to Twitch, YouTube, Facebook, Kick and any custom RTMP destination — simultaneously, from one click. Set up in 5 minutes. No watermarks, no subscriptions, no limits.</p>
       <div class="hero-btns">
-        <a href="#" class="btn-primary"><svg class="ico ico-sm"><use href="#i-dl"/></svg> Download for Windows</a>
+        <span class="dl">
+          <a href="#" class="btn-primary" data-dl-primary><svg class="ico ico-sm"><use href="#i-dl"/></svg> <span data-dl-label>Download for Windows</span></a>
+          <button class="dl-toggle" aria-label="Choose platform" data-dl-toggle>
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="dl-menu" data-dl-menu></div>
+        </span>
         <a href="#streaming" class="btn-ghost">How streaming works <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
       </div>
       <div class="hero-kpis">
@@ -707,7 +737,13 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <h2 class="cta-h">Stop juggling streaming tools.<br>Start broadcasting.</h2>
     <p class="cta-p">Download SplitCam free. No trial timer, no card on file, no watermark on your stream.</p>
     <div class="cta-btns">
-      <a href="#" class="btn-primary"><svg class="ico ico-sm"><use href="#i-dl"/></svg> Download for Windows</a>
+      <span class="dl">
+        <a href="#" class="btn-primary" data-dl-primary><svg class="ico ico-sm"><use href="#i-dl"/></svg> <span data-dl-label>Download for Windows</span></a>
+        <button class="dl-toggle" aria-label="Choose platform" data-dl-toggle>
+          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dl-menu" data-dl-menu></div>
+      </span>
       <a href="#streaming" class="btn-ghost">Explore features <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
     </div>
     <div class="cta-note">
@@ -754,6 +790,58 @@ function setTab(id,btn){
 <div style="position:fixed;bottom:20px;left:20px;padding:8px 14px;background:rgba(28,28,46,.92);border:1px solid rgba(255,255,255,.14);border-radius:99px;font-size:12px;color:#9090bb;z-index:99;display:inline-flex;align-items:center;gap:8px;backdrop-filter:blur(8px);font-family:'Geist',sans-serif">
   This is <strong style="color:#eeeeff">Variant A</strong> · <a href="v2/" style="color:#2878fc;font-weight:600;text-decoration:none">See Variant B →</a>
 </div>
+
+<script>
+(function(){
+  var ICO = {
+    windows: '<svg viewBox="0 0 24 24"><path d="M3 5.5l8-1.1V12H3V5.5zm0 8.5h8v7.6l-8-1.1V14zm9-9.7l9-1.3V12h-9V4.3zm0 9.7h9v9.3l-9-1.3V14z"/></svg>',
+    apple:   '<svg viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-3.9 2.4-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.4 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8 2.2-1.2 3-2.3c1-1.3 1.3-2.6 1.4-2.6 0-.1-2.7-1-2.8-3.9zM14 4.7c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.7-1.3z"/></svg>',
+    play:    '<svg viewBox="0 0 24 24"><path d="M3.6 2.3c-.3.3-.5.7-.5 1.3v17c0 .6.2 1 .5 1.3l8.8-9.6L3.6 2.3zM14 11l-1.7-1.6L5 2.1l11.5 6.6L14 11zM18.5 12.7l-2.4 1.4L14 12l2.1-2.1 2.4 1.4c.7.4.7 1.1 0 1.4zM5 21.9l7.3-7.3L14 13l-8.9 9c-.1.1-.1 0-.1-.1z"/></svg>'
+  };
+  var SC = {
+    windows: { label: 'Download for Windows', ico: ICO.windows, url: 'https://splitcam.com/download',                                          sub: 'Windows 10/11 · 64-bit' },
+    mac:     { label: 'Download for Mac',     ico: ICO.apple,   url: '#mac-coming',                                                            sub: 'macOS 11+' },
+    ios:     { label: 'Get on App Store',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone & iPad · iOS 13+' },
+    android: { label: 'Get on Google Play',   ico: ICO.play,    url: '#android-coming',                                                        sub: 'Android 8+' }
+  };
+  function detectOS(){
+    var ua = navigator.userAgent || '';
+    if (/Android/i.test(ua)) return 'android';
+    if (/iPad|iPhone|iPod/i.test(ua)) return 'ios';
+    if (/Macintosh|Mac OS X/i.test(ua)) return 'mac';
+    if (/Windows/i.test(ua)) return 'windows';
+    return 'windows';
+  }
+  var os = detectOS(); var cur = SC[os];
+  document.querySelectorAll('[data-dl-primary]').forEach(function(el){
+    el.setAttribute('href', cur.url);
+    var lab = el.querySelector('[data-dl-label]');
+    if (lab) lab.textContent = cur.label;
+  });
+  var menuHTML = '';
+  ['windows','mac','ios','android'].forEach(function(key){
+    var d = SC[key];
+    var active = (key === os) ? ' style="background:rgba(40,120,252,.08)"' : '';
+    menuHTML += '<a href="'+d.url+'" data-os="'+key+'"'+active+'>'
+      + '<span class="os-ico">'+d.ico+'</span>'
+      + '<span class="os-meta"><span class="os-name">'+d.label.replace(/^Download for |^Get on /,'')+'</span><span class="os-sub">'+d.sub+'</span></span>'
+      + '</a>';
+  });
+  document.querySelectorAll('[data-dl-menu]').forEach(function(m){ m.innerHTML = menuHTML; });
+  document.querySelectorAll('[data-dl-toggle]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault(); e.stopPropagation();
+      var group = btn.closest('.dl');
+      var wasOpen = group.classList.contains('open');
+      document.querySelectorAll('.dl.open').forEach(function(g){ g.classList.remove('open'); });
+      if (!wasOpen) group.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.dl.open').forEach(function(g){ g.classList.remove('open'); });
+  });
+})();
+</script>
 
 </body>
 </html>
