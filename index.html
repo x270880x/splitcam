@@ -79,7 +79,7 @@ h1.hero-title { font-size: clamp(38px, 5vw, 64px); font-weight: 700; line-height
 h1.hero-title .blue { color: var(--blue); }
 .hero-cyc { display: inline-block; overflow: hidden; vertical-align: bottom; height: 1.1em; line-height: 1.1; position: relative; }
 .hero-cyc .words { display: block; will-change: transform; }
-.hero-cyc.go .words { transition: transform .65s cubic-bezier(.22,.84,.24,1); }
+.hero-cyc.go .words { transition: transform .85s cubic-bezier(.22,.84,.24,1); }
 .hero-cyc .words > span { display: block; height: 1.1em; line-height: 1.1; white-space: nowrap; color: var(--blue); font-weight: 700; letter-spacing: inherit; }
 .hero-desc { font-size: 16px; color: var(--text-sub); line-height: 1.55; max-width: 480px; margin-bottom: 24px; letter-spacing: -0.1px; }
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -404,7 +404,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <div class="hero-inner">
     <div>
       <div class="pill"><div class="pill-dot"></div><span class="pill-text">Set the scene. Go live.</span></div>
-      <h1 class="hero-title">Your free <span class="blue">streaming studio</span> for <span class="hero-cyc" data-cyc><span class="words"></span></span>.<br>Go live everywhere.</h1>
+      <h1 class="hero-title">Your free <span class="blue">streaming studio</span> <span style="white-space:nowrap">for <span class="hero-cyc" data-cyc><span class="words"></span></span>.</span><br>Go live everywhere.</h1>
       <p class="hero-desc"><strong style="color:var(--text);font-weight:600">Mix scenes, switch sources, broadcast live</strong> to Twitch, YouTube, Facebook, Kick + more — all from one desktop app. Free forever, no watermark.</p>
       <div class="hero-btns">
         <span class="dl">
@@ -822,9 +822,9 @@ function setTab(id,btn){
         i = 0;
         void inner.offsetWidth;
         requestAnimationFrame(function(){ slot.classList.add('go'); });
-      }, 700);
+      }, 900);
     }
-  }, 2400);
+  }, 3500);
 })();
 
 (function(){
