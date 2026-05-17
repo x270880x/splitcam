@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SplitCam — Go live everywhere. Free forever.</title>
+<meta name="description" content="The all-in-one live streaming and virtual camera studio. Stream to Twitch, YouTube, Facebook, Kick and any RTMP at once. Free forever — no watermarks, no limits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0b0b14;
+  --bg-elev:#11111d;
+  --panel:#171728;
+  --raised:#1f1f36;
+  --border:rgba(255,255,255,.07);
+  --border-strong:rgba(255,255,255,.14);
+  --blue:#2878fc;
+  --blue-hover:#4d8eff;
+  --blue-dim:rgba(40,120,252,.13);
+  --purple:#a78bfa;
+  --green:#2ecc71;
+  --red:#e74c3c;
+  --amber:#f39c12;
+  --text:#f2f2fa;
+  --text-sub:#9090b8;
+  --text-dim:#5a5a78;
+}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* Atmospheric gradients */
+.bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.025) 1px,transparent 1px);background-size:24px 24px;mask-image:radial-gradient(circle at 50% 20%,#000 0%,transparent 70%)}
+.bg-glow{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0}
+
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+button{cursor:pointer;font:inherit;color:inherit;border:0;background:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;background:rgba(11,11,20,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{height:30px;width:30px}
+.nav-logo-name{display:flex;flex-direction:column;line-height:1;gap:2px}
+.nav-logo-wordmark{font-size:22px;font-weight:700;letter-spacing:-.5px}
+.nav-logo-tagline{font-size:8.5px;font-weight:500;color:var(--text-sub);letter-spacing:.6px;text-transform:uppercase}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--text-sub);transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;border-radius:10px;padding:10px 18px;transition:all .15s;white-space:nowrap}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 24px -8px var(--blue)}
+.btn-primary:hover{background:var(--blue-hover);transform:translateY(-1px);box-shadow:0 12px 28px -8px var(--blue)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border-strong)}
+.btn-ghost:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.22)}
+.btn-lg{padding:14px 24px;font-size:15px;border-radius:12px}
+
+/* HERO */
+.hero{position:relative;padding:140px 32px 80px;text-align:center;overflow:hidden}
+.hero .bg-glow.g1{top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(40,120,252,.45),transparent 70%)}
+.hero .bg-glow.g2{top:120px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(167,139,250,.25),transparent 70%)}
+.hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--border-strong);border-radius:99px;font-size:13px;color:var(--text-sub);margin-bottom:24px;background:rgba(255,255,255,.02)}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+.hero-h1{font-size:72px;font-weight:800;line-height:1.05;letter-spacing:-2px;max-width:920px;margin:0 auto 24px}
+.hero-h1 .grad{background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{font-size:20px;color:var(--text-sub);max-width:680px;margin:0 auto 36px;line-height:1.55}
+.hero-btns{display:flex;gap:14px;justify-content:center;margin-bottom:60px;flex-wrap:wrap}
+.hero-foot{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;font-size:13px;color:var(--text-dim);margin-bottom:60px}
+.hero-foot span{display:inline-flex;align-items:center;gap:6px}
+.hero-foot .ok{color:var(--green)}
+
+/* Hero mockup */
+.hero-mockup{position:relative;max-width:1140px;margin:0 auto;border-radius:18px;overflow:hidden;border:1px solid var(--border-strong);box-shadow:0 60px 140px -40px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.04) inset;background:var(--panel)}
+.hero-mockup::before{content:"";position:absolute;inset:-1px;border-radius:18px;padding:1px;background:linear-gradient(135deg,rgba(40,120,252,.4),transparent 40%,transparent 60%,rgba(167,139,250,.3));mask:linear-gradient(#000,#000) content-box,linear-gradient(#000,#000);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.hero-mockup-bar{display:flex;align-items:center;gap:8px;padding:12px 18px;background:#0e0e18;border-bottom:1px solid var(--border)}
+.hero-mockup-bar .dots{display:flex;gap:6px}
+.hero-mockup-bar .dot{width:10px;height:10px;border-radius:50%}
+.hero-mockup-bar .d1{background:#ff5f57}.hero-mockup-bar .d2{background:#febc2e}.hero-mockup-bar .d3{background:#28c840}
+.hero-mockup-bar .title{font-size:12px;color:var(--text-dim);margin-left:8px;font-family:'JetBrains Mono',monospace}
+.hero-mockup img{width:100%;display:block}
+
+/* TRUST STRIP */
+.trust{padding:60px 32px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+.trust-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:32px;text-align:center}
+.trust-num{font-size:42px;font-weight:800;letter-spacing:-1.5px;background:linear-gradient(135deg,#fff,var(--text-sub));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.trust-lbl{font-size:13px;color:var(--text-sub);margin-top:8px;letter-spacing:.5px;text-transform:uppercase}
+
+/* SECTIONS */
+section.s{padding:100px 32px;position:relative}
+.s-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1}
+.s-tag{display:inline-block;padding:5px 12px;background:var(--blue-dim);color:var(--blue);font-size:12px;font-weight:600;border-radius:99px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:16px}
+.s-h{font-size:48px;font-weight:800;letter-spacing:-1.2px;line-height:1.1;margin-bottom:16px;max-width:760px}
+.s-h.center{margin-left:auto;margin-right:auto;text-align:center}
+.s-sub{font-size:18px;color:var(--text-sub);max-width:620px;line-height:1.55}
+.s-sub.center{margin-left:auto;margin-right:auto;text-align:center}
+.s-head{margin-bottom:60px}
+.s-head.center{text-align:center}
+
+/* WHO IT'S FOR */
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.who-card{padding:28px 24px;border:1px solid var(--border);border-radius:14px;background:var(--panel);transition:all .2s;position:relative;overflow:hidden}
+.who-card:hover{border-color:var(--border-strong);transform:translateY(-3px);background:var(--raised)}
+.who-card .who-ico{width:44px;height:44px;border-radius:10px;background:var(--blue-dim);display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:22px}
+.who-card h3{font-size:18px;font-weight:700;margin-bottom:6px}
+.who-card p{font-size:14px;color:var(--text-sub);line-height:1.5}
+
+/* WORKFLOW */
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;position:relative}
+.flow-step{padding:24px 18px;border:1px solid var(--border);border-radius:14px;background:var(--panel);text-align:center;position:relative;transition:all .2s}
+.flow-step:hover{border-color:var(--blue);background:var(--raised)}
+.flow-step .n{display:inline-flex;width:32px;height:32px;background:var(--blue);color:#fff;border-radius:50%;align-items:center;justify-content:center;font-weight:700;font-size:14px;margin-bottom:14px;box-shadow:0 4px 16px var(--blue-dim)}
+.flow-step h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.flow-step p{font-size:12px;color:var(--text-sub);line-height:1.4}
+
+/* FEATURE ROWS */
+.feat-row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:120px}
+.feat-row:last-child{margin-bottom:0}
+.feat-row.reverse{direction:rtl}
+.feat-row.reverse>*{direction:ltr}
+.feat-text h3{font-size:36px;font-weight:800;letter-spacing:-.8px;line-height:1.15;margin-bottom:16px}
+.feat-text p{font-size:16px;color:var(--text-sub);margin-bottom:20px;line-height:1.6}
+.feat-list{list-style:none;margin-bottom:20px}
+.feat-list li{padding:8px 0;font-size:15px;display:flex;align-items:flex-start;gap:10px}
+.feat-list li::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--blue-dim);color:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232878fc' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");background-size:11px;background-repeat:no-repeat;background-position:center}
+.feat-visual{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--border-strong);background:var(--panel);box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+.feat-visual img{width:100%;display:block}
+.feat-visual.glow::after{content:"";position:absolute;inset:0;border-radius:18px;box-shadow:0 0 0 1px rgba(40,120,252,.2) inset,0 0 60px rgba(40,120,252,.15) inset;pointer-events:none}
+
+/* CHAT MOCK */
+.chat-mock{background:var(--panel);border-radius:18px;border:1px solid var(--border-strong);padding:20px;font-family:'JetBrains Mono',monospace;font-size:13px;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+.chat-mock .row{display:flex;align-items:center;gap:10px;padding:10px 8px;border-bottom:1px solid var(--border)}
+.chat-mock .row:last-child{border:0}
+.chat-mock .plat{font-size:10px;font-weight:700;padding:3px 7px;border-radius:4px;letter-spacing:.5px}
+.chat-mock .plat.tw{background:rgba(145,70,255,.18);color:#b78bff}
+.chat-mock .plat.yt{background:rgba(255,0,0,.13);color:#ff6b6b}
+.chat-mock .plat.fb{background:rgba(24,119,242,.18);color:#5b9cff}
+.chat-mock .plat.kk{background:rgba(83,255,68,.13);color:#83ff84}
+.chat-mock .plat.tg{background:rgba(0,153,255,.18);color:#5fc5ff}
+.chat-mock .user{color:var(--text);font-weight:600}
+.chat-mock .msg{color:var(--text-sub);flex:1}
+
+/* PLATFORMS */
+.platforms{background:var(--bg-elev);padding:80px 32px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.platforms-inner{max-width:1180px;margin:0 auto;text-align:center}
+.platforms-title{font-size:13px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:32px}
+.platforms-grid{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+.plat-chip{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border:1px solid var(--border);border-radius:99px;background:var(--panel);font-weight:600;font-size:14px;color:var(--text);transition:all .2s}
+.plat-chip:hover{border-color:var(--border-strong);background:var(--raised);transform:translateY(-2px)}
+.plat-chip .ico{width:18px;height:18px}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi{padding:28px 24px;background:var(--panel);border:1px solid var(--border);border-radius:14px}
+.testi .stars{color:#f5b400;letter-spacing:2px;margin-bottom:14px;font-size:14px}
+.testi .quote{font-size:15px;line-height:1.6;color:var(--text);margin-bottom:20px}
+.testi .who{display:flex;align-items:center;gap:12px}
+.testi .ava{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff}
+.testi .name{font-size:14px;font-weight:600}
+.testi .role{font-size:12px;color:var(--text-sub)}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq{padding:22px 24px;border:1px solid var(--border);border-radius:12px;background:var(--panel);cursor:pointer;transition:all .2s}
+.faq:hover{border-color:var(--border-strong)}
+.faq summary{font-size:16px;font-weight:600;display:flex;justify-content:space-between;align-items:center;list-style:none;cursor:pointer}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;color:var(--text-sub);transition:transform .2s;font-weight:300}
+.faq[open] summary::after{transform:rotate(45deg)}
+.faq p{margin-top:14px;color:var(--text-sub);font-size:15px;line-height:1.6}
+
+/* CTA */
+.cta-section{padding:120px 32px;position:relative;overflow:hidden}
+.cta-section .bg-glow{top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(40,120,252,.35),transparent 70%)}
+.cta-box{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1;padding:64px 40px;border:1px solid var(--border-strong);border-radius:24px;background:linear-gradient(180deg,rgba(40,120,252,.08),rgba(167,139,250,.04));backdrop-filter:blur(8px)}
+.cta-h{font-size:48px;font-weight:800;letter-spacing:-1.2px;line-height:1.1;margin-bottom:16px}
+.cta-p{font-size:18px;color:var(--text-sub);margin-bottom:32px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.cta-note{font-size:13px;color:var(--text-dim)}
+
+/* FOOTER */
+footer{padding:60px 32px 40px;border-top:1px solid var(--border);background:var(--bg-elev)}
+.footer-inner{max-width:1180px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--border)}
+.footer-brand{max-width:280px}
+.footer-brand p{font-size:14px;color:var(--text-sub);margin-top:14px}
+.footer-col h5{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{font-size:14px;color:var(--text-sub);transition:color .15s}
+.footer-col a:hover{color:var(--text)}
+.footer-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--text-dim)}
+
+/* Variant ribbon */
+.variant-ribbon{position:fixed;bottom:20px;left:20px;padding:8px 14px;background:var(--panel);border:1px solid var(--border-strong);border-radius:99px;font-size:12px;color:var(--text-sub);z-index:99;display:inline-flex;align-items:center;gap:8px;backdrop-filter:blur(8px)}
+.variant-ribbon a{color:var(--blue);font-weight:600}
+
+@media(max-width:920px){
+  nav{padding:0 18px}
+  .nav-links{display:none}
+  .hero{padding:120px 18px 60px}
+  .hero-h1{font-size:44px;letter-spacing:-1px}
+  .hero-sub{font-size:17px}
+  section.s{padding:70px 18px}
+  .s-h{font-size:34px}
+  .who-grid{grid-template-columns:1fr 1fr}
+  .flow{grid-template-columns:repeat(2,1fr)}
+  .feat-row,.feat-row.reverse{grid-template-columns:1fr;gap:32px;direction:ltr;margin-bottom:80px}
+  .feat-row.reverse>*{direction:ltr}
+  .testi-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .cta-h{font-size:34px}
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <img src="assets/logo.svg" alt="">
+    <span class="nav-logo-name">
+      <span class="nav-logo-wordmark">splitcam</span>
+      <span class="nav-logo-tagline">Go live everywhere</span>
+    </span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#workflow">How it works</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a class="btn btn-primary" href="#download">Download</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bg-glow g1"></div>
+  <div class="bg-glow g2"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="dot"></span> Free forever · No watermark · v11 just shipped</div>
+    <h1 class="hero-h1">Go live on <span class="grad">every platform.</span><br>All at once.</h1>
+    <p class="hero-sub">The all-in-one live streaming studio and virtual camera. Broadcast to Twitch, YouTube, Facebook, Kick and any custom RTMP — simultaneously, from one click.</p>
+    <div class="hero-btns">
+      <a class="btn btn-primary btn-lg" href="#download">⬇ Download for Windows</a>
+      <a class="btn btn-ghost btn-lg" href="#features">Explore features</a>
+    </div>
+    <div class="hero-foot">
+      <span><span class="ok">✓</span> 20+ years on the market</span>
+      <span><span class="ok">✓</span> 50M+ installs</span>
+      <span><span class="ok">✓</span> No subscription, ever</span>
+    </div>
+    <div class="hero-mockup">
+      <div class="hero-mockup-bar">
+        <div class="dots"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span></div>
+        <span class="title">SplitCam · LIVE · 1080p60 · 3 platforms</span>
+      </div>
+      <img src="assets/gui-main.jpg" alt="SplitCam interface">
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="trust-inner">
+    <div><div class="trust-num">50M+</div><div class="trust-lbl">Downloads</div></div>
+    <div><div class="trust-num">22</div><div class="trust-lbl">Years on market</div></div>
+    <div><div class="trust-num">8+</div><div class="trust-lbl">Platforms at once</div></div>
+    <div><div class="trust-num">$0</div><div class="trust-lbl">Forever. No card.</div></div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="s" id="who">
+  <div class="s-inner">
+    <div class="s-head center">
+      <span class="s-tag">Built for you</span>
+      <h2 class="s-h center">One studio. Every kind of creator.</h2>
+      <p class="s-sub center">Whether you're going live for 5 people or 50,000 — SplitCam scales with you. Zero learning curve, zero monthly fees.</p>
+    </div>
+    <div class="who-grid">
+      <div class="who-card"><div class="who-ico">🎮</div><h3>Streamers</h3><p>Twitch, YouTube Gaming, Kick — go live everywhere at once with one PC.</p></div>
+      <div class="who-card"><div class="who-ico">📹</div><h3>YouTubers</h3><p>Record studio-grade video, switch scenes mid-stream, edit later.</p></div>
+      <div class="who-card"><div class="who-ico">🎓</div><h3>Educators</h3><p>Use SplitCam as a webcam in Zoom, Teams, Meet. Add graphics live.</p></div>
+      <div class="who-card"><div class="who-ico">🎵</div><h3>Musicians</h3><p>Multi-track audio, low latency, simultaneous broadcast to fans.</p></div>
+      <div class="who-card"><div class="who-ico">⛪</div><h3>Churches</h3><p>Stream services to Facebook, YouTube, and your own site at once.</p></div>
+      <div class="who-card"><div class="who-ico">✨</div><h3>VTubers</h3><p>Virtual cam with effects, backgrounds, overlays. No plugin hell.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="s" id="workflow" style="background:var(--bg-elev);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="s-inner">
+    <div class="s-head center">
+      <span class="s-tag">How it works</span>
+      <h2 class="s-h center">Download to live in 5 minutes.</h2>
+      <p class="s-sub center">No 200-page manual. No paid plugins. Six clicks and you're broadcasting.</p>
+    </div>
+    <div class="flow">
+      <div class="flow-step"><div class="n">1</div><h4>Capture</h4><p>Camera, screen, audio</p></div>
+      <div class="flow-step"><div class="n">2</div><h4>Mix</h4><p>Drag, drop, layer</p></div>
+      <div class="flow-step"><div class="n">3</div><h4>Layout</h4><p>Scenes & overlays</p></div>
+      <div class="flow-step"><div class="n">4</div><h4>Stream</h4><p>To every RTMP</p></div>
+      <div class="flow-step"><div class="n">5</div><h4>Record</h4><p>Local high-quality</p></div>
+      <div class="flow-step"><div class="n">6</div><h4>Grow</h4><p>Unified chat</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="s" id="features">
+  <div class="s-inner">
+    <div class="s-head center">
+      <span class="s-tag">Core features</span>
+      <h2 class="s-h center">Everything a streaming studio should be.</h2>
+    </div>
+
+    <!-- FEATURE 1: Multi-streaming -->
+    <div class="feat-row">
+      <div class="feat-text">
+        <span class="s-tag">Multi-streaming</span>
+        <h3>One stream. Every platform.</h3>
+        <p>Send a single feed to Twitch, YouTube, Facebook, Kick, X, and any RTMP server simultaneously. No third-party multistream service. No latency hit. No extra bandwidth on your end.</p>
+        <ul class="feat-list">
+          <li>Up to 8 destinations at once</li>
+          <li>Per-platform bitrate control</li>
+          <li>Built-in RTMP server</li>
+          <li>Custom keys, custom servers</li>
+        </ul>
+      </div>
+      <div class="feat-visual glow"><img src="assets/feat-broadcast.png" alt="Multi-streaming"></div>
+    </div>
+
+    <!-- FEATURE 2: Virtual Camera -->
+    <div class="feat-row reverse">
+      <div class="feat-text">
+        <span class="s-tag">Virtual camera</span>
+        <h3>Your stream is also a webcam.</h3>
+        <p>SplitCam shows up as a real camera in Zoom, Teams, Google Meet, OBS, Discord, Skype and 50+ apps. Use scenes, filters and overlays in any meeting — instantly.</p>
+        <ul class="feat-list">
+          <li>1-click switch to any conferencing app</li>
+          <li>Background blur & replace</li>
+          <li>Filters, overlays, lower-thirds in meetings</li>
+          <li>Split one webcam across multiple apps</li>
+        </ul>
+      </div>
+      <div class="feat-visual glow"><img src="assets/feat-vcam.png" alt="Virtual camera"></div>
+    </div>
+
+    <!-- FEATURE 3: Audio -->
+    <div class="feat-row">
+      <div class="feat-text">
+        <span class="s-tag">Audio mixing</span>
+        <h3>Studio-grade audio. Built-in.</h3>
+        <p>Per-source volume, mute, monitoring. VST plugin support. Noise suppression and echo cancellation that actually work. Mic, system, game, and music — all on independent channels.</p>
+        <ul class="feat-list">
+          <li>Multi-channel mixer with VU meters</li>
+          <li>VST3 plugin support</li>
+          <li>Built-in noise gate & compressor</li>
+          <li>Separate audio tracks in recordings</li>
+        </ul>
+      </div>
+      <div class="feat-visual glow"><img src="assets/feat-audio.png" alt="Audio mixer"></div>
+    </div>
+
+    <!-- FEATURE 4: Unified Chat -->
+    <div class="feat-row reverse">
+      <div class="feat-text">
+        <span class="s-tag">Unified chat</span>
+        <h3>All chats. One window.</h3>
+        <p>Reading 5 chat tabs while streaming is impossible. SplitCam merges Twitch, YouTube, Facebook, Kick and Telegram into a single moderated feed — color-coded by platform.</p>
+        <ul class="feat-list">
+          <li>Color-coded by source</li>
+          <li>Inline reply to any chat</li>
+          <li>Auto-moderation & banned-words list</li>
+          <li>Pin viewer messages on stream</li>
+        </ul>
+      </div>
+      <div class="chat-mock">
+        <div class="row"><span class="plat tw">TWITCH</span><span class="user">@gamerz_kate</span><span class="msg">first time catching the stream live, LFG 🔥</span></div>
+        <div class="row"><span class="plat yt">YOUTUBE</span><span class="user">@MikeStreams</span><span class="msg">audio is crisp today, what mic?</span></div>
+        <div class="row"><span class="plat kk">KICK</span><span class="user">@theratio</span><span class="msg">w stream, w energy</span></div>
+        <div class="row"><span class="plat fb">FACEBOOK</span><span class="user">Sandra L.</span><span class="msg">Greetings from Brazil 🇧🇷</span></div>
+        <div class="row"><span class="plat tg">TELEGRAM</span><span class="user">@nightowl</span><span class="msg">poll when?</span></div>
+        <div class="row"><span class="plat tw">TWITCH</span><span class="user">@beanbag42</span><span class="msg">cheer100 keep grinding king</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS -->
+<div class="platforms">
+  <div class="platforms-inner">
+    <div class="platforms-title">Stream to every platform that matters</div>
+    <div class="platforms-grid">
+      <span class="plat-chip">🟣 Twitch</span>
+      <span class="plat-chip">▶ YouTube Live</span>
+      <span class="plat-chip">🟢 Kick</span>
+      <span class="plat-chip">🔵 Facebook Live</span>
+      <span class="plat-chip">𝕏 X (Twitter)</span>
+      <span class="plat-chip">📱 TikTok Live</span>
+      <span class="plat-chip">💼 LinkedIn Live</span>
+      <span class="plat-chip">🎮 Trovo</span>
+      <span class="plat-chip">🌐 Custom RTMP</span>
+      <span class="plat-chip">📡 SRT</span>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="s" id="testimonials">
+  <div class="s-inner">
+    <div class="s-head center">
+      <span class="s-tag">Loved by streamers</span>
+      <h2 class="s-h center">4.7★ rating across 30,000+ reviews.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Been using SplitCam for years for my church's Sunday service. Streaming to Facebook and YouTube at the same time, never crashed once. Free is unbeatable."</p>
+        <div class="who"><div class="ava">JM</div><div><div class="name">James Morrison</div><div class="role">Pastor · Texas, USA</div></div></div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Replaced OBS + Restream + Streamlabs combo with just SplitCam. My CPU stopped melting and I got 30 minutes of my life back per stream."</p>
+        <div class="who"><div class="ava">AK</div><div><div class="name">Aleksei K.</div><div class="role">Twitch streamer · 14k followers</div></div></div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"As a music teacher running online lessons across Zoom and YouTube, the virtual camera + audio mixer is exactly what I needed. Setup took 10 minutes."</p>
+        <div class="who"><div class="ava">SP</div><div><div class="name">Sofia P.</div><div class="role">Music educator · Berlin</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="s" id="faq" style="background:var(--bg-elev);border-top:1px solid var(--border)">
+  <div class="s-inner" style="max-width:780px">
+    <div class="s-head center">
+      <span class="s-tag">FAQ</span>
+      <h2 class="s-h center">Quick answers.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq"><summary>Is SplitCam really free?</summary><p>Yes — completely free for personal and commercial use. No watermark, no time limit, no upsell to a "pro" version. We make money through optional partner integrations, not your wallet.</p></details>
+      <details class="faq"><summary>How many platforms can I stream to at once?</summary><p>Up to 8 destinations simultaneously, depending on your upload bandwidth and CPU. Most users comfortably hit 3–5 platforms on a mid-range PC.</p></details>
+      <details class="faq"><summary>Does it work on Mac / Linux?</summary><p>SplitCam is Windows-only as of v11. macOS and Linux versions are on the roadmap. In the meantime, you can run it via Parallels or Boot Camp on Mac.</p></details>
+      <details class="faq"><summary>Will it slow down my games?</summary><p>SplitCam uses hardware encoders (NVENC, QuickSync, AMF) by default, so encoding load is on the GPU's dedicated chip — not the cores running your game. Most users see 0–3% FPS impact.</p></details>
+      <details class="faq"><summary>Can I import OBS scenes?</summary><p>Yes — SplitCam imports OBS scene collections in one click. All your sources, layouts, and transitions carry over.</p></details>
+      <details class="faq"><summary>Where's my data stored?</summary><p>Your recordings and settings stay on your machine. SplitCam doesn't upload anything to the cloud unless you explicitly enable cloud backups.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="download">
+  <div class="bg-glow"></div>
+  <div class="cta-box">
+    <h2 class="cta-h">Stop juggling streaming tools.<br>Just go live.</h2>
+    <p class="cta-p">Download SplitCam, free forever. No card, no trial timer, no watermark on your stream.</p>
+    <div class="cta-btns">
+      <a class="btn btn-primary btn-lg" href="#">⬇ Download for Windows</a>
+      <a class="btn btn-ghost btn-lg" href="#">View changelog</a>
+    </div>
+    <div class="cta-note">~85 MB installer · Windows 10/11 · 64-bit</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <img src="assets/logo.svg" alt="">
+          <span class="nav-logo-name">
+            <span class="nav-logo-wordmark">splitcam</span>
+            <span class="nav-logo-tagline">Go live everywhere</span>
+          </span>
+        </div>
+        <p>The free live-streaming studio. Built for creators since 2003.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#workflow">How it works</a></li>
+          <li><a href="#">Changelog</a></li>
+          <li><a href="#">Roadmap</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Tutorials</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Community</h5>
+        <ul>
+          <li><a href="#">Discord</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Reddit</a></li>
+          <li><a href="#">X / Twitter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Press kit</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <div>© 2026 SplitCam. All rights reserved.</div>
+      <div>Made for streamers, since 2003.</div>
+    </div>
+  </div>
+</footer>
+
+<div class="variant-ribbon">
+  This is <strong style="color:var(--text)">Variant B</strong> · <a href="../">See Variant A</a>
+</div>
+
+</body>
+</html>
