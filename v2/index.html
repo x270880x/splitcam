@@ -196,6 +196,21 @@ footer{padding:60px 32px 40px;border-top:1px solid var(--border);background:var(
 .variant-ribbon{position:fixed;bottom:20px;left:20px;padding:8px 14px;background:var(--panel);border:1px solid var(--border-strong);border-radius:99px;font-size:12px;color:var(--text-sub);z-index:99;display:inline-flex;align-items:center;gap:8px;backdrop-filter:blur(8px)}
 .variant-ribbon a{color:var(--blue);font-weight:600}
 
+/* Hero pre-headline + slot cycler */
+.hero-pre{font-size:18px;font-weight:500;color:var(--text-sub);letter-spacing:.2px;margin-bottom:16px}
+.hero-h1.cyc-h1{display:flex;align-items:flex-end;justify-content:center;gap:6px;line-height:1;flex-wrap:wrap}
+.hero-cyc{display:inline-flex;overflow:hidden;vertical-align:bottom;height:1.05em;line-height:1.05;position:relative}
+.hero-cyc .words{display:block;will-change:transform}
+.hero-cyc .words > span{display:block;height:1.05em;line-height:1.05;white-space:nowrap;background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800;letter-spacing:-2px}
+.hero-cyc.go .words{transition:transform .65s cubic-bezier(.22,.84,.24,1)}
+
+/* Audience chips */
+.audience-chips{margin:28px auto 0;max-width:760px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
+.audience-chips .lbl{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1.2px;margin-right:6px;font-weight:600}
+.audience-chips .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border:1px solid var(--border);background:rgba(255,255,255,.025);border-radius:99px;font-size:13px;color:var(--text-sub);font-weight:500;transition:all .2s;opacity:0;transform:translateY(8px);animation:chip-in .5s ease forwards}
+.audience-chips .chip:hover{border-color:var(--border-strong);color:var(--text);transform:translateY(-2px)!important}
+@keyframes chip-in{to{opacity:1;transform:translateY(0)}}
+
 /* Split-button download */
 .dl{position:relative;display:inline-flex;align-items:stretch}
 .dl .btn-primary{border-top-right-radius:0;border-bottom-right-radius:0;box-shadow:none;padding-right:14px}
@@ -268,8 +283,11 @@ footer{padding:60px 32px 40px;border-top:1px solid var(--border);background:var(
   <div class="bg-glow g2"></div>
   <div class="hero-inner">
     <div class="hero-badge"><span class="dot"></span> Free forever · No watermark · v11 just shipped</div>
-    <h1 class="hero-h1">Go live on <span class="grad">every platform.</span><br>All at once.</h1>
-    <p class="hero-sub">The all-in-one live streaming studio and virtual camera. Broadcast to Twitch, YouTube, Facebook, Kick and any custom RTMP — simultaneously, from one click.</p>
+    <div class="hero-pre">The live streaming studio for</div>
+    <h1 class="hero-h1 cyc-h1">
+      <span class="hero-cyc" data-cyc><span class="words"></span></span><span class="grad" style="font-weight:800">.</span>
+    </h1>
+    <p class="hero-sub">Broadcast to every platform at once. Free forever, no watermark. Windows · Mac · iOS · Android.</p>
     <div class="hero-btns">
       <span class="dl btn-lg">
         <a class="btn btn-primary btn-lg" href="#" data-dl-primary><span data-dl-icon-svg></span><span data-dl-label>Download</span></a>
@@ -279,6 +297,15 @@ footer{padding:60px 32px 40px;border-top:1px solid var(--border);background:var(
         <div class="dl-menu" data-dl-menu></div>
       </span>
       <a class="btn btn-ghost btn-lg" href="#features">Explore features</a>
+    </div>
+    <div class="audience-chips">
+      <span class="lbl">Also great for</span>
+      <span class="chip" style="animation-delay:.05s">🎯 Esports teams</span>
+      <span class="chip" style="animation-delay:.12s">🎤 Conferences</span>
+      <span class="chip" style="animation-delay:.19s">🛍 Live shopping</span>
+      <span class="chip" style="animation-delay:.26s">📚 Online courses</span>
+      <span class="chip" style="animation-delay:.33s">💪 Live coaches</span>
+      <span class="chip" style="animation-delay:.40s">🎪 Live events</span>
     </div>
     <div class="hero-foot">
       <span><span class="ok">✓</span> 20+ years on the market</span>
@@ -571,6 +598,47 @@ footer{padding:60px 32px 40px;border-top:1px solid var(--border);background:var(
 </div>
 
 <script>
+/* Hero audience cycler ============================================= */
+(function(){
+  var slot = document.querySelector('[data-cyc]');
+  if (!slot) return;
+  var inner = slot.querySelector('.words');
+  var words = ['streamers','YouTubers','educators','musicians','churches','VTubers','podcasters','webcam models'];
+  /* Append duplicate of first at the end for seamless wrap */
+  words.concat([words[0]]).forEach(function(w){
+    var s = document.createElement('span');
+    s.textContent = w;
+    inner.appendChild(s);
+  });
+  /* Make slot wide enough for the longest word */
+  var measure = document.createElement('span');
+  measure.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-weight:800;letter-spacing:-2px';
+  measure.style.font = getComputedStyle(inner.firstChild).font;
+  document.body.appendChild(measure);
+  var maxW = 0;
+  words.forEach(function(w){ measure.textContent = w; maxW = Math.max(maxW, measure.offsetWidth); });
+  document.body.removeChild(measure);
+  slot.style.width = (maxW + 8) + 'px';
+  /* Enable transition after first paint */
+  requestAnimationFrame(function(){ slot.classList.add('go'); });
+  /* Cycle */
+  var i = 0;
+  setInterval(function(){
+    i++;
+    inner.style.transform = 'translateY(-' + (i * 100) + '%)';
+    if (i === words.length) {
+      setTimeout(function(){
+        slot.classList.remove('go');
+        inner.style.transform = 'translateY(0)';
+        i = 0;
+        /* reflow */
+        void inner.offsetWidth;
+        requestAnimationFrame(function(){ slot.classList.add('go'); });
+      }, 700);
+    }
+  }, 2400);
+})();
+
 (function(){
   /* SVG icons inline (Windows, Apple, Google Play) */
   var ICO = {
