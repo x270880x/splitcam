@@ -91,6 +91,11 @@ h1.hero-title .blue { color: var(--blue); }
 .wd-r { background:#ff5f56; } .wd-y { background:#febc2e; } .wd-g { background:#28c840; }
 .app-titlebar-name { flex: 1; text-align: center; font-size: 11px; color: var(--text-dim); margin-right: 29px; font-family: 'Geist Mono', monospace; }
 .app-canvas { background: #0a0a14; height: 190px; position: relative; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--app-border); }
+.app-shot { position: relative; overflow: hidden; }
+.app-shot img { display: block; width: 100%; height: auto; }
+.app-shot-glow { position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 80px rgba(40,120,252,.08), inset 0 0 0 1px rgba(255,255,255,.04); }
+.app-shot-pulse { position: absolute; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; background: rgba(231,76,60,.92); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 1px; border-radius: 5px; font-family: 'Geist Mono', monospace; box-shadow: 0 4px 16px rgba(231,76,60,.4); backdrop-filter: blur(4px); }
+.app-shot-pulse .pulse-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: blink 1.4s infinite; }
 .canvas-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px); background-size: 24px 24px; }
 .canvas-cam { width: 96px; height: 70px; border: 1.5px dashed rgba(40,120,252,.45); border-radius: 8px; z-index: 1; display: flex; align-items: center; justify-content: center; color: var(--blue); }
 .canvas-badge { position: absolute; top: 10px; left: 10px; background: var(--red); color: #fff; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 8px; border-radius: 4px; font-family: 'Geist Mono', monospace; display: flex; align-items: center; gap: 5px; }
@@ -391,9 +396,9 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div>
-      <div class="pill"><div class="pill-dot"></div><span class="pill-text">v10.9 · Free Live Multi-Streaming Studio</span></div>
+      <div class="pill"><div class="pill-dot"></div><span class="pill-text">Free Live Multi-Streaming Studio</span></div>
       <h1 class="hero-title">Go live on <span class="blue">every platform.</span> All at once.</h1>
-      <p class="hero-desc">SplitCam is a free streaming studio that broadcasts to Twitch, YouTube, Facebook, Kick and any custom RTMP destination — simultaneously, from one click. Set up in 5 minutes. No watermarks, no subscriptions, no limits.</p>
+      <p class="hero-desc"><strong style="color:var(--text);font-weight:600">One click. Every platform.</strong> Stream simultaneously to Twitch, YouTube, Facebook, Kick and any RTMP destination. Set up in five minutes — free forever, no watermark, no card.</p>
       <div class="hero-btns">
         <span class="dl">
           <a href="#" class="btn-primary" data-dl-primary><svg class="ico ico-sm"><use href="#i-dl"/></svg> <span data-dl-label>Download for Windows</span></a>
@@ -414,27 +419,12 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <div class="app-window">
       <div class="app-titlebar">
         <div class="wdot wd-r"></div><div class="wdot wd-y"></div><div class="wdot wd-g"></div>
-        <span class="app-titlebar-name">SplitCam 10.9 · Live</span>
+        <span class="app-titlebar-name">SplitCam · LIVE</span>
       </div>
-      <div class="app-canvas">
-        <div class="canvas-grid"></div>
-        <div class="canvas-cam"><svg class="ico" style="width:32px;height:32px"><use href="#i-cam"/></svg></div>
-        <div class="canvas-badge">LIVE</div>
-        <div class="canvas-fps">60 FPS · 1080p</div>
-        <div class="canvas-scene-label">Scene: Main Camera</div>
-      </div>
-      <div class="scenes-row">
-        <div class="scene-item"><div class="scene-thumb active"><svg class="ico ico-lg"><use href="#i-cam"/></svg></div><div class="scene-lbl">Main</div></div>
-        <div class="scene-item"><div class="scene-thumb"><svg class="ico ico-lg"><use href="#i-game"/></svg></div><div class="scene-lbl">Game</div></div>
-        <div class="scene-item"><div class="scene-thumb"><svg class="ico ico-lg"><use href="#i-screen"/></svg></div><div class="scene-lbl">Screen</div></div>
-        <div class="scene-item"><div class="scene-thumb"><svg class="ico ico-lg"><use href="#i-chat"/></svg></div><div class="scene-lbl">Chat</div></div>
-        <div class="scene-item"><div class="scene-thumb"><svg class="ico ico-lg"><use href="#i-pause"/></svg></div><div class="scene-lbl">BRB</div></div>
-      </div>
-      <div class="channels-list">
-        <div class="ch-row"><div class="ch-icon ch-tw"><svg class="ico ico-sm"><use href="#i-twitch"/></svg></div><span class="ch-name">Twitch</span><div class="ch-status"><div class="live-dot"></div><span class="live-txt">LIVE</span></div><span class="ch-kbps">6000 kbps</span></div>
-        <div class="ch-row"><div class="ch-icon ch-yt"><svg class="ico ico-sm"><use href="#i-yt"/></svg></div><span class="ch-name">YouTube Live</span><div class="ch-status"><div class="live-dot"></div><span class="live-txt">LIVE</span></div><span class="ch-kbps">4500 kbps</span></div>
-        <div class="ch-row"><div class="ch-icon ch-fb"><svg class="ico ico-sm"><use href="#i-fb"/></svg></div><span class="ch-name">Facebook Live</span><div class="ch-status"><div class="live-dot"></div><span class="live-txt">LIVE</span></div><span class="ch-kbps">3000 kbps</span></div>
-        <div class="ch-row"><div class="ch-icon ch-rt"><svg class="ico ico-sm"><use href="#i-rtmp"/></svg></div><span class="ch-name">Custom RTMP</span><div class="ch-status"><div class="live-dot"></div><span class="live-txt">LIVE</span></div><span class="ch-kbps">2500 kbps</span></div>
+      <div class="app-shot">
+        <img src="assets/gui-hero.jpg" alt="SplitCam interface — live multistreaming to Twitch, YouTube, Facebook and Kick simultaneously" />
+        <div class="app-shot-glow"></div>
+        <div class="app-shot-pulse"><span class="pulse-dot"></span>LIVE</div>
       </div>
     </div>
   </div>
