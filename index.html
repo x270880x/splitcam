@@ -125,7 +125,8 @@ nav {
 .btn-blue-sm:hover { background: var(--blue-hover); }
 
 /* HERO */
-.hero { min-height: 100vh; padding: 100px 40px 80px; display: flex; align-items: center; position: relative; overflow: hidden; }
+.hero { min-height: 100vh; padding: 100px 40px 36px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+.hero-inner.with-platforms { flex: 1; align-content: center; }
 .hero-glow { position: absolute; pointer-events: none; width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(40,120,252,.07) 0%, transparent 70%); right: -120px; top: 50%; transform: translateY(-50%); }
 .hero-inner { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 836px; gap: 60px; align-items: center; }
 
@@ -188,13 +189,30 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .ch-kbps { font-size: 10px; color: var(--text-dim); font-family: 'Geist Mono', monospace; }
 
 /* STRIP */
-.strip { border-top: 1px solid var(--app-border); border-bottom: 1px solid var(--app-border); padding: 24px 40px; background: var(--app-panel); }
-.strip-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 36px; }
-.strip-lbl { font-size: 11px; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.2px; white-space: nowrap; }
-.strip-div { width: 1px; height: 26px; background: var(--app-border2); }
-.strip-logos { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
-.pchip { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 500; color: var(--text-sub); }
-.pchip svg { color: var(--text-dim); }
+/* Platforms strip inside hero */
+.hero-platforms { max-width: 1440px; margin: 28px auto 0; width: 100%; position: relative; z-index: 1; }
+.hero-platforms-inner { display: flex; align-items: center; gap: 24px; padding: 16px 24px; background: rgba(255,255,255,.03); border: 1px solid var(--app-border); border-radius: 16px; backdrop-filter: blur(10px); }
+.strip-lbl { font-size: 10.5px; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; white-space: nowrap; }
+.strip-div { width: 1px; height: 22px; background: var(--app-border2); flex-shrink: 0; }
+.strip-logos { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; flex: 1; }
+.pchip { display: inline-flex; align-items: center; gap: 7px; padding: 6px 11px; border-radius: 99px; font-size: 12.5px; font-weight: 600; color: var(--text); background: rgba(255,255,255,.04); border: 1px solid transparent; transition: all .18s; cursor: default; }
+.pchip:hover { background: rgba(255,255,255,.08); border-color: var(--app-border2); transform: translateY(-1px); }
+.pchip svg { width: 15px; height: 15px; flex-shrink: 0; }
+/* Brand colors */
+.pchip.tw svg { color: #9146FF; }
+.pchip.yt svg { color: #FF0000; }
+.pchip.fb svg { color: #1877F2; }
+.pchip.kk svg { color: #53FC18; }
+.pchip.tt svg { color: #FF0050; }
+.pchip.ig svg { color: #E1306C; }
+.pchip.x svg { color: #FFFFFF; }
+.pchip.li svg { color: #0A66C2; }
+.pchip.dc svg { color: #5865F2; }
+.pchip.tv svg { color: #19D66B; }
+.pchip.rb svg { color: #85C742; }
+.pchip.rt svg { color: var(--text-sub); }
+.pchip.more { color: var(--text-dim); background: transparent; border-color: var(--app-border); font-weight: 500; }
+.pchip.more:hover { color: var(--text-sub); }
 
 /* SECTION */
 .section { padding: 96px 40px; }
@@ -368,7 +386,8 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .stats-grid{grid-template-columns:1fr;}
   .footer-inner{grid-template-columns:1fr 1fr;}
   .cta-wrap{padding:60px 20px;} .cta-box{padding:48px 24px;}
-  .strip{padding:22px 20px;} .strip-inner{flex-wrap:wrap;gap:16px;}
+  .hero-platforms-inner{padding:14px 16px;gap:14px;flex-wrap:wrap;}
+  .strip-div{display:none;}
   .stats-wrap{padding:60px 20px;}
   .src-grid{grid-template-columns:1fr;}
 }
@@ -401,11 +420,18 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></symbol>
     <symbol id="i-arr" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
-    <symbol id="i-twitch" viewBox="0 0 24 24"><path d="M4 4h16v10l-4 4h-4l-3 3v-3H4V4Zm7 4v6m4-6v6"/></symbol>
-    <symbol id="i-yt" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></symbol>
-    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h2.5V5H14a3.5 3.5 0 0 0-3.5 3.5V11H8v3h2.5v8H14v-8h2.5l.5-3H14V8.5c0-.3.2-.5.5-.5Z"/></symbol>
-    <symbol id="i-rtmp" viewBox="0 0 24 24"><path d="M5 12a7 7 0 0 1 14 0M8 12a4 4 0 0 1 8 0M12 12v9m-3 0h6"/></symbol>
-    <symbol id="i-kick" viewBox="0 0 24 24"><path d="M5 4h4v6h2l4-6h5l-6 8 6 8h-5l-4-6H9v6H5V4Z"/></symbol>
+    <symbol id="i-twitch" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2 2 6v14h5v3h3l3-3h4l6-6V2H4zm17 11-3 3h-5l-3 3v-3H7V4h14v9zm-5-7h-2v6h2V6zm-5 0H9v6h2V6z"/></symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24" fill="currentColor"><path d="M22.5 6.5a3 3 0 0 0-2-2C18.5 4 12 4 12 4s-6.5 0-8.5.5a3 3 0 0 0-2 2C1 8.5 1 12 1 12s0 3.5.5 5.5a3 3 0 0 0 2 2C5.5 20 12 20 12 20s6.5 0 8.5-.5a3 3 0 0 0 2-2c.5-2 .5-5.5.5-5.5s0-3.5-.5-5.5zM10 15.5v-7l6 3.5-6 3.5z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9V15h-2.5v-3h2.5V9.8c0-2.5 1.5-3.8 3.7-3.8 1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 3h-2.3v6.9A10 10 0 0 0 22 12z"/></symbol>
+    <symbol id="i-rtmp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 14 0M8 12a4 4 0 0 1 8 0M12 12v9m-3 0h6"/></symbol>
+    <symbol id="i-kick" viewBox="0 0 24 24" fill="currentColor"><path d="M3 2h6v6h2V5h2V2h7v8h-2v2h-2v2h2v2h2v8h-7v-3h-2v-3H9v6H3V2z"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9a6 6 0 0 1-4-1.5V15a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3V2h3a4 4 0 0 0 4 4v3z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="currentColor"><path d="M17.7 3H21l-7.4 8.4L22 21h-6.8l-5.3-7L4 21H1l8-9.1L1.5 3h7l4.8 6.4L17.7 3z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8 18H5v-9h3v9zM6.5 7.7A1.7 1.7 0 1 1 8.3 6a1.7 1.7 0 0 1-1.8 1.7zM18 18h-3v-4.5c0-1.2-.5-1.7-1.4-1.7-.9 0-1.6.6-1.6 1.7V18h-3V9h2.9v1.3a3 3 0 0 1 2.7-1.5c1.6 0 3.4.9 3.4 3.7V18z"/></symbol>
+    <symbol id="i-discord" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5c-1.4-.6-2.9-1-4.4-1.3l-.2.4c1.4.3 2.7.8 3.9 1.5-2.7-1.4-5.7-1.5-9.4 0 1.2-.7 2.5-1.2 3.9-1.5l-.2-.4C11 4 9.5 4.5 8 5 5 9.5 4 14 4.5 18.5c1.8 1.3 3.5 2.1 5.2 2.6.4-.5.8-1.2 1.1-1.8-.6-.3-1.3-.6-1.9-1l.5-.3c3.6 1.6 7.5 1.6 11 0l.5.3c-.6.4-1.2.7-1.9 1 .3.7.7 1.3 1.1 1.9 1.7-.5 3.4-1.3 5.2-2.7.6-5.2-.9-9.6-3.3-13.5zM9.5 15.5c-1 0-1.9-1-1.9-2.2s.9-2.2 1.9-2.2 1.9 1 1.9 2.2-.9 2.2-1.9 2.2zm5 0c-1 0-1.9-1-1.9-2.2s.9-2.2 1.9-2.2 1.9 1 1.9 2.2-.9 2.2-1.9 2.2z"/></symbol>
+    <symbol id="i-trovo" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4v8l6 3v6l6-3v-6l6-3V4l-9 4-9-4z"/></symbol>
+    <symbol id="i-rumble" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l16 9-16 9V3z"/></symbol>
     <symbol id="i-split" viewBox="0 0 24 24"><path d="M12 3v6m0 0-5 5v7m5-12 5 5v7M7 21h0m10 0h0M12 3h0"/></symbol>
     <symbol id="i-broadcast" viewBox="0 0 24 24"><path d="M4.93 19.07a10 10 0 0 1 0-14.14M19.07 4.93a10 10 0 0 1 0 14.14M7.76 16.24a6 6 0 0 1 0-8.48M16.24 7.76a6 6 0 0 1 0 8.48"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></symbol>
     <symbol id="i-mask" viewBox="0 0 24 24"><path d="M12 3c5 0 9 4 9 9 0 6-4 9-9 9s-9-3-9-9c0-5 4-9 9-9Z"/><path d="M8.5 10.5h.01M15.5 10.5h.01M8 15c1 1.5 2.5 2 4 2s3-.5 4-2"/></symbol>
@@ -492,25 +518,30 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </div>
     </div>
   </div>
-</section>
 
-<!-- PLATFORMS STRIP -->
-<div class="strip">
-  <div class="strip-inner">
-    <span class="strip-lbl">Stream to</span>
-    <div class="strip-div"></div>
-    <div class="strip-logos">
-      <div class="pchip"><svg class="ico ico-sm"><use href="#i-twitch"/></svg> Twitch</div>
-      <div class="pchip"><svg class="ico ico-sm"><use href="#i-yt"/></svg> YouTube</div>
-      <div class="pchip"><svg class="ico ico-sm"><use href="#i-fb"/></svg> Facebook</div>
-      <div class="pchip"><svg class="ico ico-sm"><use href="#i-kick"/></svg> Kick</div>
-      <div class="pchip"><svg class="ico ico-sm"><use href="#i-game"/></svg> Steam</div>
-      <div class="pchip"><svg class="ico ico-sm"><use href="#i-box"/></svg> LinkedIn</div>
-      <div class="pchip"><svg class="ico ico-sm"><use href="#i-rtmp"/></svg> Custom RTMP</div>
-      <div class="pchip" style="color:var(--text-dim)">+25 more</div>
+  <!-- PLATFORMS STRIP (inside hero, visible above fold) -->
+  <div class="hero-platforms">
+    <div class="hero-platforms-inner">
+      <span class="strip-lbl">Stream to</span>
+      <div class="strip-div"></div>
+      <div class="strip-logos">
+        <div class="pchip tw"><svg class="ico ico-sm"><use href="#i-twitch"/></svg> Twitch</div>
+        <div class="pchip yt"><svg class="ico ico-sm"><use href="#i-yt"/></svg> YouTube</div>
+        <div class="pchip fb"><svg class="ico ico-sm"><use href="#i-fb"/></svg> Facebook</div>
+        <div class="pchip kk"><svg class="ico ico-sm"><use href="#i-kick"/></svg> Kick</div>
+        <div class="pchip tt"><svg class="ico ico-sm"><use href="#i-tiktok"/></svg> TikTok</div>
+        <div class="pchip ig"><svg class="ico ico-sm"><use href="#i-ig"/></svg> Instagram</div>
+        <div class="pchip x"><svg class="ico ico-sm"><use href="#i-x"/></svg> X</div>
+        <div class="pchip li"><svg class="ico ico-sm"><use href="#i-linkedin"/></svg> LinkedIn</div>
+        <div class="pchip dc"><svg class="ico ico-sm"><use href="#i-discord"/></svg> Discord</div>
+        <div class="pchip tv"><svg class="ico ico-sm"><use href="#i-trovo"/></svg> Trovo</div>
+        <div class="pchip rb"><svg class="ico ico-sm"><use href="#i-rumble"/></svg> Rumble</div>
+        <div class="pchip rt"><svg class="ico ico-sm"><use href="#i-rtmp"/></svg> Custom RTMP</div>
+        <div class="pchip more">+20 more</div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- QUICK START / 5-MIN -->
 <section class="section">
