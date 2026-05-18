@@ -125,8 +125,7 @@ nav {
 .btn-blue-sm:hover { background: var(--blue-hover); }
 
 /* HERO */
-.hero { min-height: 100vh; padding: 100px 40px 36px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
-.hero-inner.with-platforms { flex: 1; align-content: center; }
+.hero { min-height: 100vh; padding: 100px 40px 60px; display: flex; align-items: center; position: relative; overflow: hidden; }
 .hero-glow { position: absolute; pointer-events: none; width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(40,120,252,.07) 0%, transparent 70%); right: -120px; top: 50%; transform: translateY(-50%); }
 .hero-inner { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 836px; gap: 60px; align-items: center; }
 
@@ -189,30 +188,17 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .ch-kbps { font-size: 10px; color: var(--text-dim); font-family: 'Geist Mono', monospace; }
 
 /* STRIP */
-/* Platforms strip inside hero */
-.hero-platforms { max-width: 1440px; margin: 28px auto 0; width: 100%; position: relative; z-index: 1; }
-.hero-platforms-inner { display: flex; align-items: center; gap: 24px; padding: 16px 24px; background: rgba(255,255,255,.03); border: 1px solid var(--app-border); border-radius: 16px; backdrop-filter: blur(10px); }
-.strip-lbl { font-size: 10.5px; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; white-space: nowrap; }
-.strip-div { width: 1px; height: 22px; background: var(--app-border2); flex-shrink: 0; }
-.strip-logos { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; flex: 1; }
-.pchip { display: inline-flex; align-items: center; gap: 7px; padding: 6px 11px; border-radius: 99px; font-size: 12.5px; font-weight: 600; color: var(--text); background: rgba(255,255,255,.04); border: 1px solid transparent; transition: all .18s; cursor: default; }
-.pchip:hover { background: rgba(255,255,255,.08); border-color: var(--app-border2); transform: translateY(-1px); }
-.pchip svg { width: 15px; height: 15px; flex-shrink: 0; }
-/* Brand colors */
-.pchip.tw svg { color: #9146FF; }
-.pchip.yt svg { color: #FF0000; }
-.pchip.fb svg { color: #1877F2; }
-.pchip.kk svg { color: #53FC18; }
-.pchip.tt svg { color: #FF0050; }
-.pchip.ig svg { color: #E1306C; }
-.pchip.x svg { color: #FFFFFF; }
-.pchip.li svg { color: #0A66C2; }
-.pchip.dc svg { color: #5865F2; }
-.pchip.tv svg { color: #19D66B; }
-.pchip.rb svg { color: #85C742; }
-.pchip.rt svg { color: var(--text-sub); }
-.pchip.more { color: var(--text-dim); background: transparent; border-color: var(--app-border); font-weight: 500; }
-.pchip.more:hover { color: var(--text-sub); }
+/* Platforms strip (full-width, below hero) */
+.strip { border-top: 1px solid var(--app-border); border-bottom: 1px solid var(--app-border); padding: 22px 40px; margin-top: 20px; background: var(--app-panel); }
+.strip-inner { max-width: 1440px; margin: 0 auto; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.strip-lbl { font-size: 10.5px; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; white-space: nowrap; }
+.strip-div { width: 1px; height: 20px; background: var(--app-border2); flex-shrink: 0; }
+.strip-logos { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; flex: 1; }
+.pchip { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--text); transition: opacity .18s, transform .18s; }
+.pchip:hover { transform: translateY(-1px); }
+.pchip svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--text); opacity: .85; }
+.pchip:hover svg { opacity: 1; }
+.pchip.more { color: var(--text-dim); font-weight: 500; }
 
 /* SECTION */
 .section { padding: 96px 40px; }
@@ -386,7 +372,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .stats-grid{grid-template-columns:1fr;}
   .footer-inner{grid-template-columns:1fr 1fr;}
   .cta-wrap{padding:60px 20px;} .cta-box{padding:48px 24px;}
-  .hero-platforms-inner{padding:14px 16px;gap:14px;flex-wrap:wrap;}
+  .strip{padding:18px 20px;} .strip-inner{flex-wrap:wrap;gap:14px;}
   .strip-div{display:none;}
   .stats-wrap{padding:60px 20px;}
   .src-grid{grid-template-columns:1fr;}
@@ -518,30 +504,30 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </div>
     </div>
   </div>
+</section>
 
-  <!-- PLATFORMS STRIP (inside hero, visible above fold) -->
-  <div class="hero-platforms">
-    <div class="hero-platforms-inner">
-      <span class="strip-lbl">Stream to</span>
-      <div class="strip-div"></div>
-      <div class="strip-logos">
-        <div class="pchip tw"><svg class="ico ico-sm"><use href="#i-twitch"/></svg> Twitch</div>
-        <div class="pchip yt"><svg class="ico ico-sm"><use href="#i-yt"/></svg> YouTube</div>
-        <div class="pchip fb"><svg class="ico ico-sm"><use href="#i-fb"/></svg> Facebook</div>
-        <div class="pchip kk"><svg class="ico ico-sm"><use href="#i-kick"/></svg> Kick</div>
-        <div class="pchip tt"><svg class="ico ico-sm"><use href="#i-tiktok"/></svg> TikTok</div>
-        <div class="pchip ig"><svg class="ico ico-sm"><use href="#i-ig"/></svg> Instagram</div>
-        <div class="pchip x"><svg class="ico ico-sm"><use href="#i-x"/></svg> X</div>
-        <div class="pchip li"><svg class="ico ico-sm"><use href="#i-linkedin"/></svg> LinkedIn</div>
-        <div class="pchip dc"><svg class="ico ico-sm"><use href="#i-discord"/></svg> Discord</div>
-        <div class="pchip tv"><svg class="ico ico-sm"><use href="#i-trovo"/></svg> Trovo</div>
-        <div class="pchip rb"><svg class="ico ico-sm"><use href="#i-rumble"/></svg> Rumble</div>
-        <div class="pchip rt"><svg class="ico ico-sm"><use href="#i-rtmp"/></svg> Custom RTMP</div>
-        <div class="pchip more">+20 more</div>
-      </div>
+<!-- PLATFORMS STRIP (full-width, below hero) -->
+<div class="strip">
+  <div class="strip-inner">
+    <span class="strip-lbl">Stream to</span>
+    <div class="strip-div"></div>
+    <div class="strip-logos">
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-twitch"/></svg> Twitch</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-yt"/></svg> YouTube</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-fb"/></svg> Facebook</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-kick"/></svg> Kick</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-tiktok"/></svg> TikTok</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-ig"/></svg> Instagram</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-x"/></svg> X</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-linkedin"/></svg> LinkedIn</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-discord"/></svg> Discord</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-trovo"/></svg> Trovo</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-rumble"/></svg> Rumble</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-rtmp"/></svg> Custom RTMP</div>
+      <div class="pchip more">+ 20 more</div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- QUICK START / 5-MIN -->
 <section class="section">
