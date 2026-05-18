@@ -299,6 +299,7 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 
 /* FEAT GRID */
 .feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--app-border); border: 1px solid var(--app-border); border-radius: 12px; overflow: hidden; }
+@media(max-width:700px) { .feat-grid { grid-template-columns: 1fr; } }
 .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
 .why-card { padding: 28px 24px; border: 1px solid var(--app-border); border-radius: 14px; background: var(--app-panel); transition: border-color .2s, transform .2s; }
 .why-card:hover { border-color: var(--app-border2); transform: translateY(-3px); }
@@ -609,7 +610,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <div class="feat-panel" id="panel-engage">
       <div>
         <h3 class="feat-h">Tools your audience actually sees</h3>
-        <p class="feat-p">Built-in Tip Notifier shows live donations on your stream — name, amount, message, animated image — no third-party services like Streamlabs required. Draw on screen live, blur sensitive content, write highlights as you stream.</p>
+        <p class="feat-p">Built-in Tip Notifier shows live donations on your stream — name, amount, message, animated image — no third-party services required. Draw on screen live, blur sensitive content, write highlights as you stream.</p>
         <ul class="feat-ul">
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Tip Notifier: animated alerts with custom images and thank-you text</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Live drawing — annotate your screen mid-stream for tutorials and reactions</li>
@@ -754,18 +755,18 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
 <section class="section">
   <div class="section-inner">
     <p class="eyebrow">Everything included</p>
-    <h2 class="sec-h">A complete studio. Free.</h2>
+    <h2 class="sec-h">9 reasons SplitCam wins.</h2>
     <p class="sec-p">No premium tiers, no feature locks. The free download is the full app.</p>
     <div class="feat-grid">
-      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-broadcast"/></svg></div><div class="cell-h2">Multi-platform streaming</div><p class="cell-p2">One encode broadcasts to Twitch, YouTube, Facebook, Kick, LinkedIn, Steam and custom RTMP simultaneously.</p></div>
-      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-coin"/></svg></div><div class="cell-h2">Tip Notifier alerts</div><p class="cell-p2">Built-in donation alerts with custom images, donor name, amount and thank-you messages. No third-party widget needed.</p></div>
-      <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-replay"/></svg></div><div class="cell-h2">Instant replay</div><p class="cell-p2">Capture the last 5–10 seconds of your stream on a hotkey for instant highlights and reactions.</p></div>
-      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-screen"/></svg></div><div class="cell-h2">Game & screen capture</div><p class="cell-p2">Full desktop, specific window or Game Capture mode for DirectX & OpenGL games with proper performance.</p></div>
-      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-phone"/></svg></div><div class="cell-h2">Phone as a camera</div><p class="cell-p2">Use your smartphone as a wireless second camera over the network. Multi-cam setup without a capture card.</p></div>
-      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-pen"/></svg></div><div class="cell-h2">Live drawing</div><p class="cell-p2">Annotate your stream in real time with shapes, text and freehand drawing. Blur sensitive content on the fly.</p></div>
-      <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-mask"/></svg></div><div class="cell-h2">3D face masks</div><p class="cell-p2">Real-time face-tracked 3D masks — a feature that's rare even in paid alternatives. Free in every install.</p></div>
-      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-cloud"/></svg></div><div class="cell-h2">Cloud projects</div><p class="cell-p2">Save your stream setup to the cloud and load it from any computer. Travel-friendly streaming.</p></div>
-      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-speed"/></svg></div><div class="cell-h2">Speed test built in</div><p class="cell-p2">Run an upload speed test before going live — SplitCam picks the right bitrate for your connection.</p></div>
+      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-broadcast"/></svg></div><div class="cell-h2">Multi-streaming</div><p class="cell-p2">Stream to Twitch, YouTube, Facebook, Kick + custom RTMP simultaneously. Restream server kicks in if your upload can't handle all destinations.</p></div>
+      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-cam"/></svg></div><div class="cell-h2">Virtual Camera</div><p class="cell-p2">Use SplitCam as a webcam in Zoom, Teams, Google Meet, Discord. Both portrait (9:16) and landscape (16:9) supported.</p></div>
+      <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-mask"/></svg></div><div class="cell-h2">AI Background Removal</div><p class="cell-p2">Remove, blur or replace your background instantly. No green screen needed — AI detects your silhouette in real time.</p></div>
+      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-monitor"/></svg></div><div class="cell-h2">Vertical Canvas</div><p class="cell-p2">Switch canvas to 9:16 for TikTok Live, Reels, Shorts and vertical Instagram Live. One studio — both orientations.</p></div>
+      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-zap"/></svg></div><div class="cell-h2">Beauty Effects</div><p class="cell-p2">Skin smoother, skin tone, face tracking, face masking, hair color, lips color/size, eye enlargement — webcam-model grade beauty in one click.</p></div>
+      <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-layers"/></svg></div><div class="cell-h2">Many Sources</div><p class="cell-p2">Webcam, IP camera, browser, screen, game, video, image, PDF, text, NDI, Timer with hotkey actions, Whiteboard, Replay — every source you'll ever need.</p></div>
+      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-audio"/></svg></div><div class="cell-h2">Pro Audio</div><p class="cell-p2">VST 2/3 plugin support, neural denoise, multi-track recording, audio mixer with mic accentuation. Studio-grade audio chain inside.</p></div>
+      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-folder"/></svg></div><div class="cell-h2">OBS Project Import</div><p class="cell-p2">Bring your OBS Studio scene collections in one click. Sources, scenes, transitions and hotkeys are preserved.</p></div>
+      <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-phone"/></svg></div><div class="cell-h2">Phone as Camera</div><p class="cell-p2">Wireless smartphone as a second camera over your network. Multi-cam setup without a capture card or extra hardware.</p></div>
     </div>
   </div>
 </section>
