@@ -153,7 +153,7 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .kpi-lbl { font-size: 12px; font-weight: 500; color: var(--text-sub); margin-top: 2px; }
 
 /* APP WINDOW */
-.app-window { background: var(--app-panel); border: 1px solid var(--app-border2); border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 1px rgba(40,120,252,.13), 0 0 100px -10px rgba(40,120,252,.29), 0 0 180px -40px rgba(167,139,250,.25), 0 30px 80px -20px rgba(0,0,0,.6); }
+.app-window { background: var(--app-panel); border: 1px solid var(--app-border2); border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 1px rgba(40,120,252,.13), 0 0 60px -10px rgba(40,120,252,.32), 0 25px 60px -20px rgba(0,0,0,.6); }
 .app-titlebar { height: 34px; background: var(--app-base); border-bottom: 1px solid var(--app-border); display: flex; align-items: center; padding: 0 12px; gap: 6px; }
 .wdot { width: 11px; height: 11px; border-radius: 50%; }
 .wd-r { background:#ff5f56; } .wd-y { background:#febc2e; } .wd-g { background:#28c840; }
@@ -874,14 +874,16 @@ function setTab(id,btn){
 </div>
 
 <script>
-/* Hero video — pause when off-screen or tab hidden (saves CPU/battery) */
+/* Hero video — pause when off-screen / tab hidden / window blurred (saves CPU/battery, especially with multiple windows open) */
 (function(){
   var v = document.querySelector('.app-shot video');
   if (!v) return;
   var onScreen = true;
-  var tabVisible = true;
+  function shouldPlay(){
+    return onScreen && document.visibilityState === 'visible' && document.hasFocus();
+  }
   function apply(){
-    if (onScreen && tabVisible) { v.play().catch(function(){}); }
+    if (shouldPlay()) { v.play().catch(function(){}); }
     else { v.pause(); }
   }
   if ('IntersectionObserver' in window) {
@@ -890,10 +892,9 @@ function setTab(id,btn){
       apply();
     }, { threshold: 0.1 }).observe(v);
   }
-  document.addEventListener('visibilitychange', function(){
-    tabVisible = (document.visibilityState === 'visible');
-    apply();
-  });
+  document.addEventListener('visibilitychange', apply);
+  window.addEventListener('blur', apply);
+  window.addEventListener('focus', apply);
 })();
 
 /* Hero audience cycler — fade transition with pause between words */
