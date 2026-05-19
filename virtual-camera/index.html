@@ -178,6 +178,27 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
 .footer-inner a:hover{color:var(--text)}
 .footer-links{display:flex;gap:24px}
 
+/* HERO 2-column layout with orbital visualization on the right */
+.vc-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:1}
+.vc-hero-content{position:relative;z-index:1}
+.vc-orbit{position:relative;aspect-ratio:1/1;width:100%;max-width:440px;margin:0 auto;padding:8px}
+.orbit-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:1px dashed rgba(40,120,252,.22);border-radius:50%;pointer-events:none}
+.orbit-ring.r1{width:44%;height:44%}
+.orbit-ring.r2{width:70%;height:70%}
+.orbit-ring.r3{width:96%;height:96%}
+.orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.orbit-center img{width:54px;height:54px;animation:orbit-pulse 3s ease-in-out infinite}
+.orbit-center .orbit-brand{font-size:15px;font-weight:800;color:var(--text);letter-spacing:.3px;text-shadow:0 2px 12px rgba(0,0,0,.7),0 0 24px rgba(40,120,252,.4)}
+@keyframes orbit-pulse{0%,100%{filter:drop-shadow(0 0 18px rgba(40,120,252,.7)) drop-shadow(0 0 36px rgba(40,120,252,.35))}50%{filter:drop-shadow(0 0 26px rgba(40,120,252,.95)) drop-shadow(0 0 54px rgba(40,120,252,.55))}}
+.orbit-planet{position:absolute;border-radius:50%;background:var(--app-surface);border:1px solid var(--app-border2);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.5);transform:translate(-50%,-50%);z-index:5;animation:planet-bob 4s ease-in-out infinite}
+.orbit-planet svg{width:58%;height:58%}
+.orbit-planet.lg{width:60px;height:60px}
+.orbit-planet.md{width:46px;height:46px}
+.orbit-planet.sm{width:34px;height:34px}
+.orbit-planet:nth-child(odd){animation-delay:-2s}
+.orbit-planet:nth-child(3n){animation-delay:-1s}
+@keyframes planet-bob{0%,100%{box-shadow:0 4px 14px rgba(0,0,0,.5)}50%{box-shadow:0 4px 18px rgba(40,120,252,.3),0 4px 14px rgba(0,0,0,.5)}}
+
 /* Mobile */
 @media(max-width:900px){
   nav{padding:0 20px}
@@ -187,12 +208,32 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
   .cta-block{padding:48px 20px}
   .apps-grid{grid-template-columns:repeat(3,1fr)}
   .def-block,.feat-grid,.uc-grid{grid-template-columns:1fr;gap:20px}
+  .vc-hero-grid{grid-template-columns:1fr;gap:32px}
+  .vc-orbit{max-width:320px}
   footer{padding:32px 20px}
   .footer-inner{flex-direction:column;text-align:center}
 }
 </style>
 </head>
 <body>
+
+<!-- Inline SVG sprite for video app brand logos (used in hero orbital visualization) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-zoom" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="6" width="14" height="12" rx="2.5"/><path d="M16.5 10l5.5-3v10l-5.5-3v-4z"/></symbol>
+    <symbol id="i-teams" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="5" width="13" height="14" rx="1.5"/><path d="M5 8h7v1.6H9.3V16H7.7V9.6H5V8z" fill="#22223a"/><circle cx="18" cy="8" r="2.6"/><path d="M15 13c.8-.4 1.7-.5 2.5-.5 1.8 0 3.5.8 3.5 2.5V19h-6v-4.5c0-.6-.4-1-1-1.3v-.2z"/></symbol>
+    <symbol id="i-meet" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3v-4z"/></symbol>
+    <symbol id="i-discord" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5c-1.4-.6-2.9-1-4.4-1.3l-.2.4c1.4.3 2.7.8 3.9 1.5-2.7-1.4-5.7-1.5-9.4 0 1.2-.7 2.5-1.2 3.9-1.5l-.2-.4C11 4 9.5 4.5 8 5 5 9.5 4 14 4.5 18.5c1.8 1.3 3.5 2.1 5.2 2.6.4-.5.8-1.2 1.1-1.8-.6-.3-1.3-.6-1.9-1l.5-.3c3.6 1.6 7.5 1.6 11 0l.5.3c-.6.4-1.2.7-1.9 1 .3.7.7 1.3 1.1 1.9 1.7-.5 3.4-1.3 5.2-2.7.6-5.2-.9-9.6-3.3-13.5zM9.5 15.5c-1 0-1.9-1-1.9-2.2s.9-2.2 1.9-2.2 1.9 1 1.9 2.2-.9 2.2-1.9 2.2zm5 0c-1 0-1.9-1-1.9-2.2s.9-2.2 1.9-2.2 1.9 1 1.9 2.2-.9 2.2-1.9 2.2z"/></symbol>
+    <symbol id="i-obs" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="7" fill="#22223a"/><circle cx="12" cy="12" r="3.5"/></symbol>
+    <symbol id="i-skype" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M8 13.5c.4 1.2 1.7 2 3.5 2 1.8 0 3-.8 3-1.8 0-1.2-1.2-1.5-3-2-1.7-.5-3.5-.8-3.5-2.5 0-1.4 1.5-2.2 3.5-2.2 1.7 0 2.9.8 3.3 1.8" stroke="#22223a" stroke-width="1.6" fill="none" stroke-linecap="round"/></symbol>
+    <symbol id="i-webex" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M7 9c1 3 2 4 5 4s4-1 5-4M7 15c1-3 2-4 5-4s4 1 5 4" stroke="#22223a" stroke-width="1.5" fill="none" stroke-linecap="round"/></symbol>
+    <symbol id="i-slack" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></symbol>
+    <symbol id="i-jitsi" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v12H10l-4 4v-4H4z"/><circle cx="9" cy="10" r="1.2" fill="#22223a"/><circle cx="13" cy="10" r="1.2" fill="#22223a"/><circle cx="17" cy="10" r="1.2" fill="#22223a"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 2 .5 3.8 1.5 5.5L2 22l4.7-1.5c1.6.8 3.4 1.3 5.3 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.7 0-3.3-.5-4.7-1.3l-.3-.2-2.8.9.9-2.7-.2-.3C4 15 3.5 13.5 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5zm4.6-6.3c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1.1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.8-.2-.3 0-.4.1-.5.1-.1.3-.3.4-.5.1-.2.2-.3.2-.5.1-.2 0-.4-.1-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.5-.5h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.5 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.5.6.2 1.2.2 1.7.1.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3z"/></symbol>
+    <symbol id="i-facetime" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="6" width="14" height="12" rx="2.5"/><path d="M16.5 10l5.5-3v10l-5.5-3v-4z"/></symbol>
+    <symbol id="i-bluejeans" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="5.5" fill="#22223a"/><circle cx="12" cy="12" r="2"/></symbol>
+  </defs>
+</svg>
 
 <!-- NAV -->
 <nav>
@@ -216,12 +257,47 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
 <!-- HERO -->
 <section class="vc-hero">
   <div class="vc-hero-glow"></div>
-  <span class="eyebrow">Virtual Camera</span>
-  <h1 class="vc-h1">One stream, <span class="blue">every meeting app.</span></h1>
-  <p class="vc-sub">Use SplitCam as a virtual webcam in Zoom, Microsoft Teams, Google Meet, Discord and 60+ other video apps — with all your scenes, AI background removal, beauty effects and overlays applied. Free, with portrait and landscape modes built in.</p>
-  <div class="vc-cta-row">
-    <a href="../" class="btn-primary btn-lg">⬇ Free Download</a>
-    <a href="#how" class="btn-ghost btn-lg">How it works</a>
+  <div class="vc-hero-grid">
+    <div class="vc-hero-content">
+      <span class="eyebrow">Virtual Camera</span>
+      <h1 class="vc-h1">One stream, <span class="blue">every meeting app.</span></h1>
+      <p class="vc-sub">Use SplitCam as a virtual webcam in Zoom, Microsoft Teams, Google Meet, Discord and 60+ other video apps — with all your scenes, AI background removal, beauty effects and overlays applied. Free, with portrait and landscape modes built in.</p>
+      <div class="vc-cta-row">
+        <a href="../" class="btn-primary btn-lg">⬇ Free Download</a>
+        <a href="#how" class="btn-ghost btn-lg">How it works</a>
+      </div>
+    </div>
+
+    <!-- ORBITAL VISUALIZATION: SplitCam center, video apps orbiting around -->
+    <div class="vc-orbit" aria-hidden="true">
+      <div class="orbit-ring r1"></div>
+      <div class="orbit-ring r2"></div>
+      <div class="orbit-ring r3"></div>
+
+      <!-- Ring 1 (innermost): most popular meeting apps - Zoom / Teams / Meet / Discord -->
+      <div class="orbit-planet lg" style="top:28%;left:50%;color:#2D8CFF"><svg><use href="#i-zoom"/></svg></div>
+      <div class="orbit-planet lg" style="top:50%;left:72%;color:#6264A7"><svg><use href="#i-teams"/></svg></div>
+      <div class="orbit-planet lg" style="top:72%;left:50%;color:#00897B"><svg><use href="#i-meet"/></svg></div>
+      <div class="orbit-planet lg" style="top:50%;left:28%;color:#5865F2"><svg><use href="#i-discord"/></svg></div>
+
+      <!-- Ring 2 (middle): OBS / Skype / Webex / Slack -->
+      <div class="orbit-planet md" style="top:25%;left:75%;color:#fff"><svg><use href="#i-obs"/></svg></div>
+      <div class="orbit-planet md" style="top:75%;left:75%;color:#00AFF0"><svg><use href="#i-skype"/></svg></div>
+      <div class="orbit-planet md" style="top:75%;left:25%;color:#00BCEB"><svg><use href="#i-webex"/></svg></div>
+      <div class="orbit-planet md" style="top:25%;left:25%;color:#ECB22E"><svg><use href="#i-slack"/></svg></div>
+
+      <!-- Ring 3 (outermost): smaller / niche - WhatsApp / FaceTime / Jitsi / BlueJeans -->
+      <div class="orbit-planet sm" style="top:6%;left:34%;color:#25D366"><svg><use href="#i-whatsapp"/></svg></div>
+      <div class="orbit-planet sm" style="top:6%;left:66%;color:#34DA50"><svg><use href="#i-facetime"/></svg></div>
+      <div class="orbit-planet sm" style="top:94%;left:34%;color:#97CA00"><svg><use href="#i-jitsi"/></svg></div>
+      <div class="orbit-planet sm" style="top:94%;left:66%;color:#1D7DC2"><svg><use href="#i-bluejeans"/></svg></div>
+
+      <!-- Center: SplitCam logo + brand text (no background box) -->
+      <div class="orbit-center">
+        <img src="data:image/png;base64,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" alt="SplitCam">
+        <span class="orbit-brand">SplitCam</span>
+      </div>
+    </div>
   </div>
 </section>
 
