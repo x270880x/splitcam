@@ -144,6 +144,10 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .hero-cyc.fading { opacity: 0; }
 .hero-desc { font-size: 16px; color: var(--text-sub); line-height: 1.55; max-width: 480px; margin-bottom: 24px; letter-spacing: -0.1px; }
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.h-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; background: rgba(255,255,255,.035); border: 1px solid var(--app-border); border-radius: 99px; font-size: 12px; color: var(--text-sub); font-weight: 500; transition: all .18s; }
+.h-badge:hover { background: rgba(255,255,255,.07); color: var(--text); border-color: var(--app-border2); }
+.h-badge svg { width: 13px; height: 13px; color: var(--blue); opacity: .9; }
 .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; background: var(--blue); color: #fff; border: none; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background .18s, transform .15s, box-shadow .2s; font-family: inherit; }
 .btn-primary:hover { background: var(--blue-hover); transform: translateY(-1px); box-shadow: 0 8px 24px var(--blue-glow); }
 .btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 8px; border: 1px solid var(--app-border2); background: transparent; color: var(--text-sub); font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all .18s; font-family: inherit; }
@@ -527,9 +531,11 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <span class="nav-logo-wordmark">splitcam</span>
   </a>
   <ul class="nav-links">
+    <li><a href="#streaming">Features</a></li>
+    <li><a href="virtual-camera/">Virtual Camera</a></li>
+    <li><a href="multistreaming/">Multistreaming</a></li>
     <li><a href="#whats-new">What's New</a></li>
-    <li><a href="#">Help</a></li>
-    <li><a href="#">Developers</a></li>
+    <li><a href="#faq">Help</a></li>
   </ul>
   <div class="nav-right">
     <span class="dl dl-sm">
@@ -559,6 +565,11 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
           <div class="dl-menu" data-dl-menu></div>
         </span>
         <a href="#streaming" class="btn-ghost">How it works <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+      </div>
+      <div class="hero-badges">
+        <span class="h-badge"><svg class="ico ico-sm"><use href="#i-mask"/></svg> AI Background Removal</span>
+        <span class="h-badge"><svg class="ico ico-sm"><use href="#i-monitor"/></svg> 9:16 Vertical Canvas</span>
+        <span class="h-badge"><svg class="ico ico-sm"><use href="#i-check"/></svg> Windows · Mac · iOS · Android</span>
       </div>
     </div>
 
