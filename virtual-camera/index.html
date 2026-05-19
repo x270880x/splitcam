@@ -177,9 +177,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .app-card span{font-size:12.5px;font-weight:600;color:var(--text-sub);text-align:center;line-height:1.2}
 
 /* What is */
-.def-block{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.def-block{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
 .def-block h3{font-size:22px;font-weight:700;margin-bottom:12px;letter-spacing:-.5px}
 .def-block p{font-size:15px;color:var(--text-sub);line-height:1.7;margin-bottom:14px}
+.def-text p{margin-bottom:48px;line-height:1.75}
+.def-text p:last-child{margin-bottom:0}
 .def-visual{padding:28px;background:var(--app-base);border:1px solid var(--app-border);border-radius:14px;font-family:'Geist Mono',monospace}
 .def-flow{display:flex;flex-direction:column;gap:12px}
 .def-step{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--app-surface);border-radius:8px;font-size:13px}
@@ -279,9 +281,9 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
 .orbit-ring.r1{width:44%;height:44%}
 .orbit-ring.r2{width:70%;height:70%}
 .orbit-ring.r3{width:96%;height:96%}
-.orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
-.orbit-center img{width:54px;height:54px;animation:orbit-pulse 3s ease-in-out infinite}
-.orbit-center .orbit-brand{font-size:15px;font-weight:800;color:var(--text);letter-spacing:.3px;text-shadow:0 2px 12px rgba(0,0,0,.7),0 0 24px rgba(40,120,252,.4)}
+.orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;overflow:visible}
+.orbit-center img{width:68px;height:68px;flex-shrink:0;animation:orbit-pulse 3s ease-in-out infinite}
+.orbit-center .orbit-brand{font-size:17px;font-weight:800;color:var(--text);letter-spacing:.4px;text-shadow:0 2px 12px rgba(0,0,0,.7),0 0 24px rgba(40,120,252,.4);white-space:nowrap}
 @keyframes orbit-pulse{0%,100%{filter:drop-shadow(0 0 18px rgba(40,120,252,.7)) drop-shadow(0 0 36px rgba(40,120,252,.35))}50%{filter:drop-shadow(0 0 26px rgba(40,120,252,.95)) drop-shadow(0 0 54px rgba(40,120,252,.55))}}
 .orbit-planet{position:absolute;border-radius:50%;background:var(--app-surface);border:1px solid var(--app-border2);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.5);transform:translate(-50%,-50%);z-index:5;animation:planet-bob 4s ease-in-out infinite}
 .orbit-planet svg{width:58%;height:58%}
@@ -320,8 +322,8 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <!-- Google Meet: green camera with WHITE circular lens (distinct from Zoom by lens dot) -->
     <symbol id="i-meet" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3v-4z"/><circle cx="9" cy="12" r="2.2" fill="#fff"/></symbol>
     <symbol id="i-discord" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5c-1.4-.6-2.9-1-4.4-1.3l-.2.4c1.4.3 2.7.8 3.9 1.5-2.7-1.4-5.7-1.5-9.4 0 1.2-.7 2.5-1.2 3.9-1.5l-.2-.4C11 4 9.5 4.5 8 5 5 9.5 4 14 4.5 18.5c1.8 1.3 3.5 2.1 5.2 2.6.4-.5.8-1.2 1.1-1.8-.6-.3-1.3-.6-1.9-1l.5-.3c3.6 1.6 7.5 1.6 11 0l.5.3c-.6.4-1.2.7-1.9 1 .3.7.7 1.3 1.1 1.9 1.7-.5 3.4-1.3 5.2-2.7.6-5.2-.9-9.6-3.3-13.5zM9.5 15.5c-1 0-1.9-1-1.9-2.2s.9-2.2 1.9-2.2 1.9 1 1.9 2.2-.9 2.2-1.9 2.2zm5 0c-1 0-1.9-1-1.9-2.2s.9-2.2 1.9-2.2 1.9 1 1.9 2.2-.9 2.2-1.9 2.2z"/></symbol>
-    <!-- OBS Studio: thick circle outline with central node (broadcasting mark) -->
-    <symbol id="i-obs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="5" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="2.3" fill="currentColor" stroke="none"/></symbol>
+    <!-- OBS Studio: black circle with white OBS letters (clear brand recognition) -->
+    <symbol id="i-obs" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#1a1a1a"/><text x="12" y="15.4" font-size="7.5" font-weight="900" text-anchor="middle" fill="#fff" font-family="Geist,sans-serif" letter-spacing="-.3">OBS</text></symbol>
     <!-- Skype: blue circle with stylized S (Skype S-curve) -->
     <symbol id="i-skype" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M8.5 14.5c.6 1 1.7 1.6 3.3 1.6 1.6 0 2.7-.6 2.7-1.6 0-1.1-1-1.4-2.6-1.7-1.6-.3-3.3-.6-3.3-2.2 0-1.3 1.3-1.9 3.1-1.9 1.6 0 2.7.7 3.1 1.6" stroke="#fff" stroke-width="1.9" fill="none" stroke-linecap="round"/></symbol>
     <!-- Cisco Webex: teal circle with bold white W -->
@@ -428,7 +430,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="app-card"><svg style="color:#00BCEB"><use href="#i-webex"/></svg><span>Webex</span></div>
       <div class="app-card"><svg style="color:#F68D2E"><use href="#i-gotomeeting"/></svg><span>GoToMeeting</span></div>
       <div class="app-card"><svg style="color:#97CA00"><use href="#i-jitsi"/></svg><span>Jitsi</span></div>
-      <div class="app-card" style="background:transparent;border-style:dashed"><span style="color:var(--text-dim);font-size:11.5px;letter-spacing:.5px">+ 50 more</span></div>
+      <div class="app-card" style="background:linear-gradient(135deg,rgba(40,120,252,.12),rgba(40,120,252,.03));border:1px dashed rgba(40,120,252,.5);justify-content:center;gap:4px"><span style="color:var(--blue);font-size:24px;font-weight:800;letter-spacing:-.5px;line-height:1;text-shadow:0 0 16px rgba(40,120,252,.5)">+ 50</span><span style="color:var(--text);font-size:11.5px;font-weight:700;letter-spacing:.5px">more apps</span></div>
     </div>
   </div>
 </section>
@@ -437,37 +439,32 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
 <section class="section">
   <div class="section-inner">
     <span class="eyebrow">What is a virtual camera?</span>
-    <h2 class="sec-h">Turn your full studio into a webcam.</h2>
+    <h2 class="sec-h" style="margin-bottom:64px">Turn your full studio into a webcam.</h2>
     <div class="def-block">
-      <div>
+      <div class="def-text">
         <p>A virtual camera is software that emulates a physical webcam. To your computer it looks identical to a USB camera — every app that supports webcam input (Zoom, Teams, Meet, browsers, anything) sees it and treats it as a normal camera.</p>
         <p>The difference: instead of a raw camera feed, the virtual camera outputs whatever you compose in SplitCam — your real webcam plus AI background removal, beauty filters, screen captures, browser overlays, lower thirds, music visualizers. Whatever's in your scene, that's what your meeting app receives.</p>
         <p>Windows normally locks each physical webcam to a single application — start a Zoom call, and Teams gets a black screen. SplitCam's virtual camera bypasses this entirely. <strong style="color:var(--text)">Up to 64 apps can read from it at once</strong>, with zero added latency.</p>
       </div>
       <div class="vc-flow-vis">
-        <!-- Step 1: SplitCam inputs (PhysicalCam + Screen + Browser) -->
-        <div class="ms-step input">📷 <strong>SplitCam</strong> <span class="sub">(PhysicalCam + Screen + Browser)</span></div>
-
-        <div class="ms-flow-arrow"><span class="ms-flow-pulse"></span></div>
-
-        <!-- Step 2: SplitCam Scene - BIG live video preview with VirtualCam overlay -->
+        <!-- Step 1: SplitCam Virtual Camera — BIG live video preview with full brand overlay -->
         <div class="ms-scene-preview">
           <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
           <span class="ms-live-badge ms-live-overlay"><span class="ms-live-dot"></span>LIVE</span>
           <div class="ms-scene-overlay">
             <img src="data:image/png;base64,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" alt="">
-            <span class="sc-brand">SplitCam</span><span class="sc-sub">VirtualCam</span>
+            <span class="sc-brand">SplitCam</span><span class="sc-sub">Virtual Camera</span>
           </div>
         </div>
 
         <div class="ms-flow-arrow"><span class="ms-flow-pulse"></span></div>
 
-        <!-- Step 3: SplitCam Virtual Camera middle label -->
+        <!-- Step 2: SplitCam Virtual Camera Driver middle label -->
         <div class="ms-step mid">SplitCam Virtual Camera</div>
 
         <div class="ms-flow-arrow"><span class="ms-flow-pulse"></span></div>
 
-        <!-- Step 4: Apps grid with mini videos and green active stripes -->
+        <!-- Step 3: Apps grid (5 apps + '+50 more' card) with mini videos and green active stripes -->
         <div class="ms-fans">
           <div class="ms-platform-card">
             <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
@@ -494,10 +491,9 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
             <div class="ms-platform-label"><svg style="color:#229ED9"><use href="#i-telegram"/></svg> Telegram</div>
             <div class="ms-active-bar"><div class="ms-active-pulse ms-fan-pulse"></div></div>
           </div>
-          <div class="ms-platform-card">
-            <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
-            <div class="ms-platform-label"><svg style="color:#25D366"><use href="#i-whatsapp"/></svg> WhatsApp</div>
-            <div class="ms-active-bar"><div class="ms-active-pulse ms-fan-pulse"></div></div>
+          <div class="ms-platform-card more">
+            <div class="ms-more-thumb"><span>+ 50</span></div>
+            <div class="ms-platform-label">More Apps</div>
           </div>
         </div>
       </div>
