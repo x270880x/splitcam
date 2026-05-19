@@ -178,11 +178,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .app-card span{font-size:12.5px;font-weight:600;color:var(--text-sub);text-align:center;line-height:1.2}
 
 /* What is */
-.def-block{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.def-block{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:stretch}
 .def-block h3{font-size:22px;font-weight:700;margin-bottom:12px;letter-spacing:-.5px}
 .def-block p{font-size:15px;color:var(--text-sub);line-height:1.7;margin-bottom:14px}
-.def-text p{margin-bottom:18px;line-height:1.65}
-.def-text p:last-child{margin-bottom:0}
+.def-text{display:flex;flex-direction:column;justify-content:space-between}
+.def-text p{margin-bottom:0;line-height:1.65}
 .def-visual{padding:28px;background:var(--app-base);border:1px solid var(--app-border);border-radius:14px;font-family:'Geist Mono',monospace}
 .def-flow{display:flex;flex-direction:column;gap:12px}
 .def-step{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--app-surface);border-radius:8px;font-size:13px}
@@ -295,9 +295,9 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
 .orbit-ring.r1{width:44%;height:44%}
 .orbit-ring.r2{width:70%;height:70%}
 .orbit-ring.r3{width:96%;height:96%}
-.orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;overflow:visible}
-.orbit-center img{width:78px;height:78px;flex-shrink:0;object-fit:contain;animation:orbit-pulse 3s ease-in-out infinite}
-.orbit-center .orbit-brand{font-size:16px;font-weight:800;color:var(--text);letter-spacing:.4px;text-shadow:0 2px 12px rgba(0,0,0,.7),0 0 20px rgba(40,120,252,.5);white-space:nowrap}
+.orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;overflow:visible}
+.orbit-center img{width:66px;height:66px;flex-shrink:0;object-fit:contain;animation:orbit-pulse 3s ease-in-out infinite}
+.orbit-center .orbit-brand{font-size:15px;font-weight:800;color:var(--text);letter-spacing:.4px;text-shadow:0 2px 12px rgba(0,0,0,.7),0 0 20px rgba(40,120,252,.5);white-space:nowrap}
 @keyframes orbit-pulse{0%,100%{filter:drop-shadow(0 0 18px rgba(40,120,252,.7)) drop-shadow(0 0 36px rgba(40,120,252,.35))}50%{filter:drop-shadow(0 0 26px rgba(40,120,252,.95)) drop-shadow(0 0 54px rgba(40,120,252,.55))}}
 .orbit-planet{position:absolute;border-radius:50%;background:var(--app-surface);border:1px solid var(--app-border2);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.5);transform:translate(-50%,-50%);z-index:5;animation:planet-bob 4s ease-in-out infinite}
 .orbit-planet svg{width:58%;height:58%}
