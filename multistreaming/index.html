@@ -136,12 +136,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .ms-diagram h3{font-size:22px;font-weight:700;margin-bottom:12px;letter-spacing:-.5px}
 .ms-diagram p{font-size:15px;color:var(--text-sub);line-height:1.7;margin-bottom:14px}
 .ms-flow-vis{padding:28px;background:var(--app-base);border:1px solid var(--app-border);border-radius:14px}
-.ms-step{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--app-surface);border-radius:8px;font-size:13px}
+.ms-step{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--app-surface);border-radius:8px;font-size:13px;justify-content:space-between}
 .ms-step.input{color:var(--blue);border:1px solid rgba(40,120,252,.25);background:var(--blue-dim);font-weight:600}
 .ms-step.mid{background:rgba(40,120,252,.06);color:var(--blue);font-weight:700;text-align:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:11.5px;letter-spacing:.5px}
 .ms-fans{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:6px}
-.ms-fans .ms-step{font-size:12px;padding:8px 10px}
-.ms-arrow{text-align:center;color:var(--text-dim);font-size:18px;line-height:1;margin:8px 0}
+.ms-fans .ms-step{font-size:12px;padding:8px 10px;flex-direction:column;align-items:stretch;gap:6px}
+
+/* LIVE badge with pulsing red dot */
+.ms-live-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 7px;background:rgba(231,76,60,.18);color:#ff5454;border-radius:4px;font-size:10px;font-weight:800;letter-spacing:.6px;font-family:'Geist Mono',monospace}
+.ms-live-dot{width:6px;height:6px;border-radius:50%;background:#ff5454;box-shadow:0 0 6px #ff5454;animation:ms-live-blink 1.2s ease-in-out infinite}
+@keyframes ms-live-blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.85)}}
+
+/* Flowing arrows between steps */
+.ms-flow-arrow{position:relative;height:24px;display:flex;justify-content:center;align-items:center}
+.ms-flow-arrow::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,rgba(40,120,252,.4) 0%,rgba(40,120,252,.4) 100%);transform:translateX(-50%)}
+.ms-flow-pulse{position:absolute;left:50%;top:-4px;width:8px;height:8px;background:var(--blue);border-radius:50%;transform:translateX(-50%);box-shadow:0 0 10px var(--blue);animation:ms-flow-down 1.6s cubic-bezier(.4,0,.6,1) infinite}
+@keyframes ms-flow-down{0%{top:-4px;opacity:0}15%{opacity:1}85%{opacity:1}100%{top:calc(100% - 4px);opacity:0}}
+
+/* Active stream bars under each platform — flowing green */
+.ms-platform{position:relative}
+.ms-active-bar{height:3px;background:rgba(83,252,24,.1);border-radius:2px;overflow:hidden;position:relative}
+.ms-active-pulse{position:absolute;left:-40%;top:0;width:40%;height:100%;background:linear-gradient(to right,transparent 0%,#53fc18 50%,transparent 100%);animation:ms-stream-flow 1.8s linear infinite}
+@keyframes ms-stream-flow{to{left:100%}}
+/* Stagger pulse timing for visual rhythm */
+.ms-platform:nth-child(1) .ms-active-pulse{animation-delay:0s}
+.ms-platform:nth-child(2) .ms-active-pulse{animation-delay:.3s}
+.ms-platform:nth-child(3) .ms-active-pulse{animation-delay:.6s}
+.ms-platform:nth-child(4) .ms-active-pulse{animation-delay:.9s}
+.ms-platform:nth-child(5) .ms-active-pulse{animation-delay:1.2s}
 
 /* Use cases */
 .uc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -344,17 +366,35 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
         <p>No cloud middleman. No third-party server in the loop. Your video goes from your machine straight to Twitch / YouTube / Facebook / whatever — even with 20 destinations selected. The only requirement: your upload bandwidth needs to be enough for the total bitrate of all streams combined.</p>
       </div>
       <div class="ms-flow-vis">
-        <div class="ms-step input">📹 Your scene · 1 encode</div>
-        <div class="ms-arrow">↓</div>
+        <div class="ms-step input">
+          <span>📹 Your scene · 1 encode</span>
+          <span class="ms-live-badge"><span class="ms-live-dot"></span>LIVE</span>
+        </div>
+        <div class="ms-flow-arrow"><span class="ms-flow-pulse"></span></div>
         <div class="ms-step mid">SPLITCAM ENCODER</div>
-        <div class="ms-arrow">↓</div>
+        <div class="ms-flow-arrow ms-flow-fan"><span class="ms-flow-pulse"></span></div>
         <div class="ms-fans">
-          <div class="ms-step">▶ Twitch</div>
-          <div class="ms-step">▶ YouTube</div>
-          <div class="ms-step">▶ Facebook</div>
-          <div class="ms-step">▶ Kick</div>
-          <div class="ms-step">▶ TikTok</div>
-          <div class="ms-step">▶ + more</div>
+          <div class="ms-step ms-platform">
+            <span><svg class="ico ico-sm" style="color:#9146FF"><use href="#i-twitch"/></svg> Twitch</span>
+            <div class="ms-active-bar"><div class="ms-active-pulse"></div></div>
+          </div>
+          <div class="ms-step ms-platform">
+            <span><svg class="ico ico-sm" style="color:#FF0000"><use href="#i-yt"/></svg> YouTube</span>
+            <div class="ms-active-bar"><div class="ms-active-pulse"></div></div>
+          </div>
+          <div class="ms-step ms-platform">
+            <span><svg class="ico ico-sm" style="color:#1877F2"><use href="#i-fb"/></svg> Facebook</span>
+            <div class="ms-active-bar"><div class="ms-active-pulse"></div></div>
+          </div>
+          <div class="ms-step ms-platform">
+            <span><svg class="ico ico-sm" style="color:#53FC18"><use href="#i-kick"/></svg> Kick</span>
+            <div class="ms-active-bar"><div class="ms-active-pulse"></div></div>
+          </div>
+          <div class="ms-step ms-platform">
+            <span><svg class="ico ico-sm" style="color:#FF0050"><use href="#i-tiktok"/></svg> TikTok</span>
+            <div class="ms-active-bar"><div class="ms-active-pulse"></div></div>
+          </div>
+          <div class="ms-step">+ more</div>
         </div>
       </div>
     </div>
