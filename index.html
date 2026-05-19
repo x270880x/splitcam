@@ -311,6 +311,36 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 
 /* FEAT GRID */
 .feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--app-border); border: 1px solid var(--app-border); border-radius: 12px; overflow: hidden; }
+
+/* USE CASES */
+.usecase-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.usecase { padding: 28px 24px; border: 1px solid var(--app-border); border-radius: 14px; background: var(--app-panel); transition: border-color .2s, transform .2s; }
+.usecase:hover { border-color: var(--app-border2); transform: translateY(-3px); }
+.uc-ico { font-size: 32px; margin-bottom: 14px; line-height: 1; }
+.usecase h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--text); letter-spacing: -.3px; }
+.usecase p { font-size: 14px; color: var(--text-sub); line-height: 1.55; margin-bottom: 16px; }
+.uc-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.uc-tags span { font-size: 11px; padding: 4px 10px; background: var(--app-base); border-radius: 6px; color: var(--text-sub); border: 1px solid var(--app-border); }
+
+/* TESTIMONIALS */
+.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.testi-card { padding: 28px 24px; background: var(--app-surface); border: 1px solid var(--app-border); border-radius: 14px; }
+.testi-stars { color: #f5b400; letter-spacing: 2px; margin-bottom: 14px; font-size: 14px; }
+.testi-quote { font-size: 15px; line-height: 1.65; color: var(--text); margin-bottom: 22px; }
+.testi-author { display: flex; align-items: center; gap: 12px; }
+.testi-ava { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), #a78bfa); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: #fff; flex-shrink: 0; }
+.testi-name { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.3; }
+.testi-role { font-size: 12px; color: var(--text-sub); margin-top: 2px; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 10px; }
+.faq-item { padding: 20px 24px; border: 1px solid var(--app-border); border-radius: 12px; background: var(--app-panel); cursor: pointer; transition: border-color .2s; }
+.faq-item:hover { border-color: var(--app-border2); }
+.faq-item summary { font-size: 16px; font-weight: 600; color: var(--text); list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-size: 24px; color: var(--text-sub); transition: transform .2s; font-weight: 300; line-height: 1; flex-shrink: 0; }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { margin-top: 14px; color: var(--text-sub); font-size: 15px; line-height: 1.65; }
 @media(max-width:700px) { .feat-grid { grid-template-columns: 1fr; } }
 .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
 .why-card { padding: 28px 24px; border: 1px solid var(--app-border); border-radius: 14px; background: var(--app-panel); transition: border-color .2s, transform .2s; }
@@ -373,6 +403,8 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .feat-panel.active{grid-template-columns:1fr; gap:32px;}
   .feat-grid{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr;}
+  .usecase-grid{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr;}
   .new-grid{grid-template-columns:1fr;}
   .quickstart-grid{grid-template-columns:1fr;}
   .qs-step:not(:last-child)::after{display:none;}
@@ -763,6 +795,90 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   </div>
 </section>
 
+<!-- USE CASES -->
+<section class="section sec-bg" id="who-its-for">
+  <div class="section-inner">
+    <p class="eyebrow">Built for everyone going live</p>
+    <h2 class="sec-h">A studio that adapts to your audience.</h2>
+    <p class="sec-p">Same software, different workflow. Each community uses SplitCam differently — pick yours.</p>
+
+    <div class="usecase-grid" style="margin-top:48px">
+      <div class="usecase">
+        <div class="uc-ico">🎮</div>
+        <h3>For Streamers</h3>
+        <p>Game Capture for DirectX/OpenGL, NVENC encoding, Replay Source, multi-stream to Twitch + YouTube + Kick simultaneously. Zero FPS impact on your game.</p>
+        <div class="uc-tags"><span>Game Capture</span><span>Multi-stream</span><span>Replay</span></div>
+      </div>
+      <div class="usecase">
+        <div class="uc-ico">📹</div>
+        <h3>For YouTubers</h3>
+        <p>Studio-grade local recording, multi-track audio, OBS project import. Stream live or record for later — same scene setup, same quality.</p>
+        <div class="uc-tags"><span>HD Recording</span><span>OBS Import</span><span>Multi-track</span></div>
+      </div>
+      <div class="usecase">
+        <div class="uc-ico">🎓</div>
+        <h3>For Educators</h3>
+        <p>Whiteboard source, Timer with hotkey actions, PDF & document sources, virtual camera in Zoom/Meet/Teams. Annotate over your slides live.</p>
+        <div class="uc-tags"><span>Whiteboard</span><span>PDF Source</span><span>Virtual Cam</span></div>
+      </div>
+      <div class="usecase">
+        <div class="uc-ico">⛪</div>
+        <h3>For Churches</h3>
+        <p>Multi-stream Sunday service to Facebook, YouTube and your own website at once. Lower-thirds for speakers, song lyrics overlays included.</p>
+        <div class="uc-tags"><span>Multi-platform</span><span>Lower thirds</span><span>Lyrics</span></div>
+      </div>
+      <div class="usecase">
+        <div class="uc-ico">✨</div>
+        <h3>For VTubers</h3>
+        <p>AI background removal (no green screen), face tracking, 3D masks, chromakey. Beauty filters and Streamfog lenses ready out of the box.</p>
+        <div class="uc-tags"><span>AI Background</span><span>Face Track</span><span>3D Masks</span></div>
+      </div>
+      <div class="usecase">
+        <div class="uc-ico">🎵</div>
+        <h3>For Musicians</h3>
+        <p>VST 2/3 plugin support, multi-source audio mixer with per-track EQ, neural denoise, low-latency monitoring. Stream concerts in studio quality.</p>
+        <div class="uc-tags"><span>VST Plugins</span><span>Audio Mixer</span><span>Low Latency</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="reviews">
+  <div class="section-inner">
+    <p class="eyebrow center-h" style="text-align:center">Loved by streamers</p>
+    <h2 class="sec-h center-h" style="text-align:center;margin:0 auto 14px">4.5 stars · 357 reviews on CNET.</h2>
+    <p class="sec-p" style="text-align:center;max-width:580px;margin:0 auto 56px">Real feedback from people who switched to SplitCam.</p>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Replaced OBS + Restream + Streamlabs combo with just SplitCam. My CPU stopped melting and I got 30 minutes back per stream."</p>
+        <div class="testi-author">
+          <div class="testi-ava">AK</div>
+          <div><div class="testi-name">Aleksei K.</div><div class="testi-role">Twitch streamer · 14k followers</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Been using SplitCam for Sunday service streaming for 4 years. Free, no watermark, broadcasts to Facebook and YouTube at the same time. Setup took 10 minutes."</p>
+        <div class="testi-author">
+          <div class="testi-ava">JM</div>
+          <div><div class="testi-name">James M.</div><div class="testi-role">Pastor · Texas, USA</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"As a music teacher running online lessons across Zoom and YouTube, the virtual camera + VST plugin support is exactly what I needed. No subscription."</p>
+        <div class="testi-author">
+          <div class="testi-ava">SP</div>
+          <div><div class="testi-name">Sofia P.</div><div class="testi-role">Music educator · Berlin</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHAT'S NEW -->
 <section class="section" id="whats-new">
   <div class="section-inner">
@@ -807,6 +923,50 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         <div class="new-h">Crash-Proof Recording</div>
         <p class="new-p">Local recordings now save as fragmented MP4 — never lose a session to a crash. Recoverable up to the last written keyframe.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section sec-bg" id="faq">
+  <div class="section-inner" style="max-width:800px">
+    <p class="eyebrow center-h" style="text-align:center">Frequently asked</p>
+    <h2 class="sec-h center-h" style="text-align:center;margin:0 auto 14px">Quick answers.</h2>
+    <p class="sec-p" style="text-align:center;margin:0 auto 48px">Everything you need to know before downloading.</p>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Is SplitCam really free?</summary>
+        <p>Yes — completely free for personal and commercial use. No watermark, no time limit, no upsell to a "pro" version. Every feature is unlocked from day one.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What operating systems does it run on?</summary>
+        <p>SplitCam is available for Windows 10/11, macOS 11+, iOS 13+ (iPhone & iPad), and Android 8+. The Download button auto-detects your OS.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I import my OBS Studio scenes?</summary>
+        <p>Yes — SplitCam imports OBS scene collections in one click. All your sources, scenes, transitions and hotkeys carry over without rebuilding.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How many platforms can I stream to simultaneously?</summary>
+        <p>Up to 8 destinations at once, depending on your upload bandwidth and CPU. Built-in restream server kicks in automatically if your upload can't handle direct streaming to all platforms.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will SplitCam slow down my games?</summary>
+        <p>No — SplitCam uses hardware encoders (NVENC for Nvidia, QuickSync for Intel, AMF for AMD) by default. Encoding runs on dedicated GPU silicon, leaving your CPU and main GPU cores free for the game. Most users see 0–3% FPS impact.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I use SplitCam as a virtual camera in Zoom/Teams?</summary>
+        <p>Yes — SplitCam exposes your entire stream (with scenes, effects, overlays, AI background removal) as a virtual webcam in Zoom, Microsoft Teams, Google Meet, Discord, and 60+ other apps. Works in both portrait (9:16) and landscape (16:9) modes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What hardware do I need?</summary>
+        <p>Minimum: Intel Core i3 / AMD Ryzen 3, 4GB RAM, integrated graphics. Recommended for game streaming: Intel Core i5+ / AMD Ryzen 5+, 8GB RAM, dedicated GPU with NVENC/AMF support. Runs smoothly on older laptops too.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does SplitCam collect my data?</summary>
+        <p>Your scenes, recordings and stream settings stay on your machine. SplitCam doesn't upload anything to the cloud unless you explicitly enable Cloud Projects to sync settings between devices.</p>
+      </details>
     </div>
   </div>
 </section>
