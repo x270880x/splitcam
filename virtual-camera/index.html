@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Virtual Camera Software for Zoom, Teams & Meet | SplitCam — Free</title>
+<meta name="description" content="Use SplitCam as a virtual camera in Zoom, Teams, Google Meet, Discord and 60+ apps. Free, portrait + landscape, AI background removal, beauty effects. Win, Mac, iOS, Android.">
+<meta name="keywords" content="virtual camera, virtual webcam, virtual camera for zoom, virtual camera mac, free virtual camera, virtual camera teams, virtual camera google meet, virtual camera discord, virtual camera software, virtual webcam mac, virtual camera windows, virtual camera background, virtual camera for streaming, OBS virtual camera alternative, splitcam virtual camera">
+<meta name="author" content="SplitCam">
+<link rel="canonical" href="https://splitcam.com/virtual-camera/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://splitcam.com/virtual-camera/">
+<meta property="og:title" content="Virtual Camera for Zoom, Teams & Meet | SplitCam — Free">
+<meta property="og:description" content="Use SplitCam as a virtual camera in Zoom, Teams, Meet, Discord + 60 apps. Free, AI background removal, portrait + landscape. Win, Mac, iOS, Android.">
+<meta property="og:image" content="https://splitcam.com/assets/hero-spotlight-poster.jpg">
+<meta property="og:site_name" content="SplitCam">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Virtual Camera for Zoom, Teams & Meet | SplitCam">
+<meta name="twitter:description" content="Free virtual webcam in Zoom, Teams, Meet, Discord and 60+ apps. AI background. Portrait + landscape.">
+<meta name="twitter:image" content="https://splitcam.com/assets/hero-spotlight-poster.jpg">
+
+<meta name="theme-color" content="#141420">
+
+<!-- Schema.org SoftwareApplication + BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "SplitCam", "item": "https://splitcam.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Virtual Camera", "item": "https://splitcam.com/virtual-camera/"}
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SplitCam Virtual Camera",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Virtual Camera Software",
+      "operatingSystem": "Windows, macOS, iOS, Android",
+      "url": "https://splitcam.com/virtual-camera/",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "357", "bestRating": "5"},
+      "description": "Free virtual camera software that works in Zoom, Teams, Google Meet, Discord and 60+ video conferencing apps. Includes AI background removal, beauty effects, and supports portrait + landscape modes."
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --app-base:#141420;
+  --app-panel:#1c1c2e;
+  --app-surface:#22223a;
+  --app-raised:#2a2a48;
+  --app-border:rgba(255,255,255,.08);
+  --app-border2:rgba(255,255,255,.14);
+  --blue:#2878fc;
+  --blue-hover:#4d8eff;
+  --blue-dim:rgba(40,120,252,.13);
+  --blue-glow:rgba(40,120,252,.28);
+  --green:#2ecc71;
+  --text:#eeeeff;
+  --text-sub:#9090bb;
+  --text-dim:#50506a;
+}
+html{scroll-behavior:smooth;background:var(--app-base)}
+body{font-family:'Geist',sans-serif;background:var(--app-base);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(20,20,32,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--app-border)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-wordmark{font-size:24px;font-weight:700;letter-spacing:.5px}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:14px;color:var(--text-sub);font-weight:500;transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--text)}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:8px;background:var(--blue);color:#fff;font-size:13px;font-weight:600;transition:background .15s}
+.btn-primary:hover{background:var(--blue-hover)}
+.btn-ghost{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:8px;background:transparent;color:var(--text);border:1px solid var(--app-border2);font-size:13px;font-weight:600;transition:all .15s}
+.btn-ghost:hover{background:rgba(255,255,255,.04)}
+.btn-lg{padding:13px 24px;font-size:14px;border-radius:10px}
+
+/* Breadcrumbs */
+.breadcrumbs{padding:80px 40px 0;max-width:1100px;margin:0 auto;font-size:13px;color:var(--text-dim)}
+.breadcrumbs a{color:var(--text-sub);transition:color .15s}
+.breadcrumbs a:hover{color:var(--text)}
+.breadcrumbs .sep{margin:0 8px}
+
+/* HERO */
+.vc-hero{padding:32px 40px 80px;max-width:1100px;margin:0 auto;position:relative}
+.vc-hero-glow{position:absolute;top:-50px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(40,120,252,.15),transparent 70%);pointer-events:none;z-index:0}
+.eyebrow{display:inline-block;padding:5px 12px;background:var(--blue-dim);color:var(--blue);font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:18px;position:relative;z-index:1}
+.vc-h1{font-size:clamp(36px,4.5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.8px;margin-bottom:18px;max-width:760px;position:relative;z-index:1}
+.vc-h1 .blue{color:var(--blue)}
+.vc-sub{font-size:18px;color:var(--text-sub);max-width:620px;line-height:1.6;margin-bottom:32px;position:relative;z-index:1}
+.vc-cta-row{display:flex;gap:12px;position:relative;z-index:1;flex-wrap:wrap}
+
+/* Apps grid */
+.section{padding:64px 40px}
+.section-inner{max-width:1100px;margin:0 auto}
+.sec-h{font-size:32px;font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:14px}
+.sec-p{font-size:16px;color:var(--text-sub);line-height:1.6;max-width:640px;margin-bottom:48px}
+.sec-bg{background:var(--app-panel)}
+
+.apps-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.app-card{display:flex;flex-direction:column;align-items:center;gap:10px;padding:24px 12px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:12px;transition:all .2s}
+.app-card:hover{border-color:var(--app-border2);transform:translateY(-2px)}
+.app-card svg{width:32px;height:32px;color:var(--text);opacity:.85}
+.app-card span{font-size:12.5px;font-weight:600;color:var(--text-sub)}
+
+/* What is */
+.def-block{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.def-block h3{font-size:22px;font-weight:700;margin-bottom:12px;letter-spacing:-.5px}
+.def-block p{font-size:15px;color:var(--text-sub);line-height:1.7;margin-bottom:14px}
+.def-visual{padding:28px;background:var(--app-base);border:1px solid var(--app-border);border-radius:14px;font-family:'Geist Mono',monospace}
+.def-flow{display:flex;flex-direction:column;gap:12px}
+.def-step{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--app-surface);border-radius:8px;font-size:13px}
+.def-step.cam{color:var(--blue);border:1px solid rgba(40,120,252,.25)}
+.def-arrow{text-align:center;color:var(--text-dim);font-size:18px}
+
+/* Use cases */
+.uc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.uc-card{padding:28px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:14px;transition:all .2s}
+.uc-card:hover{border-color:var(--app-border2)}
+.uc-card .uc-ico{font-size:28px;margin-bottom:14px;line-height:1}
+.uc-card h3{font-size:18px;font-weight:700;margin-bottom:10px;letter-spacing:-.3px}
+.uc-card p{font-size:14px;color:var(--text-sub);line-height:1.6}
+
+/* Features */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feat-card{padding:24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:12px;transition:all .2s}
+.feat-card:hover{border-color:var(--app-border2)}
+.feat-card .feat-ico{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9px;background:var(--blue-dim);color:var(--blue);margin-bottom:14px}
+.feat-card .feat-ico svg{width:20px;height:20px}
+.feat-card h3{font-size:16px;font-weight:700;margin-bottom:8px;letter-spacing:-.2px}
+.feat-card p{font-size:14px;color:var(--text-sub);line-height:1.55}
+
+/* Steps */
+.steps-list{display:flex;flex-direction:column;gap:14px;max-width:760px}
+.step-row{display:flex;gap:20px;padding:22px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:14px}
+.step-num{flex:0 0 40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.step-content h3{font-size:17px;font-weight:700;margin-bottom:6px;letter-spacing:-.2px}
+.step-content p{font-size:14px;color:var(--text-sub);line-height:1.6}
+
+/* CTA */
+.cta-block{padding:64px 40px;background:linear-gradient(135deg,var(--app-panel),var(--app-surface));border-top:1px solid var(--app-border);border-bottom:1px solid var(--app-border);text-align:center}
+.cta-block h2{font-size:32px;font-weight:700;letter-spacing:-1px;margin-bottom:14px}
+.cta-block p{font-size:16px;color:var(--text-sub);max-width:520px;margin:0 auto 28px;line-height:1.6}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px;max-width:780px;margin:0 auto}
+.faq-item{padding:20px 24px;border:1px solid var(--app-border);border-radius:12px;background:var(--app-panel);cursor:pointer;transition:border-color .2s}
+.faq-item:hover{border-color:var(--app-border2)}
+.faq-item summary{font-size:15px;font-weight:600;list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:22px;color:var(--text-sub);transition:transform .2s;font-weight:300;line-height:1}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{margin-top:12px;color:var(--text-sub);font-size:14.5px;line-height:1.6}
+
+/* Footer */
+footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(--app-panel)}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text-dim)}
+.footer-inner a{color:var(--text-sub);transition:color .15s}
+.footer-inner a:hover{color:var(--text)}
+.footer-links{display:flex;gap:24px}
+
+/* Mobile */
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .breadcrumbs{padding:80px 20px 0}
+  .vc-hero,.section{padding:32px 20px}
+  .cta-block{padding:48px 20px}
+  .apps-grid{grid-template-columns:repeat(3,1fr)}
+  .def-block,.feat-grid,.uc-grid{grid-template-columns:1fr;gap:20px}
+  footer{padding:32px 20px}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="../">
+    <span class="nav-logo-wordmark">splitcam</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../#features">Features</a></li>
+    <li><a href="" class="active">Virtual Camera</a></li>
+    <li><a href="../#multistreaming">Multistreaming</a></li>
+    <li><a href="../#faq">Help</a></li>
+  </ul>
+  <a href="../" class="btn-primary">⬇ Download</a>
+</nav>
+
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+  <a href="../">SplitCam</a><span class="sep">/</span><span>Virtual Camera</span>
+</div>
+
+<!-- HERO -->
+<section class="vc-hero">
+  <div class="vc-hero-glow"></div>
+  <span class="eyebrow">Virtual Camera</span>
+  <h1 class="vc-h1">One stream, <span class="blue">every meeting app.</span></h1>
+  <p class="vc-sub">Use SplitCam as a virtual webcam in Zoom, Microsoft Teams, Google Meet, Discord and 60+ other video apps — with all your scenes, AI background removal, beauty effects and overlays applied. Free, with portrait and landscape modes built in.</p>
+  <div class="vc-cta-row">
+    <a href="../" class="btn-primary btn-lg">⬇ Free Download</a>
+    <a href="#how" class="btn-ghost btn-lg">How it works</a>
+  </div>
+</section>
+
+<!-- COMPATIBLE APPS -->
+<section class="section sec-bg">
+  <div class="section-inner">
+    <span class="eyebrow">Universal compatibility</span>
+    <h2 class="sec-h">Works in every app that takes a webcam.</h2>
+    <p class="sec-p">SplitCam installs a kernel-mode virtual camera driver. Once installed, it appears as a regular webcam in 60+ apps — no per-app integration, no plugins, no setup.</p>
+    <div class="apps-grid">
+      <div class="app-card"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3v-4z"/></svg><span>Zoom</span></div>
+      <div class="app-card"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3v-4z"/></svg><span>Microsoft Teams</span></div>
+      <div class="app-card"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Google Meet</span></div>
+      <div class="app-card"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4c-2-1-4-1.5-4-1.5l-.3.5c-2-.5-4-.5-6 0L9 2.5S6.5 3 5 4C3 7 2 11 2 15c2 2 4 3 6 3l1-1.5c-1-.3-2-.7-3-1.3 2 1 4 1.5 6 1.5s4-.5 6-1.5c-1 .6-2 1-3 1.3l1 1.5c2 0 4-1 6-3 0-4-1-8-3-11zM9 14a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm6 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg><span>Discord</span></div>
+      <div class="app-card"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8m-4-3v3"/></svg><span>OBS Studio</span></div>
+      <div class="app-card"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M9 9h6v6H9z" fill="#141420"/></svg><span>Skype</span></div>
+      <div class="app-card"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Webex</span></div>
+      <div class="app-card"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 4h18v16H3z"/></svg><span>Slack</span></div>
+      <div class="app-card"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="3"/></svg><span>Jitsi</span></div>
+      <div class="app-card"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>BlueJeans</span></div>
+      <div class="app-card"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="6" width="18" height="12" rx="2"/></svg><span>WhatsApp</span></div>
+      <div class="app-card" style="background:transparent;border-style:dashed"><span style="color:var(--text-dim);font-size:11.5px;letter-spacing:.5px">+ 50 more</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS VIRTUAL CAMERA -->
+<section class="section">
+  <div class="section-inner">
+    <span class="eyebrow">What is a virtual camera?</span>
+    <h2 class="sec-h">Turn your full studio into a webcam.</h2>
+    <div class="def-block">
+      <div>
+        <p>A virtual camera is software that emulates a physical webcam. To your computer it looks identical to a USB camera — every app that supports webcam input (Zoom, Teams, Meet, browsers, anything) sees it and treats it as a normal camera.</p>
+        <p>The difference: instead of a raw camera feed, the virtual camera outputs whatever you compose in SplitCam — your real webcam plus AI background removal, beauty filters, screen captures, browser overlays, lower thirds, music visualizers. Whatever's in your scene, that's what your meeting app receives.</p>
+        <p>Windows normally locks each physical webcam to a single application — start a Zoom call, and Teams gets a black screen. SplitCam's virtual camera bypasses this entirely. <strong style="color:var(--text)">Up to 64 apps can read from it at once</strong>, with zero added latency.</p>
+      </div>
+      <div class="def-visual">
+        <div class="def-flow">
+          <div class="def-step cam">📷 Your physical webcam + screen + browser</div>
+          <div class="def-arrow">↓</div>
+          <div class="def-step" style="background:var(--blue-dim);color:var(--blue);border:1px solid rgba(40,120,252,.3)">⚙ SplitCam composes scene</div>
+          <div class="def-arrow">↓</div>
+          <div class="def-step">📺 Zoom · Teams · Meet · Discord · ... </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section sec-bg">
+  <div class="section-inner">
+    <span class="eyebrow">Built for everyone in a video call</span>
+    <h2 class="sec-h">Five reasons people use it.</h2>
+    <div class="uc-grid">
+      <div class="uc-card">
+        <div class="uc-ico">💼</div>
+        <h3>Remote workers in Zoom & Teams</h3>
+        <p>Replace your messy background with AI-detected blur or a custom image — no green screen. Smooth your skin in beauty mode. Show your screen and your face in the same feed. Look polished without buying a new camera.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-ico">🎮</div>
+        <h3>Streamers taking Discord calls</h3>
+        <p>Use the same SplitCam scene you stream with as your Discord camera. Twitch chat sees your stream; Discord friends see the same camera setup with overlays and effects intact. No setup switching.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-ico">🎓</div>
+        <h3>Teachers in online lessons</h3>
+        <p>Show a virtual whiteboard, slides, video and your face in one feed. Annotate live with the drawing tool. Use Timer with hotkey actions for in-class activities. All output as a single webcam to Zoom / Meet / Teams.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-ico">📺</div>
+        <h3>Product demos and interviews</h3>
+        <p>Switch between your face, slide deck, browser tab and webcam mid-call. Add lower-thirds with your name and title. Cinematic transitions instead of awkward screen-share switches.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-ico">✨</div>
+        <h3>VTubers in video calls</h3>
+        <p>Use your VTube Studio avatar with chromakey + AI background as the SplitCam input. Then any meeting app shows your avatar instead of your real face. Works in browsers too.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-ico">📞</div>
+        <h3>Anyone with a bad webcam</h3>
+        <p>Even a built-in laptop camera looks better with beauty filters, lighting correction and background replacement. Free fix for hardware you can't replace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+  <div class="section-inner">
+    <span class="eyebrow">What's inside</span>
+    <h2 class="sec-h">Features that change how meetings feel.</h2>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="14" height="16" rx="2"/><rect x="7" y="4" width="14" height="16" rx="2"/></svg></div>
+        <h3>Portrait + Landscape</h3>
+        <p>Switch between 16:9 landscape (Zoom, Teams, Meet) and 9:16 portrait (mobile apps, vertical Instagram Live) with one click. Same scene, both orientations.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></div>
+        <h3>AI Background Removal</h3>
+        <p>Neural-net detects your silhouette in real time. Replace, blur or remove the background — no green screen, no setup. Faster than Zoom's built-in blur.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v3M12 19v3M5 12H2M22 12h-3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Beauty Effects</h3>
+        <p>Skin smoother, skin tone correction, face track, hair color, lips touch-up, eye enlargement. Webcam-model grade enhancements applied live.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 11h20"/></svg></div>
+        <h3>Multi-app output</h3>
+        <p>Up to 64 apps can read from the SplitCam camera simultaneously. Zoom, Teams and Discord can all use the same feed at the same time — no Windows lock.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg></div>
+        <h3>Scene switching</h3>
+        <p>Build different layouts — talking head, whiteboard, slides, multi-cam — and switch mid-call with hotkeys. Like cutting between cameras on a TV set.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-2 8 10-12h-7l2-8z"/></svg></div>
+        <h3>Hardware-accelerated</h3>
+        <p>Uses GPU encoders (NVENC, QuickSync, AMF) by default. Zero CPU impact — your meeting app doesn't even know there's processing happening underneath.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section sec-bg" id="how">
+  <div class="section-inner">
+    <span class="eyebrow">Setup in 2 minutes</span>
+    <h2 class="sec-h">Three steps to a better webcam.</h2>
+    <div class="steps-list">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Install SplitCam</h3>
+          <p>Free download for Windows, macOS, iOS or Android. The virtual camera driver installs automatically on first launch — no separate setup, no admin tricks.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Build your scene</h3>
+          <p>Add sources: your webcam, screen, browser tab, video file. Apply AI background, beauty, overlays. SplitCam ships with a preset library for video calls — pick one and adjust.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Pick "SplitCam Camera" in your meeting app</h3>
+          <p>In Zoom, Teams, Meet, Discord — open Settings → Video → camera dropdown. Pick "SplitCam Camera". Done. Your scene is now your webcam.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block">
+  <h2>Ready for a better webcam?</h2>
+  <p>Free download. No signup, no card, no watermark. Works on Windows, macOS, iOS and Android.</p>
+  <a href="../" class="btn-primary btn-lg">⬇ Free Download</a>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="section-inner">
+    <span class="eyebrow center-h" style="text-align:center;display:block">Frequently asked</span>
+    <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Virtual camera questions.</h2>
+    <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Everything you might want to know before downloading.</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Does SplitCam virtual camera work on macOS?</summary>
+        <p>Yes. SplitCam ships a native macOS virtual camera that appears in Zoom, Teams, Google Meet, Discord, Safari, Chrome — every macOS app that uses the system camera API. macOS 11 Big Sur and newer.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does it work with Zoom on Mac specifically?</summary>
+        <p>Yes. Zoom on macOS treats SplitCam as a regular camera. Open Zoom → Settings → Video → pick "SplitCam Camera" from the dropdown. AI background removal, beauty filters and scene switching all work inside the Zoom call.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can multiple apps use SplitCam at the same time?</summary>
+        <p>Yes — up to 64 simultaneous virtual outputs. Zoom, Teams, Discord, OBS and your browser can all read from SplitCam Camera at the same moment. Windows normally locks physical webcams to one app; SplitCam bypasses that.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does it work in browser-based video calls (Google Meet, Jitsi)?</summary>
+        <p>Yes. Browsers see SplitCam as a normal webcam through the WebRTC media API. Google Meet, Jitsi, Around, Whereby — all work without configuration. Open the camera dropdown in your meeting and pick "SplitCam Camera".</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I switch back to my regular webcam?</summary>
+        <p>In your meeting app's settings, open the camera dropdown and select your physical webcam instead of "SplitCam Camera". No restart needed. You can switch back any time during a call.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does SplitCam virtual camera support 4K?</summary>
+        <p>Output up to 1920×1080 (1080p) at 60fps is supported on all platforms. 4K output is supported on Windows with hardware encoding (NVENC, QuickSync, AMF) and macOS on Apple Silicon. Most video conferencing apps cap incoming feeds at 720p or 1080p regardless of source.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is there any latency or lag?</summary>
+        <p>Virtual camera output runs at GPU speed — typically under 16ms additional latency (about 1 frame at 60fps). For comparison, network round-trip in a Zoom call is 100–300ms. You won't perceive any added lag.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is SplitCam virtual camera really free?</summary>
+        <p>Yes — completely free for personal and commercial use. All features unlocked: AI background, beauty effects, scene switching, multi-app output. No watermark on the camera feed, no trial timer, no upsell.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 SplitCam · Free streaming software since 2003</div>
+    <div class="footer-links">
+      <a href="../">Home</a>
+      <a href="../#faq">FAQ</a>
+      <a href="../#features">All features</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
