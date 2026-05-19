@@ -174,6 +174,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .app-card{display:flex;flex-direction:column;align-items:center;gap:10px;padding:24px 12px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:12px;transition:all .2s}
 .app-card:hover{border-color:var(--app-border2);transform:translateY(-2px)}
 .app-card svg{width:34px;height:34px;flex-shrink:0}
+.app-card img{width:34px;height:34px;flex-shrink:0;object-fit:contain}
 .app-card span{font-size:12.5px;font-weight:600;color:var(--text-sub);text-align:center;line-height:1.2}
 
 /* What is */
@@ -299,6 +300,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
 @keyframes orbit-pulse{0%,100%{filter:drop-shadow(0 0 18px rgba(40,120,252,.7)) drop-shadow(0 0 36px rgba(40,120,252,.35))}50%{filter:drop-shadow(0 0 26px rgba(40,120,252,.95)) drop-shadow(0 0 54px rgba(40,120,252,.55))}}
 .orbit-planet{position:absolute;border-radius:50%;background:var(--app-surface);border:1px solid var(--app-border2);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.5);transform:translate(-50%,-50%);z-index:5;animation:planet-bob 4s ease-in-out infinite}
 .orbit-planet svg{width:58%;height:58%}
+.orbit-planet img{width:58%;height:58%;object-fit:contain;flex-shrink:0}
 .orbit-planet.lg{width:60px;height:60px}
 .orbit-planet.md{width:46px;height:46px}
 .orbit-planet.sm{width:34px;height:34px}
@@ -396,22 +398,22 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="orbit-ring r3"></div>
 
       <!-- Ring 1 (innermost, 4 cardinal points — same layout as /multistreaming/): 4 BIGGEST video apps - Zoom / Teams / Meet / Discord -->
-      <div class="orbit-planet lg" style="top:28%;left:50%;color:#2D8CFF"><svg><use href="#i-zoom"/></svg></div>
-      <div class="orbit-planet lg" style="top:50%;left:72%;color:#6264A7"><svg><use href="#i-teams"/></svg></div>
-      <div class="orbit-planet lg" style="top:72%;left:50%;color:#00897B"><svg><use href="#i-meet"/></svg></div>
-      <div class="orbit-planet lg" style="top:50%;left:28%;color:#5865F2"><svg><use href="#i-discord"/></svg></div>
+      <div class="orbit-planet lg" style="top:28%;left:50%;color:#2D8CFF"><img src="https://cdn.simpleicons.org/zoom/2D8CFF" alt="" loading="lazy"></div>
+      <div class="orbit-planet lg" style="top:50%;left:72%;color:#6264A7"><img src="https://cdn.simpleicons.org/microsoftteams/6264A7" alt="" loading="lazy"></div>
+      <div class="orbit-planet lg" style="top:72%;left:50%;color:#00897B"><img src="https://cdn.simpleicons.org/googlemeet/00897B" alt="" loading="lazy"></div>
+      <div class="orbit-planet lg" style="top:50%;left:28%;color:#5865F2"><img src="https://cdn.simpleicons.org/discord/5865F2" alt="" loading="lazy"></div>
 
       <!-- Ring 2 (middle, 4 diagonal corners — same layout as /multistreaming/): mid-tier - Telegram / WhatsApp / OBS / Slack -->
-      <div class="orbit-planet md" style="top:25%;left:75%;color:#229ED9"><svg><use href="#i-telegram"/></svg></div>
-      <div class="orbit-planet md" style="top:75%;left:75%;color:#25D366"><svg><use href="#i-whatsapp"/></svg></div>
-      <div class="orbit-planet md" style="top:75%;left:25%;color:#fff"><svg><use href="#i-obs"/></svg></div>
-      <div class="orbit-planet md" style="top:25%;left:25%"><svg><use href="#i-slack"/></svg></div>
+      <div class="orbit-planet md" style="top:25%;left:75%;color:#229ED9"><img src="https://cdn.simpleicons.org/telegram/26A5E4" alt="" loading="lazy"></div>
+      <div class="orbit-planet md" style="top:75%;left:75%;color:#25D366"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" loading="lazy"></div>
+      <div class="orbit-planet md" style="top:75%;left:25%;color:#fff"><img src="https://cdn.simpleicons.org/obsstudio/FFFFFF" alt="" loading="lazy"></div>
+      <div class="orbit-planet md" style="top:25%;left:25%"><img src="https://cdn.simpleicons.org/slack/ECB22E" alt="" loading="lazy"></div>
 
       <!-- Ring 3 (outermost, 4 outer corners — same layout as /multistreaming/): niche - Webex / FaceTime / Jitsi / BlueJeans -->
-      <div class="orbit-planet sm" style="top:6%;left:34%;color:#00BCEB"><svg><use href="#i-webex"/></svg></div>
-      <div class="orbit-planet sm" style="top:6%;left:66%;color:#F68D2E"><svg><use href="#i-gotomeeting"/></svg></div>
-      <div class="orbit-planet sm" style="top:94%;left:34%;color:#97CA00"><svg><use href="#i-jitsi"/></svg></div>
-      <div class="orbit-planet sm" style="top:94%;left:66%;color:#1D7DC2"><svg><use href="#i-bluejeans"/></svg></div>
+      <div class="orbit-planet sm" style="top:6%;left:34%;color:#00BCEB"><img src="https://cdn.simpleicons.org/webex/00BCEB" alt="" loading="lazy"></div>
+      <div class="orbit-planet sm" style="top:6%;left:66%;color:#F68D2E"><img src="https://cdn.simpleicons.org/gotomeeting/F68D2E" alt="" loading="lazy"></div>
+      <div class="orbit-planet sm" style="top:94%;left:34%;color:#97CA00"><img src="https://cdn.simpleicons.org/jitsi/97CA00" alt="" loading="lazy"></div>
+      <div class="orbit-planet sm" style="top:94%;left:66%;color:#1D7DC2"><img src="https://cdn.simpleicons.org/bluejeansnetwork/1D7DC2" alt="" loading="lazy"></div>
 
       <!-- Center: SplitCam logo + brand text (no background box) -->
       <div class="orbit-center">
@@ -430,18 +432,18 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <p class="sec-p">SplitCam installs a kernel-mode virtual camera driver. Once installed, it appears as a regular webcam in 60+ apps — no per-app integration, no plugins, no setup.</p>
     <div class="apps-grid">
       <!-- Row 1: 6 most popular apps -->
-      <div class="app-card"><svg style="color:#2D8CFF"><use href="#i-zoom"/></svg><span>Zoom</span></div>
-      <div class="app-card"><svg style="color:#6264A7"><use href="#i-teams"/></svg><span>Microsoft Teams</span></div>
-      <div class="app-card"><svg style="color:#00897B"><use href="#i-meet"/></svg><span>Google Meet</span></div>
-      <div class="app-card"><svg style="color:#5865F2"><use href="#i-discord"/></svg><span>Discord</span></div>
-      <div class="app-card"><svg style="color:#229ED9"><use href="#i-telegram"/></svg><span>Telegram</span></div>
-      <div class="app-card"><svg style="color:#25D366"><use href="#i-whatsapp"/></svg><span>WhatsApp</span></div>
+      <div class="app-card"><img src="https://cdn.simpleicons.org/zoom/2D8CFF" alt="" loading="lazy"><span>Zoom</span></div>
+      <div class="app-card"><img src="https://cdn.simpleicons.org/microsoftteams/6264A7" alt="" loading="lazy"><span>Microsoft Teams</span></div>
+      <div class="app-card"><img src="https://cdn.simpleicons.org/googlemeet/00897B" alt="" loading="lazy"><span>Google Meet</span></div>
+      <div class="app-card"><img src="https://cdn.simpleicons.org/discord/5865F2" alt="" loading="lazy"><span>Discord</span></div>
+      <div class="app-card"><img src="https://cdn.simpleicons.org/telegram/26A5E4" alt="" loading="lazy"><span>Telegram</span></div>
+      <div class="app-card"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" loading="lazy"><span>WhatsApp</span></div>
       <!-- Row 2: less mainstream / pro / niche -->
-      <div class="app-card"><svg style="color:#fff"><use href="#i-obs"/></svg><span>OBS Studio</span></div>
-      <div class="app-card"><svg><use href="#i-slack"/></svg><span>Slack</span></div>
-      <div class="app-card"><svg style="color:#00BCEB"><use href="#i-webex"/></svg><span>Webex</span></div>
-      <div class="app-card"><svg style="color:#F68D2E"><use href="#i-gotomeeting"/></svg><span>GoToMeeting</span></div>
-      <div class="app-card"><svg style="color:#97CA00"><use href="#i-jitsi"/></svg><span>Jitsi</span></div>
+      <div class="app-card"><img src="https://cdn.simpleicons.org/obsstudio/FFFFFF" alt="" loading="lazy"><span>OBS Studio</span></div>
+      <div class="app-card"><img src="https://cdn.simpleicons.org/slack/ECB22E" alt="" loading="lazy"><span>Slack</span></div>
+      <div class="app-card"><img src="https://cdn.simpleicons.org/webex/00BCEB" alt="" loading="lazy"><span>Webex</span></div>
+      <div class="app-card"><img src="https://cdn.simpleicons.org/gotomeeting/F68D2E" alt="" loading="lazy"><span>GoToMeeting</span></div>
+      <div class="app-card"><img src="https://cdn.simpleicons.org/jitsi/97CA00" alt="" loading="lazy"><span>Jitsi</span></div>
       <div class="app-card" style="background:linear-gradient(135deg,rgba(40,120,252,.12),rgba(40,120,252,.03));border:1px dashed rgba(40,120,252,.5);justify-content:center;gap:4px"><span style="color:var(--blue);font-size:24px;font-weight:800;letter-spacing:-.5px;line-height:1;text-shadow:0 0 16px rgba(40,120,252,.5)">+ 50</span><span style="color:var(--text);font-size:11.5px;font-weight:700;letter-spacing:.5px">more apps</span></div>
     </div>
   </div>
@@ -486,27 +488,27 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
         <div class="ms-fans">
           <div class="ms-platform-card">
             <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
-            <div class="ms-platform-label"><svg style="color:#2D8CFF"><use href="#i-zoom"/></svg> Zoom</div>
+            <div class="ms-platform-label"><img src="https://cdn.simpleicons.org/zoom/2D8CFF" alt="" loading="lazy"> Zoom</div>
             <div class="ms-active-bar"><div class="ms-active-pulse ms-fan-pulse"></div></div>
           </div>
           <div class="ms-platform-card">
             <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
-            <div class="ms-platform-label"><svg style="color:#6264A7"><use href="#i-teams"/></svg> Teams</div>
+            <div class="ms-platform-label"><img src="https://cdn.simpleicons.org/microsoftteams/6264A7" alt="" loading="lazy"> Teams</div>
             <div class="ms-active-bar"><div class="ms-active-pulse ms-fan-pulse"></div></div>
           </div>
           <div class="ms-platform-card">
             <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
-            <div class="ms-platform-label"><svg style="color:#00897B"><use href="#i-meet"/></svg> Meet</div>
+            <div class="ms-platform-label"><img src="https://cdn.simpleicons.org/googlemeet/00897B" alt="" loading="lazy"> Meet</div>
             <div class="ms-active-bar"><div class="ms-active-pulse ms-fan-pulse"></div></div>
           </div>
           <div class="ms-platform-card">
             <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
-            <div class="ms-platform-label"><svg style="color:#5865F2"><use href="#i-discord"/></svg> Discord</div>
+            <div class="ms-platform-label"><img src="https://cdn.simpleicons.org/discord/5865F2" alt="" loading="lazy"> Discord</div>
             <div class="ms-active-bar"><div class="ms-active-pulse ms-fan-pulse"></div></div>
           </div>
           <div class="ms-platform-card">
             <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
-            <div class="ms-platform-label"><svg style="color:#229ED9"><use href="#i-telegram"/></svg> Telegram</div>
+            <div class="ms-platform-label"><img src="https://cdn.simpleicons.org/telegram/26A5E4" alt="" loading="lazy"> Telegram</div>
             <div class="ms-active-bar"><div class="ms-active-pulse ms-fan-pulse"></div></div>
           </div>
           <div class="ms-platform-card more">
