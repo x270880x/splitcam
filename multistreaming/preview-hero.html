@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Preview v5 — Hub & Spoke</title>
+<title>Preview v6 — Live Multistream + narrow pipe</title>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -32,27 +32,29 @@ body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);min-h
 /* VIZ */
 .viz{position:relative;width:100%;max-width:480px;margin:0 auto}
 
-/* Compact source pill — top */
 .src-pill{display:flex;align-items:center;gap:10px;padding:9px 13px;background:linear-gradient(135deg,rgba(40,120,252,.18),rgba(156,91,255,.14));border:1.5px solid rgba(40,120,252,.5);border-radius:11px;position:relative;z-index:3;box-shadow:0 0 24px rgba(40,120,252,.28),0 6px 18px rgba(0,0,0,.4);width:fit-content;margin:0 auto}
 .src-pill img{width:26px;height:26px;flex-shrink:0;filter:drop-shadow(0 0 5px var(--blue-glow))}
 .src-pill-info{line-height:1.15}
 .src-pill-name{font-size:13px;font-weight:800;color:#fff;letter-spacing:.2px}
 .src-pill-type{font-size:11px;font-weight:700;background:linear-gradient(135deg,var(--purple),var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-top:1px}
 
-/* LIVE badge — blinking */
+/* Caption between pill and pipe */
+.pipe-caption{text-align:center;font-size:10.5px;font-weight:800;color:var(--blue);letter-spacing:1.3px;text-transform:uppercase;margin:14px 0 6px;text-shadow:0 0 10px rgba(40,120,252,.4)}
+.pipe-caption .arrow{margin:0 6px;font-size:13px;color:var(--blue);font-weight:900}
+
+/* LIVE badges — blinking */
 .live-badge{display:inline-flex;align-items:center;gap:3px;padding:2px 6px;background:rgba(231,76,60,.18);color:#ff5454;font-size:8.5px;font-weight:800;letter-spacing:.6px;border-radius:3px;animation:badge-blink 1.4s ease-in-out infinite}
 .live-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:#ff5454;box-shadow:0 0 5px #ff5454;animation:dot-pulse 1.2s ease-in-out infinite}
 @keyframes badge-blink{0%,100%{opacity:1}50%{opacity:.55}}
 @keyframes dot-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
 .src-pill-live{margin-left:4px}
 
-/* WIDE CENTRAL PIPE from source down to hub */
-.main-pipe{position:relative;height:90px;margin:0;overflow:visible}
+/* NARROW central pipe — 5x narrower than before */
+.main-pipe{position:relative;height:80px;margin:0;overflow:visible}
 .pipe-svg{position:absolute;inset:0;width:100%;height:100%}
 .pipe-rect{fill:url(#pipeGrad)}
-.pipe-edge{fill:none;stroke:rgba(40,120,252,.55);stroke-width:1.5}
-.pipe-dot{fill:var(--blue);filter:drop-shadow(0 0 6px var(--blue-glow))}
-.pipe-label{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;font-size:10px;font-weight:800;color:var(--blue);letter-spacing:1.2px;text-transform:uppercase;background:var(--bg);padding:5px 12px;border:1px solid rgba(40,120,252,.4);border-radius:99px;white-space:nowrap;text-shadow:0 0 10px rgba(40,120,252,.5);box-shadow:0 0 16px rgba(40,120,252,.2)}
+.pipe-edge{fill:none;stroke:rgba(40,120,252,.65);stroke-width:1.2}
+.pipe-dot{fill:var(--blue);filter:drop-shadow(0 0 8px var(--blue-glow))}
 
 /* HUB + fan-out */
 .viz-fan{position:relative;height:300px}
@@ -62,7 +64,6 @@ body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);min-h
 .hub-node{fill:var(--blue);filter:drop-shadow(0 0 10px var(--blue-glow))}
 .hub-ring{fill:none;stroke:var(--blue);stroke-width:1.5;opacity:.4}
 
-/* Destination cards */
 .dest{position:absolute;display:flex;align-items:center;gap:7px;padding:6px 10px;background:var(--surface);border:1px solid var(--border2);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.5);z-index:2;white-space:nowrap}
 .dest-ico{width:20px;height:20px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .dest-ico img{width:13px;height:13px;object-fit:contain}
@@ -91,7 +92,7 @@ body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);min-h
 </head>
 <body>
 
-<div class="label-top">📋 <b>PREVIEW v5</b> — hub & spoke: один широкий канал от источника к центру, оттуда веер на 7 платформ.</div>
+<div class="label-top">📋 <b>PREVIEW v6</b> — SplitCam Live Multistream + caption above pipe + 5x narrower pipe + 1.5x bigger dot</div>
 
 <section class="hero">
   <div class="hero-grid">
@@ -106,45 +107,43 @@ body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
 
     <div class="viz">
-      <!-- Source pill with blinking LIVE -->
+      <!-- Source pill: SplitCam LIVE Multistream -->
       <div class="src-pill">
         <img src="../virtual-camera/assets/logos/splitcam.png" alt="">
         <div class="src-pill-info">
-          <div class="src-pill-name">SplitCam Multistream</div>
-          <div class="src-pill-type">One stream → many sites</div>
+          <div class="src-pill-name">SplitCam Live Multistream</div>
+          <div class="src-pill-type">Streaming studio</div>
         </div>
         <span class="live-badge src-pill-live">LIVE</span>
       </div>
 
-      <!-- ONE WIDE central pipe from source down to hub -->
+      <!-- Caption ABOVE the pipe -->
+      <div class="pipe-caption">One stream <span class="arrow">→</span> to many platforms</div>
+
+      <!-- NARROW central pipe (5x narrower) + bigger running dot (1.5x) -->
       <div class="main-pipe">
-        <svg class="pipe-svg" viewBox="0 0 480 90" preserveAspectRatio="none">
+        <svg class="pipe-svg" viewBox="0 0 480 80" preserveAspectRatio="none">
           <defs>
             <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#2878fc" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="#2878fc" stop-opacity="0.12"/>
+              <stop offset="0%" stop-color="#2878fc" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#2878fc" stop-opacity="0.2"/>
             </linearGradient>
           </defs>
-          <!-- Wide central pipe (rectangle with rounded edges) -->
-          <rect class="pipe-rect" x="210" y="0" width="60" height="90" rx="6"/>
-          <rect class="pipe-edge" x="210" y="0" width="60" height="90" rx="6"/>
-          <!-- Center guide line -->
-          <line x1="240" y1="0" x2="240" y2="90" stroke="rgba(40,120,252,.4)" stroke-width="1" stroke-dasharray="3 4"/>
-          <!-- Running dot down the pipe -->
-          <circle class="pipe-dot" cx="240" r="4">
-            <animate attributeName="cy" from="0" to="90" dur="1.5s" repeatCount="indefinite"/>
+          <!-- Narrow pipe: width 12 (was 60) -->
+          <rect class="pipe-rect" x="234" y="0" width="12" height="80" rx="3"/>
+          <rect class="pipe-edge" x="234" y="0" width="12" height="80" rx="3"/>
+          <!-- Bigger running dot: r=6 (was 4) -->
+          <circle class="pipe-dot" cx="240" r="6">
+            <animate attributeName="cy" from="0" to="80" dur="1.5s" repeatCount="indefinite"/>
           </circle>
         </svg>
-        <span class="pipe-label">One stream to many platforms</span>
       </div>
 
-      <!-- Hub + fan-out to 7 destinations -->
+      <!-- Hub + 7 fan-out destinations -->
       <div class="viz-fan">
         <svg class="fan-svg" viewBox="0 0 480 300" preserveAspectRatio="none">
-          <!-- Hub node at top-center -->
           <circle class="hub-ring" cx="240" cy="6" r="10"/>
           <circle class="hub-node" cx="240" cy="6" r="5"/>
-          <!-- 7 curved paths from hub to destinations -->
           <path id="p1" class="fan-line" d="M 240 6 Q 180 22 70 28"/>
           <path id="p2" class="fan-line" d="M 240 6 Q 300 22 410 28"/>
           <path id="p3" class="fan-line" d="M 240 6 Q 130 55 50 112"/>
@@ -152,7 +151,6 @@ body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);min-h
           <path id="p5" class="fan-line" d="M 240 6 Q 170 125 80 195"/>
           <path id="p6" class="fan-line" d="M 240 6 Q 310 125 400 195"/>
           <path id="p7" class="fan-line" d="M 240 6 Q 240 200 240 285"/>
-          <!-- Travelling dots along each fan line -->
           <circle class="fan-dot" r="3"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
           <circle class="fan-dot" r="3"><animateMotion dur="2.5s" repeatCount="indefinite" begin="0.35s"><mpath href="#p2"/></animateMotion></circle>
           <circle class="fan-dot" r="3"><animateMotion dur="2.5s" repeatCount="indefinite" begin="0.7s"><mpath href="#p3"/></animateMotion></circle>
