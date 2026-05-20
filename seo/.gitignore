@@ -1,0 +1,5 @@
+# Never commit secrets or large data
+.env
+data/*.json
+*.local
+__pycache__/

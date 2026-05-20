@@ -1,0 +1,35 @@
+# Keywords to research. One per line. Lines starting with # ignored.
+# Multistreaming cluster:
+multistreaming
+multistreaming software
+multistream
+multi streaming software
+free multistreaming
+stream to multiple platforms
+simulcast
+restream alternative
+streamyard alternative
+streamlabs alternative
+
+# Virtual camera cluster:
+virtual camera
+virtual webcam
+virtual camera for zoom
+virtual camera for teams
+virtual camera for meet
+free virtual camera
+OBS virtual camera
+ManyCam alternative
+Snap Camera alternative
+
+# Use case keywords:
+how to stream to twitch and youtube
+how to use virtual camera in zoom
+multistream to twitch and youtube
+broadcast to multiple platforms
+
+# Brand keywords:
+splitcam
+splitcam download
+splitcam multistream
+splitcam virtual camera

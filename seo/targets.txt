@@ -1,0 +1,13 @@
+# Domains to analyze. Lines starting with # are ignored.
+# Our site:
+splitcam.com
+
+# Direct competitors (multistreaming + virtual camera):
+obsproject.com
+streamyard.com
+restream.io
+streamlabs.com
+
+# Virtual camera niche:
+manycam.com
+reincubate.com
