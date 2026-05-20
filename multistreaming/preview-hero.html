@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Preview v4 — Compact + Wide Fan Arrow + Custom</title>
+<title>Preview v5 — Hub & Spoke</title>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -32,29 +32,37 @@ body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);min-h
 /* VIZ */
 .viz{position:relative;width:100%;max-width:480px;margin:0 auto}
 
-/* Source pill — SMALLER */
+/* Compact source pill — top */
 .src-pill{display:flex;align-items:center;gap:10px;padding:9px 13px;background:linear-gradient(135deg,rgba(40,120,252,.18),rgba(156,91,255,.14));border:1.5px solid rgba(40,120,252,.5);border-radius:11px;position:relative;z-index:3;box-shadow:0 0 24px rgba(40,120,252,.28),0 6px 18px rgba(0,0,0,.4);width:fit-content;margin:0 auto}
 .src-pill img{width:26px;height:26px;flex-shrink:0;filter:drop-shadow(0 0 5px var(--blue-glow))}
 .src-pill-info{line-height:1.15}
 .src-pill-name{font-size:13px;font-weight:800;color:#fff;letter-spacing:.2px}
 .src-pill-type{font-size:11px;font-weight:700;background:linear-gradient(135deg,var(--purple),var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-top:1px}
-.src-pill-live{display:flex;align-items:center;gap:3px;padding:2px 6px;background:rgba(231,76,60,.18);color:#ff5454;font-size:8.5px;font-weight:800;letter-spacing:.6px;border-radius:3px;margin-left:4px}
-.src-pill-live::before{content:'';width:4px;height:4px;border-radius:50%;background:#ff5454;box-shadow:0 0 4px #ff5454;animation:pulse 1.2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
 
-/* WIDE FAN ARROW with label */
-.fan-banner{position:relative;height:60px;margin:8px 0 4px;display:flex;align-items:center;justify-content:center}
-.fan-banner svg{position:absolute;inset:0;width:100%;height:100%}
-.fan-banner .fan-shape{fill:url(#fanGrad);opacity:.18}
-.fan-banner .fan-line-out{stroke:rgba(40,120,252,.7);stroke-width:1.5;fill:none}
-.fan-banner-label{position:relative;z-index:2;font-size:10.5px;font-weight:800;color:var(--blue);letter-spacing:1.8px;text-transform:uppercase;background:var(--bg);padding:4px 14px;border:1px solid rgba(40,120,252,.35);border-radius:99px;text-shadow:0 0 10px rgba(40,120,252,.4)}
+/* LIVE badge — blinking */
+.live-badge{display:inline-flex;align-items:center;gap:3px;padding:2px 6px;background:rgba(231,76,60,.18);color:#ff5454;font-size:8.5px;font-weight:800;letter-spacing:.6px;border-radius:3px;animation:badge-blink 1.4s ease-in-out infinite}
+.live-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:#ff5454;box-shadow:0 0 5px #ff5454;animation:dot-pulse 1.2s ease-in-out infinite}
+@keyframes badge-blink{0%,100%{opacity:1}50%{opacity:.55}}
+@keyframes dot-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.src-pill-live{margin-left:4px}
 
-/* Fan area + destinations */
+/* WIDE CENTRAL PIPE from source down to hub */
+.main-pipe{position:relative;height:90px;margin:0;overflow:visible}
+.pipe-svg{position:absolute;inset:0;width:100%;height:100%}
+.pipe-rect{fill:url(#pipeGrad)}
+.pipe-edge{fill:none;stroke:rgba(40,120,252,.55);stroke-width:1.5}
+.pipe-dot{fill:var(--blue);filter:drop-shadow(0 0 6px var(--blue-glow))}
+.pipe-label{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;font-size:10px;font-weight:800;color:var(--blue);letter-spacing:1.2px;text-transform:uppercase;background:var(--bg);padding:5px 12px;border:1px solid rgba(40,120,252,.4);border-radius:99px;white-space:nowrap;text-shadow:0 0 10px rgba(40,120,252,.5);box-shadow:0 0 16px rgba(40,120,252,.2)}
+
+/* HUB + fan-out */
 .viz-fan{position:relative;height:300px}
 .fan-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
 .fan-line{fill:none;stroke:rgba(40,120,252,.5);stroke-width:1.5;stroke-linecap:round}
 .fan-dot{fill:var(--blue);filter:drop-shadow(0 0 4px var(--blue-glow))}
+.hub-node{fill:var(--blue);filter:drop-shadow(0 0 10px var(--blue-glow))}
+.hub-ring{fill:none;stroke:var(--blue);stroke-width:1.5;opacity:.4}
 
+/* Destination cards */
 .dest{position:absolute;display:flex;align-items:center;gap:7px;padding:6px 10px;background:var(--surface);border:1px solid var(--border2);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.5);z-index:2;white-space:nowrap}
 .dest-ico{width:20px;height:20px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .dest-ico img{width:13px;height:13px;object-fit:contain}
@@ -66,16 +74,14 @@ body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);min-h
 .dest-ico.ct{background:rgba(255,255,255,.1);font-size:11px}
 .dest-ico.more{background:rgba(40,120,252,.15);color:var(--blue);font-size:9px;font-weight:800}
 .dest-name{font-size:11.5px;font-weight:700;color:var(--text)}
-.dest-live{display:inline-flex;align-items:center;padding:1px 5px;background:rgba(231,76,60,.18);color:#ff5454;font-size:8px;font-weight:800;letter-spacing:.5px;border-radius:3px;margin-left:auto}
 
-/* 7 destinations positioned in fan pattern */
-.dest.d1{top:0%;left:0%}              /* top-left: YouTube */
-.dest.d2{top:0%;right:0%}             /* top-right: Twitch */
-.dest.d3{top:30%;left:-1%}            /* mid-left: Facebook */
-.dest.d4{top:30%;right:-1%}           /* mid-right: Kick */
-.dest.d5{top:60%;left:4%}             /* lower-mid-left: TikTok */
-.dest.d6{top:60%;right:4%}            /* lower-mid-right: Custom */
-.dest.d7{top:90%;left:50%;transform:translateX(-50%)} /* bottom-center: +79 */
+.dest.d1{top:0%;left:0%}
+.dest.d2{top:0%;right:0%}
+.dest.d3{top:30%;left:-1%}
+.dest.d4{top:30%;right:-1%}
+.dest.d5{top:60%;left:4%}
+.dest.d6{top:60%;right:4%}
+.dest.d7{top:90%;left:50%;transform:translateX(-50%)}
 
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr;gap:32px}
@@ -85,7 +91,7 @@ body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);min-h
 </head>
 <body>
 
-<div class="label-top">📋 <b>PREVIEW v4</b> — compact pill + wide fan arrow banner + Custom RTMP added (7 destinations total).</div>
+<div class="label-top">📋 <b>PREVIEW v5</b> — hub & spoke: один широкий канал от источника к центру, оттуда веер на 7 платформ.</div>
 
 <section class="hero">
   <div class="hero-grid">
@@ -100,45 +106,53 @@ body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
 
     <div class="viz">
-      <!-- Compact source pill -->
+      <!-- Source pill with blinking LIVE -->
       <div class="src-pill">
         <img src="../virtual-camera/assets/logos/splitcam.png" alt="">
         <div class="src-pill-info">
           <div class="src-pill-name">SplitCam Multistream</div>
           <div class="src-pill-type">One stream → many sites</div>
         </div>
-        <span class="src-pill-live">LIVE</span>
+        <span class="live-badge src-pill-live">LIVE</span>
       </div>
 
-      <!-- Wide fan-arrow banner -->
-      <div class="fan-banner">
-        <svg viewBox="0 0 480 60" preserveAspectRatio="none">
+      <!-- ONE WIDE central pipe from source down to hub -->
+      <div class="main-pipe">
+        <svg class="pipe-svg" viewBox="0 0 480 90" preserveAspectRatio="none">
           <defs>
-            <linearGradient id="fanGrad" x1="50%" y1="0%" x2="50%" y2="100%">
-              <stop offset="0%" stop-color="#2878fc"/>
-              <stop offset="100%" stop-color="#2878fc" stop-opacity="0"/>
+            <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#2878fc" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#2878fc" stop-opacity="0.12"/>
             </linearGradient>
           </defs>
-          <!-- Triangular fan: narrow at top center, wide at bottom -->
-          <polygon class="fan-shape" points="200,0 280,0 460,60 20,60"/>
-          <!-- 3 outline lines emphasizing direction -->
-          <path class="fan-line-out" d="M 220 0 L 40 56"/>
-          <path class="fan-line-out" d="M 240 0 L 240 58"/>
-          <path class="fan-line-out" d="M 260 0 L 440 56"/>
+          <!-- Wide central pipe (rectangle with rounded edges) -->
+          <rect class="pipe-rect" x="210" y="0" width="60" height="90" rx="6"/>
+          <rect class="pipe-edge" x="210" y="0" width="60" height="90" rx="6"/>
+          <!-- Center guide line -->
+          <line x1="240" y1="0" x2="240" y2="90" stroke="rgba(40,120,252,.4)" stroke-width="1" stroke-dasharray="3 4"/>
+          <!-- Running dot down the pipe -->
+          <circle class="pipe-dot" cx="240" r="4">
+            <animate attributeName="cy" from="0" to="90" dur="1.5s" repeatCount="indefinite"/>
+          </circle>
         </svg>
-        <span class="fan-banner-label">One stream → 84+ destinations</span>
+        <span class="pipe-label">One stream to many platforms</span>
       </div>
 
-      <!-- Fan: SVG arrows + destination cards -->
+      <!-- Hub + fan-out to 7 destinations -->
       <div class="viz-fan">
         <svg class="fan-svg" viewBox="0 0 480 300" preserveAspectRatio="none">
-          <path id="p1" class="fan-line" d="M 240 0 Q 180 20 70 25"/>
-          <path id="p2" class="fan-line" d="M 240 0 Q 300 20 410 25"/>
-          <path id="p3" class="fan-line" d="M 240 0 Q 130 50 50 110"/>
-          <path id="p4" class="fan-line" d="M 240 0 Q 350 50 430 110"/>
-          <path id="p5" class="fan-line" d="M 240 0 Q 170 120 80 195"/>
-          <path id="p6" class="fan-line" d="M 240 0 Q 310 120 400 195"/>
-          <path id="p7" class="fan-line" d="M 240 0 Q 240 200 240 285"/>
+          <!-- Hub node at top-center -->
+          <circle class="hub-ring" cx="240" cy="6" r="10"/>
+          <circle class="hub-node" cx="240" cy="6" r="5"/>
+          <!-- 7 curved paths from hub to destinations -->
+          <path id="p1" class="fan-line" d="M 240 6 Q 180 22 70 28"/>
+          <path id="p2" class="fan-line" d="M 240 6 Q 300 22 410 28"/>
+          <path id="p3" class="fan-line" d="M 240 6 Q 130 55 50 112"/>
+          <path id="p4" class="fan-line" d="M 240 6 Q 350 55 430 112"/>
+          <path id="p5" class="fan-line" d="M 240 6 Q 170 125 80 195"/>
+          <path id="p6" class="fan-line" d="M 240 6 Q 310 125 400 195"/>
+          <path id="p7" class="fan-line" d="M 240 6 Q 240 200 240 285"/>
+          <!-- Travelling dots along each fan line -->
           <circle class="fan-dot" r="3"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
           <circle class="fan-dot" r="3"><animateMotion dur="2.5s" repeatCount="indefinite" begin="0.35s"><mpath href="#p2"/></animateMotion></circle>
           <circle class="fan-dot" r="3"><animateMotion dur="2.5s" repeatCount="indefinite" begin="0.7s"><mpath href="#p3"/></animateMotion></circle>
@@ -148,13 +162,13 @@ body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);min-h
           <circle class="fan-dot" r="3"><animateMotion dur="2.5s" repeatCount="indefinite" begin="2.1s"><mpath href="#p7"/></animateMotion></circle>
         </svg>
 
-        <div class="dest d1"><div class="dest-ico yt"><img src="https://cdn.simpleicons.org/youtube/ffffff" alt=""></div><span class="dest-name">YouTube</span><span class="dest-live">LIVE</span></div>
-        <div class="dest d2"><div class="dest-ico tw"><img src="https://cdn.simpleicons.org/twitch/ffffff" alt=""></div><span class="dest-name">Twitch</span><span class="dest-live">LIVE</span></div>
-        <div class="dest d3"><div class="dest-ico fb"><img src="https://cdn.simpleicons.org/facebook/ffffff" alt=""></div><span class="dest-name">Facebook</span><span class="dest-live">LIVE</span></div>
-        <div class="dest d4"><div class="dest-ico kk"><img src="https://cdn.simpleicons.org/kick/000000" alt=""></div><span class="dest-name">Kick</span><span class="dest-live">LIVE</span></div>
-        <div class="dest d5"><div class="dest-ico tt"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt=""></div><span class="dest-name">TikTok</span><span class="dest-live">LIVE</span></div>
-        <div class="dest d6"><div class="dest-ico ct">🌐</div><span class="dest-name">Custom RTMP</span><span class="dest-live">LIVE</span></div>
-        <div class="dest d7"><div class="dest-ico more">+79</div><span class="dest-name">And more</span><span class="dest-live">LIVE</span></div>
+        <div class="dest d1"><div class="dest-ico yt"><img src="https://cdn.simpleicons.org/youtube/ffffff" alt=""></div><span class="dest-name">YouTube</span><span class="live-badge">LIVE</span></div>
+        <div class="dest d2"><div class="dest-ico tw"><img src="https://cdn.simpleicons.org/twitch/ffffff" alt=""></div><span class="dest-name">Twitch</span><span class="live-badge">LIVE</span></div>
+        <div class="dest d3"><div class="dest-ico fb"><img src="https://cdn.simpleicons.org/facebook/ffffff" alt=""></div><span class="dest-name">Facebook</span><span class="live-badge">LIVE</span></div>
+        <div class="dest d4"><div class="dest-ico kk"><img src="https://cdn.simpleicons.org/kick/000000" alt=""></div><span class="dest-name">Kick</span><span class="live-badge">LIVE</span></div>
+        <div class="dest d5"><div class="dest-ico tt"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt=""></div><span class="dest-name">TikTok</span><span class="live-badge">LIVE</span></div>
+        <div class="dest d6"><div class="dest-ico ct">🌐</div><span class="dest-name">Custom RTMP</span><span class="live-badge">LIVE</span></div>
+        <div class="dest d7"><div class="dest-ico more">+79</div><span class="dest-name">And more</span><span class="live-badge">LIVE</span></div>
       </div>
     </div>
   </div>
