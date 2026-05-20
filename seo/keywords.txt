@@ -33,3 +33,54 @@ splitcam
 splitcam download
 splitcam multistream
 splitcam virtual camera
+
+# /for/ personas keyword research:
+# Church cluster (from vMix analysis):
+church streaming software
+church live streaming software
+streaming services for churches
+best church streaming software
+free church streaming software
+sunday service streaming
+
+# Streamer cluster:
+free streaming software
+best streaming software for twitch
+gaming streaming software
+twitch streaming software
+streaming software for beginners
+
+# Educator cluster:
+streaming software for teachers
+online teaching software
+classroom streaming
+how to teach online with zoom
+virtual classroom software
+
+# YouTuber cluster:
+youtube live streaming software
+free live streaming software
+go live on youtube
+how to live stream on youtube
+
+# Podcaster cluster:
+podcast streaming software
+livestream podcast
+video podcast software
+
+# VTuber cluster:
+vtuber software
+vtuber streaming
+how to be a vtuber
+free vtuber software
+
+# Musician cluster:
+music livestream software
+live music streaming
+concert streaming software
+
+# Business cluster:
+virtual camera for zoom
+virtual camera for teams
+virtual camera for meeting
+webcam for online meetings
