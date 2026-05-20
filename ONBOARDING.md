@@ -127,15 +127,11 @@ cd seo && AHREFS_TOKEN='mpjnDpu-L5mjYW04-nzbQUCsaaF3N6q8P_Y4JCXs' python3 ahrefs
 
 **SKIP:** podcasters/musicians/business (volume too low per Ahrefs)
 
-## 🔔 Reminders that DIED with the old chat (re-set in new chat)
+## 🔔 SEO follow-up reminders → `seo/REMINDERS.md`
 
-Set with `CronCreate`. They were session-only, dead after old chat closed. Re-set:
-- **May 27 11:47** — Week 1 indexing check (Google Search Console)
-- **June 3 11:47** — Week 2 ranking check
-- **June 10 11:47** — Wave 2 launch
-- **June 19 11:47** — Month 1 full review
+Durable schedule lives in [`seo/REMINDERS.md`](seo/REMINDERS.md) (in this repo, travels with the project to any Mac/account). Open that file at the start of any SEO chat — it has the full task list with absolute dates, what to do for each, and a status column to mark things done.
 
-When you set them, use `recurring: false`, `durable: true`, and ToolSearch first to load `CronCreate`.
+**Do NOT** use `CronCreate` for these — it claims `durable: true` but writes nothing to disk; reminders set that way die with the chat session (confirmed 2026-05-20). iCloud Calendar (paired with the file above) is the right place for pings.
 
 ## Recent commit history (most recent first)
 ```
@@ -186,4 +182,4 @@ a8b9097 SEO Wave 1: launch /for/youtubers/ (2700 vol, KD 6)
 >
 > Model after `/for/youtubers/` (already deployed). Schema.org HowTo + FAQPage, comparison tables, cross-links. ~1500+ words each. Real content, not thin SEO bait.
 >
-> After both pages: commit + push, then re-set 4 cron reminders (May 27 / June 3 / June 10 / June 19 at 11:47).
+> After both pages: commit + push. Schedule lives in [`seo/REMINDERS.md`](seo/REMINDERS.md) — no need to set cron reminders (they don't persist).
