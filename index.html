@@ -332,6 +332,8 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .ms-spot-vis { padding: 24px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 16px; }
 .ms-spot-source { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.25); border-radius: 10px; color: var(--blue); font-weight: 700; font-size: 13px; }
 .ms-spot-source svg { width: 18px; height: 18px; }
+.ms-spot-live { margin-left: auto; padding: 2px 8px; background: rgba(231,76,60,.18); color: #ff5454; font-size: 9.5px; font-weight: 800; letter-spacing: .8px; border-radius: 4px; font-family: 'Geist Mono', monospace; animation: live-blink 1.4s ease-in-out infinite; }
+@keyframes live-blink { 0%, 100% { opacity: 1 } 50% { opacity: .55 } }
 .ms-spot-arrow { text-align: center; color: var(--text-dim); font-size: 16px; line-height: 1; margin: 8px 0; }
 .ms-spot-fan { display: flex; flex-direction: column; gap: 6px; }
 .ms-spot-tgt { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: var(--app-surface); border-radius: 8px; font-size: 13px; color: var(--text); font-weight: 500; }
@@ -769,11 +771,11 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       <div class="vc-spotlight-text">
         <p class="eyebrow">Multistreaming</p>
         <h2 class="sec-h" style="margin-bottom:14px">Live to every platform, at the same time.</h2>
-        <p class="sec-p" style="margin-bottom:24px;max-width:480px">One encode from your machine, sent directly to Twitch, YouTube, Facebook, Kick and 80+ other platforms simultaneously. Different bitrate per destination. <strong style="color:var(--text)">No cloud middleman, no monthly fee, no third-party in the loop.</strong></p>
-        <a href="multistreaming/" class="btn-primary">Learn more about Multistreaming <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+        <p class="sec-p" style="margin-bottom:24px;max-width:480px">One encode from your machine, sent <strong style="color:var(--text)">peer-to-peer</strong> to Twitch, YouTube, Facebook, Kick and 84+ other platforms simultaneously. Per-destination bitrate. <strong style="color:var(--text)">No cloud middleman, no monthly fee.</strong></p>
+        <a href="multistreaming/" class="btn-primary">See how multistreaming works <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
       </div>
       <div class="ms-spot-vis">
-        <div class="ms-spot-source"><svg class="ico"><use href="#i-broadcast"/></svg><span>Your scene · 1 encode</span></div>
+        <div class="ms-spot-source"><svg class="ico"><use href="#i-broadcast"/></svg><span>SplitCam Live Multistream</span><span class="ms-spot-live">● LIVE</span></div>
         <div class="ms-spot-arrow">↓</div>
         <div class="ms-spot-fan">
           <div class="ms-spot-tgt tw"><svg class="ico ico-sm"><use href="#i-twitch"/></svg> Twitch <span class="ms-rate">6 Mbps</span></div>
@@ -781,7 +783,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
           <div class="ms-spot-tgt fb"><svg class="ico ico-sm"><use href="#i-fb"/></svg> Facebook <span class="ms-rate">3</span></div>
           <div class="ms-spot-tgt kk"><svg class="ico ico-sm"><use href="#i-kick"/></svg> Kick <span class="ms-rate">5</span></div>
           <div class="ms-spot-tgt tt"><svg class="ico ico-sm"><use href="#i-tiktok"/></svg> TikTok <span class="ms-rate">2.5</span></div>
-          <div class="ms-spot-tgt more">+ 80 more · custom RTMP</div>
+          <div class="ms-spot-tgt more">+ 79 more · custom RTMP</div>
         </div>
       </div>
     </div>
@@ -796,10 +798,10 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         <p class="eyebrow">Virtual Camera</p>
         <h2 class="sec-h" style="margin-bottom:14px">Your stream is also a virtual camera.</h2>
         <p class="sec-p" style="margin-bottom:24px;max-width:480px">Use SplitCam as a webcam in Zoom, Teams, Google Meet, Discord, Telegram, WhatsApp and 60+ other apps — with all your scenes, effects and AI background applied. Works in both <strong style="color:var(--text)">landscape (16:9)</strong> and <strong style="color:var(--text)">portrait (9:16)</strong> orientations.</p>
-        <a href="virtual-camera/" class="btn-primary">Learn more about Virtual Camera <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+        <a href="virtual-camera/" class="btn-primary">See compatible apps <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
       </div>
       <div class="vc-spotlight-vis">
-        <div class="vc-source"><svg class="ico"><use href="#i-cam"/></svg><span>SplitCam scene</span></div>
+        <div class="vc-source"><svg class="ico"><use href="#i-cam"/></svg><span>SplitCam Virtual Camera</span><span class="ms-spot-live">● LIVE</span></div>
         <div class="vc-arrow"></div>
         <div class="vc-targets">
           <div class="vc-target"><svg class="ico ico-sm"><use href="#i-chat"/></svg> Zoom <span class="vc-orient land">16:9</span></div>
@@ -808,7 +810,8 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
           <div class="vc-target"><svg class="ico ico-sm"><use href="#i-chat"/></svg> Discord <span class="vc-orient both">16:9 / 9:16</span></div>
           <div class="vc-target"><svg class="ico ico-sm"><use href="#i-telegram"/></svg> Telegram <span class="vc-orient port">9:16</span></div>
           <div class="vc-target"><svg class="ico ico-sm"><use href="#i-whatsapp"/></svg> WhatsApp <span class="vc-orient port">9:16</span></div>
-          <div class="vc-target more">+ 60 more</div>
+          <div class="vc-target"><svg class="ico ico-sm"><use href="#i-broadcast"/></svg> OBS Studio <span class="vc-orient land">16:9</span></div>
+          <div class="vc-target more">+ 50 more</div>
         </div>
       </div>
     </div>
@@ -822,7 +825,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <h2 class="sec-h">9 reasons SplitCam wins.</h2>
     <p class="sec-p">No premium tiers, no feature locks. The free download is the full app.</p>
     <div class="feat-grid">
-      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-broadcast"/></svg></div><div class="cell-h2">Multi-streaming</div><p class="cell-p2">Stream to Twitch, YouTube, Facebook, Kick + custom RTMP simultaneously. Restream server kicks in if your upload can't handle all destinations.</p></div>
+      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-broadcast"/></svg></div><div class="cell-h2">Multi-streaming</div><p class="cell-p2">Stream to Twitch, YouTube, Facebook, Kick + 84+ platforms simultaneously. Direct peer-to-peer from your machine, no cloud middleman, no monthly fee.</p></div>
       <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-cam"/></svg></div><div class="cell-h2">Virtual Camera</div><p class="cell-p2">Use SplitCam as a webcam in Zoom, Teams, Google Meet, Discord. Both portrait (9:16) and landscape (16:9) supported.</p></div>
       <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-mask"/></svg></div><div class="cell-h2">AI Background Removal</div><p class="cell-p2">Remove, blur or replace your background instantly. No green screen needed — AI detects your silhouette in real time.</p></div>
       <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-monitor"/></svg></div><div class="cell-h2">Vertical Canvas</div><p class="cell-p2">Switch canvas to 9:16 for TikTok Live, Reels, Shorts and vertical Instagram Live. One studio — both orientations.</p></div>
