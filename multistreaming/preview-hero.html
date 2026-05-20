@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Preview — New Multistream Hero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a18;
+  --panel:#11112a;
+  --surface:#1c1c3a;
+  --border:rgba(255,255,255,.08);
+  --border2:rgba(255,255,255,.14);
+  --blue:#3a8bff;
+  --blue-glow:rgba(58,139,255,.6);
+  --purple:#9c5bff;
+  --text:#eef;
+  --text-sub:#9090c0;
+}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:60px 40px;overflow-x:hidden}
+.label-top{max-width:1200px;margin:0 auto 16px;font-size:13px;color:var(--text-sub);letter-spacing:.3px}
+.label-top b{color:var(--blue)}
+
+.flow-wrap{max-width:1200px;margin:0 auto;position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;min-height:680px}
+
+/* LEFT: title + source card */
+.flow-left{position:relative;z-index:2}
+.flow-left h1{font-size:clamp(40px,5vw,72px);font-weight:800;line-height:1;letter-spacing:-2px;margin-bottom:18px}
+.flow-left h1 .everywhere{background:linear-gradient(135deg,var(--purple) 0%,var(--blue) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:block}
+.flow-left .sub{font-size:18px;color:var(--text-sub);max-width:480px;line-height:1.5;margin-bottom:48px}
+
+.source-card{padding:36px 32px;background:linear-gradient(160deg,rgba(58,139,255,.08) 0%,rgba(156,91,255,.06) 100%);border:1px solid var(--border2);border-radius:20px;position:relative;overflow:hidden}
+.source-card::before{content:'';position:absolute;inset:-1px;border-radius:20px;padding:1px;background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.5;pointer-events:none}
+.source-card-logo{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+.source-card-logo img{width:64px;height:64px;flex-shrink:0;filter:drop-shadow(0 0 18px var(--blue-glow))}
+.source-card-name{font-size:38px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.5px}
+.source-card-type{font-size:24px;font-weight:700;background:linear-gradient(135deg,var(--purple),var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-top:6px}
+.source-card-tag{font-size:15px;color:var(--text-sub);margin-top:18px}
+
+/* RIGHT: destinations */
+.flow-right{position:relative;z-index:2}
+.dest-header{font-size:14px;font-weight:800;color:var(--blue);letter-spacing:1.5px;margin-bottom:18px;text-transform:uppercase}
+.dest-list{display:flex;flex-direction:column;gap:12px}
+.dest{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.3);transition:all .2s}
+.dest:hover{border-color:var(--blue);transform:translateX(4px)}
+.dest-ico{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(255,255,255,.05)}
+.dest-ico img{width:24px;height:24px;object-fit:contain}
+.dest-ico.yt{background:#FF0000}
+.dest-ico.tw{background:#9146FF}
+.dest-ico.fb{background:#1877F2}
+.dest-ico.kk{background:#53FC18}
+.dest-ico.tv{background:#19D66B}
+.dest-ico.rt{background:rgba(255,255,255,.08)}
+.dest-ico.more{background:rgba(255,255,255,.05);font-size:18px;color:var(--text-sub);font-weight:700}
+.dest-name{flex:1;font-size:16px;font-weight:700;color:var(--text);letter-spacing:.2px}
+.live-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 9px;background:#ff3838;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:1px;border-radius:5px;font-family:'Geist',sans-serif}
+.live-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:#fff;animation:blink 1.2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Connector lines (SVG positioned absolutely between cols) */
+.connectors{position:absolute;inset:0;pointer-events:none;z-index:1}
+.connector-line{fill:none;stroke:var(--blue);stroke-width:1.5;stroke-dasharray:4 6;opacity:.45;animation:dash 1s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-10}}
+.connector-node{fill:var(--blue);filter:drop-shadow(0 0 6px var(--blue-glow))}
+.connector-node.pulse{animation:nodePulse 2s ease-in-out infinite}
+@keyframes nodePulse{0%,100%{r:4}50%{r:6}}
+
+@media(max-width:900px){
+  .flow-wrap{grid-template-columns:1fr;gap:40px;min-height:auto}
+  .connectors{display:none}
+  .flow-left h1{font-size:42px}
+}
+</style>
+</head>
+<body>
+
+<div class="label-top">📋 <b>PREVIEW</b> — New multistream hero (replacement for orbit visualization). This page is standalone, doesn't affect the live site.</div>
+
+<div class="flow-wrap">
+
+  <!-- LEFT: headline + source card -->
+  <div class="flow-left">
+    <h1>One stream.<span class="everywhere">Everywhere.</span></h1>
+    <p class="sub">Stream to multiple platforms simultaneously — from a single encode, direct from your machine.</p>
+    <div class="source-card">
+      <div class="source-card-logo">
+        <img src="../virtual-camera/assets/logos/splitcam.png" alt="SplitCam">
+        <div>
+          <div class="source-card-name">SplitCam</div>
+          <div class="source-card-type">Multistream</div>
+        </div>
+      </div>
+      <div class="source-card-tag">One stream. Multiple destinations.</div>
+    </div>
+  </div>
+
+  <!-- Connector SVG -->
+  <svg class="connectors" viewBox="0 0 600 680" preserveAspectRatio="none">
+    <!-- Source anchor point on left (right edge of source card) -->
+    <!-- 7 destination points on right (left edge of dest cards) -->
+    <!-- Curves -->
+    <path class="connector-line" d="M 0 470 C 200 470, 400 90, 600 90"/>
+    <path class="connector-line" d="M 0 470 C 200 470, 400 175, 600 175"/>
+    <path class="connector-line" d="M 0 470 C 200 470, 400 260, 600 260"/>
+    <path class="connector-line" d="M 0 470 C 200 470, 400 345, 600 345"/>
+    <path class="connector-line" d="M 0 470 C 200 470, 400 430, 600 430"/>
+    <path class="connector-line" d="M 0 470 C 200 470, 400 515, 600 515"/>
+    <path class="connector-line" d="M 0 470 C 200 470, 400 600, 600 600"/>
+    <!-- Nodes -->
+    <circle class="connector-node pulse" cx="0" cy="470" r="5"/>
+    <circle class="connector-node" cx="600" cy="90" r="4"/>
+    <circle class="connector-node" cx="600" cy="175" r="4"/>
+    <circle class="connector-node" cx="600" cy="260" r="4"/>
+    <circle class="connector-node" cx="600" cy="345" r="4"/>
+    <circle class="connector-node" cx="600" cy="430" r="4"/>
+    <circle class="connector-node" cx="600" cy="515" r="4"/>
+    <circle class="connector-node" cx="600" cy="600" r="4"/>
+  </svg>
+
+  <!-- RIGHT: destinations list -->
+  <div class="flow-right">
+    <div class="dest-header">All live at once</div>
+    <div class="dest-list">
+      <div class="dest"><div class="dest-ico yt"><img src="https://cdn.simpleicons.org/youtube/ffffff" alt=""></div><span class="dest-name">YouTube</span><span class="live-badge">LIVE</span></div>
+      <div class="dest"><div class="dest-ico tw"><img src="https://cdn.simpleicons.org/twitch/ffffff" alt=""></div><span class="dest-name">Twitch</span><span class="live-badge">LIVE</span></div>
+      <div class="dest"><div class="dest-ico fb"><img src="https://cdn.simpleicons.org/facebook/ffffff" alt=""></div><span class="dest-name">Facebook Live</span><span class="live-badge">LIVE</span></div>
+      <div class="dest"><div class="dest-ico kk"><img src="https://cdn.simpleicons.org/kick/000000" alt=""></div><span class="dest-name">Kick</span><span class="live-badge">LIVE</span></div>
+      <div class="dest"><div class="dest-ico tv"><img src="https://cdn.simpleicons.org/trovo/ffffff" alt=""></div><span class="dest-name">Trovo</span><span class="live-badge">LIVE</span></div>
+      <div class="dest"><div class="dest-ico rt">🌐</div><span class="dest-name">Custom RTMP</span><span class="live-badge">LIVE</span></div>
+      <div class="dest"><div class="dest-ico more">···</div><span class="dest-name">And more</span><span class="live-badge">LIVE</span></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
