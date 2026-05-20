@@ -1198,7 +1198,9 @@ function setTab(id,btn){
   });
 })();
 
-/* Live streams-delivered counter — anchor: 25,001,285 streams on 2026-05-20 UTC, growing at 3000/day */
+/* Live streams-delivered counter:
+   - Initial value computed from real elapsed time since anchor (so it stays realistic across sessions)
+   - On-page animation: every 2-7 seconds (random), adds 0-4 streams (random) for a lively ticking effect */
 (function(){
   var el = document.getElementById('streams-counter');
   if (!el) return;
@@ -1210,15 +1212,21 @@ function setTab(id,btn){
   function fmt(n){ return n.toLocaleString('en-US'); }
   var current = streamsNow();
   el.textContent = fmt(current);
-  setInterval(function(){
-    var target = streamsNow();
-    if (target > current) {
-      current = target;
-      el.classList.add('tick');
-      el.textContent = fmt(current);
-      setTimeout(function(){ el.classList.remove('tick'); }, 400);
-    }
-  }, 1000);
+
+  function scheduleNextTick(){
+    var delayMs = 2000 + Math.random() * 5000;     // 2-7 sec random interval
+    setTimeout(function(){
+      var add = Math.floor(Math.random() * 5);    // 0-4 streams random
+      if (add > 0) {
+        current += add;
+        el.textContent = fmt(current);
+        el.classList.add('tick');
+        setTimeout(function(){ el.classList.remove('tick'); }, 400);
+      }
+      scheduleNextTick();
+    }, delayMs);
+  }
+  scheduleNextTick();
 })();
 </script>
 
