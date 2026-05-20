@@ -7,124 +7,183 @@ Marketing site for SplitCam — free streaming/virtual-camera software. Static H
 - **Local path**: `/Users/splitcam/Desktop/splitcam/`
 - **Live**: https://x270880x.github.io/splitcam/
 
-## Pages (4 total)
+## Pages currently deployed (5 total)
 | Path | URL | Status |
 |---|---|---|
-| `/index.html` | https://x270880x.github.io/splitcam/ | Main landing (Variant A) |
-| `/v2/index.html` | https://x270880x.github.io/splitcam/v2/ | Alternative landing (Variant B) |
-| `/virtual-camera/index.html` | https://x270880x.github.io/splitcam/virtual-camera/ | Virtual Camera SEO page |
-| `/multistreaming/index.html` | https://x270880x.github.io/splitcam/multistreaming/ | Multistreaming SEO page |
+| `/index.html` | https://x270880x.github.io/splitcam/ | Main landing (Variant A) — done |
+| `/v2/index.html` | https://x270880x.github.io/splitcam/v2/ | Variant B — done |
+| `/virtual-camera/index.html` | /virtual-camera/ | Sub-page — done |
+| `/multistreaming/index.html` | /multistreaming/ | Sub-page — done |
+| `/for/youtubers/index.html` | /for/youtubers/ | **SEO Wave 1, page 1/3 — DONE** ✅ |
 
-## Tech / decisions
-- **No framework** — vanilla HTML+CSS+JS, single-file per page (everything inlined). No build step.
-- **Dark theme** with `--app-base: #141420`, accent `--blue: #2878fc`, purple `--purple: #9c5bff`.
-- **Font**: Geist (Google Fonts) + Geist Mono for code/labels.
-- **Brand logos**: all 12 brand SVGs hosted locally in `/virtual-camera/assets/logos/` (Zoom, MS Teams, Meet, Discord, Telegram, WhatsApp, OBS, Webex, Slack, Jitsi, BlueJeans, GoToMeeting). Originally fetched from Simple Icons CDN, now self-hosted. 3 were manually crafted (MS Teams, Slack, BlueJeans — removed from Simple Icons per brand owner requests).
-- **Favicon**: full set generated from `splitcam.png` — `favicon.ico` (16/32/48), `favicon-16/32/48/192/512.png`, `apple-touch-icon.png` (180), `site.webmanifest`. Linked from all 4 HTML pages.
-- **Hero video**: `/assets/hero-spotlight.mp4` (~184KB, 1080p CRF28 20fps). Pauses on blur/visibility for performance.
-- **Diagram video**: `/multistreaming/assets/stream-preview.mp4` (~384KB) referenced cross-page from VC.
+## 🚨 IMMEDIATE NEXT TASK — Finish SEO Wave 1 (2 pages left)
 
-## Current main page hero structure
-- NAV (with logo icon + CNET rating in some places)
-- HERO with: `Live Multi-Streaming Studio` pill + CNET ★★★★★ 4.5 rating chip, H1 with cycling word (creators/streamers/gamers/VTubers/podcasters/educators), download button with OS detection (Win/Mac/iOS/Android), 3 trust badges (Free forever / No watermark / Platforms)
-- PLATFORMS STRIP (Twitch, YouTube, Facebook, Kick, TikTok, Instagram, X, LinkedIn, Discord, RTMP + 74 more)
-- STATS (5 boxes including live counter `25,001,285+ STREAMS DELIVERED` — random tick every 2-7s adding 0-4)
-- STREAMING FEATURES TABS (4 tabs: Multi-streaming / Sources / Audience / Quality)
-- MULTISTREAMING spotlight → links to `/multistreaming/`
-- VIRTUAL CAMERA spotlight → links to `/virtual-camera/`
-- ALL FEATURES GRID (9 cells)
-- USE CASES
-- QUICK START
-- TESTIMONIALS
-- WHAT'S NEW
-- FAQ
-- CTA
-- FOOTER
+**Background:** We ran full SEO analysis via Ahrefs API. Found massive keyword opportunities competitors take (Meld Studio, vMix). Started Wave 1 of two-section strategy: `/alternatives/` (X alternative) + `/for/` (persona pages).
 
-## /multistreaming/ page structure
-After section reorder (synthesis of ChatGPT analysis):
-1. HERO with hub-and-spoke visualization: SplitCam Live Multistream pill (3 lines: name / Streaming Studio Software / One stream → to many platforms) + blinking LIVE + thick central pipe with big running dot → hub node with 2 rings → 7 fan-out lines with small running dots → 7 destination cards (YouTube/Twitch/Facebook/Kick/TikTok/Custom RTMP/+79 More). Each card has blinking red LIVE badge.
-2. POPULAR MULTISTREAM COMBOS — 9 long-tail combo cards
-3. HOW IT WORKS (3 steps)
-4. USE CASES (6 audiences)
-5. WHAT IS MULTISTREAMING (with big video diagram)
-6. KEY FEATURES (6 cells)
-7. CTA
-8. FAQ (12 questions, FAQPage schema for rich snippets)
+### Wave 1 Page 1 — ✅ DONE
+`/for/youtubers/` — targets "how to live stream on youtube" (2,700 vol, KD 6 — biggest find). Live now.
 
-SEO: comprehensive meta + Schema.org (SoftwareApplication + HowTo + FAQPage + BreadcrumbList). Keywords cover multistream, simulcast, dual stream, Restream/Streamlabs/StreamYard alternative.
+### Wave 1 Page 2 — TODO: `/for/churches/`
+**Target keywords (~580 vol total, KD 2-12):**
+- "church streaming software" (150 vol, KD 2)
+- "church live streaming software" (150 vol, KD 3)
+- "streaming services for churches" (150 vol, KD 12)
+- "best church streaming software" (100 vol, KD 2)
+- "church live stream software" (100 vol, KD 1)
 
-## /virtual-camera/ page structure
-After section reorder:
-1. HERO with orbital visualization: SplitCam logo (66px, pulsing) center + "SplitCam" text. 3 orbital rings with 12 brand logos arranged in 4+4+4 pattern matching multistream layout. Ring 1 = Zoom/Teams/Meet/Discord. Ring 2 = Telegram/WhatsApp/OBS/Slack. Ring 3 = Webex/GoToMeeting/Jitsi/BlueJeans.
-2. UNIVERSAL COMPATIBILITY (apps grid) — 12 cards: Zoom (47px), Teams, Meet, Discord, Telegram, WhatsApp (row 1), OBS, Slack, Webex, GoToMeeting, Jitsi, +50 more (row 2)
-3. USE CASES
-4. HOW IT WORKS (3 steps)
-5. WHAT IS A VIRTUAL CAMERA — with diagram inside SplitCam Studio window shell (macOS-style title bar). Video shows "SplitCam Virtual Camera" overlay + LIVE badge → middle pill → 6 app cards (Zoom/Teams/Meet/Discord/Telegram + 50 More)
-6. FEATURES
-7. CTA
-8. FAQ (12 questions)
+**Why we can win:** vMix dominates this cluster (paid $60-1200) but we're free. Main page already features "For Churches" use case + multistream page has church use case.
 
-Note: Skype was REMOVED everywhere — Microsoft retired Skype May 2025. FaceTime was REPLACED with GoToMeeting (Apple restricts virtual cameras in modern FaceTime).
+**Content to build (model after /for/youtubers/):**
+- Hero: "Live stream Sunday service to Facebook + YouTube — free"
+- Sunday service workflow (multi-camera setup)
+- Lower-thirds for speakers
+- Song lyrics overlay (Browser Source)
+- Multistream FB + YouTube + church website RTMP simultaneously
+- Comparison: SplitCam (free) vs vMix ($60-1200) vs ProPresenter
+- FAQ + Schema.org HowTo + FAQPage
+- Cross-link `/multistreaming/`, `/alternatives/vmix/` (future), `/for/youtubers/`
 
-## Visualization design decisions
-- **Multistream hero** = hub-and-spoke (one pipe → hub → 7 lines). Replaced earlier orbit visualization at user's request, matched sketch they provided.
-- **Virtual Camera hero** = orbital (3 concentric rings). Kept distinct from multistream's hub-and-spoke for visual differentiation between the two products.
-- Both use same brand-blue (#2878fc) for pipes/orbits, animated SVG dots for "data flowing" feel.
+### Wave 1 Page 3 — TODO: `/alternatives/obs/`
+**Target keywords (~1,130 vol total, KD 0):**
+- "obs alternative" (500 vol, KD 0)
+- "obs studio alternative" (200 vol, KD 0)
+- "obs alternatives" (200 vol, KD 0)
+- "obs alternative mac" (80 vol, KD 0)
+- "alternatives to obs" (150 vol, KD 0)
 
-## Important style/copy rules (set by user)
-- All brand logos stored LOCALLY (no external CDN URLs in HTML). Self-hosted in `/virtual-camera/assets/logos/`.
-- No "Restream server" / "cloud middleman" wording on multistream page — SplitCam is **peer-to-peer direct**.
-- iOS belongs in platforms list (Win · macOS · iOS · Android), removed and re-added once.
-- Skype is dead (May 2025) — never mention as live product.
-- CNET rating: 4.5 stars, 357 reviews — used consistently.
-- LIVE badges should blink (badge opacity + red dot pulse) wherever they appear.
+**Why we can win:** Meld Studio currently captures this (pos 2-3) with KD 0 — open field. We have legit answers: built-in virtual camera (vs needs plugin in OBS), AI background (vs needs plugin), one-click multistream (vs Multiple RTMP Outputs plugin), OBS Project Import feature.
 
-## Recent commits (most recent first)
+**Content to build (comparison-focused):**
+- Hero: "The free SplitCam alternative to OBS Studio"
+- Why people search for OBS alternative (CPU load, learning curve, plugin maintenance, no mobile)
+- SplitCam advantages: simpler UI, built-in features, mobile apps, OBS Project Import
+- Honest where OBS is better: open source, bigger plugin ecosystem
+- Comparison table (already drafted on /for/youtubers/ — reuse)
+- Schema.org: ItemList comparison + FAQPage
+- Cross-link `/for/youtubers/`, `/for/churches/`, `/multistreaming/`
+
+## Critical design rules (from extensive iteration with user)
+
+1. **All brand logos stored LOCALLY** in `/virtual-camera/assets/logos/` — Simple Icons CDN versions downloaded + 3 manually crafted (microsoftteams, slack, bluejeansnetwork — removed from Simple Icons per brand owner requests). No external CDN refs in HTML.
+2. **SplitCam logo PNG at `/assets/splitcam.png`** — used via `<img src="..">` not base64 (extracted from inline earlier).
+3. **No "Restream server" / "cloud middleman"** wording on multistream page — SplitCam is **peer-to-peer direct**. Triple-checked, all references fixed.
+4. **iOS belongs in platforms list** (Win · macOS · iOS · Android).
+5. **Skype is DEAD** (Microsoft retired May 2025) — never mention as live product.
+6. **CNET 4.5/357 rating UNVERIFIED** — couldn't find on web search. Still referenced in Schema.org/Hero — user hasn't decided to remove. Real ratings exist on Softonic 4.7, UpdateStar 4.0, G2.
+7. **LIVE badges should blink** wherever they appear (badge opacity + red dot pulse).
+8. **What's New section** verified — all 6 features REAL (v10.8.50 changelog, May 2025).
+
+## Key UI conventions
+- Dark theme: `--app-base: #141420`, accent `--blue: #2878fc`, purple `--purple: #9c5bff`
+- Font: Geist (Google Fonts), Geist Mono for code/labels
+- Each page has favicon set linked (favicon.ico + various .png + apple-touch-icon + site.webmanifest)
+- Hero pattern: eyebrow chip + h1 + sub + CTA + trust badges + visual on right
+- Schema.org always included: at minimum BreadcrumbList + SoftwareApplication; bigger pages add HowTo + FAQPage
+
+## /for/youtubers/ structural template (use for next pages)
 ```
-4a6c0b3 Main page spotlights synced with sub-pages (Multistream + VC) + bug fix in Features grid
-ddb9142 Main page hero polish — trust signals + visual hierarchy (CNET rating chip + 3 trust badges)
-7dbd6be /multistreaming/ replace orbit visualization with hub-and-spoke design
-b7afdb4 Preview v7 (eventually applied to live page)
-... (many preview iterations v1-v7 leading to hub-and-spoke)
-69f6d95 Orbit + def-block polish (15% smaller orbit center logos)
-444df1e /virtual-camera/ adopt /multistreaming/'s proven 'What is multistreaming' section layout pattern
-06fa28d Fix broken nav links in sub-pages (Multistreaming/Features anchor fixes)
-c581d16 Add site favicon set generated from SplitCam logo
-381b6d5 Main page hero badges simplified
-0ff94b7 Main page: add live 'STREAMS DELIVERED' counter to stats
-ce4b809 /virtual-camera/ self-host all brand logos locally (removed Simple Icons CDN dependency)
+NAV (fixed top, same on all pages)
+BREADCRUMBS
+HERO (eyebrow / h1 / sub / 2 CTA / 4 trust badges)
+QUICK ANSWER box (rich snippet bait)
+STEP-BY-STEP guide (5 numbered steps with time + pro tips)
+BONUS callout box (with cross-link)
+PRO TIPS grid (6 cards)
+COMPARISON TABLE
+FAQ (8 Q&A in Schema.org FAQPage)
+RELATED cards (3 cross-links)
+CTA block
+FOOTER
 ```
 
-## Suggested next tasks
-Per user-requested plan, after Hero polish + Spotlights sync (both DONE), suggested next:
-1. **Testimonials** with real CNET quotes / Trustpilot — both main page and sub-pages need stronger social proof
-2. **Comparison table** SplitCam vs OBS vs Restream vs Streamlabs — strong SEO ("X alternative" queries) + conversion aid
-3. **SEO infrastructure** — `sitemap.xml` + `robots.txt` + custom OG preview images per page (currently all share `hero-spotlight-poster.jpg`)
-4. **OS-detection for download** — verify Mac users see `.dmg` link, Win users `.exe`, etc.
-5. **Performance** — base64 logo currently embedded in some places, could move to file
-6. **Blog/Learn section** for SEO long-tail (articles like "How to multistream to X", "Best webcam settings")
+## /seo/ folder
 
-## How to deploy / test
-- **Local preview**: `file:///Users/splitcam/Desktop/splitcam/index.html` (open in browser, no server needed)
-- **Push to live**: `cd /Users/splitcam/Desktop/splitcam && git add . && git commit -m "..." && git push origin main`. GitHub Pages auto-deploys in 30-90 sec.
-- **Revert last commit**: `git revert HEAD --no-edit && git push`
-- **Check deploy status**: https://github.com/x270880x/splitcam/actions
+- `seo/ahrefs.py` — Ahrefs API collector (uses env var AHREFS_TOKEN)
+- `seo/targets.txt` — 8 competitor domains analyzed
+- `seo/keywords.txt` — 88 keywords researched
+- `seo/data/*.json` — raw API results (gitignored — they contain live data)
+- `seo/reports/` — 3 markdown analysis reports
+- `seo/PLAN.md` — **MASTER PLAN with timeline + Wave 1/2/3**
 
-## Files of note
-- `/index.html` — main page
-- `/virtual-camera/index.html` — VC page
-- `/multistreaming/index.html` — MS page
-- `/v2/index.html` — alternative landing
-- `/virtual-camera/assets/logos/*.svg` — all brand logos
-- `/virtual-camera/assets/logos/splitcam.png` — SplitCam brand mark (66-80px in orbits)
-- `/assets/hero-spotlight.mp4` — main hero video
-- `/multistreaming/assets/stream-preview.mp4` — diagram video (cross-referenced from VC)
-- `/favicon.ico`, `/favicon-*.png`, `/apple-touch-icon.png`, `/site.webmanifest` — favicon set
+**Ahrefs token** — user provided earlier this session. Token is `mpjnDpu-L5mjYW04-nzbQUCsaaF3N6q8P_Y4JCXs` (Lite plan, 100k units/mo, used ~6k). To run:
+```bash
+cd seo && AHREFS_TOKEN='mpjnDpu-L5mjYW04-nzbQUCsaaF3N6q8P_Y4JCXs' python3 ahrefs.py
+```
+**Security note:** Token shared in chat. User should regenerate after sessions end.
+
+## SEO Roadmap (from /seo/PLAN.md)
+
+**WAVE 1** (this session, in progress): 3 pages
+- ✅ `/for/youtubers/` — 2,700 vol, KD 6
+- ⏳ `/for/churches/` — 580 vol, KD <12 ← NEXT
+- ⏳ `/alternatives/obs/` — 1,130 vol, KD 0 ← AFTER CHURCHES
+
+**WAVE 2** (week 3+): 6 pages
+- `/alternatives/` hub + `/for/` hub
+- `/alternatives/restream/`, `/alternatives/streamyard/`, `/alternatives/streamlabs/`
+- `/for/vtubers/` (target: "how to be a vtuber" — 500 vol, KD 0)
+
+**WAVE 3** (month 2+): remaining alternatives + 2 more personas (streamers, educators)
+
+**SKIP:** podcasters/musicians/business (volume too low per Ahrefs)
+
+## 🔔 Reminders that DIED with the old chat (re-set in new chat)
+
+Set with `CronCreate`. They were session-only, dead after old chat closed. Re-set:
+- **May 27 11:47** — Week 1 indexing check (Google Search Console)
+- **June 3 11:47** — Week 2 ranking check
+- **June 10 11:47** — Wave 2 launch
+- **June 19 11:47** — Month 1 full review
+
+When you set them, use `recurring: false`, `durable: true`, and ToolSearch first to load `CronCreate`.
+
+## Recent commit history (most recent first)
+```
+a8b9097 SEO Wave 1: launch /for/youtubers/ (2700 vol, KD 6)
+33da10f SEO: extended keyword research + final PLAN.md
+6d951e9 SEO: vMix analysis — Church cluster found
+7056b1f SEO: Meld Studio analysis — OBS alternative cluster
+031682b SEO infrastructure (ahrefs.py + first analysis)
+7814498 Performance: extract base64 logo to /assets/splitcam.png
+7aaa2b7 Multi-section honesty pass (Platforms+Tabs+Footer+Testimonials)
+87372c1 What's New verified v10.8 + accuracy fixes
+9eb5280 Main FAQ #4 fix (peer-to-peer instead of restream server)
+```
+
+## How to deploy
+- **Local preview:** `file:///Users/splitcam/Desktop/splitcam/index.html`
+- **Push:** `cd /Users/splitcam/Desktop/splitcam && git add . && git commit -m "..." && git push origin main`
+- GitHub Pages auto-deploys in 30-90 sec
+- **Revert:** `git revert HEAD --no-edit && git push`
 
 ## Communication style with user
 - Russian (mostly) + English code/labels
-- User prefers concise answers with concrete next steps
+- Concise answers with concrete next steps
 - Show before/after for visual changes
-- Always commit changes individually with descriptive messages so revert is easy
+- Commit individually so revert is easy
 - Live URL + local file URL both shared after pushes
+- User likes to make decisions on direction — present 2-3 options when in doubt
+- User prefers building real things over planning forever — execute mode preferred
+
+## What's been done in this session (May 2026)
+
+1. ✅ Main page hero polish (CNET rating chip, 3 trust badges)
+2. ✅ Spotlights synced with sub-pages (LIVE badges, peer-to-peer wording)
+3. ✅ FAQ peer-to-peer fix
+4. ✅ "What's New" verified — all real v10.8 features
+5. ✅ Platforms strip + Tab + Footer fixes
+6. ✅ Testimonials honest (real review platforms instead of fake CNET names)
+7. ✅ Cross-page nav consistency (added "What's New" to sub-page navs)
+8. ✅ Performance: base64 logo → /assets/splitcam.png (saved 30KB)
+9. ✅ Ahrefs API integration + 3 analysis reports + master plan
+10. ✅ SEO Wave 1 page 1: /for/youtubers/
+
+## What user wants NEXT (start with this in new chat)
+
+> **Continue SEO Wave 1.** Build remaining 2 pages:
+> 1. `/for/churches/` — target "church streaming software" cluster (580 vol, KD 2-12)
+> 2. `/alternatives/obs/` — target "obs alternative" cluster (1130 vol, KD 0)
+>
+> Model after `/for/youtubers/` (already deployed). Schema.org HowTo + FAQPage, comparison tables, cross-links. ~1500+ words each. Real content, not thin SEO bait.
+>
+> After both pages: commit + push, then re-set 4 cron reminders (May 27 / June 3 / June 10 / June 19 at 11:47).
