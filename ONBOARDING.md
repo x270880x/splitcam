@@ -95,10 +95,11 @@ Any content added/changed in one language must be replicated to all locales (EN/
 | Domain | DR | Note |
 |---|---|---|
 | splitcam.com | 55 | main site — the authority anchor |
+| splitcamera.com | 45 | legacy SplitCam domain — 301 → splitcam.com (apex + www, fixed 2026-05-22). DR 45 from ~3,100 refdomains, 0 organic keywords. Sub-domains `blog`/`forum` still serve old content over HTTP only (HTTPS = 526, broken origin SSL) — pending decision: keep+fix-SSL or redirect too. |
 | multi-stream.io | 14 | live, ranks for "free multistreaming" — possible cannibalization with `/multistreaming/` |
 | splitstream.com | 4 | live, weak — candidate to 301 → splitcam.com |
 | split.cam | 0 | dormant, clean brand domain — reserve / short links |
-| (adult) | — | new neutral domain still to register |
+| camstreamguide.com | — | neutral adult domain for cam-streaming-guides (registered; DNS/Pages connect pending) |
 
 ## Communication style with user
 - Russian (mostly) + English code/labels. Concise, concrete next steps.
