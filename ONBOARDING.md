@@ -1,185 +1,127 @@
-# SplitCam Landing Page — Project Onboarding
+# SplitCam — Project Onboarding
 
-## What this is
-Marketing site for SplitCam — free streaming/virtual-camera software. Static HTML/CSS/JS deployed to GitHub Pages.
+*Last updated: 2026-05-21. Open this at the start of any new chat to get up to speed.*
 
-- **Repo**: `x270880x/splitcam` (GitHub)
-- **Local path**: `/Users/splitcam/Desktop/splitcam/`
-- **Live**: https://x270880x.github.io/splitcam/
+## Two projects
 
-## Pages currently deployed (5 total)
-| Path | URL | Status |
-|---|---|---|
-| `/index.html` | https://x270880x.github.io/splitcam/ | Main landing (Variant A) — done |
-| `/v2/index.html` | https://x270880x.github.io/splitcam/v2/ | Variant B — done |
-| `/virtual-camera/index.html` | /virtual-camera/ | Sub-page — done |
-| `/multistreaming/index.html` | /multistreaming/ | Sub-page — done |
-| `/for/youtubers/index.html` | /for/youtubers/ | **SEO Wave 1, page 1/3 — DONE** ✅ |
+Both repos live under `/Users/splitcam/Documents/Дизайны/SplitCam/SPLITCAM DEV./`.
 
-## 🚨 IMMEDIATE NEXT TASK — Finish SEO Wave 1 (2 pages left)
+| Project | Local folder | GitHub repo | Live (staging) |
+|---|---|---|---|
+| **Main SplitCam site** | `SPLITCAM DEV./splitcam/` | `x270880x/splitcam` | https://x270880x.github.io/splitcam/ |
+| **cam-streaming-guides** (adult-cam guides) | `SPLITCAM DEV./cam-streaming-guides/` | `x270880x/cam-streaming-guides` | https://x270880x.github.io/cam-streaming-guides/ |
 
-**Background:** We ran full SEO analysis via Ahrefs API. Found massive keyword opportunities competitors take (Meld Studio, vMix). Started Wave 1 of two-section strategy: `/alternatives/` (X alternative) + `/for/` (persona pages).
+Both are static HTML deployed via GitHub Pages (auto-deploy 30–90 sec after push).
+**Workflow rule:** after meaningful edits, commit + push immediately — don't ask.
 
-### Wave 1 Page 1 — ✅ DONE
-`/for/youtubers/` — targets "how to live stream on youtube" (2,700 vol, KD 6 — biggest find). Live now.
+---
 
-### Wave 1 Page 2 — TODO: `/for/churches/`
-**Target keywords (~580 vol total, KD 2-12):**
-- "church streaming software" (150 vol, KD 2)
-- "church live streaming software" (150 vol, KD 3)
-- "streaming services for churches" (150 vol, KD 12)
-- "best church streaming software" (100 vol, KD 2)
-- "church live stream software" (100 vol, KD 1)
+# PROJECT 1 — Main SplitCam site (`/splitcam/`)
 
-**Why we can win:** vMix dominates this cluster (paid $60-1200) but we're free. Main page already features "For Churches" use case + multistream page has church use case.
+Marketing site for SplitCam — free streaming / virtual-camera software. Static HTML/CSS/JS.
+Destined to replace the redesign of the real **splitcam.com** (see `seo/MIGRATION.md`).
 
-**Content to build (model after /for/youtubers/):**
-- Hero: "Live stream Sunday service to Facebook + YouTube — free"
-- Sunday service workflow (multi-camera setup)
-- Lower-thirds for speakers
-- Song lyrics overlay (Browser Source)
-- Multistream FB + YouTube + church website RTMP simultaneously
-- Comparison: SplitCam (free) vs vMix ($60-1200) vs ProPresenter
-- FAQ + Schema.org HowTo + FAQPage
-- Cross-link `/multistreaming/`, `/alternatives/vmix/` (future), `/for/youtubers/`
+## Pages deployed (8)
+| Path | Note |
+|---|---|
+| `/` | Main landing (Variant A) |
+| `/v2/` | Main landing Variant B — A/B variant, **pick A or B before going to splitcam.com** |
+| `/virtual-camera/` | Feature page |
+| `/multistreaming/` | Feature page |
+| `/products/` | Products hub — Windows/Mac/iOS/Android + SplitCam Remote |
+| `/for/youtubers/` | SEO Wave 1 — "how to live stream on youtube" |
+| `/for/churches/` | SEO Wave 1 — "church streaming software" |
+| `/alternatives/obs/` | SEO Wave 1 — "obs alternative" |
 
-### Wave 1 Page 3 — TODO: `/alternatives/obs/`
-**Target keywords (~1,130 vol total, KD 0):**
-- "obs alternative" (500 vol, KD 0)
-- "obs studio alternative" (200 vol, KD 0)
-- "obs alternatives" (200 vol, KD 0)
-- "obs alternative mac" (80 vol, KD 0)
-- "alternatives to obs" (150 vol, KD 0)
+## SEO status
+- **Wave 1 — DONE** ✅ (youtubers, churches, obs — all built & live).
+- **Wave 2 — pending (~2026-06-10):** `/alternatives/` hub, `/for/` hub, `/alternatives/{restream,streamyard,streamlabs}/`, `/for/vtubers/`.
+- **Wave 3 — later:** remaining alternatives + `/for/{streamers,educators}/`.
+- Full plan: `seo/PLAN.md`. Recommended IA: `seo/SITEMAP.md`.
+- **Schedule & follow-ups: `seo/REMINDERS.md`** — open it in any SEO chat (indexing checks, ranking checks, wave launches with dates). Do NOT use `CronCreate` — it doesn't persist.
 
-**Why we can win:** Meld Studio currently captures this (pos 2-3) with KD 0 — open field. We have legit answers: built-in virtual camera (vs needs plugin in OBS), AI background (vs needs plugin), one-click multistream (vs Multiple RTMP Outputs plugin), OBS Project Import feature.
+## Migration to live splitcam.com
+`seo/MIGRATION.md` — only the homepage `/` is a true same-URL replacement; everything else is new URLs. `seo/REDIRECTS.md` — 301 strategy + per-page weights from Ahrefs. Open decisions: homepage A vs B, RU/ES locales.
 
-**Content to build (comparison-focused):**
-- Hero: "The free SplitCam alternative to OBS Studio"
-- Why people search for OBS alternative (CPU load, learning curve, plugin maintenance, no mobile)
-- SplitCam advantages: simpler UI, built-in features, mobile apps, OBS Project Import
-- Honest where OBS is better: open source, bigger plugin ecosystem
-- Comparison table (already drafted on /for/youtubers/ — reuse)
-- Schema.org: ItemList comparison + FAQPage
-- Cross-link `/for/youtubers/`, `/for/churches/`, `/multistreaming/`
+## Critical design rules
+1. Brand logos stored LOCALLY in `/virtual-camera/assets/logos/` — no external CDN refs.
+2. SplitCam logo PNG at `/assets/splitcam.png` — used via `<img>`, not base64.
+3. No "Restream server" / "cloud middleman" wording — SplitCam is **peer-to-peer direct**.
+4. iOS belongs in the platforms list (Win · macOS · iOS · Android).
+5. Skype is DEAD (Microsoft retired it May 2025) — never mention as a live product.
+6. CNET 4.5/357 rating is UNVERIFIED — still in Schema.org/Hero; user hasn't decided to remove. Real ratings: Softonic 4.7, UpdateStar 4.0, G2.
+7. LIVE badges blink (badge opacity + red dot pulse).
+8. Current version is **v10.9.2** — used site-wide. No installer size shown ("~85 MB" was removed as unverified).
 
-## Critical design rules (from extensive iteration with user)
-
-1. **All brand logos stored LOCALLY** in `/virtual-camera/assets/logos/` — Simple Icons CDN versions downloaded + 3 manually crafted (microsoftteams, slack, bluejeansnetwork — removed from Simple Icons per brand owner requests). No external CDN refs in HTML.
-2. **SplitCam logo PNG at `/assets/splitcam.png`** — used via `<img src="..">` not base64 (extracted from inline earlier).
-3. **No "Restream server" / "cloud middleman"** wording on multistream page — SplitCam is **peer-to-peer direct**. Triple-checked, all references fixed.
-4. **iOS belongs in platforms list** (Win · macOS · iOS · Android).
-5. **Skype is DEAD** (Microsoft retired May 2025) — never mention as live product.
-6. **CNET 4.5/357 rating UNVERIFIED** — couldn't find on web search. Still referenced in Schema.org/Hero — user hasn't decided to remove. Real ratings exist on Softonic 4.7, UpdateStar 4.0, G2.
-7. **LIVE badges should blink** wherever they appear (badge opacity + red dot pulse).
-8. **What's New section** verified — all 6 features REAL (v10.8.50 changelog, May 2025).
-
-## Key UI conventions
-- Dark theme: `--app-base: #141420`, accent `--blue: #2878fc`, purple `--purple: #9c5bff`
-- Font: Geist (Google Fonts), Geist Mono for code/labels
-- Each page has favicon set linked (favicon.ico + various .png + apple-touch-icon + site.webmanifest)
-- Hero pattern: eyebrow chip + h1 + sub + CTA + trust badges + visual on right
-- Schema.org always included: at minimum BreadcrumbList + SoftwareApplication; bigger pages add HowTo + FAQPage
-
-## /for/youtubers/ structural template (use for next pages)
-```
-NAV (fixed top, same on all pages)
-BREADCRUMBS
-HERO (eyebrow / h1 / sub / 2 CTA / 4 trust badges)
-QUICK ANSWER box (rich snippet bait)
-STEP-BY-STEP guide (5 numbered steps with time + pro tips)
-BONUS callout box (with cross-link)
-PRO TIPS grid (6 cards)
-COMPARISON TABLE
-FAQ (8 Q&A in Schema.org FAQPage)
-RELATED cards (3 cross-links)
-CTA block
-FOOTER
-```
+## UI conventions
+- Dark theme: `--app-base:#141420`, `--blue:#2878fc`, `--purple:#9c5bff`. Font: Geist.
+- Nav (7 pages): Products · Virtual Camera · Multistreaming · What's New · Help. `/v2/` has its own nav.
+- Each page: favicon set + Schema.org (≥ BreadcrumbList + SoftwareApplication; bigger pages add HowTo + FAQPage).
+- `/for/youtubers/` is the structural template for SEO pages: NAV / BREADCRUMBS / HERO / QUICK ANSWER / STEP-BY-STEP / BONUS / PRO TIPS / COMPARISON / FAQ / RELATED / CTA / FOOTER.
 
 ## /seo/ folder
+- `ahrefs.py` — domain + keyword collector · `pages.py` — per-URL weight · `domains.py` — domain weight checker
+- `PLAN.md` (master plan) · `SITEMAP.md` · `MIGRATION.md` · `REDIRECTS.md` · `REMINDERS.md`
+- `reports/` — 3 analysis reports · `data/*.json` — raw Ahrefs output (gitignored)
+- Ahrefs: set `AHREFS_TOKEN` env var. **The token shared in chat must be regenerated — it was exposed.** Lite plan, 100k units/mo.
 
-- `seo/ahrefs.py` — Ahrefs API collector (uses env var AHREFS_TOKEN)
-- `seo/targets.txt` — 8 competitor domains analyzed
-- `seo/keywords.txt` — 88 keywords researched
-- `seo/data/*.json` — raw API results (gitignored — they contain live data)
-- `seo/reports/` — 3 markdown analysis reports
-- `seo/PLAN.md` — **MASTER PLAN with timeline + Wave 1/2/3**
+---
 
-**Ahrefs token** — user provided earlier this session. Token is `mpjnDpu-L5mjYW04-nzbQUCsaaF3N6q8P_Y4JCXs` (Lite plan, 100k units/mo, used ~6k). To run:
-```bash
-cd seo && AHREFS_TOKEN='mpjnDpu-L5mjYW04-nzbQUCsaaF3N6q8P_Y4JCXs' python3 ahrefs.py
-```
-**Security note:** Token shared in chat. User should regenerate after sessions end.
+# PROJECT 2 — cam-streaming-guides (`/cam-streaming-guides/`)
 
-## SEO Roadmap (from /seo/PLAN.md)
+Adult-cam how-to guides ("how to stream on <platform> with SplitCam"). Built to move the
+adult-cam content OFF splitcam.com onto a separate neutral domain (brand-cleanup decision —
+adult = revenue, so it gets its own domain + 301s, not deletion).
 
-**WAVE 1** (this session, in progress): 3 pages
-- ✅ `/for/youtubers/` — 2,700 vol, KD 6
-- ⏳ `/for/churches/` — 580 vol, KD <12 ← NEXT
-- ⏳ `/alternatives/obs/` — 1,130 vol, KD 0 ← AFTER CHURCHES
+## State
+- **60 pages**: 19 platforms × EN/RU/ES + 3 language hubs.
+- Built by a **static generator**: `build.py` + `platforms_en.py` / `platforms_ru.py` / `platforms_es.py`. Edit data → rerun `python3 build.py`.
+- Each page: hero with platform×SplitCam collab logo (variant C, animated), quick answer, YouTube video guide, 5 steps, tips, FAQ, full Schema.org, EN/RU/ES switcher.
+- All pages `noindex` — it's staging.
+- `INVENTORY.md` (73 source adult pages on splitcam.com), `REDIRECTS.md` (301 map, `NEWDOMAIN.com` placeholder).
+- Asset slots: `logos/<slug>.svg` (platform logos) and `shots/<slug>-<n>.png` (screenshots) — drop files, rerun build.
 
-**WAVE 2** (week 3+): 6 pages
-- `/alternatives/` hub + `/for/` hub
-- `/alternatives/restream/`, `/alternatives/streamyard/`, `/alternatives/streamlabs/`
-- `/for/vtubers/` (target: "how to be a vtuber" — 500 vol, KD 0)
+## Pending for launch
+- Register a neutral adult domain → replace `NEWDOMAIN.com` everywhere, connect domain, remove `noindex`.
+- Apply the `.htaccess` 301 block on splitcam.com **after** the new site is live.
+- Optional: official platform logos into `logos/`, screenshots into `shots/`, Android SplitCam Remote link.
 
-**WAVE 3** (month 2+): remaining alternatives + 2 more personas (streamers, educators)
+## Multi-language rule
+Any content added/changed in one language must be replicated to all locales (EN/RU/ES) — keep `platforms_*.py` in sync.
 
-**SKIP:** podcasters/musicians/business (volume too low per Ahrefs)
+---
 
-## 🔔 SEO follow-up reminders → `seo/REMINDERS.md`
-
-Durable schedule lives in [`seo/REMINDERS.md`](seo/REMINDERS.md) (in this repo, travels with the project to any Mac/account). Open that file at the start of any SEO chat — it has the full task list with absolute dates, what to do for each, and a status column to mark things done.
-
-**Do NOT** use `CronCreate` for these — it claims `durable: true` but writes nothing to disk; reminders set that way die with the chat session (confirmed 2026-05-20). iCloud Calendar (paired with the file above) is the right place for pings.
-
-## Recent commit history (most recent first)
-```
-a8b9097 SEO Wave 1: launch /for/youtubers/ (2700 vol, KD 6)
-33da10f SEO: extended keyword research + final PLAN.md
-6d951e9 SEO: vMix analysis — Church cluster found
-7056b1f SEO: Meld Studio analysis — OBS alternative cluster
-031682b SEO infrastructure (ahrefs.py + first analysis)
-7814498 Performance: extract base64 logo to /assets/splitcam.png
-7aaa2b7 Multi-section honesty pass (Platforms+Tabs+Footer+Testimonials)
-87372c1 What's New verified v10.8 + accuracy fixes
-9eb5280 Main FAQ #4 fix (peer-to-peer instead of restream server)
-```
-
-## How to deploy
-- **Local preview:** `file:///Users/splitcam/Desktop/splitcam/index.html`
-- **Push:** `cd /Users/splitcam/Desktop/splitcam && git add . && git commit -m "..." && git push origin main`
-- GitHub Pages auto-deploys in 30-90 sec
-- **Revert:** `git revert HEAD --no-edit && git push`
+## Domain portfolio (all owned by the user)
+| Domain | DR | Note |
+|---|---|---|
+| splitcam.com | 55 | main site — the authority anchor |
+| multi-stream.io | 14 | live, ranks for "free multistreaming" — possible cannibalization with `/multistreaming/` |
+| splitstream.com | 4 | live, weak — candidate to 301 → splitcam.com |
+| split.cam | 0 | dormant, clean brand domain — reserve / short links |
+| (adult) | — | new neutral domain still to register |
 
 ## Communication style with user
-- Russian (mostly) + English code/labels
-- Concise answers with concrete next steps
-- Show before/after for visual changes
-- Commit individually so revert is easy
-- Live URL + local file URL both shared after pushes
-- User likes to make decisions on direction — present 2-3 options when in doubt
-- User prefers building real things over planning forever — execute mode preferred
+- Russian (mostly) + English code/labels. Concise, concrete next steps.
+- Show before/after for visual changes. Commit individually so revert is easy.
+- Share live URL after pushes; remind about `Cmd+Shift+R` (browser cache).
+- User makes the calls — present 2-3 options when in doubt. Execute mode preferred over endless planning.
 
-## What's been done in this session (May 2026)
+## How to deploy (either repo)
+```bash
+cd "/Users/splitcam/Documents/Дизайны/SplitCam/SPLITCAM DEV./<repo>"
+git add . && git commit -m "..." && git push origin main
+```
+Revert: `git revert HEAD --no-edit && git push`.
 
-1. ✅ Main page hero polish (CNET rating chip, 3 trust badges)
-2. ✅ Spotlights synced with sub-pages (LIVE badges, peer-to-peer wording)
-3. ✅ FAQ peer-to-peer fix
-4. ✅ "What's New" verified — all real v10.8 features
-5. ✅ Platforms strip + Tab + Footer fixes
-6. ✅ Testimonials honest (real review platforms instead of fake CNET names)
-7. ✅ Cross-page nav consistency (added "What's New" to sub-page navs)
-8. ✅ Performance: base64 logo → /assets/splitcam.png (saved 30KB)
-9. ✅ Ahrefs API integration + 3 analysis reports + master plan
-10. ✅ SEO Wave 1 page 1: /for/youtubers/
-
-## What user wants NEXT (start with this in new chat)
-
-> **Continue SEO Wave 1.** Build remaining 2 pages:
-> 1. `/for/churches/` — target "church streaming software" cluster (580 vol, KD 2-12)
-> 2. `/alternatives/obs/` — target "obs alternative" cluster (1130 vol, KD 0)
->
-> Model after `/for/youtubers/` (already deployed). Schema.org HowTo + FAQPage, comparison tables, cross-links. ~1500+ words each. Real content, not thin SEO bait.
->
-> After both pages: commit + push. Schedule lives in [`seo/REMINDERS.md`](seo/REMINDERS.md) — no need to set cron reminders (they don't persist).
+## Recent commits — main splitcam repo (most recent first)
+```
+7a14118 SEO: add domain weight checker (seo/domains.py)
+a0f1a9d SEO: per-page weight collector + redirect strategy
+ba62fbe SEO: add live-site migration plan (seo/MIGRATION.md)
+8de62db SEO: add recommended sitemap + interlinking map (seo/SITEMAP.md)
+7ed026b Update version to v10.9.2 site-wide; remove ~85 MB; add Products to nav
+5c6f138 Add /products/ hub page
+91c575a SEO Wave 1 page 3: /alternatives/obs/
+20d2c7c SEO Wave 1 page 2: /for/churches/
+```
+(cam-streaming-guides repo has its own history — full adult-guides build.)
