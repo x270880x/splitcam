@@ -13,3 +13,6 @@ vmix.com
 # Virtual camera niche:
 manycam.com
 reincubate.com
+
+# Brand-adjacent domains to investigate:
+splitcamera.com
