@@ -61,7 +61,7 @@ When a task is done, change `⏳ pending` → `✅ YYYY-MM-DD done` so future-yo
 
 **Re-run Ahrefs** to see total keyword count change vs baseline:
 ```bash
-cd /Users/splitcam/Desktop/splitcam/seo
+cd "/Users/splitcam/Documents/Дизайны/SplitCam/SPLITCAM DEV./splitcam/seo"
 AHREFS_TOKEN='<token from ONBOARDING.md — REGENERATE FIRST>' python3 ahrefs.py
 ```
 Compare result to baseline reports in `seo/reports/`.
@@ -106,7 +106,7 @@ Compare result to baseline reports in `seo/reports/`.
 
 **Ahrefs (re-run):**
 ```bash
-cd /Users/splitcam/Desktop/splitcam/seo
+cd "/Users/splitcam/Documents/Дизайны/SplitCam/SPLITCAM DEV./splitcam/seo"
 AHREFS_TOKEN='<token — REGENERATE FIRST>' python3 ahrefs.py
 ```
 Compare DR / ranked keyword count / traffic estimate vs baseline in `seo/reports/`.
