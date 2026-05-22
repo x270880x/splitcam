@@ -116,6 +116,22 @@ meta), verify all four before committing:
   one name everywhere. Check neighbouring untouched text still agrees with the
   edit.
 
+## Mobile check — run after ANY layout or content change
+
+The site is mobile-first traffic. After any edit to markup, CSS, or copy,
+verify the mobile rendering before committing — never assume it's fine:
+
+- Render every affected page in a headless browser at a **~390px viewport**
+  (`puppeteer-core` + the system Chrome works; no Chromium download needed).
+- Confirm **no horizontal body scroll** — `document.documentElement.scrollWidth`
+  must equal `window.innerWidth`. Any excess means something overflows.
+- Confirm nothing runs off-screen, blocks are aligned, padding is even, text is
+  readable, and the page looks tidy — not just "no errors".
+- Wide elements (tables, code blocks, media) must scroll inside their own
+  container, never push the page wider.
+- Re-check **desktop (~1440px)** too, so the mobile fix didn't regress it.
+- Save proof screenshots to `seo/screenshots/` and actually open them to look.
+
 ## Working with the user
 
 Russian (mostly) + English code/labels. Concise, concrete next steps. Show
