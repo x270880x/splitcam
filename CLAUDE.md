@@ -37,6 +37,13 @@ Pages (7 public + 1 archived):
 SEO page template (from `/for/youtubers/`): NAV / BREADCRUMBS / HERO / QUICK
 ANSWER / STEP-BY-STEP / BONUS / PRO TIPS / COMPARISON / FAQ / RELATED / CTA / FOOTER.
 
+**SEO pages get unique body text.** The template (section order, CSS, nav,
+footer) is shared, but the *prose* is not — never copy-paste step-by-step blocks
+or feature blurbs between `/for/` and `/alternatives/` pages. Each page gets its
+own examples, step ordering and audience framing (creator workflow vs church AV
+team vs OBS migration, etc.). Near-duplicate body text triggers keyword
+cannibalization. Audit with `seo/PAGE-SIMILARITY.md` after adding pages.
+
 ## Deploy
 
 GitHub Pages, repo `x270880x/splitcam`, staging at

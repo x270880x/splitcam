@@ -309,19 +309,19 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <div class="step-h">Download SplitCam <span class="step-time">~ 1 min</span></div>
-        <p class="step-p">SplitCam is a free live streaming studio with built-in YouTube integration. The installer downloads in seconds and runs on Windows 10/11, macOS 11+, iOS 13+ and Android 8+. No signup, no card, no time limit.</p>
-        <div class="step-tip"><b>Why SplitCam?</b> Unlike OBS, SplitCam ships with YouTube pre-configured (no manual encoder config), built-in AI background removal (no green screen), and a Replay Source for instant highlights. Plus it imports OBS scene collections in one click — you don't lose your existing setup.</div>
+        <div class="step-h">Grab SplitCam <span class="step-time">~ 1 min</span></div>
+        <p class="step-p">SplitCam is a free broadcasting studio that already knows how to talk to YouTube — the RTMP endpoint is a saved preset, not something you type by hand. The installer is light and runs on Windows 10/11, macOS 11+, iOS 13+ and Android 8+. There's no account to create, no card, no time limit.</p>
+        <div class="step-tip"><b>Why this beats a bare encoder:</b> the YouTube preset skips manual stream config, a Replay Source clips your last highlight on a hotkey, and background swapping runs on-device with no green screen. A solo creator can produce a tidy broadcast without a second pair of hands.</div>
       </div>
     </div>
 
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-body">
-        <div class="step-h">Build your scene <span class="step-time">~ 2 min</span></div>
-        <p class="step-p">Open SplitCam. In the source library, pick what you want viewers to see: <strong style="color:var(--text)">Webcam</strong>, <strong style="color:var(--text)">Game Capture</strong> (DirectX/OpenGL), <strong style="color:var(--text)">Screen Capture</strong>, <strong style="color:var(--text)">Browser Source</strong>, video files, images, even your phone as a wireless second camera.</p>
-        <p class="step-p">Drag layers in the scene, resize, position. Build as many scenes as you want — switch between them mid-stream with hotkeys (Scene 1 = F1, etc.) or with cinematic transitions (Fade / Luma Wipe / Slide).</p>
-        <div class="step-tip"><b>Pro tip:</b> Add a Browser Source pointing at <code class="step-code">streamlabs.com/widgets/alertbox</code> or a similar overlay service to get live chat alerts, follower notifications and donation popups on your YouTube stream.</div>
+        <div class="step-h">Lay out what viewers see <span class="step-time">~ 2 min</span></div>
+        <p class="step-p">Open SplitCam and pull sources onto the canvas: your <strong style="color:var(--text)">webcam</strong> for the talking-head shot, <strong style="color:var(--text)">Game Capture</strong> for DirectX/OpenGL titles, <strong style="color:var(--text)">Screen Capture</strong> for tutorials and reactions, a <strong style="color:var(--text)">Browser Source</strong> for overlays, plus images, clips, or a second angle streamed from your phone over Wi-Fi.</p>
+        <p class="step-p">Stack and size those layers into a handful of named scenes — Intro, Main, Just Chatting, BRB — and bind each to a hotkey (F1, F2…). Mid-stream you cut between them instantly, or roll a Fade / Luma Wipe / Slide transition when you want a more produced look.</p>
+        <div class="step-tip"><b>Creator tip:</b> aim a Browser Source at your alert widget — follower pop-ups, Super Chat callouts, sub-goal bars. On-stream engagement stays visible to viewers without a separate alert app eating resources.</div>
       </div>
     </div>
 
@@ -340,7 +340,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="step-body">
         <div class="step-h">Connect SplitCam to YouTube <span class="step-time">~ 1 min</span></div>
         <p class="step-p">In SplitCam, open <strong style="color:var(--text)">Stream Settings</strong> → select <strong style="color:var(--text)">YouTube</strong> (pre-configured). Paste your stream key into the field. Click Test connection — green check means you're connected.</p>
-        <p class="step-p">Set the encoder: <strong style="color:var(--text)">NVENC</strong> (Nvidia GPU), <strong style="color:var(--text)">QuickSync</strong> (Intel), or <strong style="color:var(--text)">AMF</strong> (AMD) — SplitCam auto-detects what your machine supports. Bitrate guidelines below:</p>
+        <p class="step-p">You don't choose an encoder by hand — SplitCam reads your hardware at launch and routes encoding to whatever silicon you have: <strong style="color:var(--text)">NVENC</strong> on an Nvidia card, <strong style="color:var(--text)">QuickSync</strong> on an Intel chip, <strong style="color:var(--text)">AMF</strong> on AMD. Your processor stays free for the game itself. Bitrate guidelines below:</p>
         <table class="compare-table" style="margin-top:14px">
           <thead><tr><th>Resolution</th><th>Frame rate</th><th>Bitrate</th></tr></thead>
           <tbody>
@@ -398,8 +398,8 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <p class="tip-card-p">SplitCam's Replay Source captures the last 5-10 sec of your scene on a hotkey. Use it for instant slow-mo or to re-show a great gameplay moment.</p>
     </div>
     <div class="tip-card">
-      <div class="tip-card-h"><span class="ico">📊</span> Watch the SplitCam health monitor</div>
-      <p class="tip-card-p">The status bar shows dropped frames, encoder load and bitrate in real time. If you see red — lower bitrate or check upload. Don't let it run.</p>
+      <div class="tip-card-h"><span class="ico">📊</span> Keep an eye on the live stats</div>
+      <p class="tip-card-p">SplitCam's readout tracks encoder load, frame drops and throughput as you broadcast. The moment it flags trouble, ease the quality down — a slightly softer 1080p beats a stuttering one.</p>
     </div>
     <div class="tip-card">
       <div class="tip-card-h"><span class="ico">🎬</span> Use scenes, not just one camera</div>
@@ -455,7 +455,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </details>
     <details class="faq-item">
       <summary>Do I need OBS or can SplitCam replace it?</summary>
-      <p>SplitCam replaces OBS for most use cases. SplitCam has built-in virtual camera, AI background removal, multistreaming and OBS Project Import (you can bring your existing OBS scenes in one click). For most YouTubers, SplitCam is faster to set up and use.</p>
+      <p>For most YouTube creators, SplitCam covers the job on its own — virtual camera, AI background, multistreaming and scene switching are all native, and it can read an exported OBS scene collection if you've already built one. Power users who depend on a specific OBS plugin may still prefer OBS.</p>
     </details>
     <details class="faq-item">
       <summary>Will SplitCam slow down my game?</summary>
@@ -467,7 +467,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </details>
     <details class="faq-item">
       <summary>How long does it take to set up YouTube live streaming?</summary>
-      <p>About 5 minutes for first-time setup. After that, going live is one click. Steps: install SplitCam, add camera, paste YouTube stream key, click Go Live.</p>
+      <p>Plan on roughly 5 minutes the first time — install SplitCam, add a camera, paste your YouTube stream key. Once those are saved, later broadcasts are near-instant: open the app, hit Go Live, confirm in YouTube Studio.</p>
     </details>
   </div>
 </section>

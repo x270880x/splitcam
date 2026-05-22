@@ -1,16 +1,14 @@
 # Page Similarity Report — duplicate / similar content audit
 
-*Generated 2026-05-22. Method below. Re-run anytime the pages change.*
+*Updated 2026-05-22 after the SEO-page uniqueness rewrite. Method below.*
 
 ## Method
 
 - Visible text only — HTML stripped, `<script>/<style>/<svg>` dropped.
-- Shared **`<nav>` / `<header>` / `<footer>`** excluded (boilerplate); 4-word
-  shingles repeated across ≥ half the pages also flagged as template and removed
-  from the literal-overlap count.
+- Shared **`<nav>` / `<header>` / `<footer>`** excluded as boilerplate.
 - Two metrics per pair:
   - **Cosine** — TF-IDF cosine over unigrams + bigrams = *thematic* similarity
-    (do the pages talk about the same things / target the same keywords).
+    (do the pages target the same keywords / talk about the same things).
   - **Phrase** — 4-word shingle Jaccard = *literal* text duplication (verbatim
     sentences copied between pages).
 - "Closest neighbour" is ranked by cosine.
@@ -19,51 +17,63 @@
 
 | Page | Closest neighbour | Cosine | Phrase | Comment |
 |---|---|---:|---:|---|
-| `/v2/` | `/` | 23.2% | 3.9% | `/v2/` is the archived Variant B of the homepage — shares hero + feature copy ("0.3 fps impact", "across Zoom and YouTube", "no cloud middleman", "commercial use, no watermark"). **No SEO risk:** `/v2/` is `noindex` and unlinked. |
-| `/` | `/v2/` | 23.2% | 3.9% | Same pair. Against indexable pages the homepage's real closest is `/for/youtubers/` (21.6%). |
-| `/for/youtubers/` | `/` | 21.6% | 2.2% | SEO page reuses homepage feature copy — platform list ("Windows 10/11 · macOS 11 · iOS"), "background removal, no green screen", "commercial use, no watermark". Different search intent (brand landing vs how-to query) → low cannibalization risk. |
-| `/for/churches/` | `/for/youtubers/` | 20.6% | 2.6% | **Highest same-type overlap.** Both Wave-1 SEO pages on the same template; share near-identical step-by-step text ("add a browser source", "wireless second camera", "AI background removal built in", "bitrate in real time"). Target queries differ ("church streaming software" vs "live stream on youtube") → moderate risk; keep the how-to steps phrased uniquely per page. |
-| `/alternatives/obs/` | `/for/youtubers/` | 20.6% | 2.5% | Same as above — shared SEO-template step-by-step + feature blurbs. OBS page adds its own comparison/encoder content, so net unique content is high. Moderate-low risk. |
-| `/multistreaming/` | `/` | 19.3% | 2.2% | Homepage's multistreaming section summarizes this feature page — shared bitrate math ("2.5 Mbps", "84 other platforms", "no cloud middleman"). By design; keep `/multistreaming/` canonical for multistreaming keywords. |
-| `/virtual-camera/` | `/` | 18.4% | 1.4% | Homepage's virtual-camera section summarizes this feature page — shared copy ("virtual webcam in Zoom/Teams", "beauty effects / skin smoother", "16:9 and landscape"). By design; low risk. |
-| `/products/` | `/` | 13.0% | 0.2% | Only one shared phrase ("no green screen needed"). Products hub is short (703 words) and almost entirely unique download-hub content. Negligible risk. |
+| `/v2/` | `/` | 23.2% | 3.9% | `/v2/` is the archived Variant B of the homepage — shares hero + feature copy. **No SEO risk:** `/v2/` is `noindex` and unlinked. |
+| `/` | `/v2/` | 23.2% | 3.9% | Same pair. Against indexable pages the homepage's real closest is `/for/youtubers/` (19.8%). |
+| `/multistreaming/` | `/` | 19.3% | 2.2% | Homepage's multistreaming section summarizes this feature page. By design; keep `/multistreaming/` canonical for multistreaming keywords. |
+| `/alternatives/obs/` | `/for/youtubers/` | 19.2% | 1.9% | Both discuss SplitCam-vs-OBS. Residual overlap is the OBS feature-comparison table + OBS FAQ that the YouTubers page also carries. Distinct target queries → low risk. See follow-up note below. |
+| `/for/youtubers/` | `/` | 19.8% | 2.0% | SEO page shares feature vocabulary with the homepage. Different search intent (brand landing vs how-to query) → low cannibalization risk. |
+| `/for/churches/` | `/for/youtubers/` | 18.5% | 1.8% | The two how-to guides. After the rewrite they share only generic product vocabulary — step text, examples and audience framing now differ (creator workflow vs volunteer AV team). Low risk. |
+| `/virtual-camera/` | `/` | 18.4% | 1.4% | Homepage's virtual-camera section summarizes this feature page. By design; low risk. |
+| `/products/` | `/` | 13.1% | 0.2% | Products hub is short and almost entirely unique download-hub content. Negligible risk. |
+
+## SEO-page trio — before vs after the uniqueness rewrite
+
+| Pair | Cosine before | Cosine after | Phrase before | Phrase after |
+|---|---:|---:|---:|---:|
+| `/for/youtubers/` ↔ `/for/churches/` | 20.6% | **18.5%** | 2.6% | **1.8%** |
+| `/for/youtubers/` ↔ `/alternatives/obs/` | 20.6% | **19.2%** | 2.5% | **1.9%** |
+| `/for/churches/` ↔ `/alternatives/obs/` | 14.0% | **13.8%** | 0.6% | **0.6%** |
+
+What changed: the step-by-step blocks and repeated feature blurbs were rewritten
+per audience — YouTuber creator workflow, church volunteer AV team, OBS-migration
+comparison. Verbatim phrases that recurred across pages ("phone as a wireless
+second camera", "add a Browser Source pointing at…", "status bar shows dropped
+frames… bitrate in real time", "after that, going live is one click") were
+reworded uniquely on each page.
 
 ## Content size (visible words, content area only)
 
 | Page | Words |
 |---|---:|
-| `/alternatives/obs/` | 2049 |
-| `/for/churches/` | 2032 |
+| `/for/churches/` | 2059 |
+| `/alternatives/obs/` | 2051 |
 | `/` | 1940 |
 | `/multistreaming/` | 1701 |
-| `/for/youtubers/` | 1545 |
+| `/for/youtubers/` | 1644 |
 | `/virtual-camera/` | 1379 |
 | `/v2/` | 835 |
 | `/products/` | 703 |
 
 ## Verdict — cannibalization risk
 
-**Overall: healthy.** No two indexable pages are near-duplicates — peak thematic
-similarity is 23% and peak literal-phrase overlap 3.9%. For static marketing
-pages this is well within safe range.
+**Healthy.** No two indexable pages are near-duplicates. Peak indexable cosine is
+19.8% and peak literal-phrase overlap 2.2% — well within safe range.
 
-Pairs worth watching:
+The SEO-page trio is no longer the standout cluster: its literal-phrase overlap
+is now below 2% and thematic similarity sits in the 14–19% band, the same band
+as the homepage-vs-feature-page pairs.
 
-1. **The three SEO pages with each other** — `/for/youtubers/`, `/for/churches/`,
-   `/alternatives/obs/` cluster at ~20% cosine and ~2.5% phrase because they
-   share the SEO template's step-by-step block almost verbatim. They target
-   distinct queries, so this is the *only* genuine (moderate-low) cannibalization
-   group. Recommendation: as new `/for/` and `/alternatives/` pages ship in
-   Wave 2, rewrite the how-to steps per page rather than copy-pasting — otherwise
-   the cluster's literal overlap grows. (Commit `7b0705d` already started this.)
+### Follow-up (not blocking)
 
-2. **Homepage vs feature pages** (`/multistreaming/`, `/virtual-camera/`) — the
-   homepage intentionally summarizes the feature pages. Not a risk as long as the
-   feature page stays the canonical target for its keyword; the homepage should
-   rank for brand/generic terms only.
+`/for/youtubers/` ↔ `/alternatives/obs/` stays at 19.2% because the YouTubers
+page carries its own full "SplitCam vs OBS" feature-comparison table plus several
+OBS-specific FAQ entries — content that structurally mirrors the dedicated
+`/alternatives/obs/` page. If this pair needs to drop further, trim the YouTubers
+comparison table to a short callout that links to `/alternatives/obs/` for the
+full breakdown. Optional; current risk is low.
 
-3. **`/` ↔ `/v2/`** — the largest raw number (23.2% / 3.9%) but *not* a risk:
-   `/v2/` is `noindex` and unlinked. It never reaches splitcam.com. If it ever
-   were exposed, it would be a true near-duplicate of the homepage.
+### Rule going forward
 
-No action required before Wave 2; just keep SEO-page step text unique per page.
+New `/for/` and `/alternatives/` pages must be written with unique body text —
+no copy-pasting step blocks or feature blurbs between pages. Each page gets its
+own examples, ordering and audience framing. (Recorded in `CLAUDE.md`.)
