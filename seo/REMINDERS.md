@@ -8,12 +8,25 @@
 
 | Do by | Status | Task | What to do |
 |---|---|---|---|
+| **2026-05-25** | ⏳ pending | SplitCam Android — Play Store approval check | See section below |
 | **2026-05-27** | ⏳ pending | Week 1 indexing check | See section below |
 | **2026-06-03** | ⏳ pending | Week 2 ranking check | See section below |
 | **2026-06-10** | ⏳ pending | Wave 2 launch (6 pages) | See section below |
 | **2026-06-19** | ⏳ pending | Month 1 full review | See section below |
 
 When a task is done, change `⏳ pending` → `✅ YYYY-MM-DD done` so future-you/Claude can skip it.
+
+---
+
+## 2026-05-25 — SplitCam Android: Play Store approval check
+
+**Context:** As of 2026-05-22 the SplitCam Android app is still pending Google Play review. Because of that, the Android / Google Play store buttons in the SplitCam Remote section on `/products/` are shown as a disabled "Coming soon" state (the iOS Remote button too — no confirmed live store URL yet).
+
+**What to do:**
+- Check Google Play for the SplitCam Android build: search the store, or try `https://play.google.com/store/apps/details?id=com.splitcam`.
+- If approved & live: in `products/index.html`, swap the "Coming soon" Android/Google Play button back to a real `<a href="...">` with the live Play Store URL.
+- Also ask the user for the iOS SplitCam Remote App Store URL if that app is live, and restore that button too.
+- If still pending: leave as "Coming soon" and re-check in a few days.
 
 ---
 
