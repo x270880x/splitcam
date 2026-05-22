@@ -139,7 +139,10 @@ nav {
 .pill { display: inline-flex; align-items: center; gap: 9px; padding: 5px 13px 5px 10px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.35); border-radius: 20px; }
 .rating-chip { display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px; background: rgba(255,255,255,.03); border: 1px solid var(--app-border); border-radius: 99px; transition: background .18s, border-color .18s; }
 .rating-chip:hover { background: rgba(255,255,255,.06); border-color: var(--app-border2); }
-.rating-chip .stars { color: #FFB400; font-size: 11px; letter-spacing: 1.5px; text-shadow: 0 0 8px rgba(255,180,0,.35); }
+.rating-chip .stars { position: relative; display: inline-block; font-size: 11px; line-height: 1; color: #46465c; }
+.rating-chip .stars::before { content: "★★★★★"; }
+.rating-chip .stars-on { position: absolute; left: 0; top: 0; width: 92%; overflow: hidden; white-space: nowrap; color: #FFB400; text-shadow: 0 0 8px rgba(255,180,0,.35); }
+.rating-chip .stars-on::before { content: "★★★★★"; }
 .rating-chip .rating-text { font-size: 11.5px; color: var(--text-sub); font-weight: 500; letter-spacing: .2px; }
 .rating-chip .rating-text strong { color: var(--text); font-weight: 700; }
 .pill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); position: relative; box-shadow: 0 0 8px rgba(46,204,113,.7); }
@@ -591,7 +594,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <div>
       <div class="hero-meta">
         <div class="pill"><div class="pill-dot"></div><span class="pill-text">Live Multi-Streaming Studio</span></div>
-        <span class="rating-chip"><span class="stars">★★★★½</span><span class="rating-text"><strong>4.5</strong> · CNET · 357 reviews</span></span>
+        <span class="rating-chip"><span class="stars" aria-label="4.5 out of 5 stars"><span class="stars-on"></span></span><span class="rating-text"><strong>4.5</strong> · CNET · 357 reviews</span></span>
       </div>
       <h1 class="hero-title"><span class="h1-promise">Go live everywhere.</span><br>Your free <span class="blue">streaming studio</span><br>for <span class="hero-cyc" data-cyc></span></h1>
       <p class="hero-desc"><strong style="color:var(--text);font-weight:600">Mix scenes, switch sources, broadcast live</strong> to Twitch, YouTube, Facebook, Kick + more — all from one desktop app. Free forever, no watermark.</p>
