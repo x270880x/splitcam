@@ -97,6 +97,25 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 10. Do NOT use `CronCreate` for SEO scheduling — it doesn't persist. Use
     `seo/REMINDERS.md`.
 
+## Content check-list — run before committing any copy change
+
+Whenever you add or rewrite user-facing text (steps, blurbs, headings, FAQ,
+meta), verify all four before committing:
+
+- **(a) Clarity & readability** — would the target reader understand it on the
+  first pass? No truncated or garbled sentences, no jarring topic jumps.
+- **(b) Plain, accessible wording** — no calques, no unexplained jargon, no
+  awkward literal translations. Write like a native human, not an editor patching
+  a string.
+- **(c) On-topic for the page & audience** — language matches who the page is
+  for (YouTube creator vs church AV volunteer vs OBS migrator). Don't leak
+  generic copy that narrows or widens the audience by accident.
+- **(d) Factual correctness & cross-page consistency** — versions (v10.9.2),
+  feature names, platform lists (Win · macOS · iOS · Android), and numbers (e.g.
+  "84+ platforms") must be correct AND identical across every page. One feature =
+  one name everywhere. Check neighbouring untouched text still agrees with the
+  edit.
+
 ## Working with the user
 
 Russian (mostly) + English code/labels. Concise, concrete next steps. Show

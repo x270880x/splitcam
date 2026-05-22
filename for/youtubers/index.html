@@ -309,7 +309,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <div class="step-h">Grab SplitCam <span class="step-time">~ 1 min</span></div>
+        <div class="step-h">Download SplitCam <span class="step-time">~ 1 min</span></div>
         <p class="step-p">SplitCam is a free broadcasting studio that already knows how to talk to YouTube — the RTMP endpoint is a saved preset, not something you type by hand. The installer is light and runs on Windows 10/11, macOS 11+, iOS 13+ and Android 8+. There's no account to create, no card, no time limit.</p>
         <div class="step-tip"><b>Why this beats a bare encoder:</b> the YouTube preset skips manual stream config, a Replay Source clips your last highlight on a hotkey, and background swapping runs on-device with no green screen. A solo creator can produce a tidy broadcast without a second pair of hands.</div>
       </div>
@@ -340,7 +340,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="step-body">
         <div class="step-h">Connect SplitCam to YouTube <span class="step-time">~ 1 min</span></div>
         <p class="step-p">In SplitCam, open <strong style="color:var(--text)">Stream Settings</strong> → select <strong style="color:var(--text)">YouTube</strong> (pre-configured). Paste your stream key into the field. Click Test connection — green check means you're connected.</p>
-        <p class="step-p">You don't choose an encoder by hand — SplitCam reads your hardware at launch and routes encoding to whatever silicon you have: <strong style="color:var(--text)">NVENC</strong> on an Nvidia card, <strong style="color:var(--text)">QuickSync</strong> on an Intel chip, <strong style="color:var(--text)">AMF</strong> on AMD. Your processor stays free for the game itself. Bitrate guidelines below:</p>
+        <p class="step-p">SplitCam auto-detects your hardware encoder at launch — <strong style="color:var(--text)">NVENC</strong> on an Nvidia card, <strong style="color:var(--text)">QuickSync</strong> on an Intel chip, <strong style="color:var(--text)">AMF</strong> on AMD — so you normally don't touch encoder settings at all. Encoding lands on GPU silicon and your processor stays free for the game or app you're streaming. Bitrate guidelines below:</p>
         <table class="compare-table" style="margin-top:14px">
           <thead><tr><th>Resolution</th><th>Frame rate</th><th>Bitrate</th></tr></thead>
           <tbody>
