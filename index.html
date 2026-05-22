@@ -368,6 +368,7 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .usecase-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
 .usecase { padding: 28px 24px; border: 1px solid var(--app-border); border-radius: 14px; background: var(--app-panel); transition: border-color .2s, transform .2s; }
 .usecase:hover { border-color: var(--app-border2); transform: translateY(-3px); }
+a.usecase { display: block; text-decoration: none; color: inherit; }
 .uc-ico { font-size: 32px; margin-bottom: 14px; line-height: 1; }
 .usecase h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--text); letter-spacing: -.3px; }
 .usecase p { font-size: 14px; color: var(--text-sub); line-height: 1.55; margin-bottom: 16px; }
@@ -561,7 +562,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">
+  <a class="nav-logo" href="./">
     <img class="nav-logo-icon" src="assets/splitcam.png" alt="SplitCam" />
     <span class="nav-logo-wordmark">splitcam</span>
   </a>
@@ -590,7 +591,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <div>
       <div class="hero-meta">
         <div class="pill"><div class="pill-dot"></div><span class="pill-text">Live Multi-Streaming Studio</span></div>
-        <span class="rating-chip"><span class="stars">★★★★★</span><span class="rating-text"><strong>4.5</strong> · CNET · 357 reviews</span></span>
+        <span class="rating-chip"><span class="stars">★★★★½</span><span class="rating-text"><strong>4.5</strong> · CNET · 357 reviews</span></span>
       </div>
       <h1 class="hero-title"><span class="h1-promise">Go live everywhere.</span><br>Your free <span class="blue">streaming studio</span><br>for <span class="hero-cyc" data-cyc></span></h1>
       <p class="hero-desc"><strong style="color:var(--text);font-weight:600">Mix scenes, switch sources, broadcast live</strong> to Twitch, YouTube, Facebook, Kick + more — all from one desktop app. Free forever, no watermark.</p>
@@ -814,7 +815,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
           <div class="vc-target"><svg class="ico ico-sm"><use href="#i-telegram"/></svg> Telegram <span class="vc-orient port">9:16</span></div>
           <div class="vc-target"><svg class="ico ico-sm"><use href="#i-whatsapp"/></svg> WhatsApp <span class="vc-orient port">9:16</span></div>
           <div class="vc-target"><svg class="ico ico-sm"><use href="#i-broadcast"/></svg> OBS Studio <span class="vc-orient land">16:9</span></div>
-          <div class="vc-target more">+ 50 more</div>
+          <div class="vc-target more">+ 53 more</div>
         </div>
       </div>
     </div>
@@ -855,24 +856,24 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         <p>Game Capture for DirectX/OpenGL, NVENC encoding, Replay Source, multi-stream to Twitch + YouTube + Kick simultaneously. Zero FPS impact on your game.</p>
         <div class="uc-tags"><span>Game Capture</span><span>Multi-stream</span><span>Replay</span></div>
       </div>
-      <div class="usecase">
+      <a class="usecase" href="for/youtubers/">
         <div class="uc-ico">📹</div>
         <h3>For YouTubers</h3>
         <p>Studio-grade local recording, multi-track audio, OBS project import. Stream live or record for later — same scene setup, same quality.</p>
         <div class="uc-tags"><span>HD Recording</span><span>OBS Import</span><span>Multi-track</span></div>
-      </div>
+      </a>
       <div class="usecase">
         <div class="uc-ico">🎓</div>
         <h3>For Educators</h3>
         <p>Whiteboard source, Timer with hotkey actions, PDF & document sources, virtual camera in Zoom/Meet/Teams. Annotate over your slides live.</p>
         <div class="uc-tags"><span>Whiteboard</span><span>PDF Source</span><span>Virtual Cam</span></div>
       </div>
-      <div class="usecase">
+      <a class="usecase" href="for/churches/">
         <div class="uc-ico">⛪</div>
         <h3>For Churches</h3>
         <p>Multi-stream Sunday service to Facebook, YouTube and your own website at once. Lower-thirds for speakers, song lyrics overlays included.</p>
         <div class="uc-tags"><span>Multi-platform</span><span>Lower thirds</span><span>Lyrics</span></div>
-      </div>
+      </a>
       <div class="usecase">
         <div class="uc-ico">✨</div>
         <h3>For VTubers</h3>
@@ -974,7 +975,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <div class="section-inner">
     <p class="eyebrow">v10.9.2 release</p>
     <h2 class="sec-h">Six new streaming tools shipped this year.</h2>
-    <p class="sec-p">Focused on what streamers actually asked for. Highlights from the 10.8 release notes.</p>
+    <p class="sec-p">Focused on what streamers actually asked for. Highlights from the v10.9.2 release notes.</p>
 
     <div class="new-grid">
       <div class="new-card">
@@ -1088,7 +1089,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
 <footer>
   <div class="footer-inner">
     <div class="foot-brand">
-      <a class="foot-logo" href="#">
+      <a class="foot-logo" href="./">
         <img class="foot-logo-icon" src="assets/splitcam.png" alt="SplitCam" />
         <span class="foot-logo-wordmark">splitcam</span>
       </a>
@@ -1101,9 +1102,9 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <div class="footer-bottom">
     <span class="foot-copy">© 2003–2026 SplitCam · Microsoft Certified Partner</span>
     <div class="foot-social">
-      <a class="soc" href="#" title="X / Twitter"><svg class="ico ico-sm"><use href="#i-x"/></svg></a>
-      <a class="soc" href="#" title="Facebook"><svg class="ico ico-sm"><use href="#i-fb"/></svg></a>
-      <a class="soc" href="#" title="YouTube"><svg class="ico ico-sm"><use href="#i-yt"/></svg></a>
+      <a class="soc" href="https://x.com/splitcamsoft" target="_blank" rel="noopener" title="X / Twitter"><svg class="ico ico-sm"><use href="#i-x"/></svg></a>
+      <a class="soc" href="https://www.facebook.com/splitcam" target="_blank" rel="noopener" title="Facebook"><svg class="ico ico-sm"><use href="#i-fb"/></svg></a>
+      <a class="soc" href="https://www.youtube.com/SplitCamSoftware" target="_blank" rel="noopener" title="YouTube"><svg class="ico ico-sm"><use href="#i-yt"/></svg></a>
     </div>
   </div>
 </footer>
