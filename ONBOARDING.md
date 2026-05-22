@@ -21,11 +21,11 @@ Both are static HTML deployed via GitHub Pages (auto-deploy 30–90 sec after pu
 Marketing site for SplitCam — free streaming / virtual-camera software. Static HTML/CSS/JS.
 Destined to replace the redesign of the real **splitcam.com** (see `seo/MIGRATION.md`).
 
-## Pages deployed (8)
+## Pages deployed (7 public + 1 archived)
 | Path | Note |
 |---|---|
-| `/` | Main landing (Variant A) |
-| `/v2/` | Main landing Variant B — A/B variant, **pick A or B before going to splitcam.com** |
+| `/` | Main landing — **Variant A is the final homepage** |
+| `/v2/` | Variant B — **archived** (A won the A/B). `noindex`, unlinked. Kept for reference only, never goes to splitcam.com. |
 | `/virtual-camera/` | Feature page |
 | `/multistreaming/` | Feature page |
 | `/products/` | Products hub — Windows/Mac/iOS/Android + SplitCam Remote |
@@ -41,7 +41,7 @@ Destined to replace the redesign of the real **splitcam.com** (see `seo/MIGRATIO
 - **Schedule & follow-ups: `seo/REMINDERS.md`** — open it in any SEO chat (indexing checks, ranking checks, wave launches with dates). Do NOT use `CronCreate` — it doesn't persist.
 
 ## Migration to live splitcam.com
-`seo/MIGRATION.md` — only the homepage `/` is a true same-URL replacement; everything else is new URLs. `seo/REDIRECTS.md` — 301 strategy + per-page weights from Ahrefs. Open decisions: homepage A vs B, RU/ES locales.
+`seo/MIGRATION.md` — only the homepage `/` is a true same-URL replacement; everything else is new URLs. `seo/REDIRECTS.md` — 301 strategy + per-page weights from Ahrefs. Open decision: RU/ES locales. (Homepage A vs B — resolved 2026-05-22: A is final, `/v2/` archived.)
 
 ## Critical design rules
 1. Brand logos stored LOCALLY in `/virtual-camera/assets/logos/` — no external CDN refs.
@@ -55,7 +55,7 @@ Destined to replace the redesign of the real **splitcam.com** (see `seo/MIGRATIO
 
 ## UI conventions
 - Dark theme: `--app-base:#141420`, `--blue:#2878fc`, `--purple:#9c5bff`. Font: Geist.
-- Nav (7 pages): Products · Virtual Camera · Multistreaming · What's New · Help. `/v2/` has its own nav.
+- Nav (7 pages): Products · Virtual Camera · Multistreaming · What's New · Help. (`/v2/` is archived and has its own separate nav.)
 - Each page: favicon set + Schema.org (≥ BreadcrumbList + SoftwareApplication; bigger pages add HowTo + FAQPage).
 - `/for/youtubers/` is the structural template for SEO pages: NAV / BREADCRUMBS / HERO / QUICK ANSWER / STEP-BY-STEP / BONUS / PRO TIPS / COMPARISON / FAQ / RELATED / CTA / FOOTER.
 

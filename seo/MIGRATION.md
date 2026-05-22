@@ -16,7 +16,7 @@ The migration is therefore: **(1) swap the homepage, (2) add new pages in waves,
 |---|---|---|---|
 | `/` (homepage) | `index.html` (Variant A) | Direct swap, same URL | Low — temporary ranking wobble 1-4 wks, normal |
 
-Open decision before swap: **Variant A vs Variant B (`/v2/`)** — pick one homepage. Only A or B goes live, not both. `/v2/` should not be a public URL.
+Resolved (2026-05-22): **Variant A is the final homepage.** `/v2/` (Variant B) is archived — `noindex` + unlinked, never goes to splitcam.com.
 
 ---
 

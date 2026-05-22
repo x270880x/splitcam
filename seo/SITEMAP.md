@@ -10,7 +10,7 @@ Status legend: ✅ built · 🔜 planned in PLAN.md · ➕ new recommendation (f
 ```
 splitcam.com/
 │
-├─ /  ............................... HOME ✅  (Variant A live; /v2/ = Variant B ✅)
+├─ /  ............................... HOME ✅  (Variant A — final; /v2/ Variant B archived, noindex)
 │
 ├─ PRODUCTS — /products/ ............ hub ✅
 │   ├─ /products/windows/ .......... ➕  per-OS page (SEO: "splitcam windows")
@@ -144,7 +144,7 @@ Keep every page **≤ 3 clicks from home**. Home → hub → leaf = 2 clicks. Do
 
 ## PART C — Build priority (suggested)
 
-1. **Now / built** — Home, /v2/, /products/, /virtual-camera/, /multistreaming/, /for/youtubers/, /for/churches/, /alternatives/obs/
+1. **Now / built** — Home, /products/, /virtual-camera/, /multistreaming/, /for/youtubers/, /for/churches/, /alternatives/obs/  (/v2/ = archived Variant B, not public)
 2. **Wave 2 (per PLAN.md, ~June 10)** — /alternatives/ hub, /for/ hub, /alternatives/{streamlabs,restream,streamyard}/, /for/vtubers/
 3. **Wave 3 (per PLAN.md, ~July)** — /alternatives/{vmix,manycam,meld-studio,snap-camera}/, /for/{streamers,educators}/
 4. **New, not yet in PLAN.md** — /features/ hub + 6 feature pages, per-OS /products/* pages, /alternatives/prism-live/, /for/{gamers,business}/, /blog/, /tutorials/, company/legal pages
