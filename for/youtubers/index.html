@@ -134,7 +134,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .breadcrumbs .sep{margin:0 8px}
 
 /* HERO */
-.hero{padding:32px 40px 60px;max-width:900px;margin:0 auto;position:relative}
+.hero{padding:32px 40px 60px;max-width:900px;margin:0 auto;position:relative;overflow:hidden}
 .hero-glow{position:absolute;top:-50px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(40,120,252,.15),transparent 70%);pointer-events:none;z-index:0}
 .eyebrow{display:inline-block;padding:5px 12px;background:var(--blue-dim);color:var(--blue);font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:18px;position:relative;z-index:1}
 .h1{font-size:clamp(34px,4.5vw,52px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px;max-width:780px;position:relative;z-index:1}
@@ -189,6 +189,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .bonus-link::after{content:'→'}
 
 /* Compare table */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .compare-table{width:100%;border-collapse:collapse;margin-top:8px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:12px;overflow:hidden}
 .compare-table th{padding:14px 16px;text-align:left;font-size:13px;font-weight:700;color:var(--text);background:var(--app-surface);border-bottom:1px solid var(--app-border)}
 .compare-table td{padding:14px 16px;font-size:14px;color:var(--text-sub);border-bottom:1px solid var(--app-border)}
@@ -341,7 +342,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <div class="step-h">Connect SplitCam to YouTube <span class="step-time">~ 1 min</span></div>
         <p class="step-p">In SplitCam, open <strong style="color:var(--text)">Stream Settings</strong> → select <strong style="color:var(--text)">YouTube</strong> (pre-configured). Paste your stream key into the field. Click Test connection — green check means you're connected.</p>
         <p class="step-p">SplitCam auto-detects your hardware encoder at launch — <strong style="color:var(--text)">NVENC</strong> on an Nvidia card, <strong style="color:var(--text)">QuickSync</strong> on an Intel chip, <strong style="color:var(--text)">AMF</strong> on AMD — so you normally don't touch encoder settings at all. Encoding lands on GPU silicon and your processor stays free for the game or app you're streaming. Bitrate guidelines below:</p>
-        <table class="compare-table" style="margin-top:14px">
+        <div class="table-wrap"><table class="compare-table" style="margin-top:14px">
           <thead><tr><th>Resolution</th><th>Frame rate</th><th>Bitrate</th></tr></thead>
           <tbody>
             <tr><td>1080p</td><td>60 fps</td><td>4,500–9,000 Kbps</td></tr>
@@ -349,7 +350,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
             <tr><td>720p</td><td>60 fps</td><td>2,250–6,000 Kbps</td></tr>
             <tr><td>720p</td><td>30 fps</td><td>1,500–4,000 Kbps</td></tr>
           </tbody>
-        </table>
+        </table></div>
         <div class="step-tip"><b>Pro tip:</b> Use SplitCam's built-in <strong>Upload Speed Test</strong> first. It tells you the safe bitrate ceiling based on your actual upload. Streaming at 6 Mbps when you only have 3 Mbps stable = dropped frames and freezes.</div>
       </div>
     </div>
@@ -412,7 +413,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">SplitCam vs OBS for YouTube live streaming</h2>
   <p class="sec-p">OBS Studio is the industry standard but has a learning curve. Here's how SplitCam compares for the YouTube use case specifically.</p>
-  <table class="compare-table">
+  <div class="table-wrap"><table class="compare-table">
     <thead>
       <tr><th>Feature</th><th>SplitCam (free)</th><th>OBS Studio (free)</th></tr>
     </thead>
@@ -429,7 +430,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Mobile (iOS / Android)</td><td class="yes">✓ Native apps</td><td class="no">Not available</td></tr>
       <tr><td>Learning curve</td><td class="yes">Easy</td><td class="meh">Steeper</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <p style="margin-top:16px;font-size:14px;color:var(--text-sub);font-style:italic">If you're already happy with OBS, stay. If you want a faster, simpler setup with built-in YouTube + multistream + virtual camera + mobile apps — try SplitCam. It imports your OBS scenes, so the switch is one click.</p>
 </section>
 
