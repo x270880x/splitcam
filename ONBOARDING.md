@@ -95,7 +95,7 @@ Any content added/changed in one language must be replicated to all locales (EN/
 | Domain | DR | Note |
 |---|---|---|
 | splitcam.com | 55 | main site — the authority anchor |
-| splitcamera.com | 45 | legacy SplitCam domain — 301 → splitcam.com (apex + www, fixed 2026-05-22). DR 45 from ~3,100 refdomains, 0 organic keywords. Sub-domains `blog`/`forum` still serve old content over HTTP only (HTTPS = 526, broken origin SSL) — pending decision: keep+fix-SSL or redirect too. |
+| splitcamera.com | 45 | legacy SplitCam domain — fully 301 → splitcam.com via one Cloudflare rule `http.host contains "splitcamera.com"` (apex + www + blog + forum, completed 2026-05-22). DR 45 from ~950 live refdomains, 0 organic keywords. `blog`/`forum` were empty placeholder WordPress installs (no posts) — redirected, nothing to preserve. |
 | multi-stream.io | 14 | live, ranks for "free multistreaming" — possible cannibalization with `/multistreaming/` |
 | splitstream.com | 4 | live, weak — candidate to 301 → splitcam.com |
 | split.cam | 0 | dormant, clean brand domain — reserve / short links |
