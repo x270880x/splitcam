@@ -11,7 +11,7 @@
 | **2026-05-25** | ⏳ pending | SplitCam Android — Play Store approval check | See section below |
 | **2026-05-27** | ⏳ pending | Week 1 indexing check | See section below |
 | **2026-06-03** | ⏳ pending | Week 2 ranking check | See section below |
-| **2026-06-10** | ⏳ pending | Wave 2 launch (6 pages) | See section below |
+| **2026-06-10** | ⏳ pending | Wave 2 — 4 SEO pages + dropdown nav rebuild | See section below |
 | **2026-06-19** | ⏳ pending | Month 1 full review | See section below |
 
 When a task is done, change `⏳ pending` → `✅ YYYY-MM-DD done` so future-you/Claude can skip it.
@@ -94,12 +94,27 @@ Compare result to baseline reports in `seo/reports/`.
 - Check `for/youtubers/index.html`, `for/churches/index.html`, `alternatives/obs/index.html` as templates
 
 **Pages to build (per PLAN.md):**
-1. `/alternatives/` — hub page listing all alternatives
-2. `/for/` — hub page listing all personas
-3. `/alternatives/restream/` — target "restream alternative"
-4. `/alternatives/streamyard/` — target "streamyard alternative"
-5. `/alternatives/streamlabs/` — target "streamlabs alternative"
-6. `/for/vtubers/` — target "how to be a vtuber" (500 vol, KD 0)
+- ~~`/alternatives/` hub~~ — ✅ built 2026-05-22
+- ~~`/for/` hub~~ — ✅ built 2026-05-22
+1. `/alternatives/restream/` — target "restream alternative"
+2. `/alternatives/streamyard/` — target "streamyard alternative"
+3. `/alternatives/streamlabs/` — target "streamlabs alternative"
+4. `/for/vtubers/` — target "how to be a vtuber" (500 vol, KD 0)
+
+**Also in Wave 2 — dropdown navigation rebuild:**
+Once the pages above exist, the `/alternatives/` and `/for/` sections each have
+4+ live leaf pages — that's the point a dropdown nav earns its keep. Do it
+properly:
+- Extract the nav into a single `nav.js` snippet so it's defined once, not
+  copy-pasted across every page (today: ~11 pages each with its own `<nav>`).
+- Add hover/click **dropdown menus** on the "Alternatives" and a new "Use Cases"
+  nav item, listing their leaf pages. The nav item itself still links to the
+  hub page (hub pages keep their standalone SEO value — do NOT replace them).
+- Add a **mobile burger menu** — mobile currently has NO menu at all
+  (`.nav-links` are just `display:none` below 900px). The burger must expose
+  every nav item incl. the dropdowns.
+- Deferred from 2026-05-22 on purpose: with only 1–2 live leaf pages per
+  section a dropdown looked empty and wasn't worth the per-page maintenance.
 
 **Ask the user before starting** — priorities might have shifted in 3 weeks.
 
