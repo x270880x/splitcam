@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SplitCam by Use Case — Streaming Setups for Every Creator | SplitCam</title>
+<meta name="description" content="See how SplitCam is set up for the way you go live — YouTube creators, churches, gamers, VTubers, educators and streamers. Free, no watermark. Windows, macOS, iOS, Android.">
+<meta name="keywords" content="live streaming for youtubers, church streaming software, streaming software for gamers, vtuber software, streaming for educators, free streaming software">
+<meta name="author" content="SplitCam">
+<link rel="canonical" href="https://splitcam.com/for/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://splitcam.com/for/">
+<meta property="og:title" content="SplitCam by Use Case — A Setup for Every Creator">
+<meta property="og:description" content="Same free studio, a different workflow for every audience. Pick a step-by-step setup guide for your kind of stream.">
+<meta property="og:image" content="https://splitcam.com/assets/hero-spotlight-poster.jpg">
+<meta property="og:site_name" content="SplitCam">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SplitCam by Use Case — A Setup for Every Creator">
+<meta name="twitter:description" content="Step-by-step SplitCam guides for YouTubers, churches, gamers, VTubers and more.">
+
+<meta name="theme-color" content="#141420">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+
+<!-- Schema.org: BreadcrumbList + ItemList of use-case guides -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "SplitCam", "item": "https://splitcam.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Use Cases", "item": "https://splitcam.com/for/"}
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "SplitCam setup guides by use case",
+      "description": "Step-by-step SplitCam guides for different kinds of creators.",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "How to live stream on YouTube", "url": "https://splitcam.com/for/youtubers/"},
+        {"@type": "ListItem", "position": 2, "name": "Church live streaming setup", "url": "https://splitcam.com/for/churches/"}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --app-base:#141420;
+  --app-panel:#1c1c2e;
+  --app-surface:#22223a;
+  --app-border:rgba(255,255,255,.08);
+  --app-border2:rgba(255,255,255,.14);
+  --blue:#2878fc;
+  --blue-hover:#4d8eff;
+  --blue-dim:rgba(40,120,252,.13);
+  --purple:#9c5bff;
+  --green:#5ee572;
+  --text:#eeeeff;
+  --text-sub:#9090bb;
+  --text-dim:#50506a;
+}
+html{scroll-behavior:smooth;background:var(--app-base)}
+body{font-family:'Geist',sans-serif;background:var(--app-base);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(20,20,32,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--app-border)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:26px;height:26px;flex-shrink:0}
+.nav-logo-wordmark{font-size:24px;font-weight:700;letter-spacing:.5px}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:14px;color:var(--text-sub);font-weight:500;transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--text)}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:8px;background:var(--blue);color:#fff;font-size:13px;font-weight:600;transition:background .15s}
+.btn-primary:hover{background:var(--blue-hover)}
+.btn-lg{padding:13px 24px;font-size:14px;border-radius:10px}
+
+/* Breadcrumbs */
+.breadcrumbs{padding:80px 40px 0;max-width:1100px;margin:0 auto;font-size:13px;color:var(--text-dim)}
+.breadcrumbs a{color:var(--text-sub);transition:color .15s}
+.breadcrumbs a:hover{color:var(--text)}
+.breadcrumbs .sep{margin:0 8px}
+
+/* HERO */
+.hero{padding:32px 40px 40px;max-width:1100px;margin:0 auto;position:relative;text-align:center}
+.hero-glow{position:absolute;top:-50px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(40,120,252,.12),transparent 70%);pointer-events:none;z-index:0}
+.eyebrow{display:inline-block;padding:5px 12px;background:var(--blue-dim);color:var(--blue);font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:18px;position:relative;z-index:1}
+.h1{font-size:clamp(36px,4.5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin:0 auto 18px;max-width:820px;position:relative;z-index:1}
+.h1 .accent{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:18px;color:var(--text-sub);max-width:680px;line-height:1.6;margin:0 auto 28px;position:relative;z-index:1}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;position:relative;z-index:1;justify-content:center}
+.h-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(255,255,255,.035);border:1px solid var(--app-border);border-radius:99px;font-size:12px;color:var(--text-sub);font-weight:500}
+.h-badge::before{content:'✓';color:var(--blue);font-weight:700}
+
+/* Section */
+.section{padding:40px 40px 10px;max-width:1100px;margin:0 auto}
+.sec-eyebrow{display:inline-block;padding:4px 10px;background:rgba(255,255,255,.04);color:var(--text-sub);font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:14px}
+.sec-h{font-size:32px;font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:14px}
+.sec-p{font-size:16px;color:var(--text-sub);line-height:1.7;margin-bottom:30px;max-width:680px}
+
+/* Hub card grid */
+.hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
+a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
+.hub-card.soon{opacity:.62}
+.hub-ico{width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:25px;background:linear-gradient(135deg,var(--blue-dim),rgba(156,91,255,.1));border:1px solid var(--app-border);margin-bottom:16px}
+.hub-ico.vs{font-size:17px;font-weight:800;letter-spacing:.5px;color:var(--blue);font-family:'Geist Mono',monospace}
+.hub-card h3{font-size:18.5px;font-weight:700;letter-spacing:-.3px;margin-bottom:3px;line-height:1.25}
+.hub-meta{font-family:'Geist Mono',monospace;font-size:11px;color:var(--text-sub);font-weight:500;letter-spacing:.4px;text-transform:uppercase;margin-bottom:12px}
+.hub-card p{font-size:14px;color:var(--text-sub);line-height:1.65;flex:1}
+.hub-go{margin-top:16px;font-size:13px;font-weight:600;color:var(--blue)}
+.tag-soon{position:absolute;top:20px;right:20px;padding:3px 9px;border-radius:99px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;background:rgba(255,164,64,.12);color:#ffa372;border:1px solid rgba(255,164,64,.3)}
+
+/* CTA */
+.cta-block{padding:56px 40px;background:linear-gradient(135deg,var(--app-panel),var(--app-surface));border-top:1px solid var(--app-border);border-bottom:1px solid var(--app-border);text-align:center;margin-top:48px}
+.cta-block h2{font-size:32px;font-weight:700;letter-spacing:-.8px;margin-bottom:14px}
+.cta-block p{font-size:16px;color:var(--text-sub);max-width:540px;margin:0 auto 26px;line-height:1.6}
+
+/* Footer */
+footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-panel)}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text-dim)}
+.footer-inner a{color:var(--text-sub);transition:color .15s}
+.footer-inner a:hover{color:var(--text)}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .breadcrumbs{padding:80px 20px 0}
+  .hero,.section{padding-left:20px;padding-right:20px}
+  .cta-block{padding:48px 20px}
+  .hub-grid{grid-template-columns:1fr}
+  footer{padding:32px 20px}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="../">
+    <img class="nav-logo-icon" src="../assets/splitcam.png" alt="SplitCam">
+    <span class="nav-logo-wordmark">splitcam</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../products/">Products</a></li>
+    <li><a href="../virtual-camera/">Virtual Camera</a></li>
+    <li><a href="../multistreaming/">Multistreaming</a></li>
+    <li><a href="../alternatives/">Alternatives</a></li>
+    <li><a href="../#faq">Help</a></li>
+  </ul>
+  <a href="../" class="btn-primary">⬇ Download</a>
+</nav>
+
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+  <a href="../">SplitCam</a><span class="sep">/</span><span>Use Cases</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <span class="eyebrow">Use cases</span>
+  <h1 class="h1">Set up SplitCam for the way <span class="accent">you</span> go live.</h1>
+  <p class="sub">A YouTube creator, a church AV team and a VTuber all reach for the same free studio — and use it completely differently. Pick your audience below for a setup guide written for exactly that kind of stream.</p>
+  <div class="hero-badges">
+    <span class="h-badge">Free forever</span>
+    <span class="h-badge">No watermark</span>
+    <span class="h-badge">Windows · macOS · iOS · Android</span>
+  </div>
+</section>
+
+<!-- USE-CASE GRID -->
+<section class="section">
+  <span class="sec-eyebrow">Pick your setup</span>
+  <h2 class="sec-h">Guides by who you stream for</h2>
+  <p class="sec-p">Each guide walks one workflow end to end — the sources to add, the settings that matter, and the steps to go live. Start with yours.</p>
+
+  <div class="hub-grid">
+
+    <a class="hub-card" href="youtubers/">
+      <div class="hub-ico">📹</div>
+      <h3>For YouTubers</h3>
+      <div class="hub-meta">Go live on YouTube</div>
+      <p>Enable live streaming on your channel, build your scenes, paste the stream key and go live — then multistream YouTube and Twitch from the same encode.</p>
+      <div class="hub-go">Open the guide →</div>
+    </a>
+
+    <a class="hub-card" href="churches/">
+      <div class="hub-ico">⛪</div>
+      <h3>For Churches</h3>
+      <div class="hub-meta">Stream Sunday service</div>
+      <p>Broadcast worship to YouTube and Facebook at once, switch between cameras, and add lower-thirds and song lyrics — on a setup a volunteer can run.</p>
+      <div class="hub-go">Open the guide →</div>
+    </a>
+
+    <div class="hub-card soon">
+      <span class="tag-soon">Soon</span>
+      <div class="hub-ico">✨</div>
+      <h3>For VTubers</h3>
+      <div class="hub-meta">Avatar streaming</div>
+      <p>Go live as an avatar with AI background removal, face tracking and real-time filters — no green screen, no extra plugins.</p>
+    </div>
+
+    <div class="hub-card soon">
+      <span class="tag-soon">Soon</span>
+      <div class="hub-ico">🎮</div>
+      <h3>For Gamers</h3>
+      <div class="hub-meta">Game capture + multistream</div>
+      <p>Capture DirectX and OpenGL games with near-zero FPS impact and multistream to Twitch, YouTube and Kick at the same time.</p>
+    </div>
+
+    <div class="hub-card soon">
+      <span class="tag-soon">Soon</span>
+      <div class="hub-ico">🎓</div>
+      <h3>For Educators</h3>
+      <div class="hub-meta">Teach and present live</div>
+      <p>Whiteboard, slide and document sources, with SplitCam as a virtual camera inside Zoom, Google Meet and Microsoft Teams.</p>
+    </div>
+
+    <div class="hub-card soon">
+      <span class="tag-soon">Soon</span>
+      <div class="hub-ico">🎬</div>
+      <h3>For Streamers</h3>
+      <div class="hub-meta">Twitch-first setup</div>
+      <p>Scenes, alerts, instant replay clips and hardware encoding tuned to hold a steady frame rate through long live sessions.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block">
+  <h2>Not sure where to start?</h2>
+  <p>Every guide uses the same free download. Get SplitCam first, then follow the setup for your kind of stream.</p>
+  <a href="../" class="btn-primary btn-lg">⬇ Free Download</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 SplitCam · Free streaming software since 2003</div>
+    <div class="footer-links">
+      <a href="../">Home</a>
+      <a href="../multistreaming/">Multistreaming</a>
+      <a href="../virtual-camera/">Virtual Camera</a>
+      <a href="../alternatives/">Alternatives</a>
+      <a href="../#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
