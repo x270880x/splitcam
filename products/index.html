@@ -185,12 +185,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 /* Small REC chip in the lower-right control row — recolor to red */
 .phone-rec-chip{position:absolute;right:7.5%;bottom:16%;width:9%;aspect-ratio:30/18;border-radius:4px;background:rgba(255,59,59,.95);box-shadow:0 0 6px rgba(255,59,59,.55)}
 .phone-rec-chip::before{content:'REC';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:6.5px;font-weight:800;color:#fff;letter-spacing:.4px;font-family:'Geist Mono',monospace}
-/* Green "live to this platform" dots on each broadcast icon at the very bottom row */
-.phone-dot{position:absolute;width:9px;height:9px;border-radius:50%;background:#22c55e;border:2px solid #0a0a14;box-shadow:0 0 6px rgba(34,197,94,.75);animation:blink 1.6s infinite}
-.phone-dot.d1{left:14%;bottom:4.8%}   /* Twitch */
-.phone-dot.d2{left:32%;bottom:4.8%}   /* YouTube */
-.phone-dot.d3{left:51%;bottom:4.8%}   /* Facebook */
-.phone-dot.d4{left:88%;bottom:4.8%}   /* Custom RTMP */
 @keyframes blink{0%,40%{opacity:1}50%,90%{opacity:.25}100%{opacity:1}}
 
 /* Compatibility note */
@@ -429,10 +423,6 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
           <div class="phone-stop" aria-hidden="true"></div>
           <div class="phone-stop-timer" data-stream-timer>00:00</div>
           <div class="phone-rec-chip" aria-hidden="true"></div>
-          <span class="phone-dot d1" aria-hidden="true"></span>
-          <span class="phone-dot d2" aria-hidden="true"></span>
-          <span class="phone-dot d3" aria-hidden="true"></span>
-          <span class="phone-dot d4" aria-hidden="true"></span>
         </div>
       </div>
     </div>
