@@ -139,6 +139,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .product-features{list-style:none;font-size:13.5px;color:var(--text-sub);line-height:1.7;margin-bottom:20px;position:relative;z-index:1}
 .product-features li{padding-left:20px;position:relative}
 .product-features li::before{content:'·';position:absolute;left:7px;color:var(--blue);font-weight:700;font-size:18px;line-height:1}
+.product-features li.soon{color:var(--text-dim)}
+.product-features li.soon::before{color:var(--text-dim)}
+.product-features li.soon .soon-tag{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:99px;font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;background:rgba(255,164,64,.12);color:#ffa372;border:1px solid rgba(255,164,64,.3);vertical-align:middle}
 .product-cta{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
 .btn-store{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;background:#fff;color:#000;font-size:13px;font-weight:600;transition:transform .15s,box-shadow .15s}
 .btn-store:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(255,255,255,.1)}
@@ -340,7 +343,9 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <p class="product-desc">Mobile streaming studio. Go live in vertical (Reels/Shorts) or horizontal from your phone, with beauty enhancement and live multi-platform chat.</p>
       <ul class="product-features">
         <li>Multistream to multiple platforms + RTMP</li>
+        <li class="soon" title="Planned for a future iOS release">Real-time AR filters and visual effects<span class="soon-tag">in development</span></li>
         <li>Vertical 9:16 and horizontal 16:9 canvases</li>
+        <li class="soon" title="Planned for a future iOS release">Picture-in-picture — stream while you browse<span class="soon-tag">in development</span></li>
         <li>Up to 4K, in-app multi-platform chat</li>
       </ul>
       <div class="product-cta">
