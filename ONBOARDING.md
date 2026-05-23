@@ -21,17 +21,21 @@ Both are static HTML deployed via GitHub Pages (auto-deploy 30–90 sec after pu
 Marketing site for SplitCam — free streaming / virtual-camera software. Static HTML/CSS/JS.
 Destined to replace the redesign of the real **splitcam.com** (see `seo/MIGRATION.md`).
 
-## Pages deployed (7 public + 1 archived)
+## Pages deployed (9 public + 1 archived)
 | Path | Note |
 |---|---|
 | `/` | Main landing — **Variant A is the final homepage** |
 | `/v2/` | Variant B — **archived** (A won the A/B). `noindex`, unlinked. Kept for reference only, never goes to splitcam.com. |
+| `/products/` | Products hub — Windows/Mac/iOS/Android + SplitCam Remote. iOS card has 2 features tagged "in development" (AR filters, Picture-in-picture) — don't reword as shipped. |
 | `/virtual-camera/` | Feature page |
 | `/multistreaming/` | Feature page |
-| `/products/` | Products hub — Windows/Mac/iOS/Android + SplitCam Remote |
+| `/alternatives/` | Hub for "vs X" comparisons. Live cards: OBS. "Soon" cards: Streamlabs, Restream, StreamYard, vMix, ManyCam. |
+| `/alternatives/obs/` | SEO Wave 1 — "obs alternative" |
+| `/for/` | Use-cases hub (labelled "Use Cases" in nav). Live cards: YouTubers, Churches. "Soon" cards: VTubers, Gamers, Educators, Streamers. |
 | `/for/youtubers/` | SEO Wave 1 — "how to live stream on youtube" |
 | `/for/churches/` | SEO Wave 1 — "church streaming software" |
-| `/alternatives/obs/` | SEO Wave 1 — "obs alternative" |
+
+Nav order site-wide: **Products · Virtual Camera · Multistreaming · Alternatives · Use Cases · Help**. (Dropdown nav rebuild is queued — see `seo/REMINDERS.md`.)
 
 ## SEO status
 - **Wave 1 — DONE** ✅ (youtubers, churches, obs — all built & live).
@@ -100,6 +104,63 @@ Any content added/changed in one language must be replicated to all locales (EN/
 | splitstream.com | 4 | live, weak — candidate to 301 → splitcam.com |
 | split.cam | 0 | dormant, clean brand domain — reserve / short links |
 | camstreamguide.com | — | neutral adult domain for cam-streaming-guides (registered; DNS/Pages connect pending) |
+
+## Infrastructure access (set up 2026-05-22 / 23)
+
+Files kept locally on the Mac (chmod 600), referenced via `$(cat …)` in
+commands so the secret never appears in command output or chat.
+
+### GitHub repositories
+- **`x270880x/splitcam-release`** (public) — 36 releases, all Windows `.msi`
+  installers mirrored from `splitcam.com/win-download/update/` (versions
+  `v9.0.9` → `v10.9.2`, plus the `v10.8.62-restream-test` prerelease). Each
+  release carries the matching changelog from `splitcam-changes-win` /
+  `history.txt` (24 with full notes; 11 interim builds with a generic note
+  + link to the full history). `v10.9.2` is marked Latest. Filenames are
+  versioned (`10.9.2_x64.msi`), so the canonical "latest" download URL is
+  `releases/download/v10.9.2/10.9.2_x64.msi`. Open follow-up: also drop a
+  fixed-name copy in the latest release if/when site Download buttons need
+  a stable `releases/latest/download/SplitCamSetup_x64.msi` URL.
+- **`x270880x/old_splitcam_site`** (**PRIVATE 🔒**) — full backup of the old
+  splitcam.com `public_html` (excluding the installer archive — that's in
+  `splitcam-release`). Stored as `old_splitcam_site.tar.gz` (~1.4 GB) on
+  the release `backup-2026-05-23`. **Keep private** — contains
+  `wp-config.php` with DB credentials and other secrets.
+
+### SSH to splitcam.com origin server
+- Key: `~/.ssh/splitcam_deploy` (Ed25519, only on Mac — never copy to other
+  machines). Public part lives in the server's `~/.ssh/authorized_keys`.
+- Server: `dfadnfvi@77.83.100.124` (Hetzner box, cPanel host
+  `pl-rocket-cms1.hostsila.org`), port 22.
+- Quick connect: `ssh -i ~/.ssh/splitcam_deploy dfadnfvi@77.83.100.124`.
+- Note: `splitcam.com` itself is fronted by Cloudflare, so SSH only via the
+  direct IP — `ssh dfadnfvi@splitcam.com` fails (CF doesn't proxy SSH).
+- Site root on server: `~/public_html` (19 GB; 17 GB is the
+  `win-download/update/` installer archive, the rest is the live PHP site
+  + WP blog/forum).
+
+### API tokens (saved locally; rotate when convenient)
+- **Cloudflare** — `~/.cloudflare_token`, scoped to zones `splitcamera.com`
+  + `splitcam.com`, **Analytics: Read only**. Use:
+  `curl -H "Authorization: Bearer $(cat ~/.cloudflare_token)" …`.
+- **Ahrefs** — `~/.ahrefs_token`, used by `seo/ahrefs.py` as:
+  `AHREFS_TOKEN=$(cat ~/.ahrefs_token) python3 ahrefs.py`. Lite plan, 100k
+  units/mo.
+- ⚠️ Both tokens were pasted in chat earlier — rotate when you can
+  (Cloudflare → API Tokens → Roll; Ahrefs → Account → API → regenerate),
+  then overwrite the file with the new value. The file paths don't change.
+- The server password the user pasted in chat — **never saved on disk**.
+  SSH-key login replaces it; change the password in the cPanel panel when
+  you can.
+
+### What the redirect-rule fix bought us (2026-05-22)
+Side-effect worth knowing: after the `http.host contains "splitcamera.com"`
+rule went live, Cloudflare's auto-protection started 403-blocking a
+botnet (~3.5 M req/14 h, 49% PH, 17% CI) hitting `www.splitcamera.com`. As
+a result, splitcam.com Cloudflare traffic dropped **−86.6%** in the same
+10-hour window vs the previous day, origin-server traffic dropped −20%
+(~70k fewer requests/day). The blocking is correct — bots, not users.
+Documented in Cloudflare Analytics (free plan).
 
 ## Communication style with user
 - Russian (mostly) + English code/labels. Concise, concrete next steps.
