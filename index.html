@@ -301,20 +301,40 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .tip-row.green .tip-amount { color: var(--green); }
 .tip-row.amber .tip-amount { color: var(--amber); }
 
-/* Audience tools vis: live cam clip + rising reaction hearts + replay hotkey */
+/* Audience tools vis: live cam clip + rising reactions + push-style alerts + replay hotkey */
 .aud-stage { width: 100%; display: flex; flex-direction: column; gap: 14px; }
 .aud-scene { position: relative; width: 100%; aspect-ratio: 16/10; background: #0e0e1c; border-radius: 12px; border: 1px solid var(--app-border2); overflow: hidden; }
 .aud-scene video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .aud-rec { position: absolute; top: 12px; right: 12px; display: flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 5px; background: rgba(231,76,60,.78); border: 1px solid rgba(231,76,60,.95); font-size: 9.5px; font-weight: 700; color: #fff; letter-spacing: .7px; backdrop-filter: blur(4px); z-index: 3; }
 .aud-rec-dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; animation: blink 1s infinite; }
 .aud-hearts { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 2; }
-.aud-heart { position: absolute; bottom: -34px; left: var(--x); font-size: 22px; opacity: 0; filter: drop-shadow(0 2px 8px rgba(0,0,0,.45)); animation: heartRise var(--dur, 5.5s) ease-out var(--d, 0s) infinite; will-change: transform, opacity; }
+.aud-heart { position: absolute; bottom: -34px; left: var(--x); font-size: 22px; opacity: 0; filter: drop-shadow(0 2px 8px rgba(0,0,0,.45)); animation: heartRise var(--dur, 6s) ease-out var(--d, 0s) infinite; will-change: transform, opacity; }
 @keyframes heartRise {
   0%   { transform: translateY(0) translateX(0) scale(.55) rotate(-6deg); opacity: 0; }
   8%   { opacity: 1; transform: translateY(-30px) translateX(-4px) scale(1.05) rotate(4deg); }
   50%  { opacity: 1; transform: translateY(-160px) translateX(8px) scale(1) rotate(-3deg); }
   88%  { opacity: .85; transform: translateY(-260px) translateX(-6px) scale(.95) rotate(2deg); }
   100% { opacity: 0; transform: translateY(-310px) translateX(4px) scale(.7) rotate(0deg); }
+}
+.aud-alerts { position: absolute; top: 46px; left: 12px; right: 12px; display: flex; flex-direction: column; gap: 6px; pointer-events: none; z-index: 3; }
+.aud-alert { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; max-width: 80%; background: linear-gradient(135deg, rgba(20,20,32,.92), rgba(34,34,58,.88)); border: 1px solid var(--app-border2); border-left: 3px solid var(--blue); border-radius: 8px; padding: 7px 11px 7px 9px; font-size: 11px; font-weight: 600; color: var(--text); box-shadow: 0 8px 24px -6px rgba(0,0,0,.55); backdrop-filter: blur(6px); opacity: 0; transform: translateX(-12px); animation: alertPop 13s ease-out infinite; }
+.aud-alert.tip   { border-left-color: var(--green); }
+.aud-alert.sub   { border-left-color: #a78bfa; }
+.aud-alert.raid  { border-left-color: var(--amber); }
+.aud-alert-emoji { font-size: 14px; line-height: 1; flex-shrink: 0; }
+.aud-alert-user  { color: #7ab1ff; }
+.aud-alert.tip  .aud-alert-user { color: #4ce492; }
+.aud-alert.sub  .aud-alert-user { color: #c1a8fc; }
+.aud-alert.raid .aud-alert-user { color: #f5b54d; }
+.aud-alert-action { color: var(--text-sub); font-weight: 500; }
+.aud-alert-amt { color: var(--text); font-family: 'Geist Mono', monospace; font-weight: 700; margin-left: 2px; }
+.aud-a1 { animation-delay: .5s; }
+.aud-a2 { animation-delay: 4s; }
+.aud-a3 { animation-delay: 7.5s; }
+.aud-a4 { animation-delay: 10.5s; }
+@keyframes alertPop {
+  0%, 1%, 28%, 100% { opacity: 0; transform: translateX(-12px); }
+  3%, 23%           { opacity: 1; transform: translateX(0); }
 }
 .aud-hotkey { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 10px; font-size: 12px; }
 .aud-hotkey-label { color: var(--text-sub); font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
@@ -785,20 +805,28 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
           <div class="aud-scene">
             <video src="assets/audience-scene.mp4" poster="assets/audience-scene-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
             <div class="aud-rec"><span class="aud-rec-dot"></span>LIVE</div>
+            <div class="aud-alerts" aria-hidden="true">
+              <div class="aud-alert tip aud-a1"><span class="aud-alert-emoji">💎</span><span class="aud-alert-user">Maria</span><span class="aud-alert-action">tipped</span><span class="aud-alert-amt">$10</span></div>
+              <div class="aud-alert sub aud-a2"><span class="aud-alert-emoji">👑</span><span class="aud-alert-user">Justin</span><span class="aud-alert-action">subscribed</span></div>
+              <div class="aud-alert aud-a3"><span class="aud-alert-emoji">＋</span><span class="aud-alert-user">Alex</span><span class="aud-alert-action">followed</span></div>
+              <div class="aud-alert raid aud-a4"><span class="aud-alert-emoji">⚡️</span><span class="aud-alert-user">Sasha</span><span class="aud-alert-action">raided with</span><span class="aud-alert-amt">25</span></div>
+            </div>
             <div class="aud-hearts" aria-hidden="true">
               <span class="aud-heart" style="--x:78%;--d:0s;--dur:5.6s">❤️</span>
-              <span class="aud-heart" style="--x:88%;--d:.7s;--dur:5.2s">💖</span>
-              <span class="aud-heart" style="--x:70%;--d:1.4s;--dur:5.9s">💛</span>
-              <span class="aud-heart" style="--x:84%;--d:2.1s;--dur:5.5s">💜</span>
-              <span class="aud-heart" style="--x:74%;--d:2.8s;--dur:5.8s">💚</span>
-              <span class="aud-heart" style="--x:90%;--d:3.5s;--dur:5.3s">💙</span>
-              <span class="aud-heart" style="--x:80%;--d:4.2s;--dur:5.7s">💕</span>
-              <span class="aud-heart" style="--x:86%;--d:4.9s;--dur:5.4s">✨</span>
+              <span class="aud-heart" style="--x:88%;--d:.6s;--dur:5.2s">🔥</span>
+              <span class="aud-heart" style="--x:70%;--d:1.2s;--dur:5.9s">💛</span>
+              <span class="aud-heart" style="--x:84%;--d:1.8s;--dur:5.5s">💖</span>
+              <span class="aud-heart" style="--x:74%;--d:2.4s;--dur:5.8s">🎉</span>
+              <span class="aud-heart" style="--x:90%;--d:3.0s;--dur:5.3s">💙</span>
+              <span class="aud-heart" style="--x:80%;--d:3.6s;--dur:5.7s">⭐️</span>
+              <span class="aud-heart" style="--x:86%;--d:4.2s;--dur:5.4s">💜</span>
+              <span class="aud-heart" style="--x:72%;--d:4.8s;--dur:5.6s">✨</span>
+              <span class="aud-heart" style="--x:88%;--d:5.4s;--dur:5.3s">💚</span>
             </div>
           </div>
           <div class="aud-hotkey">
             <span class="aud-hotkey-label"><svg><use href="#i-replay"/></svg> Replay last 10 s</span>
-            <span class="aud-keys"><span class="aud-k">Ctrl</span><span class="aud-k-plus">+</span><span class="aud-k">R</span></span>
+            <span class="aud-keys"><span class="aud-k">Tab</span></span>
           </div>
         </div>
       </div>
