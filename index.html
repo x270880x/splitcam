@@ -266,7 +266,9 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .bc-nm { font-size: 12.5px; font-weight: 600; width: 110px; }
 .bc-line { flex: 1; height: 2px; background: var(--app-raised); border-radius: 1px; overflow: hidden; position: relative; }
 .bc-pulse { position: absolute; top: 0; left: -60%; width: 60%; height: 100%; background: linear-gradient(90deg,transparent,var(--blue),transparent); animation: pl 2s linear infinite; }
-.bc-row:nth-child(2) .bc-pulse{animation-delay:.5s} .bc-row:nth-child(3) .bc-pulse{animation-delay:1s} .bc-row:nth-child(4) .bc-pulse{animation-delay:1.5s}
+.bc-row:nth-child(2) .bc-pulse{animation-delay:.5s} .bc-row:nth-child(3) .bc-pulse{animation-delay:1s} .bc-row:nth-child(4) .bc-pulse{animation-delay:1.5s} .bc-row:nth-child(5) .bc-pulse{animation-delay:2s}
+.bc-header{display:flex;align-items:center;gap:8px;padding:8px 12px;margin-bottom:12px;background:rgba(231,76,60,.08);border:1px solid rgba(231,76,60,.22);border-radius:8px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#ff8c7a;text-transform:uppercase}
+.bc-header .bc-live-dot{width:8px;height:8px;border-radius:50%;background:#ff5454;animation:blink 1.4s infinite}
 @keyframes pl{to{left:110%}}
 .bc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: blink 1.5s infinite; }
 .bc-kbps { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; width: 70px; text-align: right; }
@@ -690,10 +692,12 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         </ul>
       </div>
       <div class="feat-vis">
+        <div class="bc-header"><span class="bc-live-dot"></span> Live to all 5 — simultaneously</div>
         <div class="bc-rows">
           <div class="bc-row"><span class="bc-nm" style="color:#b48aff"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-twitch"/></svg>Twitch</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">6000 kbps</span><div class="bc-dot"></div></div>
           <div class="bc-row"><span class="bc-nm" style="color:#ff6b6b"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-yt"/></svg>YouTube</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">4500 kbps</span><div class="bc-dot"></div></div>
           <div class="bc-row"><span class="bc-nm" style="color:#5e9bff"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-fb"/></svg>Facebook</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">3000 kbps</span><div class="bc-dot"></div></div>
+          <div class="bc-row"><span class="bc-nm" style="color:#53fc18"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-kick"/></svg>Kick</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">5000 kbps</span><div class="bc-dot"></div></div>
           <div class="bc-row"><span class="bc-nm" style="color:#ffa372"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-rtmp"/></svg>Custom RTMP</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">2500 kbps</span><div class="bc-dot"></div></div>
         </div>
       </div>
