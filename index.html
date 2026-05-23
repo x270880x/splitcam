@@ -301,31 +301,20 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .tip-row.green .tip-amount { color: var(--green); }
 .tip-row.amber .tip-amount { color: var(--amber); }
 
-/* Audience tools vis: blurred figure + falling tips + replay hotkey */
+/* Audience tools vis: live cam clip + rising reaction hearts + replay hotkey */
 .aud-stage { width: 100%; display: flex; flex-direction: column; gap: 14px; }
-.aud-scene { position: relative; width: 100%; aspect-ratio: 16/10; background: linear-gradient(135deg, #1e1e36 0%, #0e0e1c 100%); border-radius: 12px; border: 1px solid var(--app-border2); overflow: hidden; }
-.aud-silhouette { position: absolute; left: 50%; bottom: -10%; width: 60%; height: 95%; transform: translateX(-50%); background: radial-gradient(ellipse 45% 30% at 50% 20%, #8d8dbf, transparent 65%), radial-gradient(ellipse 75% 60% at 50% 80%, #5a5a8a, transparent 70%); filter: blur(20px); border-radius: 50% 50% 8% 8% / 40% 40% 4% 4%; opacity: .85; }
-.aud-blur-chip { position: absolute; top: 12px; left: 12px; font-size: 9.5px; font-weight: 700; padding: 4px 9px; border-radius: 5px; background: rgba(40,120,252,.2); border: 1px solid rgba(40,120,252,.45); color: #7ab1ff; letter-spacing: .7px; display: inline-flex; align-items: center; gap: 5px; }
-.aud-blur-chip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #7ab1ff; box-shadow: 0 0 6px #7ab1ff; }
-.aud-rec { position: absolute; top: 12px; right: 12px; display: flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 5px; background: rgba(231,76,60,.18); border: 1px solid rgba(231,76,60,.45); font-size: 9.5px; font-weight: 700; color: #ff8c7a; letter-spacing: .7px; }
-.aud-rec-dot { width: 7px; height: 7px; border-radius: 50%; background: #ff5454; animation: blink 1s infinite; }
-.aud-tip { position: absolute; right: 12px; display: flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(28,28,46,.95), rgba(34,34,58,.92)); border: 1px solid var(--app-border2); border-radius: 8px; padding: 7px 10px; font-size: 11px; font-weight: 600; opacity: 0; min-width: 145px; box-shadow: 0 8px 24px -6px rgba(0,0,0,.5); animation: audTipFall 9s ease-out infinite; }
-.aud-tip-ava { width: 22px; height: 22px; border-radius: 50%; background: var(--blue-dim); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
-.aud-tip-ava.g { background: rgba(46,204,113,.18); color: var(--green); }
-.aud-tip-ava.a { background: rgba(243,156,18,.18); color: var(--amber); }
-.aud-tip-name { color: var(--text); flex: 1; }
-.aud-tip-amt { color: var(--blue); font-family: 'Geist Mono', monospace; font-weight: 700; }
-.aud-tip-amt.g { color: var(--green); }
-.aud-tip-amt.a { color: var(--amber); }
-.aud-t1 { animation-delay: 0s; }
-.aud-t2 { animation-delay: 3s; }
-.aud-t3 { animation-delay: 6s; }
-@keyframes audTipFall {
-  0%  { opacity: 0; top: 50px; transform: translateY(-8px); }
-  4%  { opacity: 1; transform: translateY(0); }
-  22% { opacity: 1; transform: translateY(0); }
-  30% { opacity: 0; transform: translateY(10px); }
-  100%{ opacity: 0; }
+.aud-scene { position: relative; width: 100%; aspect-ratio: 16/10; background: #0e0e1c; border-radius: 12px; border: 1px solid var(--app-border2); overflow: hidden; }
+.aud-scene video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.aud-rec { position: absolute; top: 12px; right: 12px; display: flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 5px; background: rgba(231,76,60,.78); border: 1px solid rgba(231,76,60,.95); font-size: 9.5px; font-weight: 700; color: #fff; letter-spacing: .7px; backdrop-filter: blur(4px); z-index: 3; }
+.aud-rec-dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; animation: blink 1s infinite; }
+.aud-hearts { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 2; }
+.aud-heart { position: absolute; bottom: -34px; left: var(--x); font-size: 22px; opacity: 0; filter: drop-shadow(0 2px 8px rgba(0,0,0,.45)); animation: heartRise var(--dur, 5.5s) ease-out var(--d, 0s) infinite; will-change: transform, opacity; }
+@keyframes heartRise {
+  0%   { transform: translateY(0) translateX(0) scale(.55) rotate(-6deg); opacity: 0; }
+  8%   { opacity: 1; transform: translateY(-30px) translateX(-4px) scale(1.05) rotate(4deg); }
+  50%  { opacity: 1; transform: translateY(-160px) translateX(8px) scale(1) rotate(-3deg); }
+  88%  { opacity: .85; transform: translateY(-260px) translateX(-6px) scale(.95) rotate(2deg); }
+  100% { opacity: 0; transform: translateY(-310px) translateX(4px) scale(.7) rotate(0deg); }
 }
 .aud-hotkey { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 10px; font-size: 12px; }
 .aud-hotkey-label { color: var(--text-sub); font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
@@ -794,12 +783,18 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       <div class="feat-vis">
         <div class="aud-stage">
           <div class="aud-scene">
-            <div class="aud-silhouette"></div>
-            <div class="aud-blur-chip">Real-time blur</div>
-            <div class="aud-rec"><span class="aud-rec-dot"></span>REC</div>
-            <div class="aud-tip aud-t1"><span class="aud-tip-ava">A</span><span class="aud-tip-name">Alex</span><span class="aud-tip-amt">$25</span></div>
-            <div class="aud-tip aud-t2"><span class="aud-tip-ava g">M</span><span class="aud-tip-name">Maria</span><span class="aud-tip-amt g">$10</span></div>
-            <div class="aud-tip aud-t3"><span class="aud-tip-ava a">J</span><span class="aud-tip-name">Justin</span><span class="aud-tip-amt a">$50</span></div>
+            <video src="assets/audience-scene.mp4" poster="assets/audience-scene-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
+            <div class="aud-rec"><span class="aud-rec-dot"></span>LIVE</div>
+            <div class="aud-hearts" aria-hidden="true">
+              <span class="aud-heart" style="--x:78%;--d:0s;--dur:5.6s">❤️</span>
+              <span class="aud-heart" style="--x:88%;--d:.7s;--dur:5.2s">💖</span>
+              <span class="aud-heart" style="--x:70%;--d:1.4s;--dur:5.9s">💛</span>
+              <span class="aud-heart" style="--x:84%;--d:2.1s;--dur:5.5s">💜</span>
+              <span class="aud-heart" style="--x:74%;--d:2.8s;--dur:5.8s">💚</span>
+              <span class="aud-heart" style="--x:90%;--d:3.5s;--dur:5.3s">💙</span>
+              <span class="aud-heart" style="--x:80%;--d:4.2s;--dur:5.7s">💕</span>
+              <span class="aud-heart" style="--x:86%;--d:4.9s;--dur:5.4s">✨</span>
+            </div>
           </div>
           <div class="aud-hotkey">
             <span class="aud-hotkey-label"><svg><use href="#i-replay"/></svg> Replay last 10 s</span>
@@ -1188,10 +1183,8 @@ function setTab(id,btn){
 </script>
 
 <script>
-/* Hero video — pause when off-screen / tab hidden / window blurred (saves CPU/battery, especially with multiple windows open) */
-(function(){
-  var v = document.querySelector('.app-shot video');
-  if (!v) return;
+/* Inline videos — pause when off-screen / tab hidden / window blurred (saves CPU/battery, especially with multiple windows open) */
+document.querySelectorAll('.app-shot video, .aud-scene video').forEach(function(v){
   var onScreen = true;
   function shouldPlay(){
     return onScreen && document.visibilityState === 'visible' && document.hasFocus();
@@ -1209,7 +1202,7 @@ function setTab(id,btn){
   document.addEventListener('visibilitychange', apply);
   window.addEventListener('blur', apply);
   window.addEventListener('focus', apply);
-})();
+});
 
 /* Hero audience cycler — fade transition with pause between words */
 (function(){
