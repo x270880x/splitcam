@@ -336,7 +336,8 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
   0%, 1%, 28%, 100% { opacity: 0; transform: translateX(-12px); }
   3%, 23%           { opacity: 1; transform: translateX(0); }
 }
-.aud-hotkey { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 10px; font-size: 12px; }
+.aud-hotkey { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 10px; font-size: 12px; transition: opacity .22s ease, transform .22s ease; }
+.aud-hotkey.aud-hk-flip { opacity: 0; transform: translateY(-4px); }
 .aud-hotkey-label { color: var(--text-sub); font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
 .aud-hotkey-label svg { width: 14px; height: 14px; color: var(--blue); stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 .aud-keys { display: inline-flex; align-items: center; gap: 6px; }
@@ -806,27 +807,31 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
             <video src="assets/audience-scene.mp4" poster="assets/audience-scene-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
             <div class="aud-rec"><span class="aud-rec-dot"></span>LIVE</div>
             <div class="aud-alerts" aria-hidden="true">
-              <div class="aud-alert tip aud-a1"><span class="aud-alert-emoji">💎</span><span class="aud-alert-user">Maria</span><span class="aud-alert-action">tipped</span><span class="aud-alert-amt">$10</span></div>
-              <div class="aud-alert sub aud-a2"><span class="aud-alert-emoji">👑</span><span class="aud-alert-user">Justin</span><span class="aud-alert-action">subscribed</span></div>
-              <div class="aud-alert aud-a3"><span class="aud-alert-emoji">＋</span><span class="aud-alert-user">Alex</span><span class="aud-alert-action">followed</span></div>
-              <div class="aud-alert raid aud-a4"><span class="aud-alert-emoji">⚡️</span><span class="aud-alert-user">Sasha</span><span class="aud-alert-action">raided with</span><span class="aud-alert-amt">25</span></div>
+              <div class="aud-alert tip aud-a1"><span class="aud-alert-emoji">💎</span><span class="aud-alert-user">Maria</span><span class="aud-alert-amt">$10</span></div>
+              <div class="aud-alert sub aud-a2"><span class="aud-alert-emoji">👑</span><span class="aud-alert-user">Justin</span></div>
+              <div class="aud-alert aud-a3"><span class="aud-alert-emoji">＋</span><span class="aud-alert-user">Alex</span></div>
+              <div class="aud-alert raid aud-a4"><span class="aud-alert-emoji">⚡️</span><span class="aud-alert-user">Sasha</span><span class="aud-alert-amt">×25</span></div>
             </div>
             <div class="aud-hearts" aria-hidden="true">
               <span class="aud-heart" style="--x:78%;--d:0s;--dur:5.6s">❤️</span>
-              <span class="aud-heart" style="--x:88%;--d:.6s;--dur:5.2s">🔥</span>
-              <span class="aud-heart" style="--x:70%;--d:1.2s;--dur:5.9s">💛</span>
-              <span class="aud-heart" style="--x:84%;--d:1.8s;--dur:5.5s">💖</span>
-              <span class="aud-heart" style="--x:74%;--d:2.4s;--dur:5.8s">🎉</span>
-              <span class="aud-heart" style="--x:90%;--d:3.0s;--dur:5.3s">💙</span>
-              <span class="aud-heart" style="--x:80%;--d:3.6s;--dur:5.7s">⭐️</span>
-              <span class="aud-heart" style="--x:86%;--d:4.2s;--dur:5.4s">💜</span>
-              <span class="aud-heart" style="--x:72%;--d:4.8s;--dur:5.6s">✨</span>
-              <span class="aud-heart" style="--x:88%;--d:5.4s;--dur:5.3s">💚</span>
+              <span class="aud-heart" style="--x:88%;--d:.5s;--dur:5.3s">🔥</span>
+              <span class="aud-heart" style="--x:70%;--d:1.0s;--dur:5.8s">💛</span>
+              <span class="aud-heart" style="--x:84%;--d:1.5s;--dur:5.5s">🏆</span>
+              <span class="aud-heart" style="--x:74%;--d:2.0s;--dur:5.9s">💖</span>
+              <span class="aud-heart" style="--x:90%;--d:2.5s;--dur:5.3s">🎮</span>
+              <span class="aud-heart" style="--x:72%;--d:3.0s;--dur:5.7s">⭐️</span>
+              <span class="aud-heart" style="--x:86%;--d:3.5s;--dur:5.4s">💙</span>
+              <span class="aud-heart" style="--x:76%;--d:4.0s;--dur:5.6s">🎉</span>
+              <span class="aud-heart" style="--x:88%;--d:4.5s;--dur:5.3s">💜</span>
+              <span class="aud-heart" style="--x:70%;--d:5.0s;--dur:5.8s">🎁</span>
+              <span class="aud-heart" style="--x:82%;--d:5.5s;--dur:5.4s">✨</span>
+              <span class="aud-heart" style="--x:90%;--d:6.0s;--dur:5.5s">💎</span>
+              <span class="aud-heart" style="--x:78%;--d:6.5s;--dur:5.7s">💚</span>
             </div>
           </div>
-          <div class="aud-hotkey">
-            <span class="aud-hotkey-label"><svg><use href="#i-replay"/></svg> Replay last 10 s</span>
-            <span class="aud-keys"><span class="aud-k">Tab</span></span>
+          <div class="aud-hotkey" id="aud-hotkey">
+            <span class="aud-hotkey-label"><svg data-hk-icon><use href="#i-replay"/></svg> <span data-hk-label>Replay last 10 s</span></span>
+            <span class="aud-keys" data-hk-keys><span class="aud-k">Tab</span></span>
           </div>
         </div>
       </div>
@@ -1211,6 +1216,36 @@ function setTab(id,btn){
 </script>
 
 <script>
+/* Audience tools hotkey ticker — cycles through SplitCam hotkeys every 3 s */
+(function(){
+  var box = document.getElementById('aud-hotkey');
+  if (!box) return;
+  var labelEl = box.querySelector('[data-hk-label]');
+  var iconUse = box.querySelector('[data-hk-icon] use');
+  var keysEl  = box.querySelector('[data-hk-keys]');
+  if (!labelEl || !iconUse || !keysEl) return;
+  var slides = [
+    { icon:'i-replay', label:'Replay last 10 s', keys:'<span class="aud-k">Tab</span>' },
+    { icon:'i-save',   label:'Start / stop REC', keys:'<span class="aud-k">Ctrl</span><span class="aud-k-plus">+</span><span class="aud-k">R</span>' },
+    { icon:'i-layers', label:'Switch scene',     keys:'<span class="aud-k">F1</span><span class="aud-k-plus">–</span><span class="aud-k">F8</span>' },
+    { icon:'i-mic',    label:'Mute microphone',  keys:'<span class="aud-k">M</span>' }
+  ];
+  var i = 0;
+  function apply(){
+    iconUse.setAttribute('href','#'+slides[i].icon);
+    labelEl.textContent = slides[i].label;
+    keysEl.innerHTML = slides[i].keys;
+  }
+  setInterval(function(){
+    box.classList.add('aud-hk-flip');
+    setTimeout(function(){
+      i = (i + 1) % slides.length;
+      apply();
+      box.classList.remove('aud-hk-flip');
+    }, 220);
+  }, 3000);
+})();
+
 /* Inline videos — pause when off-screen / tab hidden / window blurred (saves CPU/battery, especially with multiple windows open) */
 document.querySelectorAll('.app-shot video, .aud-scene video').forEach(function(v){
   var onScreen = true;
