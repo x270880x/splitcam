@@ -181,7 +181,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 /* Big stream button — overlays the white-circle area at the bottom centre.
    Replaces the circular target with a square stop-button + live timer below. */
 .phone-stop{position:absolute;left:50%;bottom:14%;transform:translateX(-50%);width:13%;aspect-ratio:1;background:#ff3b3b;border-radius:6px;box-shadow:0 0 0 3px #0a0a14,0 0 0 4px rgba(255,255,255,.22),0 0 22px rgba(255,59,59,.55);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:8.5px;letter-spacing:.6px;text-shadow:0 1px 2px rgba(0,0,0,.4)}
-.phone-stop-timer{position:absolute;left:50%;bottom:10%;transform:translateX(-50%);font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:#ff3b3b;letter-spacing:.5px;text-shadow:0 1px 2px rgba(0,0,0,.7);background:rgba(10,10,20,.6);padding:1px 6px;border-radius:4px}
 /* Small REC chip in the lower-right control row — recolor to red */
 .phone-rec-chip{position:absolute;right:7.5%;bottom:16%;width:9%;aspect-ratio:30/18;border-radius:4px;background:rgba(255,59,59,.95);box-shadow:0 0 6px rgba(255,59,59,.55)}
 .phone-rec-chip::before{content:'REC';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:6.5px;font-weight:800;color:#fff;letter-spacing:.4px;font-family:'Geist Mono',monospace}
@@ -421,7 +420,6 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <div class="phone-mock">
           <img class="phone-img" src="assets/remote-phone.png" alt="SplitCam Remote on iPhone — scene switcher, media layers, audio mixer and stream controls" loading="lazy">
           <div class="phone-stop" aria-hidden="true">LIVE</div>
-          <div class="phone-stop-timer" data-stream-timer>00:00</div>
           <div class="phone-rec-chip" aria-hidden="true"></div>
         </div>
       </div>
@@ -475,29 +473,6 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </div>
   </div>
 </footer>
-
-<script>
-/* Remote phone mockup — live stream timer ticks mm:ss when the phone is on screen */
-(function(){
-  var el = document.querySelector('[data-stream-timer]');
-  if (!el) return;
-  var seconds = 42; // start mid-stream so it never reads "fresh"
-  function fmt(s){ return String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0'); }
-  el.textContent = fmt(seconds);
-  var onScreen = false, intervalId = null;
-  function tick(){ seconds += 1; el.textContent = fmt(seconds); }
-  function start(){ if (intervalId) return; intervalId = setInterval(tick, 1000); }
-  function stop(){ if (!intervalId) return; clearInterval(intervalId); intervalId = null; }
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function(entries){
-      onScreen = entries[0].isIntersecting;
-      onScreen ? start() : stop();
-    }, { threshold: .1 }).observe(el);
-  } else {
-    start();
-  }
-})();
-</script>
 
 </body>
 </html>
