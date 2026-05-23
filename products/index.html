@@ -178,6 +178,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 /* SplitCam Remote — real iPhone screenshot with live overlays */
 .phone-mock{position:relative;width:280px;border-radius:34px;overflow:hidden;box-shadow:0 28px 70px -10px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06)}
 .phone-mock .phone-img{display:block;width:100%;height:auto}
+.phone-stop{position:absolute;left:50%;bottom:14%;transform:translateX(-50%);width:13%;aspect-ratio:1;background:#ff3b3b;border-radius:6px;box-shadow:0 0 0 3px #0a0a14,0 0 0 4px rgba(255,255,255,.22),0 0 22px rgba(255,59,59,.55);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:8.5px;letter-spacing:.6px;text-shadow:0 1px 2px rgba(0,0,0,.4)}
 @keyframes blink{0%,40%{opacity:1}50%,90%{opacity:.25}100%{opacity:1}}
 
 /* Compatibility note */
@@ -413,6 +414,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="remote-visual" aria-hidden="true">
         <div class="phone-mock">
           <img class="phone-img" src="assets/remote-phone.png" alt="SplitCam Remote on iPhone — scene switcher, media layers, audio mixer and stream controls" loading="lazy">
+          <div class="phone-stop" aria-hidden="true">LIVE</div>
         </div>
       </div>
     </div>
