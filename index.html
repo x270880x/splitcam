@@ -264,8 +264,8 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .bc-rows { display: flex; flex-direction: column; gap: 8px; width: 100%; }
 .bc-row { display: flex; align-items: center; gap: 12px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 7px; padding: 10px 14px; }
 .bc-nm { font-size: 12.5px; font-weight: 600; width: 110px; }
-.bc-line { flex: 1; height: 2px; background: var(--app-raised); border-radius: 1px; overflow: hidden; position: relative; }
-.bc-pulse { position: absolute; top: 0; left: -60%; width: 60%; height: 100%; background: linear-gradient(90deg,transparent,var(--blue),transparent); animation: pl 2s linear infinite; }
+.bc-line { flex: 1; height: 4px; background: var(--blue-dim); border-radius: 2px; overflow: hidden; position: relative; box-shadow: 0 0 8px rgba(40,120,252,.18); }
+.bc-pulse { position: absolute; top: 0; left: -60%; width: 60%; height: 100%; background: linear-gradient(90deg,transparent,#7ab1ff,transparent); animation: pl 2s linear infinite; }
 .bc-row:nth-child(2) .bc-pulse{animation-delay:.5s} .bc-row:nth-child(3) .bc-pulse{animation-delay:1s} .bc-row:nth-child(4) .bc-pulse{animation-delay:1.5s} .bc-row:nth-child(5) .bc-pulse{animation-delay:2s}
 .bc-header{display:flex;align-items:center;gap:8px;padding:8px 12px;margin-bottom:12px;background:rgba(231,76,60,.08);border:1px solid rgba(231,76,60,.22);border-radius:8px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#ff8c7a;text-transform:uppercase}
 .bc-header .bc-live-dot{width:8px;height:8px;border-radius:50%;background:#ff5454;animation:blink 1.4s infinite}
@@ -274,9 +274,14 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .bc-kbps { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; width: 70px; text-align: right; }
 
 /* Sources vis */
-.src-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; width: 100%; }
-.src-item { background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 8px; padding: 14px; display: flex; align-items: center; gap: 12px; }
-.src-ico { width: 32px; height: 32px; border-radius: 7px; background: var(--blue-dim); display: flex; align-items: center; justify-content: center; color: var(--blue); flex-shrink: 0; }
+.src-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; }
+.src-item { background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 8px; padding: 12px; display: flex; align-items: center; gap: 10px; transition: border-color .15s, transform .15s; }
+.src-item:hover { border-color: rgba(40,120,252,.32); transform: translateY(-1px); }
+.src-ico { width: 40px; height: 40px; border-radius: 9px; background: linear-gradient(135deg, var(--blue-dim), rgba(156,91,255,.08)); border: 1px solid rgba(40,120,252,.22); display: flex; align-items: center; justify-content: center; color: #7ab1ff; flex-shrink: 0; box-shadow: 0 0 14px rgba(40,120,252,.1); }
+.src-ico svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.src-ico.g { background: linear-gradient(135deg, rgba(46,204,113,.14), rgba(46,204,113,.04)); border-color: rgba(46,204,113,.28); color: #4ce492; box-shadow: 0 0 14px rgba(46,204,113,.1); }
+.src-ico.p { background: linear-gradient(135deg, rgba(167,139,250,.14), rgba(156,91,255,.04)); border-color: rgba(167,139,250,.3); color: #c1a8fc; box-shadow: 0 0 14px rgba(167,139,250,.1); }
+.src-ico.a { background: linear-gradient(135deg, rgba(243,156,18,.14), rgba(243,156,18,.04)); border-color: rgba(243,156,18,.3); color: #f5b54d; box-shadow: 0 0 14px rgba(243,156,18,.1); }
 .src-nm { font-size: 12.5px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
 .src-meta { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; }
 
@@ -295,6 +300,44 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .tip-amount { font-size: 13.5px; font-weight: 700; color: var(--blue); font-family: 'Geist Mono', monospace; }
 .tip-row.green .tip-amount { color: var(--green); }
 .tip-row.amber .tip-amount { color: var(--amber); }
+
+/* Audience tools vis: blurred figure + falling tips + replay hotkey */
+.aud-stage { width: 100%; display: flex; flex-direction: column; gap: 14px; }
+.aud-scene { position: relative; width: 100%; aspect-ratio: 16/10; background: linear-gradient(135deg, #1e1e36 0%, #0e0e1c 100%); border-radius: 12px; border: 1px solid var(--app-border2); overflow: hidden; }
+.aud-silhouette { position: absolute; left: 50%; bottom: -10%; width: 60%; height: 95%; transform: translateX(-50%); background: radial-gradient(ellipse 45% 30% at 50% 20%, #8d8dbf, transparent 65%), radial-gradient(ellipse 75% 60% at 50% 80%, #5a5a8a, transparent 70%); filter: blur(20px); border-radius: 50% 50% 8% 8% / 40% 40% 4% 4%; opacity: .85; }
+.aud-blur-chip { position: absolute; top: 12px; left: 12px; font-size: 9.5px; font-weight: 700; padding: 4px 9px; border-radius: 5px; background: rgba(40,120,252,.2); border: 1px solid rgba(40,120,252,.45); color: #7ab1ff; letter-spacing: .7px; display: inline-flex; align-items: center; gap: 5px; }
+.aud-blur-chip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #7ab1ff; box-shadow: 0 0 6px #7ab1ff; }
+.aud-rec { position: absolute; top: 12px; right: 12px; display: flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 5px; background: rgba(231,76,60,.18); border: 1px solid rgba(231,76,60,.45); font-size: 9.5px; font-weight: 700; color: #ff8c7a; letter-spacing: .7px; }
+.aud-rec-dot { width: 7px; height: 7px; border-radius: 50%; background: #ff5454; animation: blink 1s infinite; }
+.aud-tip { position: absolute; right: 12px; display: flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(28,28,46,.95), rgba(34,34,58,.92)); border: 1px solid var(--app-border2); border-radius: 8px; padding: 7px 10px; font-size: 11px; font-weight: 600; opacity: 0; min-width: 145px; box-shadow: 0 8px 24px -6px rgba(0,0,0,.5); animation: audTipFall 9s ease-out infinite; }
+.aud-tip-ava { width: 22px; height: 22px; border-radius: 50%; background: var(--blue-dim); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+.aud-tip-ava.g { background: rgba(46,204,113,.18); color: var(--green); }
+.aud-tip-ava.a { background: rgba(243,156,18,.18); color: var(--amber); }
+.aud-tip-name { color: var(--text); flex: 1; }
+.aud-tip-amt { color: var(--blue); font-family: 'Geist Mono', monospace; font-weight: 700; }
+.aud-tip-amt.g { color: var(--green); }
+.aud-tip-amt.a { color: var(--amber); }
+.aud-t1 { animation-delay: 0s; }
+.aud-t2 { animation-delay: 3s; }
+.aud-t3 { animation-delay: 6s; }
+@keyframes audTipFall {
+  0%  { opacity: 0; top: 50px; transform: translateY(-8px); }
+  4%  { opacity: 1; transform: translateY(0); }
+  22% { opacity: 1; transform: translateY(0); }
+  30% { opacity: 0; transform: translateY(10px); }
+  100%{ opacity: 0; }
+}
+.aud-hotkey { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 10px; font-size: 12px; }
+.aud-hotkey-label { color: var(--text-sub); font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
+.aud-hotkey-label svg { width: 14px; height: 14px; color: var(--blue); stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.aud-keys { display: inline-flex; align-items: center; gap: 6px; }
+.aud-k { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 26px; padding: 0 8px; border-radius: 6px; background: var(--app-base); border: 1px solid var(--app-border2); color: var(--text); font-family: 'Geist Mono', monospace; font-size: 11px; font-weight: 600; box-shadow: 0 2px 0 var(--app-raised), inset 0 -1px 0 rgba(0,0,0,.25); animation: audKeyPress 9s ease-in-out infinite; transition: none; }
+.aud-k:last-of-type { animation-delay: .08s; }
+.aud-k-plus { color: var(--text-dim); font-weight: 500; font-family: 'Geist Mono', monospace; font-size: 11px; }
+@keyframes audKeyPress {
+  0%, 86%, 100% { transform: translateY(0); background: var(--app-base); border-color: var(--app-border2); color: var(--text); box-shadow: 0 2px 0 var(--app-raised), inset 0 -1px 0 rgba(0,0,0,.25); }
+  88%, 95%      { transform: translateY(2px); background: var(--blue-dim); border-color: rgba(40,120,252,.5); color: #7ab1ff; box-shadow: 0 0 0 var(--app-raised), inset 0 -1px 0 rgba(0,0,0,.25); }
+}
 
 /* Audio vis */
 .mix-rows { display: flex; flex-direction: column; gap: 9px; width: 100%; }
@@ -478,6 +521,9 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .strip{padding:18px 20px;} .strip-inner{flex-wrap:wrap;gap:14px;}
   .strip-div{display:none;}
   .stats-wrap{padding:28px 20px;}
+  .src-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width: 520px){
   .src-grid{grid-template-columns:1fr;}
 }
 
@@ -555,6 +601,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <symbol id="i-box" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></symbol>
     <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-pdf" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Zm0 0v6h6"/><text x="12" y="17" font-family="Geist Mono, monospace" font-size="6" font-weight="700" text-anchor="middle" fill="currentColor" stroke="none">PDF</text></symbol>
     <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10m-3-7h4.5a1.5 1.5 0 0 1 0 3H10m4 0h.5a2 2 0 0 1 0 4H9"/></symbol>
     <symbol id="i-pen" viewBox="0 0 24 24"><path d="m12 18 8.5-8.5a2.1 2.1 0 0 0-3-3L9 15v3h3ZM15 6l3 3"/></symbol>
     <symbol id="i-speed" viewBox="0 0 24 24"><path d="M12 14V8m0 0 6 5m-6-5L6 13M3 18a9 9 0 1 1 18 0"/></symbol>
@@ -674,7 +721,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       <button class="tab active" onclick="setTab('multi',this)"><svg class="ico ico-sm"><use href="#i-broadcast"/></svg> Multi-streaming</button>
       <button class="tab" onclick="setTab('sources',this)"><svg class="ico ico-sm"><use href="#i-layers"/></svg> Sources & scenes</button>
       <button class="tab" onclick="setTab('engage',this)"><svg class="ico ico-sm"><use href="#i-coin"/></svg> Audience tools</button>
-      <button class="tab" onclick="setTab('quality',this)"><svg class="ico ico-sm"><use href="#i-audio"/></svg> Stream quality</button>
+      <button class="tab" onclick="setTab('quality',this)"><svg class="ico ico-sm"><use href="#i-audio"/></svg> Pro audio</button>
     </div>
 
     <!-- Multi-streaming -->
@@ -685,7 +732,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         <ul class="feat-ul">
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> 84+ platforms pre-configured: Twitch, YouTube, Facebook, Kick, TikTok, LinkedIn, Steam</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Direct peer-to-peer — no third-party server, no privacy concerns</li>
-          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Independent bitrate per platform — 6 Mbps to Twitch, 2.5 Mbps to backup</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Independent bitrate per platform — any bitrate each destination supports (e.g. 6 Mbps to Twitch, 4.5 to YouTube, 2.5 to TikTok)</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Hardware encoding via NVENC, QuickSync, AMF auto-detected at startup</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Auto ingest server selection picks the lowest-latency endpoint</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> RTMPS secure streaming for any platform that supports it</li>
@@ -707,7 +754,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <div class="feat-panel" id="panel-sources">
       <div>
         <h3 class="feat-h">Every source you'll ever need to stream</h3>
-        <p class="feat-p">Webcam, screen, game, browser, smartphone, IP camera, video files, images — all as drag-and-drop layers. Build unlimited scenes and switch between them mid-broadcast with hotkeys or cinematic transitions.</p>
+        <p class="feat-p">Webcam, IP camera, screen, game, browser, smartphone, NDI, video files, PDF slides — all as drag-and-drop layers. Build unlimited scenes and switch between them mid-broadcast with hotkeys or cinematic transitions.</p>
         <ul class="feat-ul">
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Game Capture for DirectX & OpenGL — perfect performance under heavy load</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Browser source with full JavaScript & scroll support</li>
@@ -718,12 +765,15 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </div>
       <div class="feat-vis">
         <div class="src-grid">
-          <div class="src-item"><div class="src-ico"><svg class="ico"><use href="#i-cam"/></svg></div><div><div class="src-nm">Webcam</div><div class="src-meta">1920×1080 · 60fps</div></div></div>
-          <div class="src-item"><div class="src-ico"><svg class="ico"><use href="#i-screen"/></svg></div><div><div class="src-nm">Screen Capture</div><div class="src-meta">Display 1 · 4K</div></div></div>
-          <div class="src-item"><div class="src-ico"><svg class="ico"><use href="#i-game"/></svg></div><div><div class="src-nm">Game Capture</div><div class="src-meta">DirectX 12</div></div></div>
-          <div class="src-item"><div class="src-ico"><svg class="ico"><use href="#i-globe"/></svg></div><div><div class="src-nm">Browser Source</div><div class="src-meta">Chromium</div></div></div>
-          <div class="src-item"><div class="src-ico"><svg class="ico"><use href="#i-phone"/></svg></div><div><div class="src-nm">Phone Camera</div><div class="src-meta">Wireless</div></div></div>
-          <div class="src-item"><div class="src-ico"><svg class="ico"><use href="#i-file"/></svg></div><div><div class="src-nm">Video File</div><div class="src-meta">MP4 · MKV · MOV</div></div></div>
+          <div class="src-item"><div class="src-ico"><svg><use href="#i-cam"/></svg></div><div><div class="src-nm">Webcam</div><div class="src-meta">1080p · 60fps</div></div></div>
+          <div class="src-item"><div class="src-ico p"><svg><use href="#i-screen"/></svg></div><div><div class="src-nm">Screen capture</div><div class="src-meta">4K display</div></div></div>
+          <div class="src-item"><div class="src-ico g"><svg><use href="#i-game"/></svg></div><div><div class="src-nm">Game capture</div><div class="src-meta">DirectX · OpenGL</div></div></div>
+          <div class="src-item"><div class="src-ico"><svg><use href="#i-globe"/></svg></div><div><div class="src-nm">Browser source</div><div class="src-meta">Chromium</div></div></div>
+          <div class="src-item"><div class="src-ico p"><svg><use href="#i-phone"/></svg></div><div><div class="src-nm">Phone camera</div><div class="src-meta">Wireless · LAN</div></div></div>
+          <div class="src-item"><div class="src-ico g"><svg><use href="#i-broadcast"/></svg></div><div><div class="src-nm">NDI</div><div class="src-meta">Network video</div></div></div>
+          <div class="src-item"><div class="src-ico a"><svg><use href="#i-cam"/></svg></div><div><div class="src-nm">IP camera</div><div class="src-meta">RTSP · ONVIF</div></div></div>
+          <div class="src-item"><div class="src-ico"><svg><use href="#i-file"/></svg></div><div><div class="src-nm">Video file</div><div class="src-meta">MP4 · MKV · MOV</div></div></div>
+          <div class="src-item"><div class="src-ico a"><svg><use href="#i-pdf"/></svg></div><div><div class="src-nm">PDF · slides</div><div class="src-meta">Multi-page</div></div></div>
         </div>
       </div>
     </div>
@@ -742,11 +792,19 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         </ul>
       </div>
       <div class="feat-vis">
-        <div class="tip-stack">
-          <div class="tip-row"><div class="tip-avatar">A</div><div class="tip-text"><div class="tip-name">Alex_Streamer</div><div class="tip-msg">Keep up the great content!</div></div><span class="tip-amount">$25</span></div>
-          <div class="tip-row green"><div class="tip-avatar green">M</div><div class="tip-text"><div class="tip-name">MariaLive</div><div class="tip-msg">Love this stream ❤️</div></div><span class="tip-amount">$10</span></div>
-          <div class="tip-row amber"><div class="tip-avatar amber">J</div><div class="tip-text"><div class="tip-name">JustinFromOH</div><div class="tip-msg">For the new mic upgrade!</div></div><span class="tip-amount">$50</span></div>
-          <div class="tip-row"><div class="tip-avatar">S</div><div class="tip-text"><div class="tip-name">Sasha_404</div><div class="tip-msg">First time tipping — woo!</div></div><span class="tip-amount">$5</span></div>
+        <div class="aud-stage">
+          <div class="aud-scene">
+            <div class="aud-silhouette"></div>
+            <div class="aud-blur-chip">Real-time blur</div>
+            <div class="aud-rec"><span class="aud-rec-dot"></span>REC</div>
+            <div class="aud-tip aud-t1"><span class="aud-tip-ava">A</span><span class="aud-tip-name">Alex</span><span class="aud-tip-amt">$25</span></div>
+            <div class="aud-tip aud-t2"><span class="aud-tip-ava g">M</span><span class="aud-tip-name">Maria</span><span class="aud-tip-amt g">$10</span></div>
+            <div class="aud-tip aud-t3"><span class="aud-tip-ava a">J</span><span class="aud-tip-name">Justin</span><span class="aud-tip-amt a">$50</span></div>
+          </div>
+          <div class="aud-hotkey">
+            <span class="aud-hotkey-label"><svg><use href="#i-replay"/></svg> Replay last 10 s</span>
+            <span class="aud-keys"><span class="aud-k">Ctrl</span><span class="aud-k-plus">+</span><span class="aud-k">R</span></span>
+          </div>
         </div>
       </div>
     </div>
@@ -754,14 +812,14 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <!-- Quality -->
     <div class="feat-panel" id="panel-quality">
       <div>
-        <h3 class="feat-h">Studio-quality audio & video stack</h3>
-        <p class="feat-p">A full audio mixer with VST 2/3 plugin support — meaning any pro de-noise, EQ or compression plugin works inside SplitCam. Built-in upload speed test, A/V sync correction and audio compression keep your stream broadcast-ready.</p>
+        <h3 class="feat-h">Studio-grade audio chain</h3>
+        <p class="feat-p">Full mixer with VST 2/3 plugin support — any pro de-noise, EQ or compression plugin works inside SplitCam. Neural denoise, per-layer A/V sync correction and mic accentuation keep your voice broadcast-ready from the first second on air.</p>
         <ul class="feat-ul">
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Unlimited audio sources: mic, system, browser tabs, files, applications</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> VST 2 & VST 3 plugin support — bring any pro audio chain</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Sound Offset filter for perfect A/V sync per audio layer</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Accentuate Microphone auto-ducks background when you speak</li>
-          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> HD up to 1920×1080 at 60 FPS preserved across every channel</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Neural denoise + multi-track recording for podcast-grade post production</li>
         </ul>
       </div>
       <div class="feat-vis">
