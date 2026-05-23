@@ -84,6 +84,11 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
   GraphQL Analytics queries — never echo or log the token; reference via
   `$(cat ~/.cloudflare_token)` inside curl headers only. **Was pasted in
   chat — rotate after the next use** (Cloudflare → API Tokens → Roll).
+- **Ahrefs API token:** `~/.ahrefs_token` (chmod 600). Use with
+  `seo/ahrefs.py` via `AHREFS_TOKEN=$(cat ~/.ahrefs_token) python3 ahrefs.py`.
+  Same warning — was exposed in chat earlier, rotate when convenient
+  (Ahrefs → Account → API → regenerate). Note "Important notes" #1
+  below predates this file — the token IS still in this file until rotated.
 - **Iso card honesty:** `/products/` iOS card has two features dimmed and
   tagged `in development` (AR filters, Picture-in-picture) — don't reword
   them as if they ship.
