@@ -28,6 +28,16 @@ When a task is done, change `⏳ pending` → `✅ YYYY-MM-DD done` so future-yo
 - Also ask the user for the iOS SplitCam Remote App Store URL if that app is live, and restore that button too.
 - If still pending: leave as "Coming soon" and re-check in a few days.
 
+**If Android (and ideally iOS) Remote goes live, reopen this decision:**
+On 2026-05-23 the user and Claude decided NOT to build a dedicated
+`/products/remote/` page yet — Remote isn't shipped, content is thin,
+SEO volume is low, and a "Coming soon" landing would just bounce users.
+Once the store links are real, revisit: build `/products/remote/` (full
+product page) + add a third spotlight on the homepage (Multistream /
+Virtual Camera / **Remote**) and condense the Remote block on `/products/`
+into a teaser linking to the new page. Schema.org SoftwareApplication
+for the mobile app on the new page.
+
 ---
 
 ## 2026-05-27 — Week 1 indexing check
