@@ -175,21 +175,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .remote-features li strong{color:var(--text);font-weight:600}
 .remote-cta{display:flex;gap:10px;flex-wrap:wrap}
 .remote-visual{position:relative;display:flex;justify-content:center;align-items:center}
-.phone-mock{width:240px;height:480px;background:linear-gradient(180deg,#22223a,#141420);border-radius:36px;border:2px solid rgba(255,255,255,.08);box-shadow:0 24px 60px rgba(0,0,0,.4),inset 0 0 0 6px rgba(255,255,255,.02);padding:18px;position:relative;display:flex;flex-direction:column;gap:10px}
-.phone-mock::before{content:'';position:absolute;top:14px;left:50%;transform:translateX(-50%);width:80px;height:18px;background:#000;border-radius:99px;z-index:2}
-.mock-screen{flex:1;background:#0a0a14;border-radius:22px;padding:28px 14px 14px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
-.mock-row{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:rgba(255,255,255,.04);border-radius:8px;font-size:10.5px}
-.mock-row .lbl{color:var(--text-sub)}
-.mock-row .val{color:var(--text);font-weight:600;font-family:'Geist Mono',monospace}
-.mock-row.live .lbl{color:var(--red);font-weight:700;display:flex;align-items:center;gap:5px}
-.mock-row.live .lbl::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--red);animation:blink 1.4s infinite}
+/* SplitCam Remote — real iPhone screenshot with live overlays */
+.phone-mock{position:relative;width:280px;border-radius:34px;overflow:hidden;box-shadow:0 28px 70px -10px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06)}
+.phone-mock .phone-img{display:block;width:100%;height:auto}
+/* Big stream button — overlays the white-circle area at the bottom centre.
+   Replaces the circular target with a square stop-button + live timer below. */
+.phone-stop{position:absolute;left:50%;bottom:14%;transform:translateX(-50%);width:13%;aspect-ratio:1;background:#ff3b3b;border-radius:6px;box-shadow:0 0 0 3px #0a0a14,0 0 0 4px rgba(255,255,255,.22),0 0 22px rgba(255,59,59,.55)}
+.phone-stop-timer{position:absolute;left:50%;bottom:10%;transform:translateX(-50%);font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:#ff3b3b;letter-spacing:.5px;text-shadow:0 1px 2px rgba(0,0,0,.7);background:rgba(10,10,20,.6);padding:1px 6px;border-radius:4px}
+/* Small REC chip in the lower-right control row — recolor to red */
+.phone-rec-chip{position:absolute;right:7.5%;bottom:16%;width:9%;aspect-ratio:30/18;border-radius:4px;background:rgba(255,59,59,.95);box-shadow:0 0 6px rgba(255,59,59,.55)}
+.phone-rec-chip::before{content:'REC';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:6.5px;font-weight:800;color:#fff;letter-spacing:.4px;font-family:'Geist Mono',monospace}
+/* Green "live to this platform" dots on each broadcast icon at the very bottom row */
+.phone-dot{position:absolute;width:9px;height:9px;border-radius:50%;background:#22c55e;border:2px solid #0a0a14;box-shadow:0 0 6px rgba(34,197,94,.75);animation:blink 1.6s infinite}
+.phone-dot.d1{left:14%;bottom:4.8%}   /* Twitch */
+.phone-dot.d2{left:32%;bottom:4.8%}   /* YouTube */
+.phone-dot.d3{left:51%;bottom:4.8%}   /* Facebook */
+.phone-dot.d4{left:88%;bottom:4.8%}   /* Custom RTMP */
 @keyframes blink{0%,40%{opacity:1}50%,90%{opacity:.25}100%{opacity:1}}
-.mock-scenes{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:4px}
-.mock-scene{padding:14px 6px;background:rgba(255,255,255,.04);border-radius:6px;text-align:center;font-size:9.5px;color:var(--text-sub);font-weight:600}
-.mock-scene.on{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff}
-.mock-slider{display:flex;align-items:center;gap:8px;padding:8px 10px;background:rgba(255,255,255,.04);border-radius:8px;font-size:10px}
-.mock-slider .track{flex:1;height:3px;background:rgba(255,255,255,.1);border-radius:99px;position:relative}
-.mock-slider .track::after{content:'';position:absolute;left:0;top:0;height:100%;background:var(--blue);border-radius:99px;width:var(--w,60%)}
 
 /* Compatibility note */
 .compat-note{margin-top:18px;padding:14px 18px;background:rgba(0,0,0,.18);border:1px solid var(--app-border);border-radius:12px;font-size:13px;color:var(--text-sub);line-height:1.6}
@@ -223,7 +225,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   .product-grid,.connect{grid-template-columns:1fr}
   .remote-feature{padding:28px}
   .remote-inner{grid-template-columns:1fr;gap:28px}
-  .phone-mock{width:200px;height:400px}
+  .phone-mock{width:230px}
   footer{padding:32px 20px}
   .footer-inner{flex-direction:column;text-align:center}
 }
@@ -423,20 +425,14 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
       <div class="remote-visual" aria-hidden="true">
         <div class="phone-mock">
-          <div class="mock-screen">
-            <div class="mock-row live"><span class="lbl">LIVE</span><span class="val">01:24:08</span></div>
-            <div class="mock-row"><span class="lbl">Bitrate</span><span class="val">4.5 Mbps</span></div>
-            <div class="mock-scenes">
-              <div class="mock-scene on">Wide</div>
-              <div class="mock-scene">Pulpit</div>
-              <div class="mock-scene">Band</div>
-              <div class="mock-scene">Lyrics</div>
-            </div>
-            <div class="mock-slider"><span class="lbl">Mic</span><span class="track" style="--w:75%"></span></div>
-            <div class="mock-slider"><span class="lbl">Music</span><span class="track" style="--w:42%"></span></div>
-            <div class="mock-slider"><span class="lbl">Game</span><span class="track" style="--w:88%"></span></div>
-            <div class="mock-row"><span class="lbl">Recording</span><span class="val" style="color:var(--green)">● ON</span></div>
-          </div>
+          <img class="phone-img" src="assets/remote-phone.png" alt="SplitCam Remote on iPhone — scene switcher, media layers, audio mixer and stream controls" loading="lazy">
+          <div class="phone-stop" aria-hidden="true"></div>
+          <div class="phone-stop-timer" data-stream-timer>00:00</div>
+          <div class="phone-rec-chip" aria-hidden="true"></div>
+          <span class="phone-dot d1" aria-hidden="true"></span>
+          <span class="phone-dot d2" aria-hidden="true"></span>
+          <span class="phone-dot d3" aria-hidden="true"></span>
+          <span class="phone-dot d4" aria-hidden="true"></span>
         </div>
       </div>
     </div>
@@ -489,6 +485,29 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </div>
   </div>
 </footer>
+
+<script>
+/* Remote phone mockup — live stream timer ticks mm:ss when the phone is on screen */
+(function(){
+  var el = document.querySelector('[data-stream-timer]');
+  if (!el) return;
+  var seconds = 42; // start mid-stream so it never reads "fresh"
+  function fmt(s){ return String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0'); }
+  el.textContent = fmt(seconds);
+  var onScreen = false, intervalId = null;
+  function tick(){ seconds += 1; el.textContent = fmt(seconds); }
+  function start(){ if (intervalId) return; intervalId = setInterval(tick, 1000); }
+  function stop(){ if (!intervalId) return; clearInterval(intervalId); intervalId = null; }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries){
+      onScreen = entries[0].isIntersecting;
+      onScreen ? start() : stop();
+    }, { threshold: .1 }).observe(el);
+  } else {
+    start();
+  }
+})();
+</script>
 
 </body>
 </html>
