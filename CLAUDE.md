@@ -64,6 +64,30 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 - Site-wide version is **v10.9.2**. No installer size shown.
 - Working tree clean as of last check; branch `main`.
 
+## Infrastructure access (set up 2026-05-22 / 23)
+
+- **GitHub: `x270880x/splitcam-release`** (public) — 36 releases, all Windows
+  `.msi` installers from `splitcam.com/win-download/update/` (9.0.9 → 10.9.2)
+  + the `10.8.62-restream-test` prerelease. Each release has the matching
+  changelog from `splitcam-changes-win` / `history.txt` in its notes (24 with
+  full changelog, 11 interim builds with a generic note + link).
+- **GitHub: `x270880x/old_splitcam_site`** (PRIVATE 🔒) — full backup of the
+  old splitcam.com `public_html` (excl. installers), in release
+  `backup-2026-05-23` as `old_splitcam_site.tar.gz` (1.4 GB). Private because
+  it contains `wp-config.php` with DB creds. Never make public.
+- **SSH to splitcam.com server:** key at `~/.ssh/splitcam_deploy` (Ed25519,
+  Mac-local). Server: `dfadnfvi@77.83.100.124` (cPanel host
+  `pl-rocket-cms1.hostsila.org`), port 22. Note: `splitcam.com` itself is
+  fronted by Cloudflare, SSH-only via the direct IP.
+- **Cloudflare API token:** `~/.cloudflare_token` (chmod 600), scoped to zones
+  `splitcamera.com` + `splitcam.com`, Analytics: Read only. Used for
+  GraphQL Analytics queries — never echo or log the token; reference via
+  `$(cat ~/.cloudflare_token)` inside curl headers only. **Was pasted in
+  chat — rotate after the next use** (Cloudflare → API Tokens → Roll).
+- **Iso card honesty:** `/products/` iOS card has two features dimmed and
+  tagged `in development` (AR filters, Picture-in-picture) — don't reword
+  them as if they ship.
+
 ## Done — SEO Wave 1 ✅
 
 `/for/youtubers/`, `/for/churches/`, `/alternatives/obs/` — all built & live.
