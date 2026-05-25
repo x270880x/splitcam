@@ -130,6 +130,24 @@ nav {
 .btn-blue-sm { padding: 7px 16px; border-radius: 7px; background: var(--blue); color: #fff; border: none; font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background .18s; display: inline-flex; align-items: center; gap: 6px; font-family: inherit; }
 .btn-blue-sm:hover { background: var(--blue-hover); }
 
+/* Hamburger button — mobile only */
+.nav-burger { display: none; width: 38px; height: 38px; border: 1px solid var(--app-border2); border-radius: 8px; background: transparent; cursor: pointer; align-items: center; justify-content: center; padding: 0; color: var(--text); transition: background .15s, border-color .15s; font-family: inherit; }
+.nav-burger:hover { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.22); }
+.nav-burger svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.nav-burger .ico-close { display: none; }
+.nav-burger.open .ico-open { display: none; }
+.nav-burger.open .ico-close { display: block; }
+
+/* Mobile drop-down menu */
+.nav-mobile { position: fixed; top: 56px; left: 0; right: 0; background: rgba(20,20,32,.97); backdrop-filter: blur(16px); border-bottom: 1px solid var(--app-border); padding: 14px 20px 18px; display: none; flex-direction: column; gap: 4px; z-index: 99; }
+.nav-mobile.open { display: flex; }
+.nav-mobile a { display: block; padding: 12px 14px; font-size: 15px; color: var(--text-sub); font-weight: 500; border-radius: 8px; text-decoration: none; transition: background .15s, color .15s; }
+.nav-mobile a:hover, .nav-mobile a.active { background: rgba(255,255,255,.05); color: var(--text); }
+.nav-mobile-divider { height: 1px; background: var(--app-border); margin: 8px 0; }
+.nav-mobile .btn-mobile-dl { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px 16px; font-size: 14px; font-weight: 600; color: #fff; background: var(--blue); border-radius: 8px; transition: background .15s; }
+.nav-mobile .btn-mobile-dl:hover { background: var(--blue-hover); color: #fff; }
+.nav-mobile .btn-mobile-dl svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
 /* HERO */
 .hero { min-height: 100vh; padding: 100px 40px 60px; display: flex; align-items: center; position: relative; overflow: hidden; }
 .hero-glow { position: absolute; pointer-events: none; width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(40,120,252,.07) 0%, transparent 70%); right: -120px; top: 50%; transform: translateY(-50%); }
@@ -524,6 +542,8 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
 
 @media(max-width:900px){
   nav{padding:0 20px;} .nav-links{display:none;}
+  .nav-burger{display:inline-flex;}
+  .nav-right .dl{display:none;}
   .hero{padding:80px 20px 60px;} .hero-inner{grid-template-columns:1fr;}
   .app-window{display:none;}
   .section{padding:60px 20px;}
@@ -646,7 +666,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <li><a href="multistreaming/">Multistreaming</a></li>
     <li><a href="alternatives/">Alternatives</a></li>
     <li><a href="for/">Use Cases</a></li>
-    <li><a href="#faq">Help</a></li>
+    <li><a href="help/">Help</a></li>
   </ul>
   <div class="nav-right">
     <span class="dl dl-sm">
@@ -656,8 +676,23 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </button>
       <div class="dl-menu" data-dl-menu></div>
     </span>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+      <svg class="ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
   </div>
 </nav>
+
+<div class="nav-mobile" id="nav-mobile" role="menu" aria-hidden="true">
+  <a href="products/" role="menuitem">Products</a>
+  <a href="virtual-camera/" role="menuitem">Virtual Camera</a>
+  <a href="multistreaming/" role="menuitem">Multistreaming</a>
+  <a href="alternatives/" role="menuitem">Alternatives</a>
+  <a href="for/" role="menuitem">Use Cases</a>
+  <a href="help/" role="menuitem">Help</a>
+  <div class="nav-mobile-divider"></div>
+  <a href="#" class="btn-mobile-dl" role="menuitem" data-dl-primary><svg viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg> <span data-dl-label>Download</span></a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1390,6 +1425,29 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
     }, delayMs);
   }
   scheduleNextTick();
+})();
+</script>
+
+<script>
+/* Mobile hamburger menu */
+(function(){
+  var burger = document.querySelector('.nav-burger');
+  var menu = document.getElementById('nav-mobile');
+  if (!burger || !menu) return;
+  function close(){ burger.classList.remove('open'); menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); menu.setAttribute('aria-hidden','true'); }
+  function open(){ burger.classList.add('open'); menu.classList.add('open'); burger.setAttribute('aria-expanded','true'); menu.setAttribute('aria-hidden','false'); }
+  burger.addEventListener('click', function(e){
+    e.stopPropagation();
+    if (menu.classList.contains('open')) close(); else open();
+  });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+  document.addEventListener('click', function(e){
+    if (!menu.classList.contains('open')) return;
+    if (menu.contains(e.target) || burger.contains(e.target)) return;
+    close();
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 900) close(); });
 })();
 </script>
 
