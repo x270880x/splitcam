@@ -383,10 +383,45 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .mix-rows { display: flex; flex-direction: column; gap: 9px; width: 100%; }
 .mix-row { display: flex; align-items: center; gap: 12px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 7px; padding: 10px 14px; }
 .mix-nm { font-size: 12.5px; color: var(--text-sub); width: 110px; display: flex; align-items: center; gap: 7px; font-weight: 500; }
-.mix-track { flex: 1; height: 4px; background: var(--app-raised); border-radius: 2px; }
+.mix-track { flex: 1; height: 4px; background: var(--app-raised); border-radius: 2px; overflow: hidden; }
 .mix-fill { height: 100%; border-radius: 2px; }
 .fb { background: var(--blue); } .fg { background: var(--green); } .fa { background: var(--amber); }
-.mix-db { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; }
+.mix-db { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; min-width: 42px; text-align: right; }
+
+/* Master output meter — sits above the channel rows */
+.mix-master { display: flex; align-items: center; gap: 12px; padding: 9px 14px; background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 7px; }
+.mix-master-lbl { font-size: 9.5px; font-weight: 700; letter-spacing: .8px; color: var(--text-sub); text-transform: uppercase; }
+.mix-master-meters { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+.mix-master-bar { height: 3px; background: var(--app-raised); border-radius: 2px; overflow: hidden; position: relative; }
+.mix-master-fill { position: absolute; left: 0; top: 0; height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--green) 0 60%, var(--amber) 60% 82%, #ef4b4b 82% 100%); background-size: 200% 100%; background-position: 0 0; animation: mixMasterL 2.8s ease-in-out infinite; }
+.mix-master-bar.r .mix-master-fill { animation: mixMasterR 2.4s ease-in-out infinite; }
+.mix-master-db { font-family: 'Geist Mono', monospace; font-size: 10.5px; color: var(--text); font-weight: 600; min-width: 58px; text-align: right; }
+.mix-master-meta { font-family: 'Geist Mono', monospace; font-size: 9.5px; color: var(--text-dim); font-weight: 500; }
+@keyframes mixMasterL { 0%,100% { width: 62%; } 35% { width: 78%; } 60% { width: 70%; } 85% { width: 54%; } }
+@keyframes mixMasterR { 0%,100% { width: 66%; } 30% { width: 74%; } 55% { width: 81%; } 80% { width: 60%; } }
+
+/* M/S dots */
+.mix-ms { display: inline-flex; gap: 4px; flex-shrink: 0; }
+.mix-ms-dot { width: 16px; height: 16px; border-radius: 4px; background: var(--app-base); border: 1px solid var(--app-border2); display: inline-flex; align-items: center; justify-content: center; font-size: 8.5px; font-weight: 700; color: var(--text-dim); font-family: 'Geist Mono', monospace; letter-spacing: 0; }
+
+/* Live pulse on fader fills */
+.mix-fill.pulse { animation: mixFillPulseMic 2.6s ease-in-out infinite; }
+.mix-fill.pulse-music { animation: mixFillPulseMusic 3.4s ease-in-out infinite; }
+@keyframes mixFillPulseMic { 0%,100% { width: 78%; } 30% { width: 86%; } 60% { width: 72%; } 80% { width: 82%; } }
+@keyframes mixFillPulseMusic { 0%,100% { width: 42%; } 50% { width: 48%; } }
+
+/* Tall Mic row — top line + VST chain line */
+.mix-row.mix-row-tall { flex-direction: column; align-items: stretch; gap: 9px; padding: 10px 14px 11px; }
+.mix-row-top { display: flex; align-items: center; gap: 12px; }
+.mix-vst { display: flex; align-items: center; gap: 5px; padding-left: 44px; flex-wrap: wrap; }
+.mix-vst-lbl { font-size: 9px; font-weight: 700; color: var(--text-dim); letter-spacing: .8px; text-transform: uppercase; margin-right: 5px; }
+.mix-vst-chip { display: inline-flex; align-items: center; padding: 3px 8px; background: rgba(40,120,252,.08); border: 1px solid rgba(40,120,252,.32); border-radius: 5px; font-family: 'Geist Mono', monospace; font-size: 10px; font-weight: 600; color: #7ab1ff; letter-spacing: .2px; }
+.mix-vst-sep { color: var(--text-dim); font-size: 10px; font-family: 'Geist Mono', monospace; }
+
+/* NR (neural denoise) badge on Mic row */
+.mix-nr { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px 3px 6px; background: rgba(94,229,114,.10); border: 1px solid rgba(94,229,114,.36); border-radius: 99px; font-size: 9.5px; font-weight: 700; color: var(--green); font-family: 'Geist Mono', monospace; letter-spacing: .5px; flex-shrink: 0; }
+.mix-nr::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px rgba(94,229,114,.7); animation: nrBlink 1.8s ease-in-out infinite; }
+@keyframes nrBlink { 0%, 75%, 100% { opacity: 1; } 88% { opacity: .25; } }
 
 /* WHAT'S NEW */
 .new-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -897,10 +932,55 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </div>
       <div class="feat-vis">
         <div class="mix-rows">
-          <div class="mix-row"><span class="mix-nm"><svg class="ico ico-sm"><use href="#i-mic"/></svg> Microphone</span><div class="mix-track"><div class="mix-fill fb" style="width:78%"></div></div><span class="mix-db">-3 dB</span></div>
-          <div class="mix-row"><span class="mix-nm"><svg class="ico ico-sm"><use href="#i-music"/></svg> Music</span><div class="mix-track"><div class="mix-fill fg" style="width:42%"></div></div><span class="mix-db">-14 dB</span></div>
-          <div class="mix-row"><span class="mix-nm"><svg class="ico ico-sm"><use href="#i-monitor"/></svg> System audio</span><div class="mix-track"><div class="mix-fill fa" style="width:55%"></div></div><span class="mix-db">-9 dB</span></div>
-          <div class="mix-row"><span class="mix-nm"><svg class="ico ico-sm"><use href="#i-globe"/></svg> Browser</span><div class="mix-track"><div class="mix-fill fb" style="width:30%"></div></div><span class="mix-db">-18 dB</span></div>
+          <div class="mix-master">
+            <span class="mix-master-lbl">Master Out</span>
+            <div class="mix-master-meters">
+              <div class="mix-master-bar l"><div class="mix-master-fill"></div></div>
+              <div class="mix-master-bar r"><div class="mix-master-fill"></div></div>
+            </div>
+            <span class="mix-master-db">-7 / -6 dB</span>
+            <span class="mix-master-meta">48 kHz · 24-bit</span>
+          </div>
+          <div class="mix-row mix-row-tall">
+            <div class="mix-row-top">
+              <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
+              <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-mic"/></svg> Microphone</span>
+              <div class="mix-track"><div class="mix-fill fb pulse" style="width:78%"></div></div>
+              <span class="mix-db">-3 dB</span>
+              <span class="mix-nr">NR ON</span>
+            </div>
+            <div class="mix-vst">
+              <span class="mix-vst-lbl">VST chain</span>
+              <span class="mix-vst-chip">NoiseGate</span><span class="mix-vst-sep">›</span>
+              <span class="mix-vst-chip">EQ</span><span class="mix-vst-sep">›</span>
+              <span class="mix-vst-chip">De-Ess</span><span class="mix-vst-sep">›</span>
+              <span class="mix-vst-chip">Comp</span>
+            </div>
+          </div>
+          <div class="mix-row">
+            <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
+            <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-music"/></svg> Music</span>
+            <div class="mix-track"><div class="mix-fill fg pulse-music" style="width:42%"></div></div>
+            <span class="mix-db">-14 dB</span>
+          </div>
+          <div class="mix-row">
+            <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
+            <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-monitor"/></svg> System audio</span>
+            <div class="mix-track"><div class="mix-fill fa" style="width:55%"></div></div>
+            <span class="mix-db">-9 dB</span>
+          </div>
+          <div class="mix-row">
+            <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
+            <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-globe"/></svg> Browser</span>
+            <div class="mix-track"><div class="mix-fill fb" style="width:30%"></div></div>
+            <span class="mix-db">-18 dB</span>
+          </div>
+          <div class="mix-row">
+            <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
+            <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-game"/></svg> Game audio</span>
+            <div class="mix-track"><div class="mix-fill fb" style="width:48%"></div></div>
+            <span class="mix-db">-11 dB</span>
+          </div>
         </div>
       </div>
     </div>
