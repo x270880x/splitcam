@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Help & Support — SplitCam</title>
+<meta name="description" content="Get help with SplitCam. Ask the community on the user forum, chat with the team on Telegram, or read the FAQ on the main page. Free, no signup required.">
+<meta name="keywords" content="splitcam help, splitcam support, splitcam contact, splitcam telegram, splitcam forum, splitcam community">
+<meta name="author" content="SplitCam">
+<link rel="canonical" href="https://splitcam.com/help/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://splitcam.com/help/">
+<meta property="og:title" content="Help & Support — SplitCam">
+<meta property="og:description" content="Ask the community on the user forum, or chat with the team on Telegram. Free, no signup required.">
+<meta property="og:image" content="https://splitcam.com/assets/hero-spotlight-poster.jpg">
+<meta property="og:site_name" content="SplitCam">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Help & Support — SplitCam">
+<meta name="twitter:description" content="Forum and Telegram support for SplitCam — free streaming software.">
+
+<meta name="theme-color" content="#141420">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+
+<!-- Schema.org: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "SplitCam", "item": "https://splitcam.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Help", "item": "https://splitcam.com/help/"}
+      ]
+    },
+    {
+      "@type": "ContactPage",
+      "name": "SplitCam Help & Support",
+      "url": "https://splitcam.com/help/",
+      "description": "Community forum and Telegram chat for SplitCam — free streaming software with built-in virtual camera and multistreaming."
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --app-base:#141420;
+  --app-panel:#1c1c2e;
+  --app-surface:#22223a;
+  --app-border:rgba(255,255,255,.08);
+  --app-border2:rgba(255,255,255,.14);
+  --blue:#2878fc;
+  --blue-hover:#4d8eff;
+  --blue-dim:rgba(40,120,252,.13);
+  --purple:#9c5bff;
+  --green:#5ee572;
+  --text:#eeeeff;
+  --text-sub:#9090bb;
+  --text-dim:#50506a;
+}
+html{scroll-behavior:smooth;background:var(--app-base);scroll-padding-top:60px}
+body{font-family:'Geist',sans-serif;background:var(--app-base);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(20,20,32,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--app-border)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:26px;height:26px;flex-shrink:0}
+.nav-logo-wordmark{font-size:24px;font-weight:700;letter-spacing:.5px}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:14px;color:var(--text-sub);font-weight:500;transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:8px;background:var(--blue);color:#fff;font-size:13px;font-weight:600;transition:background .15s}
+.btn-primary:hover{background:var(--blue-hover)}
+.btn-ghost{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:8px;background:transparent;color:var(--text);border:1px solid var(--app-border2);font-size:13px;font-weight:600;transition:all .15s}
+.btn-ghost:hover{background:rgba(255,255,255,.04)}
+.btn-lg{padding:13px 24px;font-size:14px;border-radius:10px}
+
+/* Hamburger button — visible on mobile only */
+.nav-burger{display:none;width:40px;height:40px;border:1px solid var(--app-border2);border-radius:8px;background:transparent;cursor:pointer;align-items:center;justify-content:center;padding:0;color:var(--text);transition:background .15s,border-color .15s}
+.nav-burger:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.22)}
+.nav-burger svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav-burger .ico-close{display:none}
+.nav-burger.open .ico-open{display:none}
+.nav-burger.open .ico-close{display:block}
+
+/* Mobile drop-down menu */
+.nav-mobile{position:fixed;top:60px;left:0;right:0;background:rgba(20,20,32,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--app-border);padding:14px 20px 18px;display:none;flex-direction:column;gap:4px;z-index:99}
+.nav-mobile.open{display:flex}
+.nav-mobile a{display:block;padding:12px 14px;font-size:15px;color:var(--text-sub);font-weight:500;border-radius:8px;transition:background .15s,color .15s}
+.nav-mobile a:hover,.nav-mobile a.active{background:rgba(255,255,255,.05);color:var(--text)}
+.nav-mobile-divider{height:1px;background:var(--app-border);margin:8px 0}
+.nav-mobile .btn-primary{justify-content:center;width:100%;padding:12px 16px;font-size:14px}
+
+/* Breadcrumbs */
+.breadcrumbs{padding:80px 40px 0;max-width:900px;margin:0 auto;font-size:13px;color:var(--text-dim)}
+.breadcrumbs a{color:var(--text-sub);transition:color .15s}
+.breadcrumbs a:hover{color:var(--text)}
+.breadcrumbs .sep{margin:0 8px}
+
+/* HERO */
+.hero{padding:32px 40px 50px;max-width:900px;margin:0 auto;position:relative;text-align:center;overflow:hidden}
+.hero-glow{position:absolute;top:-50px;left:50%;transform:translateX(-50%);width:600px;height:420px;background:radial-gradient(ellipse,rgba(40,120,252,.1),transparent 70%);pointer-events:none;z-index:0}
+.eyebrow{display:inline-block;padding:5px 12px;background:var(--blue-dim);color:var(--blue);font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:18px;position:relative;z-index:1}
+.h1{font-size:clamp(32px,4.2vw,52px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin:0 auto 18px;max-width:720px;position:relative;z-index:1}
+.h1 .accent{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:18px;color:var(--text-sub);max-width:600px;line-height:1.6;margin:0 auto 0;position:relative;z-index:1}
+.sub strong{color:var(--text);font-weight:600}
+
+/* Section */
+.section{padding:32px 40px 48px;max-width:900px;margin:0 auto}
+.sec-eyebrow{display:inline-block;padding:4px 10px;background:rgba(255,255,255,.04);color:var(--text-sub);font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:14px}
+.sec-h{font-size:28px;font-weight:700;letter-spacing:-.8px;line-height:1.2;margin-bottom:12px}
+.sec-p{font-size:15.5px;color:var(--text-sub);line-height:1.7;margin-bottom:24px;max-width:680px}
+.sec-p strong{color:var(--text);font-weight:600}
+
+/* Channel cards — forum + telegram */
+.channels{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px}
+.channel{display:block;padding:28px 28px 26px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:all .2s;position:relative;overflow:hidden}
+.channel:hover{border-color:var(--app-border2);transform:translateY(-2px);background:linear-gradient(180deg,var(--app-panel),var(--app-surface))}
+.channel-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.channel-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.channel.forum .channel-icon{background:linear-gradient(135deg,rgba(40,120,252,.22),rgba(40,120,252,.08));border:1px solid rgba(40,120,252,.32);color:#7ab1ff}
+.channel.tg .channel-icon{background:linear-gradient(135deg,rgba(40,166,237,.22),rgba(40,166,237,.06));border:1px solid rgba(40,166,237,.32);color:#5ac8fa}
+.channel-icon svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.channel.tg .channel-icon svg{fill:currentColor;stroke:none}
+.channel h3{font-size:19px;font-weight:700;letter-spacing:-.3px;line-height:1.2;margin-bottom:3px}
+.channel-tag{font-family:'Geist Mono',monospace;font-size:11.5px;color:var(--text-sub);font-weight:500;letter-spacing:.4px}
+.channel-desc{font-size:14.5px;color:var(--text-sub);line-height:1.65;margin-bottom:16px}
+.channel-desc strong{color:var(--text);font-weight:600}
+.channel-features{list-style:none;font-size:13.5px;color:var(--text-sub);line-height:1.7;margin-bottom:20px}
+.channel-features li{padding-left:20px;position:relative}
+.channel-features li::before{content:'·';position:absolute;left:7px;color:var(--blue);font-weight:700;font-size:18px;line-height:1}
+.channel.tg .channel-features li::before{color:#5ac8fa}
+.channel-cta{display:inline-flex;align-items:center;gap:7px;padding:11px 18px;border-radius:10px;font-size:13px;font-weight:600;transition:background .15s,transform .15s}
+.channel.forum .channel-cta{background:var(--blue);color:#fff}
+.channel.forum:hover .channel-cta{background:var(--blue-hover)}
+.channel.tg .channel-cta{background:#2aabee;color:#fff}
+.channel.tg:hover .channel-cta{background:#3bb8f5}
+.channel-cta svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Secondary resources */
+.resources{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+.resource{display:block;padding:18px 20px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:12px;transition:all .15s}
+.resource:hover{border-color:var(--app-border2);background:var(--app-surface)}
+.resource-h{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.resource-h svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;color:var(--text-sub)}
+.resource-p{font-size:12.5px;color:var(--text-sub);line-height:1.55}
+
+/* Note panel */
+.note{margin-top:24px;padding:16px 20px;background:rgba(0,0,0,.18);border:1px solid var(--app-border);border-radius:12px;font-size:13.5px;color:var(--text-sub);line-height:1.65}
+.note b{color:var(--text)}
+
+/* CTA block */
+.cta-block{padding:56px 40px;background:linear-gradient(135deg,var(--app-panel),var(--app-surface));border-top:1px solid var(--app-border);border-bottom:1px solid var(--app-border);text-align:center;margin-top:48px}
+.cta-block h2{font-size:28px;font-weight:700;letter-spacing:-.6px;margin-bottom:12px}
+.cta-block p{font-size:15.5px;color:var(--text-sub);max-width:520px;margin:0 auto 24px;line-height:1.6}
+
+/* Footer */
+footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-panel)}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text-dim)}
+.footer-inner a{color:var(--text-sub);transition:color .15s}
+.footer-inner a:hover{color:var(--text)}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  nav{padding:0 16px}
+  .nav-links{display:none}
+  .nav-burger{display:inline-flex}
+  .breadcrumbs{padding:80px 20px 0}
+  .hero,.section{padding-left:20px;padding-right:20px}
+  .cta-block{padding:48px 20px}
+  .channels{grid-template-columns:1fr}
+  .resources{grid-template-columns:1fr}
+  footer{padding:32px 20px}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="../">
+    <img class="nav-logo-icon" src="../assets/splitcam.png" alt="SplitCam">
+    <span class="nav-logo-wordmark">splitcam</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../products/">Products</a></li>
+    <li><a href="../virtual-camera/">Virtual Camera</a></li>
+    <li><a href="../multistreaming/">Multistreaming</a></li>
+    <li><a href="../alternatives/">Alternatives</a></li>
+    <li><a href="../for/">Use Cases</a></li>
+    <li><a href="./" class="active">Help</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="../" class="btn-primary">⬇ Download</a>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+      <svg class="ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-6 6-6 6"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile" role="menu" aria-hidden="true">
+  <a href="../products/" role="menuitem">Products</a>
+  <a href="../virtual-camera/" role="menuitem">Virtual Camera</a>
+  <a href="../multistreaming/" role="menuitem">Multistreaming</a>
+  <a href="../alternatives/" role="menuitem">Alternatives</a>
+  <a href="../for/" role="menuitem">Use Cases</a>
+  <a href="./" class="active" role="menuitem">Help</a>
+  <div class="nav-mobile-divider"></div>
+  <a href="../" class="btn-primary" role="menuitem">⬇ Download SplitCam</a>
+</div>
+
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+  <a href="../">SplitCam</a><span class="sep">/</span><span>Help</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <span class="eyebrow">Help & support</span>
+  <h1 class="h1">Get help <span class="accent">straight from the people who built it.</span></h1>
+  <p class="sub">Two ways to reach the SplitCam team and community — the <strong>user forum</strong> for searchable threads and bug reports, and <strong>Telegram</strong> for quick chat. Both are free, in English, and run by the same people who write the software.</p>
+</section>
+
+<!-- CHANNELS -->
+<section class="section">
+  <div class="channels">
+    <a class="channel forum" href="https://splitcam.com/forum/" target="_blank" rel="noopener">
+      <div class="channel-head">
+        <div class="channel-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 8.4 8.4 0 0 1-3-.6L3 21l1.6-6A8.4 8.4 0 0 1 4 12a8.4 8.4 0 0 1 8-8.5 8.4 8.4 0 0 1 9 8Z"/></svg>
+        </div>
+        <div>
+          <h3>User forum</h3>
+          <span class="channel-tag">splitcam.com/forum</span>
+        </div>
+      </div>
+      <p class="channel-desc">The main support channel since 2003. Search for an answer first — chances are someone has hit the same issue. If not, post a thread and the team or a long-time user will reply.</p>
+      <ul class="channel-features">
+        <li>Searchable archive of streaming setups, troubleshooting and feature requests</li>
+        <li>Bug reports go straight to the developers</li>
+        <li>Free registration, no email confirmation loop</li>
+      </ul>
+      <span class="channel-cta">Open the forum <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+    </a>
+
+    <a class="channel tg" href="https://t.me/splitcam" target="_blank" rel="noopener">
+      <div class="channel-head">
+        <div class="channel-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 2 2 11l6 2.5L18 6l-7 9 6 4 5-17z"/></svg>
+        </div>
+        <div>
+          <h3>Telegram chat</h3>
+          <span class="channel-tag">t.me/splitcam</span>
+        </div>
+      </div>
+      <p class="channel-desc">Faster than the forum for quick questions — paste a screenshot, ask "is this how X should work?", get an answer. The SplitCam team reads every message.</p>
+      <ul class="channel-features">
+        <li>Quick back-and-forth — minutes, not days</li>
+        <li>Share screenshots and short clips directly</li>
+        <li>English-speaking team, replies during European working hours</li>
+      </ul>
+      <span class="channel-cta">Open in Telegram <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+    </a>
+  </div>
+
+  <div class="note">
+    <b>Before you write:</b> if your question is about installing SplitCam, connecting to a streaming platform, or whether SplitCam supports a specific feature — check the <a href="../#faq" style="color:var(--blue)">FAQ on the main page</a> first. It covers the eight most common questions and is faster than waiting for a reply.
+  </div>
+</section>
+
+<!-- SECONDARY RESOURCES -->
+<section class="section">
+  <span class="sec-eyebrow">Self-serve</span>
+  <h2 class="sec-h">Documentation & references</h2>
+  <p class="sec-p">Quick links to the pages that answer questions on their own — no need to write to anyone.</p>
+
+  <div class="resources">
+    <a class="resource" href="../#faq">
+      <div class="resource-h"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 .5c0 1.5-2.5 2-2.5 4M12 17.5h.01"/></svg> FAQ</div>
+      <p class="resource-p">8 most-asked questions — free use, supported OS, OBS import, hardware, data privacy.</p>
+    </a>
+    <a class="resource" href="https://splitcam.com/splitcam-changes-win" target="_blank" rel="noopener">
+      <div class="resource-h"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Zm0 0v6h6"/></svg> Changelog</div>
+      <p class="resource-p">Every release since 2003 — what changed in each Windows build, including v10.9.2.</p>
+    </a>
+    <a class="resource" href="../products/">
+      <div class="resource-h"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg> Products</div>
+      <p class="resource-p">Downloads for Windows, macOS, iOS, Android — plus SplitCam Remote phone control app.</p>
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block">
+  <h2>Still haven't tried SplitCam?</h2>
+  <p>If you're here before installing — the free download is the full app. No watermark, no signup, no card.</p>
+  <a href="../" class="btn-primary btn-lg">⬇ Free Download</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 SplitCam · Free streaming software since 2003</div>
+    <div class="footer-links">
+      <a href="../">Home</a>
+      <a href="../multistreaming/">Multistreaming</a>
+      <a href="../virtual-camera/">Virtual Camera</a>
+      <a href="../products/">Products</a>
+      <a href="../alternatives/">Alternatives</a>
+      <a href="../for/">Use Cases</a>
+      <a href="./">Help</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Mobile hamburger menu */
+(function(){
+  var burger = document.querySelector('.nav-burger');
+  var menu = document.getElementById('nav-mobile');
+  if (!burger || !menu) return;
+  function close(){ burger.classList.remove('open'); menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); menu.setAttribute('aria-hidden','true'); }
+  function open(){ burger.classList.add('open'); menu.classList.add('open'); burger.setAttribute('aria-expanded','true'); menu.setAttribute('aria-hidden','false'); }
+  burger.addEventListener('click', function(e){
+    e.stopPropagation();
+    if (menu.classList.contains('open')) close(); else open();
+  });
+  // Close on link tap inside menu
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+  // Close on outside click
+  document.addEventListener('click', function(e){
+    if (!menu.classList.contains('open')) return;
+    if (menu.contains(e.target) || burger.contains(e.target)) return;
+    close();
+  });
+  // Close on Escape
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+  // Close on resize to desktop
+  window.addEventListener('resize', function(){ if (window.innerWidth > 900) close(); });
+})();
+</script>
+
+</body>
+</html>
