@@ -264,12 +264,7 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .qs-step:not(:last-child)::after { content: ''; position: absolute; top: 38px; right: -8px; width: 16px; height: 16px; background: var(--app-panel); border-right: 1px solid var(--app-border); border-bottom: 1px solid var(--app-border); transform: rotate(-45deg); z-index: 2; }
 
 /* TABS */
-.tabs-row { display: flex; gap: 2px; background: var(--app-base); border: 1px solid var(--app-border); border-radius: 8px; padding: 3px; width: fit-content; margin-bottom: 44px; flex-wrap: wrap; }
-.tab { padding: 8px 18px; border-radius: 6px; font-size: 13.5px; font-weight: 500; color: var(--text-sub); background: transparent; border: none; cursor: pointer; font-family: 'Geist', sans-serif; transition: all .18s; display: inline-flex; align-items: center; gap: 7px; }
-.tab.active { background: var(--app-raised); color: var(--text); box-shadow: inset 0 0 0 1px var(--app-border2); }
-
-.feat-panel { display: none; }
-.feat-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.feat-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .feat-h { font-size: 32px; font-weight: 700; letter-spacing: -1.2px; color: var(--text); margin-bottom: 14px; line-height: 1.1; }
 .feat-p { font-size: 15.5px; color: var(--text-sub); line-height: 1.75; margin-bottom: 26px; letter-spacing: -0.1px; }
 .feat-ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
@@ -452,22 +447,8 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--app-border); border: 1px solid var(--app-border); border-radius: 12px; overflow: hidden; }
 
 /* MULTISTREAM SPOTLIGHT */
-.ms-spot-vis { padding: 24px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 16px; }
-.ms-spot-source { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.25); border-radius: 10px; color: var(--blue); font-weight: 700; font-size: 13px; }
-.ms-spot-source svg { width: 18px; height: 18px; }
 .ms-spot-live { margin-left: auto; padding: 2px 8px; background: rgba(231,76,60,.18); color: #ff5454; font-size: 9.5px; font-weight: 800; letter-spacing: .8px; border-radius: 4px; font-family: 'Geist Mono', monospace; animation: live-blink 1.4s ease-in-out infinite; }
 @keyframes live-blink { 0%, 100% { opacity: 1 } 50% { opacity: .55 } }
-.ms-spot-arrow { text-align: center; color: var(--text-dim); font-size: 16px; line-height: 1; margin: 8px 0; }
-.ms-spot-fan { display: flex; flex-direction: column; gap: 6px; }
-.ms-spot-tgt { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: var(--app-surface); border-radius: 8px; font-size: 13px; color: var(--text); font-weight: 500; }
-.ms-spot-tgt svg { width: 14px; height: 14px; flex-shrink: 0; }
-.ms-spot-tgt.tw svg { color: #9146FF }
-.ms-spot-tgt.yt svg { color: #FF0000 }
-.ms-spot-tgt.fb svg { color: #1877F2 }
-.ms-spot-tgt.kk svg { color: #53FC18 }
-.ms-spot-tgt.tt svg { color: #FF0050 }
-.ms-spot-tgt .ms-rate { margin-left: auto; font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; font-weight: 600; letter-spacing: .2px; }
-.ms-spot-tgt.more { color: var(--text-dim); font-size: 12px; font-weight: 500; justify-content: center; background: transparent; border: 1px dashed var(--app-border2); }
 
 /* VIRTUAL CAMERA SPOTLIGHT (compact) */
 .vc-spotlight { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -582,7 +563,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .hero{padding:80px 20px 60px;} .hero-inner{grid-template-columns:1fr;}
   .app-window{display:none;}
   .section{padding:60px 20px;}
-  .feat-panel.active{grid-template-columns:1fr; gap:32px;}
+  .feat-panel{grid-template-columns:1fr; gap:32px;}
   .feat-grid{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr;}
   .usecase-grid{grid-template-columns:1fr;}
@@ -748,7 +729,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
           </button>
           <div class="dl-menu" data-dl-menu></div>
         </span>
-        <a href="#streaming" class="btn-ghost">How it works <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+        <a href="#multi-streaming" class="btn-ghost">How it works <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
       </div>
       <div class="hero-badges">
         <span class="h-badge"><svg class="ico ico-sm"><use href="#i-check"/></svg> Free forever</span>
@@ -802,33 +783,22 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   </div>
 </div>
 
-<!-- STREAMING FEATURES TABS -->
-<section class="section sec-bg" id="streaming">
+<!-- MULTI-STREAMING (unfolded from tabs) -->
+<section class="section sec-bg" id="multi-streaming">
   <div class="section-inner">
-    <p class="eyebrow">Live streaming</p>
-    <h2 class="sec-h">Built for streamers from the ground up.</h2>
-    <p class="sec-p">Multi-platform broadcasting, deep source library, live audience tools and pro audio — in a single free download.</p>
-
-    <div class="tabs-row">
-      <button class="tab active" onclick="setTab('multi',this)"><svg class="ico ico-sm"><use href="#i-broadcast"/></svg> Multi-streaming</button>
-      <button class="tab" onclick="setTab('sources',this)"><svg class="ico ico-sm"><use href="#i-layers"/></svg> Sources & scenes</button>
-      <button class="tab" onclick="setTab('engage',this)"><svg class="ico ico-sm"><use href="#i-coin"/></svg> Audience tools</button>
-      <button class="tab" onclick="setTab('quality',this)"><svg class="ico ico-sm"><use href="#i-audio"/></svg> Pro Audio Mixer</button>
-    </div>
-
-    <!-- Multi-streaming -->
-    <div class="feat-panel active" id="panel-multi">
+    <div class="feat-panel" id="panel-multi">
       <div>
-        <h3 class="feat-h">One encode, broadcast everywhere</h3>
-        <p class="feat-p">Stream to Twitch, YouTube, Facebook and any RTMP destination simultaneously from a single encode. <strong style="color:var(--text)">Peer-to-peer direct from your machine — no cloud middleman, no monthly fee.</strong> CPU and GPU load stays low even on four-way streams. Each destination gets independent bitrate and resolution settings.</p>
+        <p class="eyebrow">Multi-streaming</p>
+        <h2 class="feat-h">Live to every platform, at the same time.</h2>
+        <p class="feat-p">One encode from your machine, sent <strong style="color:var(--text)">peer-to-peer</strong> to Twitch, YouTube, Facebook, Kick and 84+ other platforms simultaneously. Per-destination bitrate. <strong style="color:var(--text)">No cloud middleman, no monthly fee.</strong></p>
         <ul class="feat-ul">
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> 84+ platforms pre-configured: Twitch, YouTube, Facebook, Kick, TikTok, LinkedIn, Steam</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Direct peer-to-peer — no third-party server, no privacy concerns</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Independent bitrate per platform — any bitrate each destination supports (e.g. 6 Mbps to Twitch, 4.5 to YouTube, 2.5 to TikTok)</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Hardware encoding via NVENC, QuickSync, AMF auto-detected at startup</li>
-          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Auto ingest server selection picks the lowest-latency endpoint</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> RTMPS secure streaming for any platform that supports it</li>
         </ul>
+        <a href="multistreaming/" class="btn-primary" style="margin-top:24px">See how multistreaming works <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
       </div>
       <div class="feat-vis">
         <div class="bc-header"><span class="bc-live-dot"></span><span class="bc-live">LIVE</span><span class="bc-info">to all 5 — simultaneously</span></div>
@@ -841,11 +811,16 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Sources -->
+<!-- SOURCES & SCENES (unfolded from tabs) -->
+<section class="section" id="sources">
+  <div class="section-inner">
     <div class="feat-panel" id="panel-sources">
       <div>
-        <h3 class="feat-h">Every source you'll ever need to stream</h3>
+        <p class="eyebrow">Sources & scenes</p>
+        <h2 class="feat-h">Every source you'll ever need to stream.</h2>
         <p class="feat-p">Webcam, IP camera, screen, game, browser, smartphone, NDI, video files, PDF slides — all as drag-and-drop layers. Build unlimited scenes and switch between them mid-broadcast with hotkeys or cinematic transitions.</p>
         <ul class="feat-ul">
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Game Capture for DirectX & OpenGL — perfect performance under heavy load</li>
@@ -869,11 +844,16 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Audience -->
+<!-- AUDIENCE TOOLS (unfolded from tabs) -->
+<section class="section sec-bg" id="audience-tools">
+  <div class="section-inner">
     <div class="feat-panel" id="panel-engage">
       <div>
-        <h3 class="feat-h">Tools your audience actually sees</h3>
+        <p class="eyebrow">Audience tools</p>
+        <h2 class="feat-h">Tools your audience actually sees.</h2>
         <p class="feat-p">Built-in Tip Notifier shows live donations on your stream — name, amount, message, animated image — no third-party services required. Draw on screen live, blur sensitive content, write highlights as you stream.</p>
         <ul class="feat-ul">
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Tip Notifier: animated alerts with custom images and thank-you text</li>
@@ -916,11 +896,16 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Quality -->
+<!-- PRO AUDIO MIXER (unfolded from tabs) -->
+<section class="section" id="pro-audio-mixer">
+  <div class="section-inner">
     <div class="feat-panel" id="panel-quality">
       <div>
-        <h3 class="feat-h">Studio-grade audio chain</h3>
+        <p class="eyebrow">Pro Audio Mixer</p>
+        <h2 class="feat-h">Studio-grade audio chain.</h2>
         <p class="feat-p">Full mixer with VST 2/3 plugin support — any pro de-noise, EQ or compression plugin works inside SplitCam. Neural denoise, per-layer A/V sync correction and mic accentuation keep your voice broadcast-ready from the first second on air.</p>
         <ul class="feat-ul">
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Unlimited audio sources: mic, system, browser tabs, files, applications</li>
@@ -981,32 +966,6 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
             <div class="mix-track"><div class="mix-fill fb" style="width:48%"></div></div>
             <span class="mix-db">-11 dB</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MULTISTREAMING (compact spotlight — full content on /multistreaming/) -->
-<section class="section" id="multistream">
-  <div class="section-inner">
-    <div class="vc-spotlight">
-      <div class="vc-spotlight-text">
-        <p class="eyebrow">Multistreaming</p>
-        <h2 class="sec-h" style="margin-bottom:14px">Live to every platform, at the same time.</h2>
-        <p class="sec-p" style="margin-bottom:24px;max-width:480px">One encode from your machine, sent <strong style="color:var(--text)">peer-to-peer</strong> to Twitch, YouTube, Facebook, Kick and 84+ other platforms simultaneously. Per-destination bitrate. <strong style="color:var(--text)">No cloud middleman, no monthly fee.</strong></p>
-        <a href="multistreaming/" class="btn-primary">See how multistreaming works <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
-      </div>
-      <div class="ms-spot-vis">
-        <div class="ms-spot-source"><svg class="ico"><use href="#i-broadcast"/></svg><span>SplitCam Live Multistream</span><span class="ms-spot-live">● LIVE</span></div>
-        <div class="ms-spot-arrow">↓</div>
-        <div class="ms-spot-fan">
-          <div class="ms-spot-tgt tw"><svg class="ico ico-sm"><use href="#i-twitch"/></svg> Twitch <span class="ms-rate">6 Mbps</span></div>
-          <div class="ms-spot-tgt yt"><svg class="ico ico-sm"><use href="#i-yt"/></svg> YouTube <span class="ms-rate">4.5</span></div>
-          <div class="ms-spot-tgt fb"><svg class="ico ico-sm"><use href="#i-fb"/></svg> Facebook <span class="ms-rate">3</span></div>
-          <div class="ms-spot-tgt kk"><svg class="ico ico-sm"><use href="#i-kick"/></svg> Kick <span class="ms-rate">5</span></div>
-          <div class="ms-spot-tgt tt"><svg class="ico ico-sm"><use href="#i-tiktok"/></svg> TikTok <span class="ms-rate">2.5</span></div>
-          <div class="ms-spot-tgt more">+ 79 more · custom RTMP</div>
         </div>
       </div>
     </div>
@@ -1297,7 +1256,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         </button>
         <div class="dl-menu" data-dl-menu></div>
       </span>
-      <a href="#streaming" class="btn-ghost">Explore features <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+      <a href="#multi-streaming" class="btn-ghost">Explore features <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
     </div>
     <div class="cta-note">
       <span><svg class="ico ico-sm"><use href="#i-check"/></svg> <span data-dl-req>Windows 10 or later</span></span>
@@ -1317,7 +1276,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </a>
       <p>Free live multi-streaming studio for Windows, macOS, iOS and Android. Independent software since 2003.</p>
     </div>
-    <div class="foot-col"><h5>Product</h5><ul><li><a href="multistreaming/">Multistreaming</a></li><li><a href="virtual-camera/">Virtual Camera</a></li><li><a href="#streaming">Sources & scenes</a></li><li><a href="#streaming">Audience tools</a></li><li><a href="#whats-new">What's new · v10.9.2</a></li></ul></div>
+    <div class="foot-col"><h5>Product</h5><ul><li><a href="multistreaming/">Multistreaming</a></li><li><a href="virtual-camera/">Virtual Camera</a></li><li><a href="#sources">Sources & scenes</a></li><li><a href="#audience-tools">Audience tools</a></li><li><a href="#whats-new">What's new · v10.9.2</a></li></ul></div>
     <div class="foot-col"><h5>Resources</h5><ul><li><a href="#faq">FAQ</a></li><li><a href="https://splitcam.com/forum/" target="_blank" rel="noopener">User forum</a></li><li><a href="https://splitcam.com/splitcam-changes-win" target="_blank" rel="noopener">Changelog</a></li><li><a href="for/">Use Cases</a></li><li><a href="#reviews">Reviews</a></li></ul></div>
     <div class="foot-col"><h5>Company</h5><ul><li><a href="https://splitcam.com/" target="_blank" rel="noopener">SplitCam.com</a></li><li><a href="https://splitcam.com/forum/" target="_blank" rel="noopener">Contact</a></li><li><a href="https://splitcam.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li><li><a href="https://splitcam.com/license" target="_blank" rel="noopener">License agreement</a></li></ul></div>
   </div>
@@ -1330,15 +1289,6 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     </div>
   </div>
 </footer>
-
-<script>
-function setTab(id,btn){
-  document.querySelectorAll('.feat-panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
-  document.getElementById('panel-'+id).classList.add('active');
-  btn.classList.add('active');
-}
-</script>
 
 <script>
 /* Audience tools hotkey ticker — cycles through SplitCam hotkeys every 3 s */
