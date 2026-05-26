@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow"><!-- TEMP preview — do not index -->
+
+<!-- SEO (keywords prioritized by Google Trends 12-mo volume data) -->
+<title>Free Streaming Software & Virtual Camera | SplitCam</title>
+<meta name="description" content="Free streaming software with built-in virtual camera. Multi-stream to Twitch, YouTube, Facebook & Kick at once. Best for game streaming. Mac, Win, iOS, Android.">
+<meta name="keywords" content="streaming software, free streaming software, live streaming software, best streaming software, virtual camera, virtual camera for zoom, game streaming software, youtube streaming software, webcam software, broadcasting software, OBS alternative, multistreaming, streaming software for mac, streaming software for youtube, streaming software for pc, live video streaming software, free live streaming software, audio streaming software, free streaming software for facebook live, free streaming software for twitch, VTuber software, stream to multiple platforms, RTMP streaming">
+<meta name="author" content="SplitCam">
+<link rel="canonical" href="https://splitcam.com/">
+
+<!-- Open Graph (Facebook, LinkedIn, Slack previews) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://splitcam.com/">
+<meta property="og:title" content="Free Streaming Software & Virtual Camera | SplitCam">
+<meta property="og:description" content="Multi-stream to Twitch, YouTube, Facebook & Kick simultaneously. Built-in virtual camera, scene mixing, audio mixer. Mac, Windows, iOS, Android. No watermark.">
+<meta property="og:image" content="https://splitcam.com/assets/hero-spotlight-poster.jpg">
+<meta property="og:site_name" content="SplitCam">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Streaming Software & Virtual Camera | SplitCam">
+<meta name="twitter:description" content="Multi-stream to Twitch, YouTube, Facebook & Kick. Built-in virtual camera. Free, no watermark.">
+<meta name="twitter:image" content="https://splitcam.com/assets/hero-spotlight-poster.jpg">
+
+<meta name="theme-color" content="#141420">
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Structured data for Google rich snippets (star rating, price, OS in SERP) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SplitCam",
+  "alternateName": "SplitCam Live Multi-Streaming Studio",
+  "applicationCategory": "MultimediaApplication",
+  "applicationSubCategory": "Live Streaming Software",
+  "operatingSystem": "Windows, macOS, iOS, Android",
+  "url": "https://splitcam.com/",
+  "downloadUrl": "https://splitcam.com/download",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "ratingCount": "357",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "softwareVersion": "10.9.2",
+  "datePublished": "2003-01-01",
+  "description": "Free live streaming software with built-in virtual camera. Multi-stream to Twitch, YouTube, Facebook and Kick simultaneously. Scene mixing, chromakey, audio mixer. Cross-platform: Mac, Windows, iOS, Android.",
+  "featureList": [
+    "Multi-platform streaming (Twitch, YouTube, Facebook, Kick, RTMP)",
+    "Virtual camera for Zoom, Teams, Google Meet",
+    "Scene mixing and switching",
+    "Chromakey / green screen",
+    "Audio mixer with VST plugin support",
+    "Cross-platform: Windows, macOS, iOS, Android",
+    "Free forever, no watermark"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --app-base:    #141420;
+  --app-panel:   #1c1c2e;
+  --app-surface: #22223a;
+  --app-raised:  #2a2a48;
+  --app-border:  rgba(255,255,255,0.08);
+  --app-border2: rgba(255,255,255,0.14);
+  --blue:        #2878fc;
+  --blue-hover:  #4d8eff;
+  --blue-dim:    rgba(40,120,252,0.13);
+  --blue-glow:   rgba(40,120,252,0.28);
+  --green:  #2ecc71;
+  --green-dim: rgba(46,204,113,0.12);
+  --red:    #e74c3c;
+  --amber:  #f39c12;
+  --purple: #a78bfa;
+  --text:        #eeeeff;
+  --text-sub:    #9090bb;
+  --text-dim:    #50506a;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Geist', sans-serif; background: var(--app-base); color: var(--text); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+.ico { width: 18px; height: 18px; stroke-width: 1.75; stroke: currentColor; fill: none; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.ico-lg { width: 20px; height: 20px; }
+.ico-xl { width: 22px; height: 22px; }
+.ico-sm { width: 14px; height: 14px; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 56px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px;
+  background: rgba(20,20,32,0.92); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--app-border);
+}
+.nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; transition: opacity .2s; }
+.nav-logo:hover { opacity: 0.85; }
+.nav-logo-icon { height: 28.6px; width: 28.6px; flex-shrink: 0; }
+.nav-logo-text { display: flex; flex-direction: column; gap: 2px; line-height: 1; }
+.nav-logo-wordmark { font-size: 26px; font-weight: 700; color: var(--text); letter-spacing: 0.6px; font-family: 'Geist', sans-serif; line-height: 1; }
+.nav-logo-slogan { font-size: 7.4px; font-weight: 600; color: var(--text-sub); letter-spacing: 0.6px; font-family: 'Geist', sans-serif; text-transform: uppercase; line-height: 1; text-align: justify; text-align-last: justify; width: 100%; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { font-size: 13.5px; font-weight: 500; color: var(--text-sub); text-decoration: none; transition: color .18s; }
+.nav-links a:hover { color: var(--text); }
+.nav-right { display: flex; gap: 10px; align-items: center; }
+.btn-ghost-sm { padding: 7px 16px; border-radius: 7px; border: 1px solid var(--app-border2); background: transparent; color: var(--text-sub); font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all .18s; font-family: inherit; }
+.btn-ghost-sm:hover { color: var(--text); border-color: rgba(255,255,255,.25); }
+.btn-blue-sm { padding: 7px 16px; border-radius: 7px; background: var(--blue); color: #fff; border: none; font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background .18s; display: inline-flex; align-items: center; gap: 6px; font-family: inherit; }
+.btn-blue-sm:hover { background: var(--blue-hover); }
+
+/* Hamburger button — mobile only */
+.nav-burger { display: none; width: 38px; height: 38px; border: 1px solid var(--app-border2); border-radius: 8px; background: transparent; cursor: pointer; align-items: center; justify-content: center; padding: 0; color: var(--text); transition: background .15s, border-color .15s; font-family: inherit; }
+.nav-burger:hover { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.22); }
+.nav-burger svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.nav-burger .ico-close { display: none; }
+.nav-burger.open .ico-open { display: none; }
+.nav-burger.open .ico-close { display: block; }
+
+/* Mobile drop-down menu */
+.nav-mobile { position: fixed; top: 56px; left: 0; right: 0; background: rgba(20,20,32,.97); backdrop-filter: blur(16px); border-bottom: 1px solid var(--app-border); padding: 14px 20px 18px; display: none; flex-direction: column; gap: 4px; z-index: 99; }
+.nav-mobile.open { display: flex; }
+.nav-mobile a { display: block; padding: 12px 14px; font-size: 15px; color: var(--text-sub); font-weight: 500; border-radius: 8px; text-decoration: none; transition: background .15s, color .15s; }
+.nav-mobile a:hover, .nav-mobile a.active { background: rgba(255,255,255,.05); color: var(--text); }
+.nav-mobile-divider { height: 1px; background: var(--app-border); margin: 8px 0; }
+.nav-mobile .btn-mobile-dl { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px 16px; font-size: 14px; font-weight: 600; color: #fff; background: var(--blue); border-radius: 8px; transition: background .15s; }
+.nav-mobile .btn-mobile-dl:hover { background: var(--blue-hover); color: #fff; }
+.nav-mobile .btn-mobile-dl svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* HERO */
+.hero { min-height: 100vh; padding: 100px 40px 60px; display: flex; align-items: center; position: relative; overflow: hidden; }
+.hero-glow { position: absolute; pointer-events: none; width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(40,120,252,.07) 0%, transparent 70%); right: -120px; top: 50%; transform: translateY(-50%); }
+.hero-inner { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 836px; gap: 60px; align-items: center; }
+
+.hero-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+.pill { display: inline-flex; align-items: center; gap: 9px; padding: 5px 13px 5px 10px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.35); border-radius: 20px; }
+.rating-chip { display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px; background: rgba(255,255,255,.03); border: 1px solid var(--app-border); border-radius: 99px; transition: background .18s, border-color .18s; }
+.rating-chip:hover { background: rgba(255,255,255,.06); border-color: var(--app-border2); }
+.rating-chip .stars { position: relative; display: inline-block; font-size: 11px; line-height: 1; color: #46465c; }
+.rating-chip .stars::before { content: "★★★★★"; }
+.rating-chip .stars-on { position: absolute; left: 0; top: 0; width: 92%; overflow: hidden; white-space: nowrap; color: #FFB400; text-shadow: 0 0 8px rgba(255,180,0,.35); }
+.rating-chip .stars-on::before { content: "★★★★★"; }
+.rating-chip .rating-text { font-size: 11.5px; color: var(--text-sub); font-weight: 500; letter-spacing: .2px; }
+.rating-chip .rating-text strong { color: var(--text); font-weight: 700; }
+.pill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); position: relative; box-shadow: 0 0 8px rgba(46,204,113,.7); }
+.pill-dot::before, .pill-dot::after { content:''; position: absolute; inset: 0; border-radius: 50%; background: var(--green); animation: live-pulse 1.8s cubic-bezier(.6,0,.4,1) infinite; }
+.pill-dot::after { animation-delay: .9s; }
+@keyframes blink { 0%,100%{opacity:1}50%{opacity:.35} }
+@keyframes live-pulse { 0%{transform:scale(1);opacity:.65} 100%{transform:scale(3.4);opacity:0} }
+.pill-text { font-size: 11.5px; font-weight: 600; color: var(--blue); letter-spacing: .4px; }
+
+h1.hero-title { font-size: clamp(26px, 3vw, 34px); font-weight: 700; line-height: 1.15; letter-spacing: -1.5px; color: var(--text); margin-bottom: 18px; }
+h1.hero-title .blue { color: var(--blue); }
+h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height: 1; margin-bottom: 6px; }
+.hero-cyc { display: inline-block; vertical-align: baseline; color: var(--blue); font-weight: 700; letter-spacing: inherit; text-align: left; transition: opacity .45s ease; }
+.hero-cyc.fading { opacity: 0; }
+.hero-desc { font-size: 16px; color: var(--text-sub); line-height: 1.55; max-width: 480px; margin-bottom: 24px; letter-spacing: -0.1px; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.h-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; background: rgba(255,255,255,.035); border: 1px solid var(--app-border); border-radius: 99px; font-size: 12px; color: var(--text-sub); font-weight: 500; transition: all .18s; }
+.h-badge:hover { background: rgba(255,255,255,.07); color: var(--text); border-color: var(--app-border2); }
+.h-badge svg { width: 13px; height: 13px; color: var(--blue); opacity: .9; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; background: var(--blue); color: #fff; border: none; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background .18s, transform .15s, box-shadow .2s; font-family: inherit; }
+.btn-primary:hover { background: var(--blue-hover); transform: translateY(-1px); box-shadow: 0 8px 24px var(--blue-glow); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 8px; border: 1px solid var(--app-border2); background: transparent; color: var(--text-sub); font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all .18s; font-family: inherit; }
+.btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,.25); }
+.hero-kpis { display: flex; gap: 36px; margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--app-border); }
+.kpi-num { font-size: 26px; font-weight: 700; color: var(--text); letter-spacing: -1px; }
+.kpi-lbl { font-size: 12px; font-weight: 500; color: var(--text-sub); margin-top: 2px; }
+
+/* APP WINDOW */
+.app-window { background: var(--app-panel); border: 1px solid var(--app-border2); border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 1px rgba(40,120,252,.13), 0 0 60px -10px rgba(40,120,252,.32), 0 25px 60px -20px rgba(0,0,0,.6); }
+.app-titlebar { height: 34px; background: var(--app-base); border-bottom: 1px solid var(--app-border); display: flex; align-items: center; padding: 0 12px; gap: 6px; }
+.wdot { width: 11px; height: 11px; border-radius: 50%; }
+.wd-r { background:#ff5f56; } .wd-y { background:#febc2e; } .wd-g { background:#28c840; }
+.app-titlebar-name { flex: 1; text-align: center; font-size: 11px; color: var(--text-dim); margin-right: 29px; font-family: 'Geist Mono', monospace; }
+.app-canvas { background: #0a0a14; height: 190px; position: relative; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--app-border); }
+.app-shot { position: relative; overflow: hidden; }
+.app-shot img, .app-shot video { display: block; width: 100%; height: auto; }
+.app-shot-glow { position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 80px rgba(40,120,252,.08), inset 0 0 0 1px rgba(255,255,255,.04); }
+.app-shot-pulse { position: absolute; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; background: rgba(231,76,60,.92); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 1px; border-radius: 5px; font-family: 'Geist Mono', monospace; box-shadow: 0 4px 16px rgba(231,76,60,.4); backdrop-filter: blur(4px); }
+.app-shot-pulse .pulse-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: blink 1.4s infinite; }
+.canvas-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px); background-size: 24px 24px; }
+.canvas-cam { width: 96px; height: 70px; border: 1.5px dashed rgba(40,120,252,.45); border-radius: 8px; z-index: 1; display: flex; align-items: center; justify-content: center; color: var(--blue); }
+.canvas-badge { position: absolute; top: 10px; left: 10px; background: var(--red); color: #fff; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 8px; border-radius: 4px; font-family: 'Geist Mono', monospace; display: flex; align-items: center; gap: 5px; }
+.canvas-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:#fff; animation: blink 1.5s infinite; }
+.canvas-fps { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,.65); color: var(--green); font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px; font-family: 'Geist Mono', monospace; }
+.canvas-scene-label { position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,.65); color: var(--text-sub); font-size: 10px; font-weight: 500; padding: 4px 10px; border-radius: 4px; font-family: 'Geist Mono', monospace; }
+
+.scenes-row { display: flex; gap: 6px; padding: 10px; border-bottom: 1px solid var(--app-border); background: var(--app-base); overflow-x: auto; }
+.scene-item { display: flex; flex-direction: column; align-items: center; gap: 3px; flex-shrink: 0; }
+.scene-thumb { width: 64px; height: 40px; border-radius: 5px; background: var(--app-surface); border: 1px solid var(--app-border); display: flex; align-items: center; justify-content: center; color: var(--text-sub); cursor: pointer; }
+.scene-thumb.active { border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); color: var(--blue); }
+.scene-lbl { font-size: 9.5px; color: var(--text-dim); font-weight: 500; }
+
+.channels-list { padding: 10px; display: flex; flex-direction: column; gap: 6px; }
+.ch-row { display: flex; align-items: center; gap: 10px; background: var(--app-surface); border-radius: 6px; padding: 8px 12px; border: 1px solid var(--app-border); }
+.ch-icon { width: 22px; height: 22px; border-radius: 5px; display: flex; align-items: center; justify-content: center; }
+.ch-tw { background: rgba(145,70,255,.18); color: #b48aff; } .ch-yt { background: rgba(255,0,0,.15); color: #ff6b6b; } .ch-fb { background: rgba(24,119,242,.2); color: #5e9bff; } .ch-rt { background: rgba(255,107,53,.15); color: #ffa372; }
+.ch-name { font-size: 12px; font-weight: 500; flex: 1; }
+.ch-status { display: flex; align-items: center; gap: 5px; }
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 1.5s infinite; }
+.live-txt { font-size: 9.5px; font-weight: 700; color: var(--green); letter-spacing: .5px; font-family: 'Geist Mono', monospace; }
+.ch-kbps { font-size: 10px; color: var(--text-dim); font-family: 'Geist Mono', monospace; }
+
+/* STRIP */
+/* Platforms strip (full-width, below hero) */
+.strip { border-top: 1px solid var(--app-border); border-bottom: 1px solid var(--app-border); padding: 22px 40px; margin-top: 20px; background: var(--app-panel); }
+.strip-inner { max-width: 1440px; margin: 0 auto; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; justify-content: center; }
+.strip-lbl { font-size: 10.5px; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; white-space: nowrap; }
+.strip-div { width: 1px; height: 20px; background: var(--app-border2); flex-shrink: 0; }
+.strip-logos { display: flex; gap: 22px; align-items: center; flex-wrap: nowrap; justify-content: center; }
+/* Responsive: hide chips progressively as viewport narrows */
+@media(max-width: 1280px) { .strip-logos .pchip:nth-child(n+10) { display: none; } }
+@media(max-width: 1100px) { .strip-logos .pchip:nth-child(n+9)  { display: none; } }
+@media(max-width: 980px)  { .strip-logos .pchip:nth-child(n+8)  { display: none; } }
+@media(max-width: 860px)  { .strip-logos .pchip:nth-child(n+7)  { display: none; } }
+@media(max-width: 760px)  { .strip-logos .pchip:nth-child(n+6)  { display: none; } }
+@media(max-width: 660px)  { .strip-logos .pchip:nth-child(n+5)  { display: none; } }
+@media(max-width: 560px)  { .strip-logos .pchip:nth-child(n+4)  { display: none; } }
+.pchip { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 500; color: var(--text-sub); transition: color .18s; }
+.pchip:hover { color: var(--text); }
+.pchip svg { width: 15px; height: 15px; flex-shrink: 0; color: currentColor; opacity: .75; transition: opacity .18s; }
+.pchip:hover svg { opacity: 1; }
+.pchip.more { color: var(--text-dim); }
+
+/* SECTION */
+.section { padding: 96px 40px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.sec-bg { background: var(--app-panel); }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+.eyebrow::before { content:''; width: 18px; height: 1px; background: var(--blue); }
+.sec-h { font-size: clamp(30px,3.4vw,46px); font-weight: 700; letter-spacing: -1.6px; color: var(--text); margin-bottom: 14px; line-height: 1.08; max-width: 760px; }
+.sec-p { font-size: 16px; color: var(--text-sub); max-width: 560px; line-height: 1.7; margin-bottom: 56px; letter-spacing: -0.1px; }
+
+/* QUICKSTART (5-minute setup) */
+.quickstart-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--app-border); border: 1px solid var(--app-border); border-radius: 14px; overflow: hidden; }
+.qs-step { background: var(--app-panel); padding: 32px 28px; position: relative; }
+.qs-num { font-size: 12px; font-weight: 600; color: var(--blue); letter-spacing: 1px; font-family: 'Geist Mono', monospace; margin-bottom: 18px; }
+.qs-time { font-size: 11px; color: var(--text-dim); font-family: 'Geist Mono', monospace; margin-top: 4px; }
+.qs-h { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; letter-spacing: -0.2px; }
+.qs-p { font-size: 13.5px; color: var(--text-sub); line-height: 1.6; }
+.qs-step:not(:last-child)::after { content: ''; position: absolute; top: 38px; right: -8px; width: 16px; height: 16px; background: var(--app-panel); border-right: 1px solid var(--app-border); border-bottom: 1px solid var(--app-border); transform: rotate(-45deg); z-index: 2; }
+
+/* TABS */
+.feat-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.feat-h { font-size: 32px; font-weight: 700; letter-spacing: -1.2px; color: var(--text); margin-bottom: 14px; line-height: 1.1; }
+.feat-p { font-size: 15.5px; color: var(--text-sub); line-height: 1.75; margin-bottom: 26px; letter-spacing: -0.1px; }
+.feat-ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+.feat-ul li { display: flex; align-items: flex-start; gap: 11px; font-size: 14px; color: var(--text-sub); line-height: 1.55; }
+.feat-ul li svg { color: var(--blue); margin-top: 2px; }
+
+.feat-vis { background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 14px; padding: 28px; min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+
+/* BC vis */
+.bc-rows { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.bc-row { display: flex; align-items: center; gap: 12px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 7px; padding: 10px 14px; }
+.bc-nm { font-size: 12.5px; font-weight: 600; width: 110px; }
+.bc-line { flex: 1; height: 4px; background: var(--blue-dim); border-radius: 2px; overflow: hidden; position: relative; box-shadow: 0 0 8px rgba(40,120,252,.18); }
+.bc-pulse { position: absolute; top: 0; left: -60%; width: 60%; height: 100%; background: linear-gradient(90deg,transparent,#7ab1ff,transparent); animation: pl 2s linear infinite; }
+.bc-row:nth-child(2) .bc-pulse{animation-delay:.5s} .bc-row:nth-child(3) .bc-pulse{animation-delay:1s} .bc-row:nth-child(4) .bc-pulse{animation-delay:1.5s} .bc-row:nth-child(5) .bc-pulse{animation-delay:2s}
+.bc-header{display:inline-flex;align-self:center;align-items:center;gap:8px;padding:5px 12px 5px 10px;margin-bottom:12px;border-radius:99px;border:1px solid rgba(40,120,252,.38);background:rgba(40,120,252,.06);font-size:10.5px;font-weight:700;letter-spacing:.4px}
+.bc-header .bc-live-dot{width:7px;height:7px;border-radius:50%;background:#ff5454;animation:blink 1.4s infinite;flex-shrink:0}
+.bc-header .bc-live{color:#ff5454;text-transform:uppercase;letter-spacing:.5px}
+.bc-header .bc-info{color:#7ab1ff;text-transform:none;font-weight:600;letter-spacing:.2px}
+@keyframes pl{to{left:110%}}
+.bc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: blink 1.5s infinite; }
+.bc-kbps { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; width: 70px; text-align: right; }
+
+/* Sources vis */
+.src-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; }
+.src-item { background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 8px; padding: 12px; display: flex; align-items: center; gap: 10px; transition: border-color .15s, transform .15s; }
+.src-item:hover { border-color: rgba(40,120,252,.32); transform: translateY(-1px); }
+.src-ico { width: 40px; height: 40px; border-radius: 9px; background: linear-gradient(135deg, var(--blue-dim), rgba(156,91,255,.08)); border: 1px solid rgba(40,120,252,.22); display: flex; align-items: center; justify-content: center; color: #7ab1ff; flex-shrink: 0; box-shadow: 0 0 14px rgba(40,120,252,.1); }
+.src-ico svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.src-ico.g { background: linear-gradient(135deg, rgba(46,204,113,.14), rgba(46,204,113,.04)); border-color: rgba(46,204,113,.28); color: #4ce492; box-shadow: 0 0 14px rgba(46,204,113,.1); }
+.src-ico.p { background: linear-gradient(135deg, rgba(167,139,250,.14), rgba(156,91,255,.04)); border-color: rgba(167,139,250,.3); color: #c1a8fc; box-shadow: 0 0 14px rgba(167,139,250,.1); }
+.src-ico.a { background: linear-gradient(135deg, rgba(243,156,18,.14), rgba(243,156,18,.04)); border-color: rgba(243,156,18,.3); color: #f5b54d; box-shadow: 0 0 14px rgba(243,156,18,.1); }
+.src-nm { font-size: 12.5px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+.src-meta { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; }
+
+/* Tip Notifier vis */
+.tip-stack { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.tip-row { background: linear-gradient(135deg, var(--app-panel), var(--app-surface)); border: 1px solid var(--app-border); border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; position: relative; overflow: hidden; }
+.tip-row::before { content:''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--blue); }
+.tip-row.green::before { background: var(--green); }
+.tip-row.amber::before { background: var(--amber); }
+.tip-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--blue-dim); display: flex; align-items: center; justify-content: center; color: var(--blue); font-weight: 700; font-size: 13px; flex-shrink: 0; }
+.tip-avatar.green { background: rgba(46,204,113,.15); color: var(--green); }
+.tip-avatar.amber { background: rgba(243,156,18,.15); color: var(--amber); }
+.tip-text { flex: 1; min-width: 0; }
+.tip-name { font-size: 12.5px; font-weight: 600; color: var(--text); }
+.tip-msg { font-size: 11px; color: var(--text-sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tip-amount { font-size: 13.5px; font-weight: 700; color: var(--blue); font-family: 'Geist Mono', monospace; }
+.tip-row.green .tip-amount { color: var(--green); }
+.tip-row.amber .tip-amount { color: var(--amber); }
+
+/* Audience tools vis: live cam clip + rising reactions + push-style alerts + replay hotkey */
+.aud-stage { width: 100%; display: flex; flex-direction: column; gap: 14px; }
+.aud-scene { position: relative; width: 100%; aspect-ratio: 16/10; background: #0e0e1c; border-radius: 12px; border: 1px solid var(--app-border2); overflow: hidden; }
+.aud-scene video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.aud-rec { position: absolute; top: 12px; right: 12px; display: flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 5px; background: rgba(231,76,60,.78); border: 1px solid rgba(231,76,60,.95); font-size: 9.5px; font-weight: 700; color: #fff; letter-spacing: .7px; backdrop-filter: blur(4px); z-index: 3; }
+.aud-rec-dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; animation: blink 1s infinite; }
+.aud-hearts { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 2; }
+.aud-heart { position: absolute; bottom: -34px; left: var(--x); font-size: 22px; opacity: 0; filter: drop-shadow(0 2px 8px rgba(0,0,0,.45)); animation: heartRise var(--dur, 6s) ease-out var(--d, 0s) infinite; will-change: transform, opacity; }
+@keyframes heartRise {
+  0%   { transform: translateY(0) translateX(0) scale(.55) rotate(-6deg); opacity: 0; }
+  8%   { opacity: 1; transform: translateY(-30px) translateX(-4px) scale(1.05) rotate(4deg); }
+  50%  { opacity: 1; transform: translateY(-160px) translateX(8px) scale(1) rotate(-3deg); }
+  88%  { opacity: .85; transform: translateY(-260px) translateX(-6px) scale(.95) rotate(2deg); }
+  100% { opacity: 0; transform: translateY(-310px) translateX(4px) scale(.7) rotate(0deg); }
+}
+.aud-alerts { position: absolute; top: 46px; left: 12px; right: 12px; display: flex; flex-direction: column; gap: 6px; pointer-events: none; z-index: 3; }
+.aud-pip { position: absolute; bottom: 12px; left: 12px; z-index: 3; }
+.aud-game { position: relative; width: 110px; aspect-ratio: 16/10; border-radius: 7px; border: 1.5px solid rgba(255,255,255,.28); overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,.55); }
+.aud-game video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 720px) {
+  .aud-pip { bottom: 8px; left: 8px; }
+  .aud-game { width: 78px; }
+  .aud-alerts { top: 38px; right: 35%; }
+  .aud-alert { font-size: 10px; padding: 5px 9px 5px 7px; }
+  .aud-alert-emoji { font-size: 12px; }
+}
+.aud-alert { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; max-width: 80%; background: linear-gradient(135deg, rgba(20,20,32,.92), rgba(34,34,58,.88)); border: 1px solid var(--app-border2); border-left: 3px solid var(--blue); border-radius: 8px; padding: 7px 11px 7px 9px; font-size: 11px; font-weight: 600; color: var(--text); box-shadow: 0 8px 24px -6px rgba(0,0,0,.55); backdrop-filter: blur(6px); opacity: 0; transform: translateX(-12px); animation: alertPop 13s ease-out infinite; }
+.aud-alert.tip   { border-left-color: var(--green); }
+.aud-alert.sub   { border-left-color: #a78bfa; }
+.aud-alert.raid  { border-left-color: var(--amber); }
+.aud-alert-emoji { font-size: 14px; line-height: 1; flex-shrink: 0; }
+.aud-alert-user  { color: #7ab1ff; }
+.aud-alert.tip  .aud-alert-user { color: #4ce492; }
+.aud-alert.sub  .aud-alert-user { color: #c1a8fc; }
+.aud-alert.raid .aud-alert-user { color: #f5b54d; }
+.aud-alert-action { color: var(--text-sub); font-weight: 500; }
+.aud-alert-amt { color: var(--text); font-family: 'Geist Mono', monospace; font-weight: 700; margin-left: 2px; }
+.aud-a1 { animation-delay: .5s; }
+.aud-a2 { animation-delay: 4s; }
+.aud-a3 { animation-delay: 7.5s; }
+.aud-a4 { animation-delay: 10.5s; }
+@keyframes alertPop {
+  0%, 1%, 28%, 100% { opacity: 0; transform: translateX(-12px); }
+  3%, 23%           { opacity: 1; transform: translateX(0); }
+}
+.aud-hotkey { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 10px; font-size: 12px; transition: opacity .22s ease, transform .22s ease; }
+.aud-hotkey.aud-hk-flip { opacity: 0; transform: translateY(-4px); }
+.aud-hotkey-label { color: var(--text-sub); font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
+.aud-hotkey-label svg { width: 14px; height: 14px; color: var(--blue); stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.aud-keys { display: inline-flex; align-items: center; gap: 6px; }
+.aud-k { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 26px; padding: 0 8px; border-radius: 6px; background: var(--app-base); border: 1px solid var(--app-border2); color: var(--text); font-family: 'Geist Mono', monospace; font-size: 11px; font-weight: 600; box-shadow: 0 2px 0 var(--app-raised), inset 0 -1px 0 rgba(0,0,0,.25); animation: audKeyPress 9s ease-in-out infinite; transition: none; }
+.aud-k:last-of-type { animation-delay: .08s; }
+.aud-k-plus { color: var(--text-dim); font-weight: 500; font-family: 'Geist Mono', monospace; font-size: 11px; }
+@keyframes audKeyPress {
+  0%, 86%, 100% { transform: translateY(0); background: var(--app-base); border-color: var(--app-border2); color: var(--text); box-shadow: 0 2px 0 var(--app-raised), inset 0 -1px 0 rgba(0,0,0,.25); }
+  88%, 95%      { transform: translateY(2px); background: var(--blue-dim); border-color: rgba(40,120,252,.5); color: #7ab1ff; box-shadow: 0 0 0 var(--app-raised), inset 0 -1px 0 rgba(0,0,0,.25); }
+}
+
+/* Audio vis */
+.mix-rows { display: flex; flex-direction: column; gap: 9px; width: 100%; }
+.mix-row { display: flex; align-items: center; gap: 12px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 7px; padding: 10px 14px; }
+.mix-nm { font-size: 12.5px; color: var(--text-sub); width: 110px; display: flex; align-items: center; gap: 7px; font-weight: 500; }
+.mix-track { flex: 1; height: 4px; background: var(--app-raised); border-radius: 2px; overflow: hidden; }
+.mix-fill { height: 100%; border-radius: 2px; }
+.fb { background: var(--blue); } .fg { background: var(--green); } .fa { background: var(--amber); }
+.mix-db { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; min-width: 42px; text-align: right; }
+
+/* Master output meter — sits above the channel rows */
+.mix-master { display: flex; align-items: center; gap: 12px; padding: 9px 14px; background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 7px; }
+.mix-master-lbl { font-size: 9.5px; font-weight: 700; letter-spacing: .8px; color: var(--text-sub); text-transform: uppercase; }
+.mix-master-meters { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+.mix-master-bar { height: 3px; background: var(--app-raised); border-radius: 2px; overflow: hidden; position: relative; }
+.mix-master-fill { position: absolute; left: 0; top: 0; height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--green) 0 60%, var(--amber) 60% 82%, #ef4b4b 82% 100%); background-size: 200% 100%; background-position: 0 0; animation: mixMasterL 2.8s ease-in-out infinite; }
+.mix-master-bar.r .mix-master-fill { animation: mixMasterR 2.4s ease-in-out infinite; }
+.mix-master-db { font-family: 'Geist Mono', monospace; font-size: 10.5px; color: var(--text); font-weight: 600; min-width: 58px; text-align: right; }
+.mix-master-meta { font-family: 'Geist Mono', monospace; font-size: 9.5px; color: var(--text-dim); font-weight: 500; }
+@keyframes mixMasterL { 0%,100% { width: 62%; } 35% { width: 78%; } 60% { width: 70%; } 85% { width: 54%; } }
+@keyframes mixMasterR { 0%,100% { width: 66%; } 30% { width: 74%; } 55% { width: 81%; } 80% { width: 60%; } }
+
+/* M/S dots */
+.mix-ms { display: inline-flex; gap: 4px; flex-shrink: 0; }
+.mix-ms-dot { width: 16px; height: 16px; border-radius: 4px; background: var(--app-base); border: 1px solid var(--app-border2); display: inline-flex; align-items: center; justify-content: center; font-size: 8.5px; font-weight: 700; color: var(--text-dim); font-family: 'Geist Mono', monospace; letter-spacing: 0; }
+
+/* Live pulse on fader fills */
+.mix-fill.pulse { animation: mixFillPulseMic 2.6s ease-in-out infinite; }
+.mix-fill.pulse-music { animation: mixFillPulseMusic 3.4s ease-in-out infinite; }
+@keyframes mixFillPulseMic { 0%,100% { width: 78%; } 30% { width: 86%; } 60% { width: 72%; } 80% { width: 82%; } }
+@keyframes mixFillPulseMusic { 0%,100% { width: 42%; } 50% { width: 48%; } }
+
+/* Tall Mic row — top line + VST chain line */
+.mix-row.mix-row-tall { flex-direction: column; align-items: stretch; gap: 9px; padding: 10px 14px 11px; }
+.mix-row-top { display: flex; align-items: center; gap: 12px; }
+.mix-vst { display: flex; align-items: center; gap: 5px; padding-left: 44px; flex-wrap: wrap; }
+.mix-vst-lbl { font-size: 9px; font-weight: 700; color: var(--text-dim); letter-spacing: .8px; text-transform: uppercase; margin-right: 5px; }
+.mix-vst-chip { display: inline-flex; align-items: center; padding: 3px 8px; background: rgba(40,120,252,.08); border: 1px solid rgba(40,120,252,.32); border-radius: 5px; font-family: 'Geist Mono', monospace; font-size: 10px; font-weight: 600; color: #7ab1ff; letter-spacing: .2px; }
+.mix-vst-sep { color: var(--text-dim); font-size: 10px; font-family: 'Geist Mono', monospace; }
+
+/* NR (neural denoise) badge on Mic row */
+.mix-nr { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px 3px 6px; background: rgba(94,229,114,.10); border: 1px solid rgba(94,229,114,.36); border-radius: 99px; font-size: 9.5px; font-weight: 700; color: var(--green); font-family: 'Geist Mono', monospace; letter-spacing: .5px; flex-shrink: 0; }
+.mix-nr::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px rgba(94,229,114,.7); animation: nrBlink 1.8s ease-in-out infinite; }
+@keyframes nrBlink { 0%, 75%, 100% { opacity: 1; } 88% { opacity: .25; } }
+
+/* WHAT'S NEW */
+.new-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.new-card { background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 12px; padding: 28px 26px; position: relative; transition: border-color .2s, transform .2s; }
+.new-card:hover { border-color: rgba(40,120,252,.35); transform: translateY(-2px); }
+.new-badge { position: absolute; top: 16px; right: 16px; font-size: 9.5px; font-weight: 700; color: var(--blue); background: var(--blue-dim); padding: 3px 8px; border-radius: 4px; letter-spacing: .6px; font-family: 'Geist Mono', monospace; }
+.new-ico { width: 40px; height: 40px; border-radius: 9px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.28); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; color: var(--blue); }
+.new-h { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; letter-spacing: -0.3px; }
+.new-p { font-size: 13.5px; color: var(--text-sub); line-height: 1.65; }
+
+/* BONUS / virtual camera */
+.bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.bonus-h { font-size: 32px; font-weight: 700; letter-spacing: -1.2px; color: var(--text); margin-bottom: 14px; line-height: 1.1; }
+.bonus-p { font-size: 15.5px; color: var(--text-sub); line-height: 1.75; margin-bottom: 26px; }
+.bonus-vis { background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 14px; padding: 32px; position: relative; overflow: hidden; }
+.bonus-vis::before { content:''; position:absolute; top:-50px; right:-50px; width:200px; height:200px; background: radial-gradient(circle, rgba(40,120,252,.06), transparent 70%); }
+.bonus-row { display: flex; align-items: center; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--app-border); position: relative; }
+.bonus-row:last-child { border-bottom: none; }
+.bonus-app { display: flex; align-items: center; gap: 10px; flex: 1; }
+.bonus-app-ico { width: 32px; height: 32px; border-radius: 7px; background: var(--app-surface); border: 1px solid var(--app-border); display: flex; align-items: center; justify-content: center; color: var(--text-sub); }
+.bonus-app-name { font-size: 13.5px; font-weight: 500; }
+.bonus-status { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 5px; font-family: 'Geist Mono', monospace; background: rgba(46,204,113,.12); color: var(--green); }
+.bonus-divider { display: flex; align-items: center; gap: 12px; padding: 10px 0; }
+.bonus-divider-line { flex: 1; height: 1px; background: var(--app-border2); }
+.bonus-divider-text { font-size: 11px; color: var(--blue); font-weight: 600; letter-spacing: 1px; font-family: 'Geist Mono', monospace; }
+
+/* FEAT GRID */
+.feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--app-border); border: 1px solid var(--app-border); border-radius: 12px; overflow: hidden; }
+
+/* MULTISTREAM SPOTLIGHT */
+.ms-spot-live { margin-left: auto; padding: 2px 8px; background: rgba(231,76,60,.18); color: #ff5454; font-size: 9.5px; font-weight: 800; letter-spacing: .8px; border-radius: 4px; font-family: 'Geist Mono', monospace; animation: live-blink 1.4s ease-in-out infinite; }
+@keyframes live-blink { 0%, 100% { opacity: 1 } 50% { opacity: .55 } }
+
+/* VIRTUAL CAMERA SPOTLIGHT (compact) */
+.vc-spotlight { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.vc-spotlight-vis { display: flex; align-items: center; gap: 18px; padding: 26px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 16px; }
+.vc-source { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 20px; background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 12px; flex-shrink: 0; }
+.vc-source svg { width: 32px; height: 32px; color: var(--blue); }
+.vc-source span { font-size: 11.5px; font-weight: 700; color: var(--text); letter-spacing: .3px; }
+.vc-arrow { flex: 0 0 32px; height: 2px; background: linear-gradient(to right, var(--blue), rgba(74,126,245,.2)); position: relative; }
+.vc-arrow::after { content:""; position: absolute; right: -2px; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-left: 6px solid var(--blue); border-top: 4px solid transparent; border-bottom: 4px solid transparent; opacity: .4; }
+.vc-targets { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.vc-target { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: var(--app-surface); border-radius: 8px; font-size: 13px; color: var(--text); font-weight: 500; }
+.vc-target svg { color: var(--text-sub); }
+.vc-target.more { color: var(--text-dim); font-size: 12px; background: transparent; border: 1px dashed var(--app-border2); font-weight: 500; justify-content: center; }
+.vc-orient { margin-left: auto; font-size: 9.5px; font-weight: 700; letter-spacing: .3px; padding: 2px 6px; border-radius: 4px; font-family: 'Geist Mono', monospace; }
+.vc-orient.land { color: #5b9cff; background: rgba(91,156,255,.12); }
+.vc-orient.port { color: #b78bff; background: rgba(183,139,255,.13); }
+.vc-orient.both { color: var(--text-sub); background: var(--app-base); font-size: 9px; }
+@media(max-width:900px) { .vc-spotlight { grid-template-columns: 1fr; gap: 32px; } .vc-spotlight-vis { flex-direction: column; gap: 14px; } .vc-arrow { width: 2px; height: 32px; background: linear-gradient(to bottom, var(--blue), rgba(74,126,245,.2)); } .vc-arrow::after { right: 50%; top: auto; bottom: -2px; transform: translateX(50%); border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 6px solid var(--blue); border-bottom: none; } }
+
+/* USE CASES */
+.usecase-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.usecase { padding: 28px 24px; border: 1px solid var(--app-border); border-radius: 14px; background: var(--app-panel); transition: border-color .2s, transform .2s; }
+.usecase:hover { border-color: var(--app-border2); transform: translateY(-3px); }
+a.usecase { display: block; text-decoration: none; color: inherit; }
+.uc-ico { font-size: 32px; margin-bottom: 14px; line-height: 1; }
+.usecase h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--text); letter-spacing: -.3px; }
+.usecase p { font-size: 14px; color: var(--text-sub); line-height: 1.55; margin-bottom: 16px; }
+.uc-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.uc-tags span { font-size: 11px; padding: 4px 10px; background: var(--app-base); border-radius: 6px; color: var(--text-sub); border: 1px solid var(--app-border); }
+
+/* TESTIMONIALS */
+.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.testi-card { padding: 28px 24px; background: var(--app-surface); border: 1px solid var(--app-border); border-radius: 14px; }
+.testi-stars { color: #f5b400; letter-spacing: 2px; margin-bottom: 14px; font-size: 14px; }
+.testi-quote { font-size: 15px; line-height: 1.65; color: var(--text); margin-bottom: 22px; }
+.testi-author { display: flex; align-items: center; gap: 12px; }
+.testi-ava { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), #a78bfa); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: #fff; flex-shrink: 0; }
+.testi-name { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.3; }
+.testi-role { font-size: 12px; color: var(--text-sub); margin-top: 2px; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 10px; }
+.faq-item { padding: 20px 24px; border: 1px solid var(--app-border); border-radius: 12px; background: var(--app-panel); cursor: pointer; transition: border-color .2s; }
+.faq-item:hover { border-color: var(--app-border2); }
+.faq-item summary { font-size: 16px; font-weight: 600; color: var(--text); list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-size: 24px; color: var(--text-sub); transition: transform .2s; font-weight: 300; line-height: 1; flex-shrink: 0; }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { margin-top: 14px; color: var(--text-sub); font-size: 15px; line-height: 1.65; }
+@media(max-width:700px) { .feat-grid { grid-template-columns: 1fr; } }
+.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.why-card { padding: 28px 24px; border: 1px solid var(--app-border); border-radius: 14px; background: var(--app-panel); transition: border-color .2s, transform .2s; }
+.why-card:hover { border-color: var(--app-border2); transform: translateY(-3px); }
+.why-vs { font-size: 11.5px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; font-weight: 600; }
+.why-vs strong { color: var(--text-sub); font-weight: 600; }
+.why-card h3 { font-size: 20px; font-weight: 700; letter-spacing: -.4px; margin-bottom: 12px; color: var(--text); }
+.why-card p { font-size: 14px; color: var(--text-sub); line-height: 1.6; }
+.feat-cell { background: var(--app-panel); padding: 30px 26px; transition: background .18s; }
+.feat-cell:hover { background: var(--app-surface); }
+.cell-ico { width: 40px; height: 40px; border-radius: 9px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.25); display: flex; align-items: center; justify-content: center; color: var(--blue); margin-bottom: 18px; }
+.cell-ico.g { background: var(--green-dim); border-color: rgba(46,204,113,.22); color: var(--green); }
+.cell-ico.p { background: rgba(167,139,250,.12); border-color: rgba(167,139,250,.22); color: var(--purple); }
+.cell-h2 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; letter-spacing: -0.2px; }
+.cell-p2 { font-size: 13.5px; color: var(--text-sub); line-height: 1.65; }
+
+/* STATS */
+.stats-wrap { padding: 22px 40px; background: var(--app-panel); text-align: center; border-bottom: 1px solid var(--app-border); }
+.stats-inner { max-width: 1100px; margin: 0 auto; }
+.stats-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 20px; margin-top: 0; }
+.stat-box { padding: 2px 0; }
+.stat-n { font-size: 26px; font-weight: 700; letter-spacing: -.6px; color: var(--text); line-height: 1; font-variant-numeric: tabular-nums; }
+.stat-n .u { color: var(--blue); font-weight: 600; font-size: .8em; }
+.stat-l { font-size: 11px; color: var(--text-sub); margin-top: 5px; letter-spacing: .3px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 5px; }
+.stat-n.live { color: var(--blue); font-size: 24px; transition: text-shadow .25s ease, transform .25s ease; }
+.stat-n.live.tick { text-shadow: 0 0 18px rgba(40,120,252,.7); transform: scale(1.04); }
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: #ff5454; box-shadow: 0 0 6px #ff5454; animation: live-pulse 1.4s ease-in-out infinite; flex-shrink: 0; }
+@keyframes live-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.85); } }
+.center-h { text-align: center; margin: 0 auto; }
+.center-p { font-size: 16px; color: var(--text-sub); text-align: center; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+/* CTA */
+.cta-wrap { padding: 96px 40px; }
+.cta-box { max-width: 1200px; margin: 0 auto; background: var(--app-panel); border: 1px solid var(--app-border2); border-radius: 16px; padding: 72px 56px; text-align: center; position: relative; overflow: hidden; }
+.cta-box::before { content: ''; position: absolute; top: 0; left: 25%; right: 25%; height: 1px; background: linear-gradient(90deg,transparent,rgba(40,120,252,.55),transparent); }
+.cta-h { font-size: clamp(32px,4vw,52px); font-weight: 700; letter-spacing: -1.8px; color: var(--text); margin-bottom: 14px; line-height: 1.1; }
+.cta-p { font-size: 16px; color: var(--text-sub); margin-bottom: 32px; }
+.cta-btns { display: flex; gap: 12px; justify-content: center; }
+.cta-note { margin-top: 22px; font-size: 12px; color: var(--text-dim); display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.cta-note span { display: inline-flex; align-items: center; gap: 6px; }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.foot-logo { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; text-decoration: none; }
+.foot-logo-icon { height: 22px; width: 22px; flex-shrink: 0; }
+.foot-logo-wordmark { font-size: 16px; font-weight: 700; color: var(--text); letter-spacing: -0.4px; }
+.foot-brand p { font-size: 13.5px; color: var(--text-sub); line-height: 1.6; max-width: 220px; }
+.foot-col h5 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); margin-bottom: 14px; }
+.foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.foot-col a { font-size: 13.5px; color: var(--text-sub); text-decoration: none; transition: color .18s; }
+.foot-col a:hover { color: var(--text); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding-top: 22px; border-top: 1px solid var(--app-border); }
+.foot-copy { font-size: 12.5px; color: var(--text-dim); }
+.foot-social { display: flex; gap: 8px; }
+.soc { width: 32px; height: 32px; border-radius: 7px; background: var(--app-surface); border: 1px solid var(--app-border); display: flex; align-items: center; justify-content: center; color: var(--text-sub); text-decoration: none; transition: all .18s; }
+.soc:hover { background: var(--app-raised); color: var(--text); }
+
+@media(max-width:900px){
+  nav{padding:0 20px;} .nav-links{display:none;}
+  .nav-burger{display:inline-flex;}
+  .nav-right .dl{display:none;}
+  .hero{padding:80px 20px 60px;} .hero-inner{grid-template-columns:1fr;}
+  .app-window{display:none;}
+  .section{padding:60px 20px;}
+  .feat-panel{grid-template-columns:1fr; gap:32px;}
+  .feat-grid{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr;}
+  .usecase-grid{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr;}
+  .new-grid{grid-template-columns:1fr;}
+  .quickstart-grid{grid-template-columns:1fr;}
+  .qs-step:not(:last-child)::after{display:none;}
+  .bonus-grid{grid-template-columns:1fr; gap: 32px;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
+  .stat-box:nth-child(3){grid-column:span 2;}
+  .footer-inner{grid-template-columns:1fr 1fr;}
+  .cta-wrap{padding:60px 20px;} .cta-box{padding:48px 24px;}
+  .strip{padding:18px 20px;} .strip-inner{flex-wrap:wrap;gap:14px;}
+  .strip-div{display:none;}
+  .stats-wrap{padding:28px 20px;}
+  .src-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width: 520px){
+  .src-grid{grid-template-columns:1fr;}
+}
+
+/* Split-button download */
+.dl{position:relative;display:inline-flex;align-items:stretch;font-family:inherit}
+.dl .btn-primary,.dl .btn-blue-sm{border-top-right-radius:0;border-bottom-right-radius:0}
+.dl .dl-toggle{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;border-top-right-radius:8px;border-bottom-right-radius:8px;padding:0 10px;border:none;border-left:1px solid rgba(255,255,255,.18);transition:background .18s;cursor:pointer;font-family:inherit}
+.dl .dl-toggle:hover{background:var(--blue-hover)}
+.dl .dl-toggle svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.dl-sm .dl-toggle{border-top-right-radius:7px;border-bottom-right-radius:7px;padding:0 8px}
+.dl-sm .dl-toggle svg{width:12px;height:12px}
+.dl-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:240px;background:var(--app-panel);border:1px solid var(--app-border2);border-radius:12px;box-shadow:0 24px 60px -20px rgba(0,0,0,.7);padding:6px;z-index:200;opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .15s,transform .15s}
+.dl.open .dl-menu{opacity:1;transform:translateY(0);pointer-events:auto}
+.dl-menu a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;font-size:14px;color:var(--text);font-weight:500;text-decoration:none;transition:background .12s}
+.dl-menu a:hover{background:var(--app-raised)}
+.dl-menu .os-ico{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;color:var(--text-sub);flex-shrink:0}
+.dl-menu .os-ico svg{width:18px;height:18px;fill:currentColor}
+.dl-menu .os-meta{display:flex;flex-direction:column;line-height:1.2;gap:2px}
+.dl-menu .os-name{font-weight:600;color:var(--text)}
+.dl-menu .os-sub{font-size:11px;color:var(--text-dim)}
+</style>
+</head>
+<body>
+
+<!-- SVG Icon Sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-cam" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z" stroke-width="1.6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" stroke-width="1.6" fill="none" stroke="currentColor"/></symbol>
+    <symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></symbol>
+    <symbol id="i-arr" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-twitch" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2 2 6v14h5v3h3l3-3h4l6-6V2H4zm17 11-3 3h-5l-3 3v-3H7V4h14v9zm-5-7h-2v6h2V6zm-5 0H9v6h2V6z"/></symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24" fill="currentColor"><path d="M22.5 6.5a3 3 0 0 0-2-2C18.5 4 12 4 12 4s-6.5 0-8.5.5a3 3 0 0 0-2 2C1 8.5 1 12 1 12s0 3.5.5 5.5a3 3 0 0 0 2 2C5.5 20 12 20 12 20s6.5 0 8.5-.5a3 3 0 0 0 2-2c.5-2 .5-5.5.5-5.5s0-3.5-.5-5.5zM10 15.5v-7l6 3.5-6 3.5z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9V15h-2.5v-3h2.5V9.8c0-2.5 1.5-3.8 3.7-3.8 1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 3h-2.3v6.9A10 10 0 0 0 22 12z"/></symbol>
+    <symbol id="i-rtmp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 14 0M8 12a4 4 0 0 1 8 0M12 12v9m-3 0h6"/></symbol>
+    <symbol id="i-kick" viewBox="0 0 24 24" fill="currentColor"><path d="M3 2h6v6h2V5h2V2h7v8h-2v2h-2v2h2v2h2v8h-7v-3h-2v-3H9v6H3V2z"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9a6 6 0 0 1-4-1.5V15a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3V2h3a4 4 0 0 0 4 4v3z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="currentColor"><path d="M17.7 3H21l-7.4 8.4L22 21h-6.8l-5.3-7L4 21H1l8-9.1L1.5 3h7l4.8 6.4L17.7 3z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8 18H5v-9h3v9zM6.5 7.7A1.7 1.7 0 1 1 8.3 6a1.7 1.7 0 0 1-1.8 1.7zM18 18h-3v-4.5c0-1.2-.5-1.7-1.4-1.7-.9 0-1.6.6-1.6 1.7V18h-3V9h2.9v1.3a3 3 0 0 1 2.7-1.5c1.6 0 3.4.9 3.4 3.7V18z"/></symbol>
+    <symbol id="i-discord" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5c-1.4-.6-2.9-1-4.4-1.3l-.2.4c1.4.3 2.7.8 3.9 1.5-2.7-1.4-5.7-1.5-9.4 0 1.2-.7 2.5-1.2 3.9-1.5l-.2-.4C11 4 9.5 4.5 8 5 5 9.5 4 14 4.5 18.5c1.8 1.3 3.5 2.1 5.2 2.6.4-.5.8-1.2 1.1-1.8-.6-.3-1.3-.6-1.9-1l.5-.3c3.6 1.6 7.5 1.6 11 0l.5.3c-.6.4-1.2.7-1.9 1 .3.7.7 1.3 1.1 1.9 1.7-.5 3.4-1.3 5.2-2.7.6-5.2-.9-9.6-3.3-13.5zM9.5 15.5c-1 0-1.9-1-1.9-2.2s.9-2.2 1.9-2.2 1.9 1 1.9 2.2-.9 2.2-1.9 2.2zm5 0c-1 0-1.9-1-1.9-2.2s.9-2.2 1.9-2.2 1.9 1 1.9 2.2-.9 2.2-1.9 2.2z"/></symbol>
+    <symbol id="i-trovo" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4v8l6 3v6l6-3v-6l6-3V4l-9 4-9-4z"/></symbol>
+    <symbol id="i-rumble" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l16 9-16 9V3z"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24" fill="currentColor"><path d="M22 2 2 11l6 2.5L18 6l-7 9 6 4 5-17z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.4.7 3 1.1 4.6 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2zm5.4 14c-.3.8-1.4 1.4-2.2 1.5-.6.1-1.3.2-4.3-1-3.5-1.5-5.7-5.1-5.9-5.4-.2-.3-1.5-2-1.5-3.7s.9-2.7 1.2-3.1c.3-.3.7-.5 1-.5h.6c.2 0 .5 0 .7.5l1 2.3c.1.2.1.5 0 .6-.1.2-.2.3-.4.5l-.2.3c-.1.2-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l1-1c.2-.3.5-.2.7-.1l2.2 1c.3.2.6.3.6.4 0 .2 0 1-.4 1.8z"/></symbol>
+    <symbol id="i-vimeo" viewBox="0 0 24 24" fill="currentColor"><path d="M22.4 7.5c-.2 4.2-3.1 9.8-8.8 16.8-5.8 7.4-10.8 11-14.9 11-2.5 0-4.7-2.4-6.4-7.1L-10 13.7c-1.2-4.7-2.5-7-3.9-7l-3.1 1.9-1.9-2.4c2-1.8 3.9-3.5 5.8-5.3 2.7-2.3 4.7-3.5 6-3.6 3.2-.3 5.1 1.9 5.8 6.5.8 5 1.3 8.1 1.6 9.3 1 4.6 2.1 6.9 3.3 6.9 1 0 2.4-1.5 4.3-4.6 1.9-3 3-5.4 3.1-7 .3-2.4-.7-3.6-3-3.6-1.1 0-2.2.2-3.4.7C2.2 1.8 5.8.1 8.5 0c3.9-.1 6.7 1 9.4 3.3 2.7 2.4 4.7 2.5 4.5 4.2z" transform="translate(20 0) scale(-0.04 0.04) translate(0 -10)"/><path d="M3 5c1-1 3-2 5-1 1 1 1 3 1 4l1 7c0 1 1 1 2 0 2-2 4-7 5-7 1 0 2 1 2 3 0 4-5 13-9 13-2 0-3-3-4-7L4 8c0-1 0-1-1-1L2 8 1 7c1-1 1-1 2-2z"/></symbol>
+    <symbol id="i-steam" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6 2 11l5 2c1-1 2-1 3 0l3-4c0-2 2-4 5-4 2 0 4 2 4 4s-2 5-5 5c-1 0-2 0-3-1l-4 3c0 2-2 4-4 4-1 0-3-1-3-3l-2-1c1 5 5 9 11 9s11-4 11-11C23 6 18 2 12 2zm-6 17c1 0 2-1 2-2 0-1-1-2-2-1l-1-1 1-1c2 0 4 1 4 3s-2 3-4 3l-1-1 1-2v2zm12-7c2 0 3-1 3-3s-1-3-3-3-3 1-3 3 1 3 3 3z"/></symbol>
+    <symbol id="i-dlive" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4h7a8 8 0 0 1 0 16H3V4zm3 3v10h4a5 5 0 0 0 0-10H6z"/></symbol>
+    <symbol id="i-picarto" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h6a5 5 0 0 1 0 10H8v8H5V3zm3 3v4h3a2 2 0 0 0 0-4H8z"/></symbol>
+    <symbol id="i-bigo" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4h8a4 4 0 0 1 3 7 4 4 0 0 1-3 7H3V4zm3 3v3h5a1.5 1.5 0 0 0 0-3H6zm0 6v3h5a1.5 1.5 0 0 0 0-3H6z"/></symbol>
+    <symbol id="i-split" viewBox="0 0 24 24"><path d="M12 3v6m0 0-5 5v7m5-12 5 5v7M7 21h0m10 0h0M12 3h0"/></symbol>
+    <symbol id="i-broadcast" viewBox="0 0 24 24"><path d="M4.93 19.07a10 10 0 0 1 0-14.14M19.07 4.93a10 10 0 0 1 0 14.14M7.76 16.24a6 6 0 0 1 0-8.48M16.24 7.76a6 6 0 0 1 0 8.48"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-mask" viewBox="0 0 24 24"><path d="M12 3c5 0 9 4 9 9 0 6-4 9-9 9s-9-3-9-9c0-5 4-9 9-9Z"/><path d="M8.5 10.5h.01M15.5 10.5h.01M8 15c1 1.5 2.5 2 4 2s3-.5 4-2"/></symbol>
+    <symbol id="i-audio" viewBox="0 0 24 24"><path d="M3 12h2m4-5v10m4-13v16m4-13v10m4-5h2"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M19 11a7 7 0 0 1-14 0M12 18v3m-3 0h6"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Zm0 0v6h6"/></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-5-5M8 11h6m-3-3v6"/></symbol>
+    <symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></symbol>
+    <symbol id="i-trans" viewBox="0 0 24 24"><path d="M3 7h4l3 4-3 4H3m18-8h-4l-3 4 3 4h4M21 4l3 3-3 3M3 14l-3 3 3 3"/></symbol>
+    <symbol id="i-replay" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8m0 0V3m0 5h5"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5m-18 4 9 5 9-5"/></symbol>
+    <symbol id="i-color" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="13" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="17" cy="11" r="1" fill="currentColor" stroke="none"/><path d="M14 21a3 3 0 0 1-3-3c0-1.5 1.5-2 1.5-3.5 0-1-.5-1.5-1.5-1.5"/></symbol>
+    <symbol id="i-3d" viewBox="0 0 24 24"><path d="M12 3 3 8v8l9 5 9-5V8l-9-5ZM3 8l9 5m0 0 9-5m-9 5v8"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 8.4 8.4 0 0 1-3-.6L3 21l1.6-6A8.4 8.4 0 0 1 4 12a8.4 8.4 0 0 1 8-8.5 8.4 8.4 0 0 1 9 8Z"/></symbol>
+    <symbol id="i-game" viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="11" rx="3"/><path d="M7 13h2m-1-1v2m7-1h.01m2 2h.01"/></symbol>
+    <symbol id="i-screen" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="m12 8 3 3-3 3M9 11h6M8 21h8m-4-4v4"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v6m0 6v6M3 12h6m6 0h6M5.6 5.6l4 4m5 5 4 4M18.4 5.6l-4 4m-5 5-4 4"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m4 4 16 16M20 4 4 20"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 4 7 8 8 4-1 8-3 8-8V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7Z"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-pdf" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Zm0 0v6h6"/><text x="12" y="17" font-family="Geist Mono, monospace" font-size="6" font-weight="700" text-anchor="middle" fill="currentColor" stroke="none">PDF</text></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10m-3-7h4.5a1.5 1.5 0 0 1 0 3H10m4 0h.5a2 2 0 0 1 0 4H9"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="m12 18 8.5-8.5a2.1 2.1 0 0 0-3-3L9 15v3h3ZM15 6l3 3"/></symbol>
+    <symbol id="i-speed" viewBox="0 0 24 24"><path d="M12 14V8m0 0 6 5m-6-5L6 13M3 18a9 9 0 1 1 18 0"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M16 18a5 5 0 1 0-1.5-9.8 6 6 0 0 0-11.4 3.3A4 4 0 0 0 6 18h10Z"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9m-3 3 2 2m-5 1 2 2"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  </defs>
+</svg>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="./">
+    <img class="nav-logo-icon" src="assets/splitcam.png" alt="SplitCam" />
+    <span class="nav-logo-wordmark">splitcam</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="products/">Products</a></li>
+    <li><a href="virtual-camera/">Virtual Camera</a></li>
+    <li><a href="multistreaming/">Multistreaming</a></li>
+    <li><a href="alternatives/">Alternatives</a></li>
+    <li><a href="for/">Use Cases</a></li>
+    <li><a href="help/">Help</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="dl dl-sm">
+      <a class="btn-blue-sm" href="#" data-dl-primary><svg class="ico ico-sm"><use href="#i-dl"/></svg> <span data-dl-label>Download</span></a>
+      <button class="dl-toggle" aria-label="Choose platform" data-dl-toggle>
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dl-menu" data-dl-menu></div>
+    </span>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+      <svg class="ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile" role="menu" aria-hidden="true">
+  <a href="products/" role="menuitem">Products</a>
+  <a href="virtual-camera/" role="menuitem">Virtual Camera</a>
+  <a href="multistreaming/" role="menuitem">Multistreaming</a>
+  <a href="alternatives/" role="menuitem">Alternatives</a>
+  <a href="for/" role="menuitem">Use Cases</a>
+  <a href="help/" role="menuitem">Help</a>
+  <div class="nav-mobile-divider"></div>
+  <a href="#" class="btn-mobile-dl" role="menuitem" data-dl-primary><svg viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg> <span data-dl-label>Download</span></a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-meta">
+        <div class="pill"><div class="pill-dot"></div><span class="pill-text">Live Multi-Streaming Studio</span></div>
+        <span class="rating-chip"><span class="stars" aria-label="4.5 out of 5 stars"><span class="stars-on"></span></span><span class="rating-text"><strong>4.5</strong> · CNET · 357 reviews</span></span>
+      </div>
+      <h1 class="hero-title"><span class="h1-promise">Go live everywhere.</span><br>Your free <span class="blue">streaming studio</span><br>for <span class="hero-cyc" data-cyc></span></h1>
+      <p class="hero-desc"><strong style="color:var(--text);font-weight:600">Mix scenes, switch sources, broadcast live</strong> to Twitch, YouTube, Facebook, Kick + more — all from one desktop app. Free forever, no watermark.</p>
+      <div class="hero-btns">
+        <span class="dl">
+          <a href="#" class="btn-primary" data-dl-primary><svg class="ico ico-sm"><use href="#i-dl"/></svg> <span data-dl-label>Download for Windows</span></a>
+          <button class="dl-toggle" aria-label="Choose platform" data-dl-toggle>
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="dl-menu" data-dl-menu></div>
+        </span>
+        <a href="#multi-streaming" class="btn-ghost">How it works <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+      </div>
+      <div class="hero-badges">
+        <span class="h-badge"><svg class="ico ico-sm"><use href="#i-check"/></svg> Free forever</span>
+        <span class="h-badge"><svg class="ico ico-sm"><use href="#i-check"/></svg> No watermark · no signup</span>
+        <span class="h-badge"><svg class="ico ico-sm"><use href="#i-check"/></svg> Windows · macOS · iOS · Android</span>
+      </div>
+    </div>
+
+    <div class="app-window">
+      <div class="app-shot">
+        <video src="assets/hero-spotlight.mp4" poster="assets/hero-spotlight-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
+        <div class="app-shot-glow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS STRIP (full-width, below hero) -->
+<div class="strip">
+  <div class="strip-inner">
+    <span class="strip-lbl">Stream to</span>
+    <div class="strip-div"></div>
+    <div class="strip-logos">
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-twitch"/></svg> Twitch</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-yt"/></svg> YouTube</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-fb"/></svg> Facebook</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-kick"/></svg> Kick</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-tiktok"/></svg> TikTok</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-ig"/></svg> Instagram</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-x"/></svg> X</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-linkedin"/></svg> LinkedIn</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-discord"/></svg> Discord</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-telegram"/></svg> Telegram</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-whatsapp"/></svg> WhatsApp</div>
+      <div class="pchip"><svg class="ico ico-sm"><use href="#i-rtmp"/></svg> Custom RTMP</div>
+    </div>
+    <div class="pchip more">+ 72 more</div>
+  </div>
+</div>
+
+<!-- STATS (compact trust strip) -->
+<div class="stats-wrap">
+  <div class="stats-inner">
+    <div class="stats-grid">
+      <div class="stat-box"><div class="stat-n">10<span class="u">M+</span></div><div class="stat-l">Downloads · all versions</div></div>
+      <div class="stat-box"><div class="stat-n">2003</div><div class="stat-l">In development since</div></div>
+      <div class="stat-box"><div class="stat-n live" id="streams-counter">25,001,285</div><div class="stat-l"><span class="live-dot"></span>Streams delivered</div></div>
+      <div class="stat-box"><div class="stat-n">84<span class="u">+</span></div><div class="stat-l">Stream destinations</div></div>
+      <div class="stat-box"><div class="stat-n">4.5<span class="u">★</span></div><div class="stat-l">357 reviews on CNET</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MULTI-STREAMING (unfolded from tabs) -->
+<section class="section sec-bg" id="multi-streaming">
+  <div class="section-inner">
+    <div class="feat-panel" id="panel-multi">
+      <div>
+        <p class="eyebrow">Multi-streaming</p>
+        <h2 class="feat-h">Live to every platform, at the same time.</h2>
+        <p class="feat-p">One encode from your machine, sent <strong style="color:var(--text)">peer-to-peer</strong> to Twitch, YouTube, Facebook, Kick and 84+ other platforms simultaneously. Per-destination bitrate. <strong style="color:var(--text)">No cloud middleman, no monthly fee.</strong></p>
+        <ul class="feat-ul">
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> 84+ platforms pre-configured: Twitch, YouTube, Facebook, Kick, TikTok, LinkedIn, Steam</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Direct peer-to-peer — no third-party server, no privacy concerns</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Independent bitrate per platform — any bitrate each destination supports (e.g. 6 Mbps to Twitch, 4.5 to YouTube, 2.5 to TikTok)</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Hardware encoding via NVENC, QuickSync, AMF auto-detected at startup</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> RTMPS secure streaming for any platform that supports it</li>
+        </ul>
+        <a href="multistreaming/" class="btn-primary" style="margin-top:24px">See how multistreaming works <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+      </div>
+      <div class="feat-vis">
+        <div class="bc-header"><span class="bc-live-dot"></span><span class="bc-live">LIVE</span><span class="bc-info">to all 5 — simultaneously</span></div>
+        <div class="bc-rows">
+          <div class="bc-row"><span class="bc-nm" style="color:#b48aff"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-twitch"/></svg>Twitch</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">6000 kbps</span><div class="bc-dot"></div></div>
+          <div class="bc-row"><span class="bc-nm" style="color:#ff6b6b"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-yt"/></svg>YouTube</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">4500 kbps</span><div class="bc-dot"></div></div>
+          <div class="bc-row"><span class="bc-nm" style="color:#5e9bff"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-fb"/></svg>Facebook</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">3000 kbps</span><div class="bc-dot"></div></div>
+          <div class="bc-row"><span class="bc-nm" style="color:#53fc18"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-kick"/></svg>Kick</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">5000 kbps</span><div class="bc-dot"></div></div>
+          <div class="bc-row"><span class="bc-nm" style="color:#ffa372"><svg class="ico ico-sm" style="display:inline;vertical-align:-3px;margin-right:5px"><use href="#i-rtmp"/></svg>Custom RTMP</span><div class="bc-line"><div class="bc-pulse"></div></div><span class="bc-kbps">2500 kbps</span><div class="bc-dot"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES & SCENES (unfolded from tabs) -->
+<section class="section" id="sources">
+  <div class="section-inner">
+    <div class="feat-panel" id="panel-sources">
+      <div>
+        <p class="eyebrow">Sources & scenes</p>
+        <h2 class="feat-h">Every source you'll ever need to stream.</h2>
+        <p class="feat-p">Webcam, IP camera, screen, game, browser, smartphone, NDI, video files, PDF slides — all as drag-and-drop layers. Build unlimited scenes and switch between them mid-broadcast with hotkeys or cinematic transitions.</p>
+        <ul class="feat-ul">
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Game Capture for DirectX & OpenGL — perfect performance under heavy load</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Browser source with full JavaScript & scroll support</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Phone as a wireless camera over network — second angle without a capture card</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Unlimited scenes with custom transitions: Fade, Stinger, Luma Wipe, Slide</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Import OBS Studio projects directly — keep your existing scene setup</li>
+        </ul>
+      </div>
+      <div class="feat-vis">
+        <div class="src-grid">
+          <div class="src-item"><div class="src-ico"><svg><use href="#i-cam"/></svg></div><div><div class="src-nm">Webcam</div><div class="src-meta">1080p · 60fps</div></div></div>
+          <div class="src-item"><div class="src-ico p"><svg><use href="#i-screen"/></svg></div><div><div class="src-nm">Screen capture</div><div class="src-meta">4K display</div></div></div>
+          <div class="src-item"><div class="src-ico g"><svg><use href="#i-game"/></svg></div><div><div class="src-nm">Game capture</div><div class="src-meta">DirectX · OpenGL</div></div></div>
+          <div class="src-item"><div class="src-ico"><svg><use href="#i-globe"/></svg></div><div><div class="src-nm">Browser source</div><div class="src-meta">Chromium</div></div></div>
+          <div class="src-item"><div class="src-ico p"><svg><use href="#i-phone"/></svg></div><div><div class="src-nm">Phone camera</div><div class="src-meta">Wireless · LAN</div></div></div>
+          <div class="src-item"><div class="src-ico g"><svg><use href="#i-broadcast"/></svg></div><div><div class="src-nm">NDI</div><div class="src-meta">Network video</div></div></div>
+          <div class="src-item"><div class="src-ico a"><svg><use href="#i-cam"/></svg></div><div><div class="src-nm">IP camera</div><div class="src-meta">RTSP · ONVIF</div></div></div>
+          <div class="src-item"><div class="src-ico"><svg><use href="#i-file"/></svg></div><div><div class="src-nm">Video file</div><div class="src-meta">MP4 · MKV · MOV</div></div></div>
+          <div class="src-item"><div class="src-ico a"><svg><use href="#i-pdf"/></svg></div><div><div class="src-nm">PDF · slides</div><div class="src-meta">Multi-page</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE TOOLS (unfolded from tabs) -->
+<section class="section sec-bg" id="audience-tools">
+  <div class="section-inner">
+    <div class="feat-panel" id="panel-engage">
+      <div>
+        <p class="eyebrow">Audience tools</p>
+        <h2 class="feat-h">Tools your audience actually sees.</h2>
+        <p class="feat-p">Built-in Tip Notifier shows live donations on your stream — name, amount, message, animated image — no third-party services required. Draw on screen live, blur sensitive content, write highlights as you stream.</p>
+        <ul class="feat-ul">
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Tip Notifier: animated alerts with custom images and thank-you text</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Live drawing — annotate your screen mid-stream for tutorials and reactions</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Real-time blur for accidentally exposed info (windows, passwords, faces)</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Logos, lower thirds, slideshows and animated stickers as scene layers</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Replay Source — instant 5-10 second highlights on a hotkey</li>
+        </ul>
+      </div>
+      <div class="feat-vis">
+        <div class="aud-stage">
+          <div class="aud-scene">
+            <video src="assets/audience-scene.mp4" poster="assets/audience-scene-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
+            <div class="aud-rec"><span class="aud-rec-dot"></span>LIVE</div>
+            <div class="aud-alerts" aria-hidden="true">
+              <div class="aud-alert tip aud-a1"><span class="aud-alert-emoji">💎</span><span class="aud-alert-user">Maria</span><span class="aud-alert-amt">$10</span></div>
+              <div class="aud-alert sub aud-a2"><span class="aud-alert-emoji">👑</span><span class="aud-alert-user">Justin</span></div>
+              <div class="aud-alert aud-a3"><span class="aud-alert-emoji">＋</span><span class="aud-alert-user">Alex</span></div>
+              <div class="aud-alert raid aud-a4"><span class="aud-alert-emoji">⚡️</span><span class="aud-alert-user">Sasha</span><span class="aud-alert-amt">×25</span></div>
+            </div>
+            <div class="aud-hearts" aria-hidden="true">
+              <span class="aud-heart" style="--x:78%;--d:0s;--dur:5.8s">❤️</span>
+              <span class="aud-heart" style="--x:88%;--d:1.0s;--dur:5.4s">🔥</span>
+              <span class="aud-heart" style="--x:72%;--d:2.0s;--dur:5.9s">🏆</span>
+              <span class="aud-heart" style="--x:86%;--d:3.0s;--dur:5.5s">🎮</span>
+              <span class="aud-heart" style="--x:76%;--d:4.0s;--dur:5.7s">🎉</span>
+              <span class="aud-heart" style="--x:90%;--d:5.0s;--dur:5.4s">💎</span>
+              <span class="aud-heart" style="--x:80%;--d:6.0s;--dur:5.8s">⭐️</span>
+            </div>
+            <div class="aud-pip" aria-hidden="true">
+              <div class="aud-game">
+                <video src="assets/audience-game.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              </div>
+            </div>
+          </div>
+          <div class="aud-hotkey" id="aud-hotkey">
+            <span class="aud-hotkey-label"><svg data-hk-icon><use href="#i-replay"/></svg> <span data-hk-label>Replay last 10 s</span></span>
+            <span class="aud-keys" data-hk-keys><span class="aud-k">Tab</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRO AUDIO MIXER (unfolded from tabs) -->
+<section class="section" id="pro-audio-mixer">
+  <div class="section-inner">
+    <div class="feat-panel" id="panel-quality">
+      <div>
+        <p class="eyebrow">Pro Audio Mixer</p>
+        <h2 class="feat-h">Studio-grade audio chain.</h2>
+        <p class="feat-p">Full mixer with VST 2/3 plugin support — any pro de-noise, EQ or compression plugin works inside SplitCam. Neural denoise, per-layer A/V sync correction and mic accentuation keep your voice broadcast-ready from the first second on air.</p>
+        <ul class="feat-ul">
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Unlimited audio sources: mic, system, browser tabs, files, applications</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> VST 2 & VST 3 plugin support — bring any pro audio chain</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Sound Offset filter for perfect A/V sync per audio layer</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Accentuate Microphone auto-ducks background when you speak</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Neural denoise + multi-track recording for podcast-grade post production</li>
+        </ul>
+      </div>
+      <div class="feat-vis">
+        <div class="mix-rows">
+          <div class="mix-master">
+            <span class="mix-master-lbl">Master Out</span>
+            <div class="mix-master-meters">
+              <div class="mix-master-bar l"><div class="mix-master-fill"></div></div>
+              <div class="mix-master-bar r"><div class="mix-master-fill"></div></div>
+            </div>
+            <span class="mix-master-db">-7 / -6 dB</span>
+            <span class="mix-master-meta">48 kHz · 24-bit</span>
+          </div>
+          <div class="mix-row mix-row-tall">
+            <div class="mix-row-top">
+              <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
+              <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-mic"/></svg> Microphone</span>
+              <div class="mix-track"><div class="mix-fill fb pulse" style="width:78%"></div></div>
+              <span class="mix-db">-3 dB</span>
+              <span class="mix-nr">NR ON</span>
+            </div>
+            <div class="mix-vst">
+              <span class="mix-vst-lbl">VST chain</span>
+              <span class="mix-vst-chip">NoiseGate</span><span class="mix-vst-sep">›</span>
+              <span class="mix-vst-chip">EQ</span><span class="mix-vst-sep">›</span>
+              <span class="mix-vst-chip">De-Ess</span><span class="mix-vst-sep">›</span>
+              <span class="mix-vst-chip">Comp</span>
+            </div>
+          </div>
+          <div class="mix-row">
+            <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
+            <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-music"/></svg> Music</span>
+            <div class="mix-track"><div class="mix-fill fg pulse-music" style="width:42%"></div></div>
+            <span class="mix-db">-14 dB</span>
+          </div>
+          <div class="mix-row">
+            <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
+            <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-monitor"/></svg> System audio</span>
+            <div class="mix-track"><div class="mix-fill fa" style="width:55%"></div></div>
+            <span class="mix-db">-9 dB</span>
+          </div>
+          <div class="mix-row">
+            <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
+            <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-globe"/></svg> Browser</span>
+            <div class="mix-track"><div class="mix-fill fb" style="width:30%"></div></div>
+            <span class="mix-db">-18 dB</span>
+          </div>
+          <div class="mix-row">
+            <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
+            <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-game"/></svg> Game audio</span>
+            <div class="mix-track"><div class="mix-fill fb" style="width:48%"></div></div>
+            <span class="mix-db">-11 dB</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIRTUAL CAMERA (compact spotlight — full content on /virtual-camera/) -->
+<section class="section sec-bg" id="virtual-cam">
+  <div class="section-inner">
+    <div class="vc-spotlight">
+      <div class="vc-spotlight-text">
+        <p class="eyebrow">Virtual Camera</p>
+        <h2 class="sec-h" style="margin-bottom:14px">Your stream is also a virtual camera.</h2>
+        <p class="sec-p" style="margin-bottom:24px;max-width:480px">Use SplitCam as a webcam in Zoom, Teams, Google Meet, Discord, Telegram, WhatsApp and 60+ other apps — with all your scenes, effects and AI background applied. Works in both <strong style="color:var(--text)">landscape (16:9)</strong> and <strong style="color:var(--text)">portrait (9:16)</strong> orientations.</p>
+        <a href="virtual-camera/" class="btn-primary">See compatible apps <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+      </div>
+      <div class="vc-spotlight-vis">
+        <div class="vc-source"><svg class="ico"><use href="#i-cam"/></svg><span>SplitCam Virtual Camera</span><span class="ms-spot-live">● LIVE</span></div>
+        <div class="vc-arrow"></div>
+        <div class="vc-targets">
+          <div class="vc-target"><svg class="ico ico-sm"><use href="#i-chat"/></svg> Zoom <span class="vc-orient land">16:9</span></div>
+          <div class="vc-target"><svg class="ico ico-sm"><use href="#i-box"/></svg> Teams <span class="vc-orient land">16:9</span></div>
+          <div class="vc-target"><svg class="ico ico-sm"><use href="#i-globe"/></svg> Google Meet <span class="vc-orient land">16:9</span></div>
+          <div class="vc-target"><svg class="ico ico-sm"><use href="#i-chat"/></svg> Discord <span class="vc-orient both">16:9 / 9:16</span></div>
+          <div class="vc-target"><svg class="ico ico-sm"><use href="#i-telegram"/></svg> Telegram <span class="vc-orient port">9:16</span></div>
+          <div class="vc-target"><svg class="ico ico-sm"><use href="#i-whatsapp"/></svg> WhatsApp <span class="vc-orient port">9:16</span></div>
+          <div class="vc-target"><svg class="ico ico-sm"><use href="#i-broadcast"/></svg> OBS Studio <span class="vc-orient land">16:9</span></div>
+          <div class="vc-target more">+ 53 more</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL FEATURES GRID -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow">Everything included</p>
+    <h2 class="sec-h">9 reasons SplitCam wins.</h2>
+    <p class="sec-p">No premium tiers, no feature locks. The free download is the full app.</p>
+    <div class="feat-grid">
+      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-broadcast"/></svg></div><div class="cell-h2">Multi-streaming</div><p class="cell-p2">Stream to Twitch, YouTube, Facebook, Kick + 84+ platforms simultaneously. Direct peer-to-peer from your machine, no cloud middleman, no monthly fee.</p></div>
+      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-cam"/></svg></div><div class="cell-h2">Virtual Camera</div><p class="cell-p2">Use SplitCam as a webcam in Zoom, Teams, Google Meet, Discord. Both portrait (9:16) and landscape (16:9) supported.</p></div>
+      <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-mask"/></svg></div><div class="cell-h2">AI Background Removal</div><p class="cell-p2">Remove, blur or replace your background instantly. No green screen needed — AI detects your silhouette in real time.</p></div>
+      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-monitor"/></svg></div><div class="cell-h2">Vertical Canvas</div><p class="cell-p2">Switch canvas to 9:16 for TikTok Live, Reels, Shorts and vertical Instagram Live. One studio — both orientations.</p></div>
+      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-zap"/></svg></div><div class="cell-h2">Beauty Effects</div><p class="cell-p2">Skin smoother, skin tone, face tracking, face masking, hair color, lips color/size, eye enlargement — webcam-model grade beauty in one click.</p></div>
+      <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-layers"/></svg></div><div class="cell-h2">Many Sources</div><p class="cell-p2">Webcam, IP camera, browser, screen, game, video, image, PDF, text, NDI, Timer with hotkey actions, Whiteboard, Replay — every source you'll ever need.</p></div>
+      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-audio"/></svg></div><div class="cell-h2">Pro Audio</div><p class="cell-p2">VST 2/3 plugin support, neural denoise, multi-track recording, audio mixer with mic accentuation. Studio-grade audio chain inside.</p></div>
+      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-folder"/></svg></div><div class="cell-h2">OBS Project Import</div><p class="cell-p2">Bring your OBS Studio scene collections in one click. Sources, scenes, transitions and hotkeys are preserved.</p></div>
+      <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-phone"/></svg></div><div class="cell-h2">Phone as Camera</div><p class="cell-p2">Wireless smartphone as a second camera over your network. Multi-cam setup without a capture card or extra hardware.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section sec-bg" id="who-its-for">
+  <div class="section-inner">
+    <p class="eyebrow">Built for everyone going live</p>
+    <h2 class="sec-h">A studio that adapts to your audience.</h2>
+    <p class="sec-p">Same software, different workflow. Each community uses SplitCam differently — pick yours.</p>
+
+    <div class="usecase-grid" style="margin-top:48px">
+      <div class="usecase">
+        <div class="uc-ico">🎮</div>
+        <h3>For Streamers</h3>
+        <p>Game Capture for DirectX/OpenGL, NVENC encoding, Replay Source, multi-stream to Twitch + YouTube + Kick simultaneously. Zero FPS impact on your game.</p>
+        <div class="uc-tags"><span>Game Capture</span><span>Multi-stream</span><span>Replay</span></div>
+      </div>
+      <a class="usecase" href="for/youtubers/">
+        <div class="uc-ico">📹</div>
+        <h3>For YouTubers</h3>
+        <p>Studio-grade local recording, multi-track audio, OBS project import. Stream live or record for later — same scene setup, same quality.</p>
+        <div class="uc-tags"><span>HD Recording</span><span>OBS Import</span><span>Multi-track</span></div>
+      </a>
+      <div class="usecase">
+        <div class="uc-ico">🎓</div>
+        <h3>For Educators</h3>
+        <p>Whiteboard source, Timer with hotkey actions, PDF & document sources, virtual camera in Zoom/Meet/Teams. Annotate over your slides live.</p>
+        <div class="uc-tags"><span>Whiteboard</span><span>PDF Source</span><span>Virtual Cam</span></div>
+      </div>
+      <a class="usecase" href="for/churches/">
+        <div class="uc-ico">⛪</div>
+        <h3>For Churches</h3>
+        <p>Multi-stream Sunday service to Facebook, YouTube and your own website at once. Lower-thirds for speakers, song lyrics overlays included.</p>
+        <div class="uc-tags"><span>Multi-platform</span><span>Lower thirds</span><span>Lyrics</span></div>
+      </a>
+      <div class="usecase">
+        <div class="uc-ico">✨</div>
+        <h3>For VTubers</h3>
+        <p>AI background removal (no green screen), face tracking, 3D masks, chromakey. Beauty filters and Streamfog lenses ready out of the box.</p>
+        <div class="uc-tags"><span>AI Background</span><span>Face Track</span><span>3D Masks</span></div>
+      </div>
+      <div class="usecase">
+        <div class="uc-ico">🎵</div>
+        <h3>For Musicians</h3>
+        <p>VST 2/3 plugin support, multi-source audio mixer with per-track EQ, neural denoise, low-latency monitoring. Stream concerts in studio quality.</p>
+        <div class="uc-tags"><span>VST Plugins</span><span>Audio Mixer</span><span>Low Latency</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a href="for/" class="btn-ghost">See all use cases <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK START / 5-MIN -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow">Set up in 5 minutes</p>
+    <h2 class="sec-h">From download to live — faster than your viewers can tune in.</h2>
+    <p class="sec-p">No encoder configuration nightmares. SplitCam ships with presets for every major platform — just paste your stream key and click Go Live.</p>
+
+    <div class="quickstart-grid">
+      <div class="qs-step">
+        <div class="qs-num">STEP 01<div class="qs-time">~ 1 min</div></div>
+        <div class="qs-h">Install</div>
+        <p class="qs-p">Available on Windows, Mac, iOS and Android. Lightweight install on desktop, App Store on mobile — no signup, no card, no watermark.</p>
+      </div>
+      <div class="qs-step">
+        <div class="qs-num">STEP 02<div class="qs-time">~ 2 min</div></div>
+        <div class="qs-h">Add sources</div>
+        <p class="qs-p">Pick from webcam, screen capture, browser, game, phone or video file. Drag, resize, layer in your scene.</p>
+      </div>
+      <div class="qs-step">
+        <div class="qs-num">STEP 03<div class="qs-time">~ 2 min</div></div>
+        <div class="qs-h">Connect platforms</div>
+        <p class="qs-p">Twitch, YouTube and Facebook are pre-configured. Paste your stream key, or add a custom RTMP endpoint.</p>
+      </div>
+      <div class="qs-step">
+        <div class="qs-num">STEP 04<div class="qs-time">~ 5 sec</div></div>
+        <div class="qs-h">Go live</div>
+        <p class="qs-p">One button starts every selected stream simultaneously. You're live on every connected platform at the same time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="reviews">
+  <div class="section-inner">
+    <p class="eyebrow center-h" style="text-align:center">Loved by creators</p>
+    <h2 class="sec-h center-h" style="text-align:center;margin:0 auto 14px">Streamers, churches and educators trust SplitCam.</h2>
+    <p class="sec-p" style="text-align:center;max-width:580px;margin:0 auto 56px">Real feedback patterns from users across review platforms.</p>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Replaced OBS + Restream combo with just SplitCam. CPU load dropped and I got 30 minutes back per stream — no setup juggling between apps."</p>
+        <div class="testi-author">
+          <div class="testi-ava">🎮</div>
+          <div><div class="testi-name">Twitch streamer</div><div class="testi-role">Gaming · multi-platform</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Streaming Sunday service for 4 years. Free, no watermark, broadcasts to Facebook and YouTube at the same time. Setup took 10 minutes."</p>
+        <div class="testi-author">
+          <div class="testi-ava">⛪</div>
+          <div><div class="testi-name">Church A/V volunteer</div><div class="testi-role">Sunday service · live</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Online music lessons across Zoom and YouTube — the virtual camera + VST plugin support is exactly what I needed. No subscription, no time limit."</p>
+        <div class="testi-author">
+          <div class="testi-ava">🎵</div>
+          <div><div class="testi-name">Music educator</div><div class="testi-role">Online lessons · pro audio</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Real review platform links -->
+    <div style="margin-top:48px;display:flex;flex-direction:column;align-items:center;gap:14px">
+      <span style="font-size:11.5px;color:var(--text-dim);letter-spacing:.5px;text-transform:uppercase;font-weight:700">Read user reviews on</span>
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:center">
+        <a href="https://www.g2.com/products/splitcam-multistream/reviews" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(255,255,255,.03);border:1px solid var(--app-border);border-radius:8px;color:var(--text-sub);font-size:13px;font-weight:600;text-decoration:none;transition:all .18s" onmouseover="this.style.background='rgba(255,255,255,.07)';this.style.color='var(--text)'" onmouseout="this.style.background='rgba(255,255,255,.03)';this.style.color='var(--text-sub)'">G2 →</a>
+        <a href="https://splitcam.en.softonic.com/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(255,255,255,.03);border:1px solid var(--app-border);border-radius:8px;color:var(--text-sub);font-size:13px;font-weight:600;text-decoration:none;transition:all .18s" onmouseover="this.style.background='rgba(255,255,255,.07)';this.style.color='var(--text)'" onmouseout="this.style.background='rgba(255,255,255,.03)';this.style.color='var(--text-sub)'">Softonic <span style="color:#FFB400">★ 4.7</span></a>
+        <a href="https://www.capterra.com/p/210675/SplitCam/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(255,255,255,.03);border:1px solid var(--app-border);border-radius:8px;color:var(--text-sub);font-size:13px;font-weight:600;text-decoration:none;transition:all .18s" onmouseover="this.style.background='rgba(255,255,255,.07)';this.style.color='var(--text)'" onmouseout="this.style.background='rgba(255,255,255,.03)';this.style.color='var(--text-sub)'">Capterra →</a>
+        <a href="https://www.trustradius.com/products/splitcam/reviews" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(255,255,255,.03);border:1px solid var(--app-border);border-radius:8px;color:var(--text-sub);font-size:13px;font-weight:600;text-decoration:none;transition:all .18s" onmouseover="this.style.background='rgba(255,255,255,.07)';this.style.color='var(--text)'" onmouseout="this.style.background='rgba(255,255,255,.03)';this.style.color='var(--text-sub)'">TrustRadius →</a>
+        <a href="https://splitcam.updatestar.com/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(255,255,255,.03);border:1px solid var(--app-border);border-radius:8px;color:var(--text-sub);font-size:13px;font-weight:600;text-decoration:none;transition:all .18s" onmouseover="this.style.background='rgba(255,255,255,.07)';this.style.color='var(--text)'" onmouseout="this.style.background='rgba(255,255,255,.03)';this.style.color='var(--text-sub)'">UpdateStar <span style="color:#FFB400">★ 4.0</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S NEW -->
+<section class="section" id="whats-new">
+  <div class="section-inner">
+    <p class="eyebrow">v10.9.2 release</p>
+    <h2 class="sec-h">Six new streaming tools shipped this year.</h2>
+    <p class="sec-p">Focused on what streamers actually asked for. Highlights from the v10.9.2 release notes.</p>
+
+    <div class="new-grid">
+      <div class="new-card">
+        <span class="new-badge">NEW</span>
+        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-replay"/></svg></div>
+        <div class="new-h">Replay Source</div>
+        <p class="new-p">Capture the last 5–10 seconds of any scene with a hotkey. Instant slow-mo replays during gameplay or perfect highlights mid-stream.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NEW</span>
+        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-folder"/></svg></div>
+        <div class="new-h">OBS Project Import</div>
+        <p class="new-p">Bring your OBS Studio scene collections directly into SplitCam — sources, scenes and transitions are preserved. Switch without rebuilding.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NEW</span>
+        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-cloud"/></svg></div>
+        <div class="new-h">Cloud Projects</div>
+        <p class="new-p">Save your entire stream setup to the cloud. Switch laptops, travel, or stream from a guest PC — your scenes follow you.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NEW</span>
+        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-trans"/></svg></div>
+        <div class="new-h">Luma Wipe, Slide & Swipe</div>
+        <p class="new-p">Three new scene transitions: Luma Wipe for cinematic mask cuts (with preinstalled semitransparent files), Slide and Swipe for clean horizontal handoffs between segments.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NEW</span>
+        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-speed"/></svg></div>
+        <div class="new-h">Upload Speed Test</div>
+        <p class="new-p">Rebuilt internet speed test runs in seconds, uses less bandwidth, handles slow connections — know your real upload before you go live.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NEW</span>
+        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-save"/></svg></div>
+        <div class="new-h">Crash-Proof Recording</div>
+        <p class="new-p">Local recordings now save as fragmented MP4 — never lose a session to a crash. Recoverable up to the last written keyframe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section sec-bg" id="faq">
+  <div class="section-inner" style="max-width:800px">
+    <p class="eyebrow center-h" style="text-align:center">Frequently asked</p>
+    <h2 class="sec-h center-h" style="text-align:center;margin:0 auto 14px">Quick answers.</h2>
+    <p class="sec-p" style="text-align:center;margin:0 auto 48px">Everything you need to know before downloading.</p>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Is SplitCam really free?</summary>
+        <p>Yes — completely free for personal and commercial use. No watermark, no time limit, no upsell to a "pro" version. Every feature is unlocked from day one.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What operating systems does it run on?</summary>
+        <p>SplitCam is available for Windows 10/11, macOS 11+, iOS 13+ (iPhone & iPad), and Android 8+. The Download button auto-detects your OS.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I import my OBS Studio scenes?</summary>
+        <p>Yes — SplitCam imports OBS scene collections in one click. All your sources, scenes, transitions and hotkeys carry over without rebuilding.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How many platforms can I stream to simultaneously?</summary>
+        <p>Up to 8 destinations comfortably; technically unlimited as long as your CPU/GPU and upload bandwidth handle the combined load. SplitCam sends streams <strong style="color:var(--text)">peer-to-peer directly from your machine to each platform</strong> — no cloud middleman, no third-party server in the loop. Built-in upload speed test confirms your connection before going live.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will SplitCam slow down my games?</summary>
+        <p>No — SplitCam uses hardware encoders (NVENC for Nvidia, QuickSync for Intel, AMF for AMD) by default. Encoding runs on dedicated GPU silicon, leaving your CPU and main GPU cores free for the game. Most users see 0–3% FPS impact.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I use SplitCam as a virtual camera in Zoom/Teams?</summary>
+        <p>Yes — SplitCam exposes your entire stream (with scenes, effects, overlays, AI background removal) as a virtual webcam in Zoom, Microsoft Teams, Google Meet, Discord, and 60+ other apps. Works in both portrait (9:16) and landscape (16:9) modes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What hardware do I need?</summary>
+        <p>Minimum: Intel Core i3 / AMD Ryzen 3, 4GB RAM, integrated graphics. Recommended for game streaming: Intel Core i5+ / AMD Ryzen 5+, 8GB RAM, dedicated GPU with NVENC/AMF support. Runs smoothly on older laptops too.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does SplitCam collect my data?</summary>
+        <p>Your scenes, recordings and stream settings stay on your machine. SplitCam doesn't upload anything to the cloud unless you explicitly enable Cloud Projects to sync settings between devices.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <div class="cta-box">
+    <h2 class="cta-h">Stop juggling streaming tools.<br>Start broadcasting.</h2>
+    <p class="cta-p">Download SplitCam free. No trial timer, no card on file, no watermark on your stream.</p>
+    <div class="cta-btns">
+      <span class="dl">
+        <a href="#" class="btn-primary" data-dl-primary><svg class="ico ico-sm"><use href="#i-dl"/></svg> <span data-dl-label>Download for Windows</span></a>
+        <button class="dl-toggle" aria-label="Choose platform" data-dl-toggle>
+          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dl-menu" data-dl-menu></div>
+      </span>
+      <a href="#multi-streaming" class="btn-ghost">Explore features <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+    </div>
+    <div class="cta-note">
+      <span><svg class="ico ico-sm"><use href="#i-check"/></svg> <span data-dl-req>Windows 10 or later</span></span>
+      <span><svg class="ico ico-sm"><use href="#i-shield"/></svg> No bundled software</span>
+      <span><svg class="ico ico-sm"><use href="#i-zap"/></svg> Latest v10.9.2</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <a class="foot-logo" href="./">
+        <img class="foot-logo-icon" src="assets/splitcam.png" alt="SplitCam" />
+        <span class="foot-logo-wordmark">splitcam</span>
+      </a>
+      <p>Free live multi-streaming studio for Windows, macOS, iOS and Android. Independent software since 2003.</p>
+    </div>
+    <div class="foot-col"><h5>Product</h5><ul><li><a href="multistreaming/">Multistreaming</a></li><li><a href="virtual-camera/">Virtual Camera</a></li><li><a href="#sources">Sources & scenes</a></li><li><a href="#audience-tools">Audience tools</a></li><li><a href="#whats-new">What's new · v10.9.2</a></li></ul></div>
+    <div class="foot-col"><h5>Resources</h5><ul><li><a href="#faq">FAQ</a></li><li><a href="https://splitcam.com/forum/" target="_blank" rel="noopener">User forum</a></li><li><a href="https://splitcam.com/splitcam-changes-win" target="_blank" rel="noopener">Changelog</a></li><li><a href="for/">Use Cases</a></li><li><a href="#reviews">Reviews</a></li></ul></div>
+    <div class="foot-col"><h5>Company</h5><ul><li><a href="https://splitcam.com/" target="_blank" rel="noopener">SplitCam.com</a></li><li><a href="https://splitcam.com/forum/" target="_blank" rel="noopener">Contact</a></li><li><a href="https://splitcam.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li><li><a href="https://splitcam.com/license" target="_blank" rel="noopener">License agreement</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="foot-copy">© 2003–2026 SplitCam · Independent software since 2003</span>
+    <div class="foot-social">
+      <a class="soc" href="https://x.com/splitcamsoft" target="_blank" rel="noopener" title="X / Twitter"><svg class="ico ico-sm"><use href="#i-x"/></svg></a>
+      <a class="soc" href="https://www.facebook.com/splitcamsoft/" target="_blank" rel="noopener" title="Facebook"><svg class="ico ico-sm"><use href="#i-fb"/></svg></a>
+      <a class="soc" href="https://www.youtube.com/channel/UCgFRQMJCK8E00ODT-AZDhEw" target="_blank" rel="noopener" title="YouTube"><svg class="ico ico-sm"><use href="#i-yt"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Audience tools hotkey ticker — cycles through SplitCam hotkeys every 3 s */
+(function(){
+  var box = document.getElementById('aud-hotkey');
+  if (!box) return;
+  var labelEl = box.querySelector('[data-hk-label]');
+  var iconUse = box.querySelector('[data-hk-icon] use');
+  var keysEl  = box.querySelector('[data-hk-keys]');
+  if (!labelEl || !iconUse || !keysEl) return;
+  var slides = [
+    { icon:'i-replay', label:'Replay last 10 s', keys:'<span class="aud-k">Tab</span>' },
+    { icon:'i-save',   label:'Start / stop REC', keys:'<span class="aud-k">Ctrl</span><span class="aud-k-plus">+</span><span class="aud-k">R</span>' },
+    { icon:'i-layers', label:'Switch scene',     keys:'<span class="aud-k">F1</span><span class="aud-k-plus">–</span><span class="aud-k">F8</span>' }
+  ];
+  var i = 0;
+  function apply(){
+    iconUse.setAttribute('href','#'+slides[i].icon);
+    labelEl.textContent = slides[i].label;
+    keysEl.innerHTML = slides[i].keys;
+  }
+  setInterval(function(){
+    box.classList.add('aud-hk-flip');
+    setTimeout(function(){
+      i = (i + 1) % slides.length;
+      apply();
+      box.classList.remove('aud-hk-flip');
+    }, 220);
+  }, 3000);
+})();
+
+/* Inline videos — pause when off-screen / tab hidden / window blurred (saves CPU/battery, especially with multiple windows open) */
+document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').forEach(function(v){
+  var onScreen = true;
+  function shouldPlay(){
+    return onScreen && document.visibilityState === 'visible' && document.hasFocus();
+  }
+  function apply(){
+    if (shouldPlay()) { v.play().catch(function(){}); }
+    else { v.pause(); }
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries){
+      onScreen = entries[0].isIntersecting;
+      apply();
+    }, { threshold: 0.1 }).observe(v);
+  }
+  document.addEventListener('visibilitychange', apply);
+  window.addEventListener('blur', apply);
+  window.addEventListener('focus', apply);
+});
+
+/* Hero audience cycler — fade transition with pause between words */
+(function(){
+  var slot = document.querySelector('[data-cyc]');
+  if (!slot) return;
+  var words = ['creators.','streamers.','gamers.','VTubers.','podcasters.','educators.'];
+  slot.textContent = words[0];
+  /* Reserve width for longest word so layout doesn't jump */
+  var measure = document.createElement('span');
+  var cs = getComputedStyle(slot);
+  measure.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap';
+  measure.style.font = cs.font;
+  measure.style.fontWeight = cs.fontWeight;
+  measure.style.letterSpacing = cs.letterSpacing;
+  document.body.appendChild(measure);
+  var maxW = 0;
+  words.forEach(function(w){ measure.textContent = w; maxW = Math.max(maxW, measure.offsetWidth); });
+  document.body.removeChild(measure);
+  slot.style.minWidth = (maxW + 2) + 'px';
+  /* Cycle: fade out → 200ms gap → swap text → fade in. Word visible ~3s. */
+  var i = 0;
+  setInterval(function(){
+    slot.classList.add('fading');
+    setTimeout(function(){
+      i = (i + 1) % words.length;
+      slot.textContent = words[i];
+      setTimeout(function(){
+        slot.classList.remove('fading');
+      }, 200);
+    }, 450);
+  }, 2000);
+})();
+
+(function(){
+  var ICO = {
+    windows: '<svg viewBox="0 0 24 24"><path d="M3 5.5l8-1.1V12H3V5.5zm0 8.5h8v7.6l-8-1.1V14zm9-9.7l9-1.3V12h-9V4.3zm0 9.7h9v9.3l-9-1.3V14z"/></svg>',
+    apple:   '<svg viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-3.9 2.4-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.4 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8 2.2-1.2 3-2.3c1-1.3 1.3-2.6 1.4-2.6 0-.1-2.7-1-2.8-3.9zM14 4.7c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.7-1.3z"/></svg>',
+    play:    '<svg viewBox="0 0 24 24"><path d="M3.6 2.3c-.3.3-.5.7-.5 1.3v17c0 .6.2 1 .5 1.3l8.8-9.6L3.6 2.3zM14 11l-1.7-1.6L5 2.1l11.5 6.6L14 11zM18.5 12.7l-2.4 1.4L14 12l2.1-2.1 2.4 1.4c.7.4.7 1.1 0 1.4zM5 21.9l7.3-7.3L14 13l-8.9 9c-.1.1-.1 0-.1-.1z"/></svg>'
+  };
+  var SC = {
+    windows: { label: 'Download for Windows', ico: ICO.windows, url: 'https://splitcam.com/download',                                          sub: 'Windows 10/11 · 64-bit',    req: 'Windows 10 or later' },
+    mac:     { label: 'Download for Mac',     ico: ICO.apple,   url: '#mac-coming',                                                            sub: 'macOS 11+',                 req: 'macOS 11 or later' },
+    ios:     { label: 'Get on App Store',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone & iPad · iOS 13+',   req: 'iPhone & iPad · iOS 13+' },
+    android: { label: 'Get on Google Play',   ico: ICO.play,    url: '#android-coming',                                                        sub: 'Android 8+',                req: 'Android 8 or later' }
+  };
+  function detectOS(){
+    var ua = navigator.userAgent || '';
+    if (/Android/i.test(ua)) return 'android';
+    if (/iPad|iPhone|iPod/i.test(ua)) return 'ios';
+    if (/Macintosh|Mac OS X/i.test(ua)) return 'mac';
+    if (/Windows/i.test(ua)) return 'windows';
+    return 'windows';
+  }
+  var os = detectOS(); var cur = SC[os];
+  document.querySelectorAll('[data-dl-primary]').forEach(function(el){
+    el.setAttribute('href', cur.url);
+    var lab = el.querySelector('[data-dl-label]');
+    if (lab) lab.textContent = cur.label;
+  });
+  document.querySelectorAll('[data-dl-req]').forEach(function(el){
+    el.textContent = cur.req;
+  });
+  var menuHTML = '';
+  ['windows','mac','ios','android'].forEach(function(key){
+    var d = SC[key];
+    var active = (key === os) ? ' style="background:rgba(40,120,252,.08)"' : '';
+    menuHTML += '<a href="'+d.url+'" data-os="'+key+'"'+active+'>'
+      + '<span class="os-ico">'+d.ico+'</span>'
+      + '<span class="os-meta"><span class="os-name">'+d.label.replace(/^Download for |^Get on /,'')+'</span><span class="os-sub">'+d.sub+'</span></span>'
+      + '</a>';
+  });
+  document.querySelectorAll('[data-dl-menu]').forEach(function(m){ m.innerHTML = menuHTML; });
+  document.querySelectorAll('[data-dl-toggle]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault(); e.stopPropagation();
+      var group = btn.closest('.dl');
+      var wasOpen = group.classList.contains('open');
+      document.querySelectorAll('.dl.open').forEach(function(g){ g.classList.remove('open'); });
+      if (!wasOpen) group.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.dl.open').forEach(function(g){ g.classList.remove('open'); });
+  });
+})();
+
+/* Live streams-delivered counter:
+   - Initial value computed from real elapsed time since anchor (so it stays realistic across sessions)
+   - On-page animation: every 2-7 seconds (random), adds 0-4 streams (random) for a lively ticking effect */
+(function(){
+  var el = document.getElementById('streams-counter');
+  if (!el) return;
+  var ANCHOR_TS = Date.UTC(2026, 4, 20, 0, 0, 0); // May 20, 2026 00:00 UTC
+  var ANCHOR_VALUE = 25001285;
+  var PER_DAY = 3000;
+  var PER_MS = PER_DAY / 86400000;
+  function streamsNow(){ return Math.floor(ANCHOR_VALUE + (Date.now() - ANCHOR_TS) * PER_MS); }
+  function fmt(n){ return n.toLocaleString('en-US'); }
+  var current = streamsNow();
+  el.textContent = fmt(current);
+
+  function scheduleNextTick(){
+    var delayMs = 2000 + Math.random() * 5000;     // 2-7 sec random interval
+    setTimeout(function(){
+      var add = Math.floor(Math.random() * 5);    // 0-4 streams random
+      if (add > 0) {
+        current += add;
+        el.textContent = fmt(current);
+        el.classList.add('tick');
+        setTimeout(function(){ el.classList.remove('tick'); }, 400);
+      }
+      scheduleNextTick();
+    }, delayMs);
+  }
+  scheduleNextTick();
+})();
+</script>
+
+<script>
+/* Mobile hamburger menu */
+(function(){
+  var burger = document.querySelector('.nav-burger');
+  var menu = document.getElementById('nav-mobile');
+  if (!burger || !menu) return;
+  function close(){ burger.classList.remove('open'); menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); menu.setAttribute('aria-hidden','true'); }
+  function open(){ burger.classList.add('open'); menu.classList.add('open'); burger.setAttribute('aria-expanded','true'); menu.setAttribute('aria-hidden','false'); }
+  burger.addEventListener('click', function(e){
+    e.stopPropagation();
+    if (menu.classList.contains('open')) close(); else open();
+  });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+  document.addEventListener('click', function(e){
+    if (!menu.classList.contains('open')) return;
+    if (menu.contains(e.target) || burger.contains(e.target)) return;
+    close();
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 900) close(); });
+})();
+</script>
+
+</body>
+</html>
