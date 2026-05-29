@@ -435,9 +435,36 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 /* VIRTUAL CAMERA SPOTLIGHT (compact) */
 .vc-spotlight { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .vc-spotlight-vis { display: flex; align-items: center; gap: 18px; padding: 26px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 16px; }
-.vc-source { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 20px; background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 12px; flex-shrink: 0; }
-.vc-source svg { width: 32px; height: 32px; color: var(--blue); }
-.vc-source span { font-size: 11.5px; font-weight: 700; color: var(--text); letter-spacing: .3px; }
+/* Virtual Camera source — looped presenter video with cycling PIP slides */
+.vc-source { position: relative; width: 240px; aspect-ratio: 16/9; background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 12px; overflow: hidden; flex-shrink: 0; box-shadow: 0 12px 32px -10px rgba(0,0,0,.55); }
+.vc-source video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.vc-source-live { position: absolute; bottom: 8px; left: 8px; display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px 3px 7px; background: rgba(231,76,60,.92); color: #fff; font-size: 9px; font-weight: 800; letter-spacing: .8px; border-radius: 4px; font-family: 'Geist Mono', monospace; box-shadow: 0 2px 8px rgba(231,76,60,.4); backdrop-filter: blur(4px); z-index: 3; }
+.vc-source-live::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #fff; animation: blink 1.4s ease-in-out infinite; }
+.vc-source-label { position: absolute; top: 8px; left: 8px; padding: 3px 8px; background: rgba(20,20,32,.7); color: var(--text); font-size: 9.5px; font-weight: 700; letter-spacing: .3px; border-radius: 4px; backdrop-filter: blur(6px); z-index: 3; display: inline-flex; align-items: center; gap: 5px; }
+.vc-source-label svg { width: 11px; height: 11px; color: var(--blue); }
+
+/* PIP slides — top-right corner of the video */
+.vc-pip { position: absolute; top: 8px; right: 8px; width: 46%; aspect-ratio: 4/3; pointer-events: none; z-index: 2; }
+.vc-pip-slide { position: absolute; inset: 0; background: #fff; border-radius: 6px; padding: 7px 9px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(0,0,0,.35); opacity: 0; animation: pipCycle 20s ease-in-out infinite; font-family: 'Geist', sans-serif; color: #1a1a28; }
+.vc-pip-slide.s1 { animation-delay: 0s; }
+.vc-pip-slide.s2 { animation-delay: 5s; }
+.vc-pip-slide.s3 { animation-delay: 10s; }
+.vc-pip-slide.s4 { animation-delay: 15s; }
+@keyframes pipCycle {
+  0% { opacity: 0; transform: translateX(4px) scale(.98); }
+  3%, 22% { opacity: 1; transform: translateX(0) scale(1); }
+  25%, 100% { opacity: 0; transform: translateX(-4px) scale(.98); }
+}
+.vc-pip-title { font-size: 8px; font-weight: 600; color: #6a6a8a; letter-spacing: .2px; text-transform: uppercase; }
+.vc-pip-big { font-size: 16px; font-weight: 800; color: #1a1a28; line-height: 1; letter-spacing: -.5px; }
+.vc-pip-bars { display: flex; align-items: flex-end; gap: 3px; height: 28px; padding: 0 1px; }
+.vc-pip-bar { flex: 1; background: linear-gradient(to top, #2878fc, #5a9bff); border-radius: 1.5px 1.5px 0 0; }
+.vc-pip-svg { width: 100%; height: 28px; display: block; }
+.vc-pip-row { display: flex; align-items: center; gap: 6px; }
+.vc-pip-row .vc-pip-big { font-size: 13px; }
+.vc-pip-donut { width: 28px; height: 28px; flex-shrink: 0; }
+.vc-pip-spark { width: 100%; height: 14px; display: block; }
+.vc-pip-delta { font-size: 8px; font-weight: 700; color: #1aa260; letter-spacing: .2px; }
 .vc-arrow { flex: 0 0 32px; height: 2px; background: linear-gradient(to right, var(--blue), rgba(74,126,245,.2)); position: relative; }
 .vc-arrow::after { content:""; position: absolute; right: -2px; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-left: 6px solid var(--blue); border-top: 4px solid transparent; border-bottom: 4px solid transparent; opacity: .4; }
 .vc-targets { display: flex; flex-direction: column; gap: 8px; flex: 1; }
@@ -921,7 +948,54 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         <a href="virtual-camera/" class="btn-primary">See compatible apps <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
       </div>
       <div class="vc-spotlight-vis">
-        <div class="vc-source"><svg class="ico"><use href="#i-cam"/></svg><span>SplitCam Virtual Camera</span><span class="ms-spot-live">● LIVE</span></div>
+        <div class="vc-source">
+          <video src="assets/vc-presenter.mp4" poster="assets/vc-presenter-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
+          <span class="vc-source-label"><svg><use href="#i-cam"/></svg> SplitCam Virtual Camera</span>
+          <div class="vc-pip" aria-hidden="true">
+            <div class="vc-pip-slide s1">
+              <div class="vc-pip-title">Revenue 2026</div>
+              <div class="vc-pip-bars">
+                <div class="vc-pip-bar" style="height:38%"></div>
+                <div class="vc-pip-bar" style="height:54%"></div>
+                <div class="vc-pip-bar" style="height:76%"></div>
+                <div class="vc-pip-bar" style="height:100%"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:7px;color:#9090aa;font-family:'Geist Mono',monospace">
+                <span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span>
+              </div>
+            </div>
+            <div class="vc-pip-slide s2">
+              <div class="vc-pip-title">Users <span class="vc-pip-delta">+47%</span></div>
+              <svg class="vc-pip-svg" viewBox="0 0 100 28" preserveAspectRatio="none">
+                <path d="M0 24 Q12 22 22 18 T44 12 T66 7 T100 2" fill="none" stroke="#2878fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M0 24 Q12 22 22 18 T44 12 T66 7 T100 2 L100 28 L0 28 Z" fill="rgba(40,120,252,.12)"/>
+                <circle cx="100" cy="2" r="2" fill="#2878fc"/>
+              </svg>
+              <div style="font-size:8px;color:#6a6a8a">12,847 active</div>
+            </div>
+            <div class="vc-pip-slide s3">
+              <div class="vc-pip-title">Goal Q2</div>
+              <div class="vc-pip-row">
+                <svg class="vc-pip-donut" viewBox="0 0 36 36">
+                  <circle cx="18" cy="18" r="14" fill="none" stroke="#e5e7eb" stroke-width="4"/>
+                  <circle cx="18" cy="18" r="14" fill="none" stroke="#2878fc" stroke-width="4" stroke-dasharray="59 88" stroke-dashoffset="0" transform="rotate(-90 18 18)" stroke-linecap="round"/>
+                </svg>
+                <div>
+                  <div class="vc-pip-big">67%</div>
+                  <div style="font-size:7.5px;color:#6a6a8a">on track</div>
+                </div>
+              </div>
+            </div>
+            <div class="vc-pip-slide s4">
+              <div class="vc-pip-title">MRR <span class="vc-pip-delta">↑ 12%</span></div>
+              <div class="vc-pip-big">$1.24M</div>
+              <svg class="vc-pip-spark" viewBox="0 0 100 14" preserveAspectRatio="none">
+                <path d="M0 10 L14 9 L28 11 L42 7 L56 6 L70 4 L84 3 L100 1" fill="none" stroke="#1aa260" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <span class="vc-source-live">LIVE</span>
+        </div>
         <div class="vc-arrow"></div>
         <div class="vc-targets">
           <div class="vc-target"><svg class="ico ico-sm"><use href="#i-chat"/></svg> Zoom <span class="vc-orient land">16:9</span></div>
