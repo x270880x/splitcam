@@ -380,49 +380,9 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 }
 
 /* Audio vis */
-/* Pro Audio Mixer — compact CSS replica in site palette */
-.mixer-ui { width: 100%; background: var(--app-base); border: 1px solid var(--app-border); border-radius: 12px; padding: 14px 14px 12px; display: flex; flex-direction: column; gap: 4px; }
-.mixer-title { font-size: 13px; font-weight: 600; color: var(--text); margin: 0 2px 8px; letter-spacing: -.1px; }
-.mixer-ch { display: grid; grid-template-columns: 28px minmax(0,1fr) auto; column-gap: 10px; row-gap: 6px; align-items: center; padding: 9px 10px; border: 1px solid transparent; border-radius: 8px; transition: border-color .2s, background .2s; }
-.mixer-ch.selected { border-color: rgba(40,120,252,.45); background: rgba(40,120,252,.05); }
-.mixer-ch-ico { width: 28px; height: 28px; border-radius: 6px; background: rgba(255,255,255,.06); border: 1px solid var(--app-border); display: inline-flex; align-items: center; justify-content: center; color: var(--text-sub); }
-.mixer-ch.selected .mixer-ch-ico { color: var(--blue); background: rgba(40,120,252,.10); border-color: rgba(40,120,252,.32); }
-.mixer-ch-ico svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
-.mixer-ch-name { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
-.mixer-ch-actions { display: inline-flex; gap: 8px; align-items: center; color: var(--text-dim); }
-.mixer-ch-actions svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.mixer-ch-actions .act-active { color: var(--blue); }
-.mixer-ch-slider { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; padding-top: 2px; }
-.mixer-ch-mute { width: 18px; height: 18px; flex-shrink: 0; border-radius: 50%; background: rgba(255,255,255,.05); display: inline-flex; align-items: center; justify-content: center; color: var(--text-dim); }
-.mixer-ch.muted .mixer-ch-mute { background: #e74c3c; color: #fff; }
-.mixer-ch-mute svg, .mixer-ch-vol svg { width: 10px; height: 10px; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
-.mixer-ch-vol { width: 14px; height: 14px; flex-shrink: 0; color: var(--text-dim); display: inline-flex; align-items: center; justify-content: center; }
-.mixer-ch-track { flex: 1; position: relative; height: 2px; background: rgba(255,255,255,.10); border-radius: 1px; }
-.mixer-ch-fill { position: absolute; left: 0; top: 0; height: 100%; background: var(--blue); border-radius: 1px; }
-.mixer-ch-handle { position: absolute; top: 50%; transform: translate(-50%,-50%); width: 10px; height: 10px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px rgba(40,120,252,.4), 0 1px 3px rgba(0,0,0,.4); }
-.mixer-ch.muted .mixer-ch-fill { background: var(--text-dim); }
-.mixer-ch.muted .mixer-ch-handle { background: var(--text-dim); box-shadow: 0 0 0 1px var(--app-border2), 0 1px 3px rgba(0,0,0,.4); }
-/* Animated handles + fills */
-.mixer-ch-handle.anim-mic   { animation: mxA 3.8s ease-in-out infinite; }
-.mixer-ch-handle.anim-music { animation: mxB 4.6s ease-in-out infinite; }
-.mixer-ch-handle.anim-yt    { animation: mxC 5.0s ease-in-out infinite; }
-.mixer-ch-handle.anim-sys   { animation: mxD 5.4s ease-in-out infinite; }
-.mixer-ch-handle.anim-vid   { animation: mxE 4.2s ease-in-out infinite; }
-.mixer-ch-fill.anim-mic   { animation: mxFa 3.8s ease-in-out infinite; }
-.mixer-ch-fill.anim-music { animation: mxFb 4.6s ease-in-out infinite; }
-.mixer-ch-fill.anim-yt    { animation: mxFc 5.0s ease-in-out infinite; }
-.mixer-ch-fill.anim-sys   { animation: mxFd 5.4s ease-in-out infinite; }
-.mixer-ch-fill.anim-vid   { animation: mxFe 4.2s ease-in-out infinite; }
-@keyframes mxA  { 0%,100%{left:84%}32%{left:91%}68%{left:80%} }
-@keyframes mxB  { 0%,100%{left:62%}40%{left:68%}75%{left:58%} }
-@keyframes mxC  { 0%,100%{left:70%}35%{left:76%}70%{left:65%} }
-@keyframes mxD  { 0%,100%{left:48%}35%{left:56%}70%{left:44%} }
-@keyframes mxE  { 0%,100%{left:64%}45%{left:71%}80%{left:59%} }
-@keyframes mxFa { 0%,100%{width:84%}32%{width:91%}68%{width:80%} }
-@keyframes mxFb { 0%,100%{width:62%}40%{width:68%}75%{width:58%} }
-@keyframes mxFc { 0%,100%{width:70%}35%{width:76%}70%{width:65%} }
-@keyframes mxFd { 0%,100%{width:48%}35%{width:56%}70%{width:44%} }
-@keyframes mxFe { 0%,100%{width:64%}45%{width:71%}80%{width:59%} }
+/* Pro Audio Mixer — real app screenshot, blended into site palette */
+.mixer-wrap { background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 12px; padding: 0; max-width: 360px; margin: 0 auto; overflow: hidden; box-shadow: 0 0 0 1px rgba(40,120,252,.05); }
+.mixer-img { display: block; width: 100%; height: auto; mix-blend-mode: lighten; }
 
 /* WHAT'S NEW */
 .new-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -922,86 +882,8 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         </ul>
       </div>
       <div class="feat-vis">
-        <div class="mixer-ui" aria-hidden="true">
-          <div class="mixer-title">Audio Mixer</div>
-          <div class="mixer-ch selected">
-            <span class="mixer-ch-ico"><svg><use href="#i-mic"/></svg></span>
-            <span class="mixer-ch-name">Microphone (High D…)</span>
-            <span class="mixer-ch-actions">
-              <svg viewBox="0 0 24 24"><path d="M3 9h4l4-4v14l-4-4H3z" fill="currentColor"/></svg>
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6"/><path d="M19.4 13.5a7.5 7.5 0 0 0 .1-3l1.7-1.3-1.5-2.6-2 .8a7.5 7.5 0 0 0-2.6-1.5l-.3-2.1H11.2l-.3 2.1a7.5 7.5 0 0 0-2.6 1.5l-2-.8L4.8 9.2 6.5 10.5a7.5 7.5 0 0 0 .1 3L4.8 14.8l1.5 2.6 2-.8a7.5 7.5 0 0 0 2.6 1.5l.3 2.1h2.6l.3-2.1a7.5 7.5 0 0 0 2.6-1.5l2 .8 1.5-2.6Z"/></svg>
-            </span>
-            <div class="mixer-ch-slider">
-              <span class="mixer-ch-mute"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span>
-              <div class="mixer-ch-track"><div class="mixer-ch-fill anim-mic"></div><div class="mixer-ch-handle anim-mic"></div></div>
-              <span class="mixer-ch-vol"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>
-            </div>
-          </div>
-          <div class="mixer-ch">
-            <span class="mixer-ch-ico"><svg><use href="#i-music"/></svg></span>
-            <span class="mixer-ch-name">Audio Playlist</span>
-            <span class="mixer-ch-actions">
-              <svg viewBox="0 0 24 24"><path d="M3 9h4l4-4v14l-4-4H3z" fill="currentColor"/></svg>
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6"/><path d="M19.4 13.5a7.5 7.5 0 0 0 .1-3l1.7-1.3-1.5-2.6-2 .8a7.5 7.5 0 0 0-2.6-1.5l-.3-2.1H11.2l-.3 2.1a7.5 7.5 0 0 0-2.6 1.5l-2-.8L4.8 9.2 6.5 10.5a7.5 7.5 0 0 0 .1 3L4.8 14.8l1.5 2.6 2-.8a7.5 7.5 0 0 0 2.6 1.5l.3 2.1h2.6l.3-2.1a7.5 7.5 0 0 0 2.6-1.5l2 .8 1.5-2.6Z"/></svg>
-            </span>
-            <div class="mixer-ch-slider">
-              <span class="mixer-ch-mute"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span>
-              <div class="mixer-ch-track"><div class="mixer-ch-fill anim-music"></div><div class="mixer-ch-handle anim-music"></div></div>
-              <span class="mixer-ch-vol"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>
-            </div>
-          </div>
-          <div class="mixer-ch">
-            <span class="mixer-ch-ico"><svg><use href="#i-globe"/></svg></span>
-            <span class="mixer-ch-name">www.youtube.com</span>
-            <span class="mixer-ch-actions">
-              <svg viewBox="0 0 24 24"><path d="M3 9h4l4-4v14l-4-4H3z" fill="currentColor"/></svg>
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6"/><path d="M19.4 13.5a7.5 7.5 0 0 0 .1-3l1.7-1.3-1.5-2.6-2 .8a7.5 7.5 0 0 0-2.6-1.5l-.3-2.1H11.2l-.3 2.1a7.5 7.5 0 0 0-2.6 1.5l-2-.8L4.8 9.2 6.5 10.5a7.5 7.5 0 0 0 .1 3L4.8 14.8l1.5 2.6 2-.8a7.5 7.5 0 0 0 2.6 1.5l.3 2.1h2.6l.3-2.1a7.5 7.5 0 0 0 2.6-1.5l2 .8 1.5-2.6Z"/></svg>
-            </span>
-            <div class="mixer-ch-slider">
-              <span class="mixer-ch-mute"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span>
-              <div class="mixer-ch-track"><div class="mixer-ch-fill anim-yt"></div><div class="mixer-ch-handle anim-yt"></div></div>
-              <span class="mixer-ch-vol"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>
-            </div>
-          </div>
-          <div class="mixer-ch">
-            <span class="mixer-ch-ico"><svg><use href="#i-monitor"/></svg></span>
-            <span class="mixer-ch-name">System Audio</span>
-            <span class="mixer-ch-actions">
-              <svg viewBox="0 0 24 24"><path d="M3 9h4l4-4v14l-4-4H3z" fill="currentColor"/></svg>
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6"/><path d="M19.4 13.5a7.5 7.5 0 0 0 .1-3l1.7-1.3-1.5-2.6-2 .8a7.5 7.5 0 0 0-2.6-1.5l-.3-2.1H11.2l-.3 2.1a7.5 7.5 0 0 0-2.6 1.5l-2-.8L4.8 9.2 6.5 10.5a7.5 7.5 0 0 0 .1 3L4.8 14.8l1.5 2.6 2-.8a7.5 7.5 0 0 0 2.6 1.5l.3 2.1h2.6l.3-2.1a7.5 7.5 0 0 0 2.6-1.5l2 .8 1.5-2.6Z"/></svg>
-            </span>
-            <div class="mixer-ch-slider">
-              <span class="mixer-ch-mute"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span>
-              <div class="mixer-ch-track"><div class="mixer-ch-fill anim-sys"></div><div class="mixer-ch-handle anim-sys"></div></div>
-              <span class="mixer-ch-vol"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>
-            </div>
-          </div>
-          <div class="mixer-ch muted">
-            <span class="mixer-ch-ico"><svg><use href="#i-screen"/></svg></span>
-            <span class="mixer-ch-name">Screen</span>
-            <span class="mixer-ch-actions">
-              <svg viewBox="0 0 24 24"><path d="M3 9h4l4-4v14l-4-4H3z" fill="currentColor"/></svg>
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6"/><path d="M19.4 13.5a7.5 7.5 0 0 0 .1-3l1.7-1.3-1.5-2.6-2 .8a7.5 7.5 0 0 0-2.6-1.5l-.3-2.1H11.2l-.3 2.1a7.5 7.5 0 0 0-2.6 1.5l-2-.8L4.8 9.2 6.5 10.5a7.5 7.5 0 0 0 .1 3L4.8 14.8l1.5 2.6 2-.8a7.5 7.5 0 0 0 2.6 1.5l.3 2.1h2.6l.3-2.1a7.5 7.5 0 0 0 2.6-1.5l2 .8 1.5-2.6Z"/></svg>
-            </span>
-            <div class="mixer-ch-slider">
-              <span class="mixer-ch-mute"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span>
-              <div class="mixer-ch-track"><div class="mixer-ch-fill" style="width:55%"></div><div class="mixer-ch-handle" style="left:55%"></div></div>
-              <span class="mixer-ch-vol"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>
-            </div>
-          </div>
-          <div class="mixer-ch">
-            <span class="mixer-ch-ico"><svg><use href="#i-file"/></svg></span>
-            <span class="mixer-ch-name">videoplayback.mp4</span>
-            <span class="mixer-ch-actions">
-              <span class="act-active"><svg viewBox="0 0 24 24"><path d="M3 9h4l4-4v14l-4-4H3z" fill="currentColor"/></svg></span>
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6"/><path d="M19.4 13.5a7.5 7.5 0 0 0 .1-3l1.7-1.3-1.5-2.6-2 .8a7.5 7.5 0 0 0-2.6-1.5l-.3-2.1H11.2l-.3 2.1a7.5 7.5 0 0 0-2.6 1.5l-2-.8L4.8 9.2 6.5 10.5a7.5 7.5 0 0 0 .1 3L4.8 14.8l1.5 2.6 2-.8a7.5 7.5 0 0 0 2.6 1.5l.3 2.1h2.6l.3-2.1a7.5 7.5 0 0 0 2.6-1.5l2 .8 1.5-2.6Z"/></svg>
-            </span>
-            <div class="mixer-ch-slider">
-              <span class="mixer-ch-mute"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span>
-              <div class="mixer-ch-track"><div class="mixer-ch-fill anim-vid"></div><div class="mixer-ch-handle anim-vid"></div></div>
-              <span class="mixer-ch-vol"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>
-            </div>
-          </div>
+        <div class="mixer-wrap">
+          <img class="mixer-img" src="assets/audio-mixer.png" alt="SplitCam Audio Mixer — channel strips for microphone, audio playlist, browser, system audio, screen and video sources">
         </div>
       </div>
     </div>
