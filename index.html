@@ -380,48 +380,60 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 }
 
 /* Audio vis */
-.mix-rows { display: flex; flex-direction: column; gap: 9px; width: 100%; }
-.mix-row { display: flex; align-items: center; gap: 12px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 7px; padding: 10px 14px; }
-.mix-nm { font-size: 12.5px; color: var(--text-sub); width: 110px; display: flex; align-items: center; gap: 7px; font-weight: 500; }
-.mix-track { flex: 1; height: 4px; background: var(--app-raised); border-radius: 2px; overflow: hidden; }
-.mix-fill { height: 100%; border-radius: 2px; }
-.fb { background: var(--blue); } .fg { background: var(--green); } .fa { background: var(--amber); }
-.mix-db { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; min-width: 42px; text-align: right; }
+/* Pro Audio Mixer — replica of the actual SplitCam Audio Mixer UI */
+.mixer-ui { width: 100%; background: #1a1a28; border-radius: 12px; padding: 16px 14px 18px; display: flex; flex-direction: column; }
+.mixer-title { font-size: 15px; font-weight: 600; color: var(--text); margin: 0 4px 12px; }
+.mixer-ch { padding: 10px 8px; border-radius: 8px; border: 1px solid transparent; transition: border-color .2s, background .2s; position: relative; }
+.mixer-ch + .mixer-ch { margin-top: 2px; }
+.mixer-ch.selected { border-color: rgba(40,120,252,.55); background: rgba(40,120,252,.04); }
+.mixer-ch-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.mixer-ch-ico { width: 30px; height: 30px; flex-shrink: 0; background: #f5f5fa; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #1a1a28; }
+.mixer-ch-ico svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.mixer-ch-name { flex: 1; min-width: 0; font-size: 13.5px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mixer-ch-actions { display: inline-flex; gap: 10px; flex-shrink: 0; color: var(--text-sub); align-items: center; }
+.mixer-ch-actions svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.mixer-ch-actions .act-active { color: var(--blue); }
+.mixer-ch-actions .act-active svg { fill: currentColor; stroke: currentColor; }
+.mixer-ch-slider { display: flex; align-items: center; gap: 10px; }
+.mixer-ch-mute, .mixer-ch-vol { width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; background: rgba(255,255,255,.06); display: inline-flex; align-items: center; justify-content: center; color: var(--text-sub); }
+.mixer-ch-mute svg, .mixer-ch-vol svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.mixer-ch.muted .mixer-ch-mute { background: #e74c3c; color: #fff; }
+.mixer-ch-vol { background: transparent; }
+.mixer-ch-track { flex: 1; position: relative; height: 2px; background: rgba(255,255,255,.12); border-radius: 1px; }
+.mixer-ch-fill { position: absolute; left: 0; top: 0; height: 100%; background: var(--blue); border-radius: 1px; }
+.mixer-ch-handle { position: absolute; top: 50%; transform: translate(-50%,-50%); width: 11px; height: 11px; border-radius: 50%; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.5); }
+.mixer-ch.muted .mixer-ch-fill { background: var(--text-dim); }
+.mixer-ch.muted .mixer-ch-handle { background: var(--text-dim); }
 
-/* Master output meter — sits above the channel rows */
-.mix-master { display: flex; align-items: center; gap: 12px; padding: 9px 14px; background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 7px; }
-.mix-master-lbl { font-size: 9.5px; font-weight: 700; letter-spacing: .8px; color: var(--text-sub); text-transform: uppercase; }
-.mix-master-meters { display: flex; flex-direction: column; gap: 3px; flex: 1; }
-.mix-master-bar { height: 3px; background: var(--app-raised); border-radius: 2px; overflow: hidden; position: relative; }
-.mix-master-fill { position: absolute; left: 0; top: 0; height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--green) 0 60%, var(--amber) 60% 82%, #ef4b4b 82% 100%); background-size: 200% 100%; background-position: 0 0; animation: mixMasterL 2.8s ease-in-out infinite; }
-.mix-master-bar.r .mix-master-fill { animation: mixMasterR 2.4s ease-in-out infinite; }
-.mix-master-db { font-family: 'Geist Mono', monospace; font-size: 10.5px; color: var(--text); font-weight: 600; min-width: 58px; text-align: right; }
-.mix-master-meta { font-family: 'Geist Mono', monospace; font-size: 9.5px; color: var(--text-dim); font-weight: 500; }
-@keyframes mixMasterL { 0%,100% { width: 62%; } 35% { width: 78%; } 60% { width: 70%; } 85% { width: 54%; } }
-@keyframes mixMasterR { 0%,100% { width: 66%; } 30% { width: 74%; } 55% { width: 81%; } 80% { width: 60%; } }
+/* Animated handles + fills — drift to feel live */
+.mixer-ch-handle.anim-mic   { animation: mixerMic   3.8s ease-in-out infinite; }
+.mixer-ch-handle.anim-music { animation: mixerMusic 4.6s ease-in-out infinite; }
+.mixer-ch-handle.anim-sys   { animation: mixerSys   5.1s ease-in-out infinite; }
+.mixer-ch-handle.anim-vid   { animation: mixerVid   4.2s ease-in-out infinite; }
+.mixer-ch-fill.anim-mic     { animation: mixerFillMic   3.8s ease-in-out infinite; }
+.mixer-ch-fill.anim-music   { animation: mixerFillMusic 4.6s ease-in-out infinite; }
+.mixer-ch-fill.anim-sys     { animation: mixerFillSys   5.1s ease-in-out infinite; }
+.mixer-ch-fill.anim-vid     { animation: mixerFillVid   4.2s ease-in-out infinite; }
+@keyframes mixerMic       { 0%,100% { left: 84%; } 32% { left: 91%; } 68% { left: 80%; } }
+@keyframes mixerMusic     { 0%,100% { left: 62%; } 40% { left: 68%; } 75% { left: 58%; } }
+@keyframes mixerSys       { 0%,100% { left: 48%; } 35% { left: 56%; } 70% { left: 44%; } }
+@keyframes mixerVid       { 0%,100% { left: 70%; } 45% { left: 77%; } 80% { left: 65%; } }
+@keyframes mixerFillMic   { 0%,100% { width: 84%; } 32% { width: 91%; } 68% { width: 80%; } }
+@keyframes mixerFillMusic { 0%,100% { width: 62%; } 40% { width: 68%; } 75% { width: 58%; } }
+@keyframes mixerFillSys   { 0%,100% { width: 48%; } 35% { width: 56%; } 70% { width: 44%; } }
+@keyframes mixerFillVid   { 0%,100% { width: 70%; } 45% { width: 77%; } 80% { width: 65%; } }
 
-/* M/S dots */
-.mix-ms { display: inline-flex; gap: 4px; flex-shrink: 0; }
-.mix-ms-dot { width: 16px; height: 16px; border-radius: 4px; background: var(--app-base); border: 1px solid var(--app-border2); display: inline-flex; align-items: center; justify-content: center; font-size: 8.5px; font-weight: 700; color: var(--text-dim); font-family: 'Geist Mono', monospace; letter-spacing: 0; }
-
-/* Live pulse on fader fills */
-.mix-fill.pulse { animation: mixFillPulseMic 2.6s ease-in-out infinite; }
-.mix-fill.pulse-music { animation: mixFillPulseMusic 3.4s ease-in-out infinite; }
-@keyframes mixFillPulseMic { 0%,100% { width: 78%; } 30% { width: 86%; } 60% { width: 72%; } 80% { width: 82%; } }
-@keyframes mixFillPulseMusic { 0%,100% { width: 42%; } 50% { width: 48%; } }
-
-/* Tall Mic row — top line + VST chain line */
-.mix-row.mix-row-tall { flex-direction: column; align-items: stretch; gap: 9px; padding: 10px 14px 11px; }
-.mix-row-top { display: flex; align-items: center; gap: 12px; }
-.mix-vst { display: flex; align-items: center; gap: 5px; padding-left: 44px; flex-wrap: wrap; }
-.mix-vst-lbl { font-size: 9px; font-weight: 700; color: var(--text-dim); letter-spacing: .8px; text-transform: uppercase; margin-right: 5px; }
-.mix-vst-chip { display: inline-flex; align-items: center; padding: 3px 8px; background: rgba(40,120,252,.08); border: 1px solid rgba(40,120,252,.32); border-radius: 5px; font-family: 'Geist Mono', monospace; font-size: 10px; font-weight: 600; color: #7ab1ff; letter-spacing: .2px; }
-.mix-vst-sep { color: var(--text-dim); font-size: 10px; font-family: 'Geist Mono', monospace; }
-
-/* NR (neural denoise) badge on Mic row */
-.mix-nr { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px 3px 6px; background: rgba(94,229,114,.10); border: 1px solid rgba(94,229,114,.36); border-radius: 99px; font-size: 9.5px; font-weight: 700; color: var(--green); font-family: 'Geist Mono', monospace; letter-spacing: .5px; flex-shrink: 0; }
-.mix-nr::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px rgba(94,229,114,.7); animation: nrBlink 1.8s ease-in-out infinite; }
-@keyframes nrBlink { 0%, 75%, 100% { opacity: 1; } 88% { opacity: .25; } }
+/* Audio Playlist channel sub-tracks */
+.mixer-ch-tracks { display: flex; flex-direction: column; gap: 3px; padding: 4px 4px 0 42px; }
+.mixer-ch-trow { display: flex; align-items: center; gap: 10px; font-size: 11px; color: var(--text-dim); font-family: 'Geist Mono', monospace; line-height: 1.4; }
+.mixer-ch-trow.playing { color: var(--text); }
+.mixer-ch-trow.playing::before { content: '■'; font-size: 8px; color: var(--text); margin-right: -4px; }
+.mixer-ch-trow .name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mixer-ch-trow .artist { color: var(--text-dim); width: 70px; overflow: hidden; text-overflow: ellipsis; }
+.mixer-ch-trow .time { font-size: 10.5px; color: var(--text-dim); flex-shrink: 0; }
+.mixer-ch-playctl { display: flex; align-items: center; gap: 6px; padding: 6px 4px 2px 42px; margin-top: 4px; color: var(--text-sub); }
+.mixer-ch-playctl svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.mixer-ch-playctl .spacer { flex: 1; }
 
 /* WHAT'S NEW */
 .new-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -921,55 +933,120 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         </ul>
       </div>
       <div class="feat-vis">
-        <div class="mix-rows">
-          <div class="mix-master">
-            <span class="mix-master-lbl">Master Out</span>
-            <div class="mix-master-meters">
-              <div class="mix-master-bar l"><div class="mix-master-fill"></div></div>
-              <div class="mix-master-bar r"><div class="mix-master-fill"></div></div>
+        <div class="mixer-ui" aria-hidden="true">
+          <div class="mixer-title">Audio Mixer</div>
+
+          <!-- Microphone (selected) -->
+          <div class="mixer-ch selected">
+            <div class="mixer-ch-head">
+              <div class="mixer-ch-ico"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M19 11a7 7 0 0 1-14 0M12 18v3m-3 0h6"/></svg></div>
+              <span class="mixer-ch-name">Microphone (High D…)</span>
+              <span class="mixer-ch-actions">
+                <svg viewBox="0 0 24 24"><path d="M3 9h4l4-4v14l-4-4H3z" fill="currentColor"/></svg>
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6"/><path d="M19.4 13.5a7.5 7.5 0 0 0 .1-3l1.7-1.3-1.5-2.6-2 .8a7.5 7.5 0 0 0-2.6-1.5l-.3-2.1H11.2l-.3 2.1a7.5 7.5 0 0 0-2.6 1.5l-2-.8L4.8 9.2 6.5 10.5a7.5 7.5 0 0 0 .1 3L4.8 14.8l1.5 2.6 2-.8a7.5 7.5 0 0 0 2.6 1.5l.3 2.1h2.6l.3-2.1a7.5 7.5 0 0 0 2.6-1.5l2 .8 1.5-2.6Z"/></svg>
+              </span>
             </div>
-            <span class="mix-master-db">-7 / -6 dB</span>
-            <span class="mix-master-meta">48 kHz · 24-bit</span>
-          </div>
-          <div class="mix-row mix-row-tall">
-            <div class="mix-row-top">
-              <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
-              <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-mic"/></svg> Microphone</span>
-              <div class="mix-track"><div class="mix-fill fb pulse" style="width:78%"></div></div>
-              <span class="mix-db">-3 dB</span>
-              <span class="mix-nr">NR ON</span>
-            </div>
-            <div class="mix-vst">
-              <span class="mix-vst-lbl">VST chain</span>
-              <span class="mix-vst-chip">NoiseGate</span><span class="mix-vst-sep">›</span>
-              <span class="mix-vst-chip">EQ</span><span class="mix-vst-sep">›</span>
-              <span class="mix-vst-chip">De-Ess</span><span class="mix-vst-sep">›</span>
-              <span class="mix-vst-chip">Comp</span>
+            <div class="mixer-ch-slider">
+              <span class="mixer-ch-mute"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span>
+              <div class="mixer-ch-track">
+                <div class="mixer-ch-fill anim-mic"></div>
+                <div class="mixer-ch-handle anim-mic"></div>
+              </div>
+              <span class="mixer-ch-vol"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>
             </div>
           </div>
-          <div class="mix-row">
-            <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
-            <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-music"/></svg> Music</span>
-            <div class="mix-track"><div class="mix-fill fg pulse-music" style="width:42%"></div></div>
-            <span class="mix-db">-14 dB</span>
+
+          <!-- Audio Playlist -->
+          <div class="mixer-ch">
+            <div class="mixer-ch-head">
+              <div class="mixer-ch-ico"><svg viewBox="0 0 24 24"><path d="M9 18V5l11-2v12"/><circle cx="6" cy="18" r="2.5"/><circle cx="17" cy="15" r="2.5"/></svg></div>
+              <span class="mixer-ch-name">Audio Playlist</span>
+              <span class="mixer-ch-actions">
+                <svg viewBox="0 0 24 24"><path d="M3 9h4l4-4v14l-4-4H3z" fill="currentColor"/></svg>
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6"/><path d="M19.4 13.5a7.5 7.5 0 0 0 .1-3l1.7-1.3-1.5-2.6-2 .8a7.5 7.5 0 0 0-2.6-1.5l-.3-2.1H11.2l-.3 2.1a7.5 7.5 0 0 0-2.6 1.5l-2-.8L4.8 9.2 6.5 10.5a7.5 7.5 0 0 0 .1 3L4.8 14.8l1.5 2.6 2-.8a7.5 7.5 0 0 0 2.6 1.5l.3 2.1h2.6l.3-2.1a7.5 7.5 0 0 0 2.6-1.5l2 .8 1.5-2.6Z"/></svg>
+              </span>
+            </div>
+            <div class="mixer-ch-slider">
+              <span class="mixer-ch-mute"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span>
+              <div class="mixer-ch-track">
+                <div class="mixer-ch-fill anim-music"></div>
+                <div class="mixer-ch-handle anim-music"></div>
+              </div>
+              <span class="mixer-ch-vol"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>
+            </div>
+            <div class="mixer-ch-tracks">
+              <div class="mixer-ch-trow playing"><span class="name">Late Night Talking</span><span class="artist">Harry St…</span><span class="time">02:57</span></div>
+              <div class="mixer-ch-trow"><span class="name">As It Was</span><span class="artist">Harry St…</span><span class="time">02:47</span></div>
+              <div class="mixer-ch-trow"><span class="name">Daylight</span><span class="artist">Harry St…</span><span class="time">02:44</span></div>
+            </div>
+            <div class="mixer-ch-playctl">
+              <svg viewBox="0 0 24 24"><path d="M18 5v14L8 12zM6 5h2v14H6z"/></svg>
+              <svg viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M6 5v14l10-7zM16 5h2v14h-2z"/></svg>
+              <span class="spacer"></span>
+              <svg viewBox="0 0 24 24"><path d="m16 3 4 4-4 4m4-4H5m3 6-4 4 4 4m-4-4h15"/></svg>
+              <svg viewBox="0 0 24 24"><path d="m17 1 4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4m14 0v2a4 4 0 0 1-4 4H3"/></svg>
+            </div>
           </div>
-          <div class="mix-row">
-            <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
-            <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-monitor"/></svg> System audio</span>
-            <div class="mix-track"><div class="mix-fill fa" style="width:55%"></div></div>
-            <span class="mix-db">-9 dB</span>
+
+          <!-- System Audio -->
+          <div class="mixer-ch">
+            <div class="mixer-ch-head">
+              <div class="mixer-ch-ico"><svg viewBox="0 0 24 24"><path d="M9 18V5l11-2v12"/><circle cx="6" cy="18" r="2.5"/><circle cx="17" cy="15" r="2.5"/></svg></div>
+              <span class="mixer-ch-name">System Audio</span>
+              <span class="mixer-ch-actions">
+                <svg viewBox="0 0 24 24"><path d="M3 9h4l4-4v14l-4-4H3z" fill="currentColor"/></svg>
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6"/><path d="M19.4 13.5a7.5 7.5 0 0 0 .1-3l1.7-1.3-1.5-2.6-2 .8a7.5 7.5 0 0 0-2.6-1.5l-.3-2.1H11.2l-.3 2.1a7.5 7.5 0 0 0-2.6 1.5l-2-.8L4.8 9.2 6.5 10.5a7.5 7.5 0 0 0 .1 3L4.8 14.8l1.5 2.6 2-.8a7.5 7.5 0 0 0 2.6 1.5l.3 2.1h2.6l.3-2.1a7.5 7.5 0 0 0 2.6-1.5l2 .8 1.5-2.6Z"/></svg>
+              </span>
+            </div>
+            <div class="mixer-ch-slider">
+              <span class="mixer-ch-mute"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span>
+              <div class="mixer-ch-track">
+                <div class="mixer-ch-fill anim-sys"></div>
+                <div class="mixer-ch-handle anim-sys"></div>
+              </div>
+              <span class="mixer-ch-vol"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>
+            </div>
           </div>
-          <div class="mix-row">
-            <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
-            <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-globe"/></svg> Browser</span>
-            <div class="mix-track"><div class="mix-fill fb" style="width:30%"></div></div>
-            <span class="mix-db">-18 dB</span>
+
+          <!-- msedge.exe — muted -->
+          <div class="mixer-ch muted">
+            <div class="mixer-ch-head">
+              <div class="mixer-ch-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="11" rx="1.5"/><path d="M2 18h20M9 15v3M15 15v3"/></svg></div>
+              <span class="mixer-ch-name">msedge.exe</span>
+              <span class="mixer-ch-actions">
+                <svg viewBox="0 0 24 24"><path d="M3 9h4l4-4v14l-4-4H3z" fill="currentColor"/></svg>
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6"/><path d="M19.4 13.5a7.5 7.5 0 0 0 .1-3l1.7-1.3-1.5-2.6-2 .8a7.5 7.5 0 0 0-2.6-1.5l-.3-2.1H11.2l-.3 2.1a7.5 7.5 0 0 0-2.6 1.5l-2-.8L4.8 9.2 6.5 10.5a7.5 7.5 0 0 0 .1 3L4.8 14.8l1.5 2.6 2-.8a7.5 7.5 0 0 0 2.6 1.5l.3 2.1h2.6l.3-2.1a7.5 7.5 0 0 0 2.6-1.5l2 .8 1.5-2.6Z"/></svg>
+              </span>
+            </div>
+            <div class="mixer-ch-slider">
+              <span class="mixer-ch-mute"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span>
+              <div class="mixer-ch-track">
+                <div class="mixer-ch-fill" style="width:55%"></div>
+                <div class="mixer-ch-handle" style="left:55%"></div>
+              </div>
+              <span class="mixer-ch-vol"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>
+            </div>
           </div>
-          <div class="mix-row">
-            <span class="mix-ms"><span class="mix-ms-dot">M</span><span class="mix-ms-dot">S</span></span>
-            <span class="mix-nm"><svg class="ico ico-sm"><use href="#i-game"/></svg> Game audio</span>
-            <div class="mix-track"><div class="mix-fill fb" style="width:48%"></div></div>
-            <span class="mix-db">-11 dB</span>
+
+          <!-- videoplayback.mp4 — active output -->
+          <div class="mixer-ch">
+            <div class="mixer-ch-head">
+              <div class="mixer-ch-ico"><svg viewBox="0 0 24 24"><path d="M9 18V5l11-2v12"/><circle cx="6" cy="18" r="2.5"/><circle cx="17" cy="15" r="2.5"/></svg></div>
+              <span class="mixer-ch-name">videoplayback.mp4</span>
+              <span class="mixer-ch-actions">
+                <span class="act-active"><svg viewBox="0 0 24 24"><path d="M3 9h4l4-4v14l-4-4H3z" fill="currentColor"/><path d="M16 8a5 5 0 0 1 0 8M19 5a8 8 0 0 1 0 14" fill="none" stroke="currentColor"/></svg></span>
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6"/><path d="M19.4 13.5a7.5 7.5 0 0 0 .1-3l1.7-1.3-1.5-2.6-2 .8a7.5 7.5 0 0 0-2.6-1.5l-.3-2.1H11.2l-.3 2.1a7.5 7.5 0 0 0-2.6 1.5l-2-.8L4.8 9.2 6.5 10.5a7.5 7.5 0 0 0 .1 3L4.8 14.8l1.5 2.6 2-.8a7.5 7.5 0 0 0 2.6 1.5l.3 2.1h2.6l.3-2.1a7.5 7.5 0 0 0 2.6-1.5l2 .8 1.5-2.6Z"/></svg>
+              </span>
+            </div>
+            <div class="mixer-ch-slider">
+              <span class="mixer-ch-mute"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span>
+              <div class="mixer-ch-track">
+                <div class="mixer-ch-fill anim-vid"></div>
+                <div class="mixer-ch-handle anim-vid"></div>
+              </div>
+              <span class="mixer-ch-vol"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>
+            </div>
           </div>
         </div>
       </div>
