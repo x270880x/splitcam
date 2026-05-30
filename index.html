@@ -16,14 +16,19 @@
 <meta property="og:url" content="https://splitcam.com/">
 <meta property="og:title" content="Free Streaming Software & Virtual Camera | SplitCam">
 <meta property="og:description" content="Multi-stream to Twitch, YouTube, Facebook & Kick simultaneously. Built-in virtual camera, scene mixing, audio mixer. Mac, Windows, iOS, Android. No watermark.">
-<meta property="og:image" content="https://splitcam.com/assets/hero-spotlight-poster.jpg">
+<meta property="og:image" content="https://splitcam.com/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SplitCam — go live everywhere. Free streaming studio for Windows, macOS, iOS and Android.">
 <meta property="og:site_name" content="SplitCam">
 
 <!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@splitcamsoft">
+<meta name="twitter:creator" content="@splitcamsoft">
 <meta name="twitter:title" content="Free Streaming Software & Virtual Camera | SplitCam">
 <meta name="twitter:description" content="Multi-stream to Twitch, YouTube, Facebook & Kick. Built-in virtual camera. Free, no watermark.">
-<meta name="twitter:image" content="https://splitcam.com/assets/hero-spotlight-poster.jpg">
+<meta name="twitter:image" content="https://splitcam.com/assets/og-cover.png">
 
 <meta name="theme-color" content="#141420">
 
@@ -226,7 +231,12 @@ nav {
 /* HERO */
 .hero { min-height: 100vh; padding: 100px 40px 60px; display: flex; align-items: center; position: relative; overflow: hidden; }
 .hero-glow { position: absolute; pointer-events: none; width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(40,120,252,.07) 0%, transparent 70%); right: -120px; top: 50%; transform: translateY(-50%); }
-.hero-inner { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 836px; gap: 60px; align-items: center; }
+.hero-inner { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 836px); gap: 60px; align-items: center; }
+/* At intermediate widths (900–1199) the text column gets crushed under the 836px app-window — collapse to single column there too. Full mobile rules still apply at <=900. */
+@media(max-width:1199px){
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .app-window { display: none; }
+}
 
 .hero-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
 .pill { display: inline-flex; align-items: center; gap: 9px; padding: 5px 13px 5px 10px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.35); border-radius: 20px; }
@@ -1105,17 +1115,14 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
 <!-- ALL FEATURES GRID -->
 <section class="section">
   <div class="section-inner">
-    <p class="eyebrow">Everything included</p>
-    <h2 class="sec-h">9 reasons SplitCam wins.</h2>
+    <p class="eyebrow">Everything else included</p>
+    <h2 class="sec-h">And the rest is built in, too.</h2>
     <p class="sec-p">No premium tiers, no feature locks. The free download is the full app.</p>
     <div class="feat-grid">
-      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-broadcast"/></svg></div><div class="cell-h2">Multi-streaming</div><p class="cell-p2">Stream to Twitch, YouTube, Facebook, Kick + 84+ platforms simultaneously. Direct peer-to-peer from your machine, no cloud middleman, no monthly fee.</p></div>
-      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-cam"/></svg></div><div class="cell-h2">Virtual Camera</div><p class="cell-p2">Use SplitCam as a webcam in Zoom, Teams, Google Meet, Discord. Both portrait (9:16) and landscape (16:9) supported.</p></div>
-      <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-mask"/></svg></div><div class="cell-h2">AI Background Removal</div><p class="cell-p2">Remove, blur or replace your background instantly. No green screen needed — AI detects your silhouette in real time.</p></div>
-      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-monitor"/></svg></div><div class="cell-h2">Vertical Canvas</div><p class="cell-p2">Switch canvas to 9:16 for TikTok Live, Reels, Shorts and vertical Instagram Live. One studio — both orientations.</p></div>
-      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-zap"/></svg></div><div class="cell-h2">Beauty Effects</div><p class="cell-p2">Skin smoother, skin tone, face tracking, face masking, hair color, lips color/size, eye enlargement — webcam-model grade beauty in one click.</p></div>
-      <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-layers"/></svg></div><div class="cell-h2">Many Sources</div><p class="cell-p2">Webcam, IP camera, browser, screen, game, video, image, PDF, text, NDI, Timer with hotkey actions, Whiteboard, Replay — every source you'll ever need.</p></div>
-      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-audio"/></svg></div><div class="cell-h2">Pro Audio</div><p class="cell-p2">VST 2/3 plugin support, neural denoise, multi-track recording, audio mixer with mic accentuation. Studio-grade audio chain inside.</p></div>
+      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-mask"/></svg></div><div class="cell-h2">AI Background Removal</div><p class="cell-p2">Remove, blur or replace your background instantly. No green screen needed — AI detects your silhouette in real time.</p></div>
+      <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-monitor"/></svg></div><div class="cell-h2">Vertical Canvas</div><p class="cell-p2">Switch canvas to 9:16 for TikTok Live, Reels, Shorts and vertical Instagram Live. One studio — both orientations.</p></div>
+      <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-zap"/></svg></div><div class="cell-h2">Beauty Effects</div><p class="cell-p2">Skin smoother, skin tone, face tracking, face masking, hair color, lips color/size, eye enlargement — webcam-model grade beauty in one click.</p></div>
+      <div class="feat-cell"><div class="cell-ico"><svg class="ico ico-lg"><use href="#i-layers"/></svg></div><div class="cell-h2">Many Sources</div><p class="cell-p2">Webcam, IP camera, browser, screen, game, video, image, PDF, text, NDI, Timer with hotkey actions, Whiteboard, Replay — every source you'll ever need.</p></div>
       <div class="feat-cell"><div class="cell-ico g"><svg class="ico ico-lg"><use href="#i-folder"/></svg></div><div class="cell-h2">OBS Project Import</div><p class="cell-p2">Bring your OBS Studio scene collections in one click. Sources, scenes, transitions and hotkeys are preserved.</p></div>
       <div class="feat-cell"><div class="cell-ico p"><svg class="ico ico-lg"><use href="#i-phone"/></svg></div><div class="cell-h2">Phone as Camera</div><p class="cell-p2">Wireless smartphone as a second camera over your network. Multi-cam setup without a capture card or extra hardware.</p></div>
     </div>
@@ -1435,18 +1442,35 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
   if (!slot) return;
   var words = ['creators.','streamers.','gamers.','VTubers.','podcasters.','educators.'];
   slot.textContent = words[0];
-  /* Reserve width for longest word so layout doesn't jump */
-  var measure = document.createElement('span');
-  var cs = getComputedStyle(slot);
-  measure.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap';
-  measure.style.font = cs.font;
-  measure.style.fontWeight = cs.fontWeight;
-  measure.style.letterSpacing = cs.letterSpacing;
-  document.body.appendChild(measure);
-  var maxW = 0;
-  words.forEach(function(w){ measure.textContent = w; maxW = Math.max(maxW, measure.offsetWidth); });
-  document.body.removeChild(measure);
-  slot.style.minWidth = (maxW + 2) + 'px';
+
+  /* Reserve width for the widest word so the H1 doesn't jiggle when it cycles.
+     Wait for the web font to load before measuring — otherwise we measure with
+     the fallback font and the reservation is ~30-40px short. */
+  function reserveWidth(){
+    var measure = document.createElement('span');
+    var cs = getComputedStyle(slot);
+    measure.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap';
+    measure.style.font = cs.font;
+    measure.style.fontWeight = cs.fontWeight;
+    measure.style.letterSpacing = cs.letterSpacing;
+    document.body.appendChild(measure);
+    var maxW = 0;
+    words.forEach(function(w){ measure.textContent = w; maxW = Math.max(maxW, measure.offsetWidth); });
+    document.body.removeChild(measure);
+    slot.style.minWidth = (maxW + 2) + 'px';
+  }
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(reserveWidth);
+  } else {
+    reserveWidth();
+  }
+  /* Re-measure on resize — clamp() bumps font-size at different viewport widths. */
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(reserveWidth, 120);
+  });
+
   /* Cycle: fade out → 200ms gap → swap text → fade in. Word visible ~3s. */
   var i = 0;
   setInterval(function(){
