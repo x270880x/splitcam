@@ -232,8 +232,11 @@ nav {
 .hero { min-height: 100vh; padding: 100px 40px 60px; display: flex; align-items: center; position: relative; overflow: hidden; }
 .hero-glow { position: absolute; pointer-events: none; width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(40,120,252,.07) 0%, transparent 70%); right: -120px; top: 50%; transform: translateY(-50%); }
 .hero-inner { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 836px); gap: 60px; align-items: center; }
-/* At intermediate widths (900–1199) the text column gets crushed under the 836px app-window — collapse to single column there too. Full mobile rules still apply at <=900. */
-@media(max-width:1199px){
+/* The app-window is a fixed-width 836px video. Two-column only makes sense
+   once the text side has ≳450px to breathe — viewport ≈1380+. Below that the
+   text column gets crushed, so collapse to single column (hide the app-window).
+   Full mobile rules at ≤900 then kick in on top. */
+@media(max-width:1379px){
   .hero-inner { grid-template-columns: 1fr; gap: 32px; }
   .app-window { display: none; }
 }
