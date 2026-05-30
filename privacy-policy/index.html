@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Privacy Policy — SplitCam</title>
+<meta name="description" content="How SplitCam collects and uses information on the website and inside the SplitCam software. Browser-level analytics only; no personally identifiable information.">
+<meta name="keywords" content="splitcam privacy policy, splitcam data, splitcam analytics, splitcam cookies, splitcam personal data">
+<meta name="author" content="SplitCam">
+<link rel="canonical" href="https://splitcam.com/privacy-policy/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://splitcam.com/privacy-policy/">
+<meta property="og:title" content="Privacy Policy — SplitCam">
+<meta property="og:description" content="How SplitCam collects and uses information on the website and inside the SplitCam software.">
+<meta property="og:image" content="https://splitcam.com/assets/hero-spotlight-poster.jpg">
+<meta property="og:site_name" content="SplitCam">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy Policy — SplitCam">
+<meta name="twitter:description" content="How SplitCam collects and uses information on the website and inside the software.">
+
+<meta name="theme-color" content="#141420">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+
+<!-- Schema.org: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "SplitCam", "item": "https://splitcam.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://splitcam.com/privacy-policy/"}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "SplitCam Privacy Policy",
+      "url": "https://splitcam.com/privacy-policy/",
+      "description": "How SplitCam collects and uses information on the website and inside the SplitCam software."
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --app-base:#141420;
+  --app-panel:#1c1c2e;
+  --app-surface:#22223a;
+  --app-border:rgba(255,255,255,.08);
+  --app-border2:rgba(255,255,255,.14);
+  --blue:#2878fc;
+  --blue-hover:#4d8eff;
+  --blue-dim:rgba(40,120,252,.13);
+  --purple:#9c5bff;
+  --green:#5ee572;
+  --text:#eeeeff;
+  --text-sub:#9090bb;
+  --text-dim:#50506a;
+}
+html{scroll-behavior:smooth;background:var(--app-base);scroll-padding-top:60px}
+body{font-family:'Geist',sans-serif;background:var(--app-base);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(20,20,32,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--app-border)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:26px;height:26px;flex-shrink:0}
+.nav-logo-wordmark{font-size:24px;font-weight:700;letter-spacing:.5px}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:14px;color:var(--text-sub);font-weight:500;transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:8px;background:var(--blue);color:#fff;font-size:13px;font-weight:600;transition:background .15s}
+.btn-primary:hover{background:var(--blue-hover)}
+.btn-ghost{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:8px;background:transparent;color:var(--text);border:1px solid var(--app-border2);font-size:13px;font-weight:600;transition:all .15s}
+.btn-ghost:hover{background:rgba(255,255,255,.04)}
+.btn-lg{padding:13px 24px;font-size:14px;border-radius:10px}
+
+/* Hamburger */
+.nav-burger{display:none;width:40px;height:40px;border:1px solid var(--app-border2);border-radius:8px;background:transparent;cursor:pointer;align-items:center;justify-content:center;padding:0;color:var(--text);transition:background .15s,border-color .15s}
+.nav-burger:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.22)}
+.nav-burger svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav-burger .ico-close{display:none}
+.nav-burger.open .ico-open{display:none}
+.nav-burger.open .ico-close{display:block}
+.nav-mobile{position:fixed;top:60px;left:0;right:0;background:rgba(20,20,32,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--app-border);padding:14px 20px 18px;display:none;flex-direction:column;gap:4px;z-index:99}
+.nav-mobile.open{display:flex}
+.nav-mobile a{display:block;padding:12px 14px;font-size:15px;color:var(--text-sub);font-weight:500;border-radius:8px;transition:background .15s,color .15s}
+.nav-mobile a:hover,.nav-mobile a.active{background:rgba(255,255,255,.05);color:var(--text)}
+.nav-mobile-divider{height:1px;background:var(--app-border);margin:8px 0}
+.nav-mobile .btn-primary{justify-content:center;width:100%;padding:12px 16px;font-size:14px}
+
+/* Breadcrumbs */
+.breadcrumbs{padding:80px 40px 0;max-width:900px;margin:0 auto;font-size:13px;color:var(--text-dim)}
+.breadcrumbs a{color:var(--text-sub);transition:color .15s}
+.breadcrumbs a:hover{color:var(--text)}
+.breadcrumbs .sep{margin:0 8px}
+
+/* HERO */
+.hero{padding:32px 40px 30px;max-width:900px;margin:0 auto;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-50px;left:50%;transform:translateX(-50%);width:600px;height:420px;background:radial-gradient(ellipse,rgba(40,120,252,.08),transparent 70%);pointer-events:none;z-index:0}
+.eyebrow{display:inline-block;padding:5px 12px;background:var(--blue-dim);color:var(--blue);font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:18px;position:relative;z-index:1}
+.h1{font-size:clamp(32px,4.2vw,46px);font-weight:800;line-height:1.05;letter-spacing:-1.2px;margin:0 0 14px;max-width:720px;position:relative;z-index:1}
+.h1 .accent{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:16px;color:var(--text-sub);max-width:640px;line-height:1.65;position:relative;z-index:1}
+.meta{font-family:'Geist Mono',monospace;font-size:11.5px;color:var(--text-dim);letter-spacing:.5px;margin-top:14px;text-transform:uppercase;position:relative;z-index:1}
+
+/* Legal content */
+.legal{padding:24px 40px 56px;max-width:840px;margin:0 auto}
+.legal-card{background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;padding:36px 40px}
+.legal h2{font-size:21px;font-weight:700;letter-spacing:-.4px;line-height:1.3;margin:34px 0 12px;color:var(--text);scroll-margin-top:72px}
+.legal h2:first-child{margin-top:0}
+.legal h3{font-size:16px;font-weight:700;letter-spacing:-.2px;line-height:1.4;margin:22px 0 8px;color:var(--text)}
+.legal p{font-size:15px;line-height:1.75;color:var(--text-sub);margin:0 0 14px}
+.legal p strong, .legal strong{color:var(--text);font-weight:600}
+.legal a{color:var(--blue);transition:color .15s}
+.legal a:hover{color:var(--blue-hover);text-decoration:underline}
+.legal ul{margin:0 0 16px 22px;color:var(--text-sub);font-size:15px;line-height:1.7}
+.legal ul li{margin-bottom:6px}
+
+/* CTA */
+.cta-block{padding:48px 40px;background:linear-gradient(135deg,var(--app-panel),var(--app-surface));border-top:1px solid var(--app-border);border-bottom:1px solid var(--app-border);text-align:center;margin-top:32px}
+.cta-block h2{font-size:24px;font-weight:700;letter-spacing:-.5px;margin-bottom:10px}
+.cta-block p{font-size:15px;color:var(--text-sub);max-width:520px;margin:0 auto 22px;line-height:1.6}
+
+/* Footer */
+footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-panel)}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text-dim)}
+.footer-inner a{color:var(--text-sub);transition:color .15s}
+.footer-inner a:hover{color:var(--text)}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  nav{padding:0 16px}
+  .nav-links{display:none}
+  .nav-burger{display:inline-flex}
+  .breadcrumbs{padding:80px 20px 0}
+  .hero,.legal{padding-left:20px;padding-right:20px}
+  .legal-card{padding:24px 22px}
+  .cta-block{padding:40px 20px}
+  footer{padding:32px 20px}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="../">
+    <img class="nav-logo-icon" src="../assets/splitcam.png" alt="SplitCam">
+    <span class="nav-logo-wordmark">splitcam</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../products/">Products</a></li>
+    <li><a href="../virtual-camera/">Virtual Camera</a></li>
+    <li><a href="../multistreaming/">Multistreaming</a></li>
+    <li><a href="../alternatives/">Alternatives</a></li>
+    <li><a href="../for/">Use Cases</a></li>
+    <li><a href="../help/">Help</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="../" class="btn-primary">⬇ Download</a>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+      <svg class="ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-6 6-6 6"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile" role="menu" aria-hidden="true">
+  <a href="../products/" role="menuitem">Products</a>
+  <a href="../virtual-camera/" role="menuitem">Virtual Camera</a>
+  <a href="../multistreaming/" role="menuitem">Multistreaming</a>
+  <a href="../alternatives/" role="menuitem">Alternatives</a>
+  <a href="../for/" role="menuitem">Use Cases</a>
+  <a href="../help/" role="menuitem">Help</a>
+  <div class="nav-mobile-divider"></div>
+  <a href="../" class="btn-primary" role="menuitem">⬇ Download SplitCam</a>
+</div>
+
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+  <a href="../">SplitCam</a><span class="sep">/</span><span>Privacy Policy</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <span class="eyebrow">Legal</span>
+  <h1 class="h1">Privacy <span class="accent">Policy</span></h1>
+  <p class="sub">How SplitCam collects and uses information on this website and inside the SplitCam software, plus the third-party services involved.</p>
+  <div class="meta">SplitCam · since 2003</div>
+</section>
+
+<!-- LEGAL CONTENT -->
+<section class="legal">
+  <div class="legal-card">
+
+    <h2>Introduction</h2>
+    <p>This privacy statement describes how we collect and use the personal information you provide on our website and with SplitCam software. It also describes third-party solutions we use on our website and with SplitCam software that can collect and use the personal information.</p>
+
+    <h2>Information Collection</h2>
+    <p>We gather information like IP addresses, browser type, internet service provider (ISP), referring/exit pages, operating system, date/time stamp and click-stream data by using Google Analytics — to use our site and software you need to accept the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>. We do <strong>not</strong> collect Personally Identifiable Information (“PII”) about our visitors. No further information regarding our visitors, other than the browser-level information for statistics and analytics purposes.</p>
+
+    <h2>Cookies</h2>
+    <p>A cookie, also known as a web cookie, browser cookie, or HTTP cookie, is a piece of text stored by a user’s web browser. A cookie can be used for authentication, storing site preferences, shopping cart contents, the identifier for a server-based session, or anything else that can be accomplished through storing text data. A cookie consists of one or more name-value pairs containing bits of information, which may be encrypted for information privacy and data security purposes. The cookie is sent as an HTTP header by a web server to a web browser and then sent back unchanged by the browser each time it accesses that server. We use cookies by Google Analytics for statistics and analytics purposes.</p>
+
+    <h2>Sharing of Information</h2>
+    <p>As described above, no information other than the browser-level information, and the information recorded by the cookie (IP address, browser type and language, and the date and time of your request for information) is captured by visiting our website. The browser-level information and information recorded by the cookie is not shared with any third party except Google Analytics.</p>
+
+    <h2>Policy Changes</h2>
+    <p>We reserve the right to modify this Privacy Policy at any time.</p>
+
+    <h2>InstallMonetizer products</h2>
+    <p>The products on this site utilize <a href="https://installmonetizer.com" target="_blank" rel="noopener">InstallMonetizer.com</a>’s software recommendation platform. This valuable service helps us earn money which in turn helps us pay for resources such as server costs, product research, development, marketing, etc. Our goal is to develop amazing software for our users at zero or low cost.</p>
+
+    <h3>Overview</h3>
+    <p>InstallMonetizer is a software recommendation platform that enables software developers to recommend other software during installation of their application. InstallMonetizer helps users discover other software and in exchange the software developers earn commission for facilitating this service. Recommendations for various software advertisers appear as full-window advertorials. Only selected high-quality advertisers are shown.</p>
+
+    <h3>Quality of products installed</h3>
+    <p>Advertisers working with InstallMonetizer monetize from the installs we provide in various methods (from search updates and coupons to freemium products). They review each product through quality assurance before it is released. However, they recommend the software developer and end users to review the recommended software product, its privacy and terms before engaging with that advertiser — the same engagement every user should do when installing any software. Other quality checks: recommendations are only shown during installing of the software developer’s product; no additional advertisers are recommended post-install; users have the chance to accept or decline each offer and are shown a description of the product and links to all privacy and terms for each advertiser.</p>
+
+    <h3>Benefits of working with InstallMonetizer</h3>
+    <p>Software developers need to generate money. They have to support their costs in server costs, product research, development, marketing and more. To cover their costs, they can either charge their users a fee to access their software products, or provide their software for free if end users try a recommended advertiser’s software. Most users prefer free software, so InstallMonetizer’s recommendation platform is the preferred method by which software developers generate revenue.</p>
+
+    <h3>Privacy</h3>
+    <p>InstallMonetizer values its users’ privacy. They are committed to ethical advertising recommendation and delivery of recommended products. They do <strong>not</strong> collect any personally identifiable information. In simple language this means they do not know the name, gender, age, email, or interests of any users. Each advertiser product recommended has its own privacy policy which each user can freely review before accepting any recommended product.</p>
+
+    <h3>Privacy Policy for InstallMonetizer</h3>
+    <p>InstallMonetizer (herein referred to as “We” or “InstallMonetizer”) regards each user’s privacy as important. This privacy policy covers the privacy rules associated with user’s interaction with InstallMonetizer’s websites, services or products and recommended advertisers which are presented to end users via other partner software products. Users must review the partner software product’s own privacy policy and, in addition, review the privacy policy of any advertiser product recommended by InstallMonetizer. <em>Partner software products are third-party software developers who have chosen to display recommended advertiser software via InstallMonetizer’s platform.</em></p>
+
+    <p><strong>What we collect and why.</strong> We collect information to help ensure the products we recommend are compatible with a user’s PC specifications. When a user begins installation of a partner software product, InstallMonetizer downloads a small file which determines the specifications of a computer, language, software and browsers on the user’s PC, country-level location of a user, and verification of any recommended advertiser the user installed. No personally identifiable information is gathered. While visiting our websites, we may send your browser a cookie which is stored in your browser and allows us to identify it. Cookies are used to help better understand our users’ product interest. In addition, our websites include traffic-tracking software which simply tracks the number of visits to our sites and usage of the site.</p>
+
+    <p><strong>Usage of collected data.</strong> Any information collected is anonymous. We use the data in whole to improve our advertiser recommendations. We do not sell or otherwise market this information to third parties. We may from time to time share with advertisers non-personally identifiable information for them to improve the performance of their products.</p>
+
+    <p>We may share information if required to: (1) comply with law, regulation, subpoena or court order; (2) detect, prevent or otherwise address fraud, security or technical issues; (3) enforce this Privacy Policy and/or any other agreements between you and InstallMonetizer, including investigation of potential violations thereof; or (4) protect against harm to the rights, property or safety of InstallMonetizer, its visitors, users and/or the public.</p>
+
+    <p><strong>Information security.</strong> We use industry-standard encryption and security protocols to ensure the data collected is secure. Although no technology is 100% secure, we strive to use the best technology to protect our data. Despite the measures we take, we cannot warrant the security of any information provided to us. Unauthorized entry or use, hardware or software failure, and other factors may compromise the security of user information at any time.</p>
+
+    <p>If you have feedback, questions or concerns, contact InstallMonetizer at: Privacy, c/o InstallMonetizer, 5655 Silver Creek Vly Rd 615, San Jose, CA 95138.</p>
+
+    <h2>Contact Information</h2>
+    <p>If you have any questions about our Privacy Policy, please <a href="../help/">contact us</a>.</p>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block">
+  <h2>Free streaming software since 2003</h2>
+  <p>SplitCam is free for personal and internal business use — no watermark, no signup, no card.</p>
+  <a href="../" class="btn-primary btn-lg">⬇ Free Download</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>© 2003–2026 SplitCam · Free streaming software since 2003</div>
+    <div class="footer-links">
+      <a href="../">Home</a>
+      <a href="../multistreaming/">Multistreaming</a>
+      <a href="../virtual-camera/">Virtual Camera</a>
+      <a href="../products/">Products</a>
+      <a href="../help/">Help</a>
+      <a href="../license-agreement/">License agreement</a>
+      <a href="./" class="active">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Mobile hamburger menu */
+(function(){
+  var burger = document.querySelector('.nav-burger');
+  var menu = document.getElementById('nav-mobile');
+  if (!burger || !menu) return;
+  function close(){ burger.classList.remove('open'); menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); menu.setAttribute('aria-hidden','true'); }
+  function open(){ burger.classList.add('open'); menu.classList.add('open'); burger.setAttribute('aria-expanded','true'); menu.setAttribute('aria-hidden','false'); }
+  burger.addEventListener('click', function(e){
+    e.stopPropagation();
+    if (menu.classList.contains('open')) close(); else open();
+  });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+  document.addEventListener('click', function(e){
+    if (!menu.classList.contains('open')) return;
+    if (menu.contains(e.target) || burger.contains(e.target)) return;
+    close();
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 900) close(); });
+})();
+</script>
+
+</body>
+</html>
