@@ -109,7 +109,7 @@
   --text-sub:#9090bb;
   --text-dim:#50506a;
 }
-html{scroll-behavior:smooth;background:var(--app-base)}
+html{scroll-behavior:smooth;scroll-padding-top:60px;background:var(--app-base)}
 body{font-family:'Geist',sans-serif;background:var(--app-base);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 
@@ -126,6 +126,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .btn-ghost{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:8px;background:transparent;color:var(--text);border:1px solid var(--app-border2);font-size:13px;font-weight:600;transition:all .15s}
 .btn-ghost:hover{background:rgba(255,255,255,.04)}
 .btn-lg{padding:13px 24px;font-size:14px;border-radius:10px}
+
+/* Hamburger + mobile menu */
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-burger{display:none;width:40px;height:40px;border:1px solid var(--app-border2);border-radius:8px;background:transparent;cursor:pointer;align-items:center;justify-content:center;padding:0;color:var(--text);transition:background .15s,border-color .15s;font-family:inherit}
+.nav-burger:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.22)}
+.nav-burger svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav-burger .ico-close{display:none}
+.nav-burger.open .ico-open{display:none}
+.nav-burger.open .ico-close{display:block}
+.nav-mobile{position:fixed;top:60px;left:0;right:0;background:rgba(20,20,32,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--app-border);padding:14px 20px 18px;display:none;flex-direction:column;gap:4px;z-index:99}
+.nav-mobile.open{display:flex}
+.nav-mobile a{display:block;padding:12px 14px;font-size:15px;color:var(--text-sub);font-weight:500;border-radius:8px;text-decoration:none;transition:background .15s,color .15s}
+.nav-mobile a:hover,.nav-mobile a.active{background:rgba(255,255,255,.05);color:var(--text)}
+.nav-mobile-divider{height:1px;background:var(--app-border);margin:8px 0}
+.nav-mobile .btn-primary{justify-content:center;width:100%;padding:12px 16px;font-size:14px}
 
 /* Breadcrumbs */
 .breadcrumbs{padding:80px 40px 0;max-width:900px;margin:0 auto;font-size:13px;color:var(--text-dim)}
@@ -231,8 +246,9 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 .footer-links{display:flex;gap:24px;flex-wrap:wrap}
 
 @media(max-width:900px){
-  nav{padding:0 20px}
+  nav{padding:0 16px}
   .nav-links{display:none}
+  .nav-burger{display:inline-flex}
   .breadcrumbs{padding:80px 20px 0}
   .hero,.section,.related{padding-left:20px;padding-right:20px}
   .cta-block{padding:48px 20px}
@@ -259,8 +275,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <li><a href="../" class="active">Use Cases</a></li>
     <li><a href="../../help/">Help</a></li>
   </ul>
-  <a href="../../" class="btn-primary">⬇ Download</a>
+  <div class="nav-right">
+    <a href="../../" class="btn-primary">⬇ Download</a>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+      <svg class="ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+  </div>
 </nav>
+
+<div class="nav-mobile" id="nav-mobile" role="menu" aria-hidden="true">
+  <a href="../../products/" role="menuitem">Products</a>
+  <a href="../../virtual-camera/" role="menuitem">Virtual Camera</a>
+  <a href="../../multistreaming/" role="menuitem">Multistreaming</a>
+  <a href="../../alternatives/" role="menuitem">Alternatives</a>
+  <a href="../" class="active" role="menuitem">Use Cases</a>
+  <a href="../../help/" role="menuitem">Help</a>
+  <div class="nav-mobile-divider"></div>
+  <a href="../../" class="btn-primary" role="menuitem">⬇ Download SplitCam</a>
+</div>
 
 <!-- BREADCRUMBS -->
 <div class="breadcrumbs">
@@ -517,6 +550,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </div>
   </div>
 </footer>
+
+<script>
+/* Mobile hamburger */
+(function(){
+  var burger=document.querySelector('.nav-burger');
+  var menu=document.getElementById('nav-mobile');
+  if(!burger||!menu)return;
+  function close(){burger.classList.remove('open');menu.classList.remove('open');burger.setAttribute('aria-expanded','false');menu.setAttribute('aria-hidden','true');}
+  function open(){burger.classList.add('open');menu.classList.add('open');burger.setAttribute('aria-expanded','true');menu.setAttribute('aria-hidden','false');}
+  burger.addEventListener('click',function(e){e.stopPropagation();if(menu.classList.contains('open'))close();else open();});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  document.addEventListener('click',function(e){if(!menu.classList.contains('open'))return;if(menu.contains(e.target)||burger.contains(e.target))return;close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  window.addEventListener('resize',function(){if(window.innerWidth>900)close();});
+})();
+</script>
 
 </body>
 </html>
