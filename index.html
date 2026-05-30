@@ -984,7 +984,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
             </div>
             <div class="aud-pip" aria-hidden="true">
               <div class="aud-game">
-                <video aria-hidden="true" src="assets/audience-game.mp4" autoplay loop muted playsinline preload="metadata"></video>
+                <video aria-hidden="true" src="assets/audience-game.mp4" poster="assets/audience-game-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
               </div>
             </div>
           </div>
@@ -1547,16 +1547,38 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
 </script>
 
 <script>
-/* Reduced-motion: pause autoplay videos for users who opt out of animation */
+/* Video performance: only play videos while visible on screen, and never
+   if the user prefers reduced motion. Cuts simultaneous H.264 decoding from
+   4 streams down to whatever is actually in the viewport. */
 (function(){
-  try {
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.querySelectorAll('video[autoplay]').forEach(function(v){
-        v.removeAttribute('autoplay');
+  var reduce = false;
+  try { reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  var vids = Array.prototype.slice.call(document.querySelectorAll('video'));
+  if (!vids.length) return;
+
+  if (reduce) {
+    vids.forEach(function(v){ v.removeAttribute('autoplay'); try { v.pause(); } catch (e) {} });
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) return; // browser keeps native autoplay
+
+  // Stop native autoplay; the observer decides what plays.
+  vids.forEach(function(v){ v.removeAttribute('autoplay'); });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      var v = e.target;
+      if (e.isIntersecting) {
+        var p = v.play();
+        if (p && p.catch) p.catch(function(){});
+      } else if (!v.paused) {
         v.pause();
-      });
-    }
-  } catch (e) {}
+      }
+    });
+  }, { threshold: 0.25 });
+
+  vids.forEach(function(v){ io.observe(v); });
 })();
 
 /* Mobile hamburger menu */
