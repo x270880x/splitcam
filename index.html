@@ -33,42 +33,117 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 
-<!-- Structured data for Google rich snippets (star rating, price, OS in SERP) -->
+<!-- Structured data for Google rich snippets (star rating, price, OS, brand, FAQ in SERP) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "SplitCam",
-  "alternateName": "SplitCam Live Multi-Streaming Studio",
-  "applicationCategory": "MultimediaApplication",
-  "applicationSubCategory": "Live Streaming Software",
-  "operatingSystem": "Windows, macOS, iOS, Android",
-  "url": "https://splitcam.com/",
-  "downloadUrl": "https://splitcam.com/download",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.5",
-    "ratingCount": "357",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "softwareVersion": "10.9.2",
-  "datePublished": "2003-01-01",
-  "description": "Free live streaming software with built-in virtual camera. Multi-stream to Twitch, YouTube, Facebook and Kick simultaneously. Scene mixing, chromakey, audio mixer. Cross-platform: Mac, Windows, iOS, Android.",
-  "featureList": [
-    "Multi-platform streaming (Twitch, YouTube, Facebook, Kick, RTMP)",
-    "Virtual camera for Zoom, Teams, Google Meet",
-    "Scene mixing and switching",
-    "Chromakey / green screen",
-    "Audio mixer with VST plugin support",
-    "Cross-platform: Windows, macOS, iOS, Android",
-    "Free forever, no watermark"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://splitcam.com/#organization",
+      "name": "SplitCam",
+      "url": "https://splitcam.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://splitcam.com/assets/splitcam.png"
+      },
+      "sameAs": [
+        "https://x.com/splitcamsoft",
+        "https://www.facebook.com/splitcamsoft/",
+        "https://www.youtube.com/channel/UCgFRQMJCK8E00ODT-AZDhEw"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://splitcam.com/#website",
+      "url": "https://splitcam.com/",
+      "name": "SplitCam",
+      "description": "Free live multi-streaming studio software for Windows, macOS, iOS and Android.",
+      "publisher": { "@id": "https://splitcam.com/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SplitCam",
+      "alternateName": "SplitCam Live Multi-Streaming Studio",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Live Streaming Software",
+      "operatingSystem": "Windows, macOS, iOS, Android",
+      "url": "https://splitcam.com/",
+      "downloadUrl": "https://splitcam.com/download",
+      "publisher": { "@id": "https://splitcam.com/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "ratingCount": "357",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "softwareVersion": "10.9.2",
+      "datePublished": "2003-01-01",
+      "description": "Free live streaming software with built-in virtual camera. Multi-stream to Twitch, YouTube, Facebook and Kick simultaneously. Scene mixing, chromakey, audio mixer. Cross-platform: Mac, Windows, iOS, Android.",
+      "featureList": [
+        "Multi-platform streaming (Twitch, YouTube, Facebook, Kick, RTMP)",
+        "Virtual camera for Zoom, Teams, Google Meet",
+        "Scene mixing and switching",
+        "Chromakey / green screen",
+        "Audio mixer with VST plugin support",
+        "Cross-platform: Windows, macOS, iOS, Android",
+        "Free forever, no watermark"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://splitcam.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is SplitCam really free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free for personal and commercial use. No watermark, no time limit, no upsell to a \"pro\" version. Every feature is unlocked from day one." }
+        },
+        {
+          "@type": "Question",
+          "name": "What operating systems does it run on?",
+          "acceptedAnswer": { "@type": "Answer", "text": "SplitCam is available for Windows 10/11, macOS 11+, iOS 13+ (iPhone & iPad), and Android 8+. The Download button auto-detects your OS." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I import my OBS Studio scenes?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — SplitCam imports OBS scene collections in one click. All your sources, scenes, transitions and hotkeys carry over without rebuilding." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many platforms can I stream to simultaneously?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Up to 8 destinations comfortably; technically unlimited as long as your CPU/GPU and upload bandwidth handle the combined load. SplitCam sends streams peer-to-peer directly from your machine to each platform — no cloud middleman, no third-party server in the loop. Built-in upload speed test confirms your connection before going live." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will SplitCam slow down my games?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No — SplitCam uses hardware encoders (NVENC for Nvidia, QuickSync for Intel, AMF for AMD) by default. Encoding runs on dedicated GPU silicon, leaving your CPU and main GPU cores free for the game. Most users see 0–3% FPS impact." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use SplitCam as a virtual camera in Zoom/Teams?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — SplitCam exposes your entire stream (with scenes, effects, overlays, AI background removal) as a virtual webcam in Zoom, Microsoft Teams, Google Meet, Discord, and 60+ other apps. Works in both portrait (9:16) and landscape (16:9) modes." }
+        },
+        {
+          "@type": "Question",
+          "name": "What hardware do I need?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Minimum: Intel Core i3 / AMD Ryzen 3, 4GB RAM, integrated graphics. Recommended for game streaming: Intel Core i5+ / AMD Ryzen 5+, 8GB RAM, dedicated GPU with NVENC/AMF support. Runs smoothly on older laptops too." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SplitCam collect my data?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Your scenes, recordings and stream settings stay on your machine. SplitCam doesn't upload anything to the cloud unless you explicitly enable Cloud Projects to sync settings between devices." }
+        }
+      ]
+    }
   ]
 }
 </script>
@@ -99,7 +174,7 @@
   --text-dim:    #50506a;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 56px; }
 body { font-family: 'Geist', sans-serif; background: var(--app-base); color: var(--text); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
 .ico { width: 18px; height: 18px; stroke-width: 1.75; stroke: currentColor; fill: none; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
@@ -549,7 +624,7 @@ a.usecase { display: block; text-decoration: none; color: inherit; }
 .cta-box::before { content: ''; position: absolute; top: 0; left: 25%; right: 25%; height: 1px; background: linear-gradient(90deg,transparent,rgba(40,120,252,.55),transparent); }
 .cta-h { font-size: clamp(32px,4vw,52px); font-weight: 700; letter-spacing: -1.8px; color: var(--text); margin-bottom: 14px; line-height: 1.1; }
 .cta-p { font-size: 16px; color: var(--text-sub); margin-bottom: 32px; }
-.cta-btns { display: flex; gap: 12px; justify-content: center; }
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .cta-note { margin-top: 22px; font-size: 12px; color: var(--text-dim); display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .cta-note span { display: inline-flex; align-items: center; gap: 6px; }
 
@@ -1283,7 +1358,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       <p>Free live multi-streaming studio software for Windows, macOS, iOS and Android. Since 2003.</p>
     </div>
     <div class="foot-col"><h5>Product</h5><ul><li><a href="multistreaming/">Multistreaming</a></li><li><a href="virtual-camera/">Virtual Camera</a></li><li><a href="products/">Products & downloads</a></li><li><a href="alternatives/">Alternatives</a></li><li><a href="for/">Use Cases</a></li><li><a href="#whats-new">What's new · v10.9.2</a></li><li><a href="changelog/">Changelog</a></li></ul></div>
-    <div class="foot-col"><h5>Support</h5><ul><li><a href="help/">Help center</a></li><li><a href="https://t.me/splitcam" target="_blank" rel="noopener">Telegram chat</a></li><li><a href="https://splitcam.com/forum/" target="_blank" rel="noopener">User forum</a></li></ul></div>
+    <div class="foot-col"><h5>Support</h5><ul><li><a href="help/">Help</a></li><li><a href="https://t.me/splitcam" target="_blank" rel="noopener">Telegram chat</a></li><li><a href="https://splitcam.com/forum/" target="_blank" rel="noopener">User forum</a></li></ul></div>
     <div class="foot-col"><h5>Company</h5><ul><li><a href="privacy-policy/">Privacy Policy</a></li><li><a href="license-agreement/">License agreement</a></li><li><a href="https://splitcam.com/" target="_blank" rel="noopener">SplitCam.com</a></li></ul></div>
   </div>
   <div class="footer-bottom">
