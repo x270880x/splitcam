@@ -271,7 +271,7 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .feat-ul li { display: flex; align-items: flex-start; gap: 11px; font-size: 14px; color: var(--text-sub); line-height: 1.55; }
 .feat-ul li svg { color: var(--blue); margin-top: 2px; }
 
-.feat-vis { background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 14px; padding: 28px; min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+.feat-vis { background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 14px; padding: 28px; min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; box-shadow: 0 0 80px -20px rgba(40,120,252,.38), 0 0 160px 0 rgba(156,91,255,.12); }
 
 /* BC vis */
 .bc-rows { display: flex; flex-direction: column; gap: 8px; width: 100%; }
@@ -381,9 +381,9 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 
 /* Audio vis */
 /* Pro Audio Mixer — real app screenshot; PNG bg recoloured to --app-base so it dissolves into the section */
-#panel-quality .feat-vis { padding: 0; border-radius: 0; min-height: 0; background: transparent; border: 0; }
+#panel-quality .feat-vis { padding: 0; border-radius: 0; min-height: 0; background: transparent; border: 0; box-shadow: none; }
 .mixer-img-wrap { position: relative; display: block; width: 100%; max-width: 288px; margin: 0 auto; }
-.mixer-img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.mixer-img { display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 80px -10px rgba(40,120,252,.42), 0 0 160px 10px rgba(156,91,255,.14); }
 /* Audio level meters — overlays on each of the 4 channels (Mic / Audio Playlist / www.youtube.com / System Audio) */
 .mixer-level { position: absolute; left: 5.65%; width: 85.7%; height: 0.5%; min-height: 2px; background: rgba(20,20,32,.9); overflow: hidden; border-radius: 1px; pointer-events: none; }
 .mixer-level::before { content: ''; position: absolute; top: 0; bottom: 0; left: 0; background: linear-gradient(to right, #3578f3 0%, #3578f3 70%, #5fc7e0 80%, #ee9f57 92%, #ef4b4b 100%); }
@@ -436,7 +436,7 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .vc-spotlight { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .vc-spotlight-vis { display: flex; align-items: center; gap: 18px; padding: 0; background: transparent; border: 0; border-radius: 0; }
 /* Virtual Camera source — looped presenter video with cycling PIP slides */
-.vc-source { position: relative; width: 360px; max-width: 100%; aspect-ratio: 16/9; background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 12px; overflow: hidden; flex-shrink: 0; box-shadow: 0 12px 32px -10px rgba(0,0,0,.55); }
+.vc-source { position: relative; width: 360px; max-width: 100%; aspect-ratio: 16/9; background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 12px; overflow: hidden; flex-shrink: 0; box-shadow: 0 0 80px -10px rgba(40,120,252,.42), 0 0 160px 10px rgba(156,91,255,.14), 0 12px 32px -10px rgba(0,0,0,.55); }
 .vc-source video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .vc-source-live { position: absolute; top: 8px; left: 8px; display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px 3px 7px; background: rgba(231,76,60,.95); color: #fff; font-size: 9px; font-weight: 800; letter-spacing: .8px; border-radius: 4px; font-family: 'Geist Mono', monospace; box-shadow: 0 2px 8px rgba(231,76,60,.4); z-index: 3; }
 .vc-source-live::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #fff; animation: blink 1.4s ease-in-out infinite; }
