@@ -663,7 +663,10 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
 @media(max-width:900px){
   nav{padding:0 20px;} .nav-links{display:none;}
   .nav-burger{display:inline-flex;}
-  .nav-right .dl{display:none;}
+  .nav-right .dl{display:inline-flex;}
+  .nav-right .dl.dl-compact .dl-toggle{display:none;}
+  .nav-right .dl.dl-compact .btn-blue-sm{border-radius:7px;padding:8px 13px;}
+  .nav-right .dl.dl-compact .dl-menu{display:none !important;}
   .hero{padding:80px 20px 60px;} .hero-inner{grid-template-columns:1fr;}
   .app-window{display:none;}
   .section{padding:60px 20px;}
@@ -799,7 +802,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <li><a href="help/">Help</a></li>
   </ul>
   <div class="nav-right">
-    <span class="dl dl-sm">
+    <span class="dl dl-sm dl-compact">
       <a class="btn-blue-sm" href="#" data-dl-primary><svg class="ico ico-sm"><use href="#i-dl"/></svg> <span data-dl-label>Download</span></a>
       <button class="dl-toggle" aria-label="Choose platform" data-dl-toggle>
         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1514,7 +1517,8 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
   document.querySelectorAll('[data-dl-primary]').forEach(function(el){
     el.setAttribute('href', cur.url);
     var lab = el.querySelector('[data-dl-label]');
-    if (lab) lab.textContent = cur.label;
+    /* keep the compact header button short ("Download"); only long buttons get the platform label */
+    if (lab && !el.closest('.dl-compact')) lab.textContent = cur.label;
   });
   document.querySelectorAll('[data-dl-req]').forEach(function(el){
     el.textContent = cur.req;
