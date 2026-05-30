@@ -160,6 +160,23 @@ details[open] .rel-chev{transform:rotate(180deg)}
 .rel-ul li{font-size:14px;color:var(--text-sub);line-height:1.65;padding-left:16px;position:relative}
 .rel-ul li::before{content:'';position:absolute;left:2px;top:.7em;width:6px;height:1.5px;background:var(--text-dim);border-radius:1px}
 
+/* Older binary-only builds */
+.bin-section{margin-top:36px;padding-top:28px;border-top:1px solid var(--app-border)}
+.bin-h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-.1px}
+.bin-sub{font-size:13.5px;color:var(--text-sub);line-height:1.6;margin-bottom:18px;max-width:680px}
+.bin-sub a{color:var(--blue)}
+.bin-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.bin-row{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:10px;font-size:13px;transition:all .15s}
+.bin-row:hover{border-color:var(--app-border2);background:var(--app-surface);transform:translateY(-1px)}
+.bin-ver{font-family:'Geist Mono',monospace;font-weight:700;color:var(--text);font-size:12.5px}
+.bin-date{font-family:'Geist Mono',monospace;color:var(--text-sub);font-size:11px;letter-spacing:.2px}
+.bin-label{margin-left:auto;font-size:10.5px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.4px;font-weight:700}
+.bin-ext{color:var(--text-sub);flex-shrink:0}
+.bin-row:hover .bin-ext{color:var(--blue)}
+@media(max-width:600px){
+  .bin-list{grid-template-columns:1fr}
+}
+
 /* Coming-soon placeholder */
 .cs-card{padding:48px 32px;background:var(--app-panel);border:1px dashed var(--app-border2);border-radius:14px;text-align:center;color:var(--text-sub)}
 .cs-card h3{font-size:20px;color:var(--text);font-weight:700;letter-spacing:-.3px;margin-bottom:10px}
@@ -240,13 +257,13 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="hero-glow"></div>
   <span class="eyebrow">Changelog</span>
   <h1 class="h1">Every <span class="accent">version</span>, every release.</h1>
-  <p class="sub">Full version history of SplitCam across all platforms — Windows (<strong>63 releases</strong> back to January 2020), plus macOS, iOS, Android and SplitCam Remote.</p>
+  <p class="sub">Full version history of SplitCam across all platforms — Windows (<strong>64 releases</strong> back to January 2020), plus macOS, iOS, Android and SplitCam Remote. Older Windows builds back to v9.0.9 (2019) are mirrored as binaries only.</p>
 </section>
 
 <!-- TABS -->
 <div class="tabs-wrap">
   <div class="tabs" role="tablist">
-    <button class="tab active" role="tab" aria-selected="true" data-target="panel-win">Windows<span class="tab-count">63</span></button>
+    <button class="tab active" role="tab" aria-selected="true" data-target="panel-win">Windows<span class="tab-count">64</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="panel-mac">macOS<span class="tab-count">soon</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="panel-ios">iOS<span class="tab-count">soon</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="panel-and">Android<span class="tab-count">soon</span></button>
@@ -636,6 +653,63 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <li>Prevent tootips flickering when hovering over the button under the scene.</li>
         <li>Redraw transparent buttons on the canvas panel whenever canvas panel is becoming visible after being hidden.</li>
         <li>The error with dialogs and panels being completely empty seems to be fixed.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="release" id="v10.7.44">
+      <summary class="rel-head">
+        <span class="rel-ver">v10.7.44</span>
+        <time class="rel-date">May 26, 2024</time>
+        <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="rel-sec new">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>New</h4>
+        <ul class="rel-ul">
+        <li>When SplitCam is just installed on a computer and run for the first time user is asked to select a UI language. Then Setup Wizard will guide the user through the processing of testing computer hardware and making basic configurations so that upon completing the Wizard SplitCam is ready for streaming. After the Wizard finishes user is presented with a Quick Tour which gives an overview of SplitCam&#x27;s user interface and basic functionality.</li>
+        <li>Setup Wizard can be started from the main SplitCam menu.</li>
+        <li>Quick Tour can be started from the main SplitCam menu.</li>
+        <li>Localization Editor command found in the main SplitCam menu starts a stand-alone program which can be used to translate SplitCam&#x27;s user interface to new languages or to edit existing translations.</li>
+        <li>A new DirectShow filter based Virtual Camera replaces the previous driver based one.</li>
+        <li>When adding or editing a stream SplitCam now verifies the URL and the stream key to make sure they are correct and can be used for streaming.</li>
+        <li>Prevent changing canvas resolution or FPS during streaming or recording session.</li>
+        <li>SplitCam offers to select a UI language on program startup if no language has been set by user yet.</li>
+        </ul>
+      </div>
+      <div class="rel-sec updated">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>Updated</h4>
+        <ul class="rel-ul">
+        <li>More Effects button replaces the previous Canvas Effects button in Quick Adjust window. Now clicking the More Effects button pops-up a menu offering a selection of targets for the effects dialog: either the whole canvas or some layer on it.</li>
+        <li>UI translations: texts of all UI elements can now be translated to other languages.</li>
+        <li>SplitCam includes full UI translations for the following languages: Chinese, Italian, Japanese, Romanian, Russian, Spanish, Ukrainian, and partial translations to Croatian.</li>
+        <li>Updated Support commands in the main SplitCam menu. Use the commands to find us on social networks or to contact our support team using available means.</li>
+        <li>Show target layer name in Effects dialog.</li>
+        <li>Make zooming less agressive. Limit zoom level by 300%.</li>
+        <li>Minor UI changes.</li>
+        <li>New upload speed test implementation. Download speed is not tested anymore thus saving user&#x27;s traffic. Also the test itself takes less time now.</li>
+        <li>Added an icon to the Zoom button in Source Control Bar.</li>
+        <li>Zoom browser layer instead of scrolling on mouse scroll event when not in interactive mode.</li>
+        <li>Don&#x27;t request updated stream key for inactive auto-authenticated accounts.</li>
+        <li>All buttons now have a visual mouse click feedback.</li>
+        <li>Whiteboard: Clear All button is now inactive when the whiteboard is empty.</li>
+        <li>Whiteboard: Undo/Redo buttons are disabled when there&#x27;s nothing to undo/redo.</li>
+        </ul>
+      </div>
+      <div class="rel-sec fixed">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>Fixed</h4>
+        <ul class="rel-ul">
+        <li>When loading a project recalculate layers&#x27; zoom, crop and size when current canvas resolution differs from the one saved in the project file.</li>
+        <li>Prevent computer from sleep revisited: sometimes computer might have gone to sleep while SplitCam is running.</li>
+        <li>Don&#x27;t mark project as dirty when hystogram is enabled on openening the Quick Adjust dialog.</li>
+        <li>Fixed not working Transition effects.</li>
+        <li>Fixed Stream Settings list not being displayed correctly when scroll bar is visible.</li>
+        <li>Fixed incorrectly working Face Tracking and Background Remove effects.</li>
+        <li>Update zoom level indicator in source control bar on Fit Layer to Canvas command.</li>
+        <li>GPU Tester revisited to get rid of the error of using it without initialization.</li>
+        <li>Fixed updating ingest server list not working correctly.</li>
+        <li>Removed tooltips flickering when hovering over buttons under the scene.</li>
+        <li>Redraw transparent buttons on the canvas panel whenever canvas panel is becoming visible.</li>
+        <li>Addressed the problem with dialogs and panels becoming wiped-out when another dialog or message box pops-up.</li>
         </ul>
       </div>
     </details>
@@ -3125,6 +3199,24 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         </ul>
       </div>
     </details>
+  </div>
+  <div class="bin-section">
+    <h3 class="bin-h">Older builds — binaries only</h3>
+    <p class="bin-sub">SplitCam.com publishes the changelog from v10.0.26 (Jan 2020) onward. Older Windows installers — interim builds, the restream test build, and the v9.0.x line — are mirrored on GitHub but have no published release notes. <a href="https://github.com/x270880x/splitcam-release/releases" target="_blank" rel="noopener">Browse the full release archive →</a></p>
+    <div class="bin-list">
+      <a class="bin-row" href="https://github.com/x270880x/splitcam-release/releases/tag/v10.8.69" target="_blank" rel="noopener"><span class="bin-ver">v10.8.69</span><span class="bin-date">2026-05-22</span><span class="bin-label">interim build</span><svg class="bin-ext" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3 10 14M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg></a>
+      <a class="bin-row" href="https://github.com/x270880x/splitcam-release/releases/tag/v10.8.68" target="_blank" rel="noopener"><span class="bin-ver">v10.8.68</span><span class="bin-date">2026-05-22</span><span class="bin-label">interim build</span><svg class="bin-ext" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3 10 14M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg></a>
+      <a class="bin-row" href="https://github.com/x270880x/splitcam-release/releases/tag/v10.8.67" target="_blank" rel="noopener"><span class="bin-ver">v10.8.67</span><span class="bin-date">2026-05-22</span><span class="bin-label">interim build</span><svg class="bin-ext" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3 10 14M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg></a>
+      <a class="bin-row" href="https://github.com/x270880x/splitcam-release/releases/tag/v10.8.66" target="_blank" rel="noopener"><span class="bin-ver">v10.8.66</span><span class="bin-date">2026-05-22</span><span class="bin-label">interim build</span><svg class="bin-ext" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3 10 14M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg></a>
+      <a class="bin-row" href="https://github.com/x270880x/splitcam-release/releases/tag/v10.8.65" target="_blank" rel="noopener"><span class="bin-ver">v10.8.65</span><span class="bin-date">2026-05-22</span><span class="bin-label">interim build</span><svg class="bin-ext" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3 10 14M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg></a>
+      <a class="bin-row" href="https://github.com/x270880x/splitcam-release/releases/tag/v10.8.64" target="_blank" rel="noopener"><span class="bin-ver">v10.8.64</span><span class="bin-date">2026-05-22</span><span class="bin-label">interim build</span><svg class="bin-ext" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3 10 14M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg></a>
+      <a class="bin-row" href="https://github.com/x270880x/splitcam-release/releases/tag/v10.8.62-restream-test" target="_blank" rel="noopener"><span class="bin-ver">v10.8.62-restream-test</span><span class="bin-date">2026-05-22</span><span class="bin-label">interim build</span><svg class="bin-ext" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3 10 14M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg></a>
+      <a class="bin-row" href="https://github.com/x270880x/splitcam-release/releases/tag/v10.8.61" target="_blank" rel="noopener"><span class="bin-ver">v10.8.61</span><span class="bin-date">2026-05-22</span><span class="bin-label">interim build</span><svg class="bin-ext" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3 10 14M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg></a>
+      <a class="bin-row" href="https://github.com/x270880x/splitcam-release/releases/tag/v10.8.3" target="_blank" rel="noopener"><span class="bin-ver">v10.8.3</span><span class="bin-date">2026-05-22</span><span class="bin-label">interim build</span><svg class="bin-ext" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3 10 14M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg></a>
+      <a class="bin-row" href="https://github.com/x270880x/splitcam-release/releases/tag/v10.8.2" target="_blank" rel="noopener"><span class="bin-ver">v10.8.2</span><span class="bin-date">2026-05-22</span><span class="bin-label">interim build</span><svg class="bin-ext" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3 10 14M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg></a>
+      <a class="bin-row" href="https://github.com/x270880x/splitcam-release/releases/tag/v10.7.38" target="_blank" rel="noopener"><span class="bin-ver">v10.7.38</span><span class="bin-date">2026-05-22</span><span class="bin-label">interim build</span><svg class="bin-ext" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3 10 14M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg></a>
+      <a class="bin-row" href="https://github.com/x270880x/splitcam-release/releases/tag/v9.0.9" target="_blank" rel="noopener"><span class="bin-ver">v9.0.9</span><span class="bin-date">2026-05-22</span><span class="bin-label">interim build</span><svg class="bin-ext" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3 10 14M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg></a>
+    </div>
   </div>
 </section>
 
