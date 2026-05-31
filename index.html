@@ -520,9 +520,9 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 
 /* USE CASES */
 .usecase-grid { display: grid; grid-template-columns: repeat(3,1fr); grid-auto-rows: 1fr; gap: 18px; }
-.usecase { position: relative; padding: 28px 24px; border: 1px solid var(--app-border); border-radius: 14px; background: var(--app-panel); transition: border-color .2s, transform .2s; }
+.usecase { position: relative; padding: 28px 24px; border: 1px solid var(--app-border); border-radius: 14px; background: var(--app-panel); transition: border-color .2s, transform .2s; display: flex; flex-direction: column; }
 .usecase:hover { border-color: var(--app-border2); transform: translateY(-3px); }
-a.usecase { display: block; text-decoration: none; color: inherit; }
+a.usecase { text-decoration: none; color: inherit; }
 .uc-go { position: absolute; top: 20px; right: 20px; width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; color: var(--text-dim); opacity: 0; transform: translateX(-4px); transition: opacity .2s, transform .2s, color .2s; }
 a.usecase:hover .uc-go { opacity: 1; transform: translateX(0); color: var(--blue); }
 .uc-soon { position: absolute; top: 18px; right: 18px; font-size: 9.5px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; color: #ffa372; background: rgba(255,164,64,.1); border: 1px solid rgba(255,164,64,.28); padding: 3px 8px; border-radius: 99px; font-family: 'Geist Mono', monospace; }
@@ -530,8 +530,8 @@ a.usecase:hover .uc-go { opacity: 1; transform: translateX(0); color: var(--blue
 .uc-ico svg { width: 32px; height: 32px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .usecase h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--text); letter-spacing: -.3px; }
 .usecase p { font-size: 14px; color: var(--text-sub); line-height: 1.55; margin-bottom: 16px; }
-.uc-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-.uc-tags span { font-size: 11px; padding: 4px 10px; background: var(--app-base); border-radius: 6px; color: var(--text-sub); border: 1px solid var(--app-border); }
+.uc-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; align-items: flex-start; }
+.uc-tags span { font-size: 11px; padding: 4px 10px; background: var(--app-base); border-radius: 6px; color: var(--text-sub); border: 1px solid var(--app-border); white-space: nowrap; line-height: 1.4; }
 
 /* TESTIMONIALS */
 .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
@@ -1093,7 +1093,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </div>
       <a class="usecase" href="for/youtubers/">
         <svg class="uc-go" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-        <div class="uc-ico">📹</div>
+        <div class="uc-ico">▶️</div>
         <h3>For YouTubers</h3>
         <p>Studio-grade local recording, multi-track audio, OBS project import. Stream live or record for later — same scene setup, same quality.</p>
         <div class="uc-tags"><span>HD Recording</span><span>OBS Import</span><span>Multi-track</span></div>
@@ -1112,7 +1112,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         <div class="uc-tags"><span>Multi-platform</span><span>Lower thirds</span><span>Lyrics</span></div>
       </a>
       <div class="usecase soon">
-        <div class="uc-ico">✨</div>
+        <div class="uc-ico">🎭</div>
         <h3>For VTubers</h3>
         <p>AI background removal (no green screen), face tracking, 3D masks, chromakey. Beauty filters and Streamfog lenses ready out of the box.</p>
         <div class="uc-tags"><span>AI Background</span><span>Face Track</span><span>3D Masks</span></div>
