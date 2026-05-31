@@ -85,3 +85,27 @@ New `/for/` and `/alternatives/` pages must be written with unique body text —
 no copy-pasting step blocks or feature blurbs between pages. Each page gets its
 own examples, ordering and audience framing. Run the pre-commit content
 check-list in `CLAUDE.md` before committing any copy changes.
+
+---
+
+## Re-audit 2026-06-01 (after new pages + SEO meta pass)
+
+Re-ran the similarity sweep across all 13 indexable pages (added since last
+report: `/changelog/`, `/privacy-policy/`, `/license-agreement/`, plus the
+`/for/` and `/alternatives/` hubs).
+
+**Verdict: still healthy.** Peak literal-phrase (4-gram) overlap between any two
+indexable pages was **2.3%**, thematic cosine peak ~10% (relative ranking
+unchanged from the prior report; absolute cosine differs due to a no-deps TF-IDF
+implementation). Legal pages pair only with each other (~4%, shared EULA/privacy
+boilerplate) — expected, low priority.
+
+**Action taken:** the only notable real overlap was the full 11-row "SplitCam vs
+OBS" comparison table on `/for/youtubers/`, which mirrored the dedicated
+`/alternatives/obs/` page (the follow-up flagged in the previous report).
+Trimmed it to a focused 4-row YouTube-specific comparison plus a callout linking
+to the full `/alternatives/obs/` breakdown. `/for/youtubers/` ↔
+`/alternatives/obs/` phrase overlap dropped **2.3% → 1.65%**, and the YouTubers
+page now passes link equity to the OBS page instead of competing with it.
+
+No other rewrites needed — no two indexable pages are near-duplicates.
