@@ -451,7 +451,7 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 @keyframes lvlSys   { 0%,100% { width: 24%; } 12% { width: 38%; } 28% { width: 29%; } 42% { width: 46%; } 56% { width: 77%; } 70% { width: 34%; } 85% { width: 21%; } }
 
 /* WHAT'S NEW */
-.new-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.new-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 20px; }
 .new-card { background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 12px; padding: 28px 26px; position: relative; transition: border-color .2s, transform .2s; }
 .new-card:hover { border-color: rgba(40,120,252,.35); }
 .new-badge { position: absolute; top: 16px; right: 16px; font-size: 9.5px; font-weight: 700; color: var(--blue); background: var(--blue-dim); padding: 3px 8px; border-radius: 4px; letter-spacing: .6px; font-family: 'Geist Mono', monospace; }
@@ -518,7 +518,7 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 @media(max-width:900px) { .vc-spotlight { grid-template-columns: 1fr; gap: 32px; } .vc-spotlight-vis { flex-direction: column; gap: 14px; } .vc-arrow { width: 2px; height: 48px; background: linear-gradient(to bottom, var(--blue), rgba(74,126,245,.25)); } .vc-arrow::before { top: 0; bottom: 0; left: -1px; right: -1px; background: linear-gradient(to bottom, transparent 0%, transparent 25%, #fff 50%, transparent 75%, transparent 100%); animation: vcFlowV 2.4s linear infinite; } .vc-arrow::after { right: 50%; top: auto; bottom: -7px; transform: translateX(50%); border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 8px solid var(--blue); border-bottom: none; } }
 
 /* USE CASES */
-.usecase-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.usecase-grid { display: grid; grid-template-columns: repeat(3,1fr); grid-auto-rows: 1fr; gap: 18px; }
 .usecase { position: relative; padding: 28px 24px; border: 1px solid var(--app-border); border-radius: 14px; background: var(--app-panel); transition: border-color .2s, transform .2s; }
 .usecase:hover { border-color: var(--app-border2); transform: translateY(-3px); }
 a.usecase { display: block; text-decoration: none; color: inherit; }
@@ -769,8 +769,8 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-glow"></div>
   <div class="hero-inner">
+    <div class="hero-glow"></div>
     <div>
       <div class="hero-meta">
         <div class="pill"><div class="pill-dot"></div><span class="pill-text">Live Multi-Streaming Studio</span></div>
