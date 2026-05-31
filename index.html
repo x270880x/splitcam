@@ -457,6 +457,7 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .new-card:hover { border-color: rgba(40,120,252,.35); }
 .new-badge { position: absolute; top: 16px; right: 16px; font-size: 9.5px; font-weight: 700; color: var(--blue); background: var(--blue-dim); padding: 3px 8px; border-radius: 4px; letter-spacing: .6px; font-family: 'Geist Mono', monospace; }
 .new-ico { width: 40px; height: 40px; border-radius: 9px; background: var(--blue-dim); border: 1px solid rgba(40,120,252,.28); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; color: var(--blue); }
+.new-ico svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .new-h { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; letter-spacing: -0.3px; }
 .new-p { font-size: 13.5px; color: var(--text-sub); line-height: 1.65; }
 
@@ -1231,37 +1232,37 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <div class="new-grid">
       <div class="new-card">
         <span class="new-badge">NEW</span>
-        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-replay"/></svg></div>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></div>
         <div class="new-h">Replay Source</div>
         <p class="new-p">Capture the last 5–10 seconds of any scene with a hotkey. Instant slow-mo replays during gameplay or perfect highlights mid-stream.</p>
       </div>
       <div class="new-card">
         <span class="new-badge">NEW</span>
-        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-folder"/></svg></div>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M5 12V4a2 2 0 0 1 2-2h7l5 5v5"/><path d="M2 19h10"/><path d="m9 16 3 3-3 3"/><path d="M5 19v2a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-2"/></svg></div>
         <div class="new-h">OBS Project Import</div>
         <p class="new-p">Bring your OBS Studio scene collections directly into SplitCam — sources, scenes and transitions are preserved. Switch without rebuilding.</p>
       </div>
       <div class="new-card">
         <span class="new-badge">NEW</span>
-        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-cloud"/></svg></div>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 13v9"/><path d="m17 18-5-5-5 5"/><path d="M20 16.7A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/></svg></div>
         <div class="new-h">Cloud Projects</div>
         <p class="new-p">Save your entire stream setup to the cloud. Switch laptops, travel, or stream from a guest PC — your scenes follow you.</p>
       </div>
       <div class="new-card">
         <span class="new-badge">NEW</span>
-        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-trans"/></svg></div>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
         <div class="new-h">Luma Wipe, Slide & Swipe</div>
         <p class="new-p">Three new scene transitions: Luma Wipe for cinematic mask cuts (with preinstalled semitransparent files), Slide and Swipe for clean horizontal handoffs between segments.</p>
       </div>
       <div class="new-card">
         <span class="new-badge">NEW</span>
-        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-speed"/></svg></div>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <div class="new-h">Upload Speed Test</div>
         <p class="new-p">Rebuilt internet speed test runs in seconds, uses less bandwidth, handles slow connections — know your real upload before you go live.</p>
       </div>
       <div class="new-card">
         <span class="new-badge">NEW</span>
-        <div class="new-ico"><svg class="ico ico-xl"><use href="#i-save"/></svg></div>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <div class="new-h">Crash-Proof Recording</div>
         <p class="new-p">Local recordings now save as fragmented MP4 — never lose a session to a crash. Recoverable up to the last written keyframe.</p>
       </div>
