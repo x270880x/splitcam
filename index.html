@@ -273,44 +273,21 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .btn-primary:hover { background: var(--blue-hover); transform: translateY(-1px); box-shadow: 0 8px 24px var(--blue-glow); }
 .btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 8px; border: 1px solid var(--app-border2); background: transparent; color: var(--text-sub); font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all .18s; font-family: inherit; }
 .btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,.25); }
-.hero-kpis { display: flex; gap: 36px; margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--app-border); }
-.kpi-num { font-size: 26px; font-weight: 700; color: var(--text); letter-spacing: -1px; }
-.kpi-lbl { font-size: 12px; font-weight: 500; color: var(--text-sub); margin-top: 2px; }
 
-/* APP WINDOW */
 .app-window { background: var(--app-panel); border: 1px solid var(--app-border2); border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 1px rgba(40,120,252,.13), 0 0 60px -10px rgba(40,120,252,.32), 0 25px 60px -20px rgba(0,0,0,.6); }
 .app-titlebar { height: 34px; background: var(--app-base); border-bottom: 1px solid var(--app-border); display: flex; align-items: center; padding: 0 12px; gap: 6px; }
 .wdot { width: 11px; height: 11px; border-radius: 50%; }
 .wd-r { background:#ff5f56; } .wd-y { background:#febc2e; } .wd-g { background:#28c840; }
 .app-titlebar-name { flex: 1; text-align: center; font-size: 11px; color: var(--text-dim); margin-right: 29px; font-family: 'Geist Mono', monospace; }
-.app-canvas { background: #0a0a14; height: 190px; position: relative; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--app-border); }
 .app-shot { position: relative; overflow: hidden; }
 .app-shot img, .app-shot video { display: block; width: 100%; height: auto; }
 .app-shot-glow { position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 80px rgba(40,120,252,.08), inset 0 0 0 1px rgba(255,255,255,.04); }
 .app-shot-pulse { position: absolute; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; background: rgba(231,76,60,.92); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 1px; border-radius: 5px; font-family: 'Geist Mono', monospace; box-shadow: 0 4px 16px rgba(231,76,60,.4); backdrop-filter: blur(4px); }
 .app-shot-pulse .pulse-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: blink 1.4s infinite; }
-.canvas-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px); background-size: 24px 24px; }
-.canvas-cam { width: 96px; height: 70px; border: 1.5px dashed rgba(40,120,252,.45); border-radius: 8px; z-index: 1; display: flex; align-items: center; justify-content: center; color: var(--blue); }
-.canvas-badge { position: absolute; top: 10px; left: 10px; background: var(--red); color: #fff; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 8px; border-radius: 4px; font-family: 'Geist Mono', monospace; display: flex; align-items: center; gap: 5px; }
-.canvas-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:#fff; animation: blink 1.5s infinite; }
-.canvas-fps { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,.65); color: var(--green); font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px; font-family: 'Geist Mono', monospace; }
-.canvas-scene-label { position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,.65); color: var(--text-sub); font-size: 10px; font-weight: 500; padding: 4px 10px; border-radius: 4px; font-family: 'Geist Mono', monospace; }
 
-.scenes-row { display: flex; gap: 6px; padding: 10px; border-bottom: 1px solid var(--app-border); background: var(--app-base); overflow-x: auto; }
-.scene-item { display: flex; flex-direction: column; align-items: center; gap: 3px; flex-shrink: 0; }
-.scene-thumb { width: 64px; height: 40px; border-radius: 5px; background: var(--app-surface); border: 1px solid var(--app-border); display: flex; align-items: center; justify-content: center; color: var(--text-sub); cursor: pointer; }
-.scene-thumb.active { border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); color: var(--blue); }
-.scene-lbl { font-size: 9.5px; color: var(--text-dim); font-weight: 500; }
 
-.channels-list { padding: 10px; display: flex; flex-direction: column; gap: 6px; }
-.ch-row { display: flex; align-items: center; gap: 10px; background: var(--app-surface); border-radius: 6px; padding: 8px 12px; border: 1px solid var(--app-border); }
-.ch-icon { width: 22px; height: 22px; border-radius: 5px; display: flex; align-items: center; justify-content: center; }
-.ch-tw { background: rgba(145,70,255,.18); color: #b48aff; } .ch-yt { background: rgba(255,0,0,.15); color: #ff6b6b; } .ch-fb { background: rgba(24,119,242,.2); color: #5e9bff; } .ch-rt { background: rgba(255,107,53,.15); color: #ffa372; }
-.ch-name { font-size: 12px; font-weight: 500; flex: 1; }
-.ch-status { display: flex; align-items: center; gap: 5px; }
 .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 1.5s infinite; }
 .live-txt { font-size: 9.5px; font-weight: 700; color: var(--green); letter-spacing: .5px; font-family: 'Geist Mono', monospace; }
-.ch-kbps { font-size: 10px; color: var(--text-dim); font-family: 'Geist Mono', monospace; }
 
 /* STRIP */
 /* Platforms strip (full-width, below hero) */
@@ -363,7 +340,6 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 
 .feat-vis { background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 14px; padding: 28px; min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; box-shadow: 0 0 80px -20px rgba(40,120,252,.38), 0 0 160px 0 rgba(156,91,255,.12); }
 
-/* BC vis */
 .bc-rows { display: flex; flex-direction: column; gap: 8px; width: 100%; }
 .bc-row { display: flex; align-items: center; gap: 12px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 7px; padding: 10px 14px; }
 .bc-nm { font-size: 12.5px; font-weight: 600; width: 110px; }
@@ -378,7 +354,6 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .bc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: blink 1.5s infinite; }
 .bc-kbps { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; width: 70px; text-align: right; }
 
-/* Sources vis */
 .src-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; }
 .src-item { background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 8px; padding: 12px; display: flex; align-items: center; gap: 10px; transition: border-color .15s, transform .15s; }
 .src-item:hover { border-color: rgba(40,120,252,.32); }
@@ -390,21 +365,6 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .src-nm { font-size: 12.5px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
 .src-meta { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; }
 
-/* Tip Notifier vis */
-.tip-stack { display: flex; flex-direction: column; gap: 8px; width: 100%; }
-.tip-row { background: linear-gradient(135deg, var(--app-panel), var(--app-surface)); border: 1px solid var(--app-border); border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; position: relative; overflow: hidden; }
-.tip-row::before { content:''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--blue); }
-.tip-row.green::before { background: var(--green); }
-.tip-row.amber::before { background: var(--amber); }
-.tip-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--blue-dim); display: flex; align-items: center; justify-content: center; color: var(--blue); font-weight: 700; font-size: 13px; flex-shrink: 0; }
-.tip-avatar.green { background: rgba(46,204,113,.15); color: var(--green); }
-.tip-avatar.amber { background: rgba(243,156,18,.15); color: var(--amber); }
-.tip-text { flex: 1; min-width: 0; }
-.tip-name { font-size: 12.5px; font-weight: 600; color: var(--text); }
-.tip-msg { font-size: 11px; color: var(--text-sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tip-amount { font-size: 13.5px; font-weight: 700; color: var(--blue); font-family: 'Geist Mono', monospace; }
-.tip-row.green .tip-amount { color: var(--green); }
-.tip-row.amber .tip-amount { color: var(--amber); }
 
 /* Audience tools vis: live cam clip + rising reactions + push-style alerts + replay hotkey */
 .aud-stage { width: 100%; display: flex; flex-direction: column; gap: 14px; }
@@ -499,21 +459,6 @@ h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height
 .new-h { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; letter-spacing: -0.3px; }
 .new-p { font-size: 13.5px; color: var(--text-sub); line-height: 1.65; }
 
-/* BONUS / virtual camera */
-.bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-.bonus-h { font-size: 32px; font-weight: 700; letter-spacing: -1.2px; color: var(--text); margin-bottom: 14px; line-height: 1.1; }
-.bonus-p { font-size: 15.5px; color: var(--text-sub); line-height: 1.75; margin-bottom: 26px; }
-.bonus-vis { background: var(--app-base); border: 1px solid var(--app-border2); border-radius: 14px; padding: 32px; position: relative; overflow: hidden; }
-.bonus-vis::before { content:''; position:absolute; top:-50px; right:-50px; width:200px; height:200px; background: radial-gradient(circle, rgba(40,120,252,.06), transparent 70%); }
-.bonus-row { display: flex; align-items: center; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--app-border); position: relative; }
-.bonus-row:last-child { border-bottom: none; }
-.bonus-app { display: flex; align-items: center; gap: 10px; flex: 1; }
-.bonus-app-ico { width: 32px; height: 32px; border-radius: 7px; background: var(--app-surface); border: 1px solid var(--app-border); display: flex; align-items: center; justify-content: center; color: var(--text-sub); }
-.bonus-app-name { font-size: 13.5px; font-weight: 500; }
-.bonus-status { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 5px; font-family: 'Geist Mono', monospace; background: rgba(46,204,113,.12); color: var(--green); }
-.bonus-divider { display: flex; align-items: center; gap: 12px; padding: 10px 0; }
-.bonus-divider-line { flex: 1; height: 1px; background: var(--app-border2); }
-.bonus-divider-text { font-size: 11px; color: var(--blue); font-weight: 600; letter-spacing: 1px; font-family: 'Geist Mono', monospace; }
 
 /* FEAT GRID */
 .feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--app-border); border: 1px solid var(--app-border); border-radius: 12px; overflow: hidden; }
@@ -608,13 +553,6 @@ a.usecase:hover .uc-go { opacity: 1; transform: translateX(0); color: var(--blue
 .faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item p { margin-top: 14px; color: var(--text-sub); font-size: 15px; line-height: 1.65; }
 @media(max-width:700px) { .feat-grid { grid-template-columns: 1fr; } }
-.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-.why-card { padding: 28px 24px; border: 1px solid var(--app-border); border-radius: 14px; background: var(--app-panel); transition: border-color .2s, transform .2s; }
-.why-card:hover { border-color: var(--app-border2); transform: translateY(-3px); }
-.why-vs { font-size: 11.5px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; font-weight: 600; }
-.why-vs strong { color: var(--text-sub); font-weight: 600; }
-.why-card h3 { font-size: 20px; font-weight: 700; letter-spacing: -.4px; margin-bottom: 12px; color: var(--text); }
-.why-card p { font-size: 14px; color: var(--text-sub); line-height: 1.6; }
 .feat-cell { background: var(--app-panel); padding: 30px 26px; transition: background .18s; }
 .feat-cell:hover { background: var(--app-surface); }
 .cell-ico { width: 44px; height: 44px; font-size: 30px; line-height: 1; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
@@ -677,13 +615,11 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .section{padding:60px 20px;}
   .feat-panel{grid-template-columns:1fr; gap:32px;}
   .feat-grid{grid-template-columns:1fr;}
-  .why-grid{grid-template-columns:1fr;}
   .usecase-grid{grid-template-columns:1fr;}
   .testi-grid{grid-template-columns:1fr;}
   .new-grid{grid-template-columns:1fr;}
   .quickstart-grid{grid-template-columns:1fr;}
   .qs-step:not(:last-child)::after{display:none;}
-  .bonus-grid{grid-template-columns:1fr; gap: 32px;}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
   .stat-box:nth-child(3){grid-column:span 2;}
   .footer-inner{grid-template-columns:1fr 1fr;}
@@ -829,8 +765,6 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <a href="alternatives/" role="menuitem">Alternatives</a>
   <a href="for/" role="menuitem">Use Cases</a>
   <a href="help/" role="menuitem">Help</a>
-  <div class="nav-mobile-divider"></div>
-  <a href="#" class="btn-mobile-dl" role="menuitem" data-dl-primary><svg viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg> <span data-dl-label>Download</span></a>
 </div>
 
 <!-- HERO -->
@@ -889,7 +823,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       <div class="pchip"><svg class="ico ico-sm"><use href="#i-whatsapp"/></svg> WhatsApp</div>
       <div class="pchip"><svg class="ico ico-sm"><use href="#i-rtmp"/></svg> Custom RTMP</div>
     </div>
-    <div class="pchip more">+ 72 more</div>
+    <div class="pchip more">84+ platforms</div>
   </div>
 </div>
 
