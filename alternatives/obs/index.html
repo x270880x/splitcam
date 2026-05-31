@@ -54,6 +54,21 @@
       "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "357", "bestRating": "5"}
     },
     {
+      "@type": "HowTo",
+      "name": "How to migrate from OBS Studio to SplitCam",
+      "description": "Non-destructive migration in 3 steps. Your OBS install and scene files stay where they are.",
+      "totalTime": "PT5M",
+      "tool": [
+        {"@type": "HowToTool", "name": "OBS Studio (any recent version)"},
+        {"@type": "HowToTool", "name": "SplitCam (free download)"}
+      ],
+      "step": [
+        {"@type": "HowToStep", "position": 1, "name": "Find your OBS scene collection file", "text": "In OBS, go to Scene Collection → Export. Save the JSON file to your Desktop. Existing collections live at %APPDATA%\\obs-studio\\basic\\scenes\\ on Windows and ~/Library/Application Support/obs-studio/basic/scenes/ on macOS. Leave OBS installed — if SplitCam doesn't fit, you switch right back without losing anything."},
+        {"@type": "HowToStep", "position": 2, "name": "Install SplitCam and use OBS Project Import", "text": "Download SplitCam and run it. On first launch click Import → OBS Project, point at the JSON file from step 1. Scenes, sources, transitions and hotkeys carry over. Stream keys and per-platform settings are reconfigured since they're saved per-encoder, not in the scene file.", "url": "https://splitcam.com/"},
+        {"@type": "HowToStep", "position": 3, "name": "Reconnect stream keys and go live", "text": "In SplitCam, open Stream Settings. Paste your stream keys for the platforms you use. To multistream to several platforms at once, tick all of them — no plugin needed. Click Go Live."}
+      ]
+    },
+    {
       "@type": "ItemList",
       "name": "Free alternatives to OBS Studio",
       "description": "Free, easier alternatives to OBS Studio for live streaming, ranked by ease of setup and built-in features.",
