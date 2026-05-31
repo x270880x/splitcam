@@ -1376,7 +1376,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <div class="cta-note">
       <span><svg class="ico ico-sm"><use href="#i-check"/></svg> <span data-dl-req>Windows 10 or later</span></span>
       <span><svg class="ico ico-sm"><use href="#i-shield"/></svg> No bundled software</span>
-      <span><svg class="ico ico-sm"><use href="#i-zap"/></svg> Latest v10.9.2</span>
+      <span><svg class="ico ico-sm"><use href="#i-zap"/></svg> <span data-dl-ver>Latest v10.9.2</span></span>
     </div>
   </div>
 </div>
@@ -1512,10 +1512,10 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
     play:    '<svg viewBox="0 0 24 24"><path d="M3.6 2.3c-.3.3-.5.7-.5 1.3v17c0 .6.2 1 .5 1.3l8.8-9.6L3.6 2.3zM14 11l-1.7-1.6L5 2.1l11.5 6.6L14 11zM18.5 12.7l-2.4 1.4L14 12l2.1-2.1 2.4 1.4c.7.4.7 1.1 0 1.4zM5 21.9l7.3-7.3L14 13l-8.9 9c-.1.1-.1 0-.1-.1z"/></svg>'
   };
   var SC = {
-    windows: { label: 'Download for Windows', ico: ICO.windows, url: 'https://splitcam.com/download',                                          sub: 'Windows 10/11 · 64-bit',    req: 'Windows 10 or later' },
-    mac:     { label: 'Download for Mac',     ico: ICO.apple,   url: '#mac-coming',                                                            sub: 'macOS 11+',                 req: 'macOS 11 or later' },
-    ios:     { label: 'Get on App Store',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone & iPad · iOS 13+',   req: 'iPhone & iPad · iOS 13+' },
-    android: { label: 'Get on Google Play',   ico: ICO.play,    url: '#android-coming',                                                        sub: 'Android 8+',                req: 'Android 8 or later' }
+    windows: { label: 'Download for Windows', ico: ICO.windows, url: 'https://splitcam.com/download',                                          sub: 'Windows 10/11 · 64-bit',    req: 'Windows 10 or later',     ver: 'Latest v10.9.2' },
+    mac:     { label: 'Download for Mac',     ico: ICO.apple,   url: 'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',    sub: 'macOS 13+ · Apple Silicon', req: 'macOS 13 or later',       ver: 'On the Mac App Store' },
+    ios:     { label: 'Get on App Store',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone & iPad · iOS 13+',   req: 'iPhone & iPad · iOS 13+', ver: 'On the App Store' },
+    android: { label: 'Get on Google Play',   ico: ICO.play,    url: '#android-coming',                                                        sub: 'Android 8+',                req: 'Android 8 or later',      ver: 'On Google Play' }
   };
   function detectOS(){
     var ua = navigator.userAgent || '';
@@ -1534,6 +1534,9 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
   });
   document.querySelectorAll('[data-dl-req]').forEach(function(el){
     el.textContent = cur.req;
+  });
+  document.querySelectorAll('[data-dl-ver]').forEach(function(el){
+    el.textContent = cur.ver;
   });
   var menuHTML = '';
   ['windows','mac','ios','android'].forEach(function(key){
