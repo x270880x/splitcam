@@ -311,7 +311,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <li><a href="../../help/">Help</a></li>
   </ul>
   <div class="nav-right">
-    <a href="../../" class="btn-primary">⬇ Download</a>
+    <a href="https://splitcam.com/download" class="btn-primary" data-dl-primary>⬇ Download</a>
     <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
       <svg class="ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       <svg class="ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-12 12"/></svg>
@@ -340,7 +340,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <h1 class="h1">The free <span class="accent">SplitCam alternative to OBS Studio</span> — easier, with multistream built-in.</h1>
   <p class="sub">Free. No plugins to install for <strong style="color:var(--text)">multistream, AI background, virtual camera or mobile</strong> — they ship in the box. Imports your OBS scene collection in one click, so the switch is non-destructive. Windows, macOS, iOS, Android.</p>
   <div class="hero-cta">
-    <a href="../../" class="btn-primary btn-lg">⬇ Free Download</a>
+    <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
     <a href="#compare" class="btn-ghost btn-lg">Jump to comparison ↓</a>
   </div>
   <div class="hero-badges">
@@ -649,7 +649,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="cta-block">
   <h2>Try SplitCam — it imports your OBS scenes</h2>
   <p>Free download. No card, no signup, no watermark. The full app is what you get on first install. Your OBS install stays exactly where it is — switching is reversible.</p>
-  <a href="../../" class="btn-primary btn-lg">⬇ Free Download</a>
+  <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
 </section>
 
 <!-- FOOTER -->
@@ -687,5 +687,14 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 })();
 </script>
 
+<script>
+/* Smart download: point every [data-dl-primary] at the visitor's OS installer */
+(function(){
+  var U={windows:'https://splitcam.com/download',mac:'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',ios:'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',android:'https://play.google.com/store/apps/details?id=com.splitcam'};
+  var ua=navigator.userAgent||'',os='windows';
+  if(/Android/i.test(ua))os='android';else if(/iPad|iPhone|iPod/i.test(ua))os='ios';else if(/Macintosh|Mac OS X/i.test(ua))os='mac';
+  document.querySelectorAll('[data-dl-primary]').forEach(function(a){a.setAttribute('href',U[os]);});
+})();
+</script>
 </body>
 </html>

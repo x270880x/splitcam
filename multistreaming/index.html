@@ -462,7 +462,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <li><a href="../help/">Help</a></li>
   </ul>
   <div class="nav-right">
-    <a href="../" class="btn-primary">⬇ Download</a>
+    <a href="https://splitcam.com/download" class="btn-primary" data-dl-primary>⬇ Download</a>
     <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
       <svg class="ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       <svg class="ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-12 12"/></svg>
@@ -493,7 +493,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <h1 class="ms-h1"><span class="blue">Multistreaming</span> — one stream, every platform, all at once.</h1>
       <p class="ms-sub">Free <strong>multistreaming software</strong> that broadcasts one live stream to Twitch, YouTube, Facebook, Kick, TikTok, X and <strong>84+ other platforms simultaneously</strong> — from a single encode, direct from your machine. Also known as <em>simulcasting, dual streaming, multi-platform broadcasting</em>. No cloud middleman, no monthly fee, no privacy concerns. A free alternative to Restream, Streamlabs Multistream, StreamYard and OBS multistream plugins (Aitum, SE.Live). Works on Windows, Mac, iOS and Android.</p>
       <div class="ms-cta-row">
-        <a href="../" class="btn-primary btn-lg">⬇ Free Download</a>
+        <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
         <a href="#how" class="btn-ghost btn-lg">How it works</a>
       </div>
     </div>
@@ -775,7 +775,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
 <section class="cta-block">
   <h2>Ready to stream everywhere?</h2>
   <p>Free download. No signup, no card, no watermark. 84+ platforms pre-configured. Direct from your machine — no cloud, no privacy concerns.</p>
-  <a href="../" class="btn-primary btn-lg">⬇ Free Download</a>
+  <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
 </section>
 
 <!-- FAQ -->
@@ -884,6 +884,15 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
   document.addEventListener('click',function(e){if(!menu.classList.contains('open'))return;if(menu.contains(e.target)||burger.contains(e.target))return;close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
   window.addEventListener('resize',function(){if(window.innerWidth>900)close();});
+})();
+</script>
+<script>
+/* Smart download: point every [data-dl-primary] at the visitor's OS installer */
+(function(){
+  var U={windows:'https://splitcam.com/download',mac:'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',ios:'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',android:'https://play.google.com/store/apps/details?id=com.splitcam'};
+  var ua=navigator.userAgent||'',os='windows';
+  if(/Android/i.test(ua))os='android';else if(/iPad|iPhone|iPod/i.test(ua))os='ios';else if(/Macintosh|Mac OS X/i.test(ua))os='mac';
+  document.querySelectorAll('[data-dl-primary]').forEach(function(a){a.setAttribute('href',U[os]);});
 })();
 </script>
 </body>

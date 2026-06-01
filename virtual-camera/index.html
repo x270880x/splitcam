@@ -393,7 +393,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <li><a href="../help/">Help</a></li>
   </ul>
   <div class="nav-right">
-    <a href="../" class="btn-primary">⬇ Download</a>
+    <a href="https://splitcam.com/download" class="btn-primary" data-dl-primary>⬇ Download</a>
     <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
       <svg class="ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       <svg class="ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-12 12"/></svg>
@@ -424,7 +424,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <h1 class="vc-h1">A <span class="blue">virtual camera</span> for every meeting app.</h1>
       <p class="vc-sub">Free <strong>virtual camera software</strong> that works as a <strong>virtual webcam</strong> in Zoom, Microsoft Teams, Google Meet, Discord, Telegram, WhatsApp, OBS and 60+ other video apps — with your scenes, <strong>AI background removal</strong>, beauty filters and overlays applied. A free alternative to OBS Virtual Camera, ManyCam, Camo, ChromaCam and the discontinued Snap Camera. Portrait 9:16 and landscape 16:9, up to 64 simultaneous outputs. Works on Windows, macOS, iOS and Android.</p>
       <div class="vc-cta-row">
-        <a href="../" class="btn-primary btn-lg">⬇ Free Download</a>
+        <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
         <a href="#how" class="btn-ghost btn-lg">How it works</a>
       </div>
     </div>
@@ -674,7 +674,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
 <section class="cta-block">
   <h2>Ready for a better webcam?</h2>
   <p>Free download. No signup, no card, no watermark. Works on Windows, macOS, iOS and Android.</p>
-  <a href="../" class="btn-primary btn-lg">⬇ Free Download</a>
+  <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
 </section>
 
 <!-- FAQ -->
@@ -771,5 +771,14 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
 })();
 </script>
 
+<script>
+/* Smart download: point every [data-dl-primary] at the visitor's OS installer */
+(function(){
+  var U={windows:'https://splitcam.com/download',mac:'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',ios:'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',android:'https://play.google.com/store/apps/details?id=com.splitcam'};
+  var ua=navigator.userAgent||'',os='windows';
+  if(/Android/i.test(ua))os='android';else if(/iPad|iPhone|iPod/i.test(ua))os='ios';else if(/Macintosh|Mac OS X/i.test(ua))os='mac';
+  document.querySelectorAll('[data-dl-primary]').forEach(function(a){a.setAttribute('href',U[os]);});
+})();
+</script>
 </body>
 </html>
