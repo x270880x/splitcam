@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#2878fc;--purple:#9c5bff;--text:#eeeeff;--sub:#9aa0c2}
+body{margin:0}
+.og{position:relative;width:1200px;height:630px;overflow:hidden;background:#0f0f1a;font-family:'Geist',sans-serif;color:var(--text)}
+/* layered background glows */
+.og::before{content:'';position:absolute;width:760px;height:760px;right:-180px;top:-220px;background:radial-gradient(circle,rgba(40,120,252,.34),transparent 62%);filter:blur(8px)}
+.og::after{content:'';position:absolute;width:620px;height:620px;left:-160px;bottom:-260px;background:radial-gradient(circle,rgba(156,91,255,.26),transparent 62%);filter:blur(8px)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:40px 40px;mask:radial-gradient(ellipse 90% 80% at 60% 40%,#000 30%,transparent 80%)}
+.wrap{position:relative;z-index:2;height:100%;padding:56px 60px;display:flex;flex-direction:column}
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:13px}
+.brand img{width:42px;height:42px}
+.brand b{font-size:34px;font-weight:800;letter-spacing:.5px}
+.rating{display:flex;align-items:center;gap:10px;font-size:16px;color:var(--sub);font-weight:600}
+.rating .stars{color:#FFB400;font-size:17px;letter-spacing:1px}
+.rating .dot{width:4px;height:4px;border-radius:50%;background:#46465c}
+/* body */
+.body{flex:1;display:flex;align-items:center;gap:44px;margin-top:8px}
+.left{flex:1;min-width:0}
+.kick{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:99px;background:rgba(40,120,252,.14);border:1px solid rgba(40,120,252,.4);font-size:14px;font-weight:700;color:#7ab1ff;letter-spacing:.4px;margin-bottom:22px}
+.kick .live{width:8px;height:8px;border-radius:50%;background:#ff5454;box-shadow:0 0 10px #ff5454}
+h1{font-size:74px;font-weight:800;line-height:.98;letter-spacing:-2.6px}
+h1 .g{background:linear-gradient(100deg,#3d8bff,#a06bff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{margin-top:22px;font-size:23px;line-height:1.4;color:var(--sub);max-width:540px;font-weight:500}
+.sub b{color:var(--text);font-weight:700}
+.badges{display:flex;gap:9px;margin-top:30px;flex-wrap:wrap}
+.bdg{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:99px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);font-size:15px;color:#c7cbe6;font-weight:600}
+.bdg .ck{color:var(--blue);font-weight:800}
+/* right: live multistream card */
+.card{width:392px;flex-shrink:0;background:rgba(28,28,46,.72);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:20px;backdrop-filter:blur(8px);box-shadow:0 30px 70px -20px rgba(0,0,0,.6),0 0 0 1px rgba(40,120,252,.12)}
+.card-h{display:flex;align-items:center;gap:9px;margin-bottom:16px;padding:0 4px}
+.card-h .ld{width:9px;height:9px;border-radius:50%;background:#ff5454;box-shadow:0 0 10px #ff5454}
+.card-h .lt{font-size:13px;font-weight:800;color:#ff5454;letter-spacing:1px;font-family:'Geist Mono',monospace}
+.card-h .li{font-size:13px;color:#7ab1ff;font-weight:600;margin-left:auto}
+.row{display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:12px;background:rgba(255,255,255,.035);margin-bottom:9px}
+.row:last-child{margin-bottom:0}
+.row svg{width:24px;height:24px;flex-shrink:0}
+.row .nm{font-size:17px;font-weight:700;flex:1}
+.row .kb{font-size:13px;color:#6f7398;font-family:'Geist Mono',monospace}
+.row .gl{width:9px;height:9px;border-radius:50%;background:#2ecc71;box-shadow:0 0 9px #2ecc71}
+.tw{color:#9146FF}.yt{color:#FF0000}.fb{color:#1877F2}.kk{color:#53FC18}.tt{color:#fff}
+.more{text-align:center;font-size:14px;color:#6f7398;font-weight:600;padding-top:5px;font-family:'Geist Mono',monospace}
+</style>
+</head>
+<body>
+<div class="og">
+  <div class="grid"></div>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand"><img src="../assets/splitcam.png" alt=""><b>splitcam</b></div>
+      <div class="rating"><span class="stars">★★★★★</span><span>4.7</span><span class="dot"></span><span>10M+ downloads</span><span class="dot"></span><span>Free since 2003</span></div>
+    </div>
+    <div class="body">
+      <div class="left">
+        <div class="kick"><span class="live"></span>LIVE MULTI-STREAMING STUDIO</div>
+        <h1>Go live<br><span class="g">everywhere.</span></h1>
+        <p class="sub"><b>Free streaming software</b> — multistream to 84+ platforms at once, with a built-in <b>virtual camera</b>. No watermark.</p>
+        <div class="badges">
+          <span class="bdg"><span class="ck">✓</span> Free forever</span>
+          <span class="bdg"><span class="ck">✓</span> No watermark</span>
+          <span class="bdg"><span class="ck">✓</span> Win · macOS · iOS · Android</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h"><span class="ld"></span><span class="lt">LIVE</span><span class="li">to all 5 — at once</span></div>
+        <div class="row"><svg class="tw" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2 2 6v14h5v3h3l3-3h4l6-6V2H4zm17 11-3 3h-5l-3 3v-3H7V4h14v9zm-5-7h-2v6h2V6zm-5 0H9v6h2V6z"/></svg><span class="nm">Twitch</span><span class="kb">6000 kbps</span><span class="gl"></span></div>
+        <div class="row"><svg class="yt" viewBox="0 0 24 24" fill="currentColor"><path d="M22.5 6.5a3 3 0 0 0-2-2C18.5 4 12 4 12 4s-6.5 0-8.5.5a3 3 0 0 0-2 2C1 8.5 1 12 1 12s0 3.5.5 5.5a3 3 0 0 0 2 2C5.5 20 12 20 12 20s6.5 0 8.5-.5a3 3 0 0 0 2-2c.5-2 .5-5.5.5-5.5s0-3.5-.5-5.5zM10 15.5v-7l6 3.5-6 3.5z"/></svg><span class="nm">YouTube</span><span class="kb">4500 kbps</span><span class="gl"></span></div>
+        <div class="row"><svg class="fb" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9V15h-2.5v-3h2.5V9.8c0-2.5 1.5-3.8 3.7-3.8 1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 3h-2.3v6.9A10 10 0 0 0 22 12z"/></svg><span class="nm">Facebook</span><span class="kb">3000 kbps</span><span class="gl"></span></div>
+        <div class="row"><svg class="kk" viewBox="0 0 24 24" fill="currentColor"><path d="M3 2h6v6h2V5h2V2h7v8h-2v2h-2v2h2v2h2v8h-7v-3h-2v-3H9v6H3V2z"/></svg><span class="nm">Kick</span><span class="kb">5000 kbps</span><span class="gl"></span></div>
+        <div class="row"><svg class="tt" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9a6 6 0 0 1-4-1.5V15a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3V2h3a4 4 0 0 0 4 4v3z"/></svg><span class="nm">TikTok</span><span class="kb">2500 kbps</span><span class="gl"></span></div>
+        <div class="more">+ 79 more · custom RTMP</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
