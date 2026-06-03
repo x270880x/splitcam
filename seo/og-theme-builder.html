@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#2878fc;--purple:#9c5bff;--text:#eeeeff;--sub:#9aa0c2;--green:#2ecc71}
+body{margin:0}
+.og{position:relative;width:1200px;height:630px;overflow:hidden;background:#0f0f1a;font-family:'Geist',sans-serif;color:var(--text)}
+.og::before{content:'';position:absolute;width:760px;height:760px;right:-180px;top:-220px;background:radial-gradient(circle,var(--g1,rgba(40,120,252,.34)),transparent 62%);filter:blur(8px)}
+.og::after{content:'';position:absolute;width:620px;height:620px;left:-160px;bottom:-260px;background:radial-gradient(circle,var(--g2,rgba(156,91,255,.26)),transparent 62%);filter:blur(8px)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:40px 40px;mask:radial-gradient(ellipse 90% 80% at 60% 40%,#000 30%,transparent 80%)}
+.wrap{position:relative;z-index:2;height:100%;padding:56px 60px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:13px}
+.brand img{width:42px;height:42px}
+.brand b{font-size:34px;font-weight:800;letter-spacing:.5px}
+.rating{display:flex;align-items:center;gap:10px;font-size:16px;color:var(--sub);font-weight:600}
+.rating .stars{color:#FFB400;font-size:17px;letter-spacing:1px}
+.rating .dot{width:4px;height:4px;border-radius:50%;background:#46465c}
+.body{flex:1;display:flex;align-items:center;gap:44px;margin-top:8px}
+.left{flex:1;min-width:0}
+.kick{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:99px;background:rgba(40,120,252,.14);border:1px solid rgba(40,120,252,.4);font-size:14px;font-weight:700;color:#7ab1ff;letter-spacing:.7px;margin-bottom:22px;text-transform:uppercase}
+.kick .live{width:8px;height:8px;border-radius:50%;background:#ff5454;box-shadow:0 0 10px #ff5454}
+h1{font-size:70px;font-weight:800;line-height:.99;letter-spacing:-2.4px}
+h1 .g{background:linear-gradient(100deg,#3d8bff,#a06bff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{margin-top:22px;font-size:22px;line-height:1.4;color:var(--sub);max-width:540px;font-weight:500}
+.sub b{color:var(--text);font-weight:700}
+.badges{display:flex;gap:9px;margin-top:30px;flex-wrap:wrap}
+.bdg{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:99px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);font-size:15px;color:#c7cbe6;font-weight:600}
+.bdg .ck{color:var(--blue);font-weight:800}
+.card{width:392px;flex-shrink:0;background:rgba(28,28,46,.72);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:20px;backdrop-filter:blur(8px);box-shadow:0 30px 70px -20px rgba(0,0,0,.6),0 0 0 1px rgba(40,120,252,.12)}
+.card-h{display:flex;align-items:center;gap:9px;margin-bottom:16px;padding:0 4px}
+.card-h .ld{width:9px;height:9px;border-radius:50%;background:var(--hd,#ff5454);box-shadow:0 0 10px var(--hd,#ff5454)}
+.card-h .lt{font-size:13px;font-weight:800;color:var(--hd,#ff5454);letter-spacing:1px;font-family:'Geist Mono',monospace}
+.card-h .li{font-size:13px;color:#7ab1ff;font-weight:600;margin-left:auto}
+.row{display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:12px;background:rgba(255,255,255,.035);margin-bottom:9px}
+.row:last-child{margin-bottom:0}
+.row svg{width:24px;height:24px;flex-shrink:0}
+.row img{width:24px;height:24px;flex-shrink:0;object-fit:contain}
+.row .nm{font-size:16.5px;font-weight:700;flex:1}
+.row .kb{font-size:12.5px;color:#6f7398;font-family:'Geist Mono',monospace}
+.row .gl{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 9px var(--green)}
+.row .ck{color:var(--green);font-size:18px;font-weight:800}
+.row .xk{color:#6f7398;font-size:18px;font-weight:800}
+.more{text-align:center;font-size:14px;color:#6f7398;font-weight:600;padding-top:5px;font-family:'Geist Mono',monospace}
+</style>
+</head>
+<body>
+<div class="og" id="og">
+  <div class="grid"></div>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand"><img src="../assets/splitcam.png" alt=""><b>splitcam</b></div>
+      <div class="rating"><span class="stars">★★★★★</span><span>4.7</span><span class="dot"></span><span>10M+ downloads</span><span class="dot"></span><span>Free since 2003</span></div>
+    </div>
+    <div class="body">
+      <div class="left">
+        <div class="kick"><span class="live"></span><span id="eyebrow"></span></div>
+        <h1 id="h1"></h1>
+        <p class="sub" id="sub"></p>
+        <div class="badges" id="badges"></div>
+      </div>
+      <div class="card" id="card"></div>
+    </div>
+  </div>
+</div>
+<script>
+var L='../virtual-camera/assets/logos/';
+var TW='<svg viewBox="0 0 24 24" fill="#9146FF"><path d="M4 2 2 6v14h5v3h3l3-3h4l6-6V2H4zm17 11-3 3h-5l-3 3v-3H7V4h14v9zm-5-7h-2v6h2V6zm-5 0H9v6h2V6z"/></svg>';
+var YT='<svg viewBox="0 0 24 24" fill="#FF0000"><path d="M22.5 6.5a3 3 0 0 0-2-2C18.5 4 12 4 12 4s-6.5 0-8.5.5a3 3 0 0 0-2 2C1 8.5 1 12 1 12s0 3.5.5 5.5a3 3 0 0 0 2 2C5.5 20 12 20 12 20s6.5 0 8.5-.5a3 3 0 0 0 2-2c.5-2 .5-5.5.5-5.5s0-3.5-.5-5.5zM10 15.5v-7l6 3.5-6 3.5z"/></svg>';
+var FB='<svg viewBox="0 0 24 24" fill="#1877F2"><path d="M22 12a10 10 0 1 0-11.5 9.9V15h-2.5v-3h2.5V9.8c0-2.5 1.5-3.8 3.7-3.8 1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 3h-2.3v6.9A10 10 0 0 0 22 12z"/></svg>';
+var KK='<svg viewBox="0 0 24 24" fill="#53FC18"><path d="M3 2h6v6h2V5h2V2h7v8h-2v2h-2v2h2v2h2v8h-7v-3h-2v-3H9v6H3V2z"/></svg>';
+var TT='<svg viewBox="0 0 24 24" fill="#fff"><path d="M19 9a6 6 0 0 1-4-1.5V15a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3V2h3a4 4 0 0 0 4 4v3z"/></svg>';
+var GLOBE='<svg viewBox="0 0 24 24" fill="none" stroke="#7ab1ff" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>';
+function row(o){
+  var ico = o.img ? '<img src="'+o.img+'">' : o.svg;
+  var right = o.meta!=null ? '<span class="kb">'+o.meta+'</span>' : '';
+  var end = o.check==='y' ? '<span class="ck">✓</span>' : o.check==='n' ? '<span class="xk">✕</span>' : '<span class="gl"></span>';
+  return '<div class="row">'+ico+'<span class="nm">'+o.nm+'</span>'+right+end+'</div>';
+}
+var T={
+ multistreaming:{ g1:'rgba(40,120,252,.34)',g2:'rgba(156,91,255,.26)',
+   eyebrow:'Multistreaming', h1:'One stream.<br><span class="g">Every platform.</span>',
+   sub:'<b>Multistream to 84+ platforms at once</b> — Twitch, YouTube, Facebook, Kick + more. Peer-to-peer, no monthly fee.',
+   badges:['Free forever','No monthly fee','Peer-to-peer'], hd:'#ff5454', hl:'to all 5 — at once', ht:'LIVE',
+   rows:[{svg:TW,nm:'Twitch',meta:'6000 kbps'},{svg:YT,nm:'YouTube',meta:'4500 kbps'},{svg:FB,nm:'Facebook',meta:'3000 kbps'},{svg:KK,nm:'Kick',meta:'5000 kbps'},{svg:TT,nm:'TikTok',meta:'2500 kbps'}], more:'+ 79 more · custom RTMP' },
+ virtualcamera:{ g1:'rgba(40,120,252,.34)',g2:'rgba(94,229,114,.20)',
+   eyebrow:'Virtual Camera', h1:'Your camera,<br><span class="g">in every app.</span>',
+   sub:'Use SplitCam as a <b>virtual webcam</b> in Zoom, Teams, Meet, Discord and 60+ apps — with scenes, effects and <b>AI background</b>.',
+   badges:['Free forever','No green screen','16:9 + 9:16'], hd:'#2ecc71', hl:'SplitCam Camera', ht:'SELECTED',
+   rows:[{img:L+'zoom.svg',nm:'Zoom',meta:'16:9',check:'y'},{img:L+'microsoftteams.svg',nm:'Microsoft Teams',meta:'16:9',check:'y'},{img:L+'googlemeet.svg',nm:'Google Meet',meta:'16:9',check:'y'},{img:L+'discord.svg',nm:'Discord',meta:'16:9 / 9:16',check:'y'},{img:L+'whatsapp.svg',nm:'WhatsApp',meta:'9:16',check:'y'}], more:'+ 55 more apps' },
+ obs:{ g1:'rgba(40,120,252,.30)',g2:'rgba(156,91,255,.24)',
+   eyebrow:'OBS Alternative', h1:'Leaving OBS?<br><span class="g">Import in one click.</span>',
+   sub:'A simpler, free <b>OBS alternative</b> — one-click project import, with multistreaming, AI background and a virtual camera <b>built in</b>.',
+   badges:['Free & no watermark','No plugins','Keeps your scenes'], hd:'#2ecc71', hl:'SplitCam vs OBS', ht:'BUILT IN',
+   rows:[{svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#7ab1ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M15 2v5h5"/></svg>',nm:'OBS scenes imported',check:'y'},{svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#7ab1ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/></svg>',nm:'Multistreaming',check:'y'},{svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#7ab1ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M3 5v14M21 5v14M5 3h14M5 21h14" stroke-dasharray="2.4 2.4"/></svg>',nm:'AI background',check:'y'},{svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#7ab1ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6.5"/><path d="M6 21h8M10 17v4M18 7h4v4"/></svg>',nm:'Virtual camera',check:'y'},{svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#6f7398" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>',nm:'Plugins needed',check:'n'}], more:null },
+ church:{ g1:'rgba(40,120,252,.30)',g2:'rgba(243,156,18,.20)',
+   eyebrow:'Church Streaming', h1:'Stream Sunday<br><span class="g">service everywhere.</span>',
+   sub:'Broadcast to <b>Facebook, YouTube and your church website at once</b> — multi-camera, lower-thirds and song lyrics. Free.',
+   badges:['Free forever','No subscription','Multi-camera'], hd:'#ff5454', hl:'Sunday service', ht:'LIVE',
+   rows:[{svg:FB,nm:'Facebook Live',meta:'main audience'},{svg:YT,nm:'YouTube Live',meta:'archive + SEO'},{svg:GLOBE,nm:'Church website',meta:'custom RTMP'}], more:'3 audiences · one service' },
+ vtuber:{ g1:'rgba(236,72,153,.28)',g2:'rgba(156,91,255,.26)',
+   eyebrow:'For VTubers', h1:'Be a VTuber.<br><span class="g">Free.</span>',
+   sub:'Pipe your avatar through SplitCam — <b>AI background, face tracking, chromakey</b> — then go live or drop into any meeting app.',
+   badges:['Free forever','No green screen','Avatar ready'], hd:'#2ecc71', hl:'VTuber pipeline', ht:'READY',
+   rows:[{svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#c1a8fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c5 0 9 4 9 9 0 6-4 9-9 9s-9-3-9-9c0-5 4-9 9-9Z"/><path d="M8.5 10.5h.01M15.5 10.5h.01M8 15c1 1.5 2.5 2 4 2s3-.5 4-2"/></svg>',nm:'Avatar',check:'y'},{svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#c1a8fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M3 5v14M21 5v14M5 3h14M5 21h14" stroke-dasharray="2.4 2.4"/></svg>',nm:'AI background',check:'y'},{svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#c1a8fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></svg>',nm:'Face tracking',check:'y'},{svg:TW,nm:'Live to Twitch + YT',check:'y'}], more:'avatar → any app' }
+};
+var key=(location.search.match(/t=([a-z]+)/)||[])[1]||'multistreaming';
+var c=T[key]||T.multistreaming;
+var og=document.getElementById('og');
+og.style.setProperty('--g1',c.g1); og.style.setProperty('--g2',c.g2);
+document.getElementById('eyebrow').textContent=c.eyebrow;
+document.getElementById('h1').innerHTML=c.h1;
+document.getElementById('sub').innerHTML=c.sub;
+document.getElementById('badges').innerHTML=c.badges.map(function(b){return '<span class="bdg"><span class="ck">✓</span> '+b+'</span>';}).join('');
+var card=document.getElementById('card');
+card.style.setProperty('--hd',c.hd);
+card.innerHTML='<div class="card-h"><span class="ld"></span><span class="lt">'+c.ht+'</span><span class="li">'+c.hl+'</span></div>'+c.rows.map(row).join('')+(c.more?'<div class="more">'+c.more+'</div>':'');
+document.title='og-'+key;
+</script>
+</body>
+</html>

@@ -17,14 +17,14 @@
 <meta property="og:url" content="https://splitcam.com/alternatives/obs/">
 <meta property="og:title" content="SplitCam vs OBS — Free, Simpler OBS Alternative | SplitCam">
 <meta property="og:description" content="A simpler, free OBS Studio alternative — one-click OBS project import, built-in multistreaming and a virtual camera, with no scene rebuilding.">
-<meta property="og:image" content="https://splitcam.com/assets/hero-spotlight-poster.jpg">
+<meta property="og:image" content="https://splitcam.com/assets/og-obs.png">
 <meta property="og:site_name" content="SplitCam">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SplitCam vs OBS — Free, Simpler OBS Alternative | SplitCam">
 <meta name="twitter:description" content="A simpler, free OBS Studio alternative — one-click OBS project import, built-in multistreaming and a virtual camera, with no scene rebuilding.">
-<meta name="twitter:image" content="https://splitcam.com/assets/hero-spotlight-poster.jpg">
+<meta name="twitter:image" content="https://splitcam.com/assets/og-obs.png">
 
 <meta name="theme-color" content="#141420">
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
@@ -41,9 +41,24 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "SplitCam", "item": "https://splitcam.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Alternatives", "item": "https://splitcam.com/alternatives/"},
-        {"@type": "ListItem", "position": 3, "name": "OBS Alternative", "item": "https://splitcam.com/alternatives/obs/"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SplitCam",
+          "item": "https://splitcam.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alternatives",
+          "item": "https://splitcam.com/alternatives/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "OBS Alternative",
+          "item": "https://splitcam.com/alternatives/obs/"
+        }
       ]
     },
     {
@@ -51,8 +66,11 @@
       "name": "SplitCam",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Windows, macOS, iOS, Android",
-      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.6", "bestRating": "5"}
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     },
     {
       "@type": "HowTo",
@@ -60,13 +78,35 @@
       "description": "Non-destructive migration in 3 steps. Your OBS install and scene files stay where they are.",
       "totalTime": "PT5M",
       "tool": [
-        {"@type": "HowToTool", "name": "OBS Studio (any recent version)"},
-        {"@type": "HowToTool", "name": "SplitCam (free download)"}
+        {
+          "@type": "HowToTool",
+          "name": "OBS Studio (any recent version)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "SplitCam (free download)"
+        }
       ],
       "step": [
-        {"@type": "HowToStep", "position": 1, "name": "Find your OBS scene collection file", "text": "In OBS, go to Scene Collection → Export. Save the JSON file to your Desktop. Existing collections live at %APPDATA%\\obs-studio\\basic\\scenes\\ on Windows and ~/Library/Application Support/obs-studio/basic/scenes/ on macOS. Leave OBS installed — if SplitCam doesn't fit, you switch right back without losing anything."},
-        {"@type": "HowToStep", "position": 2, "name": "Install SplitCam and use OBS Project Import", "text": "Download SplitCam and run it. On first launch click Import → OBS Project, point at the JSON file from step 1. Scenes, sources, transitions and hotkeys carry over. Stream keys and per-platform settings are reconfigured since they're saved per-encoder, not in the scene file.", "url": "https://splitcam.com/"},
-        {"@type": "HowToStep", "position": 3, "name": "Reconnect stream keys and go live", "text": "In SplitCam, open Stream Settings. Paste your stream keys for the platforms you use. To multistream to several platforms at once, tick all of them — no plugin needed. Click Go Live."}
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Find your OBS scene collection file",
+          "text": "In OBS, go to Scene Collection → Export. Save the JSON file to your Desktop. Existing collections live at %APPDATA%\\obs-studio\\basic\\scenes\\ on Windows and ~/Library/Application Support/obs-studio/basic/scenes/ on macOS. Leave OBS installed — if SplitCam doesn't fit, you switch right back without losing anything."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Install SplitCam and use OBS Project Import",
+          "text": "Download SplitCam and run it. On first launch click Import → OBS Project, point at the JSON file from step 1. Scenes, sources, transitions and hotkeys carry over. Stream keys and per-platform settings are reconfigured since they're saved per-encoder, not in the scene file.",
+          "url": "https://splitcam.com/"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Reconnect stream keys and go live",
+          "text": "In SplitCam, open Stream Settings. Paste your stream keys for the platforms you use. To multistream to several platforms at once, tick all of them — no plugin needed. Click Go Live."
+        }
       ]
     },
     {
@@ -74,24 +114,101 @@
       "name": "Free alternatives to OBS Studio",
       "description": "Free, easier alternatives to OBS Studio for live streaming, ranked by ease of setup and built-in features.",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "SplitCam", "url": "https://splitcam.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Streamlabs Desktop"},
-        {"@type": "ListItem", "position": 3, "name": "XSplit Broadcaster"},
-        {"@type": "ListItem", "position": 4, "name": "Meld Studio"},
-        {"@type": "ListItem", "position": 5, "name": "Restream Studio (web)"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SplitCam",
+          "url": "https://splitcam.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Streamlabs Desktop"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "XSplit Broadcaster"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Meld Studio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Restream Studio (web)"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "What is a good free alternative to OBS Studio?", "acceptedAnswer": {"@type": "Answer", "text": "SplitCam is a free OBS alternative that's easier to set up. It ships with multistreaming, AI background removal, beauty filters, virtual camera and mobile apps built-in — features that OBS requires plugins for. SplitCam also imports your existing OBS scene collections in one click, so switching is non-destructive. Other free alternatives: Streamlabs Desktop (fork of OBS, with overlays/widgets), XSplit Broadcaster (free tier with watermark), Meld Studio (newer, Mac-focused)."}},
-        {"@type": "Question", "name": "Why do people look for an OBS alternative?", "acceptedAnswer": {"@type": "Answer", "text": "Common reasons: (1) OBS has a learning curve — too many menus for casual streamers. (2) OBS doesn't have built-in multistreaming, AI background or beauty filters — you install separate plugins for each. (3) Plugins need maintenance after every OBS update. (4) OBS has no mobile apps — you can't stream from your phone or use your phone as a second camera. (5) High CPU usage when using software (x264) encoder on older machines."}},
-        {"@type": "Question", "name": "Is SplitCam better than OBS?", "acceptedAnswer": {"@type": "Answer", "text": "Better in different ways — and worse in others. SplitCam wins on: simpler UI, built-in multistreaming/virtual camera/AI background/mobile apps, faster setup for new streamers. OBS wins on: open-source/auditable codebase, massive plugin ecosystem (4000+ plugins), broader community tutorials. For most streamers — gamers, YouTubers, churches — SplitCam is faster to set up and use. For power users who want every possible integration and don't mind the configuration time, OBS still rules."}},
-        {"@type": "Question", "name": "Can I import my OBS scenes into SplitCam?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — SplitCam has one-click OBS Project Import. Point it at your OBS scene-collection JSON file, click Import, and all your scenes, sources and transitions appear in SplitCam. You don't have to rebuild from scratch. If you decide OBS suits you better, your original OBS files are untouched — switching is reversible."}},
-        {"@type": "Question", "name": "Does SplitCam work on Mac like OBS?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — SplitCam runs natively on macOS 11+ (Big Sur and newer), including Apple Silicon (M1/M2/M3) and Intel Macs. The macOS build supports virtual camera output to Zoom/Teams/Meet/Discord/FaceTime, hardware encoding via VideoToolbox, and the full feature set including multistreaming and AI background."}},
-        {"@type": "Question", "name": "Will SplitCam use less CPU than OBS?", "acceptedAnswer": {"@type": "Answer", "text": "Generally yes when both use hardware encoding (NVENC on Nvidia, QuickSync on Intel, AMF on AMD, VideoToolbox on macOS). SplitCam auto-detects the best hardware encoder; OBS requires manual configuration. If you've been running OBS with the x264 software encoder, switching to SplitCam (or enabling hardware encoding in OBS) typically drops CPU usage from 30-60% to under 10%."}},
-        {"@type": "Question", "name": "Is SplitCam open source like OBS?", "acceptedAnswer": {"@type": "Answer", "text": "No — SplitCam is proprietary closed-source freeware. OBS Studio is open source under GPLv2. If open-source/auditable code is a hard requirement (corporate policy, security review, contribution model), stick with OBS or look at Meld Studio. SplitCam is free as in beer, not free as in speech."}},
-        {"@type": "Question", "name": "Does SplitCam have plugins like OBS?", "acceptedAnswer": {"@type": "Answer", "text": "SplitCam has a smaller plugin ecosystem than OBS (which has 4000+ community plugins). However, most plugins people install in OBS are for features SplitCam already includes natively: multistreaming, virtual camera, NDI, AI background, browser source, beauty filters, replay buffer. If you don't need OBS-specific niche plugins, you may not need plugins at all in SplitCam."}}
+        {
+          "@type": "Question",
+          "name": "What is a good free alternative to OBS Studio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SplitCam is a free OBS alternative that's easier to set up. It ships with multistreaming, AI background removal, beauty filters, virtual camera and mobile apps built-in — features that OBS requires plugins for. SplitCam also imports your existing OBS scene collections in one click, so switching is non-destructive. Other free alternatives: Streamlabs Desktop (fork of OBS, with overlays/widgets), XSplit Broadcaster (free tier with watermark), Meld Studio (newer, Mac-focused)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do people look for an OBS alternative?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common reasons: (1) OBS has a learning curve — too many menus for casual streamers. (2) OBS doesn't have built-in multistreaming, AI background or beauty filters — you install separate plugins for each. (3) Plugins need maintenance after every OBS update. (4) OBS has no mobile apps — you can't stream from your phone or use your phone as a second camera. (5) High CPU usage when using software (x264) encoder on older machines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SplitCam better than OBS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Better in different ways — and worse in others. SplitCam wins on: simpler UI, built-in multistreaming/virtual camera/AI background/mobile apps, faster setup for new streamers. OBS wins on: open-source/auditable codebase, massive plugin ecosystem (4000+ plugins), broader community tutorials. For most streamers — gamers, YouTubers, churches — SplitCam is faster to set up and use. For power users who want every possible integration and don't mind the configuration time, OBS still rules."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I import my OBS scenes into SplitCam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — SplitCam has one-click OBS Project Import. Point it at your OBS scene-collection JSON file, click Import, and all your scenes, sources and transitions appear in SplitCam. You don't have to rebuild from scratch. If you decide OBS suits you better, your original OBS files are untouched — switching is reversible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SplitCam work on Mac like OBS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — SplitCam runs natively on macOS 11+ (Big Sur and newer), including Apple Silicon (M1/M2/M3) and Intel Macs. The macOS build supports virtual camera output to Zoom/Teams/Meet/Discord/FaceTime, hardware encoding via VideoToolbox, and the full feature set including multistreaming and AI background."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will SplitCam use less CPU than OBS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Generally yes when both use hardware encoding (NVENC on Nvidia, QuickSync on Intel, AMF on AMD, VideoToolbox on macOS). SplitCam auto-detects the best hardware encoder; OBS requires manual configuration. If you've been running OBS with the x264 software encoder, switching to SplitCam (or enabling hardware encoding in OBS) typically drops CPU usage from 30-60% to under 10%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SplitCam open source like OBS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — SplitCam is proprietary closed-source freeware. OBS Studio is open source under GPLv2. If open-source/auditable code is a hard requirement (corporate policy, security review, contribution model), stick with OBS or look at Meld Studio. SplitCam is free as in beer, not free as in speech."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SplitCam have plugins like OBS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SplitCam has a smaller plugin ecosystem than OBS (which has 4000+ community plugins). However, most plugins people install in OBS are for features SplitCam already includes natively: multistreaming, virtual camera, NDI, AI background, browser source, beauty filters, replay buffer. If you don't need OBS-specific niche plugins, you may not need plugins at all in SplitCam."
+          }
+        }
       ]
     }
   ]

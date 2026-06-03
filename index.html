@@ -65,7 +65,9 @@
       "url": "https://splitcam.com/",
       "name": "SplitCam",
       "description": "Free live multi-streaming studio software for Windows, macOS, iOS and Android.",
-      "publisher": { "@id": "https://splitcam.com/#organization" },
+      "publisher": {
+        "@id": "https://splitcam.com/#organization"
+      },
       "inLanguage": "en"
     },
     {
@@ -77,16 +79,14 @@
       "operatingSystem": "Windows, macOS, iOS, Android",
       "url": "https://splitcam.com/",
       "downloadUrl": "https://splitcam.com/download",
-      "publisher": { "@id": "https://splitcam.com/#organization" },
+      "publisher": {
+        "@id": "https://splitcam.com/#organization"
+      },
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.6", "bestRating": "5"
       },
       "softwareVersion": "10.9.2",
       "datePublished": "2003-01-01",
@@ -108,42 +108,66 @@
         {
           "@type": "Question",
           "name": "Is SplitCam really free?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free for personal and commercial use. No watermark, no time limit, no upsell to a \"pro\" version. Every feature is unlocked from day one." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — completely free for personal and commercial use. No watermark, no time limit, no upsell to a \"pro\" version. Every feature is unlocked from day one."
+          }
         },
         {
           "@type": "Question",
           "name": "What operating systems does it run on?",
-          "acceptedAnswer": { "@type": "Answer", "text": "SplitCam is available for Windows 10/11, macOS 11+, iOS 13+ (iPhone & iPad), and Android 8+. The Download button auto-detects your OS." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SplitCam is available for Windows 10/11, macOS 11+, iOS 13+ (iPhone & iPad), and Android 8+. The Download button auto-detects your OS."
+          }
         },
         {
           "@type": "Question",
           "name": "Can I import my OBS Studio scenes?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes — SplitCam imports OBS scene collections in one click. All your sources, scenes, transitions and hotkeys carry over without rebuilding." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — SplitCam imports OBS scene collections in one click. All your sources, scenes, transitions and hotkeys carry over without rebuilding."
+          }
         },
         {
           "@type": "Question",
           "name": "How many platforms can I stream to simultaneously?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Up to 8 destinations comfortably; technically unlimited as long as your CPU/GPU and upload bandwidth handle the combined load. SplitCam sends streams peer-to-peer directly from your machine to each platform — no cloud middleman, no third-party server in the loop. Built-in upload speed test confirms your connection before going live." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Up to 8 destinations comfortably; technically unlimited as long as your CPU/GPU and upload bandwidth handle the combined load. SplitCam sends streams peer-to-peer directly from your machine to each platform — no cloud middleman, no third-party server in the loop. Built-in upload speed test confirms your connection before going live."
+          }
         },
         {
           "@type": "Question",
           "name": "Will SplitCam slow down my games?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No — SplitCam uses hardware encoders (NVENC for Nvidia, QuickSync for Intel, AMF for AMD) by default. Encoding runs on dedicated GPU silicon, leaving your CPU and main GPU cores free for the game. Most users see 0–3% FPS impact." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — SplitCam uses hardware encoders (NVENC for Nvidia, QuickSync for Intel, AMF for AMD) by default. Encoding runs on dedicated GPU silicon, leaving your CPU and main GPU cores free for the game. Most users see 0–3% FPS impact."
+          }
         },
         {
           "@type": "Question",
           "name": "Can I use SplitCam as a virtual camera in Zoom/Teams?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes — SplitCam exposes your entire stream (with scenes, effects, overlays, AI background removal) as a virtual webcam in Zoom, Microsoft Teams, Google Meet, Discord, and 60+ other apps. Works in both portrait (9:16) and landscape (16:9) modes." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — SplitCam exposes your entire stream (with scenes, effects, overlays, AI background removal) as a virtual webcam in Zoom, Microsoft Teams, Google Meet, Discord, and 60+ other apps. Works in both portrait (9:16) and landscape (16:9) modes."
+          }
         },
         {
           "@type": "Question",
           "name": "What hardware do I need?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Minimum: Intel Core i3 / AMD Ryzen 3, 4GB RAM, integrated graphics. Recommended for game streaming: Intel Core i5+ / AMD Ryzen 5+, 8GB RAM, dedicated GPU with NVENC/AMF support. Runs smoothly on older laptops too." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Minimum: Intel Core i3 / AMD Ryzen 3, 4GB RAM, integrated graphics. Recommended for game streaming: Intel Core i5+ / AMD Ryzen 5+, 8GB RAM, dedicated GPU with NVENC/AMF support. Runs smoothly on older laptops too."
+          }
         },
         {
           "@type": "Question",
           "name": "Does SplitCam collect my data?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Your scenes, recordings and stream settings stay on your machine. SplitCam doesn't upload anything to the cloud unless you explicitly enable Cloud Projects to sync settings between devices." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your scenes, recordings and stream settings stay on your machine. SplitCam doesn't upload anything to the cloud unless you explicitly enable Cloud Projects to sync settings between devices."
+          }
         }
       ]
     }
@@ -245,7 +269,7 @@ nav {
 .rating-chip:hover { background: rgba(255,255,255,.06); border-color: var(--app-border2); }
 .rating-chip .stars { position: relative; display: inline-block; font-size: 11px; line-height: 1; color: #46465c; }
 .rating-chip .stars::before { content: "★★★★★"; }
-.rating-chip .stars-on { position: absolute; left: 0; top: 0; width: 92%; overflow: hidden; white-space: nowrap; color: #FFB400; text-shadow: 0 0 8px rgba(255,180,0,.35); }
+.rating-chip .stars-on { position: absolute; left: 0; top: 0; width: 94%; overflow: hidden; white-space: nowrap; color: #FFB400; text-shadow: 0 0 8px rgba(255,180,0,.35); }
 .rating-chip .stars-on::before { content: "★★★★★"; }
 .rating-chip .rating-text { font-size: 11.5px; color: var(--text-sub); font-weight: 500; letter-spacing: .2px; }
 .rating-chip .rating-text strong { color: var(--text); font-weight: 700; }
@@ -774,7 +798,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <div>
       <div class="hero-meta">
         <div class="pill"><div class="pill-dot"></div><span class="pill-text">Live Multi-Streaming Studio</span></div>
-        <span class="rating-chip"><span class="stars" aria-label="4.6 out of 5 stars"><span class="stars-on"></span></span><span class="rating-text"><strong>4.6</strong> · Microsoft Store</span></span>
+        <span class="rating-chip"><span class="stars" aria-label="4.7 out of 5 stars"><span class="stars-on"></span></span><span class="rating-text"><strong>4.7</strong> · 357 reviews</span></span>
       </div>
       <h1 class="hero-title"><span class="h1-promise">Go live everywhere.</span><br>Your free <span class="blue">streaming software</span><br>for <span class="hero-cyc" data-cyc>creators.</span></h1>
       <p class="hero-desc"><strong style="color:var(--text);font-weight:600">Free streaming software with a built-in virtual camera.</strong> Mix scenes, switch sources and broadcast live to Twitch, YouTube, Facebook, Kick + more — all from one desktop app. Free forever, no watermark.</p>
@@ -835,7 +859,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       <div class="stat-box"><div class="stat-n">2003</div><div class="stat-l">In development since</div></div>
       <div class="stat-box"><div class="stat-n live" id="streams-counter">25,001,285</div><div class="stat-l"><span class="live-dot"></span>Streams delivered</div></div>
       <div class="stat-box"><div class="stat-n">84<span class="u">+</span></div><div class="stat-l">Stream destinations</div></div>
-      <div class="stat-box"><div class="stat-n">4.6<span class="u">★</span></div><div class="stat-l">Microsoft Store rating</div></div>
+      <div class="stat-box"><div class="stat-n">4.7<span class="u">★</span></div><div class="stat-l">357 user reviews</div></div>
     </div>
   </div>
 </div>
