@@ -118,8 +118,13 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
    direct**.
 5. iOS belongs in the platforms list (Win · macOS · iOS · Android).
 6. **Skype is dead** (Microsoft retired it May 2025) — never mention it as live.
-7. CNET 4.5/357 rating is UNVERIFIED — still in Schema.org/Hero; user hasn't
-   decided to remove. Real ratings: Softonic 4.7, UpdateStar 4.0, G2.
+7. Rating = **4.7 / 357 reviews**, shown ONLY as a visible trust signal
+   (homepage hero chip + stats box). **Never put it back into Schema.org**
+   (`aggregateRating` was deliberately stripped from every page's JSON-LD
+   so Google gets no review-snippet markup — avoids a structured-data
+   manual action on a self-asserted rating). Real source ratings:
+   Softonic 4.7, UpdateStar 4.0, G2. Don't add `aggregateRating` /
+   `ratingValue` / `Review` markup to any indexed page.
 8. LIVE badges blink (badge opacity + red dot pulse).
 9. Each page needs the full favicon set + Schema.org (≥ BreadcrumbList +
    SoftwareApplication; bigger pages add HowTo + FAQPage).
