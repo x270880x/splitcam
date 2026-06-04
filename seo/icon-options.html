@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Icon options — round 2</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#141420;color:#eeeeff;font-family:system-ui,sans-serif;padding:40px;line-height:1.5}
+h1{font-size:22px;margin-bottom:6px}
+.sub{color:#9090bb;font-size:14px;margin-bottom:32px}
+.row{display:grid;grid-template-columns:230px repeat(3,1fr);gap:16px;align-items:center;padding:20px 0;border-top:1px solid rgba(255,255,255,.08)}
+.feat{font-weight:700;font-size:15px}
+.feat small{display:block;color:#9090bb;font-weight:400;font-size:12px;margin-top:3px}
+.opt{display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px;background:#1c1c2e;border:1px solid rgba(255,255,255,.08);border-radius:14px}
+.ico{display:inline-flex;align-items:center;justify-content:center;width:88px;height:88px;border-radius:18px;background:rgba(40,120,252,.13);color:#2878fc}
+.ico svg{width:48px;height:48px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.lbl{font-size:12px;color:#cdcdf0;font-family:'Geist Mono',monospace}
+.tag{font-size:11px;color:#50506a}
+.head{display:grid;grid-template-columns:230px repeat(3,1fr);gap:16px;font-size:11px;color:#50506a;text-transform:uppercase;letter-spacing:.5px;padding-bottom:8px}
+.note{color:#5ee572;font-size:13px;margin-bottom:18px}
+</style></head><body>
+<h1>Icon options — round 2</h1>
+<p class="sub">Новые варианты для рядов 1, 2, 4, 5. Скажи набор, напр. «1D, 2F, 4E, 5D».</p>
+<p class="note">✓ Зафиксировано: 3 = monitor-smartphone, 6 = globe</p>
+<div class="head"><div>Feature</div><div>D</div><div>E</div><div>F</div></div>
+
+<!-- 1 -->
+<div class="row">
+  <div class="feat">1. Direct from your machine<small>peer-to-peer, no cloud</small></div>
+  <div class="opt"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg></span><span class="lbl">radio</span><span class="tag">direct broadcast</span></div>
+  <div class="opt"><span class="ico"><svg viewBox="0 0 24 24"><path d="M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/><path d="M2 12a9 9 0 0 1 8 8"/><path d="M2 16a5 5 0 0 1 4 4"/><line x1="2" x2="2.01" y1="20" y2="20"/></svg></span><span class="lbl">cast</span><span class="tag">output</span></div>
+  <div class="opt"><span class="ico"><svg viewBox="0 0 24 24"><path d="m9 10 3-3 3 3"/><path d="M12 13V7"/><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/></svg></span><span class="lbl">monitor-up</span><span class="tag">send out</span></div>
+</div>
+
+<!-- 2 -->
+<div class="row">
+  <div class="feat">2. Per-platform bitrate<small>tune each independently</small></div>
+  <div class="opt"><span class="ico"><svg viewBox="0 0 24 24"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 4v16"/></svg></span><span class="lbl">signal</span><span class="tag">rising bars</span></div>
+  <div class="opt"><span class="ico"><svg viewBox="0 0 24 24"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg></span><span class="lbl">settings-2</span><span class="tag">per-channel knobs</span></div>
+  <div class="opt"><span class="ico"><svg viewBox="0 0 24 24"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v13"/><path d="M22 10v3"/></svg></span><span class="lbl">audio-lines</span><span class="tag">levels</span></div>
+</div>
+
+<!-- 4 -->
+<div class="row">
+  <div class="feat">4. Upload Speed Test built-in<small>measure real upload</small></div>
+  <div class="opt"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></span><span class="lbl">zap</span><span class="tag">speed</span></div>
+  <div class="opt"><span class="ico"><svg viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg></span><span class="lbl">timer</span><span class="tag">test run</span></div>
+  <div class="opt"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4"/><path d="M12 16V8"/></svg></span><span class="lbl">circle-arrow-up</span><span class="tag">upload</span></div>
+</div>
+
+<!-- 5 -->
+<div class="row">
+  <div class="feat">5. Auto-reconnect on drops<small>reconnect a dropped platform</small></div>
+  <div class="opt"><span class="ico"><svg viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span><span class="lbl">repeat</span><span class="tag">retry loop</span></div>
+  <div class="opt"><span class="ico"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span><span class="lbl">link</span><span class="tag">re-link</span></div>
+  <div class="opt"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg></span><span class="lbl">life-buoy</span><span class="tag">recovery</span></div>
+</div>
+
+</body></html>
