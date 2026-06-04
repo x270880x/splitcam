@@ -185,7 +185,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 @keyframes orbpulse{0%{width:96px;height:96px;opacity:.7}100%{width:280px;height:280px;opacity:0}}
 @keyframes orbblink{0%,100%{opacity:1}50%{opacity:.25}}
 @keyframes orbfloat{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 9px))}}
-@media(prefers-reduced-motion:reduce){.orb,.ring,.orb-chip,.orb-chip i,.orb-core .dot{animation:none!important}}
+/* center avatar (face-tracking vibe) */
+.av{position:absolute;inset:50% auto auto 50%;z-index:3;width:60px;height:64px;margin:-32px 0 0 -30px;animation:avsway 4s ease-in-out infinite;transform-origin:50% 70%}
+.av-ear{position:absolute;top:0;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-bottom:17px solid #ec4899}
+.av-ear.l{left:4px;transform:rotate(-20deg)}.av-ear.r{right:4px;transform:rotate(20deg)}
+.av-ear::after{content:"";position:absolute;left:-5px;top:7px;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:9px solid #ffc2e0}
+.av-face{position:absolute;left:4px;top:10px;width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 50% 38%,#fff,#ffe1f0);box-shadow:inset 0 -5px 9px rgba(236,72,153,.28)}
+.av-eye{position:absolute;top:20px;width:8px;height:11px;background:#2b2440;border-radius:50%;animation:avblink 4s infinite}
+.av-eye.l{left:11px}.av-eye.r{right:11px}
+.av-eye::after{content:"";position:absolute;top:2px;left:2px;width:3px;height:3px;background:#fff;border-radius:50%}
+.av-blush{position:absolute;top:28px;width:7px;height:4px;background:rgba(236,72,153,.5);border-radius:50%}
+.av-blush.l{left:5px}.av-blush.r{right:5px}
+.av-mouth{position:absolute;top:33px;left:50%;transform:translateX(-50%);width:10px;height:5px;border:2px solid #2b2440;border-top:0;border-radius:0 0 10px 10px}
+@keyframes avblink{0%,90%,100%{transform:scaleY(1)}95%{transform:scaleY(.12)}}
+@keyframes avsway{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(5deg) translateY(-2px)}}
+@media(prefers-reduced-motion:reduce){.orb,.ring,.orb-chip,.orb-chip i,.av,.av-eye{animation:none!important}}
 .eyebrow{display:inline-block;padding:5px 12px;background:rgba(236,72,153,.13);color:#f472b6;font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:18px;position:relative;z-index:1}
 .h1{font-size:clamp(34px,4.5vw,52px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px;max-width:780px;position:relative;z-index:1}
 .h1 .accent{background:linear-gradient(135deg,#ec4899,#9c5bff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -357,7 +371,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <div class="orb-wrap">
       <div class="ring"></div><div class="ring"></div><div class="ring"></div>
       <div class="orb"></div>
-      <div class="orb-core"><span class="dot"></span>LIVE</div>
+      <div class="av"><span class="av-ear l"></span><span class="av-ear r"></span><div class="av-face"><span class="av-eye l"></span><span class="av-eye r"></span><span class="av-blush l"></span><span class="av-blush r"></span><span class="av-mouth"></span></div></div>
       <div class="orb-chip p1"><i></i>Twitch</div>
       <div class="orb-chip p2" style="animation-delay:.5s"><i></i>YouTube</div>
       <div class="orb-chip p3" style="animation-delay:1s"><i></i>TikTok</div>
