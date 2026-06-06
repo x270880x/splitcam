@@ -165,12 +165,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* HERO */
 .hero{padding:32px 40px 60px;max-width:900px;margin:0 auto;position:relative;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:36px;align-items:center}
-.hero-glow{position:absolute;top:50%;right:150px;width:520px;height:520px;transform:translate(50%,-50%);background:radial-gradient(circle,rgba(236,72,153,.22),rgba(156,91,255,.10) 40%,transparent 72%);pointer-events:none;z-index:0}
+.hero-glow{position:absolute;top:-135px;right:-167px;width:560px;height:540px;background:radial-gradient(ellipse 58% 58% at 40% 62%,rgba(236,72,153,.24),rgba(156,91,255,.10) 42%,transparent 72%);pointer-events:none;z-index:0}
 .hero-copy{position:relative;z-index:1;min-width:0}
 .hero .h1{max-width:none}
 .hero .sub{max-width:none}
 /* Hero animated orb */
-.hero-visual{position:relative;z-index:1;display:flex;justify-content:center;align-items:center}
+.hero-visual{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;transform:translate(76px,-113px)}
 .orb-wrap{position:relative;width:280px;height:280px;flex:0 0 auto}
 .orb{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.13),transparent 60%),conic-gradient(from 0deg,#ec4899,#9c5bff,#2878fc,#ec4899);animation:orbspin 6s linear infinite;box-shadow:0 0 50px -6px rgba(236,72,153,.7)}
 .orb::after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--app-base)}
@@ -294,6 +294,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 .footer-inner a:hover{color:var(--text)}
 .footer-links{display:flex;gap:24px;flex-wrap:wrap}
 
+@media(min-width:901px) and (max-width:1119px){
+  .hero-visual{transform:translate(4px,-100px)}
+  .hero-glow{top:-122px;right:-92px}
+}
 @media(max-width:900px){
   nav{padding:0 16px}
   .nav-links{display:none}
@@ -301,8 +305,8 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   .breadcrumbs{padding:80px 20px 0}
   .hero,.section,.related{padding-left:20px;padding-right:20px}
   .hero{grid-template-columns:1fr;gap:8px}
-  .hero-visual{order:2;margin-top:8px}
-  .hero-glow{top:auto;bottom:30px;right:auto;left:50%;width:380px;height:380px;transform:translateX(-50%)}
+  .hero-visual{order:2;margin-top:8px;transform:none}
+  .hero-glow{top:auto;bottom:30px;right:auto;left:50%;width:380px;height:380px;transform:translateX(-50%);background:radial-gradient(circle,rgba(236,72,153,.22),rgba(156,91,255,.10) 40%,transparent 72%)}
   .cta-block{padding:48px 20px}
   .tips-grid,.related-grid{grid-template-columns:1fr}
   .step{flex-direction:column;gap:12px}
