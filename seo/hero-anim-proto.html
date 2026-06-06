@@ -85,7 +85,10 @@ h2.lbl{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#7a7a9
 .ytbtn{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);z-index:3;width:54px;height:38px;border-radius:11px;background:#ff0000;box-shadow:0 0 28px -4px #ff0000;display:flex;align-items:center;justify-content:center;animation:ytpulse 2.2s ease-in-out infinite}
 .ytbtn::after{content:"";border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
 @keyframes ytpulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.07)}}
-.cic{font-size:13px;line-height:1}
+.cic{font-size:15px;line-height:1}
+.chip5{font-size:13.5px;padding:8px 14px}
+.inward .ring{animation-name:orbpulsein;animation-timing-function:ease-in}
+@keyframes orbpulsein{0%{width:268px;height:268px;opacity:0}18%{opacity:.55}100%{width:86px;height:86px;opacity:0}}
 </style></head>
 <body>
 <div style="max-width:720px"><h1 style="font-size:26px;margin-bottom:6px">Hero — 3 концепта анимации справа от текста</h1>
@@ -150,7 +153,7 @@ h2.lbl{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#7a7a9
 <h2 class="lbl">G — youtubers: orb + play-кнопка в центре (красный акцент)</h2>
 <p class="cap">Тот же орб, но тема YouTube: красный градиент, в центре пульсирующая красная play-кнопка ▶, вокруг площадки (YouTube · Twitch · TikTok · Facebook · X). Единый язык с vtuber-страницей, но «ютубный».</p>
 <div class="row"><div class="txt"><h1>How to <span class="hl" style="background:linear-gradient(90deg,#ff2d2d,#ff7a7a);-webkit-background-clip:text;background-clip:text;color:transparent">live stream</span> on YouTube</h1><p>Free software, 5-minute setup.</p></div>
-<div class="stage" style="--accent:#ff3b3b;--accent2:#ff8a8a"><div class="orb-wrap">
+<div class="stage" style="--accent:#ff3b3b;--accent2:#ff8a8a"><div class="orb-wrap inward">
 <div class="ring"></div><div class="ring"></div><div class="ring"></div>
 <div class="orb"></div>
 <div class="ytbtn"></div>

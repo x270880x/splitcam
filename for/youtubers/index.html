@@ -279,15 +279,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .orb-wrap{position:relative;width:280px;height:280px;flex:0 0 auto}
 .orb{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.13),transparent 60%),conic-gradient(from 0deg,#ff3b3b,#ff7a7a,#2878fc,#ff3b3b);animation:orbspin 6s linear infinite;box-shadow:0 0 50px -6px rgba(255,59,59,.7)}
 .orb::after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--app-base)}
-.ring{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);border:1.5px solid #ff3b3b;border-radius:50%;opacity:0;animation:orbpulse 3s ease-out infinite}
+.ring{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);border:1.5px solid #ff3b3b;border-radius:50%;opacity:0;animation:orbpulse 3s ease-in infinite}
 .ring:nth-child(2){animation-delay:1s}.ring:nth-child(3){animation-delay:2s}
-.orb-chip{position:absolute;background:#1d1d2c;border:1px solid #303046;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600;display:flex;gap:6px;align-items:center;white-space:nowrap;box-shadow:0 6px 20px -8px #000;transform:translate(-50%,-50%);animation:orbfloat 5s ease-in-out infinite}
-.orb-chip .cic{font-size:13px;line-height:1}
+.orb-chip{position:absolute;background:#1d1d2c;border:1px solid #36364c;border-radius:999px;padding:8px 14px;font-size:13.5px;font-weight:600;display:flex;gap:7px;align-items:center;white-space:nowrap;box-shadow:0 6px 20px -8px #000;transform:translate(-50%,-50%);animation:orbfloat 5s ease-in-out infinite}
+.orb-chip .cic{font-size:16px;line-height:1}
 .orb-chip.p1{left:140px;top:8px}.orb-chip.p2{left:266px;top:99px}.orb-chip.p3{left:218px;top:247px}.orb-chip.p4{left:62px;top:247px}.orb-chip.p5{left:14px;top:99px}
 .ytbtn{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);z-index:3;width:54px;height:38px;border-radius:11px;background:#ff0000;box-shadow:0 0 28px -4px #ff0000;display:flex;align-items:center;justify-content:center;animation:ytpulse 2.2s ease-in-out infinite}
 .ytbtn::after{content:"";border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
 @keyframes orbspin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-@keyframes orbpulse{0%{width:96px;height:96px;opacity:.7}100%{width:280px;height:280px;opacity:0}}
+@keyframes orbpulse{0%{width:268px;height:268px;opacity:0}18%{opacity:.55}100%{width:86px;height:86px;opacity:0}}
 @keyframes orbfloat{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 9px))}}
 @keyframes ytpulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.07)}}
 @media(prefers-reduced-motion:reduce){.orb,.ring,.orb-chip,.ytbtn{animation:none!important}}
