@@ -81,6 +81,11 @@ h2.lbl{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#7a7a9
 .av-mouth{position:absolute;top:33px;left:50%;transform:translateX(-50%);width:10px;height:5px;border:2px solid #2b2440;border-top:0;border-radius:0 0 10px 10px}
 @keyframes avblink{0%,90%,100%{transform:scaleY(1)}95%{transform:scaleY(.12)}}
 @keyframes avsway{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(5deg) translateY(-2px)}}
+/* youtube play button center */
+.ytbtn{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);z-index:3;width:54px;height:38px;border-radius:11px;background:#ff0000;box-shadow:0 0 28px -4px #ff0000;display:flex;align-items:center;justify-content:center;animation:ytpulse 2.2s ease-in-out infinite}
+.ytbtn::after{content:"";border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+@keyframes ytpulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.07)}}
+.cic{font-size:13px;line-height:1}
 </style></head>
 <body>
 <div style="max-width:720px"><h1 style="font-size:26px;margin-bottom:6px">Hero — 3 концепта анимации справа от текста</h1>
@@ -142,6 +147,16 @@ h2.lbl{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#7a7a9
 <div class="chip chip5 p1"><i></i>Twitch</div><div class="chip chip5 p2" style="animation-delay:.5s"><i></i>YouTube</div><div class="chip chip5 p3" style="animation-delay:1s"><i></i>TikTok</div><div class="chip chip5 p4" style="animation-delay:1.5s"><i></i>Bilibili</div><div class="chip chip5 p5" style="animation-delay:2s"><i></i>X</div>
 </div></div></div>
 
+<h2 class="lbl">G — youtubers: orb + play-кнопка в центре (красный акцент)</h2>
+<p class="cap">Тот же орб, но тема YouTube: красный градиент, в центре пульсирующая красная play-кнопка ▶, вокруг площадки (YouTube · Twitch · TikTok · Facebook · X). Единый язык с vtuber-страницей, но «ютубный».</p>
+<div class="row"><div class="txt"><h1>How to <span class="hl" style="background:linear-gradient(90deg,#ff2d2d,#ff7a7a);-webkit-background-clip:text;background-clip:text;color:transparent">live stream</span> on YouTube</h1><p>Free software, 5-minute setup.</p></div>
+<div class="stage" style="--accent:#ff3b3b;--accent2:#ff8a8a"><div class="orb-wrap">
+<div class="ring"></div><div class="ring"></div><div class="ring"></div>
+<div class="orb"></div>
+<div class="ytbtn"></div>
+<div class="chip chip5 p1"><span class="cic">🎥</span>Camera</div><div class="chip chip5 p2" style="animation-delay:.5s"><span class="cic">🖥️</span>Screen</div><div class="chip chip5 p3" style="animation-delay:1s"><span class="cic">🎮</span>Game</div><div class="chip chip5 p4" style="animation-delay:1.5s"><span class="cic">📱</span>Phone</div><div class="chip chip5 p5" style="animation-delay:2s"><span class="cic">🎬</span>Media</div>
+</div></div></div>
+
 <script>
 const _p=new URLSearchParams(location.search);
 const only=_p.get('only');
@@ -156,7 +171,7 @@ if(freeze!==null){
 if(only){
   document.querySelectorAll('.lbl,.cap,h1').forEach(e=>{if(!e.closest('.txt'))e.style.display='none'});
   const rows=document.querySelectorAll('.row');
-  const idx={A:0,B:1,C:2,D:3,E:4,F:5}[only];
+  const idx={A:0,B:1,C:2,D:3,E:4,F:5,G:6}[only];
   rows.forEach((r,i)=>{if(i!==idx)r.style.display='none';});
   document.body.style.padding='24px';
 }

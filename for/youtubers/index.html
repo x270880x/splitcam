@@ -269,8 +269,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .breadcrumbs .sep{margin:0 8px}
 
 /* HERO */
-.hero{padding:32px 40px 60px;max-width:900px;margin:0 auto;position:relative;overflow:hidden}
-.hero-glow{position:absolute;top:-50px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(40,120,252,.15),transparent 70%);pointer-events:none;z-index:0}
+.hero{padding:32px 40px 60px;max-width:900px;margin:0 auto;position:relative;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:36px;align-items:center}
+.hero-copy{position:relative;z-index:1;min-width:0}
+.hero .h1{max-width:none}
+.hero .sub{max-width:none}
+.hero-glow{position:absolute;top:-135px;right:-129px;width:560px;height:540px;background:radial-gradient(ellipse 58% 58% at 40% 62%,rgba(255,59,59,.22),rgba(40,120,252,.10) 42%,transparent 72%);pointer-events:none;z-index:0}
+/* Hero animated orb (YouTube theme) */
+.hero-visual{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;transform:translate(38px,-113px)}
+.orb-wrap{position:relative;width:280px;height:280px;flex:0 0 auto}
+.orb{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.13),transparent 60%),conic-gradient(from 0deg,#ff3b3b,#ff7a7a,#2878fc,#ff3b3b);animation:orbspin 6s linear infinite;box-shadow:0 0 50px -6px rgba(255,59,59,.7)}
+.orb::after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--app-base)}
+.ring{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);border:1.5px solid #ff3b3b;border-radius:50%;opacity:0;animation:orbpulse 3s ease-out infinite}
+.ring:nth-child(2){animation-delay:1s}.ring:nth-child(3){animation-delay:2s}
+.orb-chip{position:absolute;background:#1d1d2c;border:1px solid #303046;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600;display:flex;gap:6px;align-items:center;white-space:nowrap;box-shadow:0 6px 20px -8px #000;transform:translate(-50%,-50%);animation:orbfloat 5s ease-in-out infinite}
+.orb-chip .cic{font-size:13px;line-height:1}
+.orb-chip.p1{left:140px;top:8px}.orb-chip.p2{left:266px;top:99px}.orb-chip.p3{left:218px;top:247px}.orb-chip.p4{left:62px;top:247px}.orb-chip.p5{left:14px;top:99px}
+.ytbtn{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);z-index:3;width:54px;height:38px;border-radius:11px;background:#ff0000;box-shadow:0 0 28px -4px #ff0000;display:flex;align-items:center;justify-content:center;animation:ytpulse 2.2s ease-in-out infinite}
+.ytbtn::after{content:"";border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+@keyframes orbspin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes orbpulse{0%{width:96px;height:96px;opacity:.7}100%{width:280px;height:280px;opacity:0}}
+@keyframes orbfloat{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 9px))}}
+@keyframes ytpulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.07)}}
+@media(prefers-reduced-motion:reduce){.orb,.ring,.orb-chip,.ytbtn{animation:none!important}}
 .eyebrow{display:inline-block;padding:5px 12px;background:var(--blue-dim);color:var(--blue);font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:18px;position:relative;z-index:1}
 .h1{font-size:clamp(34px,4.5vw,52px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px;max-width:780px;position:relative;z-index:1}
 .h1 .accent{background:linear-gradient(135deg,#ff0000,#ff5454);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -365,12 +385,19 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 .footer-inner a:hover{color:var(--text)}
 .footer-links{display:flex;gap:24px;flex-wrap:wrap}
 
+@media(min-width:901px) and (max-width:1119px){
+  .hero-visual{transform:translate(4px,-100px)}
+  .hero-glow{top:-122px;right:-92px}
+}
 @media(max-width:900px){
   nav{padding:0 16px}
   .nav-links{display:none}
   .nav-burger{display:inline-flex}
   .breadcrumbs{padding:80px 20px 0}
   .hero,.section,.related{padding-left:20px;padding-right:20px}
+  .hero{grid-template-columns:1fr;gap:8px}
+  .hero-visual{order:2;margin-top:8px;transform:none}
+  .hero-glow{top:auto;bottom:30px;right:auto;left:50%;width:380px;height:380px;transform:translateX(-50%);background:radial-gradient(circle,rgba(255,59,59,.22),rgba(40,120,252,.10) 40%,transparent 72%)}
   .cta-block{padding:48px 20px}
   .tips-grid,.related-grid{grid-template-columns:1fr}
   .step{flex-direction:column;gap:12px}
@@ -421,18 +448,32 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-glow"></div>
-  <span class="eyebrow">For YouTubers</span>
-  <h1 class="h1">How to <span class="accent">live stream on YouTube</span> — free software, 5-minute setup.</h1>
-  <p class="sub">Complete step-by-step guide. Use free <strong style="color:var(--text)">SplitCam</strong> as your encoder — no signup, no card, no watermark on your stream. Add scenes, switch sources, broadcast in 1080p 60fps. <strong style="color:var(--text)">Bonus:</strong> stream to YouTube + Twitch simultaneously from one encode.</p>
-  <div class="hero-cta">
-    <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
-    <a href="#steps" class="btn-ghost btn-lg">Skip to steps ↓</a>
+  <div class="hero-copy">
+    <span class="eyebrow">For YouTubers</span>
+    <h1 class="h1">How to <span class="accent">live stream on YouTube</span> — free software, 5-minute setup.</h1>
+    <p class="sub">Complete step-by-step guide. Use free <strong style="color:var(--text)">SplitCam</strong> as your encoder — no signup, no card, no watermark on your stream. Add scenes, switch sources, broadcast in 1080p 60fps. <strong style="color:var(--text)">Bonus:</strong> stream to YouTube + Twitch simultaneously from one encode.</p>
+    <div class="hero-cta">
+      <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
+      <a href="#steps" class="btn-ghost btn-lg">Skip to steps ↓</a>
+    </div>
+    <div class="hero-badges">
+      <span class="h-badge">Free forever</span>
+      <span class="h-badge">No watermark</span>
+      <span class="h-badge">Windows · macOS · iOS · Android</span>
+      <span class="h-badge">1080p 60fps · hardware encoding</span>
+    </div>
   </div>
-  <div class="hero-badges">
-    <span class="h-badge">Free forever</span>
-    <span class="h-badge">No watermark</span>
-    <span class="h-badge">Windows · macOS · iOS · Android</span>
-    <span class="h-badge">1080p 60fps · hardware encoding</span>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="orb-wrap">
+      <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+      <div class="orb"></div>
+      <div class="ytbtn"></div>
+      <div class="orb-chip p1"><span class="cic">🎥</span>Camera</div>
+      <div class="orb-chip p2" style="animation-delay:.5s"><span class="cic">🖥️</span>Screen</div>
+      <div class="orb-chip p3" style="animation-delay:1s"><span class="cic">🎮</span>Game</div>
+      <div class="orb-chip p4" style="animation-delay:1.5s"><span class="cic">📱</span>Phone</div>
+      <div class="orb-chip p5" style="animation-delay:2s"><span class="cic">🎬</span>Media</div>
+    </div>
   </div>
 </section>
 
