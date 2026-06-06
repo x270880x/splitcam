@@ -277,31 +277,49 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .breadcrumbs .sep{margin:0 8px}
 
 /* HERO */
-.hero{padding:32px 40px 60px;max-width:1180px;margin:0 auto;position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);gap:40px;align-items:center}
+.hero{padding:32px 40px 60px;max-width:1220px;margin:0 auto;position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:40px;align-items:center}
 .hero-text{position:relative;z-index:2;min-width:0}
 .hero-glow{position:absolute;top:-50px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(156,91,255,.15),transparent 70%);pointer-events:none;z-index:0}
 
-/* ORB — Sanctuary halo + broadcast ripples to FB / YouTube / website */
-.orb{position:relative;width:340px;height:340px;display:flex;align-items:center;justify-content:center;margin-left:auto;z-index:2}
-.orb-halo{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(245,180,0,.22) 0%,rgba(245,180,0,.07) 38%,transparent 65%);animation:orbHalo 4.5s ease-in-out infinite}
-.orb-core{position:absolute;width:108px;height:108px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#fff5d6 0%,#ffc757 30%,#f59000 70%,rgba(245,144,0,0) 100%);box-shadow:0 0 50px rgba(245,144,0,.55);animation:orbBreath 4.5s ease-in-out infinite;z-index:3}
-.orb-ripple{position:absolute;width:108px;height:108px;border-radius:50%;border:1.5px solid rgba(245,180,0,.55);animation:orbRipple 3s ease-out infinite;z-index:2}
-.orb-ripple.r2{animation-delay:1s}
-.orb-ripple.r3{animation-delay:2s}
-.orb-plat{position:absolute;width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:12px;font-family:'Geist Mono',monospace;border:1px solid rgba(255,255,255,.1);animation:orbPlat 3s ease-in-out infinite;z-index:4;letter-spacing:.5px}
-.orb-plat.fb{top:18px;left:50%;transform:translateX(-50%);background:#1877f2;animation-delay:.4s}
-.orb-plat.yt{bottom:30px;right:18px;background:#ff0000;animation-delay:1.4s}
-.orb-plat.web{bottom:30px;left:18px;background:var(--blue);animation-delay:2.4s}
-.orb-plat svg{width:24px;height:24px;fill:currentColor}
-@keyframes orbBreath{0%,100%{box-shadow:0 0 40px rgba(245,144,0,.45);transform:scale(1)}50%{box-shadow:0 0 70px rgba(245,144,0,.75);transform:scale(1.06)}}
-@keyframes orbHalo{0%,100%{opacity:.55;transform:scale(.95)}50%{opacity:1;transform:scale(1.08)}}
-@keyframes orbRipple{0%{transform:scale(1);opacity:.7;border-width:2px}100%{transform:scale(3.1);opacity:0;border-width:1px}}
-@keyframes orbPlat{0%,100%{box-shadow:0 0 0 0 rgba(245,180,0,.5);transform:translateY(0)}50%{box-shadow:0 0 0 10px rgba(245,180,0,0);transform:translateY(-3px)}}
-.orb-plat.fb{transform:translateX(-50%)}
-.orb-plat.fb{animation-name:orbPlatFB}
-@keyframes orbPlatFB{0%,100%{transform:translateX(-50%) translateY(0);box-shadow:0 0 0 0 rgba(245,180,0,.5)}50%{transform:translateX(-50%) translateY(-3px);box-shadow:0 0 0 10px rgba(245,180,0,0)}}
-@media (prefers-reduced-motion: reduce){.orb-core,.orb-halo,.orb-ripple,.orb-plat{animation:none}}
-@media (max-width:900px){.hero{grid-template-columns:1fr;gap:24px}.orb{margin:0 auto;width:280px;height:280px}.orb-halo{width:280px;height:280px}}
+/* TEMPLE BROADCAST — church silhouette with platforms around + streams */
+.tb{position:relative;width:480px;height:340px;margin-left:auto;z-index:2}
+.tb-label{position:absolute;top:0;left:50%;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(245,180,0,.1);border:1px solid rgba(245,180,0,.35);border-radius:99px;font-family:'Geist Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.6px;color:#ffe9a8;white-space:nowrap}
+.tb-label::before{content:"";width:7px;height:7px;border-radius:50%;background:#ef4444;animation:tbBlink 1.3s ease-in-out infinite;box-shadow:0 0 6px rgba(239,68,68,.6)}
+@keyframes tbBlink{0%,100%{opacity:1}50%{opacity:.5}}
+.tb-church{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:140px;height:170px}
+.tb-church svg{width:100%;height:100%;overflow:visible}
+.tb-church .t-body{fill:#2a2a3e;stroke:#5b9cff;stroke-width:1.5}
+.tb-church .t-roof{fill:#1c1c2e;stroke:#7ab1ff;stroke-width:1.5}
+.tb-church .t-cross{fill:#f5b400;stroke:none}
+.tb-church .t-door{fill:#0f0f18;stroke:#5b9cff;stroke-width:1}
+.tb-church .t-window{fill:#f5b400;stroke:rgba(245,180,0,.6);stroke-width:1;animation:tbWin 4s ease-in-out infinite}
+@keyframes tbWin{0%,100%{fill:#f5b400;opacity:.85}50%{fill:#ffce4a;opacity:1}}
+.tb-church-glow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:240px;height:240px;background:radial-gradient(circle,rgba(245,180,0,.22),transparent 65%);animation:tbHalo 4s ease-in-out infinite;pointer-events:none;z-index:1}
+@keyframes tbHalo{0%,100%{opacity:.6}50%{opacity:1}}
+.tb-plat{position:absolute;width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;border:1px solid rgba(255,255,255,.12);z-index:5;animation:tbPlat 4s ease-in-out infinite}
+.tb-plat svg{width:25px;height:25px;fill:currentColor}
+.tb-plat .lbl{position:absolute;top:60px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:10.5px;color:var(--text-sub);font-family:'Geist Mono',monospace;letter-spacing:.4px;text-transform:uppercase;font-weight:700}
+.tb-plat.fb{top:60px;left:14px;background:#1877f2;animation-delay:0s}
+.tb-plat.yt{top:60px;right:14px;background:#ff0000;animation-delay:1.3s}
+.tb-plat.web{bottom:14px;left:50%;background:var(--blue);animation-delay:2.6s;transform:translateX(-50%)}
+@keyframes tbPlat{0%,30%,100%{box-shadow:0 0 0 0 rgba(245,180,0,0)}5%{box-shadow:0 0 0 0 rgba(245,180,0,.5)}10%,15%{box-shadow:0 0 0 12px rgba(245,180,0,0)}}
+.tb-plat.web{animation-name:tbPlatWeb}
+@keyframes tbPlatWeb{0%,30%,100%{box-shadow:0 0 0 0 rgba(245,180,0,0);transform:translateX(-50%)}5%{box-shadow:0 0 0 0 rgba(245,180,0,.5);transform:translateX(-50%)}10%,15%{box-shadow:0 0 0 12px rgba(245,180,0,0);transform:translateX(-50%)}}
+.tb-lines{position:absolute;inset:0;pointer-events:none;z-index:1}
+.tb-lines svg{width:100%;height:100%;overflow:visible}
+.tb-lines path{fill:none;stroke:rgba(245,180,0,.4);stroke-width:1.5;stroke-dasharray:4 6;stroke-linecap:round;animation:tbDash 1.8s linear infinite}
+.tb-lines path.l2{animation-delay:.4s}
+.tb-lines path.l3{animation-delay:.8s}
+@keyframes tbDash{from{stroke-dashoffset:0}to{stroke-dashoffset:-20}}
+.tb-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 10px rgba(245,180,0,.9);z-index:3;opacity:0}
+.tb-dot.d1{animation:tbTravelFB 2.5s ease-in-out infinite}
+.tb-dot.d2{animation:tbTravelYT 2.5s ease-in-out infinite;animation-delay:.4s}
+.tb-dot.d3{animation:tbTravelWeb 2.5s ease-in-out infinite;animation-delay:.8s}
+@keyframes tbTravelFB{0%{left:50%;top:160px;opacity:0}10%{opacity:1}90%{left:42px;top:90px;opacity:1}100%{opacity:0}}
+@keyframes tbTravelYT{0%{left:50%;top:160px;opacity:0}10%{opacity:1}90%{left:418px;top:90px;opacity:1}100%{opacity:0}}
+@keyframes tbTravelWeb{0%{left:50%;top:160px;opacity:0}10%{opacity:1}90%{left:50%;top:300px;opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.tb-church .t-window,.tb-church-glow,.tb-plat,.tb-lines path,.tb-dot,.tb-label::before{animation:none}}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:24px}.tb{margin:0 auto;width:360px;height:300px}.tb-plat.fb,.tb-plat.yt{top:40px}.tb-plat.fb{left:0}.tb-plat.yt{right:0}}
 .eyebrow{display:inline-block;padding:5px 12px;background:var(--blue-dim);color:var(--blue);font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:18px;position:relative;z-index:1}
 .h1{font-size:clamp(34px,4.5vw,52px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px;max-width:780px;position:relative;z-index:1}
 .h1 .accent{background:linear-gradient(135deg,#9c5bff,#2878fc);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -477,15 +495,43 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <span class="h-badge">Windows · macOS · iOS · Android</span>
     </div>
   </div>
-  <div class="orb" aria-hidden="true">
-    <div class="orb-halo"></div>
-    <div class="orb-ripple"></div>
-    <div class="orb-ripple r2"></div>
-    <div class="orb-ripple r3"></div>
-    <div class="orb-core"></div>
-    <div class="orb-plat fb" title="Facebook Live"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></div>
-    <div class="orb-plat yt" title="YouTube Live"><svg viewBox="0 0 24 24"><path d="M23.5 6.2c-.3-1-1-1.8-2-2C19.5 3.7 12 3.7 12 3.7s-7.5 0-9.5.5c-1 .3-1.8 1-2 2C0 8.2 0 12 0 12s0 3.8.5 5.8c.3 1 1 1.8 2 2 2 .5 9.5.5 9.5.5s7.5 0 9.5-.5c1-.3 1.8-1 2-2 .5-2 .5-5.8.5-5.8s0-3.8-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></div>
-    <div class="orb-plat web" title="Church website"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8 8 0 0 1 18.92 8zM12 4.07A13.6 13.6 0 0 1 13.94 8h-3.88A13.6 13.6 0 0 1 12 4.07zM4.26 14a7.8 7.8 0 0 1 0-4h3.38a16.6 16.6 0 0 0 0 4zm.82 2h2.95a15.65 15.65 0 0 0 1.38 3.56A8 8 0 0 1 5.08 16zm2.95-8H5.08a8 8 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8zM12 19.93A13.6 13.6 0 0 1 10.06 16h3.88A13.6 13.6 0 0 1 12 19.93zM14.34 14H9.66a14.4 14.4 0 0 1 0-4h4.68a14.4 14.4 0 0 1 0 4zm.25 5.56A15.65 15.65 0 0 0 15.97 16h2.95a8 8 0 0 1-4.33 3.56zM16.36 14a16.6 16.6 0 0 0 0-4h3.38a7.8 7.8 0 0 1 0 4z"/></svg></div>
+  <div class="tb" aria-hidden="true">
+    <span class="tb-label">SUNDAY SERVICE · 10:30 AM · LIVE</span>
+    <div class="tb-lines">
+      <svg viewBox="0 0 480 340" preserveAspectRatio="none">
+        <path class="l1" d="M 240 170 Q 160 130 60 95"/>
+        <path class="l2" d="M 240 170 Q 320 130 420 95"/>
+        <path class="l3" d="M 240 200 Q 240 260 240 305"/>
+      </svg>
+    </div>
+    <div class="tb-church-glow"></div>
+    <div class="tb-church">
+      <svg viewBox="0 0 140 170">
+        <rect class="t-cross" x="65" y="0" width="10" height="32"/>
+        <rect class="t-cross" x="55" y="8" width="30" height="8"/>
+        <polygon class="t-roof" points="20,55 70,18 120,55"/>
+        <rect class="t-body" x="20" y="55" width="100" height="115" rx="2"/>
+        <path class="t-window" d="M 50 95 A 20 20 0 0 1 90 95 L 90 130 L 50 130 Z"/>
+        <path class="t-door" d="M 55 170 L 55 145 A 15 15 0 0 1 85 145 L 85 170 Z"/>
+        <rect class="t-window" x="28" y="105" width="14" height="22" rx="7"/>
+        <rect class="t-window" x="98" y="105" width="14" height="22" rx="7"/>
+      </svg>
+    </div>
+    <div class="tb-plat fb" title="Facebook Live">
+      <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+      <span class="lbl">Facebook</span>
+    </div>
+    <div class="tb-plat yt" title="YouTube Live">
+      <svg viewBox="0 0 24 24"><path d="M23.5 6.2c-.3-1-1-1.8-2-2C19.5 3.7 12 3.7 12 3.7s-7.5 0-9.5.5c-1 .3-1.8 1-2 2C0 8.2 0 12 0 12s0 3.8.5 5.8c.3 1 1 1.8 2 2 2 .5 9.5.5 9.5.5s7.5 0 9.5-.5c1-.3 1.8-1 2-2 .5-2 .5-5.8.5-5.8s0-3.8-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+      <span class="lbl">YouTube</span>
+    </div>
+    <div class="tb-plat web" title="Church website">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8 8 0 0 1 18.92 8zM12 4.07A13.6 13.6 0 0 1 13.94 8h-3.88A13.6 13.6 0 0 1 12 4.07zM4.26 14a7.8 7.8 0 0 1 0-4h3.38a16.6 16.6 0 0 0 0 4zm.82 2h2.95a15.65 15.65 0 0 0 1.38 3.56A8 8 0 0 1 5.08 16zm2.95-8H5.08a8 8 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8z"/></svg>
+      <span class="lbl">Church Web</span>
+    </div>
+    <span class="tb-dot d1"></span>
+    <span class="tb-dot d2"></span>
+    <span class="tb-dot d3"></span>
   </div>
 </section>
 
