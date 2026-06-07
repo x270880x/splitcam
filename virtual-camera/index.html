@@ -407,14 +407,14 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
 .sc-app-title .sc-app-brand{color:var(--blue);font-weight:800}
 .sc-app-shell .ms-scene-preview{max-width:100%;margin:0;border-radius:0;border:none;box-shadow:none}
 .ms-scene-preview{position:relative;border-radius:10px;overflow:hidden;background:#000;border:1px solid var(--app-border2);box-shadow:0 0 0 1px rgba(40,120,252,.15),0 8px 30px -10px rgba(40,120,252,.3);max-width:86%;margin:0 auto}
-.ms-scene-preview video{width:100%;height:auto;display:block}
+.ms-scene-preview>video,.ms-scene-preview>img{width:100%;height:auto;display:block}
 .ms-live-overlay{position:absolute;top:10px;left:10px;z-index:2;background:rgba(231,76,60,.92);color:#fff;backdrop-filter:blur(4px)}
 .ms-scene-overlay{position:absolute;bottom:10px;left:10px;z-index:2;display:flex;align-items:center;gap:8px;padding:7px 12px;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);border-radius:7px;border:1px solid rgba(255,255,255,.1)}
 .ms-scene-overlay img{width:26px;height:26px;flex-shrink:0;object-fit:contain}
 .ms-scene-overlay .sc-brand{color:#fff;font-weight:800;font-size:15px;letter-spacing:.2px}
 .ms-scene-overlay .sc-sub{color:rgba(255,255,255,.78);font-weight:600;font-size:14px;letter-spacing:.2px}
 .ms-platform-card{position:relative;border-radius:7px;overflow:hidden;background:var(--app-surface);border:1px solid var(--app-border);display:flex;flex-direction:column}
-.ms-platform-card video{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover}
+.ms-platform-card>video,.ms-platform-card>img{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover}
 .ms-platform-label{display:flex;align-items:center;justify-content:center;gap:6px;padding:7px 6px;font-size:12px;font-weight:700;color:var(--text);background:var(--app-surface);letter-spacing:.2px;border-top:1px solid var(--app-border)}
 .ms-platform-label svg{width:14px!important;height:14px!important;flex-shrink:0}
 .ms-platform-label img{width:14px;height:14px;flex-shrink:0;object-fit:contain}
@@ -708,7 +708,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
             <div class="sc-app-title"><span class="sc-app-brand">SplitCam</span> Studio</div>
           </div>
         <div class="ms-scene-preview">
-          <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
+          <img src="../multistreaming/assets/stream-preview-poster.jpg" alt="" loading="lazy">
           <span class="ms-live-badge ms-live-overlay"><span class="ms-live-dot"></span>LIVE</span>
           <div class="ms-scene-overlay">
               <img src="assets/logos/splitcam.png" alt="">
@@ -727,27 +727,27 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
         <!-- Step 3: Apps grid (5 apps + '+50 more' card) with mini videos and green active stripes -->
         <div class="ms-fans">
           <div class="ms-platform-card">
-            <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
+            <img src="../multistreaming/assets/stream-preview-poster.jpg" alt="" loading="lazy">
             <div class="ms-platform-label"><img src="assets/logos/zoom.svg" alt="" loading="lazy"> Zoom</div>
             <div class="ms-active-bar"><div class="ms-active-pulse ms-fan-pulse"></div></div>
           </div>
           <div class="ms-platform-card">
-            <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
+            <img src="../multistreaming/assets/stream-preview-poster.jpg" alt="" loading="lazy">
             <div class="ms-platform-label"><img src="assets/logos/microsoftteams.svg" alt="" loading="lazy"> Teams</div>
             <div class="ms-active-bar"><div class="ms-active-pulse ms-fan-pulse"></div></div>
           </div>
           <div class="ms-platform-card">
-            <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
+            <img src="../multistreaming/assets/stream-preview-poster.jpg" alt="" loading="lazy">
             <div class="ms-platform-label"><img src="assets/logos/googlemeet.svg" alt="" loading="lazy"> Meet</div>
             <div class="ms-active-bar"><div class="ms-active-pulse ms-fan-pulse"></div></div>
           </div>
           <div class="ms-platform-card">
-            <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
+            <img src="../multistreaming/assets/stream-preview-poster.jpg" alt="" loading="lazy">
             <div class="ms-platform-label"><img src="assets/logos/discord.svg" alt="" loading="lazy"> Discord</div>
             <div class="ms-active-bar"><div class="ms-active-pulse ms-fan-pulse"></div></div>
           </div>
           <div class="ms-platform-card">
-            <video src="../multistreaming/assets/stream-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
+            <img src="../multistreaming/assets/stream-preview-poster.jpg" alt="" loading="lazy">
             <div class="ms-platform-label"><img src="assets/logos/telegram.svg" alt="" loading="lazy"> Telegram</div>
             <div class="ms-active-bar"><div class="ms-active-pulse ms-fan-pulse"></div></div>
           </div>
