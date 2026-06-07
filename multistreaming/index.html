@@ -319,8 +319,13 @@
 
 @media(max-width:900px){
   .combo-grid{grid-template-columns:1fr}
-  .ms-hero-grid{grid-template-columns:1fr;gap:32px}
-  .ms-viz{max-width:340px;transform:translateX(0)}
+  .ms-hero-grid{grid-template-columns:1fr;gap:8px}
+  .ms-hero-content{display:contents}
+  .ms-hero-content .eyebrow{order:1}
+  .ms-h1{order:2;margin-bottom:8px}
+  .ms-viz{order:3;max-width:340px;transform:none;margin:8px auto 6px}
+  .ms-cta-row{order:4;justify-content:center}
+  .ms-sub{order:5;margin-top:14px}
 }
 html{scroll-behavior:smooth;scroll-padding-top:60px;background:var(--app-base)}
 body{font-family:'Geist',sans-serif;background:var(--app-base);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
