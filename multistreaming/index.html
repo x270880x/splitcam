@@ -763,9 +763,9 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
         <p>No cloud middleman. No third-party server in the loop. Your video goes from your machine straight to Twitch / YouTube / Facebook / whatever — even with 20 destinations selected. The only requirement: your upload bandwidth needs to be enough for the total bitrate of all streams combined.</p>
       </div>
       <div class="ms-flow-vis">
-        <!-- SplitCam Scene with live video preview -->
+        <!-- SplitCam Scene preview (static frame — animated via CSS pulses, no looping video to avoid flicker) -->
         <div class="ms-scene-preview">
-          <video src="assets/stream-preview.mp4" poster="assets/stream-preview-poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
+          <img src="assets/stream-preview-poster.jpg" alt="SplitCam scene preview" loading="lazy">
           <span class="ms-live-badge ms-live-overlay"><span class="ms-live-dot"></span>LIVE</span>
           <div class="ms-scene-overlay">
             <img src="../assets/splitcam.png" alt="">
