@@ -652,6 +652,14 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .app-window{display:none;}
   .section{padding:60px 20px;}
   .feat-panel{grid-template-columns:1fr; gap:32px;}
+  /* center the section CTA buttons on mobile */
+  .feat-panel .btn-primary, .feat-panel .btn-ghost,
+  .vc-spotlight-text .btn-primary, .vc-spotlight-text .btn-ghost{display:flex; width:fit-content; margin-left:auto; margin-right:auto;}
+  /* multistream viz: give the animated bar room so it doesn't look squished */
+  .feat-vis{padding:18px;}
+  .bc-row{gap:8px; padding:9px 11px;}
+  .bc-nm{width:96px; font-size:11px; white-space:nowrap;}
+  .bc-kbps{width:54px; font-size:9.5px;}
   .feat-grid{grid-template-columns:1fr;}
   .usecase-grid{grid-template-columns:1fr;}
   .testi-grid{grid-template-columns:1fr;}
