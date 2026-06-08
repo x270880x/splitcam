@@ -1,6 +1,6 @@
 # SplitCam — Project Onboarding
 
-*Last updated: 2026-05-21. Open this at the start of any new chat to get up to speed.*
+*Last updated: 2026-06-07. Open this at the start of any new chat to get up to speed.*
 
 ## Two projects
 
@@ -175,15 +175,83 @@ git add . && git commit -m "..." && git push origin main
 ```
 Revert: `git revert HEAD --no-edit && git push`.
 
+## Session log — 2026-06-07 (UI polish + perf + SEO pass)
+
+Big sweep across the public site. Themes:
+
+**Video / perf — flicker fix (important pattern).** The `ms-flow-vis`
+fan diagrams on **/multistreaming/** and **/virtual-camera/** each ran
+**6 simultaneous `<video>` of `stream-preview.mp4`** (unsynced loops,
+no poster) → visible flicker + decode load. Fix: replaced every preview
+`<video>` with a static poster frame
+(`multistreaming/assets/stream-preview-poster.jpg`, extracted via
+ffmpeg). Both blocks are now fully static imagery; "live" feel comes
+from CSS only (blinking LIVE badge, flow-pulse dots, colored
+active-stream bars). CSS scoped to **direct children**
+(`.ms-platform-card>img`) so the small app/platform logo `<img>`s in the
+labels keep their icon size. `stream-preview.mp4` is now unused but
+**kept on disk on purpose** (reserve). Homepage's 4 videos
+(hero-spotlight, audience-scene, audience-game/Apex PiP, vc-presenter)
+are different single-instance clips with posters + an off-screen pause
+observer — left as real video (genuine motion), not flickering.
+
+**Mobile centering / hero reorder.** Homepage hero fully centered on
+≤900px (title, desc, Download split-button, badges, rating chip).
+Section CTA buttons ("See how multistreaming works", "See compatible
+apps") centered on mobile. SEO/`for`/`alternatives` pages got a mobile
+hero reorder (H1 → visual/orb → Download → copy) + centered CTA.
+Homepage multistream `bc-rows` viz was cramped on mobile (animated bar
+squished to ~38px) — shrank `.bc-nm`/`.bc-kbps`, trimmed padding, added
+`white-space:nowrap` so the bar is ~112px and rows are a uniform 38px.
+Verified `scrollWidth == innerWidth` at 390px on every change.
+
+**/products/ cleanup.** Removed the hero download split-button +
+platform dropdown + "Compare all platforms" (redundant above the card
+grid). Bottom-aligned the 4 platform cards' download buttons
+(flex column + `margin-top:auto`) so they line up across each row.
+Hero sub now leads with "Every SplitCam download is free" (SEO).
+Both Remote store buttons are grey "Coming soon".
+
+**Rating.** Now **4.7 / 357 reviews**, visible-only (hero chip + stats).
+**`aggregateRating` stripped from every page's JSON-LD** so Google gets
+no review-snippet markup — see Critical rule #7 in CLAUDE.md. Never
+re-add it.
+
+**SEO keyword pass (Ahrefs-backed, per-page, no cannibalization).**
+Audited meta-vs-body; wove each page's own missing title keyword into
+body copy — homepage: "free streaming software" (450), "free live
+streaming software" (350), "stream/broadcast to multiple platforms",
+"virtual camera for zoom", "virtual webcam"; /virtual-camera/: "virtual
+camera for Zoom"; /products/: "SplitCam download"; /multistreaming/:
+"broadcast to multiple platforms". Alternative-keywords
+(restream/streamyard/streamlabs/manycam) deliberately left for the
+planned `/alternatives/*` Wave-2 pages.
+
+**Icons / content.** Feature grid + "What's new" switched to a unified
+Lucide line-art set; "What's new" now lists 6 real recent features
+(Restream Server Picker, Vertical Canvas, Replay, 3D Transform, Luma
+Wipe/Slide/Swipe, Virtual Camera Routing) from the changelog. Use-case
+cards got themed icons (YouTube red play SVG, trophy, theatre mask).
+"How creators use it" expanded 3→6 stories. SplitCam Remote phone
+mockup on /products/ = real iPhone screenshot + CSS overlays (LIVE
+square, green platform badges, SplitCam·REMOTE pill); Remote pairing
+copy fixed to mention QR + auto-discovery (never "no QR").
+
+(GA4 `G-S1THLDP1XV` is on all public pages. `/for/vtubers/` exists as a
+noindex DRAFT, not yet enabled.)
+
 ## Recent commits — main splitcam repo (most recent first)
 ```
-7a14118 SEO: add domain weight checker (seo/domains.py)
-a0f1a9d SEO: per-page weight collector + redirect strategy
-ba62fbe SEO: add live-site migration plan (seo/MIGRATION.md)
-8de62db SEO: add recommended sitemap + interlinking map (seo/SITEMAP.md)
-7ed026b Update version to v10.9.2 site-wide; remove ~85 MB; add Products to nav
-5c6f138 Add /products/ hub page
-91c575a SEO Wave 1 page 3: /alternatives/obs/
-20d2c7c SEO Wave 1 page 2: /for/churches/
+e8d0b05 Center hero CTA on mobile (/alternatives/obs/)
+79f4794 Mobile hero reorder + centered CTA on /virtual-camera/
+9cfaf9a Mobile hero reorder + centered CTA on /multistreaming/
+8f049f9 Mobile hero reorder on /for/churches/: H1 → visual → Download → copy
+b1f2504 Virtual-camera viz: 6 videos → static (flicker fix)
+3d5ce08 Multistreaming viz: go fully static — kill the last looping video
+5acd204 Multistreaming viz: stop the flicker — 6 videos → 1 + posters
+c02721f Homepage mobile: center section CTA buttons + fix cramped multistream viz
+f4229bd Homepage hero: center everything on mobile
+18bbc00 Products hero: drop the download split-button, dropdown and Compare
+fe536c1 Products: bottom-align the download buttons across each card row
 ```
 (cam-streaming-guides repo has its own history — full adult-guides build.)
