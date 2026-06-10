@@ -1,6 +1,6 @@
 # SplitCam — Project Onboarding
 
-*Last updated: 2026-06-07. Open this at the start of any new chat to get up to speed.*
+*Last updated: 2026-06-09. Open this at the start of any new chat to get up to speed.*
 
 ## Two projects
 
@@ -240,8 +240,25 @@ copy fixed to mention QR + auto-discovery (never "no QR").
 (GA4 `G-S1THLDP1XV` is on all public pages. `/for/vtubers/` exists as a
 noindex DRAFT, not yet enabled.)
 
+## Session log — 2026-06-09 (mini iteration)
+
+Small visual tweaks on **/virtual-camera/** orbit-center SplitCam logo:
+- Desktop: 66 → 57 → 55 → **60** px (net ≈ −9% from original; bumped
+  back up after we shrunk too far).
+- Mobile (≤900px): added a separate rule, **49** px (≈ −17% from
+  desktop original 66, so mobile reads as a touch smaller in the
+  cramped vertical hero stack).
+
+(No other site-wide changes this iteration.)
+
 ## Recent commits — main splitcam repo (most recent first)
 ```
+28be593 Virtual-camera hero: shrink mobile orbit-center logo (54 → 49px); desktop 60
+c243ef9 Virtual-camera hero: bump orbit-center logo 10% on desktop (55 → 60px)
+717e327 Virtual-camera hero: orbit-center logo 2% smaller on mobile (54px)
+d1dc7b7 Virtual-camera hero: orbit-center logo 57 → 55px
+cd3429d Virtual-camera hero: shrink the orbit-center SplitCam logo 13% (66 → 57px)
+3dab94f ONBOARDING: log the 2026-06-07 UI/perf/SEO session + refresh commit list
 e8d0b05 Center hero CTA on mobile (/alternatives/obs/)
 79f4794 Mobile hero reorder + centered CTA on /virtual-camera/
 9cfaf9a Mobile hero reorder + centered CTA on /multistreaming/
