@@ -1,6 +1,6 @@
 # SplitCam — Project Onboarding
 
-*Last updated: 2026-06-09. Open this at the start of any new chat to get up to speed.*
+*Last updated: 2026-06-11. Open this at the start of any new chat to get up to speed.*
 
 ## Two projects
 
@@ -26,7 +26,7 @@ Destined to replace the redesign of the real **splitcam.com** (see `seo/MIGRATIO
 |---|---|
 | `/` | Main landing — **Variant A is the final homepage** |
 | `/v2/` | Variant B — **archived** (A won the A/B). `noindex`, unlinked. Kept for reference only, never goes to splitcam.com. |
-| `/products/` | Products hub — Windows/Mac/iOS/Android + SplitCam Remote. iOS card has 2 features tagged "in development" (AR filters, Picture-in-picture) — don't reword as shipped. |
+| `/products/` | Products hub — Windows/Mac/iOS/Android + SplitCam Remote. iOS card has 2 features tagged "in development" (AR filters, Picture-in-picture) — don't reword as shipped. Remote: **iOS app LIVE** (App Store id6760961594, button live since 2026-06-11); Android Remote not released — Google Play stays "Coming soon". |
 | `/virtual-camera/` | Feature page |
 | `/multistreaming/` | Feature page |
 | `/alternatives/` | Hub for "vs X" comparisons. Live cards: OBS. "Soon" cards: Streamlabs, Restream, StreamYard, vMix, ManyCam. |
@@ -251,8 +251,32 @@ Small visual tweaks on **/virtual-camera/** orbit-center SplitCam logo:
 
 (No other site-wide changes this iteration.)
 
+## Session log — 2026-06-11 (overdue SEO reminders sweep + Remote iOS live)
+
+Worked through the overdue items in `seo/REMINDERS.md` (full results live there):
+
+- **Play Store check:** main mobile apps are live on both stores and were
+  already linked from the `/products/` cards. **SplitCam Remote for iOS is
+  LIVE** — App Store `id6760961594`, v1.2, iOS 17+, released 2026-05-19.
+  Android Remote not released (dev page lists only `com.splitcam`).
+  → `/products/` Remote section: App Store button is now a real link
+  (promoted to solid `btn-store`), Google Play stays "Coming soon";
+  Pair Step-02 copy, JSON-LD (`operatingSystem: iOS` + `installUrl`) and
+  the `/changelog/` Remote panel updated. Commit `4ba08fd`. macOS support
+  of Remote confirmed via the Mac app v1.13 release notes.
+- **Indexing/ranking checks (weeks 1-2):** staging is **NOT indexed** —
+  `site:` empty, Ahrefs 0 keywords for the `x270880x.github.io/splitcam/`
+  prefix, no GSC property. Open decision: set up GSC for staging (HTML-file
+  verification + sitemap submit) vs. wait for the splitcam.com migration.
+- **Wave 2:** user asked for go/no-go. Scope refined: `/for/vtubers/` exists
+  as a noindex draft (enable, don't rebuild); mobile burger already shipped
+  site-wide on 2026-06-07, so remaining nav work = desktop dropdowns for
+  Alternatives/Use Cases (+ optional `nav.js` extraction).
+- `/products/remote/` page decision stays parked until Android Remote ships.
+
 ## Recent commits — main splitcam repo (most recent first)
 ```
+4ba08fd SplitCam Remote for iOS is live: activate App Store button on /products/
 28be593 Virtual-camera hero: shrink mobile orbit-center logo (54 → 49px); desktop 60
 c243ef9 Virtual-camera hero: bump orbit-center logo 10% on desktop (55 → 60px)
 717e327 Virtual-camera hero: orbit-center logo 2% smaller on mobile (54px)

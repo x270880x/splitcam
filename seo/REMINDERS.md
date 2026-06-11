@@ -8,10 +8,10 @@
 
 | Do by | Status | Task | What to do |
 |---|---|---|---|
-| **2026-05-25** | ⏳ pending | SplitCam Android — Play Store approval check | See section below |
-| **2026-05-27** | ⏳ pending | Week 1 indexing check | See section below |
-| **2026-06-03** | ⏳ pending | Week 2 ranking check | See section below |
-| **2026-06-10** | ⏳ pending | Wave 2 — 4 SEO pages + dropdown nav rebuild | See section below |
+| **2026-05-25** | ✅ 2026-06-11 done | SplitCam Android — Play Store approval check | See section below |
+| **2026-05-27** | ✅ 2026-06-11 done — NOT indexed | Week 1 indexing check | See section below |
+| **2026-06-03** | ✅ 2026-06-11 done — 0 keywords | Week 2 ranking check | See section below |
+| **2026-06-10** | ⏳ pending — awaiting user go (asked 2026-06-11) | Wave 2 — 4 SEO pages + dropdown nav rebuild | See section below |
 | **2026-06-19** | ⏳ pending | Month 1 full review | See section below |
 
 When a task is done, change `⏳ pending` → `✅ YYYY-MM-DD done` so future-you/Claude can skip it.
@@ -38,6 +38,24 @@ Virtual Camera / **Remote**) and condense the Remote block on `/products/`
 into a teaser linking to the new page. Schema.org SoftwareApplication
 for the mobile app on the new page.
 
+**✅ Result (2026-06-11):**
+- **Main mobile apps are live on BOTH stores** and were already linked from
+  the `/products/` platform cards: iOS `id1543666414`, Android `com.splitcam`
+  ("SplitCam Live Multistreaming", SplitCam Labs., 10K+ installs).
+- **SplitCam Remote (the separate companion app): iOS is LIVE** —
+  `https://apps.apple.com/app/splitcam-remote/id6760961594`, v1.2,
+  iOS 17+, current version released 2026-05-19, seller OMT-LIDER TOV.
+  **Android Remote does NOT exist yet** (Play dev page lists only
+  `com.splitcam`) → Google Play button stays "Coming soon".
+- Site updated (commit `4ba08fd`): Remote App Store button is a real link
+  (solid `btn-store` style), Pair Step 02 copy, JSON-LD `MobileApplication`
+  → `operatingSystem: iOS` + `installUrl`, `/changelog/` Remote panel text.
+- macOS compatibility of Remote confirmed via Mac App Store v1.13 release
+  notes ("Added support for remote control via SplitCam Remote application
+  for iOS") — the "Works with Windows 10/11 and macOS 13+" copy is correct.
+- `/products/remote/` page decision stays parked — **re-open when Android
+  Remote ships** (one-store app page is still thin).
+
 ---
 
 ## 2026-05-27 — Week 1 indexing check
@@ -56,6 +74,15 @@ for the mobile app on the new page.
 - Note initial impressions / clicks (will mostly be zero this early — that's normal)
 
 **Quick test without GSC:** Google `site:x270880x.github.io/splitcam/for/youtubers/` — if the page shows up, it's indexed.
+
+**✅ Result (2026-06-11): NOT indexed.** `site:` search returns nothing from
+`x270880x.github.io`; Ahrefs (prefix `x270880x.github.io/splitcam/`) shows
+**0 organic keywords / 0 traffic**. No GSC property exists for the staging
+host. Expected for a no-backlink github.io subdomain. Options discussed
+with user: (a) set up GSC for the staging host (HTML-file verification is
+easy — we control the repo), submit `sitemap.xml`, request indexing; or
+(b) accept that staging stays dark and the SEO payoff lands at migration
+to splitcam.com (DR 55). Decision pending.
 
 ---
 
@@ -90,6 +117,11 @@ AHREFS_TOKEN='<token from ONBOARDING.md — REGENERATE FIRST>' python3 ahrefs.py
 Compare result to baseline reports in `seo/reports/`.
 
 **Output:** identify keywords ranking position 11-30 (close to page 1). These are the ones to push with extra internal links or minor content tweaks **before** Wave 2 launches.
+
+**✅ Result (2026-06-11): nothing ranks** — direct consequence of the
+non-indexing above (Ahrefs metrics + organic-keywords for the prefix both
+return zero). Nothing to push yet; re-run this check after the staging
+host gets indexed or after migration to splitcam.com.
 
 ---
 
@@ -127,6 +159,14 @@ properly:
   section a dropdown looked empty and wasn't worth the per-page maintenance.
 
 **Ask the user before starting** — priorities might have shifted in 3 weeks.
+
+**Status note (2026-06-11):** asked the user, awaiting go. Scope check done:
+- `/for/vtubers/` already exists as a **noindex draft** — review + enable,
+  don't build from scratch.
+- **Mobile burger menu already exists site-wide** (shipped in the
+  2026-06-07 session, `nav-burger` on all 14 pages) — remaining nav scope
+  is only the **desktop dropdowns** for Alternatives / Use Cases (+ the
+  optional `nav.js` extraction; nav is still copy-pasted per page).
 
 ---
 
