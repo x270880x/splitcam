@@ -77,12 +77,25 @@ for the mobile app on the new page.
 
 **✅ Result (2026-06-11): NOT indexed.** `site:` search returns nothing from
 `x270880x.github.io`; Ahrefs (prefix `x270880x.github.io/splitcam/`) shows
-**0 organic keywords / 0 traffic**. No GSC property exists for the staging
-host. Expected for a no-backlink github.io subdomain. Options discussed
-with user: (a) set up GSC for the staging host (HTML-file verification is
-easy — we control the repo), submit `sitemap.xml`, request indexing; or
-(b) accept that staging stays dark and the SEO payoff lands at migration
-to splitcam.com (DR 55). Decision pending.
+**0 organic keywords / 0 traffic**.
+
+**Root cause found (same day): staging is unindexable BY DESIGN.** Every
+page carries `<link rel="canonical" href="https://splitcam.com/...">`,
+`sitemap.xml` lists only `splitcam.com` URLs, and `robots.txt` points to
+`https://splitcam.com/sitemap.xml`. Google treats every staging URL as a
+duplicate of its future splitcam.com home → it will never index the
+github.io host. This is the correct pre-launch pattern (no duplicate
+content, staging never competes with the real domain) — **do not "fix" it
+and do not create a GSC property for x270880x.github.io (pointless: the
+canonicals veto indexing, and the sitemap can't even be submitted there —
+foreign-host URLs).** The week-1/week-2 indexing expectations in this file
+were written before this setup; real indexing/ranking checks only make
+sense **after migration to splitcam.com**.
+
+**What IS useful now: a GSC property for `splitcam.com` itself** —
+baseline queries/impressions before migration + instant readiness on
+migration day. Do NOT submit the new-structure sitemap there until the
+new URLs actually exist on splitcam.com (they'd be 404s today).
 
 ---
 
