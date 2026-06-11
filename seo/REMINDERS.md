@@ -11,7 +11,7 @@
 | **2026-05-25** | ✅ 2026-06-11 done | SplitCam Android — Play Store approval check | See section below |
 | **2026-05-27** | ✅ 2026-06-11 done — NOT indexed | Week 1 indexing check | See section below |
 | **2026-06-03** | ✅ 2026-06-11 done — 0 keywords | Week 2 ranking check | See section below |
-| **2026-06-10** | ⏳ pending — awaiting user go (asked 2026-06-11) | Wave 2 — 4 SEO pages + dropdown nav rebuild | See section below |
+| **2026-06-10** | ⏸ postponed by user 2026-06-11 — revisit at Month-1 review (2026-06-19) | Wave 2 — 4 SEO pages + dropdown nav rebuild | See section below |
 | **2026-06-19** | ⏳ pending | Month 1 full review | See section below |
 
 When a task is done, change `⏳ pending` → `✅ YYYY-MM-DD done` so future-you/Claude can skip it.
@@ -160,7 +160,9 @@ properly:
 
 **Ask the user before starting** — priorities might have shifted in 3 weeks.
 
-**Status note (2026-06-11):** asked the user, awaiting go. Scope check done:
+**Status note (2026-06-11):** asked the user — **postponed** (also declined
+GSC-for-staging setup for now; SEO payoff is expected at the splitcam.com
+migration). Revisit both at the Month-1 review on 2026-06-19. Scope check done:
 - `/for/vtubers/` already exists as a **noindex draft** — review + enable,
   don't build from scratch.
 - **Mobile burger menu already exists site-wide** (shipped in the
