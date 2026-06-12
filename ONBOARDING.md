@@ -275,6 +275,23 @@ Worked through the overdue items in `seo/REMINDERS.md` (full results live there)
   Alternatives/Use Cases (+ optional `nav.js` extraction).
 - `/products/remote/` page decision stays parked until Android Remote ships.
 
+## Session log — 2026-06-12 (later same day)
+
+- **Homepage pill-dot fix (`91e6c3c`):** the green "Live Multi-Streaming
+  Studio" hero dot looked static — two `@keyframes` were both named
+  `live-pulse` and the stats-dot one overrode the hero rings. Renamed the
+  hero animation `pill-sonar`. Lesson: keyframes names are global per page.
+- **Multistreaming scene-preview video restored (`80075e0`), desktop-only,**
+  per user — partial revision of the 2026-06-07 "fully static" decision.
+  The BIG `.ms-scene-preview` is a looping video again; the six platform
+  thumbs stay static posters (six parallel loops were the flicker source).
+  Implementation: poster `<img>` in HTML; JS swaps in ONE `<video>` only
+  at >900px (mobile downloads nothing), `preload=metadata`, plays only
+  in-view + visible tab (IO + visibilitychange), reduced-motion respected.
+  Assets: `stream-preview-av1.mp4` 87KB (svt-av1 crf52, codecs string
+  `av01.0.04M.08`) + `stream-preview-h264.mp4` 147KB (x264 crf33) — master
+  `stream-preview.mp4` (375KB) kept untouched as the re-encode source.
+
 ## Session log — 2026-06-12 (full link & interlinking audit)
 
 Built `seo/linkcheck.py` and ran a site-wide audit (user request):
