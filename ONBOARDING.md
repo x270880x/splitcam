@@ -288,9 +288,12 @@ Worked through the overdue items in `seo/REMINDERS.md` (full results live there)
   Implementation: poster `<img>` in HTML; JS swaps in ONE `<video>` only
   at >900px (mobile downloads nothing), `preload=metadata`, plays only
   in-view + visible tab (IO + visibilitychange), reduced-motion respected.
-  Assets: `stream-preview-av1.mp4` 87KB (svt-av1 crf52, codecs string
-  `av01.0.04M.08`) + `stream-preview-h264.mp4` 147KB (x264 crf33) — master
-  `stream-preview.mp4` (375KB) kept untouched as the re-encode source.
+  Assets (after the `c973729` squeeze): `stream-preview-av1.mp4` **48KB**
+  (svt-av1 crf58, 15fps, codecs string `av01.0.04M.08`) +
+  `stream-preview-h264.mp4` **98KB** (x264 crf36, 15fps) — master
+  `stream-preview.mp4` (375KB, 20fps) kept untouched as the re-encode
+  source. Tried & rejected: av1 crf63 (21KB — visibly soft) and GIF
+  (480px/10fps/128colors = **1.98MB**, ~40× heavier — never GIF this).
 - **Follow-up (`0d0765f`): video on ALL diagram tiles** — user wanted the
   five platform thumbs animated too. Done WITHOUT re-introducing parallel
   videos: each thumb is a 320×180 `<canvas>` painted from the one video
