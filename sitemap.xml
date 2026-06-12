@@ -306,17 +306,89 @@
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://splitcam.com/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://splitcam.com/es/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/changelog/"/>
+  </url>
+  <url>
+    <loc>https://splitcam.com/ru/changelog/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://splitcam.com/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://splitcam.com/es/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/changelog/"/>
+  </url>
+  <url>
+    <loc>https://splitcam.com/es/changelog/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://splitcam.com/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://splitcam.com/es/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/changelog/"/>
   </url>
   <url>
     <loc>https://splitcam.com/privacy-policy/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://splitcam.com/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://splitcam.com/es/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/privacy-policy/"/>
+  </url>
+  <url>
+    <loc>https://splitcam.com/ru/privacy-policy/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://splitcam.com/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://splitcam.com/es/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/privacy-policy/"/>
+  </url>
+  <url>
+    <loc>https://splitcam.com/es/privacy-policy/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://splitcam.com/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://splitcam.com/es/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/privacy-policy/"/>
   </url>
   <url>
     <loc>https://splitcam.com/license-agreement/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://splitcam.com/license-agreement/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/license-agreement/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://splitcam.com/es/license-agreement/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/license-agreement/"/>
+  </url>
+  <url>
+    <loc>https://splitcam.com/ru/license-agreement/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://splitcam.com/license-agreement/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/license-agreement/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://splitcam.com/es/license-agreement/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/license-agreement/"/>
+  </url>
+  <url>
+    <loc>https://splitcam.com/es/license-agreement/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://splitcam.com/license-agreement/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/license-agreement/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://splitcam.com/es/license-agreement/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/license-agreement/"/>
   </url>
 </urlset>
