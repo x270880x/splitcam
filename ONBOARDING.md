@@ -291,6 +291,14 @@ Worked through the overdue items in `seo/REMINDERS.md` (full results live there)
   Assets: `stream-preview-av1.mp4` 87KB (svt-av1 crf52, codecs string
   `av01.0.04M.08`) + `stream-preview-h264.mp4` 147KB (x264 crf33) — master
   `stream-preview.mp4` (375KB) kept untouched as the re-encode source.
+- **Follow-up (`0d0765f`): video on ALL diagram tiles** — user wanted the
+  five platform thumbs animated too. Done WITHOUT re-introducing parallel
+  videos: each thumb is a 320×180 `<canvas>` painted from the one video
+  via `requestVideoFrameCallback` (rAF fallback) — single decoder,
+  frame-perfect sync. Transparent canvas shows the poster (CSS background)
+  until the first frame. The "+79" card stays a styled div. Mobile still
+  fully static, zero video bytes. Pattern to remember: **one `<video>` +
+  canvas mirrors** is the only sanctioned way to multiply this clip.
 
 ## Session log — 2026-06-12 (full link & interlinking audit)
 
