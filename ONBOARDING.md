@@ -307,6 +307,17 @@ changelog, privacy-policy, license-agreement, /v2/, for/vtubers draft.
 - **Upkeep rule:** new EN page ⇒ also build `/ru/` + `/es/` + 3 sitemap
   entries; edit copy in one language ⇒ mirror to the other two.
 
+**Utility pages added same day (user: "translate everything", overriding the
+leave-changelog/legal-in-EN convention):** `privacy-policy/` + `license-
+agreement/` fully translated RU/ES; `changelog/` shell localized (nav, hero,
+intros, all 243 New/Improved/Fixed labels, coming-soon panels, footer, title)
+while the **1817 technical release bullets stay EN** — Ahrefs shows 0 search
+volume for changelog/privacy/license in every locale, and the bullets change
+every release. So now **13 pages × 3 locales**. EN utility originals also got
+reciprocal hreflang + switcher. sitemap = 39 entries / 156 alternates.
+If the user ever wants the 1817 changelog bullets translated too, that's the
+one remaining (low-value, high-token) piece left as EN on purpose.
+
 ## Session log — 2026-06-12 (later same day)
 
 - **Homepage pill-dot fix (`91e6c3c`):** the green "Live Multi-Streaming
