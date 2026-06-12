@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S1THLDP1XV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S1THLDP1XV');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO (English keywords — Filipino tech audiences search in English): "obs alternative" + "obs studio alternative" + "splitcam vs obs" -->
+<title>SplitCam vs OBS — Free, Simpler OBS Alternative | SplitCam</title>
+<meta name="description" content="A simpler, free OBS Studio alternative — one-click OBS project import, built-in multistreaming and a virtual camera, with no scene rebuilding.">
+<meta name="keywords" content="obs alternative, obs studio alternative, splitcam vs obs, obs virtual camera, easier than obs">
+<meta name="author" content="SplitCam">
+<link rel="canonical" href="https://splitcam.com/fil/alternatives/obs/">
+<!--HL-->
+<link rel="alternate" hreflang="en" href="https://splitcam.com/alternatives/obs/">
+<link rel="alternate" hreflang="fil" href="https://splitcam.com/fil/alternatives/obs/">
+<link rel="alternate" hreflang="fr" href="https://splitcam.com/fr/alternatives/obs/">
+<link rel="alternate" hreflang="pt" href="https://splitcam.com/pt/alternatives/obs/">
+<link rel="alternate" hreflang="de" href="https://splitcam.com/de/alternatives/obs/">
+<link rel="alternate" hreflang="tr" href="https://splitcam.com/tr/alternatives/obs/">
+<link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/alternatives/obs/">
+<link rel="alternate" hreflang="es" href="https://splitcam.com/es/alternatives/obs/">
+<link rel="alternate" hreflang="x-default" href="https://splitcam.com/alternatives/obs/">
+<!--/HL--><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://splitcam.com/fil/alternatives/obs/">
+<meta property="og:title" content="SplitCam vs OBS — Free, Simpler OBS Alternative | SplitCam">
+<meta property="og:description" content="A simpler, free OBS Studio alternative — one-click OBS project import, built-in multistreaming and a virtual camera, with no scene rebuilding.">
+<meta property="og:image" content="https://splitcam.com/assets/og-obs.png">
+<meta property="og:site_name" content="SplitCam">
+<meta property="og:locale" content="fil_PH">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SplitCam vs OBS — Free, Simpler OBS Alternative | SplitCam">
+<meta name="twitter:description" content="A simpler, free OBS Studio alternative — one-click OBS project import, built-in multistreaming and a virtual camera, with no scene rebuilding.">
+<meta name="twitter:image" content="https://splitcam.com/assets/og-obs.png">
+
+<meta name="theme-color" content="#141420">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+<link rel="shortcut icon" href="../../../favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+<link rel="manifest" href="../../../site.webmanifest">
+
+<!-- Schema.org: BreadcrumbList + SoftwareApplication + FAQPage + ItemList comparison -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SplitCam",
+          "item": "https://splitcam.com/fil/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alternatives",
+          "item": "https://splitcam.com/fil/alternatives/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "OBS Alternative",
+          "item": "https://splitcam.com/fil/alternatives/obs/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SplitCam",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Windows, macOS, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to migrate from OBS Studio to SplitCam",
+      "description": "Non-destructive migration in 3 steps. Your OBS install and scene files stay where they are.",
+      "totalTime": "PT5M",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "OBS Studio (any recent version)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "SplitCam (free download)"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Find your OBS scene collection file",
+          "text": "In OBS, go to Scene Collection → Export. Save the JSON file to your Desktop. Existing collections live at %APPDATA%\\obs-studio\\basic\\scenes\\ on Windows and ~/Library/Application Support/obs-studio/basic/scenes/ on macOS. Leave OBS installed — if SplitCam doesn't fit, you switch right back without losing anything."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Install SplitCam and use OBS Project Import",
+          "text": "Download SplitCam and run it. On first launch click Import → OBS Project, point at the JSON file from step 1. Scenes, sources, transitions and hotkeys carry over. Stream keys and per-platform settings are reconfigured since they're saved per-encoder, not in the scene file.",
+          "url": "https://splitcam.com/"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Reconnect stream keys and go live",
+          "text": "In SplitCam, open Stream Settings. Paste your stream keys for the platforms you use. To multistream to several platforms at once, tick all of them — no plugin needed. Click Go Live."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Free alternatives to OBS Studio",
+      "description": "Free, easier alternatives to OBS Studio for live streaming, ranked by ease of setup and built-in features.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SplitCam",
+          "url": "https://splitcam.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Streamlabs Desktop"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "XSplit Broadcaster"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Meld Studio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Restream Studio (web)"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a good free alternative to OBS Studio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SplitCam is a free OBS alternative that's easier to set up. It ships with multistreaming, AI background removal, beauty filters, virtual camera and mobile apps built-in — features that OBS requires plugins for. SplitCam also imports your existing OBS scene collections in one click, so switching is non-destructive. Other free alternatives: Streamlabs Desktop (fork of OBS, with overlays/widgets), XSplit Broadcaster (free tier with watermark), Meld Studio (newer, Mac-focused)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do people look for an OBS alternative?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common reasons: (1) OBS has a learning curve — too many menus for casual streamers. (2) OBS doesn't have built-in multistreaming, AI background or beauty filters — you install separate plugins for each. (3) Plugins need maintenance after every OBS update. (4) OBS has no mobile apps — you can't stream from your phone or use your phone as a second camera. (5) High CPU usage when using software (x264) encoder on older machines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SplitCam better than OBS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Better in different ways — and worse in others. SplitCam wins on: simpler UI, built-in multistreaming/virtual camera/AI background/mobile apps, faster setup for new streamers. OBS wins on: open-source/auditable codebase, massive plugin ecosystem (4000+ plugins), broader community tutorials. For most streamers — gamers, YouTubers, churches — SplitCam is faster to set up and use. For power users who want every possible integration and don't mind the configuration time, OBS still rules."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I import my OBS scenes into SplitCam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — SplitCam has one-click OBS Project Import. Point it at your OBS scene-collection JSON file, click Import, and all your scenes, sources and transitions appear in SplitCam. You don't have to rebuild from scratch. If you decide OBS suits you better, your original OBS files are untouched — switching is reversible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SplitCam work on Mac like OBS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — SplitCam runs natively on macOS 11+ (Big Sur and newer), including Apple Silicon (M1/M2/M3) and Intel Macs. The macOS build supports virtual camera output to Zoom/Teams/Meet/Discord/FaceTime, hardware encoding via VideoToolbox, and the full feature set including multistreaming and AI background."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will SplitCam use less CPU than OBS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Generally yes when both use hardware encoding (NVENC on Nvidia, QuickSync on Intel, AMF on AMD, VideoToolbox on macOS). SplitCam auto-detects the best hardware encoder; OBS requires manual configuration. If you've been running OBS with the x264 software encoder, switching to SplitCam (or enabling hardware encoding in OBS) typically drops CPU usage from 30-60% to under 10%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SplitCam open source like OBS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — SplitCam is proprietary closed-source freeware. OBS Studio is open source under GPLv2. If open-source/auditable code is a hard requirement (corporate policy, security review, contribution model), stick with OBS or look at Meld Studio. SplitCam is free as in beer, not free as in speech."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SplitCam have plugins like OBS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SplitCam has a smaller plugin ecosystem than OBS (which has 4000+ community plugins). However, most plugins people install in OBS are for features SplitCam already includes natively: multistreaming, virtual camera, NDI, AI background, browser source, beauty filters, replay buffer. If you don't need OBS-specific niche plugins, you may not need plugins at all in SplitCam."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --app-base:#141420;
+  --app-panel:#1c1c2e;
+  --app-surface:#22223a;
+  --app-border:rgba(255,255,255,.08);
+  --app-border2:rgba(255,255,255,.14);
+  --blue:#2878fc;
+  --blue-hover:#4d8eff;
+  --blue-dim:rgba(40,120,252,.13);
+  --purple:#9c5bff;
+  --red:#ff5454;
+  --text:#eeeeff;
+  --text-sub:#9090bb;
+  --text-dim:#50506a;
+}
+html{scroll-behavior:smooth;scroll-padding-top:60px;background:var(--app-base)}
+body{font-family:'Geist',sans-serif;background:var(--app-base);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(20,20,32,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--app-border)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:26px;height:26px;flex-shrink:0}
+.nav-logo-wordmark{font-size:24px;font-weight:700;letter-spacing:.5px}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:14px;color:var(--text-sub);font-weight:500;transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:8px;background:var(--blue);color:#fff;font-size:13px;font-weight:600;transition:background .15s}
+.btn-primary:hover{background:var(--blue-hover)}
+.btn-ghost{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:8px;background:transparent;color:var(--text);border:1px solid var(--app-border2);font-size:13px;font-weight:600;transition:all .15s}
+.btn-ghost:hover{background:rgba(255,255,255,.04)}
+.btn-lg{padding:13px 24px;font-size:14px;border-radius:10px}
+
+/* Hamburger + mobile menu */
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-burger{display:none;width:40px;height:40px;border:1px solid var(--app-border2);border-radius:8px;background:transparent;cursor:pointer;align-items:center;justify-content:center;padding:0;color:var(--text);transition:background .15s,border-color .15s;font-family:inherit}
+.nav-burger:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.22)}
+.nav-burger svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav-burger .ico-close{display:none}
+.nav-burger.open .ico-open{display:none}
+.nav-burger.open .ico-close{display:block}
+.nav-mobile{position:fixed;top:60px;left:0;right:0;background:rgba(20,20,32,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--app-border);padding:14px 20px 18px;display:none;flex-direction:column;gap:4px;z-index:99}
+.nav-mobile.open{display:flex}
+.nav-mobile a{display:block;padding:12px 14px;font-size:15px;color:var(--text-sub);font-weight:500;border-radius:8px;text-decoration:none;transition:background .15s,color .15s}
+.nav-mobile a:hover,.nav-mobile a.active{background:rgba(255,255,255,.05);color:var(--text)}
+.nav-mobile-divider{height:1px;background:var(--app-border);margin:8px 0}
+.nav-mobile .btn-primary{justify-content:center;width:100%;padding:12px 16px;font-size:14px}
+
+/* Breadcrumbs */
+.breadcrumbs{padding:80px 40px 0;max-width:900px;margin:0 auto;font-size:13px;color:var(--text-dim)}
+.breadcrumbs a{color:var(--text-sub);transition:color .15s}
+.breadcrumbs a:hover{color:var(--text)}
+.breadcrumbs .sep{margin:0 8px}
+
+/* HERO */
+.hero{padding:32px 40px 60px;max-width:900px;margin:0 auto;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-50px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(40,120,252,.15),transparent 70%);pointer-events:none;z-index:0}
+.eyebrow{display:inline-block;padding:5px 12px;background:var(--blue-dim);color:var(--blue);font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:18px;position:relative;z-index:1}
+.h1{font-size:clamp(34px,4.5vw,52px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px;max-width:780px;position:relative;z-index:1}
+.h1 .accent{background:linear-gradient(135deg,#2878fc,#9c5bff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:18px;color:var(--text-sub);max-width:680px;line-height:1.55;margin-bottom:28px;position:relative;z-index:1}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;position:relative;z-index:1}
+.h-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(255,255,255,.035);border:1px solid var(--app-border);border-radius:99px;font-size:12px;color:var(--text-sub);font-weight:500}
+.h-badge::before{content:'✓';color:var(--blue);font-weight:700}
+
+/* Quick answer box (snippet bait) */
+.quick-answer{max-width:900px;margin:0 auto;padding:0 40px 60px}
+.qa-box{padding:24px 28px;background:linear-gradient(135deg,rgba(40,120,252,.08),rgba(156,91,255,.05));border:1px solid rgba(40,120,252,.25);border-radius:14px}
+.qa-h{font-size:13px;font-weight:800;color:var(--blue);letter-spacing:.6px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.qa-h::before{content:'⚡';font-size:16px}
+.qa-text{font-size:16px;line-height:1.7;color:var(--text)}
+.qa-text strong{color:#fff}
+.qa-text ul{margin:10px 0 0 20px;list-style:disc;color:var(--text-sub)}
+.qa-text ul strong{color:var(--text)}
+.qa-text li{margin-bottom:6px}
+
+/* Sections */
+.section{padding:48px 40px;max-width:900px;margin:0 auto}
+.sec-h{font-size:32px;font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:18px}
+.sec-p{font-size:16px;color:var(--text-sub);line-height:1.7;margin-bottom:32px;max-width:720px}
+
+/* Reasons grid (why OBS alternative) */
+.reasons-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.reason{padding:22px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:14px}
+.reason-num{font-family:'Geist Mono',monospace;font-size:12px;color:var(--blue);font-weight:700;letter-spacing:1px;margin-bottom:6px;text-transform:uppercase}
+.reason h3{font-size:17px;font-weight:700;margin-bottom:8px;letter-spacing:-.2px}
+.reason p{font-size:14px;color:var(--text-sub);line-height:1.6}
+.reason p strong{color:var(--text)}
+
+/* Advantages list (what SplitCam does differently) */
+.adv-list{display:flex;flex-direction:column;gap:14px}
+.adv{display:flex;gap:18px;padding:20px 22px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:14px}
+.adv-ico{flex:0 0 44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px}
+.adv-body{flex:1}
+.adv h3{font-size:17px;font-weight:700;margin-bottom:5px;letter-spacing:-.2px}
+.adv p{font-size:14px;color:var(--text-sub);line-height:1.6}
+.adv p strong{color:var(--text)}
+.adv .vs{display:inline-block;margin-top:8px;padding:3px 10px;font-size:11.5px;font-weight:700;color:var(--red);background:rgba(255,84,84,.08);border:1px solid rgba(255,84,84,.25);border-radius:99px;letter-spacing:.3px}
+.adv .vs::before{content:'OBS: ';color:var(--red)}
+
+/* Bonus / honest */
+.bonus{padding:32px;background:linear-gradient(135deg,rgba(255,164,64,.08),rgba(255,84,84,.05));border:1px solid rgba(255,164,64,.25);border-radius:16px;margin:32px 0}
+.bonus-h{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;margin-bottom:10px;letter-spacing:-.4px}
+.bonus-h::before{content:'⚖️';font-size:24px}
+.bonus-p{font-size:15px;color:var(--text-sub);line-height:1.7;margin-bottom:14px}
+.bonus-p strong{color:var(--text)}
+.bonus-p:last-of-type{margin-bottom:18px}
+.bonus ul{list-style:none;padding-left:0;font-size:14.5px;color:var(--text-sub);line-height:1.8}
+.bonus ul li{padding-left:24px;position:relative;margin-bottom:4px}
+.bonus ul li::before{content:'→';position:absolute;left:6px;color:#ffa372;font-weight:700}
+.bonus ul li strong{color:var(--text)}
+
+/* Migration steps */
+.steps{display:flex;flex-direction:column;gap:18px}
+.step{display:flex;gap:24px;padding:24px 26px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:14px}
+.step-num{flex:0 0 48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px}
+.step-body{flex:1}
+.step-h{font-size:19px;font-weight:700;margin-bottom:8px;letter-spacing:-.3px}
+.step-p{font-size:14.5px;color:var(--text-sub);line-height:1.65;margin-bottom:10px}
+.step-p strong{color:var(--text)}
+.step-tip{padding:10px 14px;background:rgba(40,120,252,.08);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;font-size:13.5px;color:var(--text);margin-top:8px;line-height:1.6}
+.step-tip b{color:var(--blue);font-weight:700}
+.step-code{display:inline-block;padding:2px 7px;background:rgba(255,255,255,.07);border:1px solid var(--app-border);border-radius:4px;font-family:'Geist Mono',monospace;font-size:13px;color:var(--blue)}
+
+/* Compare table */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.compare-table{width:100%;border-collapse:collapse;margin-top:8px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:12px;overflow:hidden}
+.compare-table th{padding:14px 16px;text-align:left;font-size:13px;font-weight:700;color:var(--text);background:var(--app-surface);border-bottom:1px solid var(--app-border)}
+.compare-table td{padding:14px 16px;font-size:14px;color:var(--text-sub);border-bottom:1px solid var(--app-border)}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table td:first-child{font-weight:600;color:var(--text)}
+.compare-table .yes{color:#5ee572;font-weight:700}
+.compare-table .no{color:var(--red);font-weight:700}
+.compare-table .meh{color:#ffa372;font-weight:700}
+
+/* Other alternatives list */
+.alt-list{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.alt-row{display:flex;gap:16px;align-items:flex-start;padding:18px 22px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:12px}
+.alt-rank{flex:0 0 36px;height:36px;border-radius:10px;background:var(--app-surface);color:var(--text-sub);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;font-family:'Geist Mono',monospace}
+.alt-row.featured .alt-rank{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff}
+.alt-body{flex:1}
+.alt-body h4{font-size:16px;font-weight:700;margin-bottom:4px;letter-spacing:-.2px}
+.alt-body h4 .tag{display:inline-block;margin-left:8px;padding:2px 8px;font-size:10.5px;font-weight:700;background:var(--blue-dim);color:var(--blue);border-radius:99px;letter-spacing:.4px;text-transform:uppercase;vertical-align:middle}
+.alt-body p{font-size:13.5px;color:var(--text-sub);line-height:1.55}
+.alt-body p strong{color:var(--text)}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{padding:18px 22px;border:1px solid var(--app-border);border-radius:12px;background:var(--app-panel);cursor:pointer}
+.faq-item:hover{border-color:var(--app-border2)}
+.faq-item summary{font-size:15.5px;font-weight:600;list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:22px;color:var(--text-sub);font-weight:300;line-height:1}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{margin-top:12px;color:var(--text-sub);font-size:14.5px;line-height:1.65}
+
+/* CTA */
+.cta-block{padding:56px 40px;background:linear-gradient(135deg,var(--app-panel),var(--app-surface));border-top:1px solid var(--app-border);border-bottom:1px solid var(--app-border);text-align:center;margin-top:48px}
+.cta-block h2{font-size:32px;font-weight:700;letter-spacing:-.8px;margin-bottom:14px}
+.cta-block p{font-size:16px;color:var(--text-sub);max-width:540px;margin:0 auto 26px;line-height:1.6}
+
+/* Related cross-links */
+.related{padding:32px 40px;max-width:900px;margin:0 auto}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.related-card{padding:18px 20px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:12px;transition:all .18s}
+.related-card:hover{border-color:var(--blue);transform:translateY(-2px)}
+.related-card .eyebrow{font-size:10.5px;padding:3px 9px;margin-bottom:8px;display:inline-block}
+.related-card h4{font-size:15.5px;font-weight:700;margin-bottom:6px;letter-spacing:-.2px}
+.related-card p{font-size:13px;color:var(--text-sub);line-height:1.55}
+
+/* Footer */
+footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-panel)}
+.footer-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text-dim)}
+.footer-inner a{color:var(--text-sub);transition:color .15s}
+.footer-inner a:hover{color:var(--text)}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  nav{padding:0 16px}
+  .nav-links{display:none}
+  .nav-burger{display:inline-flex}
+  .breadcrumbs{padding:80px 20px 0}
+  .hero,.section,.related{padding-left:20px;padding-right:20px}
+  .hero-cta{justify-content:center}
+  .cta-block{padding:48px 20px}
+  .reasons-grid,.related-grid{grid-template-columns:1fr}
+  .step,.adv{flex-direction:column;gap:12px}
+  footer{padding:32px 20px}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+.lang-sw{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--app-border);border-radius:8px;background:rgba(255,255,255,.02)}
+.lang-sw a,.lang-sw .on{font-size:10.5px;font-weight:700;letter-spacing:.4px;padding:3px 7px;border-radius:6px;color:var(--text-sub);text-decoration:none}
+.lang-sw a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.lang-sw .on{color:#fff;background:var(--blue)}
+@media (max-width:900px){.nav-right .lang-sw{display:none}}
+#nav-mobile .lang-sw{margin:10px 16px 4px}
+
+/* nav-fit: tighten links + collapse to burger early so longer RU/ES (and EN+switcher) labels never clip */
+.nav-links{gap:18px}
+.nav-links a{white-space:nowrap}
+@media(max-width:1100px){nav .nav-links{display:none}nav .nav-burger{display:inline-flex}.nav-right .lang-sw{display:none}}
+
+.lang-dl{position:relative;display:inline-block}
+.lang-dl>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border:1px solid var(--app-border);border-radius:8px;background:rgba(255,255,255,.02);font-size:11.5px;font-weight:700;color:var(--text-sub);user-select:none}
+.lang-dl>summary::-webkit-details-marker{display:none}
+.lang-dl>summary:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.lang-dl .lf{font-size:13px;line-height:1}.lang-dl .lc{letter-spacing:.4px}
+.lang-dl .dl-caret{font-size:9px;opacity:.7}
+.lang-dl-menu{position:absolute;top:calc(100% + 6px);right:0;z-index:60;min-width:180px;max-height:60vh;overflow-y:auto;padding:6px;background:var(--app-panel);border:1px solid var(--app-border2);border-radius:10px;box-shadow:0 12px 32px -8px rgba(0,0,0,.6);display:grid;gap:1px}
+.lang-dl-menu a{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:7px;font-size:13px;font-weight:500;color:var(--text-sub);text-decoration:none;white-space:nowrap}
+.lang-dl-menu a:hover{background:rgba(255,255,255,.05);color:var(--text)}
+.lang-dl-menu a.cur{color:#fff;background:var(--blue)}
+.lang-dl-menu .lf{font-size:15px}
+@media(max-width:1100px){.nav-right .lang-dl{display:none}}
+#nav-mobile .lang-dl{display:block;margin:10px 16px 4px}
+#nav-mobile .lang-dl-menu{position:static;max-height:none;box-shadow:none;margin-top:6px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="../../">
+    <img class="nav-logo-icon" src="../../../assets/splitcam.png" alt="SplitCam">
+    <span class="nav-logo-wordmark">splitcam</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../../products/">Products</a></li>
+    <li><a href="../../virtual-camera/">Virtual Camera</a></li>
+    <li><a href="../../multistreaming/">Multistreaming</a></li>
+    <li><a href="../" class="active">Alternatives</a></li>
+    <li><a href="../../for/">Use Cases</a></li>
+    <li><a href="../../help/">Help</a></li>
+  </ul>
+  <div class="nav-right">
+    <!--LD--><details class="lang-dl"><summary aria-label="Language"><span class="lf">🇵🇭</span><span class="lc">FIL</span><span class="dl-caret">▾</span></summary><div class="lang-dl-menu"><a href="../../../alternatives/obs/" data-lang="en" hreflang="en" lang="en"><span class="lf">🇬🇧</span><span class="ln">English</span></a><a href="../../../fil/alternatives/obs/" data-lang="fil" hreflang="fil" lang="fil" class="cur"><span class="lf">🇵🇭</span><span class="ln">Filipino</span></a><a href="../../../fr/alternatives/obs/" data-lang="fr" hreflang="fr" lang="fr"><span class="lf">🇫🇷</span><span class="ln">Français</span></a><a href="../../../pt/alternatives/obs/" data-lang="pt" hreflang="pt" lang="pt"><span class="lf">🇧🇷</span><span class="ln">Português</span></a><a href="../../../de/alternatives/obs/" data-lang="de" hreflang="de" lang="de"><span class="lf">🇩🇪</span><span class="ln">Deutsch</span></a><a href="../../../tr/alternatives/obs/" data-lang="tr" hreflang="tr" lang="tr"><span class="lf">🇹🇷</span><span class="ln">Türkçe</span></a><a href="../../../ru/alternatives/obs/" data-lang="ru" hreflang="ru" lang="ru"><span class="lf">🇷🇺</span><span class="ln">Русский</span></a><a href="../../../es/alternatives/obs/" data-lang="es" hreflang="es" lang="es"><span class="lf">🇪🇸</span><span class="ln">Español</span></a></div></details><!--/LD-->
+    <a href="https://splitcam.com/download" class="btn-primary" data-dl-primary>⬇ Download</a>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+      <svg class="ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile" role="menu" aria-hidden="true">
+  <a href="../../products/" role="menuitem">Products</a>
+  <a href="../../virtual-camera/" role="menuitem">Virtual Camera</a>
+  <a href="../../multistreaming/" role="menuitem">Multistreaming</a>
+  <a href="../" class="active" role="menuitem">Alternatives</a>
+  <a href="../../for/" role="menuitem">Use Cases</a>
+  <a href="../../help/" role="menuitem">Help</a>
+  <!--LD--><details class="lang-dl"><summary aria-label="Language"><span class="lf">🇵🇭</span><span class="lc">FIL</span><span class="dl-caret">▾</span></summary><div class="lang-dl-menu"><a href="../../../alternatives/obs/" data-lang="en" hreflang="en" lang="en"><span class="lf">🇬🇧</span><span class="ln">English</span></a><a href="../../../fil/alternatives/obs/" data-lang="fil" hreflang="fil" lang="fil" class="cur"><span class="lf">🇵🇭</span><span class="ln">Filipino</span></a><a href="../../../fr/alternatives/obs/" data-lang="fr" hreflang="fr" lang="fr"><span class="lf">🇫🇷</span><span class="ln">Français</span></a><a href="../../../pt/alternatives/obs/" data-lang="pt" hreflang="pt" lang="pt"><span class="lf">🇧🇷</span><span class="ln">Português</span></a><a href="../../../de/alternatives/obs/" data-lang="de" hreflang="de" lang="de"><span class="lf">🇩🇪</span><span class="ln">Deutsch</span></a><a href="../../../tr/alternatives/obs/" data-lang="tr" hreflang="tr" lang="tr"><span class="lf">🇹🇷</span><span class="ln">Türkçe</span></a><a href="../../../ru/alternatives/obs/" data-lang="ru" hreflang="ru" lang="ru"><span class="lf">🇷🇺</span><span class="ln">Русский</span></a><a href="../../../es/alternatives/obs/" data-lang="es" hreflang="es" lang="es"><span class="lf">🇪🇸</span><span class="ln">Español</span></a></div></details><!--/LD-->
+</div>
+
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+  <a href="../../">SplitCam</a><span class="sep">/</span><a href="../">Alternatives</a><span class="sep">/</span><span>OBS</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <span class="eyebrow">OBS Alternative</span>
+  <h1 class="h1">The free <span class="accent">SplitCam alternative to OBS Studio</span> — easier, with multistream built-in.</h1>
+  <p class="sub">Libre. Walang plugins na kailangang i-install para sa <strong style="color:var(--text)">multistream, AI background, virtual camera o mobile</strong> — kasama na lahat sa box. Ini-import nito ang OBS scene collection mo sa isang click, kaya hindi destructive ang paglipat. Windows, macOS, iOS, Android.</p>
+  <div class="hero-cta">
+    <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
+    <a href="#compare" class="btn-ghost btn-lg">Jump to comparison ↓</a>
+  </div>
+  <div class="hero-badges">
+    <span class="h-badge">Free forever · no watermark</span>
+    <span class="h-badge">Imports OBS scenes</span>
+    <span class="h-badge">Built-in multistream + virtual camera</span>
+    <span class="h-badge">Native iOS + Android</span>
+  </div>
+</section>
+
+<!-- QUICK ANSWER -->
+<div class="quick-answer">
+  <div class="qa-box">
+    <div class="qa-h">Quick answer — best OBS alternative</div>
+    <div class="qa-text">
+      Ang <strong>SplitCam</strong> ay libreng OBS alternative na naghahatid ng pinaka-sikat na OBS plugins bilang built-in features:
+      <ul>
+        <li><strong>Built-in multistreaming</strong> — hindi na kailangan ng Multiple RTMP Outputs plugin.</li>
+        <li><strong>Built-in AI background removal</strong> — hindi na kailangan ng Background Removal plugin.</li>
+        <li><strong>Built-in virtual camera with AI</strong> — gumagana sa Zoom, Teams, Meet, Discord.</li>
+        <li><strong>Native iOS + Android apps</strong> — walang mobile ang OBS.</li>
+        <li><strong>One-click OBS scene import</strong> — dalhin ang existing setup mo nang hindi nagre-rebuild.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- WHY PEOPLE SEARCH FOR OBS ALTERNATIVE -->
+<section class="section">
+  <h2 class="sec-h">Why people look for an OBS alternative</h2>
+  <p class="sec-p">Makapangyarihan at libre ang OBS Studio — pero hindi ito palaging ang tamang fit. Ang limang dahilan na lagi naming naririnig:</p>
+  <div class="reasons-grid">
+    <div class="reason">
+      <div class="reason-num">Reason 01</div>
+      <h3>Ang learning curve</h3>
+      <p>May daan-daang settings ang OBS na nakakalat sa nested menus. <strong>2–3 oras ang ginugugol ng mga baguhang streamer</strong> sa unang setup. Para sa one-off broadcast o casual streamer, marami iyon.</p>
+    </div>
+    <div class="reason">
+      <div class="reason-num">Reason 02</div>
+      <h3>Bawat feature, may kailangang plugin</h3>
+      <p>Multistream? Plugin. AI background? Plugin. NDI? Plugin. Replay buffer overlay? Plugin. <strong>Bawat plugin ay may hiwalay na install, config at maintenance</strong> pagkatapos ng bawat OBS update.</p>
+    </div>
+    <div class="reason">
+      <div class="reason-num">Reason 03</div>
+      <h3>Mataas na CPU sa mas lumang makina</h3>
+      <p>Out of the box, madalas na-default ang OBS sa <code class="step-code">x264</code> software encoder, na puwedeng mag-pin ng CPU sa 40–60% habang nag-1080p stream. Aayusin ito ng hardware encoding pero hindi naka-on by default.</p>
+    </div>
+    <div class="reason">
+      <div class="reason-num">Reason 04</div>
+      <h3>Walang mobile apps</h3>
+      <p>Desktop-only ang OBS. Hindi ka makakapag-broadcast mula sa telepono, at ang paggawa ng telepono bilang dagdag na camera angle ay nangangailangan ng third-party hacks tulad ng <strong>NDI HX Camera</strong> o bayad na bridges.</p>
+    </div>
+    <div class="reason">
+      <div class="reason-num">Reason 05</div>
+      <h3>Bare-bones ang virtual camera</h3>
+      <p>May basic na virtual camera ang OBS pero <strong>walang AI background, walang beauty filters, walang auto-framing</strong>. Karamihan ng nagdadagdag ng mukha sa Zoom/Teams ay gusto ang mga feature na ito — at kailangang mag-install ng plugins para makuha ito.</p>
+    </div>
+    <div class="reason">
+      <div class="reason-num">Reason 06</div>
+      <h3>Mukhang luma na ang UI</h3>
+      <p>Hindi nagbago nang malaki ang interface ng OBS sa loob ng mga taon. Para sa galing sa <strong>Streamlabs, Restream Studio o modernong streaming tools</strong>, parang tool na kailangan mong kalabanin sa halip na tumulong.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW SPLITCAM SOLVES IT -->
+<section class="section">
+  <h2 class="sec-h">What SplitCam does differently</h2>
+  <p class="sec-p">Ang bawat item sa ibaba ay built-in na feature ng SplitCam na, sa OBS, ay nangangailangan ng hiwalay na plugin install (o wala talaga).</p>
+  <div class="adv-list">
+    <div class="adv">
+      <div class="adv-ico">📡</div>
+      <div class="adv-body">
+        <h3>Built-in multistreaming</h3>
+        <p>Mag-stream sa YouTube + Twitch + Facebook + Kick + TikTok + sariling RTMP mo, <strong>lahat mula sa isang encode</strong>. Lagyan ng check, i-paste ang keys, i-click ang Go Live. Bawat stream ay tumutuloy diretso mula sa PC mo papunta sa bawat platform — walang dinadaan sa bayad na cloud service. 84+ platform na pre-configured.</p>
+        <span class="vs">requires Multiple RTMP Outputs plugin</span>
+      </div>
+    </div>
+    <div class="adv">
+      <div class="adv-ico">🪄</div>
+      <div class="adv-body">
+        <h3>AI background removal (walang green screen)</h3>
+        <p>Palitan o i-blur ang background mo <strong>nang walang pisikal na green screen</strong>. Malinis ang edge detection sa buhok at salamin. Gumagana sa live stream, sa virtual camera, at sa recordings.</p>
+        <span class="vs">requires Background Removal plugin</span>
+      </div>
+    </div>
+    <div class="adv">
+      <div class="adv-ico">🎥</div>
+      <div class="adv-body">
+        <h3>Virtual camera with AI features</h3>
+        <p>Gamitin ang SplitCam scene mo (na may AI background, beauty filters at overlays) <strong>bilang webcam sa Zoom, Teams, Meet, Discord, FaceTime</strong>. May virtual camera din ang OBS, pero walang AI background o beauty layer na nilalapat dito.</p>
+        <span class="vs">basic virtual camera, no AI</span>
+      </div>
+    </div>
+    <div class="adv">
+      <div class="adv-ico">📱</div>
+      <div class="adv-body">
+        <h3>Native iOS at Android apps</h3>
+        <p>Mag-broadcast diretso mula sa telepono, o i-pair ang isa sa desktop app bilang <strong>dagdag na camera angle sa Wi-Fi</strong> — itutok sa whiteboard, sa gameplay rig, sa stage.</p>
+        <span class="vs">desktop only, no mobile</span>
+      </div>
+    </div>
+    <div class="adv">
+      <div class="adv-ico">⚡</div>
+      <div class="adv-body">
+        <h3>Hardware encoding na auto-detected</h3>
+        <p>Pinipili ng SplitCam ang <strong>NVENC / QuickSync / AMF / VideoToolbox</strong> batay sa hardware mo sa unang buksan. Naililipat sa GPU silicon ang encoding. Malaya ang CPU para sa laro o app na sini-stream mo.</p>
+        <span class="vs">defaults to x264 software encoder</span>
+      </div>
+    </div>
+    <div class="adv">
+      <div class="adv-ico">🔄</div>
+      <div class="adv-body">
+        <h3>One-click OBS Project Import</h3>
+        <p>Ituro lang ito sa OBS scene-collection JSON file mo at i-click ang Import. Pumapasok lahat ng scene, source, transition at hotkey. <strong>Hindi nagagalaw ang orihinal mong OBS files</strong> — nababalikan ang paglipat.</p>
+        <span class="vs">N/A (it is OBS)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST: WHERE OBS WINS -->
+<section class="section">
+  <div class="bonus">
+    <div class="bonus-h">Honest: kung saan mas panalo pa rin ang OBS</div>
+    <p class="bonus-p">Ang SplitCam ang mas madaling daily-driver para sa karamihan ng streamer. Pero kung mahalaga sa iyo ang alinman sa mga ito, OBS pa rin ang tamang pili:</p>
+    <ul>
+      <li><strong>Open source</strong> — GPLv2 ang OBS na may pampublikong source sa GitHub. Closed-source freeware ang SplitCam. Kung kailangan mo ng auditable code para sa corporate security review o para mag-contribute pabalik, panalo ang OBS.</li>
+      <li><strong>Napakalaking plugin ecosystem</strong> — 4,000+ na community OBS plugins ang sumasaklaw sa mga obscure na gamit (custom NDI variants, niche capture hardware, lab/research integrations). Mas maliit ang catalog ng SplitCam.</li>
+      <li><strong>Linux support</strong> — natively tumatakbo ang OBS sa Linux. Hindi pa (sa ngayon) ang SplitCam — Windows, macOS, iOS, Android lang.</li>
+      <li><strong>Mas malalim na community tutorials</strong> — mas matagal na ang OBS, kaya sumasaklaw ang video tutorials, Reddit threads at Discord servers sa bawat edge case. Mas maliit pa ang community ng SplitCam pero lumalaki.</li>
+      <li><strong>Hardcore power user feel</strong> — kung talagang gusto mo ang lalim at configurability ng OBS at nailaan mo na ang oras sa setup, mas kaunti ang mapapala mo sa paglipat.</li>
+    </ul>
+    <p class="bonus-p" style="margin-top:14px">Kung wala sa mga nasa itaas ang kritikal para sa iyo, mas mabilis kang mapapag-stream ng SplitCam nang mas kaunti ang setup. <strong>Subukan ang dalawa — dahil sa OBS Project Import, ~2 minuto lang ang gugugulin ng paghahambing.</strong></p>
+  </div>
+</section>
+
+<!-- HOW TO MIGRATE -->
+<section class="section">
+  <h2 class="sec-h">How to migrate from OBS to SplitCam in 3 steps</h2>
+  <p class="sec-p">Non-destructive. Nananatili kung nasaan ang OBS install at scene files mo.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-h">Hanapin ang OBS scene collection file mo</div>
+        <p class="step-p">Sa OBS, pumunta sa <strong>Scene Collection → Export</strong>. I-save ang JSON file sa Desktop mo. (Alternatibo: hanapin ang existing collections mo sa disk:)</p>
+        <p class="step-p">• <strong>Windows:</strong> <code class="step-code">%APPDATA%\obs-studio\basic\scenes\</code><br>
+        • <strong>macOS:</strong> <code class="step-code">~/Library/Application Support/obs-studio/basic/scenes/</code></p>
+        <div class="step-tip"><b>Huwag muna i-uninstall ang OBS.</b> Iwan itong naka-install. Kung hindi gumana ang SplitCam para sa iyo, babalik ka agad nang walang nawawala.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-h">I-install ang SplitCam at gamitin ang OBS Project Import</div>
+        <p class="step-p"><a href="../../" style="color:var(--blue)">I-download ang SplitCam</a>. Sa unang buksan, i-click ang <strong>Import → OBS Project</strong>. Ituro sa JSON file mula sa step 1. Pumapasok ang scenes, sources, transitions at hotkeys mo.</p>
+        <div class="step-tip"><b>Ano ang dumadala:</b> scenes, sources (webcam / window / display / browser / image / media / text), transitions, hotkeys. <b>Ano ang ire-reconfigure mo:</b> stream keys at per-platform settings (dahil naka-save ang mga ito per-encoder, hindi sa scene files).</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-h">Ikonekta ulit ang stream keys at mag-go live</div>
+        <p class="step-p">Sa SplitCam, buksan ang <strong>Stream Settings</strong>. I-paste ang stream keys mo para sa mga platform na ginagamit mo. Kung gusto mong mag-multistream sa maraming platform nang sabay, lagyan ng check lahat — walang kailangang plugin. I-click ang <strong>Go Live</strong>.</p>
+        <div class="step-tip"><b>Kabuuang oras:</b> ~5 minuto kung medium complexity ang OBS setup mo. Kung may mabigat kang plugin dependencies sa OBS (advanced scene switcher, OBS WebSocket integrations), maghanda ng dagdag na oras para suriin ang native equivalents ng SplitCam.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="section" id="compare">
+  <h2 class="sec-h">SplitCam vs OBS Studio — feature-by-feature</h2>
+  <p class="sec-p">Tapat na paghahambing. Kung saan panalo ang OBS, panalo ang OBS. Kung saan panalo ang SplitCam, panalo ang SplitCam.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Feature</th><th>SplitCam</th><th>OBS Studio</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Cost</td><td class="yes">Free, no watermark</td><td class="yes">Free, no watermark</td></tr>
+      <tr><td>Open source</td><td class="no">No (proprietary)</td><td class="yes">✓ GPLv2 on GitHub</td></tr>
+      <tr><td>Multistream (multi-platform)</td><td class="yes">✓ Built-in, 84+ platforms</td><td class="meh">Multiple RTMP Outputs plugin</td></tr>
+      <tr><td>AI background removal</td><td class="yes">✓ Built-in</td><td class="meh">Background Removal plugin</td></tr>
+      <tr><td>Beauty filters</td><td class="yes">✓ Built-in</td><td class="no">Not available</td></tr>
+      <tr><td>Virtual camera</td><td class="yes">✓ With AI background + beauty</td><td class="meh">Basic, no AI applied</td></tr>
+      <tr><td>OBS Project Import</td><td class="yes">✓ One click</td><td class="yes">N/A</td></tr>
+      <tr><td>Scene switching + transitions</td><td class="yes">✓ Built-in (Fade/Luma/Slide)</td><td class="yes">✓ Built-in (Fade/Cut)</td></tr>
+      <tr><td>Browser source</td><td class="yes">✓ Built-in</td><td class="yes">✓ Built-in</td></tr>
+      <tr><td>Hardware encoding (NVENC/QuickSync/AMF)</td><td class="yes">Auto-detected</td><td class="meh">Manual setup</td></tr>
+      <tr><td>Mobile apps (iOS + Android)</td><td class="yes">✓ Native</td><td class="no">No mobile</td></tr>
+      <tr><td>Phone as an extra camera</td><td class="yes">✓ Built-in</td><td class="meh">NDI HX or 3rd-party</td></tr>
+      <tr><td>Linux support</td><td class="no">Not available</td><td class="yes">✓ Native</td></tr>
+      <tr><td>Plugin ecosystem size</td><td class="meh">Smaller</td><td class="yes">4,000+ plugins</td></tr>
+      <tr><td>Learning curve</td><td class="yes">Easy</td><td class="meh">Steeper</td></tr>
+      <tr><td>UI age / polish</td><td class="yes">Modern</td><td class="meh">Functional, dated</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- OTHER ALTERNATIVES (for completeness, for ItemList schema) -->
+<section class="section">
+  <h2 class="sec-h">Other OBS alternatives worth knowing</h2>
+  <p class="sec-p">Karamihan ng "OBS alternative" lists ay ipinapakita ang parehong iilan. Tapat na one-line takes sa bawat isa:</p>
+  <div class="alt-list">
+    <div class="alt-row featured">
+      <div class="alt-rank">1</div>
+      <div class="alt-body">
+        <h4>SplitCam <span class="tag">Free · this site</span></h4>
+        <p>Libre, walang watermark, built-in multistream + AI + virtual camera + mobile. Ini-import ang OBS scenes. Pinakamainam para sa streamers na gusto ang lakas ng OBS nang walang plugin tax.</p>
+      </div>
+    </div>
+    <div class="alt-row">
+      <div class="alt-rank">2</div>
+      <div class="alt-body">
+        <h4>Streamlabs Desktop <span class="tag">Free + paid</span></h4>
+        <p>Fork talaga ng OBS na may naka-bake na overlays, widgets at chat. May free tier; <strong>$19/buwan</strong> na "Streamlabs Ultra" para sa multistream at themes. Pag-aari ng Logitech.</p>
+      </div>
+    </div>
+    <div class="alt-row">
+      <div class="alt-rank">3</div>
+      <div class="alt-body">
+        <h4>XSplit Broadcaster <span class="tag">Free with watermark</span></h4>
+        <p>Nila-<strong>watermark ng free version ang stream mo</strong>. Tinatanggal ng Premium $5–$15/buwan ang watermark at binubuksan ang features. Makinis ang UI pero deal-breaker ang watermark sa free para sa karamihan.</p>
+      </div>
+    </div>
+    <div class="alt-row">
+      <div class="alt-rank">4</div>
+      <div class="alt-body">
+        <h4>Meld Studio <span class="tag">Free · early</span></h4>
+        <p>Mas bago, macOS-first, modernong UI. Open source. Mas maliit ang feature set ngayon — limitado ang multistreaming at walang Windows version sa panahon ng pagsulat. Isa itong dapat bantayan.</p>
+      </div>
+    </div>
+    <div class="alt-row">
+      <div class="alt-rank">5</div>
+      <div class="alt-body">
+        <h4>Restream Studio <span class="tag">Web · $19/mo</span></h4>
+        <p>Browser-based, walang install na kailangan. Hanggang 6 na guests sa studio. <strong>Subscription ($19+/buwan)</strong>, mas kaunti ang kontrol kaysa sa desktop encoder. Mainam para sa podcast-style streams na may remote guests.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <h2 class="sec-h">OBS alternative FAQ</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>What is a good free alternative to OBS Studio?</summary>
+      <p>Ang SplitCam ay libreng OBS alternative na mas madaling i-set up. Kasama na rito ang multistreaming, AI background removal, beauty filters, virtual camera at mobile apps — mga feature na kailangan ng plugins sa OBS. Ini-import din ng SplitCam ang existing mong OBS scene collections sa isang click, kaya hindi destructive ang paglipat. Ibang libreng alternatives: Streamlabs Desktop (fork ng OBS, may overlays/widgets), XSplit Broadcaster (free tier na may watermark), Meld Studio (mas bago, Mac-focused).</p>
+    </details>
+    <details class="faq-item">
+      <summary>Why do people look for an OBS alternative?</summary>
+      <p>Karaniwang dahilan: (1) May learning curve ang OBS — masyadong maraming menu para sa casual streamers. (2) Walang built-in na multistreaming, AI background o beauty filters ang OBS — mag-i-install ka ng hiwalay na plugin para sa bawat isa. (3) Kailangan ng maintenance ang plugins pagkatapos ng bawat OBS update. (4) Walang mobile apps ang OBS — hindi ka makakapag-stream mula sa telepono o makakagamit ng telepono bilang pangalawang camera. (5) Mataas ang CPU usage kapag gumagamit ng software (x264) encoder sa mas lumang makina.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Is SplitCam better than OBS?</summary>
+      <p>Mas mabuti sa iba't ibang paraan — at mas mahina sa iba. Panalo ang SplitCam sa: mas simpleng UI, built-in multistreaming/virtual camera/AI background/mobile apps, mas mabilis na setup para sa mga baguhang streamer. Panalo ang OBS sa: open-source/auditable codebase, napakalaking plugin ecosystem (4000+ plugins), mas malawak na community tutorials. Para sa karamihan ng streamer — gamers, YouTubers, churches — mas mabilis i-set up at gamitin ang SplitCam. Para sa power users na gusto ang bawat posibleng integration at hindi alintana ang oras sa configuration, OBS pa rin ang hari.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can I import my OBS scenes into SplitCam?</summary>
+      <p>Oo — may one-click OBS Project Import ang SplitCam. Ituro ito sa OBS scene-collection JSON file mo, i-click ang Import, at lalabas ang lahat ng scenes, sources at transitions mo sa SplitCam. Hindi mo na kailangang mag-rebuild mula sa simula. Kung magpasya kang mas bagay sa iyo ang OBS, hindi nagalaw ang orihinal mong OBS files — nababalikan ang paglipat.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Does SplitCam work on Mac like OBS?</summary>
+      <p>Oo — natively tumatakbo ang SplitCam sa macOS 11+ (Big Sur at mas bago), kasama ang Apple Silicon (M1/M2/M3) at Intel Macs. Sinusuportahan ng macOS build ang virtual camera output sa Zoom/Teams/Meet/Discord/FaceTime, hardware encoding via VideoToolbox, at ang buong feature set kasama ang multistreaming at AI background.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Will SplitCam use less CPU than OBS?</summary>
+      <p>Sa pangkalahatan, oo kapag pareho silang gumagamit ng hardware encoding (NVENC sa Nvidia, QuickSync sa Intel, AMF sa AMD, VideoToolbox sa macOS). Awtomatikong tinutukoy ng SplitCam ang pinakamahusay na hardware encoder; kailangan ng OBS ng manual configuration. Kung nagpapatakbo ka ng OBS gamit ang x264 software encoder, ang paglipat sa SplitCam (o pag-on ng hardware encoding sa OBS) ay karaniwang nagpapababa ng CPU usage mula 30-60% pababa sa wala pang 10%.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Is SplitCam open source like OBS?</summary>
+      <p>Hindi — proprietary closed-source freeware ang SplitCam. Open source ang OBS Studio sa ilalim ng GPLv2. Kung hard requirement ang open-source/auditable code (corporate policy, security review, contribution model), manatili sa OBS o tingnan ang Meld Studio. Libre ang SplitCam na parang libreng beer, hindi libre na parang malayang pananalita.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Does SplitCam have plugins like OBS?</summary>
+      <p>Mas maliit ang plugin ecosystem ng SplitCam kaysa sa OBS (na may 4000+ na community plugins). Gayunpaman, karamihan ng plugins na ini-install ng tao sa OBS ay para sa mga feature na natively na kasama sa SplitCam: multistreaming, virtual camera, NDI, AI background, browser source, beauty filters, replay buffer. Kung hindi mo kailangan ang OBS-specific na niche plugins, baka hindi mo na kailangan ng plugins sa SplitCam.</p>
+    </details>
+  </div>
+</section>
+
+<!-- RELATED -->
+<div class="related">
+  <h3 style="font-size:18px;font-weight:700;margin-bottom:6px">Related guides</h3>
+  <div class="related-grid">
+    <a class="related-card" href="../../multistreaming/">
+      <span class="eyebrow">Multistreaming</span>
+      <h4>One stream → every platform</h4>
+      <p>Kung ano talaga ang multistreaming, paano tinatalo ng peer-to-peer ang cloud Restream.</p>
+    </a>
+    <a class="related-card" href="../../for/youtubers/">
+      <span class="eyebrow">YouTube Live</span>
+      <h4>Live stream on YouTube</h4>
+      <p>Buong step-by-step guide gamit ang SplitCam bilang encoder.</p>
+    </a>
+    <a class="related-card" href="../../for/churches/">
+      <span class="eyebrow">For Churches</span>
+      <h4>Church Sunday-service streaming</h4>
+      <p>Multi-camera setup, lyrics overlay, multistream sa FB + YouTube + site.</p>
+    </a>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-block">
+  <h2>Try SplitCam — it imports your OBS scenes</h2>
+  <p>Libreng download. Walang card, walang signup, walang watermark. Ang buong app ang makukuha mo sa unang install. Nananatili kung nasaan ang OBS install mo — nababalikan ang paglipat.</p>
+  <div class="cta-btns" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
+    <a href="../../products/" class="btn-ghost btn-lg">All apps &amp; downloads</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 SplitCam · Free streaming software since 2003</div>
+    <div class="footer-links">
+      <a href="../../">Home</a>
+      <a href="../../multistreaming/">Multistreaming</a>
+      <a href="../../virtual-camera/">Virtual Camera</a>
+      <a href="../">Alternatives</a>
+      <a href="../../for/">Use Cases</a>
+      <a href="../../#faq">FAQ</a>
+      <a href="../../help/">Help</a>
+      <a href="../../../changelog/">Changelog</a>
+      <a href="../../../license-agreement/">License</a>
+      <a href="../../../privacy-policy/">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Mobile hamburger */
+(function(){
+  var burger=document.querySelector('.nav-burger');
+  var menu=document.getElementById('nav-mobile');
+  if(!burger||!menu)return;
+  function close(){burger.classList.remove('open');menu.classList.remove('open');burger.setAttribute('aria-expanded','false');menu.setAttribute('aria-hidden','true');}
+  function open(){burger.classList.add('open');menu.classList.add('open');burger.setAttribute('aria-expanded','true');menu.setAttribute('aria-hidden','false');}
+  burger.addEventListener('click',function(e){e.stopPropagation();if(menu.classList.contains('open'))close();else open();});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  document.addEventListener('click',function(e){if(!menu.classList.contains('open'))return;if(menu.contains(e.target)||burger.contains(e.target))return;close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  window.addEventListener('resize',function(){if(window.innerWidth>900)close();});
+})();
+</script>
+
+<script>
+/* Smart download: point every [data-dl-primary] at the visitor's OS installer */
+(function(){
+  var U={windows:'https://splitcam.com/download',mac:'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',ios:'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',android:'https://play.google.com/store/apps/details?id=com.splitcam'};
+  var ua=navigator.userAgent||'',os='windows';
+  if(/Android/i.test(ua))os='android';else if(/iPad|iPhone|iPod/i.test(ua))os='ios';else if(/Macintosh|Mac OS X/i.test(ua))os='mac';
+  document.querySelectorAll('[data-dl-primary]').forEach(function(a){a.setAttribute('href',U[os]);});
+})();
+</script>
+<!--AD--><script>
+(function(){try{
+var L=["en","fil","fr","pt","de","tr","ru","es"];
+var cur=document.documentElement.lang;
+var path=location.pathname;if(path.charAt(0)==="/")path=path.substring(1);
+var parts=path.split("/");if(L.indexOf(parts[0])>=0)parts.shift();
+var slug=parts.join("/");
+function go(lang){var p=lang==="en"?"/"+slug:"/"+lang+"/"+slug;if(p!==location.pathname){document.documentElement.style.visibility="hidden";location.replace(p+location.search+location.hash);}}
+var stored;try{stored=localStorage.getItem("preferred_lang");}catch(e){}
+if(stored&&L.indexOf(stored)>=0){if(stored!==cur)go(stored);}
+else{var bl=navigator.languages||(navigator.language?[navigator.language]:[]);for(var i=0;i<bl.length;i++){var c=bl[i].toLowerCase().split("-")[0];if(c==="nb"||c==="nn")c="no";if(c==="tl")c="fil";if(L.indexOf(c)>=0){if(c!==cur)go(c);break;}}}
+if(document.addEventListener){document.addEventListener("click",function(e){var t=e.target;while(t&&t!==document){if(t.tagName==="A"&&t.getAttribute&&t.getAttribute("data-lang")){try{localStorage.setItem("preferred_lang",t.getAttribute("data-lang"));}catch(e){}break;}t=t.parentNode;}},true);}
+}catch(e){}})();
+</script><!--/AD-->
+</body>
+</html>
