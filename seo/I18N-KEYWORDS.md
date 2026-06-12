@@ -59,3 +59,21 @@ write naturally for the audience (misa/culto/servicio dominical).
 | /for/youtubers/ | «Как стримить на Ютубе» | «Cómo hacer un directo en YouTube» + «cómo transmitir en vivo en YouTube» in body |
 | /for/churches/ | «Трансляция богослужения» | «Transmisión en vivo para iglesias» |
 | /products/ | «Скачать SplitCam» + «стрим с телефона» on mobile cards | «Descargar SplitCam» + «app para hacer directos» on mobile cards |
+
+---
+
+# Wave 1 keywords — fil / fr / pt-BR / de / tr (Ahrefs, 2026-06-13)
+
+Per-page PRIMARY keyword → title/H1/meta. Brand "splitcam" everywhere.
+
+| Page | fr (FR) | de (DE) | pt (BR) | tr (TR) | fil (PH) |
+|---|---|---|---|---|---|
+| `/` home | logiciel de streaming (311/KD10) | **streaming software (598/KD0)** | software de transmissão ao vivo (50) | canlı yayın programı / yayın programı (38/37) | streaming software / live streaming software (EN) |
+| multistreaming | multistream (1230) | multistreaming (40) | multistream (1269) | multistream (73) | multistream (100) |
+| virtual-camera | webcam virtuelle / caméra virtuelle (20/10) | virtuelle kamera (80) | câmera virtual / webcam virtual (50/80) | sanal kamera (80) | virtual camera (150, EN) |
+| alternatives/obs | alternative obs (30) | **obs alternative (274/KD0)** | alternativa ao OBS | OBS alternatifi | obs alternative (90/KD0, EN) |
+| for/youtubers | comment streamer sur youtube (20) | auf youtube streamen | **como fazer live no youtube (1995/KD0)** | youtube canlı yayın programı (24) | **how to stream on youtube (363, EN)** |
+| products | télécharger splitcam | splitcam herunterladen | baixar splitcam | splitcam indir | download splitcam (EN) |
+
+**fil = English titles/keywords** (PH searches tech in English); body copy may be Filipino/Taglish but titles, meta, H1, JSON-LD stay English-keyword-led.
+**pt-BR youtubers is a huge win** (1995/KD0). **de home + obs are huge KD0 wins.** **fr/pt multistream ~1200** (high KD ~57 — long game).
