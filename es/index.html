@@ -722,6 +722,11 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     scroll-behavior: auto !important;
   }
 }
+
+/* nav-fit: tighten links + collapse to burger early so longer RU/ES (and EN+switcher) labels never clip */
+.nav-links{gap:18px}
+.nav-links a{white-space:nowrap}
+@media(max-width:1100px){nav .nav-links{display:none}nav .nav-burger{display:inline-flex}.nav-right .lang-sw{display:none}}
 </style>
 </head>
 <body>
