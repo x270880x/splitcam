@@ -117,6 +117,16 @@ CSS — add once to the page `<style>` (same on every page):
 ## QA after writing
 
 - `python3 seo/linkcheck.py --no-network` MUST report 0 broken internal links/resources.
+- **Layout/size check (mandatory — translated text is longer than EN):** nothing
+  may overflow, clip, or overlap in any locale. Check desktop 1440/1280/1100 + mobile 390.
+  - **`white-space:nowrap` on any translatable text = bug.** Known fixes already in:
+    nav collapses to burger ≤1100px (long labels + switcher clipped the button);
+    hero `.blue` keyword is `white-space:normal` + `overflow-wrap:break-word` (it was
+    `nowrap` and slid under the hero app-window in RU/ES). Apply the same defensively
+    to new headings/buttons in long locales (de, ru, fil, el, fi…).
+  - Quick audits (via the preview iframe): 0 horizontal body overflow; 0 clipped text
+    (scrollWidth>clientWidth on nowrap/overflow boxes); no text⇄visual box intersection
+    in hero/spotlight sections.
 - Mobile ≤900px and desktop 1440px spot-check on at least `/ru/` and `/es/multistreaming/`.
 - grep the new tree for `v10.9.2`, `84+`, `aggregateRating` (must be absent), `lang="`.
 - `sitemap.xml` gets all 20 new URLs in the same commit.
