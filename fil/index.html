@@ -23,12 +23,17 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
 <!-- hreflang -->
+<!--HL-->
 <link rel="alternate" hreflang="en" href="https://splitcam.com/">
+<link rel="alternate" hreflang="fil" href="https://splitcam.com/fil/">
+<link rel="alternate" hreflang="fr" href="https://splitcam.com/fr/">
+<link rel="alternate" hreflang="pt" href="https://splitcam.com/pt/">
+<link rel="alternate" hreflang="de" href="https://splitcam.com/de/">
+<link rel="alternate" hreflang="tr" href="https://splitcam.com/tr/">
 <link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/">
 <link rel="alternate" hreflang="es" href="https://splitcam.com/es/">
 <link rel="alternate" hreflang="x-default" href="https://splitcam.com/">
-
-<!-- Open Graph (Facebook, LinkedIn, Slack previews) -->
+<!--/HL--><!-- Open Graph (Facebook, LinkedIn, Slack previews) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://splitcam.com/fil/">
 <meta property="og:title" content="Free Streaming Software & Virtual Camera | SplitCam">
@@ -727,6 +732,21 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
 .nav-links{gap:18px}
 .nav-links a{white-space:nowrap}
 @media(max-width:1100px){nav .nav-links{display:none}nav .nav-burger{display:inline-flex}.nav-right .lang-sw{display:none}}
+
+.lang-dl{position:relative;display:inline-block}
+.lang-dl>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border:1px solid var(--app-border);border-radius:8px;background:rgba(255,255,255,.02);font-size:11.5px;font-weight:700;color:var(--text-sub);user-select:none}
+.lang-dl>summary::-webkit-details-marker{display:none}
+.lang-dl>summary:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.lang-dl .lf{font-size:13px;line-height:1}.lang-dl .lc{letter-spacing:.4px}
+.lang-dl .dl-caret{font-size:9px;opacity:.7}
+.lang-dl-menu{position:absolute;top:calc(100% + 6px);right:0;z-index:60;min-width:180px;max-height:60vh;overflow-y:auto;padding:6px;background:var(--app-panel);border:1px solid var(--app-border2);border-radius:10px;box-shadow:0 12px 32px -8px rgba(0,0,0,.6);display:grid;gap:1px}
+.lang-dl-menu a{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:7px;font-size:13px;font-weight:500;color:var(--text-sub);text-decoration:none;white-space:nowrap}
+.lang-dl-menu a:hover{background:rgba(255,255,255,.05);color:var(--text)}
+.lang-dl-menu a.cur{color:#fff;background:var(--blue)}
+.lang-dl-menu .lf{font-size:15px}
+@media(max-width:1100px){.nav-right .lang-dl{display:none}}
+#nav-mobile .lang-dl{display:block;margin:10px 16px 4px}
+#nav-mobile .lang-dl-menu{position:static;max-height:none;box-shadow:none;margin-top:6px}
 </style>
 </head>
 <body>
@@ -803,19 +823,15 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <span class="nav-logo-wordmark">splitcam</span>
   </a>
   <ul class="nav-links">
-    <li><a href="products/">Products</a></li>
-    <li><a href="virtual-camera/">Virtual Camera</a></li>
-    <li><a href="multistreaming/">Multistreaming</a></li>
-    <li><a href="alternatives/">Alternatives</a></li>
-    <li><a href="for/">Use Cases</a></li>
-    <li><a href="help/">Help</a></li>
+    <li><a href="../products/">Products</a></li>
+    <li><a href="../virtual-camera/">Virtual Camera</a></li>
+    <li><a href="../multistreaming/">Multistreaming</a></li>
+    <li><a href="../alternatives/">Alternatives</a></li>
+    <li><a href="../for/">Use Cases</a></li>
+    <li><a href="../help/">Help</a></li>
   </ul>
   <div class="nav-right">
-    <div class="lang-sw" aria-label="Language">
-      <span class="on" lang="en">EN</span>
-      <a href="ru/" hreflang="ru" lang="ru">RU</a>
-      <a href="es/" hreflang="es" lang="es">ES</a>
-    </div>
+    <!--LD--><details class="lang-dl"><summary aria-label="Language"><span class="lf">🇵🇭</span><span class="lc">FIL</span><span class="dl-caret">▾</span></summary><div class="lang-dl-menu"><a href="../" data-lang="en" hreflang="en" lang="en"><span class="lf">🇬🇧</span><span class="ln">English</span></a><a href="../fil/" data-lang="fil" hreflang="fil" lang="fil" class="cur"><span class="lf">🇵🇭</span><span class="ln">Filipino</span></a><a href="../fr/" data-lang="fr" hreflang="fr" lang="fr"><span class="lf">🇫🇷</span><span class="ln">Français</span></a><a href="../pt/" data-lang="pt" hreflang="pt" lang="pt"><span class="lf">🇧🇷</span><span class="ln">Português</span></a><a href="../de/" data-lang="de" hreflang="de" lang="de"><span class="lf">🇩🇪</span><span class="ln">Deutsch</span></a><a href="../tr/" data-lang="tr" hreflang="tr" lang="tr"><span class="lf">🇹🇷</span><span class="ln">Türkçe</span></a><a href="../ru/" data-lang="ru" hreflang="ru" lang="ru"><span class="lf">🇷🇺</span><span class="ln">Русский</span></a><a href="../es/" data-lang="es" hreflang="es" lang="es"><span class="lf">🇪🇸</span><span class="ln">Español</span></a></div></details><!--/LD-->
     <span class="dl dl-sm dl-compact">
       <a class="btn-blue-sm" href="#" data-dl-primary><svg class="ico ico-sm"><use href="#i-dl"/></svg> <span data-dl-label>Download</span></a>
       <button class="dl-toggle" aria-label="Choose platform" data-dl-toggle>
@@ -831,17 +847,13 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
 </nav>
 
 <div class="nav-mobile" id="nav-mobile" role="menu" aria-hidden="true">
-  <a href="products/" role="menuitem">Products</a>
-  <a href="virtual-camera/" role="menuitem">Virtual Camera</a>
-  <a href="multistreaming/" role="menuitem">Multistreaming</a>
-  <a href="alternatives/" role="menuitem">Alternatives</a>
-  <a href="for/" role="menuitem">Use Cases</a>
-  <a href="help/" role="menuitem">Help</a>
-  <div class="lang-sw" aria-label="Language">
-    <span class="on" lang="en">EN</span>
-    <a href="ru/" hreflang="ru" lang="ru">RU</a>
-    <a href="es/" hreflang="es" lang="es">ES</a>
-  </div>
+  <a href="../products/" role="menuitem">Products</a>
+  <a href="../virtual-camera/" role="menuitem">Virtual Camera</a>
+  <a href="../multistreaming/" role="menuitem">Multistreaming</a>
+  <a href="../alternatives/" role="menuitem">Alternatives</a>
+  <a href="../for/" role="menuitem">Use Cases</a>
+  <a href="../help/" role="menuitem">Help</a>
+  <!--LD--><details class="lang-dl"><summary aria-label="Language"><span class="lf">🇵🇭</span><span class="lc">FIL</span><span class="dl-caret">▾</span></summary><div class="lang-dl-menu"><a href="../" data-lang="en" hreflang="en" lang="en"><span class="lf">🇬🇧</span><span class="ln">English</span></a><a href="../fil/" data-lang="fil" hreflang="fil" lang="fil" class="cur"><span class="lf">🇵🇭</span><span class="ln">Filipino</span></a><a href="../fr/" data-lang="fr" hreflang="fr" lang="fr"><span class="lf">🇫🇷</span><span class="ln">Français</span></a><a href="../pt/" data-lang="pt" hreflang="pt" lang="pt"><span class="lf">🇧🇷</span><span class="ln">Português</span></a><a href="../de/" data-lang="de" hreflang="de" lang="de"><span class="lf">🇩🇪</span><span class="ln">Deutsch</span></a><a href="../tr/" data-lang="tr" hreflang="tr" lang="tr"><span class="lf">🇹🇷</span><span class="ln">Türkçe</span></a><a href="../ru/" data-lang="ru" hreflang="ru" lang="ru"><span class="lf">🇷🇺</span><span class="ln">Русский</span></a><a href="../es/" data-lang="es" hreflang="es" lang="es"><span class="lf">🇪🇸</span><span class="ln">Español</span></a></div></details><!--/LD-->
 </div>
 
 <!-- HERO -->
@@ -932,7 +944,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Hardware encoding via NVENC, QuickSync, AMF — auto-detected sa startup</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> RTMPS secure streaming para sa kahit anong platform na sumusuporta nito</li>
         </ul>
-        <a href="multistreaming/" class="btn-primary" style="margin-top:24px">Tingnan paano gumagana ang multistream <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+        <a href="../multistreaming/" class="btn-primary" style="margin-top:24px">Tingnan paano gumagana ang multistream <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
       </div>
       <div class="feat-vis">
         <div class="bc-header"><span class="bc-live-dot"></span><span class="bc-live">LIVE</span><span class="bc-info">sa lahat ng 5 — sabay-sabay</span></div>
@@ -961,7 +973,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Browser source na may buong JavaScript & scroll support</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Phone bilang wireless camera over network — second angle nang walang capture card</li>
           <li><svg class="ico ico-sm"><use href="#i-check"/></svg> Unlimited scenes na may custom transitions: Fade, Stinger, Luma Wipe, Slide, Swipe</li>
-          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> I-import ang OBS Studio projects directly — panatilihin ang dati mong scene setup (<a href="alternatives/obs/" style="color:var(--blue)">SplitCam vs OBS</a>)</li>
+          <li><svg class="ico ico-sm"><use href="#i-check"/></svg> I-import ang OBS Studio projects directly — panatilihin ang dati mong scene setup (<a href="../alternatives/obs/" style="color:var(--blue)">SplitCam vs OBS</a>)</li>
         </ul>
       </div>
       <div class="feat-vis">
@@ -1070,7 +1082,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         <p class="eyebrow">Virtual Camera</p>
         <h2 class="sec-h" style="margin-bottom:14px">Ang stream mo ay virtual camera rin.</h2>
         <p class="sec-p" style="margin-bottom:24px;max-width:480px">Gamitin ang SplitCam bilang <strong style="color:var(--text)">virtual camera para sa Zoom</strong>, Teams, Google Meet, Discord, Telegram, WhatsApp at 60+ iba pang apps — isang libreng virtual webcam na may lahat ng scenes, effects at AI background mo. Gumagana sa <strong style="color:var(--text)">landscape (16:9)</strong> at <strong style="color:var(--text)">portrait (9:16)</strong> orientations.</p>
-        <a href="virtual-camera/" class="btn-primary">Tingnan ang compatible apps <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+        <a href="../virtual-camera/" class="btn-primary">Tingnan ang compatible apps <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
       </div>
       <div class="vc-spotlight-vis">
         <div class="vc-source">
@@ -1168,7 +1180,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         <p>Game Capture para sa DirectX/OpenGL, NVENC encoding, Replay Source, multistream sa Twitch + YouTube + Kick nang sabay. Zero FPS impact sa laro mo.</p>
         <div class="uc-tags"><span>Game Capture</span><span>Multistream</span><span>Replay</span></div>
       </div>
-      <a class="usecase" href="for/youtubers/">
+      <a class="usecase" href="../for/youtubers/">
         <svg class="uc-go" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
         <div class="uc-ico uc-ico-yt" aria-hidden="true" style="filter:drop-shadow(0 0 12px rgba(255,0,0,.4))"><svg viewBox="0 0 24 24" fill="none"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0000"/><polygon points="10,8.5 10,15.5 16,12" fill="#fff"/></svg></div>
         <h3>Para sa YouTubers</h3>
@@ -1181,7 +1193,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         <p>Whiteboard source, Timer na may hotkey actions, PDF & document sources, virtual camera sa Zoom/Meet/Teams. Mag-annotate sa slides mo nang live.</p>
         <div class="uc-tags"><span>Whiteboard</span><span>PDF Source</span><span>Virtual Cam</span></div>
       </div>
-      <a class="usecase" href="for/churches/">
+      <a class="usecase" href="../for/churches/">
         <svg class="uc-go" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.5))">⛪</div>
         <h3>Para sa mga Simbahan</h3>
@@ -1202,7 +1214,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </div>
     </div>
     <div style="text-align:center;margin-top:36px">
-      <a href="for/" class="btn-ghost">Tingnan lahat ng use cases <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
+      <a href="../for/" class="btn-ghost">Tingnan lahat ng use cases <svg class="ico ico-sm"><use href="#i-arr"/></svg></a>
     </div>
   </div>
 </section>
@@ -1413,8 +1425,8 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </a>
       <p>Libreng live streaming software at multi-streaming studio para sa Windows, macOS, iOS at Android. Since 2003.</p>
     </div>
-    <div class="foot-col"><h5>Product</h5><ul><li><a href="multistreaming/">Multistreaming</a></li><li><a href="virtual-camera/">Virtual Camera</a></li><li><a href="products/">Products & downloads</a></li><li><a href="alternatives/">Alternatives</a></li><li><a href="for/">Use Cases</a></li><li><a href="#whats-new">What's new · v10.9.2</a></li><li><a href="../changelog/">Changelog</a></li></ul></div>
-    <div class="foot-col"><h5>Support</h5><ul><li><a href="help/">Help</a></li><li><a href="https://t.me/splitcam" target="_blank" rel="noopener">Telegram chat</a></li><li><a href="https://splitcam.com/forum/" target="_blank" rel="noopener">User forum</a></li></ul></div>
+    <div class="foot-col"><h5>Product</h5><ul><li><a href="../multistreaming/">Multistreaming</a></li><li><a href="../virtual-camera/">Virtual Camera</a></li><li><a href="../products/">Products & downloads</a></li><li><a href="../alternatives/">Alternatives</a></li><li><a href="../for/">Use Cases</a></li><li><a href="#whats-new">What's new · v10.9.2</a></li><li><a href="../changelog/">Changelog</a></li></ul></div>
+    <div class="foot-col"><h5>Support</h5><ul><li><a href="../help/">Help</a></li><li><a href="https://t.me/splitcam" target="_blank" rel="noopener">Telegram chat</a></li><li><a href="https://splitcam.com/forum/" target="_blank" rel="noopener">User forum</a></li></ul></div>
     <div class="foot-col"><h5>Company</h5><ul><li><a href="../privacy-policy/">Privacy Policy</a></li><li><a href="../license-agreement/">License agreement</a></li><li><a href="https://splitcam.com/" target="_blank" rel="noopener">SplitCam.com</a></li></ul></div>
   </div>
   <div class="footer-bottom">
@@ -1673,5 +1685,19 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
 })();
 </script>
 
+<!--AD--><script>
+(function(){try{
+var L=["en","fil","fr","pt","de","tr","ru","es"];
+var cur=document.documentElement.lang;
+var path=location.pathname;if(path.charAt(0)==="/")path=path.substring(1);
+var parts=path.split("/");if(L.indexOf(parts[0])>=0)parts.shift();
+var slug=parts.join("/");
+function go(lang){var p=lang==="en"?"/"+slug:"/"+lang+"/"+slug;if(p!==location.pathname){document.documentElement.style.visibility="hidden";location.replace(p+location.search+location.hash);}}
+var stored;try{stored=localStorage.getItem("preferred_lang");}catch(e){}
+if(stored&&L.indexOf(stored)>=0){if(stored!==cur)go(stored);}
+else{var bl=navigator.languages||(navigator.language?[navigator.language]:[]);for(var i=0;i<bl.length;i++){var c=bl[i].toLowerCase().split("-")[0];if(c==="nb"||c==="nn")c="no";if(c==="tl")c="fil";if(L.indexOf(c)>=0){if(c!==cur)go(c);break;}}}
+if(document.addEventListener){document.addEventListener("click",function(e){var t=e.target;while(t&&t!==document){if(t.tagName==="A"&&t.getAttribute&&t.getAttribute("data-lang")){try{localStorage.setItem("preferred_lang",t.getAttribute("data-lang"));}catch(e){}break;}t=t.parentNode;}},true);}
+}catch(e){}})();
+</script><!--/AD-->
 </body>
 </html>

@@ -23,12 +23,17 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
 <!-- hreflang -->
+<!--HL-->
 <link rel="alternate" hreflang="en" href="https://splitcam.com/">
+<link rel="alternate" hreflang="fil" href="https://splitcam.com/fil/">
+<link rel="alternate" hreflang="fr" href="https://splitcam.com/fr/">
+<link rel="alternate" hreflang="pt" href="https://splitcam.com/pt/">
+<link rel="alternate" hreflang="de" href="https://splitcam.com/de/">
+<link rel="alternate" hreflang="tr" href="https://splitcam.com/tr/">
 <link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/">
 <link rel="alternate" hreflang="es" href="https://splitcam.com/es/">
 <link rel="alternate" hreflang="x-default" href="https://splitcam.com/">
-
-<!-- Open Graph (Facebook, LinkedIn, Slack previews) -->
+<!--/HL--><!-- Open Graph (Facebook, LinkedIn, Slack previews) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://splitcam.com/ru/">
 <meta property="og:title" content="Программа для стрима и виртуальная камера — бесплатно | SplitCam">
@@ -306,9 +311,9 @@ nav {
 @keyframes pill-sonar { 0%{transform:scale(1);opacity:.65} 100%{transform:scale(3.4);opacity:0} }
 .pill-text { font-size: 11.5px; font-weight: 600; color: var(--blue); letter-spacing: .4px; }
 
-h1.hero-title { font-size: clamp(28px, 4vw, 56px); font-weight: 700; line-height: 1.1; letter-spacing: -1.8px; color: var(--text); margin-bottom: 18px; overflow-wrap: break-word; }
+h1.hero-title { font-size: clamp(28px, 3.3vw, 46px); font-weight: 700; line-height: 1.1; letter-spacing: -1.4px; color: var(--text); margin-bottom: 18px; overflow-wrap: break-word; }
 h1.hero-title .blue { color: var(--blue); white-space: normal; }
-h1.hero-title .h1-promise { font-size: 1.2em; display: inline-block; line-height: 1; margin-bottom: 6px; }
+h1.hero-title .h1-promise { font-size: 1.1em; display: inline-block; line-height: 1; margin-bottom: 6px; }
 .hero-cyc { display: inline-block; vertical-align: baseline; color: var(--blue); font-weight: 700; letter-spacing: inherit; text-align: left; transition: opacity .45s ease; }
 .hero-cyc.fading { opacity: 0; }
 .hero-desc { font-size: 16px; color: var(--text-sub); line-height: 1.55; max-width: 480px; margin-bottom: 24px; letter-spacing: -0.1px; }
@@ -727,6 +732,21 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
 .nav-links{gap:18px}
 .nav-links a{white-space:nowrap}
 @media(max-width:1100px){nav .nav-links{display:none}nav .nav-burger{display:inline-flex}.nav-right .lang-sw{display:none}}
+
+.lang-dl{position:relative;display:inline-block}
+.lang-dl>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border:1px solid var(--app-border);border-radius:8px;background:rgba(255,255,255,.02);font-size:11.5px;font-weight:700;color:var(--text-sub);user-select:none}
+.lang-dl>summary::-webkit-details-marker{display:none}
+.lang-dl>summary:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.lang-dl .lf{font-size:13px;line-height:1}.lang-dl .lc{letter-spacing:.4px}
+.lang-dl .dl-caret{font-size:9px;opacity:.7}
+.lang-dl-menu{position:absolute;top:calc(100% + 6px);right:0;z-index:60;min-width:180px;max-height:60vh;overflow-y:auto;padding:6px;background:var(--app-panel);border:1px solid var(--app-border2);border-radius:10px;box-shadow:0 12px 32px -8px rgba(0,0,0,.6);display:grid;gap:1px}
+.lang-dl-menu a{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:7px;font-size:13px;font-weight:500;color:var(--text-sub);text-decoration:none;white-space:nowrap}
+.lang-dl-menu a:hover{background:rgba(255,255,255,.05);color:var(--text)}
+.lang-dl-menu a.cur{color:#fff;background:var(--blue)}
+.lang-dl-menu .lf{font-size:15px}
+@media(max-width:1100px){.nav-right .lang-dl{display:none}}
+#nav-mobile .lang-dl{display:block;margin:10px 16px 4px}
+#nav-mobile .lang-dl-menu{position:static;max-height:none;box-shadow:none;margin-top:6px}
 </style>
 </head>
 <body>
@@ -811,11 +831,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <li><a href="help/">Помощь</a></li>
   </ul>
   <div class="nav-right">
-    <div class="lang-sw" aria-label="Language">
-      <a href="../" hreflang="en" lang="en">EN</a>
-      <span class="on" lang="ru">RU</span>
-      <a href="../es/" hreflang="es" lang="es">ES</a>
-    </div>
+    <!--LD--><details class="lang-dl"><summary aria-label="Language"><span class="lf">🇷🇺</span><span class="lc">RU</span><span class="dl-caret">▾</span></summary><div class="lang-dl-menu"><a href="../" data-lang="en" hreflang="en" lang="en"><span class="lf">🇬🇧</span><span class="ln">English</span></a><a href="../fil/" data-lang="fil" hreflang="fil" lang="fil"><span class="lf">🇵🇭</span><span class="ln">Filipino</span></a><a href="../fr/" data-lang="fr" hreflang="fr" lang="fr"><span class="lf">🇫🇷</span><span class="ln">Français</span></a><a href="../pt/" data-lang="pt" hreflang="pt" lang="pt"><span class="lf">🇧🇷</span><span class="ln">Português</span></a><a href="../de/" data-lang="de" hreflang="de" lang="de"><span class="lf">🇩🇪</span><span class="ln">Deutsch</span></a><a href="../tr/" data-lang="tr" hreflang="tr" lang="tr"><span class="lf">🇹🇷</span><span class="ln">Türkçe</span></a><a href="../ru/" data-lang="ru" hreflang="ru" lang="ru" class="cur"><span class="lf">🇷🇺</span><span class="ln">Русский</span></a><a href="../es/" data-lang="es" hreflang="es" lang="es"><span class="lf">🇪🇸</span><span class="ln">Español</span></a></div></details><!--/LD-->
     <span class="dl dl-sm dl-compact">
       <a class="btn-blue-sm" href="#" data-dl-primary><svg class="ico ico-sm"><use href="#i-dl"/></svg> <span data-dl-label>Скачать</span></a>
       <button class="dl-toggle" aria-label="Выбрать платформу" data-dl-toggle>
@@ -837,11 +853,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <a href="alternatives/" role="menuitem">Альтернативы</a>
   <a href="for/" role="menuitem">Сценарии</a>
   <a href="help/" role="menuitem">Помощь</a>
-  <div class="lang-sw" aria-label="Language">
-    <a href="../" hreflang="en" lang="en">EN</a>
-    <span class="on" lang="ru">RU</span>
-    <a href="../es/" hreflang="es" lang="es">ES</a>
-  </div>
+  <!--LD--><details class="lang-dl"><summary aria-label="Language"><span class="lf">🇷🇺</span><span class="lc">RU</span><span class="dl-caret">▾</span></summary><div class="lang-dl-menu"><a href="../" data-lang="en" hreflang="en" lang="en"><span class="lf">🇬🇧</span><span class="ln">English</span></a><a href="../fil/" data-lang="fil" hreflang="fil" lang="fil"><span class="lf">🇵🇭</span><span class="ln">Filipino</span></a><a href="../fr/" data-lang="fr" hreflang="fr" lang="fr"><span class="lf">🇫🇷</span><span class="ln">Français</span></a><a href="../pt/" data-lang="pt" hreflang="pt" lang="pt"><span class="lf">🇧🇷</span><span class="ln">Português</span></a><a href="../de/" data-lang="de" hreflang="de" lang="de"><span class="lf">🇩🇪</span><span class="ln">Deutsch</span></a><a href="../tr/" data-lang="tr" hreflang="tr" lang="tr"><span class="lf">🇹🇷</span><span class="ln">Türkçe</span></a><a href="../ru/" data-lang="ru" hreflang="ru" lang="ru" class="cur"><span class="lf">🇷🇺</span><span class="ln">Русский</span></a><a href="../es/" data-lang="es" hreflang="es" lang="es"><span class="lf">🇪🇸</span><span class="ln">Español</span></a></div></details><!--/LD-->
 </div>
 
 <!-- HERO -->
@@ -1413,9 +1425,9 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </a>
       <p>Бесплатная программа для трансляций и студия мультистрима для Windows, macOS, iOS и Android. С 2003 года.</p>
     </div>
-    <div class="foot-col"><h5>Продукт</h5><ul><li><a href="multistreaming/">Мультистрим</a></li><li><a href="virtual-camera/">Виртуальная камера</a></li><li><a href="products/">Продукты и загрузки</a></li><li><a href="alternatives/">Альтернативы</a></li><li><a href="for/">Сценарии</a></li><li><a href="#whats-new">Что нового · v10.9.2</a></li><li><a href="../changelog/">История версий</a></li></ul></div>
+    <div class="foot-col"><h5>Продукт</h5><ul><li><a href="multistreaming/">Мультистрим</a></li><li><a href="virtual-camera/">Виртуальная камера</a></li><li><a href="products/">Продукты и загрузки</a></li><li><a href="alternatives/">Альтернативы</a></li><li><a href="for/">Сценарии</a></li><li><a href="#whats-new">Что нового · v10.9.2</a></li><li><a href="changelog/">История версий</a></li></ul></div>
     <div class="foot-col"><h5>Поддержка</h5><ul><li><a href="help/">Помощь</a></li><li><a href="https://t.me/splitcam" target="_blank" rel="noopener">Чат в Telegram</a></li><li><a href="https://splitcam.com/forum/" target="_blank" rel="noopener">Форум пользователей</a></li></ul></div>
-    <div class="foot-col"><h5>Компания</h5><ul><li><a href="../privacy-policy/">Приватность</a></li><li><a href="../license-agreement/">Лицензия</a></li><li><a href="https://splitcam.com/" target="_blank" rel="noopener">SplitCam.com</a></li></ul></div>
+    <div class="foot-col"><h5>Компания</h5><ul><li><a href="privacy-policy/">Приватность</a></li><li><a href="license-agreement/">Лицензия</a></li><li><a href="https://splitcam.com/" target="_blank" rel="noopener">SplitCam.com</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <span class="foot-copy">© 2003–2026 SplitCam</span>
@@ -1673,5 +1685,19 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
 })();
 </script>
 
+<!--AD--><script>
+(function(){try{
+var L=["en","fil","fr","pt","de","tr","ru","es"];
+var cur=document.documentElement.lang;
+var path=location.pathname;if(path.charAt(0)==="/")path=path.substring(1);
+var parts=path.split("/");if(L.indexOf(parts[0])>=0)parts.shift();
+var slug=parts.join("/");
+function go(lang){var p=lang==="en"?"/"+slug:"/"+lang+"/"+slug;if(p!==location.pathname){document.documentElement.style.visibility="hidden";location.replace(p+location.search+location.hash);}}
+var stored;try{stored=localStorage.getItem("preferred_lang");}catch(e){}
+if(stored&&L.indexOf(stored)>=0){if(stored!==cur)go(stored);}
+else{var bl=navigator.languages||(navigator.language?[navigator.language]:[]);for(var i=0;i<bl.length;i++){var c=bl[i].toLowerCase().split("-")[0];if(c==="nb"||c==="nn")c="no";if(c==="tl")c="fil";if(L.indexOf(c)>=0){if(c!==cur)go(c);break;}}}
+if(document.addEventListener){document.addEventListener("click",function(e){var t=e.target;while(t&&t!==document){if(t.tagName==="A"&&t.getAttribute&&t.getAttribute("data-lang")){try{localStorage.setItem("preferred_lang",t.getAttribute("data-lang"));}catch(e){}break;}t=t.parentNode;}},true);}
+}catch(e){}})();
+</script><!--/AD-->
 </body>
 </html>

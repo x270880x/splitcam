@@ -19,11 +19,12 @@
 <meta name="keywords" content="licencia splitcam, eula splitcam, acuerdo de licencia splitcam, condiciones splitcam, licencia gratuita splitcam">
 <meta name="author" content="SplitCam">
 <link rel="canonical" href="https://splitcam.com/es/license-agreement/">
+<!--HL-->
 <link rel="alternate" hreflang="en" href="https://splitcam.com/license-agreement/">
 <link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/license-agreement/">
 <link rel="alternate" hreflang="es" href="https://splitcam.com/es/license-agreement/">
 <link rel="alternate" hreflang="x-default" href="https://splitcam.com/license-agreement/">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<!--/HL--><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -189,6 +190,21 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 .nav-links{gap:18px}
 .nav-links a{white-space:nowrap}
 @media(max-width:1100px){nav .nav-links{display:none}nav .nav-burger{display:inline-flex}.nav-right .lang-sw{display:none}}
+
+.lang-dl{position:relative;display:inline-block}
+.lang-dl>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border:1px solid var(--app-border);border-radius:8px;background:rgba(255,255,255,.02);font-size:11.5px;font-weight:700;color:var(--text-sub);user-select:none}
+.lang-dl>summary::-webkit-details-marker{display:none}
+.lang-dl>summary:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.lang-dl .lf{font-size:13px;line-height:1}.lang-dl .lc{letter-spacing:.4px}
+.lang-dl .dl-caret{font-size:9px;opacity:.7}
+.lang-dl-menu{position:absolute;top:calc(100% + 6px);right:0;z-index:60;min-width:180px;max-height:60vh;overflow-y:auto;padding:6px;background:var(--app-panel);border:1px solid var(--app-border2);border-radius:10px;box-shadow:0 12px 32px -8px rgba(0,0,0,.6);display:grid;gap:1px}
+.lang-dl-menu a{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:7px;font-size:13px;font-weight:500;color:var(--text-sub);text-decoration:none;white-space:nowrap}
+.lang-dl-menu a:hover{background:rgba(255,255,255,.05);color:var(--text)}
+.lang-dl-menu a.cur{color:#fff;background:var(--blue)}
+.lang-dl-menu .lf{font-size:15px}
+@media(max-width:1100px){.nav-right .lang-dl{display:none}}
+#nav-mobile .lang-dl{display:block;margin:10px 16px 4px}
+#nav-mobile .lang-dl-menu{position:static;max-height:none;box-shadow:none;margin-top:6px}
 </style>
 </head>
 <body>
@@ -208,11 +224,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <li><a href="../help/">Ayuda</a></li>
   </ul>
   <div class="nav-right">
-    <div class="lang-sw" aria-label="Language">
-      <a href="../../license-agreement/" hreflang="en" lang="en">EN</a>
-      <a href="../../ru/license-agreement/" hreflang="ru" lang="ru">RU</a>
-      <span class="on" lang="es">ES</span>
-    </div>
+    <!--LD--><details class="lang-dl"><summary aria-label="Language"><span class="lf">🇪🇸</span><span class="lc">ES</span><span class="dl-caret">▾</span></summary><div class="lang-dl-menu"><a href="../../license-agreement/" data-lang="en" hreflang="en" lang="en"><span class="lf">🇬🇧</span><span class="ln">English</span></a><a href="../../ru/license-agreement/" data-lang="ru" hreflang="ru" lang="ru"><span class="lf">🇷🇺</span><span class="ln">Русский</span></a><a href="../../es/license-agreement/" data-lang="es" hreflang="es" lang="es" class="cur"><span class="lf">🇪🇸</span><span class="ln">Español</span></a></div></details><!--/LD-->
     <a href="../" class="btn-primary">⬇ Descargar</a>
     <button class="nav-burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
       <svg class="ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -230,11 +242,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <a href="../help/" role="menuitem">Ayuda</a>
   <div class="nav-mobile-divider"></div>
   <a href="../" class="btn-primary" role="menuitem">⬇ Descargar SplitCam</a>
-  <div class="lang-sw" aria-label="Language">
-    <a href="../../license-agreement/" hreflang="en" lang="en">EN</a>
-    <a href="../../ru/license-agreement/" hreflang="ru" lang="ru">RU</a>
-    <span class="on" lang="es">ES</span>
-  </div>
+  <!--LD--><details class="lang-dl"><summary aria-label="Language"><span class="lf">🇪🇸</span><span class="lc">ES</span><span class="dl-caret">▾</span></summary><div class="lang-dl-menu"><a href="../../license-agreement/" data-lang="en" hreflang="en" lang="en"><span class="lf">🇬🇧</span><span class="ln">English</span></a><a href="../../ru/license-agreement/" data-lang="ru" hreflang="ru" lang="ru"><span class="lf">🇷🇺</span><span class="ln">Русский</span></a><a href="../../es/license-agreement/" data-lang="es" hreflang="es" lang="es" class="cur"><span class="lf">🇪🇸</span><span class="ln">Español</span></a></div></details><!--/LD-->
 </div>
 
 <!-- BREADCRUMBS -->
@@ -344,5 +352,19 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 })();
 </script>
 
+<!--AD--><script>
+(function(){try{
+var L=["en","ru","es"];
+var cur=document.documentElement.lang;
+var path=location.pathname;if(path.charAt(0)==="/")path=path.substring(1);
+var parts=path.split("/");if(L.indexOf(parts[0])>=0)parts.shift();
+var slug=parts.join("/");
+function go(lang){var p=lang==="en"?"/"+slug:"/"+lang+"/"+slug;if(p!==location.pathname){document.documentElement.style.visibility="hidden";location.replace(p+location.search+location.hash);}}
+var stored;try{stored=localStorage.getItem("preferred_lang");}catch(e){}
+if(stored&&L.indexOf(stored)>=0){if(stored!==cur)go(stored);}
+else{var bl=navigator.languages||(navigator.language?[navigator.language]:[]);for(var i=0;i<bl.length;i++){var c=bl[i].toLowerCase().split("-")[0];if(c==="nb"||c==="nn")c="no";if(c==="tl")c="fil";if(L.indexOf(c)>=0){if(c!==cur)go(c);break;}}}
+if(document.addEventListener){document.addEventListener("click",function(e){var t=e.target;while(t&&t!==document){if(t.tagName==="A"&&t.getAttribute&&t.getAttribute("data-lang")){try{localStorage.setItem("preferred_lang",t.getAttribute("data-lang"));}catch(e){}break;}t=t.parentNode;}},true);}
+}catch(e){}})();
+</script><!--/AD-->
 </body>
 </html>
