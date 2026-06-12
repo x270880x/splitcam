@@ -20,6 +20,10 @@
 <meta name="keywords" content="streaming software, free streaming software, live streaming software, best streaming software, virtual camera, virtual camera for zoom, game streaming software, youtube streaming software, webcam software, broadcasting software, OBS alternative, multistreaming, streaming software for mac, streaming software for youtube, streaming software for pc, live video streaming software, free live streaming software, audio streaming software, free streaming software for facebook live, free streaming software for twitch, VTuber software, stream to multiple platforms, RTMP streaming">
 <meta name="author" content="SplitCam">
 <link rel="canonical" href="https://splitcam.com/">
+<link rel="alternate" hreflang="en" href="https://splitcam.com/">
+<link rel="alternate" hreflang="ru" href="https://splitcam.com/ru/">
+<link rel="alternate" hreflang="es" href="https://splitcam.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://splitcam.com/">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
 <!-- Open Graph (Facebook, LinkedIn, Slack previews) -->
@@ -707,6 +711,12 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     scroll-behavior: auto !important;
   }
 }
+.lang-sw{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--app-border);border-radius:8px;background:rgba(255,255,255,.02)}
+.lang-sw a,.lang-sw .on{font-size:10.5px;font-weight:700;letter-spacing:.4px;padding:3px 7px;border-radius:6px;color:var(--text-sub);text-decoration:none}
+.lang-sw a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.lang-sw .on{color:#fff;background:var(--blue)}
+@media (max-width:900px){.nav-right .lang-sw{display:none}}
+#nav-mobile .lang-sw{margin:10px 16px 4px}
 </style>
 </head>
 <body>
@@ -791,6 +801,11 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
     <li><a href="help/">Help</a></li>
   </ul>
   <div class="nav-right">
+    <div class="lang-sw" aria-label="Language">
+      <span class="on" lang="en">EN</span>
+      <a href="ru/" hreflang="ru" lang="ru">RU</a>
+      <a href="es/" hreflang="es" lang="es">ES</a>
+    </div>
     <span class="dl dl-sm dl-compact">
       <a class="btn-blue-sm" href="#" data-dl-primary><svg class="ico ico-sm"><use href="#i-dl"/></svg> <span data-dl-label>Download</span></a>
       <button class="dl-toggle" aria-label="Choose platform" data-dl-toggle>
@@ -812,6 +827,11 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <a href="alternatives/" role="menuitem">Alternatives</a>
   <a href="for/" role="menuitem">Use Cases</a>
   <a href="help/" role="menuitem">Help</a>
+  <div class="lang-sw" aria-label="Language">
+    <span class="on" lang="en">EN</span>
+    <a href="ru/" hreflang="ru" lang="ru">RU</a>
+    <a href="es/" hreflang="es" lang="es">ES</a>
+  </div>
 </div>
 
 <!-- HERO -->
