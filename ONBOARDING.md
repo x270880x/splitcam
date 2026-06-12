@@ -45,7 +45,7 @@ Nav order site-wide: **Products · Virtual Camera · Multistreaming · Alternati
 - **Schedule & follow-ups: `seo/REMINDERS.md`** — open it in any SEO chat (indexing checks, ranking checks, wave launches with dates). Do NOT use `CronCreate` — it doesn't persist.
 
 ## Migration to live splitcam.com
-`seo/MIGRATION.md` — only the homepage `/` is a true same-URL replacement; everything else is new URLs. `seo/REDIRECTS.md` — 301 strategy + per-page weights from Ahrefs. Open decision: RU/ES locales. (Homepage A vs B — resolved 2026-05-22: A is final, `/v2/` archived.)
+`seo/MIGRATION.md` — only the homepage `/` is a true same-URL replacement; everything else is new URLs. `seo/REDIRECTS.md` — 301 strategy + per-page weights from Ahrefs. **RU/ES locales — DONE 2026-06-13** (`/ru/` + `/es/`, 10 pages each; specs in `seo/I18N-PLAN.md` + `seo/I18N-KEYWORDS.md`). (Homepage A vs B — resolved 2026-05-22: A is final, `/v2/` archived.)
 
 ## Critical design rules
 1. Brand logos stored LOCALLY in `/virtual-camera/assets/logos/` — no external CDN refs.
@@ -274,6 +274,38 @@ Worked through the overdue items in `seo/REMINDERS.md` (full results live there)
   site-wide on 2026-06-07, so remaining nav work = desktop dropdowns for
   Alternatives/Use Cases (+ optional `nav.js` extraction).
 - `/products/remote/` page decision stays parked until Android Remote ships.
+
+## Session log — 2026-06-13 (RU + ES localization — whole site)
+
+Translated the entire content site into Russian and Spanish (like
+cam-streaming-guides), native streaming-scene copy with Ahrefs-picked
+keywords per locale. Now **30 content pages**: EN root + `/ru/` + `/es/`,
+10 pages each (`/`, products, virtual-camera, multistreaming, alternatives,
+alternatives/obs, for, for/youtubers, for/churches, help). Not translated:
+changelog, privacy-policy, license-agreement, /v2/, for/vtubers draft.
+
+- **Keywords (Ahrefs ru/es/mx) → `seo/I18N-KEYWORDS.md`.** Notable: RU
+  «рестрим» 996, «программа для стрима» 150/KD2, «мультистрим» 100/KD0,
+  «как стримить на ютубе» 90/KD0, «трансляция богослужения» 40/KD1;
+  ES «multistream» ~700 (kept as the anglicism), «software de streaming» 140,
+  «alternativas a OBS» 90 (plural), «cómo hacer un directo en YouTube» 75.
+  Each primary key sits in its page's title/H1.
+- **Spec → `seo/I18N-PLAN.md`** (binding): URL scheme `/ru/…` `/es/…`,
+  per-depth path-shift rules, hreflang/canonical templates, switcher
+  markup+CSS, RU/ES glossary + tone, invariants, QA. Assets are NOT copied —
+  localized pages reference the EN tree's assets via `../` (e.g. VC partner
+  logos at `../virtual-camera/assets/logos/`).
+- **hreflang reciprocity:** all 30 pages (incl. the 10 EN originals, patched
+  this session) declare en/ru/es/x-default. `sitemap.xml` rebuilt with
+  `xhtml:link` alternates (33 url entries, 120 alternates).
+- **Language switcher** EN·RU·ES in nav + burger on every page.
+- Built mostly by parallel subagents (one page-pair each); a couple hit
+  session limits mid-run and were redone. linkcheck: **0 broken across 35
+  pages**; mobile (390px) + desktop (1440px) spot-checked on RU home and
+  ES multistreaming. Canonicals point at the future `splitcam.com/<locale>/`.
+- This closes the migration plan's "Open decision: RU/ES locales".
+- **Upkeep rule:** new EN page ⇒ also build `/ru/` + `/es/` + 3 sitemap
+  entries; edit copy in one language ⇒ mirror to the other two.
 
 ## Session log — 2026-06-12 (later same day)
 

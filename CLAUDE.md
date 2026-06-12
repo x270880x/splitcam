@@ -106,7 +106,32 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 - **Wave 3** (later): remaining alternatives + `/for/{streamers,educators}/`.
 - **Migration to live splitcam.com**: only `/` is a true same-URL replacement;
   everything else is new URLs. See `seo/MIGRATION.md` + `seo/REDIRECTS.md`.
-  Open decision: RU/ES locales.
+  RU/ES locales — **DONE 2026-06-13** (see below).
+
+## Localization — RU + ES (built 2026-06-13)
+
+All 10 content pages exist in three languages: EN (root), RU (`/ru/...`),
+ES (`/es/...`). Untranslated by design: `changelog/`, `privacy-policy/`,
+`license-agreement/`, `/v2/`, `for/vtubers/` (draft).
+
+- **Keyword research per locale:** `seo/I18N-KEYWORDS.md` (Ahrefs ru/es/mx).
+  Primary keys live in each page's title/H1 (e.g. RU «программа для стрима»,
+  «мультистрим», «трансляция богослужения»; ES «software de streaming»,
+  «multistream», «alternativas a OBS» plural).
+- **Binding spec:** `seo/I18N-PLAN.md` — path-shift rules, hreflang/canonical
+  templates, the language-switcher markup+CSS, tone/glossary, invariants.
+  **Read it before adding or editing any localized page.**
+- **hreflang:** every page (incl. the 10 EN originals) declares en/ru/es/
+  x-default alternates — reciprocity is required or Google ignores them.
+  `sitemap.xml` carries the same alternates as `xhtml:link`.
+- **Language switcher:** EN·RU·ES in nav + burger on all 30 pages.
+- **Canonicals** point to `splitcam.com/<locale>/...` (the future live URLs),
+  same convention as the EN tree — staging stays non-indexed.
+- **When you add a new EN page:** also create `/ru/` + `/es/` versions and add
+  it (×3, with alternates) to `sitemap.xml`. When you edit copy in one
+  language, mirror it to the other two (see [[feedback_multilang_sync]]).
+- Audit after changes: `python3 seo/linkcheck.py --no-network` (must be 0
+  broken) + the mobile check.
 - Full SEO plan: `seo/PLAN.md`. Recommended IA: `seo/SITEMAP.md`.
   Schedule & follow-ups: `seo/REMINDERS.md` (open it in any SEO chat).
 
