@@ -5,10 +5,18 @@
 ## Scope
 
 - Locales: `ru`, `es`. URL scheme: `/ru/<same path>/`, `/es/<same path>/` mirroring the EN tree.
-- **10 pages in scope:** `/` `products/` `virtual-camera/` `multistreaming/` `alternatives/`
+- **10 content pages:** `/` `products/` `virtual-camera/` `multistreaming/` `alternatives/`
   `alternatives/obs/` `for/` `for/youtubers/` `for/churches/` `help/`.
-- **NOT translated** (stay EN-only): `changelog/`, `privacy-policy/`, `license-agreement/`,
-  `/v2/` (archived), `for/vtubers/` (noindex draft), `seo/`.
+- **Utility pages (added 2026-06-13, user rule "translate everything"):**
+  `privacy-policy/`, `license-agreement/` — translate FULLY.
+  `changelog/` — localize the page shell only (nav, hero, platform intros,
+  tab labels, `New/Improved/Fixed` section headers, footer, meta/title,
+  hreflang, switcher). The ~1817 technical release `<li>` bullets stay EN:
+  0 search volume (Ahrefs, all locales) + they change every release.
+- **NOT translated:** `/v2/` (archived), `for/vtubers/` (noindex draft), `seo/`.
+- **SEO rule (every new/edited page):** Ahrefs per locale → the language's
+  real keyword goes in title + meta description + H1 (not a literal EN
+  translation). Utility pages have ~0 volume → translate cleanly, no forcing.
 
 ## Per-file rules
 

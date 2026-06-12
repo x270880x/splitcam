@@ -110,9 +110,18 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 
 ## Localization — RU + ES (built 2026-06-13)
 
-All 10 content pages exist in three languages: EN (root), RU (`/ru/...`),
-ES (`/es/...`). Untranslated by design: `changelog/`, `privacy-policy/`,
-`license-agreement/`, `/v2/`, `for/vtubers/` (draft).
+All content + utility pages exist in three languages: EN (root), RU
+(`/ru/...`), ES (`/es/...`). Localized: the 10 content pages **plus**
+`privacy-policy/`, `license-agreement/` (full) and `changelog/` (page shell +
+section labels localized; the technical release-note bullets stay EN — zero
+search volume, changes every release). Untranslated: `/v2/` (archived),
+`for/vtubers/` (noindex draft).
+
+**Rule (user, 2026-06-13): everything new gets all three languages — no
+exceptions by page type** (incl. legal/utility). And every new/edited page
+gets a per-locale **Ahrefs** pass: put the language's real keyword in the
+**title, meta description, and H1** (don't translate the EN title literally).
+See [[feedback_multilang_sync]].
 
 - **Keyword research per locale:** `seo/I18N-KEYWORDS.md` (Ahrefs ru/es/mx).
   Primary keys live in each page's title/H1 (e.g. RU «программа для стрима»,
