@@ -284,10 +284,11 @@ nav {
 .rating-chip .rating-text { font-size: 11.5px; color: var(--text-sub); font-weight: 500; letter-spacing: .2px; }
 .rating-chip .rating-text strong { color: var(--text); font-weight: 700; }
 .pill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); position: relative; box-shadow: 0 0 8px rgba(46,204,113,.7); }
-.pill-dot::before, .pill-dot::after { content:''; position: absolute; inset: 0; border-radius: 50%; background: var(--green); animation: live-pulse 1.8s cubic-bezier(.6,0,.4,1) infinite; }
+.pill-dot::before, .pill-dot::after { content:''; position: absolute; inset: 0; border-radius: 50%; background: var(--green); animation: pill-sonar 1.8s cubic-bezier(.6,0,.4,1) infinite; }
 .pill-dot::after { animation-delay: .9s; }
 @keyframes blink { 0%,100%{opacity:1}50%{opacity:.35} }
-@keyframes live-pulse { 0%{transform:scale(1);opacity:.65} 100%{transform:scale(3.4);opacity:0} }
+/* NB: name must stay unique — a second `live-pulse` further down used to override this */
+@keyframes pill-sonar { 0%{transform:scale(1);opacity:.65} 100%{transform:scale(3.4);opacity:0} }
 .pill-text { font-size: 11.5px; font-weight: 600; color: var(--blue); letter-spacing: .4px; }
 
 h1.hero-title { font-size: clamp(28px, 4vw, 56px); font-weight: 700; line-height: 1.1; letter-spacing: -1.8px; color: var(--text); margin-bottom: 18px; }
