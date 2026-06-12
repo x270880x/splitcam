@@ -423,7 +423,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Mini platform cards with video — label below as a strip */
 .ms-platform-card{position:relative;border-radius:7px;overflow:hidden;background:var(--app-surface);border:1px solid var(--app-border);display:flex;flex-direction:column}
-.ms-platform-card video,.ms-platform-card img{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover}
+.ms-platform-card video,.ms-platform-card canvas,.ms-platform-card img{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover}
 .ms-platform-label{display:flex;align-items:center;justify-content:center;gap:6px;padding:7px 6px;font-size:12px;font-weight:700;color:var(--text);background:var(--app-surface);letter-spacing:.2px;border-top:1px solid var(--app-border)}
 .ms-platform-label svg{width:14px!important;height:14px!important;flex-shrink:0}
 .ms-platform-card .ms-active-bar{height:2px;border-radius:0;background:rgba(83,252,24,.12);margin:0}
@@ -768,9 +768,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
         <p>No cloud middleman. No third-party server in the loop. Your video goes from your machine straight to Twitch / YouTube / Facebook / whatever — even with 20 destinations selected. The only requirement: your upload bandwidth needs to be enough for the total bitrate of all streams combined.</p>
       </div>
       <div class="ms-flow-vis">
-        <!-- SplitCam Scene preview: static poster by default; on desktop (>900px) JS swaps in a
-             single optimized looping video (av1 87KB / h264 147KB). The six platform thumbs stay
-             static on purpose — six parallel <video> loops used to flicker (see 2026-06-07 log). -->
+        <!-- SplitCam Scene preview: static posters by default; on desktop (>900px) JS swaps in
+             ONE optimized looping video (av1 87KB / h264 147KB) and mirrors its frames into the
+             platform thumbs via lightweight canvases — a single decoder, perfectly in sync.
+             Never put six parallel <video> loops here again: that flickered (2026-06-07 log). -->
         <div class="ms-scene-preview">
           <img src="assets/stream-preview-poster.jpg" alt="SplitCam scene preview" loading="lazy">
           <span class="ms-live-badge ms-live-overlay"><span class="ms-live-dot"></span>LIVE</span>
@@ -985,7 +986,9 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
   document.querySelectorAll('[data-dl-primary]').forEach(function(a){a.setAttribute('href',U[os]);});
 })();
 
-/* Desktop-only: swap the static scene poster for ONE optimized looping preview video.
+/* Desktop-only: swap the static scene poster for ONE optimized looping preview video,
+   and mirror the SAME video into the platform thumbs via canvases (single decoder,
+   perfectly synced — six parallel <video> loops used to flicker, never bring them back).
    Mobile never downloads the file; plays only in-view and in a visible tab.
    Runs after the legacy focus-pause block above, so that block stays inert for this video. */
 (function(){
@@ -1005,12 +1008,39 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
    ['assets/stream-preview-h264.mp4','video/mp4']].forEach(function(s){
     var el = document.createElement('source'); el.src = s[0]; el.type = s[1]; v.appendChild(el);
   });
+
+  /* platform thumbs -> canvas mirrors of the single video */
+  var thumbs = [];
+  document.querySelectorAll('.ms-fans .ms-platform-card > img').forEach(function(im){
+    var c = document.createElement('canvas');
+    c.width = 320; c.height = 180;
+    c.style.background = "url('assets/stream-preview-poster.jpg') center/cover";
+    c.setAttribute('aria-hidden','true');
+    im.parentNode.replaceChild(c, im);
+    thumbs.push(c.getContext('2d'));
+  });
+  function draw(){
+    var vw = v.videoWidth, vh = v.videoHeight;
+    if (!vw) return;
+    var sh = vw * 9 / 16, sy = Math.max(0, (vh - sh) / 2); /* cover-crop to 16:9 like the thumbs */
+    thumbs.forEach(function(ctx){ ctx.drawImage(v, 0, sy, vw, Math.min(sh, vh), 0, 0, 320, 180); });
+  }
+  if (thumbs.length){
+    if ('requestVideoFrameCallback' in HTMLVideoElement.prototype){
+      var loop = function(){ draw(); v.requestVideoFrameCallback(loop); };
+      v.requestVideoFrameCallback(loop);
+    } else {
+      (function raf(){ if (!v.paused) draw(); requestAnimationFrame(raf); })();
+    }
+  }
+
   var inView = false;
   function apply(){
     if (inView && document.visibilityState === 'visible') v.play().catch(function(){});
     else v.pause();
   }
-  new IntersectionObserver(function(es){ inView = es[0].isIntersecting; apply(); }, {threshold:.15}).observe(box);
+  var watch = box.closest('.ms-flow-vis') || box; /* thumbs sit in the same diagram block */
+  new IntersectionObserver(function(es){ inView = es[0].isIntersecting; apply(); }, {threshold:.15}).observe(watch);
   document.addEventListener('visibilitychange', apply);
   box.replaceChild(v, img);
 })();
