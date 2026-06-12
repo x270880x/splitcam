@@ -768,7 +768,9 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
         <p>No cloud middleman. No third-party server in the loop. Your video goes from your machine straight to Twitch / YouTube / Facebook / whatever — even with 20 destinations selected. The only requirement: your upload bandwidth needs to be enough for the total bitrate of all streams combined.</p>
       </div>
       <div class="ms-flow-vis">
-        <!-- SplitCam Scene preview (static frame — animated via CSS pulses, no looping video to avoid flicker) -->
+        <!-- SplitCam Scene preview: static poster by default; on desktop (>900px) JS swaps in a
+             single optimized looping video (av1 87KB / h264 147KB). The six platform thumbs stay
+             static on purpose — six parallel <video> loops used to flicker (see 2026-06-07 log). -->
         <div class="ms-scene-preview">
           <img src="assets/stream-preview-poster.jpg" alt="SplitCam scene preview" loading="lazy">
           <span class="ms-live-badge ms-live-overlay"><span class="ms-live-dot"></span>LIVE</span>
@@ -981,6 +983,36 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
   var ua=navigator.userAgent||'',os='windows';
   if(/Android/i.test(ua))os='android';else if(/iPad|iPhone|iPod/i.test(ua))os='ios';else if(/Macintosh|Mac OS X/i.test(ua))os='mac';
   document.querySelectorAll('[data-dl-primary]').forEach(function(a){a.setAttribute('href',U[os]);});
+})();
+
+/* Desktop-only: swap the static scene poster for ONE optimized looping preview video.
+   Mobile never downloads the file; plays only in-view and in a visible tab.
+   Runs after the legacy focus-pause block above, so that block stays inert for this video. */
+(function(){
+  if (window.innerWidth <= 900) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var box = document.querySelector('.ms-scene-preview');
+  var img = box && box.querySelector('img');
+  if (!img) return;
+  var v = document.createElement('video');
+  v.muted = true; v.setAttribute('muted','');
+  v.loop = true;
+  v.playsInline = true; v.setAttribute('playsinline','');
+  v.preload = 'metadata';
+  v.poster = 'assets/stream-preview-poster.jpg';
+  v.setAttribute('aria-hidden','true');
+  [['assets/stream-preview-av1.mp4','video/mp4; codecs="av01.0.04M.08"'],
+   ['assets/stream-preview-h264.mp4','video/mp4']].forEach(function(s){
+    var el = document.createElement('source'); el.src = s[0]; el.type = s[1]; v.appendChild(el);
+  });
+  var inView = false;
+  function apply(){
+    if (inView && document.visibilityState === 'visible') v.play().catch(function(){});
+    else v.pause();
+  }
+  new IntersectionObserver(function(es){ inView = es[0].isIntersecting; apply(); }, {threshold:.15}).observe(box);
+  document.addEventListener('visibilitychange', apply);
+  box.replaceChild(v, img);
 })();
 </script>
 </body>
