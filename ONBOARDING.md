@@ -1,6 +1,6 @@
 # SplitCam — Project Onboarding
 
-*Last updated: 2026-06-11. Open this at the start of any new chat to get up to speed.*
+*Last updated: 2026-06-12. Open this at the start of any new chat to get up to speed.*
 
 ## Two projects
 
@@ -65,6 +65,7 @@ Nav order site-wide: **Products · Virtual Camera · Multistreaming · Alternati
 
 ## /seo/ folder
 - `ahrefs.py` — domain + keyword collector · `pages.py` — per-URL weight · `domains.py` — domain weight checker
+- `linkcheck.py` — site-wide link & interlinking audit (broken links/anchors/resources, external HTTP, nav-vs-contextual graph, sitemap sync). Run before migration and after adding pages.
 - `PLAN.md` (master plan) · `SITEMAP.md` · `MIGRATION.md` · `REDIRECTS.md` · `REMINDERS.md`
 - `reports/` — 3 analysis reports · `data/*.json` — raw Ahrefs output (gitignored)
 - Ahrefs: set `AHREFS_TOKEN` env var. **The token shared in chat must be regenerated — it was exposed.** Lite plan, 100k units/mo.
@@ -274,8 +275,34 @@ Worked through the overdue items in `seo/REMINDERS.md` (full results live there)
   Alternatives/Use Cases (+ optional `nav.js` extraction).
 - `/products/remote/` page decision stays parked until Android Remote ships.
 
+## Session log — 2026-06-12 (full link & interlinking audit)
+
+Built `seo/linkcheck.py` and ran a site-wide audit (user request):
+
+- **Links: clean.** 0 broken internal links / anchors / resources / slash
+  redirects across all 15 pages. External 29/31 OK; facebook.com 400 is
+  bot-blocking only (200 with a mobile UA). Sitemap ↔ disk in full sync;
+  noindex pages excluded; nothing links to the vtubers draft.
+- **One real dead external:** `installmonetizer.com` (domain gone) in
+  `/privacy-policy/` — a whole legacy "InstallMonetizer products" section
+  from the old site references a dead service. **OPEN: user to decide —
+  delete the section vs unlink.** Likely the policy text predates reality.
+- **Interlinking verdict:** structurally sufficient (flat ≤1-click
+  architecture, hubs↔leaves, RELATED blocks, breadcrumbs; feature pages
+  correctly get the most contextual weight). Two gaps: (1) SEO leaves have
+  zero nav presence — fixed by Wave 2 dropdowns when they come; (2) feature
+  pages didn't link down to leaves with keyword anchors — **fixed** (commit
+  `2fcad1c`): 4 links added (ms→churches, ms→youtubers, vc→youtubers,
+  vc→obs; JSON-LD FAQ mirrored). Leaves now: youtubers 7 / churches 5 /
+  obs 6 contextual inlinks.
+
 ## Recent commits — main splitcam repo (most recent first)
 ```
+65e5745 seo/linkcheck.py: site-wide link & interlinking audit tool
+2fcad1c Interlinking: keyword-anchor links from feature pages down to SEO leaves
+5311488 REMINDERS: Wave 2 + GSC-staging postponed by user; revisit at Month-1 review
+684e45c REMINDERS: staging is unindexable by design (canonicals -> splitcam.com)
+a496694 ONBOARDING + REMINDERS: log 2026-06-11 sweep
 4ba08fd SplitCam Remote for iOS is live: activate App Store button on /products/
 28be593 Virtual-camera hero: shrink mobile orbit-center logo (54 → 49px); desktop 60
 c243ef9 Virtual-camera hero: bump orbit-center logo 10% on desktop (55 → 60px)

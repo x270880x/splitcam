@@ -17,9 +17,11 @@ project, separate domain) — not covered here.
 - Plain HTML/CSS/JS. No `package.json`, no bundler, no framework.
 - Inline `<style>`/`<script>` per page. Dark theme: `--app-base:#141420`,
   `--blue:#2878fc`, `--purple:#9c5bff`. Font: Geist.
-- `/seo/` — Python tooling for Ahrefs analytics (`ahrefs.py`, `pages.py`,
-  `domains.py`) + planning docs (`PLAN.md`, `SITEMAP.md`, `MIGRATION.md`,
-  `REDIRECTS.md`, `REMINDERS.md`). Raw data in `seo/data/*.json` (gitignored).
+- `/seo/` — Python tooling: Ahrefs analytics (`ahrefs.py`, `pages.py`,
+  `domains.py`) + `linkcheck.py` (site-wide link & interlinking audit — run
+  after adding pages and before migration) + planning docs (`PLAN.md`,
+  `SITEMAP.md`, `MIGRATION.md`, `REDIRECTS.md`, `REMINDERS.md`). Raw data
+  in `seo/data/*.json` (gitignored).
 
 Pages (7 public + 1 archived):
 
