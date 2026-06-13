@@ -165,8 +165,9 @@ DROPDOWN_CSS = """.lang-dl{position:relative;display:inline-block}
 #  2. the download split-button's corner rounding doesn't swap, so the main button +
 #     dropdown toggle stop reading as one joined control. Re-mirror the radii.
 RTL_CSS = """[dir="rtl"] svg:has(use[href="#i-arr"]){transform:scaleX(-1)}
-[dir="rtl"] .dl>.btn-primary{border-radius:0 8px 8px 0}
-[dir="rtl"] .dl .dl-toggle{border-radius:8px 0 0 8px}"""
+[dir="rtl"] .dl>[data-dl-primary]{border-radius:0 8px 8px 0}
+[dir="rtl"] .dl>.dl-toggle{border-radius:8px 0 0 8px}
+[dir="rtl"] .vc-arrow{transform:scaleX(-1)}"""
 
 
 if __name__ == "__main__":

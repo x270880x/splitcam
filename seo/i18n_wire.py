@@ -104,10 +104,14 @@ def wire_file(locale, page, avail):
     if ".lang-dl{position" not in s:
         s = s.replace("</style>", "\n" + i18n.DROPDOWN_CSS + "\n</style>", 1)
 
-    # 4b. RTL layout fixes for RTL locales (arrow flip + split-button radii). Idempotent:
-    # pages copy EN's pre-RTL <style>, so inject the block the first time we see an RTL page.
-    if i18n.is_rtl(locale) and 'use[href="#i-arr"]' not in s:
-        s = s.replace("</style>", "\n" + i18n.RTL_CSS + "\n</style>", 1)
+    # 4b. RTL layout fixes for RTL locales (arrow flip + split-button radii), kept in a
+    # regenerated marker region so edits to i18n.RTL_CSS propagate on the next wire run.
+    if i18n.is_rtl(locale):
+        block = region("RTLCSS", "\n" + i18n.RTL_CSS + "\n")
+        if re.search(r"<!--RTLCSS-->.*?<!--/RTLCSS-->", s, re.DOTALL):
+            s = re.sub(r"<!--RTLCSS-->.*?<!--/RTLCSS-->", lambda _: block, s, flags=re.DOTALL)
+        else:
+            s = s.replace("</style>", "\n" + block + "\n</style>", 1)
 
     # 5. partial-wave link safety (any page): a localized sibling link points to the
     # localized page if it exists, else falls back to the EN page so nothing 404s.
