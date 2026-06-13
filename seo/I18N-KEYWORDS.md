@@ -92,3 +92,19 @@ Per-page PRIMARY keyword → title/H1/meta. Brand "splitcam" everywhere.
 | products | завантажити splitcam | scarica splitcam | tải splitcam | download splitcam (+ «aplikasi live streaming») | splitcam downloaden |
 
 **ID «aplikasi live streaming» 4886 is the single biggest keyword across both waves** — lead the ID home + products with it. IT/NL multistream 219/285. UA demand is thin (brand-led). All LTR (no RTL this wave).
+
+---
+
+# Wave 3 keywords — ro / hi / ja / ms / bg (Ahrefs, 2026-06-13)
+
+| Page | ro (RO) | hi (IN — ENGLISH!) | ja (JP) | ms (MY) | bg (BG) |
+|---|---|---|---|---|---|
+| `/` home | program streaming (10) / splitcam 82 | **streaming software (920, EN)** | **配信ソフト (648/KD1)** | software streaming / splitcam 37 | splitcam 22 / софтуер за стрийминг |
+| multistreaming | multistream (40) | **multistream (546, EN)** | マルチ配信 (10) | multistream (50) | мултистрийм |
+| virtual-camera | cameră virtuală | **virtual camera (420, EN)** | バーチャルカメラ (90) | kamera maya | виртуална камера |
+| alternatives/obs | alternativă OBS | **obs alternative (150/KD0, EN)** | obs 代替 (40) | alternatif OBS | OBS алтернатива |
+| for/youtubers | cum să faci live pe YouTube | **how to live stream on youtube (512/KD10, EN)** | **youtube 配信 やり方 (436/KD1)** | cara live streaming di youtube | splitcam |
+| products | descarcă splitcam | download splitcam (EN) | splitcam ダウンロード | muat turun splitcam | свали splitcam |
+
+**hi = ENGLISH titles/keywords** (India searches tech in English — Devanagari terms had ~0 volume); body in natural Hindi (Devanagari) + English tech terms (Hinglish is how Indian tech content reads). Big volumes (920/546/512/420).
+**ja = Japanese** (Japan searches in JP): 配信ソフト 648, youtube 配信 やり方 436 — both big, KD1. ro/ms/bg thin & brand-led. All LTR (no RTL).
