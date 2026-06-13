@@ -99,15 +99,19 @@ def wire_file(locale, page, avail):
     if ".lang-dl{position" not in s:
         s = s.replace("</style>", "\n" + i18n.DROPDOWN_CSS + "\n</style>", 1)
 
-    # 5. partial-wave link safety (homepage): a localized sibling link points to the
+    # 5. partial-wave link safety (any page): a localized sibling link points to the
     # localized page if it exists, else falls back to the EN page so nothing 404s.
-    # Longest paths first so 'for/youtubers/' is handled before 'for/'.
-    if page == "" and locale != "en":
-        for P in sorted([p for p in PAGE_PATHS if p], key=len, reverse=True):
-            if exists(locale, P):
-                s = s.replace(f'href="../{P}', f'href="{P}')   # localize (page now exists)
+    # From /L/<page>/, an in-locale sibling link uses prefix `../`*n (n = page depth);
+    # the EN fallback is one level higher (`../`*(n+1)). Longest sibling first so
+    # 'for/youtubers/' is handled before 'for/'.
+    if locale != "en":
+        n = page.count("/")
+        loc_pre, en_pre = "../" * n, "../" * (n + 1)
+        for S in sorted([p for p in PAGE_PATHS if p and p != page], key=len, reverse=True):
+            if exists(locale, S):
+                s = s.replace(f'href="{en_pre}{S}', f'href="{loc_pre}{S}')   # localize
             else:
-                s = s.replace(f'href="{P}', f'href="../{P}')   # fall back to EN
+                s = s.replace(f'href="{loc_pre}{S}', f'href="{en_pre}{S}')   # EN fallback
 
     if s != orig and not CHECK:
         open(fn, "w", encoding="utf-8").write(s)
