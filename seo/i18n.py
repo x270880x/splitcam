@@ -155,9 +155,18 @@ DROPDOWN_CSS = """.lang-dl{position:relative;display:inline-block}
 .lang-dl-menu .lf{font-size:15px}
 @media(max-width:1100px){.nav-right .lang-dl{display:none}}
 #nav-mobile .lang-dl{display:block;margin:10px 16px 4px}
-#nav-mobile .lang-dl-menu{position:static;max-height:none;box-shadow:none;margin-top:6px}
-[dir="rtl"] .lang-dl-menu{right:auto;left:0}
-[dir="rtl"] .lang-dl .dl-caret{margin-left:0;margin-right:2px}"""
+#nav-mobile .lang-dl-menu{position:static;max-height:none;box-shadow:none;margin-top:6px}"""
+
+
+# RTL layout fixes — injected into RTL-locale pages by i18n_wire.py (rules only bite
+# under dir="rtl", so they're inert for LTR). Two real bugs the dir flip alone leaves:
+#  1. horizontal "forward" arrows (the #i-arr glyph in CTAs / "video -> platforms")
+#     still point right; mirror them.
+#  2. the download split-button's corner rounding doesn't swap, so the main button +
+#     dropdown toggle stop reading as one joined control. Re-mirror the radii.
+RTL_CSS = """[dir="rtl"] svg:has(use[href="#i-arr"]){transform:scaleX(-1)}
+[dir="rtl"] .dl>.btn-primary{border-radius:0 8px 8px 0}
+[dir="rtl"] .dl .dl-toggle{border-radius:8px 0 0 8px}"""
 
 
 if __name__ == "__main__":
