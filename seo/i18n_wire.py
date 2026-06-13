@@ -76,6 +76,11 @@ def wire_file(locale, page, avail):
     orig = s
     depth = depth_prefix(locale, page)
 
+    # 0. normalize <html> direction (RTL locales -> dir="rtl", LTR -> none). Idempotent.
+    dir_attr = ' dir="rtl"' if i18n.is_rtl(locale) else ''
+    s = re.sub(rf'<html lang="{re.escape(locale)}"[^>]*>',
+               f'<html lang="{locale}"{dir_attr}>', s, count=1)
+
     # 1. dropdown switcher — both nav-right and #nav-mobile copies
     dd = i18n.dropdown(locale, avail, page, depth)
     # marked replacement (rerun) first

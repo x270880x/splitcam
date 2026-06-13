@@ -28,6 +28,12 @@ LANG_DONE = {"en","ru","es","fil","fr","pt","de","tr","uk","it","vi","id","nl","
 
 RTL_LANGS = {"ar", "he", "fa"}
 
+
+def is_rtl(locale):
+    """True for right-to-left locales (Arabic, Hebrew, Persian)."""
+    return locale in RTL_LANGS
+
+
 # URL path prefix per locale. EN at root ("").
 LANG_PATH = {L: ("" if L == "en" else f"{L}/") for L in LANG_ORDER}
 
@@ -149,7 +155,9 @@ DROPDOWN_CSS = """.lang-dl{position:relative;display:inline-block}
 .lang-dl-menu .lf{font-size:15px}
 @media(max-width:1100px){.nav-right .lang-dl{display:none}}
 #nav-mobile .lang-dl{display:block;margin:10px 16px 4px}
-#nav-mobile .lang-dl-menu{position:static;max-height:none;box-shadow:none;margin-top:6px}"""
+#nav-mobile .lang-dl-menu{position:static;max-height:none;box-shadow:none;margin-top:6px}
+[dir="rtl"] .lang-dl-menu{right:auto;left:0}
+[dir="rtl"] .lang-dl .dl-caret{margin-left:0;margin-right:2px}"""
 
 
 if __name__ == "__main__":
