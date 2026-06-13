@@ -77,3 +77,18 @@ Per-page PRIMARY keyword → title/H1/meta. Brand "splitcam" everywhere.
 
 **fil = English titles/keywords** (PH searches tech in English); body copy may be Filipino/Taglish but titles, meta, H1, JSON-LD stay English-keyword-led.
 **pt-BR youtubers is a huge win** (1995/KD0). **de home + obs are huge KD0 wins.** **fr/pt multistream ~1200** (high KD ~57 — long game).
+
+---
+
+# Wave 2 keywords — uk / it / vi / id / nl (Ahrefs, 2026-06-13)
+
+| Page | uk (UA) | it (IT) | vi (VN) | id (ID) | nl (NL) |
+|---|---|---|---|---|---|
+| `/` home | програма для стрімінгу / splitcam 272 | software per streaming / programma per streaming (30) | phần mềm livestream (150) | **aplikasi live streaming (4886/KD8!)** | streaming software (116) |
+| multistreaming | мультистрим (20) | **multistream (219)** | multistream (60) | multistream (94) | **multistream (285)** |
+| virtual-camera | віртуальна камера | webcam virtuale (30) | camera ảo / webcam ảo (30) | kamera virtual (20) | virtuele camera |
+| alternatives/obs | альтернатива obs | alternativa a obs (10) | thay thế obs | alternatif obs (10) | OBS alternatief |
+| for/youtubers | як стрімити на ютубі | come fare una diretta su youtube (60/KD0) | cách live trên youtube (95) | **cara live streaming di youtube (131/KD0)** | livestreamen op YouTube |
+| products | завантажити splitcam | scarica splitcam | tải splitcam | download splitcam (+ «aplikasi live streaming») | splitcam downloaden |
+
+**ID «aplikasi live streaming» 4886 is the single biggest keyword across both waves** — lead the ID home + products with it. IT/NL multistream 219/285. UA demand is thin (brand-led). All LTR (no RTL this wave).
