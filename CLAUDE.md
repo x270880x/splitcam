@@ -106,41 +106,62 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 - **Wave 3** (later): remaining alternatives + `/for/{streamers,educators}/`.
 - **Migration to live splitcam.com**: only `/` is a true same-URL replacement;
   everything else is new URLs. See `seo/MIGRATION.md` + `seo/REDIRECTS.md`.
-  RU/ES locales — **DONE 2026-06-13** (see below).
+  Multi-locale — **18 languages DONE 2026-06-13** (see below).
 
-## Localization — RU + ES (built 2026-06-13)
+## Localization — 18 languages (built 2026-06-13)
 
-All content + utility pages exist in three languages: EN (root), RU
-(`/ru/...`), ES (`/es/...`). Localized: the 10 content pages **plus**
-`privacy-policy/`, `license-agreement/` (full) and `changelog/` (page shell +
-section labels localized; the technical release-note bullets stay EN — zero
-search volume, changes every release). Untranslated: `/v2/` (archived),
-`for/vtubers/` (noindex draft).
+Every page exists in **18 locales**: EN (root) + 17 under `/<lang>/...`:
+**ru es de fr pt tr fil uk it vi id nl ro hi ja ms bg**. That's all 13 pages
+(10 content + `privacy-policy/` + `license-agreement/` full, + `changelog/`
+shell-only — its ~1817 technical release bullets stay EN) × 18 = **234
+indexable pages**. Untranslated: `/v2/` (archived), `for/vtubers/` (noindex draft).
 
-**Rule (user, 2026-06-13): everything new gets all three languages — no
-exceptions by page type** (incl. legal/utility). And every new/edited page
-gets a per-locale **Ahrefs** pass: put the language's real keyword in the
-**title, meta description, and H1** (don't translate the EN title literally).
-See [[feedback_multilang_sync]].
+Built in 3 waves of 5 new languages, ordered by Ahrefs "splitcam" demand. The
+**top 18 by demand are done; the remaining 17 (Waves 4–7: ar ko th pl hu sv zh
+el cs he sr hr da fi no sk fa) all have ≤10/mo demand, most literally 0** — so
+18 captures essentially all the SEO value. Continuing to 35 is brand-completeness
+only (the user may or may not want it). `seo/i18n.py` `waves()` lists what's left.
 
-- **Keyword research per locale:** `seo/I18N-KEYWORDS.md` (Ahrefs ru/es/mx).
-  Primary keys live in each page's title/H1 (e.g. RU «программа для стрима»,
-  «мультистрим», «трансляция богослужения»; ES «software de streaming»,
-  «multistream», «alternativas a OBS» plural).
-- **Binding spec:** `seo/I18N-PLAN.md` — path-shift rules, hreflang/canonical
-  templates, the language-switcher markup+CSS, tone/glossary, invariants.
-  **Read it before adding or editing any localized page.**
-- **hreflang:** every page (incl. the 10 EN originals) declares en/ru/es/
-  x-default alternates — reciprocity is required or Google ignores them.
-  `sitemap.xml` carries the same alternates as `xhtml:link`.
-- **Language switcher:** EN·RU·ES in nav + burger on all 30 pages.
-- **Canonicals** point to `splitcam.com/<locale>/...` (the future live URLs),
-  same convention as the EN tree — staging stays non-indexed.
-- **When you add a new EN page:** also create `/ru/` + `/es/` versions and add
-  it (×3, with alternates) to `sitemap.xml`. When you edit copy in one
-  language, mirror it to the other two (see [[feedback_multilang_sync]]).
-- Audit after changes: `python3 seo/linkcheck.py --no-network` (must be 0
-  broken) + the mobile check.
+### The i18n engine (no build step — these two files ARE the system)
+- **`seo/i18n.py`** — single source of truth: `LANG_ORDER` (demand-sorted),
+  `LANG_DONE`, native names/flags/labels/paths, RTL set, `DEMAND`, and render
+  helpers (`dropdown()`, `hreflang_block()`, `AUTO_DETECT_JS`, `DROPDOWN_CSS`).
+- **`seo/i18n_wire.py`** — run it after adding/translating pages. It rebuilds,
+  per page, listing **only the locales where that page exists on disk**: the
+  `<details>` language dropdown (flags + native names, nav + burger), the
+  hreflang block, the browser-language auto-redirect JS, the dropdown CSS, and
+  `sitemap.xml`. Idempotent (marker-based). Also rewrites a locale page's
+  sibling links to the EN fallback when the localized sibling doesn't exist yet
+  (so partial waves never 404). **`python3 seo/i18n_wire.py` then
+  `python3 seo/linkcheck.py --no-network` (must be 0 broken).**
+
+### How to add languages (the proven pipeline)
+1. Ahrefs per market → append a Wave table to `seo/I18N-KEYWORDS.md`.
+2. Spawn ~5 parallel translation agents (one per language) per batch:
+   homepage → SEO-core (vc/multistreaming/obs/youtubers) → rest → utility.
+   Each reads the EN source for content + `ru/<page>/` for the exact
+   path-shifts at that depth; switcher/hreflang are placeholders (the wiring
+   rewrites them). Account session limits hit ~mid-large-batch — retry the
+   failed locale's remaining pages.
+3. Run `i18n_wire.py`, linkcheck, mark the langs in `LANG_DONE`, commit.
+
+### Per-locale rules (binding: `seo/I18N-PLAN.md` — read before editing a localized page)
+- **SEO:** Ahrefs per locale → the language's real keyword in title + meta
+  description + H1 (NOT a literal EN translation). `seo/I18N-KEYWORDS.md` has
+  the per-page map for all 18. Notable: **fil + hi search tech in ENGLISH**
+  (English titles/keywords, local-language body); ja/de/etc. use their own.
+- **Layout (mandatory, user 2026-06-13):** translated text is longer →
+  `white-space:nowrap` on any translatable text is a bug; headings/hero use
+  `white-space:normal` + `overflow-wrap:break-word`; nav collapses to burger
+  ≤1100px. Check no overflow/clip/overlap at 1440/1280/390. Verify balanced
+  `<style>…</style>` per file (an agent once shipped an unclosed one that broke
+  the whole page render).
+- **hreflang reciprocity** across all 18 + EN; **no `aggregateRating`** in any
+  JSON-LD (crit rule #7); GA gtag byte-identical; canonicals → future
+  `splitcam.com/<locale>/...`.
+- **New EN page ⇒ build all 18 locales + rerun `i18n_wire.py`** (which adds it
+  to every dropdown/hreflang/sitemap). Edit EN copy ⇒ mirror to 17. See
+  [[feedback_multilang_sync]].
 - Full SEO plan: `seo/PLAN.md`. Recommended IA: `seo/SITEMAP.md`.
   Schedule & follow-ups: `seo/REMINDERS.md` (open it in any SEO chat).
 

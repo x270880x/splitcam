@@ -1,6 +1,19 @@
 # SplitCam — Project Onboarding
 
-*Last updated: 2026-06-12. Open this at the start of any new chat to get up to speed.*
+*Last updated: 2026-06-13. Open this at the start of any new chat to get up to speed.*
+
+## ⭐ Current state (read first)
+- Site is live in **18 languages** (234 indexable pages). EN root + 17 under
+  `/<lang>/`: ru es de fr pt tr fil uk it vi id nl ro hi ja ms bg.
+- The whole language system is two files: **`seo/i18n.py`** (config + render
+  helpers) and **`seo/i18n_wire.py`** (rebuilds dropdown/hreflang/auto-detect/
+  sitemap across every page). See the "Localization — 18 languages" section in
+  **CLAUDE.md** for the full how-to. Run `i18n_wire.py` then
+  `linkcheck.py --no-network` after any page add/translate.
+- Per-locale keyword maps: `seo/I18N-KEYWORDS.md`. Binding spec: `seo/I18N-PLAN.md`.
+- **Remaining 17 languages (Waves 4–7) have ≤10/mo Ahrefs demand, most 0** — 18 =
+  all real demand. Going to 35 is brand-completeness only; the user decides.
+- Working tree clean & pushed; `linkcheck` 0 broken across 236 pages.
 
 ## Two projects
 
@@ -274,6 +287,52 @@ Worked through the overdue items in `seo/REMINDERS.md` (full results live there)
   site-wide on 2026-06-07, so remaining nav work = desktop dropdowns for
   Alternatives/Use Cases (+ optional `nav.js` extraction).
 - `/products/remote/` page decision stays parked until Android Remote ships.
+
+## Session log — 2026-06-13 (i18n: 3 → 18 languages + dropdown/auto-detect + fixes)
+
+Big session. After the RU/ES work (logged below), the user asked to take the
+site to all the languages cam-streaming-guides has (35), natively, in waves of
+5, Ahrefs-checked, layout-safe. Built the system and shipped **18 languages**
+(top-18 by Ahrefs demand; Waves 1–3). Remaining 17 are ≤10/mo demand, mostly 0.
+
+**Built the i18n engine (no build step):**
+- `seo/i18n.py` — 35-locale config (demand-ordered `LANG_ORDER`, `LANG_DONE`,
+  native names/flags/labels/paths, RTL set, `DEMAND`) + render helpers
+  (dropdown, hreflang, auto-detect JS, dropdown CSS). Ported from camstreamguide.
+- `seo/i18n_wire.py` — run after translating; rebuilds dropdown + hreflang +
+  auto-redirect + dropdown CSS + `sitemap.xml` across every page, listing only
+  locales where each page exists, with EN-fallback for missing siblings (partial
+  waves never 404). Idempotent (markers). Always pair with `linkcheck`.
+- Replaced the old inline EN·RU·ES 3-button switcher with a `<details>` flag
+  dropdown (now 18 langs) + browser-language auto-redirect (localStorage +
+  navigator.languages, like camstreamguide).
+
+**Waves (5 langs each, ~5 parallel agents/batch: homepage → SEO-core → rest →
+utility):** W1 de/fr/pt/tr/fil · W2 uk/it/vi/id/nl · W3 ro/hi/ja/ms/bg. Per-locale
+Ahrefs keywords in `seo/I18N-KEYWORDS.md`. Big wins: ID «aplikasi live streaming»
+4886, DE «streaming software» 598 + «obs alternative» 274 (both KD0), PT «como
+fazer live no youtube» 1995, JA 配信ソフト 648 / YouTube配信やり方 436, hi EN-SEO
+(streaming software 920). **fil + hi: English titles/keywords** (those markets
+search tech in English), local-language body. changelog kept 1817 EN bullets per
+locale (shell only). Account session limits hit on big batches — retried.
+
+**Layout/content fixes this session:**
+- Hero H1 `.blue` keyword had `white-space:nowrap` → overflowed under the app-
+  window in long locales → `white-space:normal` + `overflow-wrap:break-word`.
+- Nav: long labels + switcher clipped the header button → collapse to burger
+  ≤1100px + tighter gaps (all pages).
+- uk homepage had a duplicate `<style>` + missing `</style>` (agent bug) that
+  broke the whole render → fixed; now verify balanced `<style>` per file.
+- Fixed Cyrillic «масOS»→«macOS» typo in the changelog bullet (was in EN source,
+  propagated to all locales).
+- Removed the dead **InstallMonetizer** section from privacy-policy on all 18
+  locales (defunct PPI-bundling disclosure from the old site; dead domain;
+  contradicted the "free, no bundle" positioning).
+- RU `/ru/virtual-camera/` compatibility grid/orbit: swapped in Яндекс Телемост
+  + MAX (RU video-call platforms) for the RU audience.
+
+**To continue to 35:** `python3 seo/i18n.py` prints the remaining waves
+(ar/ko/th/pl/hu → …). Same pipeline. But flag the ~0 demand first.
 
 ## Session log — 2026-06-13 (RU + ES localization — whole site)
 
