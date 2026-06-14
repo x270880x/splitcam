@@ -785,87 +785,87 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
 <!-- FAQ -->
 <section class="section">
-  <h2 class="sec-h">Често задавани въпроси за църковния стрийм</h2>
+  <h2 class="sec-h">Ofte stillede spørgsmål om kirke-stream</h2>
   <div class="faq-list">
     <details class="faq-item">
-      <summary>Коя е най-добрата безплатна програма за стрийм за църкви?</summary>
-      <p>SplitCam е един от най-добрите безплатни варианти за църкви: вграден мултистрийм към Facebook + YouTube + сайта на църквата едновременно, превключване на сцени с няколко камери, надписи и текстове на песни през Browser Source, без воден знак, без абонамент. OBS Studio също е безплатна, но изисква плъгини за мултистрийм и е по-трудна за усвояване от доброволците оператори.</p>
+      <summary>Hvad er den bedste gratis streaming-software til kirker?</summary>
+      <p>SplitCam er en af de bedste gratis muligheder for kirker: indbygget multistream til Facebook + YouTube + kirkens hjemmeside samtidig, sceneskift med flere kameraer, undertekster og sangtekster via Browser Source, uden vandmærke, uden abonnement. OBS Studio er også gratis, men kræver plugins til multistream og er sværere at lære for frivillige operatører.</p>
     </details>
     <details class="faq-item">
-      <summary>Мога ли да излъчвам неделното богослужение към Facebook и YouTube едновременно?</summary>
-      <p>Да — SplitCam има вграден мултистрийм. Поставете stream key за Facebook Live и YouTube Live, натиснете „На живо“ веднъж и двете платформи получават излъчването едновременно. Можете да изпращате и към собствения сайт на църквата през RTMP в същото време. Потокът тръгва директно (peer-to-peer) от църковния компютър — без облачен посредник, без месечна такса. Вижте <a href="../../multistreaming/" style="color:var(--blue)">подробности за мултистрийма</a>.</p>
+      <summary>Kan jeg livestreame søndagsgudstjenesten til Facebook og YouTube samtidig?</summary>
+      <p>Ja — SplitCam har indbygget multistream. Indsæt stream key til Facebook Live og YouTube Live, tryk „Live“ én gang, og begge platforme får streamet samtidig. Du kan også sende til kirkens egen hjemmeside via RTMP på samme tid. Streamet går direkte (peer-to-peer) fra kirkens computer — uden mellemled i skyen, uden månedligt gebyr. Se <a href="../../multistreaming/" style="color:var(--blue)">detaljer om multistream</a>.</p>
     </details>
     <details class="faq-item">
-      <summary>Колко струва програмата за стрийм за църкви?</summary>
-      <p>SplitCam е 100% безплатна, без воден знак и без ограничение във времето. Платени варианти: vMix Basic HD $60 еднократно (ограничен до 4 входа, без мултистрийм), vMix Pro $1200 еднократно (пълни функции), ProPresenter $499+ (фокусиран върху хвалението, не е пълноценен енкодер за стрийм), Resi $99–$249/месец (облачен), BoxCast $99–$499/месец.</p>
+      <summary>Hvad koster streaming-software til kirker?</summary>
+      <p>SplitCam er 100 % gratis, uden vandmærke og uden tidsbegrænsning. Betalte muligheder: vMix Basic HD $60 engang (begrænset til 4 input, ingen multistream), vMix Pro $1200 engang (alle funktioner), ProPresenter $499+ (fokuseret på lovsang, ikke en fuldgyldig stream-encoder), Resi $99–$249/måned (sky), BoxCast $99–$499/måned.</p>
     </details>
     <details class="faq-item">
-      <summary>Нужен ли ми е отделен компютър за стрийм на неделното богослужение?</summary>
-      <p>Не задължително — SplitCam може да работи на същия компютър, който показва слайдовете на проектора или ProPresenter, ако машината има достатъчно ресурс на процесора/видеокартата (препоръчва се Intel i5 8-о поколение+, 16 GB RAM). За конфигурации с 3+ камери на 1080p се препоръчва отделен компютър за стрийм, за да се избегнат изпуснати кадри.</p>
+      <summary>Skal jeg bruge en separat computer til at streame søndagsgudstjenesten?</summary>
+      <p>Ikke nødvendigvis — SplitCam kan køre på den samme computer, der viser slidesene på projektoren eller ProPresenter, hvis maskinen har nok CPU/GPU-ressourcer (Intel i5 8. generation+, 16 GB RAM anbefales). Til opsætninger med 3+ kameraer i 1080p anbefales en separat stream-computer for at undgå tabte frames.</p>
     </details>
     <details class="faq-item">
-      <summary>Как да добавя текстове на песни в църковното излъчване?</summary>
-      <p>Добавете Browser Source в SplitCam, насочен към страницата с текстове. Ако използвате ProPresenter, активирайте изхода му Network → Web URL и насочете Browser Source на SplitCam към този адрес. Ако използвате OpenLP или друг безплатен вариант, насочете към уеб адреса на сценичния му дисплей. Текстовете ще се появяват на живо в излъчването, докато хвалебният състав сменя слайдовете. Забележка: излъчването на защитени с авторски права текстове изисква CCLI Streaming License.</p>
+      <summary>Hvordan tilføjer jeg sangtekster til kirkens stream?</summary>
+      <p>Tilføj en Browser Source i SplitCam, der peger på siden med teksterne. Bruger du ProPresenter, så aktivér dets output Network → Web URL og ret SplitCams Browser Source mod den adresse. Bruger du OpenLP eller en anden gratis løsning, så peg på webadressen til dens scene-display. Teksterne dukker op live i streamet, mens lovsangsbandet skifter slides. Bemærk: at streame ophavsretligt beskyttede tekster kræver en CCLI Streaming License.</p>
     </details>
     <details class="faq-item">
-      <summary>Мога ли да използвам няколко камери за църковния стрийм?</summary>
-      <p>Да — SplitCam поддържа неограничен брой камери като източници на сцена. Включете всяка камера към компютъра (USB уеб камера, DSLR през HDMI кепчър карта като Elgato Cam Link или телефон с мобилното приложение SplitCam като допълнителен безжичен ракурс). Изградете сцени за общ план, близък план на амвона, хвалебен състав, слайд с текст. Превключвайте между тях с горещи клавиши (F1, F2, F3...) по време на богослужението.</p>
+      <summary>Kan jeg bruge flere kameraer til kirkens stream?</summary>
+      <p>Ja — SplitCam understøtter et ubegrænset antal kameraer som scenekilder. Tilslut hvert kamera til computeren (USB-webcam, DSLR via HDMI-capture card som Elgato Cam Link eller en telefon med SplitCam-mobilappen som en ekstra trådløs vinkel). Byg scener til totalbillede, nærbillede af prædikestolen, lovsangsband, tekstslide. Skift mellem dem med genvejstaster (F1, F2, F3...) under gudstjenesten.</p>
     </details>
     <details class="faq-item">
-      <summary>Ще работи ли SplitCam на по-стари църковни компютри?</summary>
-      <p>SplitCam работи на Windows 10/11 и macOS 11+ със скромни хардуерни изисквания. За мултикамерен стрийм на 1080p е удобен Intel i5 8-о поколение или Ryzen 5 с 16 GB RAM. За стрийм с една камера на 720p може да свърши работа и по-стар лаптоп с i3 / 8 GB RAM. Хардуерното кодиране (NVENC / QuickSync / AMF) сваля натоварването от процесора.</p>
+      <summary>Vil SplitCam køre på ældre kirke-computere?</summary>
+      <p>SplitCam kører på Windows 10/11 og macOS 11+ med beskedne hardwarekrav. Til multikamera-stream i 1080p er en Intel i5 8. generation eller Ryzen 5 med 16 GB RAM behagelig. Til stream med ét kamera i 720p kan en ældre laptop med i3 / 8 GB RAM klare det. Hardware-encoding (NVENC / QuickSync / AMF) tager belastningen af CPU'en.</p>
     </details>
     <details class="faq-item">
-      <summary>Достатъчно надеждна ли е SplitCam за неделно богослужение на живо?</summary>
-      <p>Да — SplitCam се развива активно от 2003 г. и се използва от църкви и телевизионни оператори по целия свят. Енкодерът използва хардуерно ускорение за стабилност, мониторът на състоянието показва изпуснатите кадри в реално време, а мултистрийм системата е директна (peer-to-peer) — ако една платформа спре, не повлича останалите. Направете събота генерална репетиция преди първото си излъчване в неделя.</p>
+      <summary>Er SplitCam pålideligt nok til en søndagsgudstjeneste live?</summary>
+      <p>Ja — SplitCam er udviklet aktivt siden 2003 og bruges af kirker og tv-operatører over hele verden. Encoderen bruger hardwareacceleration for stabilitet, statusmonitoren viser tabte frames i realtid, og multistream-systemet er direkte (peer-to-peer) — hvis én platform falder, trækker den ikke de andre med. Lav en generalprøve lørdag inden dit første stream om søndagen.</p>
     </details>
   </div>
 </section>
 
 <!-- RELATED -->
 <div class="related">
-  <h3 style="font-size:18px;font-weight:700;margin-bottom:6px">Свързани ръководства</h3>
+  <h3 style="font-size:18px;font-weight:700;margin-bottom:6px">Relaterede guides</h3>
   <div class="related-grid">
     <a class="related-card" href="../../multistreaming/">
-      <span class="eyebrow">Мултистрийм</span>
-      <h4>Един стрийм → всяка платформа</h4>
-      <p>Излъчвайте към Facebook + YouTube + сайта на църквата едновременно, директно (peer-to-peer).</p>
+      <span class="eyebrow">Multistream</span>
+      <h4>Ét stream → enhver platform</h4>
+      <p>Stream til Facebook + YouTube + kirkens hjemmeside samtidig, direkte (peer-to-peer).</p>
     </a>
     <a class="related-card" href="../youtubers/">
       <span class="eyebrow">YouTube Live</span>
-      <h4>Как да стриймите на живо в YouTube</h4>
-      <p>Ръководство стъпка по стъпка конкретно за страната на YouTube — stream key, битрейт, настройки.</p>
+      <h4>Sådan streamer du live på YouTube</h4>
+      <p>Guide trin for trin specifikt til YouTube-siden — stream key, bitrate, indstillinger.</p>
     </a>
     <a class="related-card" href="../../virtual-camera/">
-      <span class="eyebrow">Виртуална камера</span>
-      <h4>Използвайте SplitCam като уеб камера</h4>
-      <p>За молитвени срещи и библейски занятия в Zoom, Teams, Google Meet.</p>
+      <span class="eyebrow">Virtuelt kamera</span>
+      <h4>Brug SplitCam som webcam</h4>
+      <p>Til bønnemøder og bibelstudier i Zoom, Teams, Google Meet.</p>
     </a>
   </div>
 </div>
 
 <!-- CTA -->
 <section class="cta-block">
-  <h2>Излъчвайте тази неделя — безплатно</h2>
-  <p>Безплатно изтегляне. Без абонамент, без карта, без воден знак. Похарчете спестения бюджет за по-добър звук или втора камера.</p>
-  <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Свали безплатно</a>
+  <h2>Stream denne søndag — gratis</h2>
+  <p>Gratis download. Uden abonnement, uden kort, uden vandmærke. Brug det sparede budget på bedre lyd eller et ekstra kamera.</p>
+  <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Gratis download</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div>© 2026 SplitCam · Безплатна програма за стрийм от 2003 г.</div>
+    <div>© 2026 SplitCam · Gratis streaming-software siden 2003</div>
     <div class="footer-links">
-      <a href="../../">Начало</a>
-      <a href="../../multistreaming/">Мултистрийм</a>
-      <a href="../../virtual-camera/">Виртуална камера</a>
-      <a href="../../alternatives/">Алтернативи</a>
-      <a href="../">Приложения</a>
-      <a href="../../#faq">Въпроси</a>
-      <a href="../../help/">Помощ</a>
-      <a href="../../changelog/">История на версиите</a>
-      <a href="../../license-agreement/">Лиценз</a>
-      <a href="../../privacy-policy/">Поверителност</a>
+      <a href="../../">Hjem</a>
+      <a href="../../multistreaming/">Multistream</a>
+      <a href="../../virtual-camera/">Virtuelt kamera</a>
+      <a href="../../alternatives/">Alternativer</a>
+      <a href="../">Anvendelser</a>
+      <a href="../../#faq">FAQ</a>
+      <a href="../../help/">Hjælp</a>
+      <a href="../../changelog/">Versionshistorik</a>
+      <a href="../../license-agreement/">Licens</a>
+      <a href="../../privacy-policy/">Privatliv</a>
     </div>
   </div>
 </footer>
