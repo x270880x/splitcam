@@ -106,21 +106,31 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 - **Wave 3** (later): remaining alternatives + `/for/{streamers,educators}/`.
 - **Migration to live splitcam.com**: only `/` is a true same-URL replacement;
   everything else is new URLs. See `seo/MIGRATION.md` + `seo/REDIRECTS.md`.
-  Multi-locale — **18 languages DONE 2026-06-13** (see below).
+  Multi-locale — **all 35 languages DONE 2026-06-15** (see below).
 
-## Localization — 18 languages (built 2026-06-13)
+## Localization — all 35 languages (built 2026-06-13 → 06-15)
 
-Every page exists in **18 locales**: EN (root) + 17 under `/<lang>/...`:
-**ru es de fr pt tr fil uk it vi id nl ro hi ja ms bg**. That's all 13 pages
-(10 content + `privacy-policy/` + `license-agreement/` full, + `changelog/`
-shell-only — its ~1817 technical release bullets stay EN) × 18 = **234
-indexable pages**. Untranslated: `/v2/` (archived), `for/vtubers/` (noindex draft).
+Every page exists in **35 locales**: EN (root) + 34 under `/<lang>/...`:
+**ru es de fr pt tr fil uk it vi id nl ro hi ja ms bg ar ko th pl hu sv zh el cs
+he sr hr da fi no sk fa** (ar/he/fa are RTL). That's all 13 pages (10 content +
+`privacy-policy/` + `license-agreement/` full, + `changelog/` shell-only — its
+~1817 technical release bullets stay EN) × 35 = **455 indexable pages**.
+Untranslated: `/v2/` (archived), `for/vtubers/` (noindex draft).
 
-Built in 3 waves of 5 new languages, ordered by Ahrefs "splitcam" demand. The
-**top 18 by demand are done; the remaining 17 (Waves 4–7: ar ko th pl hu sv zh
-el cs he sr hr da fi no sk fa) all have ≤10/mo demand, most literally 0** — so
-18 captures essentially all the SEO value. Continuing to 35 is brand-completeness
-only (the user may or may not want it). `seo/i18n.py` `waves()` lists what's left.
+Built by Ahrefs "splitcam" demand: top 18 first (2026-06-13), then the remaining
+17 (Waves 4–7 — ≤10/mo demand, mostly 0) completed 2026-06-15 for brand
+completeness. `seo/i18n.py` `waves()` confirms 0 left. **RTL** (ar/he/fa) is
+handled by `i18n.RTL_CSS` (forward-arrow flip via `svg:has(use[href="#i-arr"])`,
+download split-button radii, vc-arrow connector) injected per RTL page by
+`i18n_wire.py` into a regenerated `<!--RTLCSS-->` marker region.
+
+> **Wave 4–7 build note (2026-06-15):** an earlier unattended run mass-translated
+> these locales from a Bulgarian (`bg/`) scaffold and left systematic bugs —
+> canonical/og/JSON-LD URLs pointing at `/bg/`, smart-quoted HTML attributes
+> (broke links), and a few untranslated/Bulgarian pages. All were cleaned + the
+> affected locales retranslated fresh from EN. If re-running a wave, **translate
+> from `index.html` (EN), never from another locale's scaffold, and use only
+> straight ASCII quotes in attributes/JSON-LD.**
 
 ### The i18n engine (no build step — these two files ARE the system)
 - **`seo/i18n.py`** — single source of truth: `LANG_ORDER` (demand-sorted),
@@ -159,7 +169,7 @@ only (the user may or may not want it). `seo/i18n.py` `waves()` lists what's lef
 - **hreflang reciprocity** across all 18 + EN; **no `aggregateRating`** in any
   JSON-LD (crit rule #7); GA gtag byte-identical; canonicals → future
   `splitcam.com/<locale>/...`.
-- **New EN page ⇒ build all 18 locales + rerun `i18n_wire.py`** (which adds it
+- **New EN page ⇒ build all 34 locales + rerun `i18n_wire.py`** (which adds it
   to every dropdown/hreflang/sitemap). Edit EN copy ⇒ mirror to 17. See
   [[feedback_multilang_sync]].
 - Full SEO plan: `seo/PLAN.md`. Recommended IA: `seo/SITEMAP.md`.
