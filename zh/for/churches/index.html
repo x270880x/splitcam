@@ -45,7 +45,6 @@
 <link rel="alternate" hreflang="hu" href="https://splitcam.com/hu/for/churches/">
 <link rel="alternate" hreflang="sv" href="https://splitcam.com/sv/for/churches/">
 <link rel="alternate" hreflang="zh" href="https://splitcam.com/zh/for/churches/">
-<link rel="alternate" hreflang="el" href="https://splitcam.com/el/for/churches/">
 <link rel="alternate" hreflang="cs" href="https://splitcam.com/cs/for/churches/">
 <link rel="alternate" hreflang="he" href="https://splitcam.com/he/for/churches/">
 <link rel="alternate" hreflang="sr" href="https://splitcam.com/sr/for/churches/">
@@ -81,178 +80,7 @@
 <link rel="manifest" href="../../../site.webmanifest">
 
 <!-- Schema.org: HowTo + BreadcrumbList + SoftwareApplication + FAQPage for rich snippets -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "SplitCam",
-          "item": "https://splitcam.com/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "教会用户",
-          "item": "https://splitcam.com/zh/for/churches/"
-        }
-      ]
-    },
-    {
-      "@type": "HowTo",
-      "name": "如何进行教会礼拜直播",
-      "description": "完整分步指南：使用免费软件 SplitCam，同时将主日礼拜直播到 Facebook、YouTube 和教会网站。",
-      "totalTime": "PT10M",
-      "image": "https://splitcam.com/assets/og-church.png",
-      "tool": [
-        {
-          "@type": "HowToTool",
-          "name": "SplitCam（免费下载）"
-        },
-        {
-          "@type": "HowToTool",
-          "name": "一台或多台摄像机（网络摄像头、采集卡接 DSLR，或手机）"
-        },
-        {
-          "@type": "HowToTool",
-          "name": "音频源（调音台或 USB 麦克风）"
-        }
-      ],
-      "supply": [
-        {
-          "@type": "HowToSupply",
-          "name": "具有直播权限的 Facebook 主页"
-        },
-        {
-          "@type": "HowToSupply",
-          "name": "已开通直播功能的 YouTube 频道"
-        },
-        {
-          "@type": "HowToSupply",
-          "name": "各平台的推流密钥（Stream Key）"
-        }
-      ],
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "在音控台电脑上安装 SplitCam",
-          "text": "免费下载 SplitCam for Windows 或 macOS。无需注册，无需银行卡，无水印。可直接在播放幻灯片的教会笔记本上运行。",
-          "url": "https://splitcam.com/zh/"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "将摄像机作为场景图层添加",
-          "text": "连接每台摄像机（USB 网络摄像头、HDMI 采集卡接 DSLR，或通过 SplitCam 手机 App 作为无线摄像头），并将其添加为视频源。创建场景：全景 / 讲台 / 诗班 / 歌词幻灯片。"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "接入调音台的音频",
-          "text": "通过 USB 音频接口将教会调音台连接到电脑，在 SplitCam 中选择它作为音频源。会众在现场听到的声音，就是直播观众接收到的声音。"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 4,
-          "name": "添加字幕和歌词",
-          "text": "添加文字叠加层，显示讲道者姓名和讲道主题。歌词部分添加 Browser Source，指向 ProPresenter 的网络输出地址（或任何显示歌词的网页）——切换幻灯片时歌词实时出现在直播画面中。"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 5,
-          "name": "同时推流到 Facebook + YouTube + 教会网站",
-          "text": "在推流设置中填入 Facebook Live、YouTube Live 以及教会网站的 RTMP 推流密钥，全部勾选，点击"开始直播"——每个平台同时收到直播流，点对点直传，无需云端中转。"
-        }
-      ]
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "SplitCam",
-      "applicationCategory": "MultimediaApplication",
-      "operatingSystem": "Windows, macOS, iOS, Android",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "教会直播最好的免费软件是什么？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "SplitCam 是教会最佳免费选项之一：内置多平台推流（同时推到 Facebook + YouTube + 教会网站）、多摄像机场景切换、Browser Source 歌词叠加，无水印、无订阅费。OBS Studio 也免费，但多平台推流需要插件，对志愿者操作员来说上手较难。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "我能同时将主日礼拜直播到 Facebook 和 YouTube 吗？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "可以——SplitCam 内置多平台推流。填入 Facebook Live 和 YouTube Live 的推流密钥，点击一次"开始直播"，两个平台同时接收直播流。同时还可以通过 RTMP 推送到教会自己的网站。直播流从教会电脑点对点直传，无需云端中转，也没有月费。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "教会直播软件要多少钱？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "SplitCam 100% 免费，无水印，不限时长。付费选项参考：vMix Basic HD 一次性 $60（最多 4 路输入，不支持多平台推流）、vMix Pro 一次性 $1200（完整功能）、ProPresenter $499+（侧重敬拜展示，不是完整直播编码器）、Resi $99–$249/月（云端）、BoxCast $99–$499/月。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "主日礼拜直播需要单独的电脑吗？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "不一定——如果机器性能足够（建议 Intel i5 第 8 代及以上 + 16 GB RAM），SplitCam 可以跑在同一台运行幻灯片或 ProPresenter 的电脑上。3 台及以上摄像机 1080p 配置建议使用独立直播电脑，以避免丢帧。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "如何在教会直播中添加歌词？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "在 SplitCam 中添加 Browser Source，指向歌词页面。如果使用 ProPresenter，启用其 Network → Web URL 输出，将 SplitCam 的 Browser Source 指向该地址。如果使用 OpenLP 等免费软件，指向其舞台显示的网页地址。诗班切换幻灯片时，歌词会实时出现在直播画面中。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "教会直播可以使用多台摄像机吗？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "可以——SplitCam 支持无限数量的摄像机作为场景视频源。将每台摄像机接入电脑（USB 网络摄像头、Elgato Cam Link 等 HDMI 采集卡接 DSLR，或通过 SplitCam 手机 App 作为无线第二摄像机）。创建全景、讲台近景、诗班、歌词幻灯片等场景，礼拜时用快捷键（F1、F2、F3……）快速切换。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "SplitCam 能在教会的旧电脑上运行吗？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "SplitCam 支持 Windows 10/11 和 macOS 11+，硬件要求不高。多摄像机 1080p 直播建议 Intel i5 第 8 代或 Ryzen 5 + 16 GB RAM；单摄像机 720p 直播，i3 / 8 GB RAM 的旧笔记本也能胜任。硬件编码（NVENC / QuickSync / AMF）可大幅降低 CPU 负载。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "SplitCam 用于主日礼拜直播够稳定吗？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "够——SplitCam 自 2003 年持续开发，被全球各地的教会和电视台使用。编码器采用硬件加速保障稳定性，状态监视器实时显示丢帧情况，多平台推流系统点对点直传——某个平台中断不影响其他平台。建议在周日首次直播前的周六进行一次彩排。"
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -518,7 +346,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <li><a href="../../help/">帮助</a></li>
   </ul>
   <div class="nav-right">
-    <!--LD--><details class="lang-dl"><summary aria-label="Language"><span class="lf">🇨🇳</span><span class="lc">中</span><span class="dl-caret">▾</span></summary><div class="lang-dl-menu"><a href="../../for/churches/" data-lang="en" hreflang="en" lang="en"><span class="lf">🇬🇧</span><span class="ln">English</span></a><a href="../../../fil/for/churches/" data-lang="fil" hreflang="fil" lang="fil"><span class="lf">🇵🇭</span><span class="ln">Filipino</span></a><a href="../../../fr/for/churches/" data-lang="fr" hreflang="fr" lang="fr"><span class="lf">🇫🇷</span><span class="ln">Français</span></a><a href="../../../pt/for/churches/" data-lang="pt" hreflang="pt" lang="pt"><span class="lf">🇧🇷</span><span class="ln">Português</span></a><a href="../../../de/for/churches/" data-lang="de" hreflang="de" lang="de"><span class="lf">🇩🇪</span><span class="ln">Deutsch</span></a><a href="../../../tr/for/churches/" data-lang="tr" hreflang="tr" lang="tr"><span class="lf">🇹🇷</span><span class="ln">Türkçe</span></a><a href="../../../uk/for/churches/" data-lang="uk" hreflang="uk" lang="uk"><span class="lf">🇺🇦</span><span class="ln">Українська</span></a><a href="../../../ru/for/churches/" data-lang="ru" hreflang="ru" lang="ru"><span class="lf">🇷🇺</span><span class="ln">Русский</span></a><a href="../../../it/for/churches/" data-lang="it" hreflang="it" lang="it"><span class="lf">🇮🇹</span><span class="ln">Italiano</span></a><a href="../../../vi/for/churches/" data-lang="vi" hreflang="vi" lang="vi"><span class="lf">🇻🇳</span><span class="ln">Tiếng Việt</span></a><a href="../../../id/for/churches/" data-lang="id" hreflang="id" lang="id"><span class="lf">🇮🇩</span><span class="ln">Bahasa Indonesia</span></a><a href="../../../nl/for/churches/" data-lang="nl" hreflang="nl" lang="nl"><span class="lf">🇳🇱</span><span class="ln">Nederlands</span></a><a href="../../../es/for/churches/" data-lang="es" hreflang="es" lang="es"><span class="lf">🇪🇸</span><span class="ln">Español</span></a><a href="../../../ro/for/churches/" data-lang="ro" hreflang="ro" lang="ro"><span class="lf">🇷🇴</span><span class="ln">Română</span></a><a href="../../../hi/for/churches/" data-lang="hi" hreflang="hi" lang="hi"><span class="lf">🇮🇳</span><span class="ln">हिन्दी</span></a><a href="../../../ja/for/churches/" data-lang="ja" hreflang="ja" lang="ja"><span class="lf">🇯🇵</span><span class="ln">日本語</span></a><a href="../../../ms/for/churches/" data-lang="ms" hreflang="ms" lang="ms"><span class="lf">🇲🇾</span><span class="ln">Bahasa Melayu</span></a><a href="../../../bg/for/churches/" data-lang="bg" hreflang="bg" lang="bg"><span class="lf">🇧🇬</span><span class="ln">Български</span></a><a href="../../../ar/for/churches/" data-lang="ar" hreflang="ar" lang="ar"><span class="lf">🇸🇦</span><span class="ln">العربية</span></a><a href="../../../ko/for/churches/" data-lang="ko" hreflang="ko" lang="ko"><span class="lf">🇰🇷</span><span class="ln">한국어</span></a><a href="../../../th/for/churches/" data-lang="th" hreflang="th" lang="th"><span class="lf">🇹🇭</span><span class="ln">ไทย</span></a><a href="../../../pl/for/churches/" data-lang="pl" hreflang="pl" lang="pl"><span class="lf">🇵🇱</span><span class="ln">Polski</span></a><a href="../../../hu/for/churches/" data-lang="hu" hreflang="hu" lang="hu"><span class="lf">🇭🇺</span><span class="ln">Magyar</span></a><a href="../../../sv/for/churches/" data-lang="sv" hreflang="sv" lang="sv"><span class="lf">🇸🇪</span><span class="ln">Svenska</span></a><a href="../../../zh/for/churches/" data-lang="zh" hreflang="zh" lang="zh" class="cur"><span class="lf">🇨🇳</span><span class="ln">中文</span></a><a href="../../../el/for/churches/" data-lang="el" hreflang="el" lang="el"><span class="lf">🇬🇷</span><span class="ln">Ελληνικά</span></a><a href="../../../cs/for/churches/" data-lang="cs" hreflang="cs" lang="cs"><span class="lf">🇨🇿</span><span class="ln">Čeština</span></a><a href="../../../he/for/churches/" data-lang="he" hreflang="he" lang="he"><span class="lf">🇮🇱</span><span class="ln">עברית</span></a><a href="../../../sr/for/churches/" data-lang="sr" hreflang="sr" lang="sr"><span class="lf">🇷🇸</span><span class="ln">Српски</span></a><a href="../../../hr/for/churches/" data-lang="hr" hreflang="hr" lang="hr"><span class="lf">🇭🇷</span><span class="ln">Hrvatski</span></a><a href="../../../da/for/churches/" data-lang="da" hreflang="da" lang="da"><span class="lf">🇩🇰</span><span class="ln">Dansk</span></a><a href="../../../fi/for/churches/" data-lang="fi" hreflang="fi" lang="fi"><span class="lf">🇫🇮</span><span class="ln">Suomi</span></a><a href="../../../no/for/churches/" data-lang="no" hreflang="no" lang="no"><span class="lf">🇳🇴</span><span class="ln">Norsk</span></a><a href="../../../sk/for/churches/" data-lang="sk" hreflang="sk" lang="sk"><span class="lf">🇸🇰</span><span class="ln">Slovenčina</span></a><a href="../../../fa/for/churches/" data-lang="fa" hreflang="fa" lang="fa"><span class="lf">🇮🇷</span><span class="ln">فارسی</span></a></div></details><!--/LD-->
+    <!--LD--><details class="lang-dl"><summary aria-label="Language"><span class="lf">🇨🇳</span><span class="lc">中</span><span class="dl-caret">▾</span></summary><div class="lang-dl-menu"><a href="../../for/churches/" data-lang="en" hreflang="en" lang="en"><span class="lf">🇬🇧</span><span class="ln">English</span></a><a href="../../../fil/for/churches/" data-lang="fil" hreflang="fil" lang="fil"><span class="lf">🇵🇭</span><span class="ln">Filipino</span></a><a href="../../../fr/for/churches/" data-lang="fr" hreflang="fr" lang="fr"><span class="lf">🇫🇷</span><span class="ln">Français</span></a><a href="../../../pt/for/churches/" data-lang="pt" hreflang="pt" lang="pt"><span class="lf">🇧🇷</span><span class="ln">Português</span></a><a href="../../../de/for/churches/" data-lang="de" hreflang="de" lang="de"><span class="lf">🇩🇪</span><span class="ln">Deutsch</span></a><a href="../../../tr/for/churches/" data-lang="tr" hreflang="tr" lang="tr"><span class="lf">🇹🇷</span><span class="ln">Türkçe</span></a><a href="../../../uk/for/churches/" data-lang="uk" hreflang="uk" lang="uk"><span class="lf">🇺🇦</span><span class="ln">Українська</span></a><a href="../../../ru/for/churches/" data-lang="ru" hreflang="ru" lang="ru"><span class="lf">🇷🇺</span><span class="ln">Русский</span></a><a href="../../../it/for/churches/" data-lang="it" hreflang="it" lang="it"><span class="lf">🇮🇹</span><span class="ln">Italiano</span></a><a href="../../../vi/for/churches/" data-lang="vi" hreflang="vi" lang="vi"><span class="lf">🇻🇳</span><span class="ln">Tiếng Việt</span></a><a href="../../../id/for/churches/" data-lang="id" hreflang="id" lang="id"><span class="lf">🇮🇩</span><span class="ln">Bahasa Indonesia</span></a><a href="../../../nl/for/churches/" data-lang="nl" hreflang="nl" lang="nl"><span class="lf">🇳🇱</span><span class="ln">Nederlands</span></a><a href="../../../es/for/churches/" data-lang="es" hreflang="es" lang="es"><span class="lf">🇪🇸</span><span class="ln">Español</span></a><a href="../../../ro/for/churches/" data-lang="ro" hreflang="ro" lang="ro"><span class="lf">🇷🇴</span><span class="ln">Română</span></a><a href="../../../hi/for/churches/" data-lang="hi" hreflang="hi" lang="hi"><span class="lf">🇮🇳</span><span class="ln">हिन्दी</span></a><a href="../../../ja/for/churches/" data-lang="ja" hreflang="ja" lang="ja"><span class="lf">🇯🇵</span><span class="ln">日本語</span></a><a href="../../../ms/for/churches/" data-lang="ms" hreflang="ms" lang="ms"><span class="lf">🇲🇾</span><span class="ln">Bahasa Melayu</span></a><a href="../../../bg/for/churches/" data-lang="bg" hreflang="bg" lang="bg"><span class="lf">🇧🇬</span><span class="ln">Български</span></a><a href="../../../ar/for/churches/" data-lang="ar" hreflang="ar" lang="ar"><span class="lf">🇸🇦</span><span class="ln">العربية</span></a><a href="../../../ko/for/churches/" data-lang="ko" hreflang="ko" lang="ko"><span class="lf">🇰🇷</span><span class="ln">한국어</span></a><a href="../../../th/for/churches/" data-lang="th" hreflang="th" lang="th"><span class="lf">🇹🇭</span><span class="ln">ไทย</span></a><a href="../../../pl/for/churches/" data-lang="pl" hreflang="pl" lang="pl"><span class="lf">🇵🇱</span><span class="ln">Polski</span></a><a href="../../../hu/for/churches/" data-lang="hu" hreflang="hu" lang="hu"><span class="lf">🇭🇺</span><span class="ln">Magyar</span></a><a href="../../../sv/for/churches/" data-lang="sv" hreflang="sv" lang="sv"><span class="lf">🇸🇪</span><span class="ln">Svenska</span></a><a href="../../../zh/for/churches/" data-lang="zh" hreflang="zh" lang="zh" class="cur"><span class="lf">🇨🇳</span><span class="ln">中文</span></a><a href="../../../cs/for/churches/" data-lang="cs" hreflang="cs" lang="cs"><span class="lf">🇨🇿</span><span class="ln">Čeština</span></a><a href="../../../he/for/churches/" data-lang="he" hreflang="he" lang="he"><span class="lf">🇮🇱</span><span class="ln">עברית</span></a><a href="../../../sr/for/churches/" data-lang="sr" hreflang="sr" lang="sr"><span class="lf">🇷🇸</span><span class="ln">Српски</span></a><a href="../../../hr/for/churches/" data-lang="hr" hreflang="hr" lang="hr"><span class="lf">🇭🇷</span><span class="ln">Hrvatski</span></a><a href="../../../da/for/churches/" data-lang="da" hreflang="da" lang="da"><span class="lf">🇩🇰</span><span class="ln">Dansk</span></a><a href="../../../fi/for/churches/" data-lang="fi" hreflang="fi" lang="fi"><span class="lf">🇫🇮</span><span class="ln">Suomi</span></a><a href="../../../no/for/churches/" data-lang="no" hreflang="no" lang="no"><span class="lf">🇳🇴</span><span class="ln">Norsk</span></a><a href="../../../sk/for/churches/" data-lang="sk" hreflang="sk" lang="sk"><span class="lf">🇸🇰</span><span class="ln">Slovenčina</span></a><a href="../../../fa/for/churches/" data-lang="fa" hreflang="fa" lang="fa"><span class="lf">🇮🇷</span><span class="ln">فارسی</span></a></div></details><!--/LD-->
     <a href="https://splitcam.com/download" class="btn-primary" data-dl-primary>⬇ 下载</a>
     <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav-mobile">
       <svg class="ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -534,7 +362,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <a href="../../alternatives/" role="menuitem">替代方案</a>
   <a href="../" class="active" role="menuitem">使用场景</a>
   <a href="../../help/" role="menuitem">帮助</a>
-  <!--LD--><details class="lang-dl"><summary aria-label="Language"><span class="lf">🇨🇳</span><span class="lc">中</span><span class="dl-caret">▾</span></summary><div class="lang-dl-menu"><a href="../../for/churches/" data-lang="en" hreflang="en" lang="en"><span class="lf">🇬🇧</span><span class="ln">English</span></a><a href="../../../fil/for/churches/" data-lang="fil" hreflang="fil" lang="fil"><span class="lf">🇵🇭</span><span class="ln">Filipino</span></a><a href="../../../fr/for/churches/" data-lang="fr" hreflang="fr" lang="fr"><span class="lf">🇫🇷</span><span class="ln">Français</span></a><a href="../../../pt/for/churches/" data-lang="pt" hreflang="pt" lang="pt"><span class="lf">🇧🇷</span><span class="ln">Português</span></a><a href="../../../de/for/churches/" data-lang="de" hreflang="de" lang="de"><span class="lf">🇩🇪</span><span class="ln">Deutsch</span></a><a href="../../../tr/for/churches/" data-lang="tr" hreflang="tr" lang="tr"><span class="lf">🇹🇷</span><span class="ln">Türkçe</span></a><a href="../../../uk/for/churches/" data-lang="uk" hreflang="uk" lang="uk"><span class="lf">🇺🇦</span><span class="ln">Українська</span></a><a href="../../../ru/for/churches/" data-lang="ru" hreflang="ru" lang="ru"><span class="lf">🇷🇺</span><span class="ln">Русский</span></a><a href="../../../it/for/churches/" data-lang="it" hreflang="it" lang="it"><span class="lf">🇮🇹</span><span class="ln">Italiano</span></a><a href="../../../vi/for/churches/" data-lang="vi" hreflang="vi" lang="vi"><span class="lf">🇻🇳</span><span class="ln">Tiếng Việt</span></a><a href="../../../id/for/churches/" data-lang="id" hreflang="id" lang="id"><span class="lf">🇮🇩</span><span class="ln">Bahasa Indonesia</span></a><a href="../../../nl/for/churches/" data-lang="nl" hreflang="nl" lang="nl"><span class="lf">🇳🇱</span><span class="ln">Nederlands</span></a><a href="../../../es/for/churches/" data-lang="es" hreflang="es" lang="es"><span class="lf">🇪🇸</span><span class="ln">Español</span></a><a href="../../../ro/for/churches/" data-lang="ro" hreflang="ro" lang="ro"><span class="lf">🇷🇴</span><span class="ln">Română</span></a><a href="../../../hi/for/churches/" data-lang="hi" hreflang="hi" lang="hi"><span class="lf">🇮🇳</span><span class="ln">हिन्दी</span></a><a href="../../../ja/for/churches/" data-lang="ja" hreflang="ja" lang="ja"><span class="lf">🇯🇵</span><span class="ln">日本語</span></a><a href="../../../ms/for/churches/" data-lang="ms" hreflang="ms" lang="ms"><span class="lf">🇲🇾</span><span class="ln">Bahasa Melayu</span></a><a href="../../../bg/for/churches/" data-lang="bg" hreflang="bg" lang="bg"><span class="lf">🇧🇬</span><span class="ln">Български</span></a><a href="../../../ar/for/churches/" data-lang="ar" hreflang="ar" lang="ar"><span class="lf">🇸🇦</span><span class="ln">العربية</span></a><a href="../../../ko/for/churches/" data-lang="ko" hreflang="ko" lang="ko"><span class="lf">🇰🇷</span><span class="ln">한국어</span></a><a href="../../../th/for/churches/" data-lang="th" hreflang="th" lang="th"><span class="lf">🇹🇭</span><span class="ln">ไทย</span></a><a href="../../../pl/for/churches/" data-lang="pl" hreflang="pl" lang="pl"><span class="lf">🇵🇱</span><span class="ln">Polski</span></a><a href="../../../hu/for/churches/" data-lang="hu" hreflang="hu" lang="hu"><span class="lf">🇭🇺</span><span class="ln">Magyar</span></a><a href="../../../sv/for/churches/" data-lang="sv" hreflang="sv" lang="sv"><span class="lf">🇸🇪</span><span class="ln">Svenska</span></a><a href="../../../zh/for/churches/" data-lang="zh" hreflang="zh" lang="zh" class="cur"><span class="lf">🇨🇳</span><span class="ln">中文</span></a><a href="../../../el/for/churches/" data-lang="el" hreflang="el" lang="el"><span class="lf">🇬🇷</span><span class="ln">Ελληνικά</span></a><a href="../../../cs/for/churches/" data-lang="cs" hreflang="cs" lang="cs"><span class="lf">🇨🇿</span><span class="ln">Čeština</span></a><a href="../../../he/for/churches/" data-lang="he" hreflang="he" lang="he"><span class="lf">🇮🇱</span><span class="ln">עברית</span></a><a href="../../../sr/for/churches/" data-lang="sr" hreflang="sr" lang="sr"><span class="lf">🇷🇸</span><span class="ln">Српски</span></a><a href="../../../hr/for/churches/" data-lang="hr" hreflang="hr" lang="hr"><span class="lf">🇭🇷</span><span class="ln">Hrvatski</span></a><a href="../../../da/for/churches/" data-lang="da" hreflang="da" lang="da"><span class="lf">🇩🇰</span><span class="ln">Dansk</span></a><a href="../../../fi/for/churches/" data-lang="fi" hreflang="fi" lang="fi"><span class="lf">🇫🇮</span><span class="ln">Suomi</span></a><a href="../../../no/for/churches/" data-lang="no" hreflang="no" lang="no"><span class="lf">🇳🇴</span><span class="ln">Norsk</span></a><a href="../../../sk/for/churches/" data-lang="sk" hreflang="sk" lang="sk"><span class="lf">🇸🇰</span><span class="ln">Slovenčina</span></a><a href="../../../fa/for/churches/" data-lang="fa" hreflang="fa" lang="fa"><span class="lf">🇮🇷</span><span class="ln">فارسی</span></a></div></details><!--/LD-->
+  <!--LD--><details class="lang-dl"><summary aria-label="Language"><span class="lf">🇨🇳</span><span class="lc">中</span><span class="dl-caret">▾</span></summary><div class="lang-dl-menu"><a href="../../for/churches/" data-lang="en" hreflang="en" lang="en"><span class="lf">🇬🇧</span><span class="ln">English</span></a><a href="../../../fil/for/churches/" data-lang="fil" hreflang="fil" lang="fil"><span class="lf">🇵🇭</span><span class="ln">Filipino</span></a><a href="../../../fr/for/churches/" data-lang="fr" hreflang="fr" lang="fr"><span class="lf">🇫🇷</span><span class="ln">Français</span></a><a href="../../../pt/for/churches/" data-lang="pt" hreflang="pt" lang="pt"><span class="lf">🇧🇷</span><span class="ln">Português</span></a><a href="../../../de/for/churches/" data-lang="de" hreflang="de" lang="de"><span class="lf">🇩🇪</span><span class="ln">Deutsch</span></a><a href="../../../tr/for/churches/" data-lang="tr" hreflang="tr" lang="tr"><span class="lf">🇹🇷</span><span class="ln">Türkçe</span></a><a href="../../../uk/for/churches/" data-lang="uk" hreflang="uk" lang="uk"><span class="lf">🇺🇦</span><span class="ln">Українська</span></a><a href="../../../ru/for/churches/" data-lang="ru" hreflang="ru" lang="ru"><span class="lf">🇷🇺</span><span class="ln">Русский</span></a><a href="../../../it/for/churches/" data-lang="it" hreflang="it" lang="it"><span class="lf">🇮🇹</span><span class="ln">Italiano</span></a><a href="../../../vi/for/churches/" data-lang="vi" hreflang="vi" lang="vi"><span class="lf">🇻🇳</span><span class="ln">Tiếng Việt</span></a><a href="../../../id/for/churches/" data-lang="id" hreflang="id" lang="id"><span class="lf">🇮🇩</span><span class="ln">Bahasa Indonesia</span></a><a href="../../../nl/for/churches/" data-lang="nl" hreflang="nl" lang="nl"><span class="lf">🇳🇱</span><span class="ln">Nederlands</span></a><a href="../../../es/for/churches/" data-lang="es" hreflang="es" lang="es"><span class="lf">🇪🇸</span><span class="ln">Español</span></a><a href="../../../ro/for/churches/" data-lang="ro" hreflang="ro" lang="ro"><span class="lf">🇷🇴</span><span class="ln">Română</span></a><a href="../../../hi/for/churches/" data-lang="hi" hreflang="hi" lang="hi"><span class="lf">🇮🇳</span><span class="ln">हिन्दी</span></a><a href="../../../ja/for/churches/" data-lang="ja" hreflang="ja" lang="ja"><span class="lf">🇯🇵</span><span class="ln">日本語</span></a><a href="../../../ms/for/churches/" data-lang="ms" hreflang="ms" lang="ms"><span class="lf">🇲🇾</span><span class="ln">Bahasa Melayu</span></a><a href="../../../bg/for/churches/" data-lang="bg" hreflang="bg" lang="bg"><span class="lf">🇧🇬</span><span class="ln">Български</span></a><a href="../../../ar/for/churches/" data-lang="ar" hreflang="ar" lang="ar"><span class="lf">🇸🇦</span><span class="ln">العربية</span></a><a href="../../../ko/for/churches/" data-lang="ko" hreflang="ko" lang="ko"><span class="lf">🇰🇷</span><span class="ln">한국어</span></a><a href="../../../th/for/churches/" data-lang="th" hreflang="th" lang="th"><span class="lf">🇹🇭</span><span class="ln">ไทย</span></a><a href="../../../pl/for/churches/" data-lang="pl" hreflang="pl" lang="pl"><span class="lf">🇵🇱</span><span class="ln">Polski</span></a><a href="../../../hu/for/churches/" data-lang="hu" hreflang="hu" lang="hu"><span class="lf">🇭🇺</span><span class="ln">Magyar</span></a><a href="../../../sv/for/churches/" data-lang="sv" hreflang="sv" lang="sv"><span class="lf">🇸🇪</span><span class="ln">Svenska</span></a><a href="../../../zh/for/churches/" data-lang="zh" hreflang="zh" lang="zh" class="cur"><span class="lf">🇨🇳</span><span class="ln">中文</span></a><a href="../../../cs/for/churches/" data-lang="cs" hreflang="cs" lang="cs"><span class="lf">🇨🇿</span><span class="ln">Čeština</span></a><a href="../../../he/for/churches/" data-lang="he" hreflang="he" lang="he"><span class="lf">🇮🇱</span><span class="ln">עברית</span></a><a href="../../../sr/for/churches/" data-lang="sr" hreflang="sr" lang="sr"><span class="lf">🇷🇸</span><span class="ln">Српски</span></a><a href="../../../hr/for/churches/" data-lang="hr" hreflang="hr" lang="hr"><span class="lf">🇭🇷</span><span class="ln">Hrvatski</span></a><a href="../../../da/for/churches/" data-lang="da" hreflang="da" lang="da"><span class="lf">🇩🇰</span><span class="ln">Dansk</span></a><a href="../../../fi/for/churches/" data-lang="fi" hreflang="fi" lang="fi"><span class="lf">🇫🇮</span><span class="ln">Suomi</span></a><a href="../../../no/for/churches/" data-lang="no" hreflang="no" lang="no"><span class="lf">🇳🇴</span><span class="ln">Norsk</span></a><a href="../../../sk/for/churches/" data-lang="sk" hreflang="sk" lang="sk"><span class="lf">🇸🇰</span><span class="ln">Slovenčina</span></a><a href="../../../fa/for/churches/" data-lang="fa" hreflang="fa" lang="fa"><span class="lf">🇮🇷</span><span class="ln">فارسی</span></a></div></details><!--/LD-->
 </div>
 
 <!-- BREADCRUMBS -->
@@ -901,7 +729,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 </script>
 <!--AD--><script>
 (function(){try{
-var L=["en","fil","fr","pt","de","tr","uk","ru","it","vi","id","nl","es","ro","hi","ja","ms","bg","ar","ko","th","pl","hu","sv","zh","el","cs","he","sr","hr","da","fi","no","sk","fa"];
+var L=["en","fil","fr","pt","de","tr","uk","ru","it","vi","id","nl","es","ro","hi","ja","ms","bg","ar","ko","th","pl","hu","sv","zh","cs","he","sr","hr","da","fi","no","sk","fa"];
 var cur=document.documentElement.lang;
 var path=location.pathname;if(path.charAt(0)==="/")path=path.substring(1);
 var parts=path.split("/");if(L.indexOf(parts[0])>=0)parts.shift();
