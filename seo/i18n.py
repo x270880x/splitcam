@@ -25,7 +25,7 @@ LANG_ORDER = [
 
 # Already live (skip in waves). Update as waves land.
 LANG_DONE = {"en","ru","es","fil","fr","pt","de","tr","uk","it","vi","id","nl","ro","hi","ja","ms","bg",
-             "ar","ko","th","pl","hu"}  # Waves 1-3 done 2026-06-13; Wave 4 (ar ko th pl hu) done 2026-06-13
+             "ar","ko","th","pl","hu","sv","zh","el","cs","he"}  # Waves 1-5 done 2026-06-14
 
 RTL_LANGS = {"ar", "he", "fa"}
 
