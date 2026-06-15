@@ -762,7 +762,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     var active = (key === os) ? ' style="background:rgba(40,120,252,.08)"' : '';
     menuHTML += '<a href="'+d.url+'" data-os="'+key+'"'+active+'>'
       + '<span class="os-ico">'+d.ico+'</span>'
-      + '<span class="os-meta"><span class="os-name">'+d.label.replace(/^הורדה ל-|^הורדה מ-/,'')+'</span><span class="os-sub">'+d.sub+'</span></span>'
+      + '<span class="os-meta"><span class="os-name">'+({windows:'Windows',mac:'Mac',ios:'App Store',android:'Google Play'}[key]||d.label)+'</span><span class="os-sub">'+d.sub+'</span></span>'
       + '</a>';
   });
   document.querySelectorAll('[data-dl-menu]').forEach(function(m){ m.innerHTML = menuHTML; });
