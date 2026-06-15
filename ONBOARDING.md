@@ -294,6 +294,60 @@ instability; a full Claude restart was needed to kill it).
   per page (sonnet hits the 32K output cap on 1000+ line pages); never leave an
   unattended translation run unsupervised.
 
+## Session log — 2026-06-15 (later — full QA audit: native + Ahrefs + SEO, all 35)
+
+After the build, a deep QA pass (user: "проверь как нативный пользователь каждого
+языка + ahrefs + seo"). The earlier 3-pages-per-locale review **under-sampled** —
+real bugs hid on the other 10 page types. Audited the under-reviewed content pages
+(vc / multistreaming / obs / for-churches) per locale with native-speaker agents +
+**mechanical full-site scans** (35×13 = 442 pages). Found & fixed a long tail of
+bg-scaffold residue the first cleanup missed:
+
+- **Critical visible-render bugs:** raw JSON-string literals shown as page text
+  where real content belonged (`sr/virtual-camera` hero + a FAQ; `sr/multistreaming`
+  a heading); `da/for/churches` had **every å/æ/ø stripped to ASCII** (0→346,
+  SERP-visible); `hr/for/churches` Step 2 spliced with Step 5 + an **unclosed
+  `<details>`** (broke FAQ render) + a duplicate related-card; `hr/virtual-camera`
+  truncated hero. All reconstructed from the EN source.
+- **Quote glyphs:** the German low-quote `„…"` survived in non-European-convention
+  locales — **he** (54, 6 pages; the first reviewers mis-called `„` "proper Hebrew
+  quotes"), **th** (21). **zh** used wrong-facing `”…”` (24) instead of `「…」` house
+  style. → he/th straight `"`, zh `「」`. **`„` is CORRECT for de/bg/ro/pl/cs/hu/hr/
+  sr/sk; it's a BUG only in th/he/ja/ko/zh/vi/hi/ar/fa — scope any `„` scan to those.**
+- **Twitch date self-contradiction:** EN-source `multistreaming` FAQ said both "since
+  June 2024" and "since October 2023"; it had propagated to 13 locales. Unified to
+  October 2023 (matches the JSON-LD). Fix the EN master, then mirror.
+- **Missing JSON-LD:** 13 pages had only a `<!-- Schema.org -->` comment, no markup
+  (sr×4, zh×3, da/el/hr/sv/cs/he). Added per-page schema copied from `ru`/EN siblings
+  + translated to match each page's visible FAQ/HowTo. **A quote-fix agent then broke
+  5 he JSON-LD blocks** — replacing `„X"` with straight `"X"` *inside* a JSON string
+  value yields invalid JSON; escape inner quotes as `\"` (or single quotes). Caught
+  by the scanner, fixed same session.
+- **Grammar/term:** `it` virtual-camera split (camera/telecamera → **webcam virtuale**,
+  89×) + generic "restream" misuse (clashes with the Restream competitor it argues
+  against); `hr` "simultcast"×12; cs/sk/pl/el/bg minor one-offs.
+- **SEO (Ahrefs, ~954 units of 100k):** `th` homepage targeted ซอฟต์แวร์สตรีม (**0/mo**)
+  → switched to **โปรแกรมสตรีม (200/KD0)**; `id` wove in **aplikasi live streaming
+  (4886/mo — the project's biggest keyword)**; `ja` standalone 配信ソフト (648);
+  trimmed over-length pt/uk/ro/ru/fi homepage title/meta. New-market Ahrefs confirmed
+  Waves 4–7 ≤10/mo (mostly 0). **`fa` is unmeasurable — Iran (`ir`) is excluded from
+  Ahrefs' country list (sanctions).**
+- **Cross-page term drift** (fi/no/hu/da/nl/vi): a feature named differently across a
+  locale's pages (e.g. "Multistream" vs "Monilähetys") → unified to each locale's
+  majority / feature-page term.
+
+Final scan (442 pages): 0 unbalanced tags · 0 stray quotes · 0 Twitch-2024 · 0
+Cyrillic-outside-markers · 0 invalid JSON-LD · 0 unclosed details. ~17 thematic
+commits, all pushed.
+
+**Lessons:** (1) review more than a 3-page sample — the bg scaffold left bugs on
+every page type; (2) scope `„`-quote scans by language convention (it's right in
+half of Europe); (3) re-validate JSON-LD after any quote/text edit; (4) keep a
+mechanical full-site scanner (lang tag · Cyrillic-outside-`<!--LD/HL/AD-->` · `„`/`”`
+glyphs · `<style>`/`<script>`/`<details>` balance · `json.loads` every ld+json) and
+run it after every locale batch — agents miss what a grep catches, and a grep misses
+what a native reads.
+
 ## Session log — 2026-06-11 (overdue SEO reminders sweep + Remote iOS live)
 
 Worked through the overdue items in `seo/REMINDERS.md` (full results live there):

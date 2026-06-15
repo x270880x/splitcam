@@ -131,6 +131,17 @@ download split-button radii, vc-arrow connector) injected per RTL page by
 > affected locales retranslated fresh from EN. If re-running a wave, **translate
 > from `index.html` (EN), never from another locale's scaffold, and use only
 > straight ASCII quotes in attributes/JSON-LD.**
+>
+> **QA addendum (2026-06-15 audit — full detail in `ONBOARDING.md`):** after any
+> locale batch, run a mechanical full-site scan — lang tag · Cyrillic outside
+> `<!--LD/HL/AD-->` · `„`/`”` quote glyphs · `<style>`/`<script>`/`<details>`
+> balance · `json.loads` on every `ld+json`. Notes: the `„…"` low-quote is
+> **correct** for de/bg/ro/pl/cs/hu/hr/sr/sk but a **bug** in th/he/ja/ko/zh/vi/
+> hi/ar/fa (bg-scaffold residue) — scope `„` scans to those. Replacing `„X"`→`"X"`
+> *inside* a JSON-LD value breaks the JSON (escape inner quotes `\"`). The Twitch
+> simulcast date on `multistreaming` is **October 2023** everywhere (an EN-source
+> "June 2024" once contradicted it across 13 locales). `fa` demand is unmeasurable
+> (Ahrefs excludes Iran). Don't sample 3 pages/locale — bugs hide on all 13.
 
 ### The i18n engine (no build step — these two files ARE the system)
 - **`seo/i18n.py`** — single source of truth: `LANG_ORDER` (demand-sorted),
