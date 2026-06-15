@@ -4,7 +4,8 @@
 Checks:
   1. Internal links resolve to real files (incl. #anchors, trailing slashes).
   2. Resource refs (img/script/css/video/poster) resolve.
-  3. External links respond (GET, browser UA, 8 threads). 403/429 -> WARN.
+  3. External links respond (GET, browser UA, 8 threads). 403/429/999 -> WARN;
+     400 from blanket bot-blocking social hosts (facebook etc.) -> WARN too.
   4. Internal link graph: contextual (body) vs nav/footer/breadcrumb links,
      inlink/outlink counts, click depth from homepage, orphans.
   5. sitemap.xml vs indexable pages on disk.
@@ -205,9 +206,22 @@ section('BROKEN anchors (#fragment missing)', broken_anchor)
 section('BROKEN resources (img/css/js/video)', broken_res)
 section('Links missing trailing slash (301 hop)', missing_slash)
 
+# Hosts that blanket-block scripted requests regardless of UA, so a 4xx from
+# them means "bot-blocked", not "dead page" — e.g. facebook.com/<anything>
+# (even /zuck) returns 400 to curl. Treat their 400 as WARN, not a hard failure.
+SOCIAL_BOT_BLOCK = ('facebook.com', 'instagram.com', 'twitter.com', 'x.com',
+                    'linkedin.com', 'tiktok.com', 'threads.net')
+def _host(url):
+    return re.sub(r'^https?://', '', url).split('/')[0].lower()
+def _bot_blocked(url, code):
+    if code in (403, 429, 999):
+        return True
+    h = _host(url)
+    return code == 400 and any(h == d or h.endswith('.' + d) for d in SOCIAL_BOT_BLOCK)
+
 bad_ext = {u: rc for u, rc in net_results.items()
            if rc[0] is None or rc[0] >= 400}
-warn = {u: rc for u, rc in bad_ext.items() if rc[0] in (403, 429, 999)}
+warn = {u: rc for u, rc in bad_ext.items() if _bot_blocked(u, rc[0])}
 hard = {u: rc for u, rc in bad_ext.items() if u not in warn}
 section('EXTERNAL hard failures', sorted(hard.items()),
         lambda kv: f'{kv[1][0] or kv[1][1]}  {kv[0]}  <- ' +
