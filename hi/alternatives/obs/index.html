@@ -122,13 +122,13 @@
     },
     {
       "@type": "HowTo",
-      "name": "How to migrate from OBS Studio to SplitCam",
-      "description": "Non-destructive migration in 3 steps. Your OBS install and scene files stay where they are.",
+      "name": "OBS Studio से SplitCam पर migrate कैसे करें",
+      "description": "3 steps में non-destructive migration. आपका OBS install और scene files जहाँ हैं वहीं रहते हैं.",
       "totalTime": "PT5M",
       "tool": [
         {
           "@type": "HowToTool",
-          "name": "OBS Studio (any recent version)"
+          "name": "OBS Studio (कोई भी recent version)"
         },
         {
           "@type": "HowToTool",
@@ -139,28 +139,28 @@
         {
           "@type": "HowToStep",
           "position": 1,
-          "name": "Find your OBS scene collection file",
-          "text": "In OBS, go to Scene Collection → Export. Save the JSON file to your Desktop. Existing collections live at %APPDATA%\\obs-studio\\basic\\scenes\\ on Windows and ~/Library/Application Support/obs-studio/basic/scenes/ on macOS. Leave OBS installed — if SplitCam doesn't fit, you switch right back without losing anything."
+          "name": "अपनी OBS scene collection file ढूँढें",
+          "text": "OBS में Scene Collection → Export पर जाएँ. JSON file को अपने Desktop पर save करें. मौजूदा collections Windows पर %APPDATA%\\obs-studio\\basic\\scenes\\ और macOS पर ~/Library/Application Support/obs-studio/basic/scenes/ में रहती हैं. OBS को installed रहने दें — अगर SplitCam आपके लिए काम न करे, तो आप बिना कुछ खोए तुरंत वापस switch कर लेंगे."
         },
         {
           "@type": "HowToStep",
           "position": 2,
-          "name": "Install SplitCam and use OBS Project Import",
-          "text": "Download SplitCam and run it. On first launch click Import → OBS Project, point at the JSON file from step 1. Scenes, sources, transitions and hotkeys carry over. Stream keys and per-platform settings are reconfigured since they're saved per-encoder, not in the scene file.",
+          "name": "SplitCam install करें और OBS Project Import use करें",
+          "text": "SplitCam download करके चलाएँ. पहली बार खुलते ही Import → OBS Project दबाएँ, step 1 की JSON file पर point करें. Scenes, sources, transitions और hotkeys आ जाते हैं. Stream keys और per-platform settings दोबारा configure करनी पड़ती हैं, क्योंकि वे per-encoder save होती हैं, scene file में नहीं.",
           "url": "https://splitcam.com/hi/"
         },
         {
           "@type": "HowToStep",
           "position": 3,
-          "name": "Reconnect stream keys and go live",
-          "text": "In SplitCam, open Stream Settings. Paste your stream keys for the platforms you use. To multistream to several platforms at once, tick all of them — no plugin needed. Click Go Live."
+          "name": "Stream keys दोबारा connect करें और live जाएँ",
+          "text": "SplitCam में Stream Settings खोलें. जिन platforms को आप use करते हैं उनकी stream keys paste करें. एक साथ कई platforms पर multistream करने के लिए सबको tick कर दें — कोई plugin नहीं चाहिए. Go Live दबाएँ."
         }
       ]
     },
     {
       "@type": "ItemList",
-      "name": "Free alternatives to OBS Studio",
-      "description": "Free, easier alternatives to OBS Studio for live streaming, ranked by ease of setup and built-in features.",
+      "name": "OBS Studio के free alternatives",
+      "description": "Live streaming के लिए OBS Studio के free, ज़्यादा आसान alternatives — setup की आसानी और built-in features के हिसाब से क्रमबद्ध.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -195,7 +195,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is a good free alternative to OBS Studio?",
+          "name": "OBS Studio का एक अच्छा free alternative कौन सा है?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "SplitCam एक free OBS alternative है जो set up करना आसान है. इसमें multistreaming, AI background removal, beauty filters, virtual camera और mobile apps built-in आते हैं — वो features जिनके लिए OBS को plugins चाहिए होते हैं. SplitCam आपकी मौजूदा OBS scene collections को एक click में import भी कर लेता है, तो switch करना non-destructive है. बाकी free alternatives: Streamlabs Desktop (OBS का fork, overlays/widgets के साथ), XSplit Broadcaster (watermark वाला free tier), Meld Studio (नया, Mac-focused)."
@@ -203,7 +203,7 @@
         },
         {
           "@type": "Question",
-          "name": "Why do people look for an OBS alternative?",
+          "name": "लोग OBS alternative क्यों ढूँढते हैं?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "आम वजहें: (1) OBS की एक learning curve है — casual streamers के लिए बहुत सारे menus. (2) OBS में built-in multistreaming, AI background या beauty filters नहीं हैं — हर एक के लिए अलग plugin install करना पड़ता है. (3) हर OBS update के बाद plugins को maintenance चाहिए. (4) OBS के mobile apps नहीं हैं — आप अपने phone से stream नहीं कर सकते या phone को second camera की तरह use नहीं कर सकते. (5) पुरानी machines पर software (x264) encoder use करते समय ज़्यादा CPU usage."
@@ -211,7 +211,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is SplitCam better than OBS?",
+          "name": "क्या SplitCam, OBS से बेहतर है?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "कुछ मामलों में बेहतर — और कुछ में नहीं. SplitCam इनमें आगे है: आसान UI, built-in multistreaming/virtual camera/AI background/mobile apps, नए streamers के लिए तेज़ setup. OBS इनमें आगे है: open-source/auditable codebase, विशाल plugin ecosystem (4000+ plugins), ज़्यादा community tutorials. ज़्यादातर streamers — gamers, YouTubers, churches — के लिए SplitCam set up और use करना तेज़ है. जो power users हर मुमकिन integration चाहते हैं और configuration time को बुरा नहीं मानते, उनके लिए OBS आज भी बादशाह है."
@@ -219,7 +219,7 @@
         },
         {
           "@type": "Question",
-          "name": "Can I import my OBS scenes into SplitCam?",
+          "name": "क्या मैं अपनी OBS scenes को SplitCam में import कर सकता हूँ?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "हाँ — SplitCam में one-click OBS Project Import है. इसे अपनी OBS scene-collection JSON file पर point करें, Import दबाएँ, और आपकी सारी scenes, sources और transitions SplitCam में आ जाती हैं. आपको scratch से कुछ बनाना नहीं पड़ता. अगर आपको लगे कि OBS आपके लिए बेहतर है, तो आपकी original OBS files छेड़ी नहीं जातीं — switch करना reversible है."
@@ -227,7 +227,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does SplitCam work on Mac like OBS?",
+          "name": "क्या SplitCam, OBS की तरह Mac पर काम करता है?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "हाँ — SplitCam macOS 11+ (Big Sur और उससे नया) पर natively चलता है, जिसमें Apple Silicon (M1/M2/M3) और Intel Macs शामिल हैं. macOS build, Zoom/Teams/Meet/Discord/FaceTime को virtual camera output, VideoToolbox के ज़रिए hardware encoding, और multistreaming व AI background समेत पूरा feature set support करता है."
@@ -235,7 +235,7 @@
         },
         {
           "@type": "Question",
-          "name": "Will SplitCam use less CPU than OBS?",
+          "name": "क्या SplitCam, OBS से कम CPU use करेगा?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "आम तौर पर हाँ, जब दोनों hardware encoding use करें (Nvidia पर NVENC, Intel पर QuickSync, AMD पर AMF, macOS पर VideoToolbox). SplitCam सबसे अच्छा hardware encoder अपने आप detect कर लेता है; OBS को manual configuration चाहिए. अगर आप OBS को x264 software encoder के साथ चला रहे थे, तो SplitCam पर switch करने से (या OBS में hardware encoding on करने से) CPU usage आम तौर पर 30-60% से गिरकर 10% से नीचे आ जाता है."
@@ -243,7 +243,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is SplitCam open source like OBS?",
+          "name": "क्या SplitCam, OBS की तरह open source है?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "नहीं — SplitCam एक proprietary closed-source freeware है. OBS Studio, GPLv2 के तहत open source है. अगर open-source/auditable code आपकी सख़्त ज़रूरत है (corporate policy, security review, contribution model), तो OBS के साथ रहें या Meld Studio देखें. SplitCam free as in beer है, free as in speech नहीं."
@@ -251,7 +251,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does SplitCam have plugins like OBS?",
+          "name": "क्या SplitCam में OBS की तरह plugins हैं?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "SplitCam का plugin ecosystem OBS (जिसके 4000+ community plugins हैं) से छोटा है. लेकिन OBS में लोग जो ज़्यादातर plugins install करते हैं, वे ऐसे features के लिए होते हैं जो SplitCam में पहले से natively हैं: multistreaming, virtual camera, NDI, AI background, browser source, beauty filters, replay buffer. अगर आपको OBS-specific niche plugins नहीं चाहिए, तो शायद SplitCam में आपको plugins की ज़रूरत ही न पड़े."
@@ -549,7 +549,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- QUICK ANSWER -->
 <div class="quick-answer">
   <div class="qa-box">
-    <div class="qa-h">Quick answer — best OBS alternative</div>
+    <div class="qa-h">संक्षिप्त जवाब — सबसे अच्छा OBS alternative</div>
     <div class="qa-text">
       <strong>SplitCam</strong> एक free OBS alternative है जो सबसे ज़्यादा install किए जाने वाले OBS plugins को built-in features की तरह देता है:
       <ul>
@@ -570,7 +570,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
     <div class="reason">
       <div class="reason-num">Reason 01</div>
-      <h3>Learning curve</h3>
+      <h3>सीखने में लगने वाला समय</h3>
       <p>OBS में सैकड़ों settings nested menus में बिखरे होते हैं. <strong>नए streamers पहले setup पर 2–3 घंटे</strong> लगा देते हैं. एक one-off broadcast या casual streamer के लिए यह काफ़ी ज़्यादा है.</p>
     </div>
     <div class="reason">
@@ -709,7 +709,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
 <!-- COMPARE -->
 <section class="section" id="compare">
-  <h2 class="sec-h">SplitCam vs OBS Studio — feature-by-feature</h2>
+  <h2 class="sec-h">SplitCam vs OBS Studio — feature दर feature</h2>
   <p class="sec-p">ईमानदार तुलना. जहाँ OBS जीतता है, वहाँ OBS जीतता है. जहाँ SplitCam जीतता है, वहाँ SplitCam.</p>
   <div class="table-wrap"><table class="compare-table">
     <thead>
@@ -781,7 +781,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
 <!-- FAQ -->
 <section class="section">
-  <h2 class="sec-h">OBS alternative FAQ</h2>
+  <h2 class="sec-h">OBS alternative — अक्सर पूछे जाने वाले सवाल</h2>
   <div class="faq-list">
     <details class="faq-item">
       <summary>OBS Studio का एक अच्छा free alternative कौन सा है?</summary>
@@ -820,7 +820,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
 <!-- RELATED -->
 <div class="related">
-  <h3 style="font-size:18px;font-weight:700;margin-bottom:6px">Related guides</h3>
+  <h3 style="font-size:18px;font-weight:700;margin-bottom:6px">मिलती-जुलती guides</h3>
   <div class="related-grid">
     <a class="related-card" href="../../multistreaming/">
       <span class="eyebrow">Multistreaming</span>

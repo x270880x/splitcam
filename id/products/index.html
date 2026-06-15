@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Download SplitCam — Windows, Mac, iOS & Android | SplitCam</title>
-<meta name="description" content="Download SplitCam gratis untuk Windows, macOS, iOS, dan Android — plus SplitCam Remote, aplikasi live streaming yang mengontrol stream komputer dari HP. Tanpa watermark.">
+<meta name="description" content="Download SplitCam gratis untuk Windows, macOS, iOS, dan Android — plus SplitCam Remote, aplikasi HP yang mengontrol stream komputer. Tanpa watermark.">
 <meta name="keywords" content="download splitcam, aplikasi live streaming, splitcam windows, splitcam mac, splitcam ios, splitcam android, splitcam remote, aplikasi webcam gratis, software webcam">
 <meta name="author" content="SplitCam">
 <link rel="canonical" href="https://splitcam.com/id/products/">
@@ -62,7 +62,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://splitcam.com/id/products/">
 <meta property="og:title" content="Download SplitCam — Windows, Mac, iOS & Android | SplitCam">
-<meta property="og:description" content="Download SplitCam gratis untuk Windows, macOS, iOS, dan Android — plus SplitCam Remote, aplikasi live streaming yang mengontrol stream komputer dari HP. Tanpa watermark.">
+<meta property="og:description" content="Download SplitCam gratis untuk Windows, macOS, iOS, dan Android — plus SplitCam Remote, aplikasi HP yang mengontrol stream komputer. Tanpa watermark.">
 <meta property="og:image" content="https://splitcam.com/assets/og-products.png">
 <meta property="og:site_name" content="SplitCam">
 <meta property="og:locale" content="id_ID">
@@ -70,7 +70,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Download SplitCam — Windows, Mac, iOS & Android | SplitCam">
-<meta name="twitter:description" content="Download SplitCam gratis untuk Windows, macOS, iOS, dan Android — plus SplitCam Remote, aplikasi live streaming yang mengontrol stream komputer dari HP. Tanpa watermark.">
+<meta name="twitter:description" content="Download SplitCam gratis untuk Windows, macOS, iOS, dan Android — plus SplitCam Remote, aplikasi HP yang mengontrol stream komputer. Tanpa watermark.">
 <meta name="twitter:image" content="https://splitcam.com/assets/og-products.png">
 
 <meta name="theme-color" content="#141420">
@@ -732,8 +732,8 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   var SC = {
     windows: { label: 'Download untuk Windows', ico: ICO.windows, url: 'https://splitcam.com/download',                                          sub: 'Windows 10/11 · 64-bit' },
     mac:     { label: 'Download untuk Mac',     ico: ICO.apple,   url: 'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',    sub: 'macOS 13+ · Apple Silicon' },
-    ios:     { label: 'Ambil di App Store',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone & iPad · iOS 16.6+' },
-    android: { label: 'Ambil di Google Play',   ico: ICO.play,    url: 'https://play.google.com/store/apps/details?id=com.splitcam',            sub: 'Android 8+' }
+    ios:     { label: 'Dapatkan di App Store',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone & iPad · iOS 16.6+' },
+    android: { label: 'Dapatkan di Google Play',   ico: ICO.play,    url: 'https://play.google.com/store/apps/details?id=com.splitcam',            sub: 'Android 8+' }
   };
   function detectOS(){
     var ua = navigator.userAgent || '';
@@ -755,7 +755,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     var active = (key === os) ? ' style="background:rgba(40,120,252,.08)"' : '';
     menuHTML += '<a href="'+d.url+'" data-os="'+key+'"'+active+'>'
       + '<span class="os-ico">'+d.ico+'</span>'
-      + '<span class="os-meta"><span class="os-name">'+d.label.replace(/^Download untuk |^Ambil di /,'')+'</span><span class="os-sub">'+d.sub+'</span></span>'
+      + '<span class="os-meta"><span class="os-name">'+d.label.replace(/^Download untuk |^Dapatkan di /,'')+'</span><span class="os-sub">'+d.sub+'</span></span>'
       + '</a>';
   });
   document.querySelectorAll('[data-dl-menu]').forEach(function(m){ m.innerHTML = menuHTML; });
