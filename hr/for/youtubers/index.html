@@ -562,7 +562,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <li><strong>Dodajte kameru</strong> (web kamera, snimanje zaslona ili igre) kao sloj scene.</li>
         <li><strong>Kopirajte stream ključ</strong>: <em>studio.youtube.com → Stvori → Pokreni prijenos → Tok</em>.</li>
         <li><strong>Zalijepite ključ</strong> u SplitCam → Postavke streaminga → YouTube. Bitrate za 1080p — 4,5 Mbps.</li>
-        <li><strong>Pritisnite "Uživo"</strong> u SplitCam, zatim "Pokreni prijenos" u YouTube Studiju. Ste uživo.</li>
+        <li><strong>Pritisnite "Uživo"</strong> u SplitCam, zatim "Pokreni prijenos" u YouTube Studiju. Vi ste uživo.</li>
       </ol>
     </div>
   </div>
@@ -571,7 +571,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- STEPS -->
 <section class="section" id="steps">
   <h2 class="sec-h">Korak po korak: prijenos uživo na YouTube</h2>
-  <p class="sec-p">Od nule do etetra — oko 5 minuta. Provjereno na Windows 11 i macOS 14, na ostalim platformama sve je potpuno isto.</p>
+  <p class="sec-p">Od nule do prvog kadra uživo — oko 5 minuta. Provjereno na Windows 11 i macOS 14, na ostalim platformama sve je potpuno isto.</p>
 
   <div class="steps">
     <div class="step">
@@ -579,7 +579,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="step-body">
         <div class="step-h">Preuzmite SplitCam <span class="step-time">~ 1 min</span></div>
         <p class="step-p">SplitCam je besplatni streaming studio koji već zna kako razgovarati s YouTubeom: RTMP adresa je ugrađena u gotov predložak, nije potrebno unositi ništa ručno. Instalacijski program je lagan i radi na Windows 10/11, macOS 11+, iOS 13+ i Android 8+. Bez računa, bez kartice, bez vremenskih ograničenja.</p>
-        <div class="step-tip"><b>Što je bolje od običnog enkodera:</b> predložak za YouTube štedi ručno postavljanje toka, Replay Source prečacom za brze tipke reže zadnji highlight, a zamjena pozadine radi izravno na uređaju — bez zelenog ekrana. Solo autor pravi uredan eter bez drugog para ruku.</div>
+        <div class="step-tip"><b>Što je bolje od običnog enkodera:</b> predložak za YouTube štedi ručno postavljanje toka, Replay Source prečacom za brze tipke reže zadnji highlight, a zamjena pozadine radi izravno na uređaju — bez zelenog ekrana. Solo autor pravi uredan prijenos uživo bez drugog para ruku.</div>
       </div>
     </div>
 
@@ -599,7 +599,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <div class="step-h">Preuzmite stream ključ s YouTubea <span class="step-time">~ 30 sek</span></div>
         <p class="step-p">Prijavite se na <a href="https://studio.youtube.com/" style="color:var(--blue)" target="_blank" rel="noopener">studio.youtube.com</a> → pritisnite <strong style="color:var(--text)">Stvori</strong> (gore desno) → <strong style="color:var(--text)">Pokreni prijenos</strong>. U izborniku lijevo otvorite karticu <strong style="color:var(--text)">Tok</strong>.</p>
         <p class="step-p">Ispunite naslov, opis i kategoriju prijenosa. U ploči s postavkama desno kopirajte <strong style="color:var(--text)">stream ključ</strong> (izgleda kao <code class="step-code">xxxx-xxxx-xxxx-xxxx-xxxx</code>).</p>
-        <div class="step-tip"><b>⚠ Sigurnost:</b> stream ključ je poput lozinke: nemojte ga prikazivati javno i nemojte ga postavljati na git. Ako ključ procuri, svi će moći streamati na vašem kanalu. Možete ga resetirati u YouTube Studiju u bilo kada.</div>
+        <div class="step-tip"><b>⚠ Sigurnost:</b> stream ključ je poput lozinke: nemojte ga prikazivati javno i nemojte ga postavljati na git. Ako ključ procuri, svi će moći streamati na vašem kanalu. Možete ga resetirati u YouTube Studiju u bilo kojem trenutku.</div>
       </div>
     </div>
 
@@ -608,7 +608,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="step-body">
         <div class="step-h">Povežite SplitCam s YouTubeom <span class="step-time">~ 1 min</span></div>
         <p class="step-p">U SplitCam otvorite <strong style="color:var(--text)">Postavke streaminga</strong> → odaberite <strong style="color:var(--text)">YouTube</strong> (već postavljeno). Zalijepite stream ključ u polje. Pritisnite "Provjeri vezu" — zelena kvačica znači da je sve spojeno.</p>
-        <p class="step-p">Hardverski enkoder SplitCam-a otkriva se sam pri pokretanju — <strong style="color:var(--text)">NVENC</strong> na karticama Nvidia, <strong style="color:var(--text)">QuickSync</strong> na čipovima Intel, <strong style="color:var(--text)">AMF</strong> na AMD — tako da se postavke kodiranja obično uopće ne moraju dirati. Kodiranje ide na čip grafičke kartice, a CPU ostaje slobodan za igru ili aplikaciju koju streimate. Orijentiri za bitrate — u nastavku:</p>
+        <p class="step-p">Hardverski enkoder SplitCam-a otkriva se sam pri pokretanju — <strong style="color:var(--text)">NVENC</strong> na karticama Nvidia, <strong style="color:var(--text)">QuickSync</strong> na čipovima Intel, <strong style="color:var(--text)">AMF</strong> na AMD — tako da se postavke kodiranja obično uopće ne moraju dirati. Kodiranje ide na čip grafičke kartice, a CPU ostaje slobodan za igru ili aplikaciju koju emitirate. Orijentiri za bitrate — u nastavku:</p>
         <div class="table-wrap"><table class="compare-table" style="margin-top:14px">
           <thead><tr><th>Rezolucija</th><th>Broj sličica</th><th>Bitrate</th></tr></thead>
           <tbody>
@@ -627,7 +627,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="step-body">
         <div class="step-h">Pritisnite "Uživo" <span class="step-time">~ 5 sek</span></div>
         <p class="step-p">U SplitCam pritisnite veliki gumb <strong style="color:var(--text)">"Uživo"</strong>. Tok je krenuo prema YouTubeu. Nakon ~10–15 sekundi u YouTube Studiju će se pojaviti pregled — tamo ćete vidjeti svoj stream.</p>
-        <p class="step-p">Kad pregled izgleda kako treba, pritisnite <strong style="color:var(--text)">"Pokreni prijenos"</strong> u YouTube Studiju (gore desno). Od te sekunde stream vide gledatelji. Ste uživo.</p>
+        <p class="step-p">Kad pregled izgleda kako treba, pritisnite <strong style="color:var(--text)">"Pokreni prijenos"</strong> u YouTube Studiju (gore desno). Od te sekunde stream vide gledatelji. Uživo ste.</p>
         <div class="step-tip"><b>To je sve.</b> Prvo postavljanje je oko 5 minuta. Poslije: otvarate SplitCam, pritišćete "Uživo", potvrđujete u YouTube Studiju. Oko deset sekundi.</div>
       </div>
     </div>
@@ -646,11 +646,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
 <!-- PRO TIPS -->
 <section class="section">
-  <h2 class="sec-h">Savjeti za gladak eter</h2>
+  <h2 class="sec-h">Savjeti za gladak prijenos uživo</h2>
   <p class="sec-p">Što iskusni streameri rade automatski, a početnici propuštaju.</p>
   <div class="tips-grid">
     <div class="tip-card">
-      <div class="tip-card-h"><span class="ico">🔇</span> Mikrofon na tihi mod prije etera</div>
+      <div class="tip-card-h"><span class="ico">🔇</span> Mikrofon na tihi mod prije početka</div>
       <p class="tip-card-p">Uvijek počnite s isključenim mikrofonom i uključite ga kad ste spremni. Spašava vas od ispuštenog u eteru "ovo uopće radi?".</p>
     </div>
     <div class="tip-card">
@@ -666,12 +666,12 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <p class="tip-card-p">Replay Source u SplitCam-u čuva zadnjih 5–10 sekundi scene i umeće ih tipkom prečaca. Trenutačni slow-motion ili ponavljanje sjajnog trenutka iz igre.</p>
     </div>
     <div class="tip-card">
-      <div class="tip-card-h"><span class="ico">📈</span> Pratite statistiku etera</div>
-      <p class="tip-card-p">SplitCam izravno tijekom prijenosa prikazuje opterećenje enkodera, ispuštene kadrove i propusnost. Primijetili ste problem — lagano smanjite kvalitetu: malo mekši 1080p bolji je od etera s zamrzavanjima.</p>
+      <div class="tip-card-h"><span class="ico">📈</span> Pratite statistiku prijenosa</div>
+      <p class="tip-card-p">SplitCam izravno tijekom prijenosa prikazuje opterećenje enkodera, ispuštene kadrove i propusnost. Primijetili ste problem — lagano smanjite kvalitetu: malo mekši 1080p bolji je od prijenosa sa zamrzavanjima.</p>
     </div>
     <div class="tip-card">
       <div class="tip-card-h"><span class="ico">🎞️</span> Scene, a ne jedna kamera</div>
-      <p class="tip-card-p">Izgradite najmanje 3 scene: "Počinjemo uskoro" / eter / "Vraćam se za malo". Prebacivanja između njih drže sliku živom i profesionalnom.</p>
+      <p class="tip-card-p">Izgradite najmanje 3 scene: "Počinjemo uskoro" / uživo / "Vraćam se za malo". Prebacivanja između njih drže sliku živom i profesionalnom.</p>
     </div>
   </div>
 </section>
@@ -728,7 +728,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </details>
     <details class="faq-item">
       <summary>Koliko traje postavljanje streama na YouTubeu?</summary>
-      <p>Računajte oko 5 minuta za prvi put — instalacija SplitCam, dodavanje kamere, unos stream ključa s YouTubea. Poslije je sve sačuvano i sljedeći eteri startaju gotovo trenutačno: otvarate aplikaciju, pritišćete "Uživo", potvrđujete u YouTube Studiju.</p>
+      <p>Računajte oko 5 minuta za prvi put — instalacija SplitCam, dodavanje kamere, unos stream ključa s YouTubea. Poslije je sve sačuvano i sljedeći prijenosi kreću gotovo trenutačno: otvarate aplikaciju, pritišćete "Uživo", potvrđujete u YouTube Studiju.</p>
     </details>
   </div>
 </section>
