@@ -166,7 +166,7 @@
           "name": "What operating systems does it run on?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SplitCam, Windows 10/11, macOS 11+, iOS 13+ (iPhone और iPad) और Android 8+ के लिए available है. Download button अपने आप आपका OS detect कर लेता है."
+            "text": "SplitCam, Windows 10/11, macOS 11+, iOS 16+ (iPhone और iPad) और Android 8+ के लिए available है. Download button अपने आप आपका OS detect कर लेता है."
           }
         },
         {
@@ -1386,7 +1386,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </details>
       <details class="faq-item">
         <summary>यह किन operating systems पर चलता है?</summary>
-        <p>SplitCam, Windows 10/11, macOS 11+, iOS 13+ (iPhone और iPad) और Android 8+ के लिए available है. Download button अपने आप आपका OS detect कर लेता है.</p>
+        <p>SplitCam, Windows 10/11, macOS 11+, iOS 16+ (iPhone और iPad) और Android 8+ के लिए available है. Download button अपने आप आपका OS detect कर लेता है.</p>
       </details>
       <details class="faq-item">
         <summary>क्या मैं अपनी OBS Studio scenes import कर सकता हूँ?</summary>
@@ -1572,8 +1572,8 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
   var SC = {
     windows: { label: 'Windows के लिए Download', ico: ICO.windows, url: 'https://splitcam.com/download',                                          sub: 'Windows 10/11 · 64-bit',    req: 'Windows 10 या नया',       ver: 'Latest v10.9.2' },
     mac:     { label: 'Mac के लिए Download',     ico: ICO.apple,   url: 'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',    sub: 'macOS 13+ · Apple Silicon', req: 'macOS 13 या नया',         ver: 'Mac App Store पर' },
-    ios:     { label: 'App Store से लीजिए',      ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone & iPad · iOS 13+',   req: 'iPhone & iPad · iOS 13+', ver: 'App Store पर' },
-    android: { label: 'Google Play से लीजिए',    ico: ICO.play,    url: '#android-coming',                                                        sub: 'Android 8+',                req: 'Android 8 या नया',        ver: 'जल्द आ रहा है' }
+    ios:     { label: 'App Store से लीजिए',      ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone & iPad · iOS 16+',   req: 'iPhone & iPad · iOS 16+', ver: 'App Store पर' },
+    android: { label: 'Google Play से लीजिए',    ico: ICO.play,    url: 'https://play.google.com/store/apps/details?id=com.splitcam',                                                        sub: 'Android 8+',                req: 'Android 8 या नया',        ver: 'Google Play पर' }
   };
   function detectOS(){
     var ua = navigator.userAgent || '';

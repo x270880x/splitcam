@@ -166,7 +166,7 @@
           "name": "어떤 운영체제에서 사용할 수 있나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SplitCam은 Windows 10/11, macOS 11+, iOS 13+ (iPhone 및 iPad), Android 8+에서 사용할 수 있습니다. 다운로드 버튼이 사용 중인 운영체제를 자동으로 감지합니다."
+            "text": "SplitCam은 Windows 10/11, macOS 11+, iOS 16+ (iPhone 및 iPad), Android 8+에서 사용할 수 있습니다. 다운로드 버튼이 사용 중인 운영체제를 자동으로 감지합니다."
           }
         },
         {
@@ -1386,7 +1386,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </details>
       <details class="faq-item">
         <summary>어떤 운영체제에서 사용할 수 있나요?</summary>
-        <p>SplitCam은 Windows 10/11, macOS 11+, iOS 13+ (iPhone 및 iPad), Android 8+에서 사용할 수 있습니다. 다운로드 버튼이 사용 중인 운영체제를 자동으로 감지합니다.</p>
+        <p>SplitCam은 Windows 10/11, macOS 11+, iOS 16+ (iPhone 및 iPad), Android 8+에서 사용할 수 있습니다. 다운로드 버튼이 사용 중인 운영체제를 자동으로 감지합니다.</p>
       </details>
       <details class="faq-item">
         <summary>OBS Studio 장면을 가져올 수 있나요?</summary>
@@ -1572,8 +1572,8 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
   var SC = {
     windows: { label: 'Windows용 다운로드', ico: ICO.windows, url: 'https://splitcam.com/download',                                          sub: 'Windows 10/11 · 64비트',    req: 'Windows 10 이상',     ver: '최신 v10.9.2' },
     mac:     { label: 'Mac용 다운로드',     ico: ICO.apple,   url: 'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',    sub: 'macOS 13+ · Apple Silicon', req: 'macOS 13 이상',       ver: 'Mac App Store에서' },
-    ios:     { label: 'App Store에서 다운로드',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone 및 iPad · iOS 13+',   req: 'iPhone 및 iPad · iOS 13+', ver: 'App Store에서' },
-    android: { label: 'Google Play에서 다운로드',   ico: ICO.play,    url: '#android-coming',                                                        sub: 'Android 8+',                req: 'Android 8 이상',      ver: '출시 예정' }
+    ios:     { label: 'App Store에서 다운로드',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone 및 iPad · iOS 16+',   req: 'iPhone 및 iPad · iOS 16+', ver: 'App Store에서' },
+    android: { label: 'Google Play에서 다운로드',   ico: ICO.play,    url: 'https://play.google.com/store/apps/details?id=com.splitcam',                                                        sub: 'Android 8+',                req: 'Android 8 이상',      ver: 'Google Play에서' }
   };
   function detectOS(){
     var ua = navigator.userAgent || '';

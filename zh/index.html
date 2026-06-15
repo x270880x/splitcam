@@ -1253,7 +1253,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </details>
       <details class="faq-item">
         <summary>它支持哪些操作系统？</summary>
-        <p>SplitCam 支持 Windows 10/11、macOS 11+、iOS 13+（iPhone 和 iPad）以及 Android 8+。下载按钮会自动识别你的操作系统。</p>
+        <p>SplitCam 支持 Windows 10/11、macOS 11+、iOS 16+（iPhone 和 iPad）以及 Android 8+。下载按钮会自动识别你的操作系统。</p>
       </details>
       <details class="faq-item">
         <summary>我能导入 OBS Studio 的场景吗？</summary>
@@ -1439,8 +1439,8 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
   var SC = {
     windows: { label: '下载 Windows 版', ico: ICO.windows, url: 'https://splitcam.com/download',                                          sub: 'Windows 10/11 · 64 位',    req: 'Windows 10 或更高版本',     ver: '最新版 v10.9.2' },
     mac:     { label: '下载 Mac 版',     ico: ICO.apple,   url: 'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',    sub: 'macOS 13+ · Apple Silicon', req: 'macOS 13 或更高版本',       ver: 'Mac App Store 上架' },
-    ios:     { label: '从 App Store 获取',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone 和 iPad · iOS 13+',   req: 'iPhone 和 iPad · iOS 13+', ver: 'App Store 上架' },
-    android: { label: '从 Google Play 获取',   ico: ICO.play,    url: '#android-coming',                                                        sub: 'Android 8+',                req: 'Android 8 或更高版本',      ver: '即将推出' }
+    ios:     { label: '从 App Store 获取',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone 和 iPad · iOS 16+',   req: 'iPhone 和 iPad · iOS 16+', ver: 'App Store 上架' },
+    android: { label: '从 Google Play 获取',   ico: ICO.play,    url: 'https://play.google.com/store/apps/details?id=com.splitcam',                                                        sub: 'Android 8+',                req: 'Android 8 或更高版本',      ver: '在 Google Play 上' }
   };
   function detectOS(){
     var ua = navigator.userAgent || '';

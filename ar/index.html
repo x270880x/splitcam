@@ -166,7 +166,7 @@
           "name": "ما أنظمة التشغيل التي يعمل عليها؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "يتوفر SplitCam لـ Windows 10/11 وmacOS 11+ وiOS 13+ (iPhone وiPad) وAndroid 8+. يكتشف زر التنزيل نظام التشغيل لديك تلقائيًا."
+            "text": "يتوفر SplitCam لـ Windows 10/11 وmacOS 11+ وiOS 16+ (iPhone وiPad) وAndroid 8+. يكتشف زر التنزيل نظام التشغيل لديك تلقائيًا."
           }
         },
         {
@@ -1393,7 +1393,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </details>
       <details class="faq-item">
         <summary>ما أنظمة التشغيل التي يعمل عليها؟</summary>
-        <p>يتوفر SplitCam لـ Windows 10/11 وmacOS 11+ وiOS 13+ (iPhone وiPad) وAndroid 8+. يكتشف زر التنزيل نظام التشغيل لديك تلقائيًا.</p>
+        <p>يتوفر SplitCam لـ Windows 10/11 وmacOS 11+ وiOS 16+ (iPhone وiPad) وAndroid 8+. يكتشف زر التنزيل نظام التشغيل لديك تلقائيًا.</p>
       </details>
       <details class="faq-item">
         <summary>هل يمكنني استيراد مشاهد OBS Studio؟</summary>
@@ -1579,8 +1579,8 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
   var SC = {
     windows: { label: 'تنزيل لـ Windows', ico: ICO.windows, url: 'https://splitcam.com/download',                                          sub: 'Windows 10/11 · 64-bit',    req: 'Windows 10 أو أحدث',     ver: 'أحدث إصدار v10.9.2' },
     mac:     { label: 'تنزيل لـ Mac',     ico: ICO.apple,   url: 'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',    sub: 'macOS 13+ · Apple Silicon', req: 'macOS 13 أو أحدث',       ver: 'على Mac App Store' },
-    ios:     { label: 'احصل عليه من App Store',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone وiPad · iOS 13+',   req: 'iPhone وiPad · iOS 13+', ver: 'على App Store' },
-    android: { label: 'احصل عليه من Google Play',   ico: ICO.play,    url: '#android-coming',                                                        sub: 'Android 8+',                req: 'Android 8 أو أحدث',      ver: 'على Google Play' }
+    ios:     { label: 'احصل عليه من App Store',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone وiPad · iOS 16+',   req: 'iPhone وiPad · iOS 16+', ver: 'على App Store' },
+    android: { label: 'احصل عليه من Google Play',   ico: ICO.play,    url: 'https://play.google.com/store/apps/details?id=com.splitcam',                                                        sub: 'Android 8+',                req: 'Android 8 أو أحدث',      ver: 'على Google Play' }
   };
   function detectOS(){
     var ua = navigator.userAgent || '';

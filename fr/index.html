@@ -167,7 +167,7 @@
           "name": "Sur quels systèmes d'exploitation fonctionne-t-il ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SplitCam est disponible pour Windows 10/11, macOS 11+, iOS 13+ (iPhone et iPad) et Android 8+. Le bouton de téléchargement détecte automatiquement votre système."
+            "text": "SplitCam est disponible pour Windows 10/11, macOS 11+, iOS 16+ (iPhone et iPad) et Android 8+. Le bouton de téléchargement détecte automatiquement votre système."
           }
         },
         {
@@ -1387,7 +1387,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </details>
       <details class="faq-item">
         <summary>Sur quels systèmes d'exploitation fonctionne-t-il ?</summary>
-        <p>SplitCam est disponible pour Windows 10/11, macOS 11+, iOS 13+ (iPhone et iPad) et Android 8+. Le bouton de téléchargement détecte automatiquement votre système.</p>
+        <p>SplitCam est disponible pour Windows 10/11, macOS 11+, iOS 16+ (iPhone et iPad) et Android 8+. Le bouton de téléchargement détecte automatiquement votre système.</p>
       </details>
       <details class="faq-item">
         <summary>Puis-je importer mes scènes OBS Studio ?</summary>
@@ -1573,8 +1573,8 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
   var SC = {
     windows: { label: 'Télécharger pour Windows', ico: ICO.windows, url: 'https://splitcam.com/download',                                          sub: 'Windows 10/11 · 64 bits',    req: 'Windows 10 ou version ultérieure',     ver: 'Dernière v10.9.2' },
     mac:     { label: 'Télécharger pour Mac',     ico: ICO.apple,   url: 'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',    sub: 'macOS 13+ · Apple Silicon', req: 'macOS 13 ou version ultérieure',       ver: 'Sur le Mac App Store' },
-    ios:     { label: 'Obtenir sur App Store',    ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone et iPad · iOS 13+',   req: 'iPhone et iPad · iOS 13+', ver: 'Sur l\'App Store' },
-    android: { label: 'Obtenir sur Google Play',  ico: ICO.play,    url: '#android-coming',                                                        sub: 'Android 8+',                req: 'Android 8 ou version ultérieure',      ver: 'Bientôt sur Google Play' }
+    ios:     { label: 'Obtenir sur App Store',    ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone et iPad · iOS 16+',   req: 'iPhone et iPad · iOS 16+', ver: 'Sur l\'App Store' },
+    android: { label: 'Obtenir sur Google Play',  ico: ICO.play,    url: 'https://play.google.com/store/apps/details?id=com.splitcam',                                                        sub: 'Android 8+',                req: 'Android 8 ou version ultérieure',      ver: 'Sur Google Play' }
   };
   function detectOS(){
     var ua = navigator.userAgent || '';

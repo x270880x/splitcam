@@ -166,7 +166,7 @@
           "name": "על אילו מערכות הפעלה SplitCam פועל?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SplitCam זמין ל-Windows 10/11, macOS 11+, iOS 13+ ‏(iPhone ו-iPad) ו-Android 8+. כפתור ההורדה מזהה אוטומטית את מערכת ההפעלה שלכם."
+            "text": "SplitCam זמין ל-Windows 10/11, macOS 11+, iOS 16+ ‏(iPhone ו-iPad) ו-Android 8+. כפתור ההורדה מזהה אוטומטית את מערכת ההפעלה שלכם."
           }
         },
         {
@@ -1393,7 +1393,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </details>
       <details class="faq-item">
         <summary>על אילו מערכות הפעלה זה פועל?</summary>
-        <p>SplitCam זמין ל-Windows 10/11, macOS 11+, iOS 13+ ‏(iPhone ו-iPad) ו-Android 8+. כפתור ההורדה מזהה אוטומטית את מערכת ההפעלה שלכם.</p>
+        <p>SplitCam זמין ל-Windows 10/11, macOS 11+, iOS 16+ ‏(iPhone ו-iPad) ו-Android 8+. כפתור ההורדה מזהה אוטומטית את מערכת ההפעלה שלכם.</p>
       </details>
       <details class="faq-item">
         <summary>האם אפשר לייבא את הסצנות שלי מ-OBS Studio?</summary>
@@ -1579,8 +1579,8 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
   var SC = {
     windows: { label: 'הורדה ל-Windows', ico: ICO.windows, url: 'https://splitcam.com/download',                                          sub: 'Windows 10/11 · 64-bit',    req: 'Windows 10 ומעלה',     ver: 'הגרסה האחרונה v10.9.2' },
     mac:     { label: 'הורדה ל-Mac',     ico: ICO.apple,   url: 'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',    sub: 'macOS 13+ · Apple Silicon', req: 'macOS 13 ומעלה',       ver: 'ב-Mac App Store' },
-    ios:     { label: 'הורדה מ-App Store',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone ו-iPad · iOS 13+',   req: 'iPhone ו-iPad · iOS 13+', ver: 'ב-App Store' },
-    android: { label: 'הורדה מ-Google Play',   ico: ICO.play,    url: '#android-coming',                                                        sub: 'Android 8+',                req: 'Android 8 ומעלה',      ver: 'בקרוב' }
+    ios:     { label: 'הורדה מ-App Store',     ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone ו-iPad · iOS 16+',   req: 'iPhone ו-iPad · iOS 16+', ver: 'ב-App Store' },
+    android: { label: 'הורדה מ-Google Play',   ico: ICO.play,    url: 'https://play.google.com/store/apps/details?id=com.splitcam',                                                        sub: 'Android 8+',                req: 'Android 8 ומעלה',      ver: 'ב-Google Play' }
   };
   function detectOS(){
     var ua = navigator.userAgent || '';

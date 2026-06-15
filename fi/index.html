@@ -167,7 +167,7 @@
           "name": "Millä käyttöjärjestelmillä se toimii?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SplitCam on saatavilla Windows 10/11:lle, macOS 11+:lle, iOS 13+:lle (iPhone ja iPad) ja Android 8+:lle. Lataa-painike tunnistaa käyttöjärjestelmäsi automaattisesti."
+            "text": "SplitCam on saatavilla Windows 10/11:lle, macOS 11+:lle, iOS 16+:lle (iPhone ja iPad) ja Android 8+:lle. Lataa-painike tunnistaa käyttöjärjestelmäsi automaattisesti."
           }
         },
         {
@@ -1389,7 +1389,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </details>
       <details class="faq-item">
         <summary>Millä käyttöjärjestelmillä se toimii?</summary>
-        <p>SplitCam on saatavilla Windows 10/11:lle, macOS 11+:lle, iOS 13+:lle (iPhone ja iPad) ja Android 8+:lle. Lataa-painike tunnistaa käyttöjärjestelmäsi automaattisesti.</p>
+        <p>SplitCam on saatavilla Windows 10/11:lle, macOS 11+:lle, iOS 16+:lle (iPhone ja iPad) ja Android 8+:lle. Lataa-painike tunnistaa käyttöjärjestelmäsi automaattisesti.</p>
       </details>
       <details class="faq-item">
         <summary>Voinko tuoda OBS Studio -näkymäni?</summary>
@@ -1575,8 +1575,8 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
   var SC = {
     windows: { label: 'Lataa Windowsille', ico: ICO.windows, url: 'https://splitcam.com/download',                                          sub: 'Windows 10/11 · 64-bittinen', req: 'Windows 10 tai uudempi',  ver: 'Uusin v10.9.2' },
     mac:     { label: 'Lataa Macille',     ico: ICO.apple,   url: 'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',    sub: 'macOS 13+ · Apple Silicon', req: 'macOS 13 tai uudempi',    ver: 'Mac App Storessa' },
-    ios:     { label: 'Hae App Storesta',  ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone ja iPad · iOS 13+',  req: 'iPhone ja iPad · iOS 13+', ver: 'App Storessa' },
-    android: { label: 'Hae Google Playsta', ico: ICO.play,   url: '#android-coming',                                                        sub: 'Android 8+',                req: 'Android 8 tai uudempi',   ver: 'Tulossa pian Google Playhin' }
+    ios:     { label: 'Hae App Storesta',  ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone ja iPad · iOS 16+',  req: 'iPhone ja iPad · iOS 16+', ver: 'App Storessa' },
+    android: { label: 'Hae Google Playsta', ico: ICO.play,   url: 'https://play.google.com/store/apps/details?id=com.splitcam',                                                        sub: 'Android 8+',                req: 'Android 8 tai uudempi',   ver: 'Google Playssa' }
   };
   function detectOS(){
     var ua = navigator.userAgent || '';

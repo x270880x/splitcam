@@ -167,7 +167,7 @@
           "name": "Hangi işletim sistemlerinde çalışır?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SplitCam; Windows 10/11, macOS 11+, iOS 13+ (iPhone ve iPad) ve Android 8+ için mevcut. İndir düğmesi işletim sisteminizi otomatik algılar."
+            "text": "SplitCam; Windows 10/11, macOS 11+, iOS 16+ (iPhone ve iPad) ve Android 8+ için mevcut. İndir düğmesi işletim sisteminizi otomatik algılar."
           }
         },
         {
@@ -1387,7 +1387,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </details>
       <details class="faq-item">
         <summary>Hangi işletim sistemlerinde çalışır?</summary>
-        <p>SplitCam; Windows 10/11, macOS 11+, iOS 13+ (iPhone ve iPad) ve Android 8+ için mevcut. İndir düğmesi işletim sisteminizi otomatik algılar.</p>
+        <p>SplitCam; Windows 10/11, macOS 11+, iOS 16+ (iPhone ve iPad) ve Android 8+ için mevcut. İndir düğmesi işletim sisteminizi otomatik algılar.</p>
       </details>
       <details class="faq-item">
         <summary>OBS Studio sahnelerimi içe aktarabilir miyim?</summary>
@@ -1573,8 +1573,8 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
   var SC = {
     windows: { label: 'Windows için indir', name: 'Windows',     ico: ICO.windows, url: 'https://splitcam.com/download',                                          sub: 'Windows 10/11 · 64-bit',    req: 'Windows 10 veya üzeri',   ver: 'En yeni v10.9.2' },
     mac:     { label: 'Mac için indir',     name: 'Mac',         ico: ICO.apple,   url: 'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',    sub: 'macOS 13+ · Apple Silicon', req: 'macOS 13 veya üzeri',     ver: 'Mac App Store\'da' },
-    ios:     { label: 'App Store\'dan al',   name: 'iOS',         ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone ve iPad · iOS 13+',  req: 'iPhone ve iPad · iOS 13+', ver: 'App Store\'da' },
-    android: { label: 'Google Play\'den al', name: 'Android',     ico: ICO.play,    url: '#android-coming',                                                        sub: 'Android 8+',                req: 'Android 8 veya üzeri',    ver: 'Google Play\'de' }
+    ios:     { label: 'App Store\'dan al',   name: 'iOS',         ico: ICO.apple,   url: 'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',   sub: 'iPhone ve iPad · iOS 16+',  req: 'iPhone ve iPad · iOS 16+', ver: 'App Store\'da' },
+    android: { label: 'Google Play\'den al', name: 'Android',     ico: ICO.play,    url: 'https://play.google.com/store/apps/details?id=com.splitcam',                                                        sub: 'Android 8+',                req: 'Android 8 veya üzeri',    ver: 'Google Play\'de' }
   };
   function detectOS(){
     var ua = navigator.userAgent || '';
