@@ -1,19 +1,22 @@
 # SplitCam — Project Onboarding
 
-*Last updated: 2026-06-13. Open this at the start of any new chat to get up to speed.*
+*Last updated: 2026-06-15. Open this at the start of any new chat to get up to speed.*
 
 ## ⭐ Current state (read first)
-- Site is live in **18 languages** (234 indexable pages). EN root + 17 under
-  `/<lang>/`: ru es de fr pt tr fil uk it vi id nl ro hi ja ms bg.
+- Site is live in **all 35 languages** (455 indexable pages). EN root + 34 under
+  `/<lang>/`: ru es de fr pt tr fil uk it vi id nl ro hi ja ms bg ar ko th pl hu
+  sv zh el cs he sr hr da fi no sk fa. **RTL locales: ar, he, fa** (sr = Latin script).
 - The whole language system is two files: **`seo/i18n.py`** (config + render
-  helpers) and **`seo/i18n_wire.py`** (rebuilds dropdown/hreflang/auto-detect/
-  sitemap across every page). See the "Localization — 18 languages" section in
-  **CLAUDE.md** for the full how-to. Run `i18n_wire.py` then
-  `linkcheck.py --no-network` after any page add/translate.
-- Per-locale keyword maps: `seo/I18N-KEYWORDS.md`. Binding spec: `seo/I18N-PLAN.md`.
-- **Remaining 17 languages (Waves 4–7) have ≤10/mo Ahrefs demand, most 0** — 18 =
-  all real demand. Going to 35 is brand-completeness only; the user decides.
-- Working tree clean & pushed; `linkcheck` 0 broken across 236 pages.
+  helpers + `RTL_CSS`) and **`seo/i18n_wire.py`** (rebuilds dropdown/hreflang/
+  auto-detect/sitemap + per-RTL-page CSS across every page). See the "Localization
+  — all 35 languages" section in **CLAUDE.md** for the full how-to. Run
+  `i18n_wire.py` then `linkcheck.py --no-network` (must be 0) after any add/translate.
+- Per-locale keyword maps: `seo/I18N-KEYWORDS.md` (waves 1-3; waves 4-7 were
+  brand-led, ~0 demand). Binding spec: `seo/I18N-PLAN.md`.
+- The 17 lowest-demand locales (waves 4–7, ≤10/mo, mostly 0) were completed
+  2026-06-15 for brand completeness — **see the 2026-06-15 session log below** (it
+  involved cleaning up an unattended mass-translation run; lessons recorded there).
+- Working tree clean & pushed; `linkcheck` 0 broken across 455 pages.
 
 ## Two projects
 
@@ -58,7 +61,7 @@ Nav order site-wide: **Products · Virtual Camera · Multistreaming · Alternati
 - **Schedule & follow-ups: `seo/REMINDERS.md`** — open it in any SEO chat (indexing checks, ranking checks, wave launches with dates). Do NOT use `CronCreate` — it doesn't persist.
 
 ## Migration to live splitcam.com
-`seo/MIGRATION.md` — only the homepage `/` is a true same-URL replacement; everything else is new URLs. `seo/REDIRECTS.md` — 301 strategy + per-page weights from Ahrefs. **RU/ES locales — DONE 2026-06-13** (`/ru/` + `/es/`, 10 pages each; specs in `seo/I18N-PLAN.md` + `seo/I18N-KEYWORDS.md`). (Homepage A vs B — resolved 2026-05-22: A is final, `/v2/` archived.)
+`seo/MIGRATION.md` — only the homepage `/` is a true same-URL replacement; everything else is new URLs. `seo/REDIRECTS.md` — 301 strategy + per-page weights from Ahrefs. **All 35 locales — DONE 2026-06-15** (13 pages each, 455 total; specs in `seo/I18N-PLAN.md` + `seo/I18N-KEYWORDS.md`). (Homepage A vs B — resolved 2026-05-22: A is final, `/v2/` archived.)
 
 ## Critical design rules
 1. Brand logos stored LOCALLY in `/virtual-camera/assets/logos/` — no external CDN refs.
@@ -264,6 +267,32 @@ Small visual tweaks on **/virtual-camera/** orbit-center SplitCam logo:
   cramped vertical hero stack).
 
 (No other site-wide changes this iteration.)
+
+## Session log — 2026-06-15 (i18n: 18 → all 35 languages + runaway cleanup)
+
+Took the site from 18 to **all 35 languages** (455 pages). The hard part wasn't the
+translation — it was recovering from an **unattended background run** that mass-
+translated ~all locales from a Bulgarian (`bg/`) scaffold and committed+pushed it with
+systematic bugs, then kept clobbering files for hours (Cyrillic project-path NFC/NFD
+instability; a full Claude restart was needed to kill it).
+
+- **Bugs cleaned across 34 locales:** canonical/og:url/og:locale/JSON-LD URLs → `/bg/`
+  (~98 pages); smart/curly quotes in HTML attributes + JSON-LD (broke ~150 links +
+  JSON-LD); untranslated Bulgarian pages; an absolute `/multistreaming/` FAQ link on
+  all 30 homepages. Fixed surgically (per-locale `/bg/`→`/<L>/`, curly→straight,
+  JSON-LD repair + remove-fallback, restored vi/ro/bg/de `for/youtubers` JSON-LD from
+  the pre-runaway commit).
+- **Rebuilt 7 scaffold-only locales fresh from EN** — da, fa (RTL), fi, hr, no, sk,
+  sr (Latin) — 13 pages each, one opus agent per page, linkcheck-gated commit per locale.
+- **RTL** (ar/he/fa): `i18n.RTL_CSS` (forward-arrow flip `svg:has(use[href="#i-arr"])`,
+  download split-button radii via `[data-dl-primary]`, vc-arrow connector) injected per
+  RTL page by `i18n_wire.py` into a `<!--RTLCSS-->` marker region.
+- **Final:** 35 × 13 = 455 pages; linkcheck 0, JSON-LD 0 broken, 0 `/bg/` canonical,
+  0 curly attrs, no Bulgarian leaks, gtag byte-identical. Logs/report: `../wave4-7-logs/`.
+- **Lessons (also in CLAUDE.md):** translate from `index.html` (EN), NEVER from another
+  locale's scaffold; only straight ASCII quotes in attributes/JSON-LD; one opus agent
+  per page (sonnet hits the 32K output cap on 1000+ line pages); never leave an
+  unattended translation run unsupervised.
 
 ## Session log — 2026-06-11 (overdue SEO reminders sweep + Remote iOS live)
 

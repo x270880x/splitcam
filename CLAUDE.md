@@ -166,7 +166,7 @@ download split-button radii, vc-arrow connector) injected per RTL page by
   ≤1100px. Check no overflow/clip/overlap at 1440/1280/390. Verify balanced
   `<style>…</style>` per file (an agent once shipped an unclosed one that broke
   the whole page render).
-- **hreflang reciprocity** across all 18 + EN; **no `aggregateRating`** in any
+- **hreflang reciprocity** across all 34 + EN; **no `aggregateRating`** in any
   JSON-LD (crit rule #7); GA gtag byte-identical; canonicals → future
   `splitcam.com/<locale>/...`.
 - **New EN page ⇒ build all 34 locales + rerun `i18n_wire.py`** (which adds it
