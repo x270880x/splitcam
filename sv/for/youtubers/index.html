@@ -82,7 +82,172 @@
 <link rel="manifest" href="../../../site.webmanifest">
 
 <!-- Schema.org: HowTo + BreadcrumbList + SoftwareApplication + FAQPage for rich snippets -->
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SplitCam",
+          "item": "https://splitcam.com/sv/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "YouTubers",
+          "item": "https://splitcam.com/sv/for/youtubers/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "Så streamar du live på YouTube",
+      "description": "Komplett steg-för-steg-guide för att starta en livesändning på YouTube med den gratis SplitCam-programvaran.",
+      "totalTime": "PT5M",
+      "image": "https://splitcam.com/assets/og-youtubers.png",
+      "inLanguage": "sv",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "SplitCam (gratis nedladdning)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "YouTube-kanal med livesändning aktiverad"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Webbkamera eller capture-kort"
+        }
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "Streamnyckel från YouTube Studio"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Ladda ner SplitCam",
+          "text": "Ladda ner gratis SplitCam för Windows, macOS, iOS eller Android. Ingen registrering, inget kort, ingen vattenstämpel.",
+          "url": "https://splitcam.com/sv/"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Bygg bilden för tittarna",
+          "text": "Öppna SplitCam. Lägg till din webbkamera, skärminspelning, spelinspelning eller webbläsarkälla som scenlager. Dra, ändra storlek och lagra dem precis som du vill att tittarna ska se."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Hämta streamnyckeln från YouTube",
+          "text": "Gå till studio.youtube.com → Skapa → Gå live → Stream. Kopiera din streamnyckel (visa den ingenstans offentligt — den fungerar som ett lösenord)."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Anslut SplitCam till YouTube",
+          "text": "I SplitCam, öppna Streaminginställningar → YouTube (förkonfigurerad) → klistra in streamnyckeln. Ställ in bitrate (4,5 Mbps rekommenderas för 1080p)."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Tryck på Gå live",
+          "text": "Tryck på Gå live-knappen i SplitCam. Inom cirka 10–15 sekunder aktiveras din YouTube Live-förhandsvisning. Tryck på Gå live i YouTube Studio för att publicera för tittarna."
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SplitCam",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Windows, macOS, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "sv",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Är SplitCam gratis för streaming på YouTube?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja — gratis för alltid. Ingen vattenstämpel på streamen, ingen funktion låst bakom en prenumeration. Multistreaming, 1080p 60fps, scenväxling och den virtuella kameran ingår från första starten. Du behåller 100 % av dina YouTube-intäkter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vilken bitrate ska jag använda för YouTube?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "För 1080p 30fps: 3000–6000 Kbps. För 1080p 60fps: 4500–9000 Kbps. För 720p: 1500–4000 Kbps. SplitCams inbyggda Upload Speed Test kontrollerar din uppkoppling innan du går live."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan man streama på YouTube och Twitch samtidigt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. I Streaminginställningar, bocka i YouTube och Twitch (eller annan plattform), klistra in respektive streamnyckel och tryck sedan på Gå live en gång — SplitCam sänder peer-to-peer till varje markerad destination samtidigt. Ingen molnserver, ingen månadsavgift."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hur aktiverar jag livesändningar på min YouTube-kanal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Du behöver ett verifierat YouTube-konto (telefonverifiering) och inga sändningsrestriktioner de senaste 90 dagarna. För mobila sändningar krävs 50+ prenumeranter. För streaming från dator finns inget prenumerantkrav — alla verifierade konton kan sända live."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Behövs OBS, eller ersätter SplitCam det?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "För de flesta YouTubers klarar SplitCam jobbet på egen hand: virtuell kamera, AI-bakgrund, multistreaming och scenväxling är inbyggda, och din befintliga OBS-scensamling läses in med ett klick. De som är beroende av ett specifikt OBS-plugin kan vara bekvämare att stanna på OBS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sänker SplitCam FPS i spelet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Omärkbart för ögat. SplitCam lägger kodningen på grafikkortets dedikerade hårdvara — NVENC på Nvidia, QuickSync på Intel, AMF på AMD — kodaren väljs automatiskt vid start. Processorn och de primära renderingskärnorna förblir fria för spelet, så bildfrekvensen bevaras; de flesta konfigurationer tappar bara 0–3 % FPS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan man streama på YouTube från telefonen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja — SplitCam för iOS och Android streamar direkt till YouTube från telefonen. För mobila sändningar på YouTube krävs 50+ prenumeranter på kanalen. Det vertikala 9:16-formatet är aktiverat som standard på mobilen — perfekt för YouTube Shorts Live."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hur lång tid tar det att ställa in YouTube-streaming?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Räkna med ungefär 5 minuter för första gången — installera SplitCam, lägg till kamera, klistra in streamnyckeln från YouTube. Sedan är allt sparat och nästa sändning startar nästan omedelbart: öppna appen, tryck på Gå live, bekräfta i YouTube Studio."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

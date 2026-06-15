@@ -82,7 +82,172 @@
 <link rel="manifest" href="../../../site.webmanifest">
 
 <!-- Schema.org: HowTo + BreadcrumbList + SoftwareApplication + FAQPage for rich snippets -->
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SplitCam",
+          "item": "https://splitcam.com/he/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "יוצרים ביוטיוב",
+          "item": "https://splitcam.com/he/for/youtubers/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "איך לשדר בשידור חי ב-YouTube",
+      "description": "מדריך מלא שלב אחר שלב להתחלת שידור חי ב-YouTube באמצעות התוכנה החינמית SplitCam.",
+      "totalTime": "PT5M",
+      "image": "https://splitcam.com/assets/og-youtubers.png",
+      "inLanguage": "he",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "SplitCam (הורדה חינם)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "ערוץ YouTube עם שידורים חיים מופעלים"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "מצלמת רשת או כרטיס לכידה"
+        }
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "מפתח שידור מ-YouTube Studio"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "הורידו את SplitCam",
+          "text": "הורידו את SplitCam בחינם ל-Windows, macOS, iOS או Android. בלי הרשמה, בלי כרטיס אשראי, בלי סימן מים.",
+          "url": "https://splitcam.com/he/"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "בנו את התמונה לצופים",
+          "text": "פתחו את SplitCam. הוסיפו מצלמת רשת, לכידת מסך, לכידת משחק או מקור דפדפן כשכבות סצנה. גררו, שנו גודל וסדרו בשכבות בדיוק כפי שאתם רוצים שהצופים יראו."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "קחו את מפתח השידור מ-YouTube",
+          "text": "עברו אל studio.youtube.com → צור → התחל שידור חי → Stream. העתיקו את מפתח השידור שלכם (אל תפרסמו אותו בשום מקום פומבי — הוא כמו סיסמה)."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "חברו את SplitCam ל-YouTube",
+          "text": "ב-SplitCam, פתחו את הגדרות השידור → YouTube (מוגדר מראש) → הדביקו את מפתח השידור. הגדירו קצב סיביות (מומלץ 4.5 Mbps ל-1080p)."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "לחצו חי",
+          "text": "לחצו על כפתור חי ב-SplitCam. תוך כ-10–15 שניות תצוגת התצוגה המקדימה של YouTube Live תופעל. לחצו על התחל שידור חי ב-YouTube Studio כדי לפרסם לצופים."
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SplitCam",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Windows, macOS, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "he",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "האם SplitCam חינמי לשידור ביוטיוב?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "כן — חינמי לתמיד. בלי סימן מים על השידור, בלי תכונה נעולה מאחורי מנוי. שידור לכמה פלטפורמות, 1080p 60fps, החלפת סצנות והמצלמה הווירטואלית — כולם כלולים מההפעלה הראשונה. אתם שומרים 100% מההכנסות מ-YouTube."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "איזה קצב סיביות להגדיר לשידור ביוטיוב?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ל-1080p 30fps: 3000–6000 Kbps. ל-1080p 60fps: 4500–9000 Kbps. ל-720p: 1500–4000 Kbps. ה-Upload Speed Test המובנה ב-SplitCam יבדוק את הערוץ שלכם לפני שאתם עולים לשידור חי."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "אפשר לשדר ל-YouTube ול-Twitch בו-זמנית?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "כן. בהגדרות שידור, סמנו YouTube ו-Twitch (או כל פלטפורמה אחרת), הדביקו כל מפתח שידור, ואז לחצו חי פעם אחת — SplitCam משדר peer-to-peer לכל יעד שסומן בו-זמנית. בלי שרת ענן ובלי תשלום חודשי."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "איך מפעילים שידורים חיים בערוץ YouTube?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "צריך חשבון YouTube מאומת (אימות טלפוני) ובלי הגבלות שידור ב-90 הימים האחרונים. לשידורים ממובייל צריך 50+ מנויים. לשידור מהמחשב אין דרישת מנויים — כל חשבון מאומת יכול לעלות לשידור חי."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "צריך OBS, או ש-SplitCam מחליף אותו?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "לרוב היוצרים ביוטיוב SplitCam עושה את העבודה לבד: מצלמה וירטואלית, רקע AI, שידור לכמה פלטפורמות ומעבר בין סצנות מובנים כאן, ואת אוסף הסצנות המוכן של OBS הוא יקרא אם כבר בניתם אותו. למי שתלוי בתוסף ספציפי של OBS, ייתכן שנוח יותר להישאר ב-OBS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "האם SplitCam יוריד FPS במשחק?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "לא מורגש לעין. SplitCam מעביר את הקידוד לחומרה הייעודית של כרטיס המסך — NVENC ב-Nvidia, QuickSync ב-Intel, AMF ב-AMD — המקודד נבחר אוטומטית בהפעלה. המעבד וליבות הרינדור הראשיות נשארים למשחק, כך שקצב הפריימים נשמר; רוב התצורות מאבדות רק 0–3% FPS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "אפשר לשדר ל-YouTube מהטלפון?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "כן — SplitCam ל-iOS ול-Android משדר ל-YouTube ישירות מהטלפון. לשידורים ממובייל YouTube דורש 50+ מנויים בערוץ. הקנבס האנכי 9:16 מופעל במובייל כברירת מחדל — בדיוק ל-YouTube Shorts Live."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "כמה זמן לוקח להגדיר שידור ביוטיוב?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "תכננו בערך 5 דקות לפעם הראשונה — התקנת SplitCam, הוספת מצלמה, הדבקת מפתח השידור מ-YouTube. אחר כך הכול שמור והשידורים הבאים מתחילים כמעט מיד: פותחים את האפליקציה, לוחצים חי, מאשרים ב-YouTube Studio."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

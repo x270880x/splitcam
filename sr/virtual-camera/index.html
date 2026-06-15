@@ -90,8 +90,197 @@
 <link rel="manifest" href="../../site.webmanifest">
 
 <!-- Schema.org SoftwareApplication + BreadcrumbList + HowTo + FAQPage -->
-
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SplitCam",
+          "item": "https://splitcam.com/sr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Virtuelna kamera",
+          "item": "https://splitcam.com/sr/virtual-camera/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SplitCam — virtuelna kamera",
+      "alternateName": [
+        "SplitCam virtuelna web kamera",
+        "SplitCam VCam"
+      ],
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Virtual Camera Software",
+      "operatingSystem": "Windows, macOS, iOS, Android",
+      "url": "https://splitcam.com/sr/virtual-camera/",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Besplatna virtuelna kamera koja radi u Zoom-u, Microsoft Teams-u, Google Meet-u, Discord-u, Telegramu, WhatsApp-u i 60+ aplikacija za video pozive. AI uklanjanje pozadine, beauty filteri, uspravni i vodoravni režim, do 64 istovremena virtuelna izlaza.",
+      "keywords": "virtuelna kamera, virtuelna web kamera, web kamera za striming, virtuelna kamera za zoom, virtuelna kamera za teams, virtuelna kamera za meet, virtuelna kamera discord, virtuelna kamera telegram, virtuelna kamera whatsapp, virtuelna kamera obs, besplatna virtuelna kamera, alternativa za obs virtual camera, alternativa za manycam, alternativa za camo, alternativa za snap camera, web kamera sa AI pozadinom, beauty filter za web kameru",
+      "featureList": [
+        "Radi kao virtuelna web kamera u Zoom-u, Teams-u, Google Meet-u, Discord-u, Telegramu, WhatsApp-u, OBS-u i 60+ aplikacija",
+        "AI uklanjanje pozadine — zeleni ekran nije potreban",
+        "Beauty filteri (zaglađivanje kože, osvetljenje, konturisanje)",
+        "Uspravni 9:16 i vodoravni 16:9 režim",
+        "Do 64 istovremena virtuelna izlaza",
+        "Prizori iz više izvora (web kamera, ekran, pretraživač, slike)",
+        "Podesivi hroma-ključ / zeleni ekran",
+        "Donje trećine, overlay-i i crtanje uživo",
+        "Besplatno zauvek — bez vodenog žiga i mesečne pretplate"
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "Kako koristiti virtuelnu kameru SplitCam u Zoom-u, Teams-u ili Google Meet-u",
+      "description": "Podesite SplitCam kao virtuelnu web kameru u bilo kojoj aplikaciji za video pozive u 3 koraka.",
+      "totalTime": "PT2M",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "SplitCam (besplatno)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Vaša web kamera ili kamera telefona"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Instalirajte SplitCam",
+          "text": "Besplatno preuzimanje za Windows, macOS, iOS ili Android. Drajver za virtuelnu kameru se instalira sam pri prvom pokretanju — bez posebnog podešavanja i bez problema s administratorskim pravima."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Izgradite prizor",
+          "text": "Dodajte izvore: web kameru, snimanje ekrana, karticu pretraživača, video fajl. Uključite AI pozadinu, beauty, overlay-e. SplitCam ima biblioteku gotovih šablona za video pozive — izaberite šablon i doradite ga."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Izaberite \"SplitCam Camera\" u aplikaciji za pozive",
+          "text": "U Zoom-u, Teams-u, Meet-u, Discord-u otvorite Settings → Video → listu kamera. Izaberite \"SplitCam Camera\". Gotovo: vaš prizor je sada vaša web kamera."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Da li virtuelna kamera SplitCam radi na macOS-u?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. SplitCam ima nativnu virtuelnu kameru za macOS: pojavljuje se u Zoom-u, Teams-u, Google Meet-u, Discord-u, Safariju, Chrome-u — u svakoj aplikaciji na macOS-u koja koristi sistemski API za kameru. macOS 11 Big Sur i noviji."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A radi li konkretno sa Zoom-om na Macu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Zoom na macOS-u vidi SplitCam kao običnu kameru. Otvorite Zoom → Settings → Video → izaberite \"SplitCam Camera\" iz liste. AI uklanjanje pozadine, beauty filteri i promena prizora rade direktno u Zoom pozivu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mogu li više aplikacija koristiti SplitCam istovremeno?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da — do 64 istovremena virtuelna izlaza. Zoom, Teams, Discord, OBS i pretraživač mogu čitati kameru SplitCam u istom trenutku. Windows obično daje fizičku web kameru samo jednoj aplikaciji — SplitCam zaobilazi to ograničenje. Popularna kombinacija: strimovanje na YouTubeu i razgovor u Zoom-u iz istog signala."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Radi li to u pretraživačkim video pozivima (Google Meet, Jitsi)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Pretraživači vide SplitCam kao običnu web kameru kroz WebRTC. Google Meet, Jitsi, Around, Whereby — sve radi bez podešavanja. Otvorite listu kamera u pozivu i izaberite \"SplitCam Camera\"."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kako da se vratim na običnu web kameru?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "U podešavanjima aplikacije za pozive otvorite listu kamera i izaberite fizičku web kameru umesto \"SplitCam Camera\". Nije potrebno restartovanje. Možete prebacivati u bilo kom trenutku direktno tokom poziva."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li virtuelna kamera SplitCam podržava 4K?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Izlaz do 1920×1080 (1080p) pri 60 fps dostupan je na svim platformama. 4K se podržava na Windowsu s hardverskim enkodiranjem (NVENC, QuickSync, AMF) i na macOS-u s Apple Silicon. Većina aplikacija za video pozive ionako svodi ulaznu sliku na 720p ili 1080p."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ima li kašnjenja ili laga?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Virtuelna kamera radi brzinom GPU-a — obično ispod 16 ms dodatnog kašnjenja (oko 1 kadar pri 60 fps). Za poređenje: mrežno kašnjenje u Zoom pozivu je 100–300 ms. Nećete osetiti nikakvo primetno kašnjenje."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li je SplitCam zaista besplatna virtuelna kamera?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da — potpuno besplatno za ličnu i komercijalnu upotrebu. Sve funkcije su otključane: AI pozadina, beauty efekti, promena prizora, izlaz na više aplikacija. Bez vodenog žiga na slici, bez probnog perioda, bez dodatne prodaje."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Može li SplitCam zameniti virtuelnu kameru OBS-a, ManyCam-a ili Snap Camere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. SplitCam je besplatna alternativa za OBS Virtual Camera (bez podešavanja pluginova — ceo studio je ugrađen), ManyCam (besplatno naspram plaćenog), Camo (radi bez telefona), Snap Camera (koju je Snap ugasio 2023.), ChromaCam, FineCam, mmhmm, XSplit VCam i Animaze. Sve ključne funkcije — virtuelna kamera, AI uklanjanje pozadine, beauty filteri — uključene su besplatno. Za detaljno poređenje pogledajte SplitCam vs OBS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li virtuelna kamera SplitCam radi u video pozivima u Telegramu i WhatsApp-u?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. I Telegram Desktop i WhatsApp Desktop na Windowsu i macOS-u dozvoljavaju da izaberete bilo koju sistemsku web kameru — SplitCam se pojavljuje u njihovim podešavanjima kao \"SplitCam Camera\". Prizori, AI pozadina, beauty filteri i overlay-i rade u Telegram i WhatsApp video pozivima isto kao u Zoom-u."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li je potreban zeleni ekran za AI uklanjanje pozadine?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ne. SplitCam koristi AI direktno na uređaju: otkriva osobu u kadru i uklanja pozadinu u realnom vremenu — bez zelenog ekrana i bez podešavanja chroma key-a. A ako ipak imate zeleni ekran, odvojeni alat chroma key daje još čišće ivice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Može li se SplitCam koristiti kao vertikalna web kamera (9:16)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Prebacite platno na portret 9:16 — i SplitCam će slati vertikalni video. Idealno za TikTok Live u pretraživaču, web verziju Instagram Live-a i svaku aplikaciju s podrškom vertikalne kamere. Podrazumevano je uključen horizontalni 16:9."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">

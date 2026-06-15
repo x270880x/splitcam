@@ -81,8 +81,184 @@
 <link rel="manifest" href="../../../site.webmanifest">
 
 <!-- Schema.org: HowTo + BreadcrumbList + SoftwareApplication + FAQPage for rich snippets -->
-
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SplitCam",
+          "item": "https://splitcam.com/hr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Primjena",
+          "item": "https://splitcam.com/hr/for/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Crkve",
+          "item": "https://splitcam.com/hr/for/churches/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "Kako postaviti prijenos crkvenog bogoslužja",
+      "description": "Potpuni vodič korak po korak: kako prenositi nedjeljno bogoslužje uživo na Facebook, YouTube i web stranicu crkve istovremeno pomoću besplatnog programa SplitCam.",
+      "totalTime": "PT10M",
+      "image": "https://splitcam.com/assets/og-church.png",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "SplitCam (besplatno preuzimanje)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Jedna ili više kamera (web kamera, DSLR putem capture kartice ili telefon)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Izvor zvuka (mikseta ili USB mikrofon)"
+        }
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "Facebook stranica s pristupom prijenosima uživo"
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "YouTube kanal s omogućenim prijenosima uživo"
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "Stream key za svaku platformu"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Instalirajte SplitCam na računalo pri ozvučavanju",
+          "text": "Instalirajte SplitCam na crkveni laptop s kojeg prikazujete slajdove ili na računalo u režiji — program radi na Windows 10/11 i macOS 11+. Ne košta ništa, ne traži račun, ne ograničava trajanje prijenosa i nikad ne postavlja vodeni žig.",
+          "url": "https://splitcam.com/hr/"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Dodajte kamere kao slojeve scene",
+          "text": "Spojite svaku kameru na računalo (USB web kamera, DSLR putem HDMI capture kartice ili telefon kao bežični kut preko Wi-Fija) i dodajte je kao izvor. Izgradite scene: opći plan / propovjedaonica / hvalbeni zbor / slajd s tekstom. Prebacujte se tipkama prečaca F1–F5 tijekom bogoslužja."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Dovedite zvuk iz miksete",
+          "text": "Spojite crkvenu miksetu na računalo putem USB audio sučelja i odaberite ga kao audio izvor u SplitCam. Sve što vjernici čuju u dvorani — propovijed, hvalbeni zbor, orgulje — čut će i gledatelji uživo."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Dodajte naslove i tekstove pjesama",
+          "text": "Dodajte tekstualni izvor s imenom propovjednika i temom propovijedi. Za tekstove pjesama dodajte Browser Source s mrežnim izlazom ProPresentera (ili bilo kojom stranicom s tekstovima) — riječi će se pojavljivati izravno u prijenosu."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Multistreaming prema Facebooku, YouTubeu i web stranici crkve",
+          "text": "U Stream Settings unesite stream key za Facebook Live, YouTube Live i RTMP adresu web stranice crkve. Označite sve tri. Pritisnite \"Uživo\" — svaka platforma prima prijenos istovremeno, izravno s vašeg računala."
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SplitCam",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Windows, macOS, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Koji je najbolji besplatni program za streaming za crkve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SplitCam je jedna od najboljih besplatnih opcija za crkve: ugrađeni multistreaming prema Facebooku + YouTubeu + web stranici crkve istovremeno, prebacivanje scena s više kamera, naslovi i tekstovi pjesama putem Browser Source, bez vodenog žiga, bez pretplate. OBS Studio je također besplatan, ali zahtijeva dodatke za multistreaming i teže se usvaja za volontere operatere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mogu li istovremeno prenositi nedjeljno bogoslužje na Facebook i YouTube?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da — SplitCam ima ugrađeni multistreaming. Unesite stream key za Facebook Live i YouTube Live, pritisnite \"Uživo\" jednom i obje platforme primaju prijenos istovremeno. Možete slati i na vlastitu web stranicu crkve putem RTMP u isto vrijeme. Tok teče izravno (peer-to-peer) s crkvenog računala — bez oblačnog posrednika, bez mjesečne naknade."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Koliko košta program za streaming za crkve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SplitCam je 100% besplatan, bez vodenog žiga i bez vremenskog ograničenja. Plaćene opcije: vMix Basic HD $60 jednokratno (ograničen na 4 ulaza, bez multistreaming), vMix Pro $1200 jednokratno (pune funkcije), ProPresenter $499+ (fokusiran na hvaljenje, nije potpuni encoder za streaming), Resi $99–$249/mj (oblačni), BoxCast $99–$499/mj."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Trebam li zasebno računalo za streaming nedjeljnog bogoslužja?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nije nužno — SplitCam može raditi na istom računalu koje prikazuje slajdove na projektoru ili ProPresenteru, ako stroj ima dovoljno resursa CPU/GPU (preporučuje se Intel i5 8. gen+, 16 GB RAM). Za konfiguracije s 3+ kamera na 1080p preporučuje se zasebno računalo za streaming radi izbjegavanja ispuštenih kadrova."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kako dodati tekstove pjesama u crkveni prijenos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dodajte Browser Source u SplitCam usmjeren na stranicu s tekstovima. Ako koristite ProPresenter, aktivirajte njegov izlaz Network → Web URL i usmjerite Browser Source SplitCam na tu adresu. Ako koristite OpenLP ili drugu besplatnu opciju, usmjerite na web adresu njegovog scenog zaslona. Tekstovi će se pojavljivati uživo u prijenosu dok hvalbeni zbor mijenja slajdove. Napomena: prijenos tekstova zaštićenih autorskim pravima zahtijeva CCLI Streaming License."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mogu li koristiti više kamera za crkveni streaming?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da — SplitCam podržava neograničen broj kamera kao izvora scene. Spojite svaku kameru na računalo (USB web kamera, DSLR putem HDMI capture kartice kao Elgato Cam Link ili telefon s mobilnom aplikacijom SplitCam kao dodatni bežični kut). Izgradite scene za opći plan, krupni plan propovjedaonice, hvalbeni zbor, slajd s tekstom. Prebacujte između njih tipkama prečaca (F1, F2, F3...) tijekom bogoslužja."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoće li SplitCam raditi na starijim crkvenim računalima?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SplitCam radi na Windows 10/11 i macOS 11+ sa skromnim hardverskim zahtjevima. Za multicamerani streaming na 1080p prikladan je Intel i5 8. gen ili Ryzen 5 s 16 GB RAM. Za streaming s jednom kamerom na 720p može poslužiti i stariji laptop s i3 / 8 GB RAM. Hardversko kodiranje (NVENC / QuickSync / AMF) smanjuje opterećenje procesora."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je li SplitCam dovoljno pouzdan za nedjeljno bogoslužje uživo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da — SplitCam se aktivno razvija od 2003. i koriste ga crkve i televizijski operateri diljem svijeta. Enkoder koristi hardversko ubrzanje za stabilnost, monitor stanja prikazuje ispuštene kadrove u stvarnom vremenu, a multistreaming sustav je izravan (peer-to-peer) — ako jedna platforma stane, ne povlači ostale. Napravite generalnu probu u subotu prije prvog nedjeljnog prijenosa."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -635,7 +811,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <details class="faq-item">
       <summary>Trebam li zasebno računalo za streaming nedjeljnog bogoslužja?</summary>
       <p>Nije nužno — SplitCam može raditi na istom računalu koje prikazuje slajdove na projektoru ili ProPresenteru, ako stroj ima dovoljno resursa CPU/GPU (preporučuje se Intel i5 8. gen+, 16 GB RAM). Za konfiguracije s 3+ kamera na 1080p preporučuje se zasebno računalo za streaming radi izbjegavanja ispuštenih kadrova.</p>
-      <h4>Kako streamati uživo na YouTube</h4>
+    </details>
     <details class="faq-item">
       <summary>Kako dodati tekstove pjesama u crkveni prijenos?</summary>
       <p>Dodajte Browser Source u SplitCam usmjeren na stranicu s tekstovima. Ako koristite ProPresenter, aktivirajte njegov izlaz Network → Web URL i usmjerite Browser Source SplitCam na tu adresu. Ako koristite OpenLP ili drugu besplatnu opciju, usmjerite na web adresu njegovog scenog zaslona. Tekstovi će se pojavljivati uživo u prijenosu dok hvalbeni zbor mijenja slajdove. Napomena: prijenos tekstova zaštićenih autorskim pravima zahtijeva CCLI Streaming License.</p>

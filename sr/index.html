@@ -89,7 +89,140 @@
 <link rel="manifest" href="../site.webmanifest">
 
 <!-- Structured data for Google rich snippets (price, OS, brand, FAQ in SERP) -->
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://splitcam.com/#organization",
+      "name": "SplitCam",
+      "url": "https://splitcam.com/sr/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://splitcam.com/assets/splitcam.png"
+      },
+      "sameAs": [
+        "https://x.com/splitcamsoft",
+        "https://www.facebook.com/splitcamsoft/",
+        "https://www.youtube.com/channel/UCgFRQMJCK8E00ODT-AZDhEw"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://splitcam.com/sr/#website",
+      "url": "https://splitcam.com/sr/",
+      "name": "SplitCam",
+      "description": "Besplatan studio za multistriming uživo za Windows, macOS, iOS i Android.",
+      "publisher": {
+        "@id": "https://splitcam.com/#organization"
+      },
+      "inLanguage": "sr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SplitCam",
+      "alternateName": "SplitCam — studio za multistriming uživo",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Live Streaming Software",
+      "operatingSystem": "Windows, macOS, iOS, Android",
+      "url": "https://splitcam.com/sr/",
+      "downloadUrl": "https://splitcam.com/download",
+      "publisher": {
+        "@id": "https://splitcam.com/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "softwareVersion": "10.9.2",
+      "datePublished": "2003-01-01",
+      "description": "Besplatan program za striming sa ugrađenom virtuelnom kamerom. Multistriming na Twitch, YouTube, Facebook i Kick istovremeno. Scene, hroma-ključ, audio mikser. Radi na više platformi: Mac, Windows, iOS, Android.",
+      "featureList": [
+        "Multistriming na više platformi (Twitch, YouTube, Facebook, Kick, RTMP)",
+        "Virtuelna kamera za Zoom, Teams, Google Meet",
+        "Scene: miksovanje i prebacivanje",
+        "Hroma-ključ / zeleni ekran",
+        "Audio mikser sa podrškom za VST dodatke",
+        "Radi na više platformi: Windows, macOS, iOS, Android",
+        "Besplatno zauvek, bez vodenog žiga"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://splitcam.com/sr/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Da li je SplitCam zaista besplatan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da — potpuno besplatan za ličnu i komercijalnu upotrebu. Bez vodenog žiga, bez vremenskog ograničenja, bez nagovaranja na \"pro\" verziju. Sve funkcije su otključane od prvog dana."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Na kojim operativnim sistemima radi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SplitCam je dostupan za Windows 10/11, macOS 11+, iOS 16+ (iPhone i iPad) i Android 8+. Dugme \"Preuzmi\" samo prepoznaje tvoj operativni sistem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mogu li da uvezem svoje scene iz OBS Studio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da — SplitCam uvozi kolekcije scena iz OBS-a jednim klikom. Svi tvoji izvori, scene, prelazi i prečice prenose se bez ponovnog podešavanja."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Na koliko platformi mogu da strimujem istovremeno?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Do 8 istovremeno; nema čvrstog ograničenja — praktičnu granicu određuje brzina slanja tvog interneta. Strimovi idu direktno (peer-to-peer) sa tvog računara na svaku platformu, bez servera u oblaku u tom lancu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li će SplitCam usporiti moje igre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ne — SplitCam podrazumevano koristi hardverske enkodere (NVENC za Nvidia, QuickSync za Intel, AMF za AMD). Enkodovanje radi na zasebnim delovima grafičke kartice, ostavljajući procesor i glavna jezgra GPU-a slobodnim za igru. Većina korisnika vidi pad FPS-a od 0–3%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mogu li da koristim SplitCam kao virtuelnu kameru u Zoom-u/Teams-u?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da — SplitCam prikazuje ceo tvoj prenos (sa scenama, efektima, oblogama, AI uklanjanjem pozadine) kao virtuelnu veb-kameru u Zoom-u, Microsoft Teams-u, Google Meet-u, Discord-u i još 60+ aplikacija. Radi i u uspravnom (9:16) i u vodoravnom (16:9) režimu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kakav hardver mi je potreban?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Minimum: Intel Core i3 / AMD Ryzen 3, 4 GB RAM-a, integrisana grafika. Preporučeno za striming igara: Intel Core i5+ / AMD Ryzen 5+, 8 GB RAM-a, zasebna grafička kartica sa podrškom za NVENC/AMF. Radi glatko i na starijim laptopovima."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li SplitCam prikuplja moje podatke?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tvoje scene, snimci i podešavanja strima ostaju na tvom računaru. SplitCam ništa ne otprema u oblak osim ako sam izričito ne uključiš Cloud Projects radi sinhronizacije podešavanja između uređaja."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">

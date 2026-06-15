@@ -82,7 +82,172 @@
 <link rel="manifest" href="../../../site.webmanifest">
 
 <!-- Schema.org: HowTo + BreadcrumbList + SoftwareApplication + FAQPage for rich snippets -->
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SplitCam",
+          "item": "https://splitcam.com/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "YouTube 创作者",
+          "item": "https://splitcam.com/zh/for/youtubers/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "如何在 YouTube 上进行直播",
+      "description": "使用免费的 SplitCam 软件在 YouTube 上开始直播的完整分步指南。",
+      "totalTime": "PT5M",
+      "image": "https://splitcam.com/assets/og-youtubers.png",
+      "inLanguage": "zh",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "SplitCam（免费下载）"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "已开启直播功能的 YouTube 频道"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "摄像头或采集卡"
+        }
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "来自 YouTube Studio 的推流密钥"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "下载 SplitCam",
+          "text": "下载免费的 SplitCam，支持 Windows、macOS、iOS 和 Android。无需注册、无需信用卡、无水印。",
+          "url": "https://splitcam.com/zh/"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "搭建观众看到的画面",
+          "text": "打开 SplitCam，将摄像头、屏幕捕获、游戏捕获或浏览器源添加为场景图层。按你希望观众看到的方式拖动、缩放、叠放。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "从 YouTube 获取推流密钥",
+          "text": "进入 studio.youtube.com → 创建 → 开始直播 → 串流。复制你的推流密钥（不要公开展示——它相当于密码）。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "将 SplitCam 连接到 YouTube",
+          "text": "在 SplitCam 中打开推流设置 → YouTube（已预设）→ 粘贴推流密钥。设置码率（1080p 推荐 4.5 Mbps）。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "点击「开始直播」",
+          "text": "点击 SplitCam 中的「开始直播」按钮。约 10–15 秒后，YouTube Live 预览即会激活。在 YouTube Studio 中点击「开始串流」即可向观众发布。"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SplitCam",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Windows, macOS, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "zh",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "SplitCam 用于 YouTube 直播是免费的吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "是的——永久免费。直播画面无水印，也没有任何功能被锁在付费订阅后面。多平台直播、1080p 60fps、场景切换和虚拟摄像头从第一次启动起就全部可用。你的 YouTube 收益 100% 归你所有。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "YouTube 直播应该设置多少码率？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "1080p 30fps：3000–6000 Kbps。1080p 60fps：4500–9000 Kbps。720p：1500–4000 Kbps。SplitCam 内置 Upload Speed Test，可在开播前检测你的实际上行带宽。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以同时向 YouTube 和 Twitch 推流吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。在推流设置中勾选 YouTube 和 Twitch（或其他任意平台），分别粘贴各平台的推流密钥，然后点击一次「开始直播」——SplitCam 会以点对点方式同时将推流发送到所有勾选的目标平台。无需云端服务器，无月费。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如何在 YouTube 频道上开启直播功能？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "需要已验证的 YouTube 帐号（手机号验证），且过去 90 天内无直播限制。移动端直播需要 50+ 订阅者。电脑端直播无订阅者数量要求——任何已验证帐号均可开播。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "还需要 OBS 吗，还是 SplitCam 可以替代它？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "对大多数 YouTube 创作者来说，SplitCam 已足够独立完成工作：虚拟摄像头、AI 背景、多平台直播和场景切换全部内置，如果你已有 OBS 场景集合，它也可以直接导入。如果你依赖特定的 OBS 插件，继续使用 OBS 可能更方便。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "SplitCam 会影响游戏帧率吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "影响几乎可以忽略不计。SplitCam 将编码任务交给显卡的独立硬件——Nvidia 用 NVENC、Intel 用 QuickSync、AMD 用 AMF，启动时自动选择。CPU 和游戏渲染核心不受影响，绝大多数配置的帧率损失仅为 0–3%。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以用手机在 YouTube 上直播吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以——iOS 和 Android 版 SplitCam 支持直接从手机在 YouTube 上开播。YouTube 移动端直播需要频道拥有 50+ 订阅者。移动端默认支持 9:16 竖屏画布，非常适合 YouTube Shorts 直播。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "配置 YouTube 直播需要多长时间？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "首次配置约需 5 分钟——安装 SplitCam、添加摄像头、填入 YouTube 推流密钥。之后所有设置均已保存，后续开播几乎即时完成：打开应用，点击「开始直播」，在 YouTube Studio 中确认即可。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -81,7 +81,180 @@
 <link rel="manifest" href="../../../site.webmanifest">
 
 <!-- Schema.org: HowTo + BreadcrumbList + SoftwareApplication + FAQPage for rich snippets -->
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SplitCam",
+          "item": "https://splitcam.com/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "教会",
+          "item": "https://splitcam.com/zh/for/churches/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "如何直播主日礼拜",
+      "description": "使用免费的 SplitCam 软件，将主日礼拜同时直播到 Facebook、YouTube 和教会网站的完整分步指南。",
+      "totalTime": "PT10M",
+      "image": "https://splitcam.com/assets/og-church.png",
+      "inLanguage": "zh",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "SplitCam（免费下载）"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "一台或多台摄像机（网络摄像头、通过采集卡接入的单反，或手机）"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "音频源（调音台或 USB 麦克风）"
+        }
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "已开通直播权限的 Facebook 主页"
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "已开启直播功能的 YouTube 频道"
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "各平台的推流密钥"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "在音控台电脑上安装 SplitCam",
+          "text": "下载免费的 SplitCam，支持 Windows 或 macOS。无需注册、无需信用卡、无水印。可运行在负责放映幻灯片的教会电脑上。",
+          "url": "https://splitcam.com/zh/"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "将摄像机作为场景图层添加",
+          "text": "连接每台摄像机（网络摄像头、通过 HDMI 采集卡接入的单反，或作为无线机位的手机）并添加为视频源。搭建场景：全景 / 讲台 / 诗班 / 歌词幻灯片。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "接入调音台的音频",
+          "text": "通过 USB 音频接口将教会调音台连接到电脑。在 SplitCam 中将其选为音频源。会众在现场听到的声音，就是你直播流获得的声音。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "添加字幕和歌词",
+          "text": "为讲员姓名和讲道标题添加文字叠加。歌词方面，添加一个 Browser Source 指向 ProPresenter 的网络输出（或任意歌词网页）——歌词即可实时显示在直播画面中。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "同时推流到 Facebook + YouTube + 教会网站",
+          "text": "在推流设置中，粘贴 Facebook Live、YouTube Live 和教会网站的 RTMP 推流密钥。勾选这三项，点击「开始直播」——所有平台以点对点方式同时接收直播流。"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SplitCam",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Windows, macOS, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "zh",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "教会直播最好的免费软件是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SplitCam 是教会最佳免费选项之一：内置多平台推流（同时推到 Facebook + YouTube + 教会网站）、多摄像机场景切换、Browser Source 歌词叠加，无水印、无订阅费。OBS Studio 也免费，但多平台推流需要插件，对志愿者操作员来说上手较难。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我能同时将主日礼拜直播到 Facebook 和 YouTube 吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以——SplitCam 内置多平台推流。填入 Facebook Live 和 YouTube Live 的推流密钥，点击一次「开始直播」，两个平台同时接收直播流。同时还可以通过 RTMP 推送到教会自己的网站。直播流从教会电脑点对点直传，无需云端中转，也没有月费。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "教会直播软件要多少钱？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SplitCam 100% 免费，无水印，不限时长。付费选项参考：vMix Basic HD 一次性 $60（最多 4 路输入，不支持多平台推流）、vMix Pro 一次性 $1200（完整功能）、ProPresenter $499+（侧重敬拜展示，不是完整直播编码器）、Resi $99–$249/月（云端）、BoxCast $99–$499/月。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "主日礼拜直播需要单独的电脑吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不一定——如果机器性能足够（建议 Intel i5 第 8 代及以上 + 16 GB RAM），SplitCam 可以跑在同一台运行幻灯片或 ProPresenter 的电脑上。3 台及以上摄像机 1080p 配置建议使用独立直播电脑，以避免丢帧。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如何在教会直播中添加歌词？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "在 SplitCam 中添加 Browser Source，指向歌词页面。如果使用 ProPresenter，启用其 Network → Web URL 输出，将 SplitCam 的 Browser Source 指向该地址。如果使用 OpenLP 等免费软件，指向其舞台显示的网页地址。诗班切换幻灯片时，歌词会实时出现在直播画面中。注意：直播有版权保护的歌词需要 CCLI Streaming License。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "教会直播可以使用多台摄像机吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以——SplitCam 支持无限数量的摄像机作为场景视频源。将每台摄像机接入电脑（USB 网络摄像头、Elgato Cam Link 等 HDMI 采集卡接 DSLR，或通过 SplitCam 手机 App 作为无线第二机位）。创建全景、讲台近景、诗班、歌词幻灯片等场景，礼拜时用快捷键（F1、F2、F3……）快速切换。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "SplitCam 能在教会的旧电脑上运行吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SplitCam 支持 Windows 10/11 和 macOS 11+，硬件要求不高。多摄像机 1080p 直播建议 Intel i5 第 8 代或 Ryzen 5 + 16 GB RAM；单摄像机 720p 直播，i3 / 8 GB RAM 的旧笔记本也能胜任。硬件编码（NVENC / QuickSync / AMF）可大幅降低 CPU 负载。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "SplitCam 用于主日礼拜直播够稳定吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "够——SplitCam 自 2003 年持续开发，被全球各地的教会和电视台使用。编码器采用硬件加速保障稳定性，状态监视器实时显示丢帧情况，多平台推流系统点对点直传——某个平台中断不影响其他平台。建议在周日首次直播前的周六进行一次彩排。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
