@@ -1,0 +1,13 @@
+URL,Target URL,Status,Preserve query string,Include subdomains,Subpath matching,Preserve path suffix
+https://splitcam.com/download.html,https://splitcam.com/products/,301,true,false,false,false
+https://splitcam.com/downloadnew,https://splitcam.com/products/,301,true,false,false,false
+https://splitcam.com/SplitCamSetup.exe,https://splitcam.com/products/,301,false,false,false,false
+https://splitcam.com/russian/,https://splitcam.com/ru/,301,true,false,true,false
+https://splitcam.com/german/,https://splitcam.com/de/,301,true,false,true,false
+https://splitcam.com/aboutus.html,https://splitcam.com/contact-us,301,true,false,false,false
+https://splitcam.com/cgi-sys/suspendedpage.cgi,https://splitcam.com/,301,false,false,false,false
+https://splitcam.com/more-plugins,https://splitcam.com/products/,301,true,false,false,false
+https://splitcam.com/splitcam-changes-win,https://splitcam.com/changelog/,301,true,false,false,false
+https://splitcam.com/splitcam-changes-mac,https://splitcam.com/changelog/,301,true,false,false,false
+https://splitcam.com/tour,https://splitcam.com/products/,301,true,false,true,false
+https://splitcam.com/download,https://splitcam.com/products/,301,true,false,false,false
