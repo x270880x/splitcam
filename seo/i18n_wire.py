@@ -22,13 +22,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHECK = "--check" in sys.argv
 
 # Page paths that participate in the locale system (translatable set).
-PAGE_PATHS = ["", "products/", "virtual-camera/", "multistreaming/", "alternatives/",
+PAGE_PATHS = ["", "products/", "download/", "virtual-camera/", "multistreaming/", "alternatives/",
               "alternatives/obs/", "for/", "for/youtubers/", "for/churches/", "help/",
               "changelog/", "privacy-policy/", "license-agreement/"]
 # changelog/privacy/license sit at priority 0.6/0.3; rest from i18n weighting.
-PRIO = {"": "1.0", "multistreaming/": "0.9", "virtual-camera/": "0.9", "products/": "0.9",
+PRIO = {"": "1.0", "multistreaming/": "0.9", "virtual-camera/": "0.9", "products/": "0.9", "download/": "0.9",
         "changelog/": "0.6", "help/": "0.6", "privacy-policy/": "0.3", "license-agreement/": "0.3"}
-FREQ = {"": "weekly", "changelog/": "weekly", "privacy-policy/": "yearly", "license-agreement/": "yearly"}
+FREQ = {"": "weekly", "download/": "weekly", "changelog/": "weekly", "privacy-policy/": "yearly", "license-agreement/": "yearly"}
 LASTMOD = "2026-06-13"
 
 
@@ -81,8 +81,14 @@ def wire_file(locale, page, avail):
     s = re.sub(rf'<html lang="{re.escape(locale)}"[^>]*>',
                f'<html lang="{locale}"{dir_attr}>', s, count=1)
 
-    # 1. dropdown switcher — both nav-right and #nav-mobile copies
-    dd = i18n.dropdown(locale, avail, page, depth)
+    # 1. dropdown switcher — both nav-right and #nav-mobile copies. For a page that
+    # is not present in every locale (e.g. EN-only /download/), point the switcher at
+    # each locale's homepage instead of a non-existent localized sibling.
+    home_avail = available("")
+    if len(avail) < len(home_avail):
+        dd = i18n.dropdown(locale, home_avail, "", depth)
+    else:
+        dd = i18n.dropdown(locale, avail, page, depth)
     # marked replacement (rerun) first
     if re.search(r"<!--LD-->.*?<!--/LD-->", s, re.DOTALL):
         s = re.sub(r"<!--LD-->.*?<!--/LD-->", lambda _: region("LD", dd), s, flags=re.DOTALL)
