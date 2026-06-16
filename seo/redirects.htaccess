@@ -6,29 +6,29 @@
 # (so these win before WP's front-controller rewrite). Anchored RedirectMatch =
 # exact, no accidental prefix catches.
 #
+# KEY DECISION — /download is KEPT, not redirected:
+#   /download has 556 referring domains + traffic + rankings (crown jewel) and the
+#   word "download" is the literal search intent. 301'ing it to /products/ would
+#   bleed equity for no reason. So: KEEP /download as a live page (serve the new
+#   Win/Mac/iOS/Android download content there), and point the dead download URLs
+#   AT /download. /products/ stays as the product-overview hub (different intent —
+#   keep their on-page targeting distinct to avoid cannibalization).
+#
 # RECONCILED TARGETS (doc said /features/ and /whats-new/ — neither is built):
 #   /tour, /more-plugins      -> /products/   (was /features/)
 #   /splitcam-changes-win|mac -> /changelog/  (was /whats-new/)
 #
-# DECISIONS BAKED IN:
-#   * /download (556 refdomains, crown jewel): set to /products/ here as a safe
-#     default since the new site has no /download page. HIGHER-EQUITY OPTION:
-#     keep /download as its own page (serve the products/download content there)
-#     and DELETE the /download line below — a 301 of a 556-rd URL needlessly
-#     bleeds ~10% equity.
-#   * Adult-cam cluster (streamray/onlyfans/stripchat, ru bongacams/stripchat):
-#     NOT included — already redirecting on the live host.
-#   * /features (TIER-1, ranks "splitcam"): keep & rebuild ideally; uncomment the
-#     line below only if it is removed.
+# NOT INCLUDED: adult-cam cluster (streamray/onlyfans/stripchat, ru bongacams/
+#   stripchat) — already redirecting on the live host.
 #
-# KEEP (no redirect — same URL, content swapped or left as-is): / , /download*,
+# KEEP (no redirect — same URL): / , /download (see above), /products/,
 #   /help + /help/* (753 rd hub), /blog/, /forum/, /contact-us, legal pages,
 #   installers /win-download/SplitCamSetup.msi(_x64).
 
 # --- dead URLs leaking equity (apply now) ---
-RedirectMatch 301 ^/download\.html$                 https://splitcam.com/products/
-RedirectMatch 301 ^/downloadnew/?$                  https://splitcam.com/products/
-RedirectMatch 301 ^/SplitCamSetup\.exe$             https://splitcam.com/products/
+RedirectMatch 301 ^/download\.html$                 https://splitcam.com/download
+RedirectMatch 301 ^/downloadnew/?$                  https://splitcam.com/download
+RedirectMatch 301 ^/SplitCamSetup\.exe$             https://splitcam.com/download
 RedirectMatch 301 ^/russian(/.*)?$                  https://splitcam.com/ru/
 RedirectMatch 301 ^/german/?$                       https://splitcam.com/de/
 RedirectMatch 301 ^/aboutus\.html$                  https://splitcam.com/contact-us
@@ -38,7 +38,6 @@ RedirectMatch 301 ^/cgi-sys/suspendedpage\.cgi$     https://splitcam.com/
 RedirectMatch 301 ^/more-plugins/?$                 https://splitcam.com/products/
 RedirectMatch 301 ^/splitcam-changes-(win|mac)/?$   https://splitcam.com/changelog/
 RedirectMatch 301 ^/tour(/.*)?$                     https://splitcam.com/products/
-RedirectMatch 301 ^/download/?$                     https://splitcam.com/products/
 
 # --- optional (uncomment only if these are removed, not rebuilt) ---
 # RedirectMatch 301 ^/features/?$                    https://splitcam.com/products/
