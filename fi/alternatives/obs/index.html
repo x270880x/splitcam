@@ -153,7 +153,7 @@
           "@type": "HowToStep",
           "position": 3,
           "name": "Kytke lähetysavaimet ja mene suoraan lähetykseen",
-          "text": "Avaa SplitCamissä Stream Settings. Liitä käyttämiesi alustojen lähetysavaimet. Jos haluat lähettää useaan alustaan kerralla, rastita kaikki — lisäosaa ei tarvita. Klikkaa Go Live."
+          "text": "Avaa SplitCamissa Stream Settings. Liitä käyttämiesi alustojen lähetysavaimet. Jos haluat lähettää useaan alustaan kerralla, rastita kaikki — lisäosaa ei tarvita. Klikkaa Go Live."
         }
       ]
     },
@@ -222,7 +222,7 @@
           "name": "Voinko tuoda OBS-kohtaukseni SplitCamiin?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Kyllä — SplitCamissä on OBS Project Import yhdellä klikkauksella. Osoita se OBS:n kohtauskokoelman JSON-tiedostoon, klikkaa Import, ja kaikki kohtaukset, lähteet ja siirtymät ilmestyvät SplitCamiin. Sinun ei tarvitse rakentaa kaikkea alusta. Jos päätät, että OBS sopii sinulle paremmin, alkuperäiset OBS-tiedostosi pysyvät koskemattomina — siirtyminen on peruutettavissa."
+            "text": "Kyllä — SplitCamissa on OBS Project Import yhdellä klikkauksella. Osoita se OBS:n kohtauskokoelman JSON-tiedostoon, klikkaa Import, ja kaikki kohtaukset, lähteet ja siirtymät ilmestyvät SplitCamiin. Sinun ei tarvitse rakentaa kaikkea alusta. Jos päätät, että OBS sopii sinulle paremmin, alkuperäiset OBS-tiedostosi pysyvät koskemattomina — siirtyminen on peruutettavissa."
           }
         },
         {
@@ -230,7 +230,7 @@
           "name": "Toimiiko SplitCam Macilla kuten OBS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Kyllä — SplitCam toimii natiivisti macOS 11+ -käyttöjärjestelmässä (Big Sur ja uudemmat), mukaan lukien Apple Silicon (M1/M2/M3) ja Intel-Macit. macOS-versio tukee virtuaalikameran ulostuloa Zoomiin/Teamsiin/Meetiin/Discordiin/FaceTimeen, laitteistopohjaista enkoodausta VideoToolboxin kautta sekä koko ominaisuusvalikoimaa monilähetys ja tekoälytausta mukaan lukien."
+            "text": "Kyllä — SplitCam toimii natiivisti macOS 11+ -käyttöjärjestelmässä (Big Sur ja uudemmat), mukaan lukien Apple Silicon (M1/M2/M3) ja Intel-Macit. macOS-versio tukee virtuaalikameran ulostuloa Zoomiin/Teamsiin/Meetiin/Discordiin/FaceTimeen, laitteistopohjaista koodausta VideoToolboxin kautta sekä koko ominaisuusvalikoimaa monilähetys ja tekoälytausta mukaan lukien."
           }
         },
         {
@@ -238,7 +238,7 @@
           "name": "Kuluttaako SplitCam vähemmän suoritintehoa kuin OBS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yleensä kyllä, kun molemmat käyttävät laitteistopohjaista enkoodausta (NVENC Nvidialla, QuickSync Intelillä, AMF AMD:llä, VideoToolbox macOS:ssä). SplitCam tunnistaa parhaan laitteistoenkooderin automaattisesti; OBS vaatii manuaalisen määrityksen. Jos olet ajanut OBS:ää x264-ohjelmistoenkooderilla, siirtyminen SplitCamiin (tai laitteistoenkoodauksen käyttöönotto OBS:ssä) tyypillisesti pudottaa suorittimen kuormituksen 30–60 prosentista alle 10 prosenttiin."
+            "text": "Yleensä kyllä, kun molemmat käyttävät laitteistopohjaista koodausta (NVENC Nvidialla, QuickSync Intelillä, AMF AMD:llä, VideoToolbox macOS:ssä). SplitCam tunnistaa parhaan laitteistoenkooderin automaattisesti; OBS vaatii manuaalisen määrityksen. Jos olet ajanut OBS:ää x264-ohjelmistoenkooderilla, siirtyminen SplitCamiin (tai laitteistokoodauksen käyttöönotto OBS:ssä) tyypillisesti pudottaa suorittimen kuormituksen 30–60 prosentista alle 10 prosenttiin."
           }
         },
         {
@@ -246,15 +246,15 @@
           "name": "Onko SplitCam avointa lähdekoodia kuten OBS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ei — SplitCam on suljetun lähdekoodin omisteinen ilmaisohjelma. OBS Studio on avointa lähdekoodia GPLv2-lisenssillä. Jos avoin ja tarkastettavissa oleva koodi on ehdoton vaatimus (yrityskäytäntö, tietoturvatarkastus, kontribuointimalli), pysy OBS:ssä tai katso Meld Studiota. SplitCam on ilmainen kuin ilmaiskaljat, ei ilmainen kuin sananvapaus."
+            "text": "Ei — SplitCam on suljetun lähdekoodin omisteinen ilmaisohjelma. OBS Studio on avointa lähdekoodia GPLv2-lisenssillä. Jos avoin ja tarkastettavissa oleva koodi on ehdoton vaatimus (yrityskäytäntö, tietoturvatarkastus, osallistumismalli), pysy OBS:ssä tai katso Meld Studiota. SplitCam on ilmaista käyttää, mutta sen lähdekoodi ei ole avointa."
           }
         },
         {
           "@type": "Question",
-          "name": "Onko SplitCamissä lisäosia kuten OBS:ssä?",
+          "name": "Onko SplitCamissa lisäosia kuten OBS:ssä?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SplitCamillä on pienempi lisäosaekosysteemi kuin OBS:llä (jolla on 4000+ yhteisön lisäosaa). Useimmat lisäosat, joita OBS:ään asennetaan, ovat kuitenkin ominaisuuksia, jotka SplitCam sisältää jo natiivisti: monilähetys, virtuaalikamera, NDI, tekoälytausta, selainlähde, kauneussuodattimet, toistopuskuri. Jos et tarvitse OBS-kohtaisia erikoislisäosia, et ehkä tarvitse lisäosia lainkaan SplitCamissä."
+            "text": "SplitCamilla on pienempi lisäosaekosysteemi kuin OBS:llä (jolla on 4000+ yhteisön lisäosaa). Useimmat lisäosat, joita OBS:ään asennetaan, ovat kuitenkin ominaisuuksia, jotka SplitCam sisältää jo natiivisti: monilähetys, virtuaalikamera, NDI, tekoälytausta, selainlähde, kauneussuodattimet, toistopuskuri. Jos et tarvitse OBS-kohtaisia erikoislisäosia, et ehkä tarvitse lisäosia lainkaan SplitCamissa."
           }
         }
       ]
@@ -557,7 +557,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <ul>
         <li><strong>Sisäänrakennettu monilähetys</strong> — Multiple RTMP Outputs -lisäosaa ei tarvita.</li>
         <li><strong>Sisäänrakennettu tekoälypohjainen taustanpoisto</strong> — Background Removal -lisäosaa ei tarvita.</li>
-        <li><strong>Sisäänrakennettu virtuaalikamera tekoälyllä</strong> — toimii Zoomissa, Teamsissä, Meetissä ja Discordissa.</li>
+        <li><strong>Sisäänrakennettu virtuaalikamera tekoälyllä</strong> — toimii Zoomissa, Teamsissa, Meetissä ja Discordissa.</li>
         <li><strong>Natiivit iOS- ja Android-sovellukset</strong> — OBS:ssä ei ole mobiilia.</li>
         <li><strong>OBS-kohtausten tuonti yhdellä klikkauksella</strong> — siirrä valmis kokoonpanosi ilman uudelleenrakentamista.</li>
       </ul>
@@ -583,7 +583,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <div class="reason">
       <div class="reason-num">Syy 03</div>
       <h3>Korkea kuormitus vanhemmilla koneilla</h3>
-      <p>Oletuksena OBS valitsee usein ohjelmistopohjaisen <code class="step-code">x264</code>-enkooderin, joka voi kuormittaa suoritinta 40–60 % 1080p-lähetyksen aikana. Laitteistoenkoodaus korjaa tämän, mutta ei ole päällä oletuksena.</p>
+      <p>Oletuksena OBS valitsee usein ohjelmistopohjaisen <code class="step-code">x264</code>-enkooderin, joka voi kuormittaa suoritinta 40–60 % 1080p-lähetyksen aikana. Laitteistokoodaus korjaa tämän, mutta ei ole päällä oletuksena.</p>
     </div>
     <div class="reason">
       <div class="reason-num">Syy 04</div>
@@ -612,7 +612,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="adv-ico">📡</div>
       <div class="adv-body">
         <h3>Sisäänrakennettu monilähetys</h3>
-        <p>Lähetä YouTubeen + Twitchiin + Facebookiin + Kickiin + TikTokiin + omaan RTMP:ään, <strong>kaikki yhdestä enkoodauksesta</strong>. Rastita ruudut, liitä avaimet, klikkaa Go Live. Jokainen lähetys kulkee suoraan tietokoneeltasi kullekin alustalle — mitään ei välitetä maksullisen pilvipalvelun kautta. 84+ alustaa esimääritettynä.</p>
+        <p>Lähetä YouTubeen + Twitchiin + Facebookiin + Kickiin + TikTokiin + omaan RTMP:ään, <strong>kaikki yhdestä koodauksesta</strong>. Rastita ruudut, liitä avaimet, klikkaa Go Live. Jokainen lähetys kulkee suoraan tietokoneeltasi kullekin alustalle — mitään ei välitetä maksullisen pilvipalvelun kautta. 84+ alustaa esimääritettynä.</p>
         <span class="vs">vaatii Multiple RTMP Outputs -lisäosan</span>
       </div>
     </div>
@@ -628,7 +628,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="adv-ico">🎥</div>
       <div class="adv-body">
         <h3>Virtuaalikamera tekoälyominaisuuksilla</h3>
-        <p>Käytä SplitCam-kohtaustasi (tekoälytaustalla, kauneussuodattimilla ja overlayllä) <strong>verkkokamerana Zoomissa, Teamsissä, Meetissä, Discordissa ja FaceTimessä</strong>. OBS:ssä on myös virtuaalikamera, mutta siihen ei sovelleta tekoälytaustaa tai kauneuskerrosta.</p>
+        <p>Käytä SplitCam-kohtaustasi (tekoälytaustalla, kauneussuodattimilla ja overlayllä) <strong>verkkokamerana Zoomissa, Teamsissa, Meetissä, Discordissa ja FaceTimessä</strong>. OBS:ssä on myös virtuaalikamera, mutta siihen ei sovelleta tekoälytaustaa tai kauneuskerrosta.</p>
         <span class="vs">perustason virtuaalikamera, ei tekoälyä</span>
       </div>
     </div>
@@ -643,8 +643,8 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <div class="adv">
       <div class="adv-ico">⚡</div>
       <div class="adv-body">
-        <h3>Laitteistoenkoodaus tunnistetaan automaattisesti</h3>
-        <p>SplitCam valitsee <strong>NVENC / QuickSync / AMF / VideoToolbox</strong> laitteistosi mukaan ensimmäisellä käynnistyksellä. Enkoodaus siirtyy näytönohjaimen piirille. Suoritin pysyy vapaana pelille tai sovellukselle, jota striimaat.</p>
+        <h3>Laitteistokoodaus tunnistetaan automaattisesti</h3>
+        <p>SplitCam valitsee <strong>NVENC / QuickSync / AMF / VideoToolbox</strong> laitteistosi mukaan ensimmäisellä käynnistyksellä. Koodaus siirtyy näytönohjaimen piirille. Suoritin pysyy vapaana pelille tai sovellukselle, jota striimaat.</p>
         <span class="vs">oletuksena x264-ohjelmistoenkooderi</span>
       </div>
     </div>
@@ -665,20 +665,20 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <div class="bonus-h">Rehellisesti: missä OBS yhä voittaa SplitCamin</div>
     <p class="bonus-p">SplitCam on useimmille striimaajille helpompi jokapäiväinen valinta. Mutta jos jokin näistä on sinulle tärkeä, OBS on yhä oikea valinta:</p>
     <ul>
-      <li><strong>Avoin lähdekoodi</strong> — OBS on GPLv2 ja sen lähdekoodi on julkisesti GitHubissa. SplitCam on suljetun lähdekoodin ilmaisohjelma. Jos tarvitset tarkastettavissa olevaa koodia yrityksen tietoturvatarkastusta varten tai kontribuoidaksesi takaisin, OBS voittaa.</li>
+      <li><strong>Avoin lähdekoodi</strong> — OBS on GPLv2 ja sen lähdekoodi on julkisesti GitHubissa. SplitCam on suljetun lähdekoodin ilmaisohjelma. Jos tarvitset tarkastettavissa olevaa koodia yrityksen tietoturvatarkastusta varten tai osallistuaksesi kehitykseen, OBS voittaa.</li>
       <li><strong>Valtava lisäosaekosysteemi</strong> — 4000+ yhteisön OBS-lisäosaa kattaa harvinaiset käyttötapaukset (mukautetut NDI-variantit, erikoinen kaappauslaitteisto, labra-/tutkimusintegraatiot). SplitCamin valikoima on pienempi.</li>
       <li><strong>Linux-tuki</strong> — OBS toimii natiivisti Linuxissa. SplitCam ei (vielä) — vain Windows, macOS, iOS, Android.</li>
       <li><strong>Syvemmät yhteisön opetusvideot</strong> — OBS on ollut olemassa pidempään, joten videotutoriaalit, Reddit-ketjut ja Discord-palvelimet kattavat jokaisen erikoistapauksen. SplitCamin yhteisö on pienempi, joskin kasvava.</li>
       <li><strong>Tehokäyttäjän tuntuma</strong> — jos aidosti rakastat OBS:n syvyyttä ja muokattavuutta ja olet jo panostanut käyttöönottoaikaan, siirtyminen tuo vähemmän hyötyä.</li>
     </ul>
-    <p class="bonus-p" style="margin-top:14px">Jos mikään yllä olevista ei ole sinulle ratkaisevaa, SplitCamillä pääset lähetykseen nopeammin vähemmällä määrityksellä. <strong>Kokeile molempia — OBS Project Import tarkoittaa, että vertailu maksaa sinulle noin 2 minuuttia.</strong></p>
+    <p class="bonus-p" style="margin-top:14px">Jos mikään yllä olevista ei ole sinulle ratkaisevaa, SplitCamilla pääset lähetykseen nopeammin vähemmällä määrityksellä. <strong>Kokeile molempia — OBS Project Import tarkoittaa, että vertailu maksaa sinulle noin 2 minuuttia.</strong></p>
   </div>
 </section>
 
 <!-- HOW TO MIGRATE -->
 <section class="section">
   <h2 class="sec-h">Kuinka siirtyä OBS:stä SplitCamiin kolmessa vaiheessa</h2>
-  <p class="sec-p">Vahingoittamatonta. OBS-asennuksesi ja kohtaustiedostosi pysyvät täsmälleen paikoillaan.</p>
+  <p class="sec-p">Vahingoittamaton siirtyminen. OBS-asennuksesi ja kohtaustiedostosi pysyvät täsmälleen paikoillaan.</p>
   <div class="steps">
     <div class="step">
       <div class="step-num">1</div>
@@ -702,7 +702,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="step-num">3</div>
       <div class="step-body">
         <div class="step-h">Kytke lähetysavaimet ja mene suoraan lähetykseen</div>
-        <p class="step-p">Avaa SplitCamissä <strong>Stream Settings</strong>. Liitä käyttämiesi alustojen lähetysavaimet. Jos haluat lähettää useaan alustaan kerralla, rastita kaikki — lisäosaa ei tarvita. Klikkaa <strong>Go Live</strong>.</p>
+        <p class="step-p">Avaa SplitCamissa <strong>Stream Settings</strong>. Liitä käyttämiesi alustojen lähetysavaimet. Jos haluat lähettää useaan alustaan kerralla, rastita kaikki — lisäosaa ei tarvita. Klikkaa <strong>Go Live</strong>.</p>
         <div class="step-tip"><b>Kokonaisaika:</b> noin 5 minuuttia, jos OBS-kokoonpanosi on keskitasoa monimutkainen. Jos sinulla on raskaita lisäosariippuvuuksia OBS:ssä (advanced scene switcher, OBS WebSocket -integraatiot), varaa lisäaikaa SplitCamin natiivien vastineiden arviointiin.</div>
       </div>
     </div>
@@ -727,7 +727,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>OBS Project Import</td><td class="yes">✓ Yksi klikkaus</td><td class="yes">N/A</td></tr>
       <tr><td>Kohtausten vaihto + siirtymät</td><td class="yes">✓ Sisäänrakennettu (Fade/Luma/Slide)</td><td class="yes">✓ Sisäänrakennettu (Fade/Cut)</td></tr>
       <tr><td>Selainlähde</td><td class="yes">✓ Sisäänrakennettu</td><td class="yes">✓ Sisäänrakennettu</td></tr>
-      <tr><td>Laitteistoenkoodaus (NVENC/QuickSync/AMF)</td><td class="yes">Tunnistetaan automaattisesti</td><td class="meh">Manuaalinen määritys</td></tr>
+      <tr><td>Laitteistokoodaus (NVENC/QuickSync/AMF)</td><td class="yes">Tunnistetaan automaattisesti</td><td class="meh">Manuaalinen määritys</td></tr>
       <tr><td>Mobiilisovellukset (iOS + Android)</td><td class="yes">✓ Natiivit</td><td class="no">Ei mobiilia</td></tr>
       <tr><td>Puhelin ylimääräisenä kamerana</td><td class="yes">✓ Sisäänrakennettu</td><td class="meh">NDI HX tai kolmas osapuoli</td></tr>
       <tr><td>Linux-tuki</td><td class="no">Ei saatavilla</td><td class="yes">✓ Natiivi</td></tr>
@@ -799,23 +799,23 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </details>
     <details class="faq-item">
       <summary>Voinko tuoda OBS-kohtaukseni SplitCamiin?</summary>
-      <p>Kyllä — SplitCamissä on OBS Project Import yhdellä klikkauksella. Osoita se OBS:n kohtauskokoelman JSON-tiedostoon, klikkaa Import, ja kaikki kohtaukset, lähteet ja siirtymät ilmestyvät SplitCamiin. Sinun ei tarvitse rakentaa kaikkea alusta. Jos päätät, että OBS sopii sinulle paremmin, alkuperäiset OBS-tiedostosi pysyvät koskemattomina — siirtyminen on peruutettavissa.</p>
+      <p>Kyllä — SplitCamissa on OBS Project Import yhdellä klikkauksella. Osoita se OBS:n kohtauskokoelman JSON-tiedostoon, klikkaa Import, ja kaikki kohtaukset, lähteet ja siirtymät ilmestyvät SplitCamiin. Sinun ei tarvitse rakentaa kaikkea alusta. Jos päätät, että OBS sopii sinulle paremmin, alkuperäiset OBS-tiedostosi pysyvät koskemattomina — siirtyminen on peruutettavissa.</p>
     </details>
     <details class="faq-item">
       <summary>Toimiiko SplitCam Macilla kuten OBS?</summary>
-      <p>Kyllä — SplitCam toimii natiivisti macOS 11+ -käyttöjärjestelmässä (Big Sur ja uudemmat), mukaan lukien Apple Silicon (M1/M2/M3) ja Intel-Macit. macOS-versio tukee virtuaalikameran ulostuloa Zoomiin/Teamsiin/Meetiin/Discordiin/FaceTimeen, laitteistopohjaista enkoodausta VideoToolboxin kautta sekä koko ominaisuusvalikoimaa monilähetys ja tekoälytausta mukaan lukien.</p>
+      <p>Kyllä — SplitCam toimii natiivisti macOS 11+ -käyttöjärjestelmässä (Big Sur ja uudemmat), mukaan lukien Apple Silicon (M1/M2/M3) ja Intel-Macit. macOS-versio tukee virtuaalikameran ulostuloa Zoomiin/Teamsiin/Meetiin/Discordiin/FaceTimeen, laitteistopohjaista koodausta VideoToolboxin kautta sekä koko ominaisuusvalikoimaa monilähetys ja tekoälytausta mukaan lukien.</p>
     </details>
     <details class="faq-item">
       <summary>Kuluttaako SplitCam vähemmän suoritintehoa kuin OBS?</summary>
-      <p>Yleensä kyllä, kun molemmat käyttävät laitteistopohjaista enkoodausta (NVENC Nvidialla, QuickSync Intelillä, AMF AMD:llä, VideoToolbox macOS:ssä). SplitCam tunnistaa parhaan laitteistoenkooderin automaattisesti; OBS vaatii manuaalisen määrityksen. Jos olet ajanut OBS:ää x264-ohjelmistoenkooderilla, siirtyminen SplitCamiin (tai laitteistoenkoodauksen käyttöönotto OBS:ssä) tyypillisesti pudottaa suorittimen kuormituksen 30–60 prosentista alle 10 prosenttiin.</p>
+      <p>Yleensä kyllä, kun molemmat käyttävät laitteistopohjaista koodausta (NVENC Nvidialla, QuickSync Intelillä, AMF AMD:llä, VideoToolbox macOS:ssä). SplitCam tunnistaa parhaan laitteistoenkooderin automaattisesti; OBS vaatii manuaalisen määrityksen. Jos olet ajanut OBS:ää x264-ohjelmistoenkooderilla, siirtyminen SplitCamiin (tai laitteistokoodauksen käyttöönotto OBS:ssä) tyypillisesti pudottaa suorittimen kuormituksen 30–60 prosentista alle 10 prosenttiin.</p>
     </details>
     <details class="faq-item">
       <summary>Onko SplitCam avointa lähdekoodia kuten OBS?</summary>
-      <p>Ei — SplitCam on suljetun lähdekoodin omisteinen ilmaisohjelma. OBS Studio on avointa lähdekoodia GPLv2-lisenssillä. Jos avoin ja tarkastettavissa oleva koodi on ehdoton vaatimus (yrityskäytäntö, tietoturvatarkastus, kontribuointimalli), pysy OBS:ssä tai katso Meld Studiota. SplitCam on ilmainen kuin ilmaiskaljat, ei ilmainen kuin sananvapaus.</p>
+      <p>Ei — SplitCam on suljetun lähdekoodin omisteinen ilmaisohjelma. OBS Studio on avointa lähdekoodia GPLv2-lisenssillä. Jos avoin ja tarkastettavissa oleva koodi on ehdoton vaatimus (yrityskäytäntö, tietoturvatarkastus, osallistumismalli), pysy OBS:ssä tai katso Meld Studiota. SplitCam on ilmaista käyttää, mutta sen lähdekoodi ei ole avointa.</p>
     </details>
     <details class="faq-item">
-      <summary>Onko SplitCamissä lisäosia kuten OBS:ssä?</summary>
-      <p>SplitCamillä on pienempi lisäosaekosysteemi kuin OBS:llä (jolla on 4000+ yhteisön lisäosaa). Useimmat lisäosat, joita OBS:ään asennetaan, ovat kuitenkin ominaisuuksia, jotka SplitCam sisältää jo natiivisti: monilähetys, virtuaalikamera, NDI, tekoälytausta, selainlähde, kauneussuodattimet, toistopuskuri. Jos et tarvitse OBS-kohtaisia erikoislisäosia, et ehkä tarvitse lisäosia lainkaan SplitCamissä.</p>
+      <summary>Onko SplitCamissa lisäosia kuten OBS:ssä?</summary>
+      <p>SplitCamilla on pienempi lisäosaekosysteemi kuin OBS:llä (jolla on 4000+ yhteisön lisäosaa). Useimmat lisäosat, joita OBS:ään asennetaan, ovat kuitenkin ominaisuuksia, jotka SplitCam sisältää jo natiivisti: monilähetys, virtuaalikamera, NDI, tekoälytausta, selainlähde, kauneussuodattimet, toistopuskuri. Jos et tarvitse OBS-kohtaisia erikoislisäosia, et ehkä tarvitse lisäosia lainkaan SplitCamissa.</p>
     </details>
   </div>
 </section>
@@ -844,7 +844,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
 <!-- CTA -->
 <section class="cta-block">
-  <h2>Kokeile SplitCamiä — se tuo OBS-kohtauksesi</h2>
+  <h2>Kokeile SplitCamia — se tuo OBS-kohtauksesi</h2>
   <p>Ilmainen lataus. Ei korttia, ei rekisteröitymistä, ei vesileimaa. Saat täyden sovelluksen heti ensimmäisellä asennuksella. OBS-asennuksesi pysyy täsmälleen paikoillaan — siirtyminen on peruutettavissa.</p>
   <div class="cta-btns" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
     <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Lataa ilmaiseksi</a>
