@@ -1,0 +1,77 @@
+{
+  "locale": "ru",
+  "language": "Russian",
+  "overall": "good",
+  "review_date": "2026-06-16",
+  "note": "false_positive_extraction_artifact = words looked glued in the text dump because <br>/badge tags were stripped without spaces; the live HTML renders correctly — ignore.",
+  "counts": {
+    "false_positive_extraction_artifact": 4,
+    "pending_review": 2,
+    "applied_and_pushed": 1
+  },
+  "findings": [
+    {
+      "n": 1,
+      "page": "home",
+      "severity": "high",
+      "status": "false_positive_extraction_artifact",
+      "issue": "Two words run together with a missing space (and a missing space before the em dash clause). 'везде.Ваша' has no space after the period, and 'дляавторов' is a single glued word. Both are clear typesetting/rendering errors a native reader would immediately flag.",
+      "original": "Выходите в эфир везде.Ваша бесплатная программа для стрима — дляавторов.",
+      "suggestion": "Выходите в эфир везде. Ваша бесплатная программа для стрима — для авторов."
+    },
+    {
+      "n": 2,
+      "page": "home",
+      "severity": "high",
+      "status": "false_positive_extraction_artifact",
+      "issue": "Missing space after the period: 'программами.Выходите' is glued together.",
+      "original": "Хватит жонглировать программами.Выходите в эфир.",
+      "suggestion": "Хватит жонглировать программами. Выходите в эфир."
+    },
+    {
+      "n": 3,
+      "page": "products",
+      "severity": "high",
+      "status": "false_positive_extraction_artifact",
+      "issue": "The status badge 'в разработке' is glued onto the end of the list item without a space or separator: 'реальном временив разработке'. Reads as a single broken word.",
+      "original": "AR-фильтры и визуальные эффекты в реальном временив разработке",
+      "suggestion": "AR-фильтры и визуальные эффекты в реальном времени (в разработке)"
+    },
+    {
+      "n": 4,
+      "page": "products",
+      "severity": "high",
+      "status": "false_positive_extraction_artifact",
+      "issue": "Same glued-on 'в разработке' badge with no space: 'приложенияхв разработке'.",
+      "original": "Картинка в картинке — стрим продолжается, пока вы в других приложенияхв разработке",
+      "suggestion": "Картинка в картинке — стрим продолжается, пока вы в других приложениях (в разработке)"
+    },
+    {
+      "n": 5,
+      "page": "for/churches",
+      "severity": "high",
+      "status": "pending_review",
+      "issue": "Grammar error: 'Выберете' (future tense, 2nd person plural) is used where the imperative 'Выберите' is required. This is a very common but unmistakable Russian spelling/grammar mistake. Also 'потеряете остальных' takes the wrong case — the antecedent is 'платформы/аудитории', which require accusative inanimate 'остальные', not animate genitive 'остальных'.",
+      "original": "Выберете одну платформу — потеряете остальных.",
+      "suggestion": "Выберете одну платформу — потеряете остальные. (или, в повелительном тоне: Выберите одну платформу — и потеряете остальные.)"
+    },
+    {
+      "n": 6,
+      "page": "home",
+      "severity": "medium",
+      "status": "applied_and_pushed",
+      "issue": "'подчёркивание микрофона' is a literal calque of the feature name 'Accentuate Microphone' and is not idiomatic — 'подчёркивание микрофона' (underlining/emphasising the microphone) does not convey 'ducking the background so your voice stands out'. The same feature is described correctly two lines later as 'сам приглушает фон, когда вы говорите'. Recommend describing the function rather than calquing the name.",
+      "original": "синхронизация звука с видео для каждого слоя и подчёркивание микрофона держат ваш голос готовым к эфиру с первой секунды",
+      "suggestion": "синхронизация звука с видео для каждого слоя и автоприглушение фона под голос держат ваш голос готовым к эфиру с первой секунды"
+    },
+    {
+      "n": 7,
+      "page": "multistreaming",
+      "severity": "low",
+      "status": "pending_review",
+      "issue": "'первопроходцы Kick' (pioneers/trailblazers of Kick) is an odd, slightly overwrought metaphor for 'early adopters / first viewers on Kick' and reads as a stretched translation. A native streamer would phrase it more plainly.",
+      "original": "Один и тот же стрим видят зрители Twitch, аудитория YouTube и первопроходцы Kick.",
+      "suggestion": "Один и тот же стрим видят зрители Twitch, аудитория YouTube и первые подписчики на Kick."
+    }
+  ]
+}
