@@ -26,9 +26,9 @@
 #   installers /win-download/SplitCamSetup.msi(_x64).
 
 # --- dead URLs leaking equity (apply now) ---
-RedirectMatch 301 ^/download\.html$                 https://splitcam.com/download
-RedirectMatch 301 ^/downloadnew/?$                  https://splitcam.com/download
-RedirectMatch 301 ^/SplitCamSetup\.exe$             https://splitcam.com/download
+RedirectMatch 301 ^/download\.html$                 https://splitcam.com/download/
+RedirectMatch 301 ^/downloadnew/?$                  https://splitcam.com/download/
+RedirectMatch 301 ^/SplitCamSetup\.exe$             https://splitcam.com/download/
 RedirectMatch 301 ^/russian(/.*)?$                  https://splitcam.com/ru/
 RedirectMatch 301 ^/german/?$                       https://splitcam.com/de/
 RedirectMatch 301 ^/aboutus\.html$                  https://splitcam.com/contact-us
