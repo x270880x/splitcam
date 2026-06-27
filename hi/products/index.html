@@ -789,6 +789,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
 <!--AD--><script>
 (function(){try{
+if(/hostsila|github\.io|localhost|^\d+\.\d+\.\d+\.\d+$/i.test(location.hostname))return;
 var L=["en","fil","fr","pt","de","tr","uk","ru","it","vi","id","nl","es","ro","hi","ja","ms","bg","ar","ko","th","pl","hu","sv","zh","el","cs","he","sr","hr","da","fi","no","sk","fa"];
 var cur=document.documentElement.lang;
 var path=location.pathname;if(path.charAt(0)==="/")path=path.substring(1);

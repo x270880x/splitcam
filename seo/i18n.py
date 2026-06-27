@@ -130,6 +130,7 @@ def dropdown(cur, available, page_path, depth):
 # __LANG_LIST__ is replaced with the JSON array of live locales by the wiring step.
 AUTO_DETECT_JS = """<script>
 (function(){try{
+if(/hostsila|github\.io|localhost|^\d+\.\d+\.\d+\.\d+$/i.test(location.hostname))return;
 var L=__LANG_LIST__;
 var cur=document.documentElement.lang;
 var path=location.pathname;if(path.charAt(0)==="/")path=path.substring(1);
