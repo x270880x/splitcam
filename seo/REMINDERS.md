@@ -32,17 +32,17 @@ UNLINKED (no dedicated page yet — link them the moment one ships): **AI Backgr
 Removal · Scenes/Sources/Layers · Effects/Filters/Beauty · Audio Mixer · Screen & Window
 Capture.** Don't forget.
 
-## Pre-migration — keep-URL pages still to build (2026-06-28)
+## Pre-migration — legacy page decisions (2026-06-28, both RESOLVED)
 
 - `/contact-us` (+ `/ru/kontakty`, `/es/contactenos`) — **RESOLVED 2026-06-28: 301 →
   `/help`** (the support hub: Telegram · Forum · FAQ). No static page rebuilt, no form
   backend needed. In `redirects.htaccess` + cloudflare CSV. (Old `aboutus.html` retargeted
   to `/help` too, to avoid a 2-hop chain.)
-- `/donate-us` (+ `/ru/pozhertvovat`, `/es/donarnos`) — donation page, still **keep-URL,
-  build before migration** (low priority). Do NOT 301 to homepage (loses the donate
-  function). Pull donation links from the old-site backup (private repo
-  `x270880x/old_splitcam_site`, release `backup-2026-05-23`); build slashless + run
-  `i18n_wire.py` + `linkcheck.py`. Until built, leave on the old host.
+- `/donate-us` (+ `/ru/pozhertvovat`, `/es/donarnos`) — **RESOLVED 2026-06-28: BUILT** in
+  all 35 locales (slashless `/donate-us`), same PayPal hosted button as live
+  (`hosted_button_id=32FNT59FAVDPN`). Old localized ru/es donate URLs 301 →
+  `/ru/donate-us`, `/es/donate-us` (in `redirects.htaccess` + CSV). If the PayPal button
+  ID ever changes, update it in all 35 `*/donate-us/index.html`.
 
 ---
 

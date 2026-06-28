@@ -33,7 +33,7 @@
 #   stripchat) — already redirecting on the live host.
 #
 # KEEP (no redirect — same URL): / , /download, /features, /products, /help + /help/*
-#   (753 rd hub), /blog/, /forum/, legal pages, /donate-us (build before migration),
+#   (753 rd hub), /blog/, /forum/, legal pages, /donate-us (now BUILT, all 35 locales),
 #   installers /win-download/SplitCamSetup.msi(_x64).
 #   (/contact-us now 301s to /help — see below.)
 
@@ -61,19 +61,21 @@ RedirectMatch 301 ^/es/contactenos/?$               https://splitcam.com/es/help
 # localized URLs onto the new ones to carry their equity (one hop). Help SUB-articles
 # (/ru/help-ru/*, /es/ayuda/*) are NOT redirected — out of redesign scope, kept as-is;
 # the help rules below are anchored to the hub only. ru/es contact slugs (/ru/kontakty,
-# /es/contactenos) 301 to their /help in the dead-URL block above. donate
-# (/ru/pozhertvovat, /es/donarnos) waits on the donate-us build (keep-URL) — left out.
+# /es/contactenos) 301 to their /help in the dead-URL block above. donate-us is now BUILT
+# in all 35 locales, so the old localized donate URLs map onto it.
 RedirectMatch 301 ^/ru/osobennosti/?$                    https://splitcam.com/ru/features
 RedirectMatch 301 ^/ru/downloads/?$                      https://splitcam.com/ru/products
 RedirectMatch 301 ^/ru/help-ru/?$                        https://splitcam.com/ru/help
 RedirectMatch 301 ^/ru/licenzionnoe-soglashenie/?$       https://splitcam.com/ru/license-agreement
 RedirectMatch 301 ^/ru/politika-konfidencialnosti/?$     https://splitcam.com/ru/privacy-policy
+RedirectMatch 301 ^/ru/pozhertvovat/?$                   https://splitcam.com/ru/donate-us
 RedirectMatch 301 ^/ru/tour-ru(/.*)?$                    https://splitcam.com/ru/products
 RedirectMatch 301 ^/es/caracteristicas/?$                https://splitcam.com/es/features
 RedirectMatch 301 ^/es/descargar-el-programa/?$          https://splitcam.com/es/products
 RedirectMatch 301 ^/es/ayuda/?$                          https://splitcam.com/es/help
 RedirectMatch 301 ^/es/acuerdo-de-licencia/?$            https://splitcam.com/es/license-agreement
 RedirectMatch 301 ^/es/privacy-policy-2/?$               https://splitcam.com/es/privacy-policy
+RedirectMatch 301 ^/es/donarnos/?$                       https://splitcam.com/es/donate-us
 RedirectMatch 301 ^/es/gira(/.*)?$                       https://splitcam.com/es/products
 
 # --- optional (uncomment only if these are removed, not rebuilt) ---

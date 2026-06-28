@@ -53,7 +53,7 @@ These pages exist on splitcam.com and are indexed. We have NOT built a replaceme
 | `/tour` + 6 sub-pages | Old product-tour walkthrough | Concept is dated. 301 the lot → `/features/` or `/products/`. Don't rebuild as-is. |
 | `/more-plugins` | Plugins / add-ons page | Decide if still relevant. If yes — light refresh; if no — 301 → `/features/`. |
 | `/splitcam-changes-win`, `/splitcam-changes-mac` | OS-split changelogs | Build one `/whats-new/` (or `/changelog/`) page; 301 both old URLs to it. |
-| `/donate-us` | Donation page | Leave, or light restyle to match new design. Low priority. |
+| `/donate-us` | Donation page | **Built 2026-06-28** in the new design, all 35 locales, same URL (slashless `/donate-us`). Same PayPal hosted button as live. ru/es `pozhertvovat`/`donarnos` 301 → `/ru/donate-us`, `/es/donate-us`. |
 | `/contact-us` | Contact page | **Decided 2026-06-28: 301 → `/help`** (support hub: Telegram/Forum/FAQ). No rebuild, no form backend. ru/es contact slugs redirect to their `/help` too. |
 | `/license-agreement`, `/privacy-policy`, `/privacy-policy-for-mac-apps` | Legal | Leave URLs; restyle later. No SEO impact. |
 | `/help/*` (~115 EN pages) | Help / docs / tutorials | OUT OF SCOPE of the redesign. Leave entirely. Re-skin later if desired. |
