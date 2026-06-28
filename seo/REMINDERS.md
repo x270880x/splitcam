@@ -16,6 +16,22 @@
 
 When a task is done, change `⏳ pending` → `✅ YYYY-MM-DD done` so future-you/Claude can skip it.
 
+## Standing rule — link every feature/product page FROM the `/features/` hub (user, 2026-06-28)
+
+`/features/` is the central hub. **Whenever a new feature or product page is built**
+(a dedicated AI-background, scenes/layers, effects, audio-mixer, screen-capture, or any
+future `/multistreaming/`-type page), add an outbound link from its matching `/features/`
+card — the existing pattern is `<a … class="product-changelog">Learn more <svg…></a>`
+inside that card's `.product-cta`. **Then mirror the link into all 35 locale `/features/`
+pages** (the link text is translated), and rerun `python3 seo/i18n_wire.py` +
+`python3 seo/linkcheck.py --no-network` (must be 0).
+
+Currently linked from `/features/`: Virtual Camera → `/virtual-camera/`, Multistreaming →
+`/multistreaming/`, OBS Import → `/alternatives/obs/`, Remote → `/products/`. Still
+UNLINKED (no dedicated page yet — link them the moment one ships): **AI Background
+Removal · Scenes/Sources/Layers · Effects/Filters/Beauty · Audio Mixer · Screen & Window
+Capture.** Don't forget.
+
 ---
 
 ## 2026-05-25 — SplitCam Android: Play Store approval check
