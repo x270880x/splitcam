@@ -3,9 +3,25 @@
 *Last updated: 2026-06-28. Open this at the start of any new chat to get up to speed.*
 
 ## ⭐ Current state (read first)
-- Site is live in **all 35 languages** (455 indexable pages). EN root + 34 under
+- Site is live in **all 35 languages** (490 indexable pages; sitemap 491 incl. EN-only
+  `/download`). EN root + 34 under
   `/<lang>/`: ru es de fr pt tr fil uk it vi id nl ro hi ja ms bg ar ko th pl hu
   sv zh el cs he sr hr da fi no sk fa. **RTL locales: ar, he, fa** (sr = Latin script).
+- **URL form = slashless (2026-06-28).** canonical / og:url / hreflang / sitemap /
+  JSON-LD URLs have **no trailing slash** on sub-pages (`/download`, `/features`,
+  `/ru/products`) — only the site root `/` and locale roots `/ru/` keep a slash. This
+  matches live splitcam.com (it serves `/download`, 301s `/download/` away) so Google
+  maps the redesign onto the indexed URLs instantly on migration. Single source of
+  truth: `i18n.page_url()`. Production Apache enforces it via the RewriteRule block in
+  `seo/redirects.htaccess`; GitHub Pages staging keeps serving the directory form
+  (`/download/`) and that's fine (canonical points to production). Internal nav links
+  keep their slash so staging never 301-hops and `linkcheck` stays green.
+- **`/features/` hub** (built 2026-06-28, all 35 locales) — replaces live
+  splitcam.com/features (ranks for "splitcam"). Features overview: virtual camera,
+  multistreaming, AI background, scenes/layers, effects, audio mixer, capture, OBS
+  import + Remote panel + FAQ. **Not yet in the global nav** (reachable via sitemap,
+  language dropdown, breadcrumb, footer) — adding it as a nav item is an open option.
+- **Skype is fully removed site-wide (0 mentions)** — Microsoft retired it May 2025.
 - The whole language system is two files: **`seo/i18n.py`** (config + render
   helpers + `RTL_CSS`) and **`seo/i18n_wire.py`** (rebuilds dropdown/hreflang/
   auto-detect/sitemap + per-RTL-page CSS across every page). See the "Localization
@@ -16,7 +32,7 @@
 - The 17 lowest-demand locales (waves 4–7, ≤10/mo, mostly 0) were completed
   2026-06-15 for brand completeness — **see the 2026-06-15 session log below** (it
   involved cleaning up an unattended mass-translation run; lessons recorded there).
-- Working tree clean & pushed; `linkcheck` 0 broken across 455 pages.
+- Working tree clean & pushed; `linkcheck` 0 broken across 490 pages.
 
 ## Two projects
 
@@ -37,12 +53,13 @@ Both are static HTML deployed via GitHub Pages (auto-deploy 30–90 sec after pu
 Marketing site for SplitCam — free streaming / virtual-camera software. Static HTML/CSS/JS.
 Destined to replace the redesign of the real **splitcam.com** (see `seo/MIGRATION.md`).
 
-## Pages deployed (9 public + 1 archived)
+## Pages deployed (10 public + 1 archived)
 | Path | Note |
 |---|---|
 | `/` | Main landing — **Variant A is the final homepage** |
 | `/v2/` | Variant B — **archived** (A won the A/B). `noindex`, unlinked. Kept for reference only, never goes to splitcam.com. |
 | `/products/` | Products hub — Windows/Mac/iOS/Android + SplitCam Remote. iOS card has 2 features tagged "in development" (AR filters, Picture-in-picture) — don't reword as shipped. Remote: **iOS app LIVE** (App Store id6760961594, button live since 2026-06-11); Android Remote not released — Google Play stays "Coming soon". |
+| `/features/` | **Features hub** (all 35 locales) — virtual camera, multistreaming, AI background, scenes/layers, effects, audio mixer, capture, OBS import + Remote panel + FAQ. Replaces live splitcam.com/features. Not in global nav yet. |
 | `/virtual-camera/` | Feature page |
 | `/multistreaming/` | Feature page |
 | `/alternatives/` | Hub for "vs X" comparisons. Live cards: OBS. "Soon" cards: Streamlabs, Restream, StreamYard, vMix, ManyCam. |
@@ -61,7 +78,7 @@ Nav order site-wide: **Products · Virtual Camera · Multistreaming · Alternati
 - **Schedule & follow-ups: `seo/REMINDERS.md`** — open it in any SEO chat (indexing checks, ranking checks, wave launches with dates). Do NOT use `CronCreate` — it doesn't persist.
 
 ## Migration to live splitcam.com
-`seo/MIGRATION.md` — only the homepage `/` is a true same-URL replacement; everything else is new URLs. `seo/REDIRECTS.md` — 301 strategy + per-page weights from Ahrefs. **All 35 locales — DONE 2026-06-15** (13 pages each, 455 total; specs in `seo/I18N-PLAN.md` + `seo/I18N-KEYWORDS.md`). (Homepage A vs B — resolved 2026-05-22: A is final, `/v2/` archived.)
+`seo/MIGRATION.md` — only the homepage `/` is a true same-URL replacement; everything else is new URLs. `seo/REDIRECTS.md` — 301 strategy + per-page weights from Ahrefs. **All 35 locales — DONE 2026-06-15** (14 pages each, 490 total; specs in `seo/I18N-PLAN.md` + `seo/I18N-KEYWORDS.md`). (Homepage A vs B — resolved 2026-05-22: A is final, `/v2/` archived.)
 
 ## Critical design rules
 1. Brand logos stored LOCALLY in `/virtual-camera/assets/logos/` — no external CDN refs.

@@ -23,12 +23,13 @@ project, separate domain) — not covered here.
   `SITEMAP.md`, `MIGRATION.md`, `REDIRECTS.md`, `REMINDERS.md`). Raw data
   in `seo/data/*.json` (gitignored).
 
-Pages (7 public + 1 archived):
+Pages (8 public + 1 archived):
 
 | Path | Note |
 |---|---|
 | `/` | Main landing — **Variant A is final** |
 | `/v2/` | Variant B — archived, `noindex`, unlinked. Reference only. |
+| `/features/` | Features hub (all 35 locales) — replaces live splitcam.com/features. Not in global nav yet. |
 | `/virtual-camera/` | Feature page |
 | `/multistreaming/` | Feature page |
 | `/products/` | Products hub — Win / macOS / iOS / Android + SplitCam Remote |
@@ -112,9 +113,9 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 
 Every page exists in **35 locales**: EN (root) + 34 under `/<lang>/...`:
 **ru es de fr pt tr fil uk it vi id nl ro hi ja ms bg ar ko th pl hu sv zh el cs
-he sr hr da fi no sk fa** (ar/he/fa are RTL). That's all 13 pages (10 content +
+he sr hr da fi no sk fa** (ar/he/fa are RTL). That's all 14 pages (11 content +
 `privacy-policy/` + `license-agreement/` full, + `changelog/` shell-only — its
-~1817 technical release bullets stay EN) × 35 = **455 indexable pages**.
+~1817 technical release bullets stay EN) × 35 = **490 indexable pages**.
 Untranslated: `/v2/` (archived), `for/vtubers/` (noindex draft).
 
 Built by Ahrefs "splitcam" demand: top 18 first (2026-06-13), then the remaining
