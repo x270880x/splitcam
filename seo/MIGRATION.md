@@ -10,6 +10,27 @@ The migration is therefore: **(1) swap the homepage, (2) add new pages in waves,
 
 ---
 
+## URL form — slashless (decided 2026-06-28)
+
+The whole site now declares **slashless** canonicals / og:url / hreflang / sitemap
+for every sub-page (`https://splitcam.com/download`, `/features`, `/ru/products` …);
+only the site root `/` and the locale roots `/ru/` keep a slash. This **matches the
+live splitcam.com canonical form byte-for-byte** (it already serves `/download` and
+301s `/download/` away), so for the handful of pages that already exist on the live
+site Google maps the redesigned page straight onto the indexed URL — no new-URL
+limbo, no redirect hop. (For the ~450 net-new pages there is nothing to match, but
+the slashless form keeps the whole site on one consistent convention.)
+
+Serving is enforced on the **production Apache host** by the RewriteRule block in
+`seo/redirects.htaccess` (strip trailing slash → 301, serve `<dir>/index.html` for
+the slashless URL). **GitHub Pages staging ignores .htaccess** and keeps serving the
+directory form (`/download/`) — that's expected; staging isn't the indexed property,
+and every page still canonicals to the production slashless URL. Internal nav links
+keep their directory slash (so staging never 301-hops and `linkcheck` stays green);
+on production they 301 once to slashless and the canonical consolidates them.
+
+---
+
 ## LIST 1 — Ready to replace NOW (finished replacement exists)
 
 | Live URL | Our replacement | Action | Risk |

@@ -89,15 +89,28 @@ def waves():
         yield i // 5 + 1, todo[i:i + 5]
 
 
+def page_url(locale_path, page_path):
+    """Single source of truth for a page's absolute production URL.
+
+    Slashless for sub-pages — live splitcam.com canonicalises WITHOUT a trailing
+    slash (`/download`, `/features`, …), and matching that byte-for-byte is what
+    lets Google map the redesigned page onto the already-indexed URL instantly on
+    migration. Only the site root (`/`) and each locale root (`/ru/`) keep a slash.
+    locale_path is i18n.LANG_PATH[L] ('' for EN, 'ru/' …); '' for the x-default URL.
+    """
+    url = f"{SITE}/{locale_path}{page_path}"
+    return url if page_path == "" else url.rstrip("/")
+
+
 def hreflang_block(page_path, available):
     """page_path: '' for home, 'products/' etc. available: set of live locales."""
     rows = []
     for L in LANG_ORDER:
         if L not in available:
             continue
-        href = f"{SITE}/{LANG_PATH[L]}{page_path}"
+        href = page_url(LANG_PATH[L], page_path)
         rows.append(f'<link rel="alternate" hreflang="{L}" href="{href}">')
-    rows.append(f'<link rel="alternate" hreflang="x-default" href="{SITE}/{page_path}">')
+    rows.append(f'<link rel="alternate" hreflang="x-default" href="{page_url("", page_path)}">')
     return "\n".join(rows)
 
 

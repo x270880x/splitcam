@@ -250,12 +250,17 @@ for p in sorted(public):
     for s, t in sorted(rows): print(f'   from {s or "/":30} anchor: "{t}"')
 
 print('\n--- SITEMAP vs DISK ---')
+# Slash-insensitive compare: sitemap URLs are slashless for sub-pages (they match
+# live splitcam.com, which canonicalises without a trailing slash) while on-disk
+# page keys carry the directory slash. Normalise both before diffing.
+_norm = lambda S: {x.rstrip('/') for x in S}
+sm_n, pk_n, ni_n = _norm(sitemap_paths), _norm(page_keys), _norm(noindex_pages)
 print('in sitemap, no matching page on disk:',
-      sorted(sitemap_paths - page_keys) or '—')
+      sorted(sm_n - pk_n) or '—')
 print('page on disk, not in sitemap (excl. noindex):',
-      sorted((page_keys - noindex_pages) - sitemap_paths) or '—')
+      sorted((pk_n - ni_n) - sm_n) or '—')
 print('noindex pages listed in sitemap (bad):',
-      sorted(sitemap_paths & noindex_pages) or '—')
+      sorted(sm_n & ni_n) or '—')
 
 print('\n--- LINKS TO LIVE splitcam.com (will need rewrite at migration) ---')
 for u in sorted(splitcam_links):

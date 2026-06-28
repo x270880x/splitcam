@@ -139,7 +139,6 @@ def wire_file(locale, page, avail):
 
 
 def build_sitemap():
-    B = i18n.SITE + "/"
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
            '        xmlns:xhtml="http://www.w3.org/1999/xhtml">']
@@ -148,10 +147,10 @@ def build_sitemap():
         if not avail:
             continue
         alts = "".join(
-            f'    <xhtml:link rel="alternate" hreflang="{L}" href="{B}{i18n.LANG_PATH[L]}{page}"/>\n'
-            for L in avail) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{B}{page}"/>\n'
+            f'    <xhtml:link rel="alternate" hreflang="{L}" href="{i18n.page_url(i18n.LANG_PATH[L], page)}"/>\n'
+            for L in avail) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{i18n.page_url("", page)}"/>\n'
         for L in avail:
-            loc = f"{B}{i18n.LANG_PATH[L]}{page}"
+            loc = i18n.page_url(i18n.LANG_PATH[L], page)
             out.append(f'  <url>\n    <loc>{loc}</loc>\n    <lastmod>{LASTMOD}</lastmod>\n'
                        f'    <changefreq>{FREQ.get(page, "monthly")}</changefreq>\n'
                        f'    <priority>{PRIO.get(page, "0.7")}</priority>\n{alts}  </url>')
