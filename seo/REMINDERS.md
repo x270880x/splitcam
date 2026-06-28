@@ -32,6 +32,20 @@ UNLINKED (no dedicated page yet — link them the moment one ships): **AI Backgr
 Removal · Scenes/Sources/Layers · Effects/Filters/Beauty · Audio Mixer · Screen & Window
 Capture.** Don't forget.
 
+## Pre-migration — keep-URL pages still to build (2026-06-28)
+
+These live splitcam.com pages are **kept (same URL), NOT redirected** — build them in the
+redesign before go-live so the URL survives migration (each has modest backlinks). Do NOT
+301 them to the homepage (soft-404 risk + loses the function).
+- `/contact-us` (+ `/ru/kontakty`, `/es/contactenos`) — contact page. **Open question:**
+  the old page used a WordPress form; a static rebuild needs a form backend (Formspree /
+  mailto / etc.) — decide before building. Content can be pulled from the old-site backup
+  (private repo `x270880x/old_splitcam_site`, release `backup-2026-05-23`).
+- `/donate-us` (+ `/ru/pozhertvovat`, `/es/donarnos`) — donation page. Low priority; keep
+  URL, light restyle, pull donation links from the backup.
+URL form: build them slashless like everything else (`/contact-us`, `/ru/kontakty` …) and
+run `i18n_wire.py` + `linkcheck.py` after. Until built, leave them on the old host.
+
 ---
 
 ## 2026-05-25 — SplitCam Android: Play Store approval check
