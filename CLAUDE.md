@@ -23,7 +23,7 @@ project, separate domain) — not covered here.
   `SITEMAP.md`, `MIGRATION.md`, `REDIRECTS.md`, `REMINDERS.md`). Raw data
   in `seo/data/*.json` (gitignored).
 
-Pages (8 public + 1 archived):
+Pages (9 public + 1 archived):
 
 | Path | Note |
 |---|---|
@@ -33,6 +33,7 @@ Pages (8 public + 1 archived):
 | `/virtual-camera/` | Feature page |
 | `/multistreaming/` | Feature page |
 | `/products/` | Products hub — Win / macOS / iOS / Android + SplitCam Remote |
+| `/donate-us/` | Donate page (all 35 locales) — PayPal hosted button (`32FNT59FAVDPN`). Keep-URL, matches live. |
 | `/for/youtubers/` | SEO Wave 1 — structural template for SEO pages |
 | `/for/churches/` | SEO Wave 1 |
 | `/alternatives/obs/` | SEO Wave 1 |
@@ -113,9 +114,9 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 
 Every page exists in **35 locales**: EN (root) + 34 under `/<lang>/...`:
 **ru es de fr pt tr fil uk it vi id nl ro hi ja ms bg ar ko th pl hu sv zh el cs
-he sr hr da fi no sk fa** (ar/he/fa are RTL). That's all 14 pages (11 content +
+he sr hr da fi no sk fa** (ar/he/fa are RTL). That's all 15 pages (12 content +
 `privacy-policy/` + `license-agreement/` full, + `changelog/` shell-only — its
-~1817 technical release bullets stay EN) × 35 = **490 indexable pages**.
+~1817 technical release bullets stay EN) × 35 = **525 indexable pages**.
 Untranslated: `/v2/` (archived), `for/vtubers/` (noindex draft).
 
 Built by Ahrefs "splitcam" demand: top 18 first (2026-06-13), then the remaining
