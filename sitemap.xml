@@ -17650,6 +17650,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/changelog"/>
   </url>
   <url>
+    <loc>https://splitcam.com/donate-us</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://splitcam.com/donate-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/donate-us"/>
+  </url>
+  <url>
     <loc>https://splitcam.com/privacy-policy</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>yearly</changefreq>

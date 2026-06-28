@@ -24,11 +24,11 @@ CHECK = "--check" in sys.argv
 # Page paths that participate in the locale system (translatable set).
 PAGE_PATHS = ["", "products/", "features/", "download/", "virtual-camera/", "multistreaming/", "alternatives/",
               "alternatives/obs/", "for/", "for/youtubers/", "for/churches/", "help/",
-              "changelog/", "privacy-policy/", "license-agreement/"]
+              "changelog/", "donate-us/", "privacy-policy/", "license-agreement/"]
 # changelog/privacy/license sit at priority 0.6/0.3; rest from i18n weighting.
 PRIO = {"": "1.0", "multistreaming/": "0.9", "virtual-camera/": "0.9", "products/": "0.9", "features/": "0.9", "download/": "0.9",
-        "changelog/": "0.6", "help/": "0.6", "privacy-policy/": "0.3", "license-agreement/": "0.3"}
-FREQ = {"": "weekly", "download/": "weekly", "changelog/": "weekly", "privacy-policy/": "yearly", "license-agreement/": "yearly"}
+        "changelog/": "0.6", "help/": "0.6", "donate-us/": "0.3", "privacy-policy/": "0.3", "license-agreement/": "0.3"}
+FREQ = {"": "weekly", "download/": "weekly", "changelog/": "weekly", "donate-us/": "yearly", "privacy-policy/": "yearly", "license-agreement/": "yearly"}
 LASTMOD = "2026-06-13"
 
 
