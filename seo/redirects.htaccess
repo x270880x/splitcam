@@ -42,13 +42,17 @@ RedirectMatch 301 ^/downloadnew/?$                  https://splitcam.com/downloa
 RedirectMatch 301 ^/SplitCamSetup\.exe$             https://splitcam.com/download
 RedirectMatch 301 ^/russian(/.*)?$                  https://splitcam.com/ru/
 RedirectMatch 301 ^/german/?$                       https://splitcam.com/de/
-RedirectMatch 301 ^/aboutus\.html$                  https://splitcam.com/contact-us
+RedirectMatch 301 ^/aboutus\.html$                  https://splitcam.com/help
 RedirectMatch 301 ^/cgi-sys/suspendedpage\.cgi$     https://splitcam.com/
 
 # --- removed / changed pages (apply at migration) ---
 RedirectMatch 301 ^/more-plugins/?$                 https://splitcam.com/products
 RedirectMatch 301 ^/splitcam-changes-(win|mac)/?$   https://splitcam.com/changelog
 RedirectMatch 301 ^/tour(/.*)?$                     https://splitcam.com/products
+# contact-us -> help (the support hub: Telegram · Forum · FAQ). No static page rebuilt.
+RedirectMatch 301 ^/contact-us/?$                   https://splitcam.com/help
+RedirectMatch 301 ^/ru/kontakty/?$                  https://splitcam.com/ru/help
+RedirectMatch 301 ^/es/contactenos/?$               https://splitcam.com/es/help
 
 # --- locale (ru/es): old LOCALIZED slugs -> new English locale slugs ------------
 # Live splitcam.com is localized only for ru + es, with translated slugs. Our redesign

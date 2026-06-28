@@ -54,7 +54,7 @@ These pages exist on splitcam.com and are indexed. We have NOT built a replaceme
 | `/more-plugins` | Plugins / add-ons page | Decide if still relevant. If yes — light refresh; if no — 301 → `/features/`. |
 | `/splitcam-changes-win`, `/splitcam-changes-mac` | OS-split changelogs | Build one `/whats-new/` (or `/changelog/`) page; 301 both old URLs to it. |
 | `/donate-us` | Donation page | Leave, or light restyle to match new design. Low priority. |
-| `/contact-us` | Contact page | Light restyle to match new design, same URL. |
+| `/contact-us` | Contact page | **Decided 2026-06-28: 301 → `/help`** (support hub: Telegram/Forum/FAQ). No rebuild, no form backend. ru/es contact slugs redirect to their `/help` too. |
 | `/license-agreement`, `/privacy-policy`, `/privacy-policy-for-mac-apps` | Legal | Leave URLs; restyle later. No SEO impact. |
 | `/help/*` (~115 EN pages) | Help / docs / tutorials | OUT OF SCOPE of the redesign. Leave entirely. Re-skin later if desired. |
 | `/blog/` (+ categories) | Blog | Leave. Keep — SITEMAP.md flags blog as a strength to grow. |

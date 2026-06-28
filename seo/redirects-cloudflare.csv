@@ -4,7 +4,10 @@ https://splitcam.com/downloadnew,https://splitcam.com/download,301,true,false,fa
 https://splitcam.com/SplitCamSetup.exe,https://splitcam.com/download,301,false,false,false,false
 https://splitcam.com/russian/,https://splitcam.com/ru/,301,true,false,true,false
 https://splitcam.com/german/,https://splitcam.com/de/,301,true,false,true,false
-https://splitcam.com/aboutus.html,https://splitcam.com/contact-us,301,true,false,false,false
+https://splitcam.com/aboutus.html,https://splitcam.com/help,301,true,false,false,false
+https://splitcam.com/contact-us,https://splitcam.com/help,301,true,false,false,false
+https://splitcam.com/ru/kontakty,https://splitcam.com/ru/help,301,true,false,false,false
+https://splitcam.com/es/contactenos,https://splitcam.com/es/help,301,true,false,false,false
 https://splitcam.com/cgi-sys/suspendedpage.cgi,https://splitcam.com/,301,false,false,false,false
 https://splitcam.com/more-plugins,https://splitcam.com/products,301,true,false,false,false
 https://splitcam.com/splitcam-changes-win,https://splitcam.com/changelog,301,true,false,false,false
