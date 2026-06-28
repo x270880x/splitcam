@@ -33,8 +33,9 @@
 #   stripchat) — already redirecting on the live host.
 #
 # KEEP (no redirect — same URL): / , /download, /features, /products, /help + /help/*
-#   (753 rd hub), /blog/, /forum/, /contact-us, legal pages,
+#   (753 rd hub), /blog/, /forum/, legal pages, /donate-us (build before migration),
 #   installers /win-download/SplitCamSetup.msi(_x64).
+#   (/contact-us now 301s to /help — see below.)
 
 # --- dead URLs leaking equity (apply now) ---
 RedirectMatch 301 ^/download\.html$                 https://splitcam.com/download
@@ -59,9 +60,9 @@ RedirectMatch 301 ^/es/contactenos/?$               https://splitcam.com/es/help
 # uses uniform English slugs under each locale prefix (/ru/features …), so 301 the old
 # localized URLs onto the new ones to carry their equity (one hop). Help SUB-articles
 # (/ru/help-ru/*, /es/ayuda/*) are NOT redirected — out of redesign scope, kept as-is;
-# the help rules below are anchored to the hub only. contact/donate (/ru/kontakty,
-# /es/contactenos, /ru/pozhertvovat, /es/donarnos) depend on the contact-us/donate-us
-# keep-decision — left out for now.
+# the help rules below are anchored to the hub only. ru/es contact slugs (/ru/kontakty,
+# /es/contactenos) 301 to their /help in the dead-URL block above. donate
+# (/ru/pozhertvovat, /es/donarnos) waits on the donate-us build (keep-URL) — left out.
 RedirectMatch 301 ^/ru/osobennosti/?$                    https://splitcam.com/ru/features
 RedirectMatch 301 ^/ru/downloads/?$                      https://splitcam.com/ru/products
 RedirectMatch 301 ^/ru/help-ru/?$                        https://splitcam.com/ru/help
