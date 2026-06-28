@@ -62,11 +62,23 @@ These pages exist on splitcam.com and are indexed. We have NOT built a replaceme
 | `/download-splitcam-for-macos-mojave-and-catalina` | Legacy-macOS download | Leave (serves old-OS users) or fold into `/products/mac/`. |
 | `/download-archive-for-windows` | Windows download archive | Leave or fold into `/products/windows/`. |
 
-### Locale variants — needs its own decision
-- `/ru/` ≈95 pages, `/es/` ≈45 pages — fully built and indexed.
-- `/tr/`, `/hi/`, `/de/`, `/ar/` — exist but robots-blocked.
-- We built **English only**. If we swap the EN homepage, the RU/ES sites still show the old design → split-brand inconsistency.
-- **Decision needed:** (a) localize the new homepage to RU/ES before/with launch, (b) launch EN first and localize RU/ES in a follow-up, or (c) leave locales on the old design indefinitely. Given the user is Russian-speaking, RU likely matters.
+### Locale variants — slug decision RESOLVED (2026-06-28)
+- The redesign is now built in **all 35 locales** (no longer EN-only) with **uniform
+  English slugs** under each locale prefix (`/ru/features`, `/es/products` …).
+- Live splitcam.com is localized only for **ru + es**, with **translated slugs**
+  (`/ru/osobennosti`, `/es/caracteristicas`, `/ru/help-ru` …). These do NOT match our
+  uniform slugs — that's intentional. **Decision (user, 2026-06-28): keep uniform English
+  slugs + 301 the old localized ru/es URLs onto the new ones at migration** (rather than
+  re-slugging the i18n engine for 2 locales). Equity transfers one-hop; consistent across
+  all 35 locales. The 301 map is in `seo/redirects.htaccess` + `redirects-cloudflare.csv`
+  (ru: osobennosti→features, downloads→products, help-ru→help, licenzionnoe-soglashenie→
+  license-agreement, politika-konfidencialnosti→privacy-policy, tour-ru→products; es:
+  caracteristicas→features, descargar-el-programa→products, ayuda→help, acuerdo-de-licencia→
+  license-agreement, privacy-policy-2→privacy-policy, gira→products).
+- Help SUB-articles (`/ru/help-ru/*`, `/es/ayuda/*`) stay (out of scope, anchored rules
+  skip them). contact/donate localized URLs depend on the contact-us/donate-us keep-decision.
+- `/tr/`, `/hi/`, `/de/`, `/ar/` and the other ~29 locales have **no live equivalent** —
+  brand-new URLs, nothing to match.
 
 ---
 
