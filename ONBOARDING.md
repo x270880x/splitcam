@@ -1,6 +1,6 @@
 # SplitCam — Project Onboarding
 
-*Last updated: 2026-06-15. Open this at the start of any new chat to get up to speed.*
+*Last updated: 2026-06-28. Open this at the start of any new chat to get up to speed.*
 
 ## ⭐ Current state (read first)
 - Site is live in **all 35 languages** (455 indexable pages). EN root + 34 under
@@ -294,9 +294,9 @@ instability; a full Claude restart was needed to kill it).
   per page (sonnet hits the 32K output cap on 1000+ line pages); never leave an
   unattended translation run unsupervised.
 
-## Session log — 2026-06-15 (later — full QA audit: native + Ahrefs + SEO, all 35)
+## Session log — 2026-06-28 (full QA audit: native + Ahrefs + SEO, all 35)
 
-After the build, a deep QA pass (user: "проверь как нативный пользователь каждого
+After the 06-15 build, a deep QA pass (user: "проверь как нативный пользователь каждого
 языка + ahrefs + seo"). The earlier 3-pages-per-locale review **under-sampled** —
 real bugs hid on the other 10 page types. Audited the under-reviewed content pages
 (vc / multistreaming / obs / for-churches) per locale with native-speaker agents +

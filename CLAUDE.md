@@ -132,7 +132,7 @@ download split-button radii, vc-arrow connector) injected per RTL page by
 > from `index.html` (EN), never from another locale's scaffold, and use only
 > straight ASCII quotes in attributes/JSON-LD.**
 >
-> **QA addendum (2026-06-15 audit — full detail in `ONBOARDING.md`):** after any
+> **QA addendum (2026-06-28 audit — full detail in `ONBOARDING.md`):** after any
 > locale batch, run a mechanical full-site scan — lang tag · Cyrillic outside
 > `<!--LD/HL/AD-->` · `„`/`”` quote glyphs · `<style>`/`<script>`/`<details>`
 > balance · `json.loads` on every `ld+json`. Notes: the `„…"` low-quote is
