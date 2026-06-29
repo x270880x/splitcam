@@ -66,16 +66,20 @@ Skype-0), `win-download/` (installers updated to 10.9.2 build; 32-bit untouched)
   wipe win-download).
 - Purge Cloudflare cache for `win-download/SplitCamSetup_x64.msi` (cache rule, 1-day TTL).
 
-## Staged ver.txt rollout — AWAITING USER DECISION (2026-06-29)
+## ver.txt policy — RESOLVED (user, 2026-06-30)
 
-User wants the update-channel version pointer(s) ramped **weekly +1 minor** (e.g.
-10.5→10.6→…→**10.9.2**), then after reaching 10.9.2 switch to "bump **10 days after a new
-version appears on the site**." 3 ver.txt on the host: root `/ver.txt`=8.4.0.0 (legacy,
-diff scheme; `ver.php` just echoes it), `update/ver.txt`=10.9.2 (already latest),
-`update/light/ver.txt`=10.5.0 (only one in the 10.x ramp range). **Open question asked:
-which files to ramp** — light only (safe) vs also stage-rolling `update/` down to ~10.4
-(would tell apps the latest is older than it is). Don't start the weekly schedule until
-the user confirms files + first-bump timing.
+The weekly-ramp idea was dropped. **All ver.txt track the current release.** Set
+2026-06-30 to **10.9.2** (the live version): root `/ver.txt` (was 8.4.0.0),
+`win-download/update/ver.txt` (already 10.9.2), `win-download/update/light/ver.txt`
+(was 10.5.0). `ver.php` just echoes the root `/ver.txt` + its mtime.
+
+**STANDING RULE:** when a new SplitCam version ships on the site, **10 days after the
+release** set **all three ver.txt** to the new version string (plain text, no trailing
+newline, e.g. `10.9.2`). The matching new installer must already be deployed first.
+
+All three ver.txt are **host-managed** (NOT in the git repo — removed root `/ver.txt`
+from the repo so a re-deploy overlay can't reset it). Edit them directly on the host via
+SSH (`~/.hostsila_ssh`).
 
 ---
 

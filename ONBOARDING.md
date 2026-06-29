@@ -242,7 +242,8 @@ new cPanel host and deploying the redesign there.
   localized slugs → new (`/ru/osobennosti`→`/ru/features` …); `/contact-us`→`/help`;
   donate. **URL set verified one-to-one vs live splitcam.com** (EN pages match exactly;
   new pages are additive 404s; ru/es decided = uniform slugs + 301).
-- Added to repo: `/.well-known/assetlinks.json`, `/ver.txt`, `.nojekyll`.
+- Added to repo: `/.well-known/assetlinks.json`, `.nojekyll`. (`/ver.txt` is
+  **host-managed**, not in the repo — see the ver.txt policy in `seo/REMINDERS.md`.)
 
 **(B) OLD → NEW cPanel host migration (the new prod target, `~jntckkaf/public_html`):**
 - **SSH access (saved, see Infrastructure section + memory `project-splitcam-hosting`):**
