@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.splitcam",
+      "sha256_cert_fingerprints": [
+        "AA:E4:B9:2B:F8:4F:21:CB:87:C1:83:AB:DB:29:5A:19:68:B1:1E:35:A9:95:52:63:95:22:1E:E8:1C:5F:A2:D9",
+        "82:B8:6A:A6:40:60:83:94:B9:BC:49:31:FC:56:51:7D:22:88:A1:A2:D0:34:18:F5:1D:99:A1:6C:13:D1:98:8A"
+      ]
+    }
+  }
+]
