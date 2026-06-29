@@ -46,6 +46,39 @@ Capture.** Don't forget.
 
 ---
 
+## NEW host migration — status + cutover checklist (2026-06-29/30)
+
+New prod target: **cPanel `~jntckkaf` on rocket-cp2.hostsila.org** (cutover IP
+`91.223.223.113`), preview http://rocket-cp2.hostsila.org/~jntckkaf/. SSH creds:
+`~/.hostsila_ssh` (new, full shell), `~/.splitcam_old_ssh` (old, SFTP-only). See the
+2026-06-29/30 session log in `ONBOARDING.md` and memory `project-splitcam-hosting`.
+
+**Already on the new host:** full redesign (527 pages, slashless/features/donate/footers/
+Skype-0), `win-download/` (installers updated to 10.9.2 build; 32-bit untouched),
+`ver.php`, `ofcf-turnstile.php`, `ver.txt` (8.4.0.0), `.well-known/assetlinks.json`.
+
+**At CUTOVER (when user says go):**
+- Point splitcam.com DNS → `91.223.223.113`.
+- Drop `seo/redirects.htaccess` into the live docroot `.htaccess` (NOT done on preview —
+  its slashless RewriteRule breaks the `/~jntckkaf/` userdir).
+- Re-deploy the redesign if the repo changed since (host pulls the GitHub main tarball and
+  overlay-copies, excluding `.git/seo/v2/.claude/*.md/.nojekyll`; never `--delete` or you
+  wipe win-download).
+- Purge Cloudflare cache for `win-download/SplitCamSetup_x64.msi` (cache rule, 1-day TTL).
+
+## Staged ver.txt rollout — AWAITING USER DECISION (2026-06-29)
+
+User wants the update-channel version pointer(s) ramped **weekly +1 minor** (e.g.
+10.5→10.6→…→**10.9.2**), then after reaching 10.9.2 switch to "bump **10 days after a new
+version appears on the site**." 3 ver.txt on the host: root `/ver.txt`=8.4.0.0 (legacy,
+diff scheme; `ver.php` just echoes it), `update/ver.txt`=10.9.2 (already latest),
+`update/light/ver.txt`=10.5.0 (only one in the 10.x ramp range). **Open question asked:
+which files to ramp** — light only (safe) vs also stage-rolling `update/` down to ~10.4
+(would tell apps the latest is older than it is). Don't start the weekly schedule until
+the user confirms files + first-bump timing.
+
+---
+
 ## 2026-05-25 — SplitCam Android: Play Store approval check
 
 **Context:** As of 2026-05-22 the SplitCam Android app is still pending Google Play review. Because of that, the Android / Google Play store buttons in the SplitCam Remote section on `/products/` are shown as a disabled "Coming soon" state (the iOS Remote button too — no confirmed live store URL yet).

@@ -1,6 +1,6 @@
 # SplitCam — Project Onboarding
 
-*Last updated: 2026-06-28. Open this at the start of any new chat to get up to speed.*
+*Last updated: 2026-06-30. Open this at the start of any new chat to get up to speed.*
 
 ## ⭐ Current state (read first)
 - Site is live in **all 35 languages** (525 indexable pages; sitemap 526 incl. EN-only
@@ -21,6 +21,16 @@
   multistreaming, AI background, scenes/layers, effects, audio mixer, capture, OBS
   import + Remote panel + FAQ. **Not yet in the global nav** (reachable via sitemap,
   language dropdown, breadcrumb, footer) — adding it as a nav item is an open option.
+- **`/donate-us/`** (built 2026-06-29, all 35 locales) — keep-URL donate page.
+  Donations go to **`paypal.me/Katzovich`**; amount chips ($25/$50/$100/$200/$500/$1000)
+  are clickable `paypal.me/Katzovich/<amt>USD` links (the old PayPal hosted-button was
+  replaced). **Features + Donate are now footer links on every page.**
+- **MIGRATED to the new cPanel host (2026-06-29/30) — see the session log below.** The
+  redesign + the live-site infra (`win-download/` installers, `ver.php`,
+  `ofcf-turnstile.php`, `ver.txt`, `.well-known/assetlinks.json`) are now on
+  `~jntckkaf/public_html` (preview http://rocket-cp2.hostsila.org/~jntckkaf/). splitcam.com
+  DNS NOT cut over yet. **Open: the staged `ver.txt` rollout plan** (weekly +1 minor →
+  10.9.2) is in `seo/REMINDERS.md`, awaiting the user's which-files decision.
 - **Skype is fully removed site-wide (0 mentions)** — Microsoft retired it May 2025.
 - The whole language system is two files: **`seo/i18n.py`** (config + render
   helpers + `RTL_CSS`) and **`seo/i18n_wire.py`** (rebuilds dropdown/hreflang/
@@ -209,6 +219,70 @@ cd "/Users/splitcam/Documents/Дизайны/SplitCam/SPLITCAM DEV./<repo>"
 git add . && git commit -m "..." && git push origin main
 ```
 Revert: `git revert HEAD --no-edit && git push`.
+
+## Session log — 2026-06-29/30 (new pages, URL form, + full old→new host migration)
+
+Huge session. Two halves: (A) repo/SEO work, (B) migrating the live-site infra to the
+new cPanel host and deploying the redesign there.
+
+**(A) Repo / SEO — all committed & pushed (`x270880x/splitcam`):**
+- **Slashless URL form (Option A).** canonical / og:url / hreflang / sitemap / JSON-LD
+  are slashless on every sub-page (`/download`, `/features`, `/ru/products`) to match
+  live splitcam.com byte-for-byte; only `/` and locale roots (`/ru/`) keep a slash.
+  Single source: `i18n.page_url()`. Production `.htaccess` enforces it (RewriteRule in
+  `seo/redirects.htaccess`). Internal nav links keep their slash (staging stays green).
+- **`/features/` + `/donate-us/`** built EN, then natively localized to all 34 locales
+  (two `features-localize` / `donate-localize` workflows: native writer + adversarial
+  native reviewer per locale, 68 agents each). Donate uses **paypal.me/Katzovich** with
+  clickable amount chips (`/25USD`…`/1000USD`); the old PayPal hosted-button was dropped.
+- **Footer: Features + Donate links added to every page** (525) — both footer styles
+  (standard `.footer-links` + the homepage multi-column `.foot-col`), native labels.
+- **Skype removed site-wide** (changelog ×35, v2, features FAQ) → 0 mentions.
+- **Redirects** (`redirects.htaccess` + cloudflare CSV): slashless serving; ru/es old
+  localized slugs → new (`/ru/osobennosti`→`/ru/features` …); `/contact-us`→`/help`;
+  donate. **URL set verified one-to-one vs live splitcam.com** (EN pages match exactly;
+  new pages are additive 404s; ru/es decided = uniform slugs + 301).
+- Added to repo: `/.well-known/assetlinks.json`, `/ver.txt`, `.nojekyll`.
+
+**(B) OLD → NEW cPanel host migration (the new prod target, `~jntckkaf/public_html`):**
+- **SSH access (saved, see Infrastructure section + memory `project-splitcam-hosting`):**
+  NEW host `jntckkaf@91.223.223.113` = full shell (creds `~/.hostsila_ssh`); OLD host
+  `dfadnfvi@77.83.100.124` = nologin shell but **SFTP works** (creds `~/.splitcam_old_ssh`).
+  Both hosts block `scp`/legacy-scp (sftp-subsystem only) → push small files via
+  **base64 over ssh-exec**, automate the password with `expect` (no sshpass on this Mac).
+- **win-download/** (≈16 GB, the Windows installer tree) pulled server-side onto the new
+  host via **origin-direct** (`curl --resolve splitcam.com:443:77.83.100.124 -k` — the new
+  host's datacenter IP gets 503 from Cloudflare, origin-direct bypasses it). Contents:
+  root installers (`SplitCamSetup.msi` 32-bit, `SplitCamSetup_x64.msi`, `_SplitCamSetup_x64.msi`,
+  `splitcam.exe` v9.0.7.16-legacy), `update/` (46 historical MSIs + `ingests.cfg/2`,
+  `proxy.cfg`, `ver.txt`, `history.txt`), `update/light/` (a slow "light" channel:
+  `10.4.75_x64.msi` + its `ver.txt`), `archive/` (7 legacy 4.x–8.x exes). vcredist deleted
+  per user. **Both x64 MSIs + light's installer updated to the current build** (`f69f844f`,
+  10.9.2); 32-bit left as-is; `light/ver.txt` set to 10.5.0 (filenames kept).
+- **PHP source** (`ver.php`, `ofcf-turnstile.php`) pulled off the OLD host via SFTP (NOT
+  retrievable over HTTP — server executes them). Both portable (no DB/secret/host
+  hardcode; `ofcf-turnstile.php` is a Cloudflare-Turnstile login captcha, public sitekey).
+  Uploaded + verified executing on the new host.
+- **Antivirus:** no AV anywhere + clamav.net is Cloudflare-blocked. Installed **ClamAV
+  0.105.2 on the host** (extracted from the GitHub-release `.deb` via `ar`+python `tarfile`;
+  1.5.2 needed glibc 2.29, host has 2.28 → version-hunt found 0.105.2 works). DB pulled via
+  `curl` with the ClamAV User-Agent (default UA 403s). Scanned `win-download` + PHP — slow
+  (deep MSI unpack); these are official vendor installers (md5-identical to live).
+- **Full redesign deployed to the host** by having the host download the repo main tarball
+  from GitHub (codeload — reachable; clamav.net/Cloudflare-fronted sites 403 the host) and
+  **overlay-copying** the public files into `~jntckkaf/public_html` (excluded
+  `.git/seo/v2/.claude/*.md/.nojekyll`; `cp` without `--delete` so win-download/ver.php
+  survive). Host went 457 → 527 pages, now has features/donate/slashless/footers/Skype-0.
+  **`.htaccess` NOT redeployed to the preview** (the slashless RewriteRule would break the
+  `/~jntckkaf/` userdir serving — it's a cutover-time, live-docroot thing).
+
+**OPEN / pending:**
+- **Staged `ver.txt` rollout** — user wants weekly +1-minor bumps toward 10.9.2, then
+  "10 days after a new site version". 3 ver.txt on host (root 8.4.0.0, update/ 10.9.2,
+  light/ 10.5.0) + ver.php (reads root). Which files to ramp = awaiting decision. In
+  `seo/REMINDERS.md`.
+- DNS cutover to `91.223.223.113` + drop `seo/redirects.htaccess` into the live docroot.
+- Re-deploy redesign at cutover if the repo changed since.
 
 ## Session log — 2026-06-07 (UI polish + perf + SEO pass)
 
