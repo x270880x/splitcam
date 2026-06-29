@@ -352,8 +352,9 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 .donate-panel h2{font-size:24px;font-weight:800;letter-spacing:-.5px;margin-bottom:8px}
 .donate-panel p{font-size:14.5px;color:var(--text-sub);line-height:1.6;margin-bottom:20px}
 .donate-amounts{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:22px}
-.donate-amounts span{padding:7px 14px;border-radius:99px;background:rgba(255,255,255,.04);border:1px solid var(--app-border2);font-size:13px;font-weight:700;color:var(--text)}
-.donate-amounts span.any{background:transparent;color:var(--text-sub);font-weight:500}
+.donate-amounts a{padding:7px 14px;border-radius:99px;background:rgba(255,255,255,.04);border:1px solid var(--app-border2);font-size:13px;font-weight:700;color:var(--text);text-decoration:none;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+.donate-amounts a:hover{border-color:var(--blue);color:#fff;background:var(--blue-dim)}
+.donate-amounts a.any{background:transparent;color:var(--text-sub);font-weight:500}
 .donate-form{display:inline-block}
 .paypal-btn{cursor:pointer;border:none;font-family:inherit}
 .donate-note{margin-top:16px;font-size:12.5px;color:var(--text-dim);line-height:1.6}
@@ -416,13 +417,9 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <h2>立即捐助</h2>
       <p>无论金额多少，都是帮助。捐款全程由 PayPal 安全处理——具体金额可在下一步页面自行填写。</p>
       <div class="donate-amounts">
-        <span>$25</span><span>$50</span><span>$100</span><span>$200</span><span>$500</span><span>$1000</span><span class="any">或任意金额</span>
+        <a href="https://paypal.me/Katzovich/25USD" target="_blank" rel="noopener">$25</a><a href="https://paypal.me/Katzovich/50USD" target="_blank" rel="noopener">$50</a><a href="https://paypal.me/Katzovich/100USD" target="_blank" rel="noopener">$100</a><a href="https://paypal.me/Katzovich/200USD" target="_blank" rel="noopener">$200</a><a href="https://paypal.me/Katzovich/500USD" target="_blank" rel="noopener">$500</a><a href="https://paypal.me/Katzovich/1000USD" target="_blank" rel="noopener">$1000</a><a class="any" href="https://paypal.me/Katzovich" target="_blank" rel="noopener">或任意金额</a>
       </div>
-      <form class="donate-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="32FNT59FAVDPN">
-        <button type="submit" class="btn-primary btn-lg paypal-btn">❤ 通过 PayPal 捐助</button>
-      </form>
+      <a class="btn-primary btn-lg paypal-btn" href="https://paypal.me/Katzovich" target="_blank" rel="noopener">❤ 通过 PayPal 捐助</a>
       <p class="donate-note"><b>安全又灵活：</b>可用银行卡或 PayPal 余额支付——无需注册 PayPal 账户。一次性付款，不会重复扣费。</p>
     </div>
   </div>
