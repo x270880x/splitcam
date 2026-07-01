@@ -264,11 +264,20 @@ new cPanel host and deploying the redesign there.
   retrievable over HTTP — server executes them). Both portable (no DB/secret/host
   hardcode; `ofcf-turnstile.php` is a Cloudflare-Turnstile login captcha, public sitekey).
   Uploaded + verified executing on the new host.
-- **Antivirus:** no AV anywhere + clamav.net is Cloudflare-blocked. Installed **ClamAV
-  0.105.2 on the host** (extracted from the GitHub-release `.deb` via `ar`+python `tarfile`;
-  1.5.2 needed glibc 2.29, host has 2.28 → version-hunt found 0.105.2 works). DB pulled via
-  `curl` with the ClamAV User-Agent (default UA 403s). Scanned `win-download` + PHP — slow
-  (deep MSI unpack); these are official vendor installers (md5-identical to live).
+- **Antivirus — DONE, 0 infected everywhere.** No AV anywhere + clamav.net is
+  Cloudflare-blocked. Installed **ClamAV 0.105.2 on the host** (extracted from the
+  GitHub-release `.deb` via `ar`+python `tarfile`; 1.5.2 needed glibc 2.29, host has 2.28 →
+  version-hunt found 0.105.2 works). DB pulled via `curl` with the ClamAV User-Agent (default
+  UA 403s). Host scan: **529 HTML+PHP pages = 0 infected**; `win-download` per-file =
+  45 clean / 0 infected / **24 skipped** — the 24 big old installers OOM-kill clamscan
+  (exit 137 at ~18s, independent of `--scan-archive=no` / all-parsers-off) due to the
+  per-user **CloudLinux LVE memory cap** (host box has 131 GB RAM & `ulimit -v unlimited`, so
+  it's the LVE PMEM quota, not hardware). Those **24 were then scanned locally on the Mac**
+  (ClamAV **1.5.2**, fresh DB 2026-07-01, deep unpack, no memory cap — pulled via the
+  `~jntckkaf` preview URL, 1.8 GB): **24/24 clean, 0 infected.** Net: everything downloaded &
+  deployed to the new host is clean; the 24 are official vendor installers (md5-identical to
+  live splitcam.com). Repeatable: `brew`'s clamav on the Mac has no LVE cap and a newer engine
+  — use it for anything the host can't deep-unpack.
 - **Full redesign deployed to the host** by having the host download the repo main tarball
   from GitHub (codeload — reachable; clamav.net/Cloudflare-fronted sites 403 the host) and
   **overlay-copying** the public files into `~jntckkaf/public_html` (excluded
