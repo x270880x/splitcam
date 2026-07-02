@@ -170,7 +170,9 @@ RedirectMatch 301 ^/ru/help\-ru/video\-rukovodstva/kak\-odnovremenno\-provodit\-
 # Live still serves these 200 with traffic; after cutover they would 404.
 # Adult help pages get more specific 301s to the cam-guides domain when it ships —
 # that block must be pasted ABOVE this catch-all.
-RedirectMatch 301 ^/help/.+$                        https://splitcam.com/help
+# (?!index\.html$) — the slashless RewriteRule internally rewrites /help -> /help/index.html;
+# without the exclusion this catch-all re-catches it and loops /help onto itself
+RedirectMatch 301 ^/help/(?!index\.html$).+$       https://splitcam.com/help
 RedirectMatch 301 ^/privacy-policy-for-mac-apps/?$  https://splitcam.com/privacy-policy
 RedirectMatch 301 ^/download-splitcam-for-macos-mojave-and-catalina/?$ https://splitcam.com/download
 RedirectMatch 301 ^/download-archive-for-windows/?$ https://splitcam.com/changelog
