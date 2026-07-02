@@ -337,7 +337,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <li><a href="../../help/">Help</a></li>
   </ul>
   <div class="nav-right">
-    <a href="https://splitcam.com/download/" class="btn-primary" data-dl-primary>⬇ Download</a>
+    <a href="https://splitcam.com/download" class="btn-primary" data-dl-primary>⬇ Download</a>
     <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
       <svg class="ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       <svg class="ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-12 12"/></svg>
@@ -367,7 +367,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <h1 class="h1">How to be a <span class="accent">VTuber</span> — free software, real avatar, zero green screen.</h1>
     <p class="sub">Becoming a VTuber takes three things: an avatar, face tracking, and software to composite and broadcast it. Your avatar app handles the first two — free <strong style="color:var(--text)">SplitCam</strong> does the rest: AI background removal, scene switching, beauty effects, multistreaming and a virtual camera. No watermark, no subscription.</p>
     <div class="hero-cta">
-      <a href="https://splitcam.com/download/" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
+      <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
       <a href="#steps" class="btn-ghost btn-lg">Skip to setup ↓</a>
     </div>
     <div class="hero-badges">
@@ -584,7 +584,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="cta-block">
   <h2>Ready to debut your avatar?</h2>
   <p>Free download. No card, no signup, no watermark. AI background, beauty effects and multistreaming are all unlocked from the first launch.</p>
-  <a href="https://splitcam.com/download/" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
+  <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
 </section>
 
 <!-- FOOTER -->
@@ -627,7 +627,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <script>
 /* Smart download: point every [data-dl-primary] at the visitor's OS installer */
 (function(){
-  var U={windows:'https://splitcam.com/download/',mac:'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',ios:'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',android:'https://play.google.com/store/apps/details?id=com.splitcam'};
+  var U={windows:'https://splitcam.com/download',mac:'https://apps.apple.com/us/app/splitcam-live-streaming/id6479984191',ios:'https://apps.apple.com/app/splitcam-live-streaming-app/id1543666414',android:'https://play.google.com/store/apps/details?id=com.splitcam'};
   var ua=navigator.userAgent||'',os='windows';
   if(/Android/i.test(ua))os='android';else if(/iPad|iPhone|iPod/i.test(ua))os='ios';else if(/Macintosh|Mac OS X/i.test(ua))os='mac';
   document.querySelectorAll('[data-dl-primary]').forEach(function(a){a.setAttribute('href',U[os]);});
