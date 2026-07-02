@@ -190,6 +190,12 @@ download split-button radii, vc-arrow connector) injected per RTL page by
 
 ## Important notes
 
+0. **Subresources must be FULL absolute URLs** (`https://splitcam.com/...`) — pages are
+   served at slashless canonical URLs in production, so page-relative `src`/`poster`/icon
+   paths resolve against the wrong base and 404 (bug found 2026-07-02: orbit logos).
+   Enforced across all 527 pages; any NEW page/image must follow this.
+
+
 1. **`AHREFS_TOKEN` must be regenerated** — it was exposed in chat. Set the new
    token as an env var; never commit it. Ahrefs Lite plan, 100k units/mo.
 2. Brand logos stored LOCALLY in `/virtual-camera/assets/logos/` — no external CDN.

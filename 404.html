@@ -15,10 +15,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>404 — Page not found | SplitCam</title>
 <meta name="robots" content="noindex, follow">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://splitcam.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://splitcam.com/favicon-16x16.png">
+<link rel="shortcut icon" href="https://splitcam.com/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://splitcam.com/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -83,7 +83,7 @@ h1 { font-size: clamp(22px, 3.4vw, 30px); font-weight: 700; letter-spacing: -.6p
 </head>
 <body>
 
-<div class="top"><a href="/"><img src="/assets/splitcam.png" alt="SplitCam"> SplitCam</a></div>
+<div class="top"><a href="https://splitcam.com/"><img src="https://splitcam.com/assets/splitcam.png" alt="SplitCam"> SplitCam</a></div>
 
 <div class="stage">
   <div class="glow"></div>
@@ -98,14 +98,14 @@ h1 { font-size: clamp(22px, 3.4vw, 30px); font-weight: 700; letter-spacing: -.6p
     <h1 id="t-h1">This page isn&rsquo;t live</h1>
     <p class="sub" id="t-sub">The page you&rsquo;re looking for doesn&rsquo;t exist or has moved. The stream goes on &mdash; pick a scene below.</p>
     <div class="btns">
-      <a class="btn-primary" id="b-home" href="/">Go to homepage</a>
+      <a class="btn-primary" id="b-home" href="https://splitcam.com/">Go to homepage</a>
       <a class="btn-ghost" id="b-dl" href="https://splitcam.com/download">Download SplitCam</a>
     </div>
     <div class="links" id="qlinks">
-      <a href="/features/">Features</a><span>&middot;</span>
-      <a href="/virtual-camera/">Virtual Camera</a><span>&middot;</span>
-      <a href="/multistreaming/">Multistreaming</a><span>&middot;</span>
-      <a href="/help/">Help</a>
+      <a href="https://splitcam.com/features/">Features</a><span>&middot;</span>
+      <a href="https://splitcam.com/virtual-camera/">Virtual Camera</a><span>&middot;</span>
+      <a href="https://splitcam.com/multistreaming/">Multistreaming</a><span>&middot;</span>
+      <a href="https://splitcam.com/help/">Help</a>
     </div>
   </div>
 </div>
@@ -171,13 +171,13 @@ h1 { font-size: clamp(22px, 3.4vw, 30px); font-weight: 700; letter-spacing: -.6p
     document.getElementById('t-sub').textContent = t[1];
     document.getElementById('b-home').textContent = t[2];
     document.getElementById('b-dl').textContent = t[3];
-    document.getElementById('b-home').setAttribute('href', '/' + lang + '/');
+    document.getElementById('b-home').setAttribute('href', 'https://splitcam.com/' + lang + '/');
     document.documentElement.setAttribute('lang', lang);
     if (RTL[lang]) { document.getElementById('t-h1').setAttribute('dir','rtl'); document.getElementById('t-sub').setAttribute('dir','rtl'); }
     // быстрые ссылки — в локаль
     var q = document.getElementById('qlinks').getElementsByTagName('a');
     for (var j = 0; j < q.length; j++) {
-      q[j].setAttribute('href', '/' + lang + q[j].getAttribute('href'));
+      q[j].setAttribute('href', 'https://splitcam.com/' + lang + q[j].getAttribute('href').replace('https://splitcam.com',''));
     }
   }
 })();
