@@ -46,6 +46,126 @@ RedirectMatch 301 ^/german/?$                       https://splitcam.com/de/
 RedirectMatch 301 ^/aboutus\.html$                  https://splitcam.com/help
 RedirectMatch 301 ^/cgi-sys/suspendedpage\.cgi$     https://splitcam.com/
 
+# --- ADULT cluster -> camstreamguide.com (from ../cam-streaming-guides/REDIRECTS.md;
+# live old host ALREADY does these 301s — replicated here so they survive cutover.
+# mod_alias: first match wins, so this block MUST stay ABOVE the /help catch-all) ---
+# === Adult-cam pages → migrated to camstreamguide.com (2026) ===
+
+# Chaturbate
+Redirect 301 /help/start/how-to-add-chaturbate-stream                 https://camstreamguide.com/chaturbate/
+Redirect 301 /help/video-tutorials/how-to-stream-on-chaturbate        https://camstreamguide.com/chaturbate/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-chaturbate            https://camstreamguide.com/ru/chaturbate/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-dobavit-translyaciyu-na-chaturbate https://camstreamguide.com/ru/chaturbate/
+Redirect 301 /es/ayuda/start/como-transmitir-en-chaturbate                                  https://camstreamguide.com/es/chaturbate/
+Redirect 301 /es/ayuda/video-tutorials/transmite-en-chaturbate-en-alta-calidad-facil-paso-a-paso https://camstreamguide.com/es/chaturbate/
+
+# CAM4
+Redirect 301 /help/start/how-to-add-cam4-stream                       https://camstreamguide.com/cam4/
+Redirect 301 /help/video-tutorials/how-to-stream-on-cam4              https://camstreamguide.com/cam4/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-cam4                  https://camstreamguide.com/ru/cam4/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-dobavit-translyaciyu-na-cam4       https://camstreamguide.com/ru/cam4/
+Redirect 301 /es/ayuda/start/como-transmitir-en-cam4                                        https://camstreamguide.com/es/cam4/
+Redirect 301 /es/ayuda/video-tutorials/transmite-en-cam4-en-alta-calidad-facil-paso-a-paso  https://camstreamguide.com/es/cam4/
+
+# BongaCams
+Redirect 301 /help/start/how-to-stream-on-bongacams                   https://camstreamguide.com/bongacams/
+Redirect 301 /help/video-tutorials/how-to-stream-on-bongacams         https://camstreamguide.com/bongacams/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-bongacams             https://camstreamguide.com/ru/bongacams/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-bongacams https://camstreamguide.com/ru/bongacams/
+
+# Stripchat
+Redirect 301 /help/start/how-to-add-stripchat-stream                  https://camstreamguide.com/stripchat/
+Redirect 301 /help/video-tutorials/how-to-add-stripchat-stream        https://camstreamguide.com/stripchat/
+Redirect 301 /blog/2020/how-to-add-stripchat-stream.html              https://camstreamguide.com/stripchat/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-stripchat                              https://camstreamguide.com/ru/stripchat/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-v-stripchat-pri-pomoshhi-splitcam https://camstreamguide.com/ru/stripchat/
+
+# OnlyFans
+Redirect 301 /help/start/how-to-stream-on-onlyfans                    https://camstreamguide.com/onlyfans/
+Redirect 301 /help/video-tutorials/how-to-stream-on-onlyfans          https://camstreamguide.com/onlyfans/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-onlyfans              https://camstreamguide.com/ru/onlyfans/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-onlyfans  https://camstreamguide.com/ru/onlyfans/
+
+# CamPlace
+Redirect 301 /help/start/how-to-stream-on-camplace                    https://camstreamguide.com/camplace/
+Redirect 301 /help/start/how-to-stream-on-camplace-2                  https://camstreamguide.com/camplace/
+Redirect 301 /help/video-tutorials/how-to-stream-on-camplace          https://camstreamguide.com/camplace/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-camplace              https://camstreamguide.com/ru/camplace/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-camplace  https://camstreamguide.com/ru/camplace/
+
+# CamSoda
+Redirect 301 /help/video-tutorials/how-to-stream-on-camsoda           https://camstreamguide.com/camsoda/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-camsoda                https://camstreamguide.com/ru/camsoda/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-camsoda    https://camstreamguide.com/ru/camsoda/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-camsoda-2  https://camstreamguide.com/ru/camsoda/
+
+# Streamate
+Redirect 301 /help/video-tutorials/how-to-stream-on-streamate         https://camstreamguide.com/streamate/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-streamate              https://camstreamguide.com/ru/streamate/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-streamate  https://camstreamguide.com/ru/streamate/
+
+# StreamRay
+Redirect 301 /help/start/how-to-stream-on-streamray                   https://camstreamguide.com/streamray/
+Redirect 301 /help/video-tutorials/how-to-stream-on-streamray         https://camstreamguide.com/streamray/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-streamray              https://camstreamguide.com/ru/streamray/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-streamray  https://camstreamguide.com/ru/streamray/
+
+# XLoveCam
+Redirect 301 /help/start/how-to-stream-to-xlovecam                    https://camstreamguide.com/xlovecam/
+Redirect 301 /help/video-tutorials/how-to-stream-on-xlovecam          https://camstreamguide.com/xlovecam/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-xlovecam               https://camstreamguide.com/ru/xlovecam/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-xlovecam   https://camstreamguide.com/ru/xlovecam/
+
+# SoulCams
+Redirect 301 /help/start/how-to-stream-to-soulcams                    https://camstreamguide.com/soulcams/
+Redirect 301 /help/video-tutorials/how-to-stream-on-soulcams          https://camstreamguide.com/soulcams/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-soulcams               https://camstreamguide.com/ru/soulcams/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-soulcams   https://camstreamguide.com/ru/soulcams/
+
+# ImLive
+Redirect 301 /help/start/how-to-stream-on-imlive                      https://camstreamguide.com/imlive/
+Redirect 301 /help/video-tutorials/how-to-stream-on-imlive            https://camstreamguide.com/imlive/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-imlive                 https://camstreamguide.com/ru/imlive/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-imlive     https://camstreamguide.com/ru/imlive/
+
+# VXLive
+Redirect 301 /help/video-tutorials/how-to-stream-on-vxlive            https://camstreamguide.com/vxlive/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-vxlive                 https://camstreamguide.com/ru/vxlive/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-vxlive     https://camstreamguide.com/ru/vxlive/
+
+# Virtwish
+Redirect 301 /help/start/how-to-add-virtwish-stream                   https://camstreamguide.com/virtwish/
+Redirect 301 /help/video-tutorials/how-to-add-virtwish-stream         https://camstreamguide.com/virtwish/
+Redirect 301 /ru/help-ru/start/kak-provodit-translyaciyu-na-virtwish               https://camstreamguide.com/ru/virtwish/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-virtwish   https://camstreamguide.com/ru/virtwish/
+
+# XModels
+Redirect 301 /help/video-tutorials/how-to-stream-to-xmodels           https://camstreamguide.com/xmodels/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-xmodels    https://camstreamguide.com/ru/xmodels/
+
+# Flirt4Free
+Redirect 301 /help/video-tutorials/how-to-stream-on-flirt-4-free      https://camstreamguide.com/flirt4free/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-provodit-translyaciyu-na-flirt4free https://camstreamguide.com/ru/flirt4free/
+
+# MyFreeCams (MFC alerts)
+Redirect 301 /help/start/how-to-add-mfc-alerts                        https://camstreamguide.com/mfc-alerts/
+Redirect 301 /help/video-tutorials/how-to-add-mfc-alerts              https://camstreamguide.com/mfc-alerts/
+Redirect 301 /blog/2020/how-to-add-mfc-alerts.html                    https://camstreamguide.com/mfc-alerts/
+Redirect 301 /ru/help-ru/start/kak-dobavit-mfc-alerts                              https://camstreamguide.com/ru/mfc-alerts/
+Redirect 301 /es/ayuda/start/como-agregar-mfc-alerts                               https://camstreamguide.com/es/mfc-alerts/
+
+# Lovense (toy)
+Redirect 301 /help/video-tutorials/how-to-add-a-lovense-toy-to-your-stream         https://camstreamguide.com/lovense/
+Redirect 301 /ru/help-ru/start/kak-dobavit-ustrojstvo-lovense-na-translyaciyu       https://camstreamguide.com/ru/lovense/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-dobavit-ustrojstvo-lovense-na-translyaciyu https://camstreamguide.com/ru/lovense/
+Redirect 301 /es/ayuda/video-tutorials/conecta-tus-juguetes-lovense-y-reacciona-a-tus-tokens-paso-a-paso https://camstreamguide.com/es/lovense/
+
+# Multi-platform broadcast guide
+Redirect 301 /help/video-tutorials/splitcam-10-how-to-broadcast-on-bongacams-chaturbate-cam4-stripchat-and-other-at-the-same-time https://camstreamguide.com/multistream-cams/
+Redirect 301 /ru/help-ru/video-rukovodstva/kak-odnovremenno-provodit-translyacii-na-bongacams-chaturbate-cam4-stripchat-i-dr      https://camstreamguide.com/ru/multistream-cams/
+
+# === end adult migration block ===
+
 # --- legacy WP content that will NOT exist on the new host (added 2026-07-02) ---
 # Live still serves these 200 with traffic; after cutover they would 404.
 # Adult help pages get more specific 301s to the cam-guides domain when it ships —
@@ -58,7 +178,7 @@ RedirectMatch 301 ^/download-archive-for-windows/?$ https://splitcam.com/changel
 # to the closest-topic page; generated from the live blog's 109 posts).
 # NOTE (user, 2026-07-02): posts whose BEST match is a PLANNED page point at the
 # future URL already: /for/streamers (5 rules), /for/educators (1 rule) — Wave 3.
-# !! SHIP those two pages BEFORE cutover, or flip these 6 rules to /for. ---
+# CUTOVER 2026-07-02: flipped to /for for launch; build the pages post-cutover and retarget. ---
 RedirectMatch 301 ^/blog/2011/splitcam\-blog\-started\.html$ https://splitcam.com/
 RedirectMatch 301 ^/blog/2011/splitcam\-site\-redesigned\.html$ https://splitcam.com/
 RedirectMatch 301 ^/blog/2012/multilingual\-splitcam\-version\-is\-coming\-soon\-translators\-wanted\.html$ https://splitcam.com/
@@ -117,11 +237,11 @@ RedirectMatch 301 ^/blog/2020/how\-to\-add\-video\-to\-broadcast\.html$ https://
 RedirectMatch 301 ^/blog/2020/how\-to\-add\-webcam\.html$ https://splitcam.com/features
 RedirectMatch 301 ^/blog/2020/layer\-management\.html$ https://splitcam.com/features
 RedirectMatch 301 ^/blog/2021/23\-and\-1\-reasons\-why\-splitcam\-is\-the\-best\.html$ https://splitcam.com/features
-RedirectMatch 301 ^/blog/2021/9\-streaming\-ideas\-you\-can\-make\-millions\-from\.html$ https://splitcam.com/for/streamers
-RedirectMatch 301 ^/blog/2021/choosing\-a\-webcam\-for\-streaming\.html$ https://splitcam.com/for/streamers
-RedirectMatch 301 ^/blog/2021/how\-to\-start\-streaming\.html$ https://splitcam.com/for/streamers
-RedirectMatch 301 ^/blog/2021/what\-a\-streamer\-needs\-to\-know\-20\-tips\.html$ https://splitcam.com/for/streamers
-RedirectMatch 301 ^/blog/2021/what\-is\-streaming\-and\-how\-do\-you\-make\-money\-on\-it\.html$ https://splitcam.com/for/streamers
+RedirectMatch 301 ^/blog/2021/9\-streaming\-ideas\-you\-can\-make\-millions\-from\.html$ https://splitcam.com/for
+RedirectMatch 301 ^/blog/2021/choosing\-a\-webcam\-for\-streaming\.html$ https://splitcam.com/for
+RedirectMatch 301 ^/blog/2021/how\-to\-start\-streaming\.html$ https://splitcam.com/for
+RedirectMatch 301 ^/blog/2021/what\-a\-streamer\-needs\-to\-know\-20\-tips\.html$ https://splitcam.com/for
+RedirectMatch 301 ^/blog/2021/what\-is\-streaming\-and\-how\-do\-you\-make\-money\-on\-it\.html$ https://splitcam.com/for
 RedirectMatch 301 ^/blog/2011/how\-to\-connect\-splitcam\-to\-youtube\.html$ https://splitcam.com/for/youtubers
 RedirectMatch 301 ^/blog/2011/recommendations\-for\-splitcam\-faster\-work\.html$ https://splitcam.com/help
 RedirectMatch 301 ^/blog/2011/splitcam\-installation\-guide\-video\-tutorial\.html$ https://splitcam.com/help
@@ -163,7 +283,7 @@ RedirectMatch 301 ^/blog/2012/skype\-via\-splitcam\-video\-guide\.html$ https://
 RedirectMatch 301 ^/blog/2012/video\-splitcam\-your\-webcam\-in\-yahoo\-skype\-windows\-live\-at\-the\-same\-time\.html$ https://splitcam.com/virtual-camera
 RedirectMatch 301 ^/blog/2012/yahoo\-messenger\-windows\-live\-messenger\-and\-skype\-at\-the\-same\-time\-with\-splitcam\-russian\.html$ https://splitcam.com/virtual-camera
 RedirectMatch 301 ^/blog/2021/5\-reasons\-to\-switch\-to\-video\-conferencing\.html$ https://splitcam.com/virtual-camera
-RedirectMatch 301 ^/blog/2021/how\-to\-create\-a\-webinar\-thats\-appreciated\.html$ https://splitcam.com/for/educators
+RedirectMatch 301 ^/blog/2021/how\-to\-create\-a\-webinar\-thats\-appreciated\.html$ https://splitcam.com/for
 RedirectMatch 301 ^/blog/2021/how\-to\-stream\-to\-skout\-with\-a\-virtual\-camera\.html$ https://splitcam.com/virtual-camera
 RedirectMatch 301 ^/blog/2021/how\-to\-use\-microsoft\-teams\-with\-splitcam\.html$ https://splitcam.com/virtual-camera
 RedirectMatch 301 ^/blog/2021/how\-to\-work\-with\-google\-meet\.html$ https://splitcam.com/virtual-camera
