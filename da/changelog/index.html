@@ -229,7 +229,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .release.open{border-color:rgba(40,120,252,.3);background:linear-gradient(180deg,var(--app-panel),var(--app-surface))}
 .rel-head{display:flex;align-items:center;gap:14px;padding:18px 22px;cursor:pointer;list-style:none;font-weight:600}
 .rel-head::-webkit-details-marker{display:none}
-.rel-ver{font-family:'Geist Mono',monospace;font-size:15px;font-weight:700;color:var(--text);letter-spacing:.2px;padding:5px 11px;background:var(--blue-dim);border-radius:8px;color:var(--blue)}
+.rel-ver{font-family:'Geist Mono',monospace;font-size:15px;font-weight:700;color:var(--text);letter-spacing:.2px;padding:5px 11px;background:var(--blue-dim);border-radius:8px;color:var(--blue)}.rel-dl{display:inline-flex;align-items:center;padding:6px 8px;border-radius:8px;color:var(--blue);background:var(--blue-dim);transition:background .15s,color .15s}.rel-dl:hover{background:var(--blue);color:#fff}
 .release.open .rel-ver{background:var(--blue);color:#fff}
 .rel-date{font-size:13px;color:var(--text-sub);font-weight:500;font-family:'Geist Mono',monospace;letter-spacing:.2px}
 .rel-chev{margin-left:auto;color:var(--text-sub);transition:transform .2s}
@@ -393,7 +393,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="releases">
     <article class="release open" id="win-v10.9.2">
       <header class="rel-head">
-        <span class="rel-ver">v10.9.2</span>
+        <span class="rel-ver">v10.9.2</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.9.2/10.9.2_x64.msi" title="Download v10.9.2 installer (.msi)" aria-label="Download v10.9.2" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">March 18, 2026</time>
       </header>
       <div class="rel-sec new">
@@ -446,7 +446,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <article class="release open" id="win-v10.8.70">
       <header class="rel-head">
-        <span class="rel-ver">v10.8.70</span>
+        <span class="rel-ver">v10.8.70</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.70/10.8.70_x64.msi" title="Download v10.8.70 installer (.msi)" aria-label="Download v10.8.70" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">December 14, 2025</time>
       </header>
       <div class="rel-sec new">
@@ -493,7 +493,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <article class="release open" id="win-v10.8.60">
       <header class="rel-head">
-        <span class="rel-ver">v10.8.60</span>
+        <span class="rel-ver">v10.8.60</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.60/10.8.60_x64.msi" title="Download v10.8.60 installer (.msi)" aria-label="Download v10.8.60" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">August 26, 2025</time>
       </header>
       <div class="rel-sec new">
@@ -527,7 +527,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.8.55">
       <summary class="rel-head">
-        <span class="rel-ver">v10.8.55</span>
+        <span class="rel-ver">v10.8.55</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.55/10.8.55_x64.msi" title="Download v10.8.55 installer (.msi)" aria-label="Download v10.8.55" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">July 28, 2025</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -561,7 +561,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.8.50">
       <summary class="rel-head">
-        <span class="rel-ver">v10.8.50</span>
+        <span class="rel-ver">v10.8.50</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.50/10.8.50_x64.msi" title="Download v10.8.50 installer (.msi)" aria-label="Download v10.8.50" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">May 31, 2025</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -609,7 +609,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.8.25">
       <summary class="rel-head">
-        <span class="rel-ver">v10.8.25</span>
+        <span class="rel-ver">v10.8.25</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.25/10.8.25_x64.msi" title="Download v10.8.25 installer (.msi)" aria-label="Download v10.8.25" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">January 18, 2025</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -692,7 +692,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.8.5">
       <summary class="rel-head">
-        <span class="rel-ver">v10.8.5</span>
+        <span class="rel-ver">v10.8.5</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.5/10.8.5_x64.msi" title="Download v10.8.5 installer (.msi)" aria-label="Download v10.8.5" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">July 14, 2024</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -769,7 +769,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.7.44">
       <summary class="rel-head">
-        <span class="rel-ver">v10.7.44</span>
+        <span class="rel-ver">v10.7.44</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.7.44/10.7.44_x64.msi" title="Download v10.7.44 installer (.msi)" aria-label="Download v10.7.44" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">May 26, 2024</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -826,7 +826,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.7.32">
       <summary class="rel-head">
-        <span class="rel-ver">v10.7.32</span>
+        <span class="rel-ver">v10.7.32</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.7.32/10.7.32_x64.msi" title="Download v10.7.32 installer (.msi)" aria-label="Download v10.7.32" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">February 14, 2024</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -889,7 +889,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.7.24">
       <summary class="rel-head">
-        <span class="rel-ver">v10.7.24</span>
+        <span class="rel-ver">v10.7.24</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.7.24/10.7.24_x64.msi" title="Download v10.7.24 installer (.msi)" aria-label="Download v10.7.24" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">December 12, 2023</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -1059,7 +1059,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.7.11">
       <summary class="rel-head">
-        <span class="rel-ver">v10.7.11</span>
+        <span class="rel-ver">v10.7.11</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.7.11/10.7.11_x64.msi" title="Download v10.7.11 installer (.msi)" aria-label="Download v10.7.11" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">July 18, 2023</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -1201,7 +1201,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.6.54">
       <summary class="rel-head">
-        <span class="rel-ver">v10.6.54</span>
+        <span class="rel-ver">v10.6.54</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.6.54/10.6.54.msi" title="Download v10.6.54 installer (.msi)" aria-label="Download v10.6.54" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">March 12, 2023</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -1422,7 +1422,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.6.12">
       <summary class="rel-head">
-        <span class="rel-ver">v10.6.12</span>
+        <span class="rel-ver">v10.6.12</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.6.12/10.6.12.msi" title="Download v10.6.12 installer (.msi)" aria-label="Download v10.6.12" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">July 18, 2022</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -1529,7 +1529,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.5.92">
       <summary class="rel-head">
-        <span class="rel-ver">v10.5.92</span>
+        <span class="rel-ver">v10.5.92</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.5.92/10.5.92.msi" title="Download v10.5.92 installer (.msi)" aria-label="Download v10.5.92" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">June 14, 2022</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -1948,7 +1948,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.5.12">
       <summary class="rel-head">
-        <span class="rel-ver">v10.5.12</span>
+        <span class="rel-ver">v10.5.12</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.5.12/10.5.12.msi" title="Download v10.5.12 installer (.msi)" aria-label="Download v10.5.12" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">Feb 24, 2021</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -2047,7 +2047,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.4.96">
       <summary class="rel-head">
-        <span class="rel-ver">v10.4.96</span>
+        <span class="rel-ver">v10.4.96</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.4.96/10.4.96.msi" title="Download v10.4.96 installer (.msi)" aria-label="Download v10.4.96" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">Jan 20, 2021</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -2427,7 +2427,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.4.8">
       <summary class="rel-head">
-        <span class="rel-ver">v10.4.8</span>
+        <span class="rel-ver">v10.4.8</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.4.8/10.4.8.msi" title="Download v10.4.8 installer (.msi)" aria-label="Download v10.4.8" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">Jul 20, 2020</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -2497,7 +2497,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.4.5">
       <summary class="rel-head">
-        <span class="rel-ver">v10.4.5</span>
+        <span class="rel-ver">v10.4.5</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.4.5/10.4.5.msi" title="Download v10.4.5 installer (.msi)" aria-label="Download v10.4.5" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">Jul 7, 2020</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -2603,7 +2603,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.3.85">
       <summary class="rel-head">
-        <span class="rel-ver">v10.3.85</span>
+        <span class="rel-ver">v10.3.85</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.3.85/10.3.85.msi" title="Download v10.3.85 installer (.msi)" aria-label="Download v10.3.85" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">Jun 12, 2020</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -2640,7 +2640,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.3.78">
       <summary class="rel-head">
-        <span class="rel-ver">v10.3.78</span>
+        <span class="rel-ver">v10.3.78</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.3.78/10.3.78.msi" title="Download v10.3.78 installer (.msi)" aria-label="Download v10.3.78" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">Jun 4, 2020</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -2820,7 +2820,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.3.42">
       <summary class="rel-head">
-        <span class="rel-ver">v10.3.42</span>
+        <span class="rel-ver">v10.3.42</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.3.42/10.3.42.msi" title="Download v10.3.42 installer (.msi)" aria-label="Download v10.3.42" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">Apr. 14, 2020</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -2912,7 +2912,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.2.16">
       <summary class="rel-head">
-        <span class="rel-ver">v10.2.16</span>
+        <span class="rel-ver">v10.2.16</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.2.16/10.2.16.msi" title="Download v10.2.16 installer (.msi)" aria-label="Download v10.2.16" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">Mar. 11, 2020</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -3000,7 +3000,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.1.4">
       <summary class="rel-head">
-        <span class="rel-ver">v10.1.4</span>
+        <span class="rel-ver">v10.1.4</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.1.4/10.1.4.msi" title="Download v10.1.4 installer (.msi)" aria-label="Download v10.1.4" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">Feb. 23, 2020</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
@@ -3155,7 +3155,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 
     <details class="release" id="win-v10.0.58">
       <summary class="rel-head">
-        <span class="rel-ver">v10.0.58</span>
+        <span class="rel-ver">v10.0.58</span><a class="rel-dl" href="https://github.com/x270880x/splitcam-release/releases/download/v10.0.58/10.0.58.msi" title="Download v10.0.58 installer (.msi)" aria-label="Download v10.0.58" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">Jan. 24, 2020</time>
         <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
