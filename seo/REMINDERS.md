@@ -340,3 +340,13 @@ Compare DR / ranked keyword count / traffic estimate vs baseline in `seo/reports
 - **Open at start of any SEO chat** — Claude can `Read` this file and pick up exactly where things left off
 - **Update status** in the table as tasks complete (don't delete sections — useful for context later)
 - **Don't trust the cron tool for durable reminders** — it lied about `durable: true` in May 2026; reminders set that way died with the chat session. Use this file + iCloud Calendar instead.
+## Search-engine registration (2026-07-02, post-cutover)
+- **IndexNow — DONE:** all 526 sitemap URLs submitted (api.indexnow.org 200, bing 200,
+  yandex 202). Key file: https://splitcam.com/485c229ee85ee55f1967363aabec7e9a.txt (host-managed,
+  in public_html; NOT in the repo — re-upload if docroot is ever rebuilt from scratch).
+  **Practice:** after adding/renaming pages, re-submit changed URLs:
+  POST https://api.indexnow.org/indexnow {host, key, keyLocation, urlList}.
+- **Google:** domain property sc-domain:splitcam.com verified via DNS TXT; sitemap
+  declared in robots.txt (auto-discovery). GSC manual sitemap submit = user action.
+- Optional later: Bing Webmaster Tools (import from GSC), Yandex Webmaster UI for RU market.
+
