@@ -71,7 +71,24 @@ New prod target: **cPanel `~jntckkaf` on rocket-cp2.hostsila.org** (cutover IP
 on the host, 0 drift; win-download fully AV-audited 0 infected (manifest
 `~/clamav/fullscan-2026-07-02.log` on the host: path|md5|verdict for every file).
 
-**At CUTOVER (when user says go):**
+## ✅ CUTOVER EXECUTED — 2026-07-02 ~19:00
+splitcam.com + www -> **91.223.223.113** (proxied), cache purged, live battery green
+(pages 200, slashless 301, all redirect classes incl. adult->camstreamguide, ver.php/.cfg/
+installer OK). Mail PINNED to old server first: mail/webmail = A 77.83.100.124 (DNS only),
+MX -> mail.splitcam.com — old server must stay alive for mail. www->apex 301 via CF dynamic
+redirect rule. Origin cert = CF Origin CA (to 2041). Rollback: A records back to
+77.83.100.124. Post-cutover follow-ups below.
+
+**Post-cutover follow-ups:**
+- Submit sitemap in GSC (property verified via DNS TXT); watch indexing of 34 locales
+  (old robots blocked /de/ /tr/ /hi/ /ar/ — now open).
+- Build /for/streamers + /for/educators, retarget the 6 blog rules from /for.
+- Re-issue the CF Origin cert pair (private key transited chat 2026-07-02) — low risk, free.
+- Re-run indexing/ranking checks (+7d, +14d) and Month-1-style Ahrefs vs baseline (+30d).
+- Old server: keep alive (mail + adult-source pages); decide mail migration separately.
+- Watch new-host bandwidth usage (16 GB installers now on live traffic) — hoster quota unknown.
+
+**Original checklist (executed):**
 - **SHIP `/for/streamers` + `/for/educators` BEFORE cutover** (user 2026-07-02: blog 301s
   already point at these planned Wave-3 URLs — 5 rules → /for/streamers, 1 → /for/educators.
   If they can't ship in time, flip those 6 rules in `seo/redirects.htaccess` to `/for`).
