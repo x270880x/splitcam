@@ -39,10 +39,12 @@ Capture.** Don't forget.
   backend needed. In `redirects.htaccess` + cloudflare CSV. (Old `aboutus.html` retargeted
   to `/help` too, to avoid a 2-hop chain.)
 - `/donate-us` (+ `/ru/pozhertvovat`, `/es/donarnos`) — **RESOLVED 2026-06-28: BUILT** in
-  all 35 locales (slashless `/donate-us`), same PayPal hosted button as live
-  (`hosted_button_id=32FNT59FAVDPN`). Old localized ru/es donate URLs 301 →
-  `/ru/donate-us`, `/es/donate-us` (in `redirects.htaccess` + CSV). If the PayPal button
-  ID ever changes, update it in all 35 `*/donate-us/index.html`.
+  all 35 locales (slashless `/donate-us`). **Updated 2026-06-30:** donations now go to
+  **`paypal.me/Katzovich`** — amount chips ($25/$50/$100/$200/$500/$1000) are clickable
+  `paypal.me/Katzovich/<amt>USD` links; the old hosted button (`32FNT59FAVDPN`) was
+  removed everywhere. Old localized ru/es donate URLs 301 → `/ru/donate-us`,
+  `/es/donate-us` (in `redirects.htaccess` + CSV). If the PayPal target ever changes,
+  update it in all 35 `*/donate-us/index.html`.
 
 ---
 
@@ -53,14 +55,26 @@ New prod target: **cPanel `~jntckkaf` on rocket-cp2.hostsila.org** (cutover IP
 `~/.hostsila_ssh` (new, full shell), `~/.splitcam_old_ssh` (old, SFTP-only). See the
 2026-06-29/30 session log in `ONBOARDING.md` and memory `project-splitcam-hosting`.
 
-**Already on the new host:** full redesign (527 pages, slashless/features/donate/footers/
-Skype-0), `win-download/` (installers updated to 10.9.2 build; 32-bit untouched),
-`ver.php`, `ofcf-turnstile.php`, `ver.txt` (8.4.0.0), `.well-known/assetlinks.json`.
+**Already on the new host:** full redesign (slashless/features/donate/footers/Skype-0),
+`win-download/` (installers updated to 10.9.2 build; 32-bit untouched), `ver.php`,
+`ofcf-turnstile.php`, all three `ver.txt` = **10.9.2**, `.well-known/assetlinks.json`.
+**Verified 2026-07-02:** full sweep — all 578 deployable repo files byte-identical (md5)
+on the host, 0 drift; win-download fully AV-audited 0 infected (manifest
+`~/clamav/fullscan-2026-07-02.log` on the host: path|md5|verdict for every file).
 
 **At CUTOVER (when user says go):**
 - Point splitcam.com DNS → `91.223.223.113`.
-- Drop `seo/redirects.htaccess` into the live docroot `.htaccess` (NOT done on preview —
-  its slashless RewriteRule breaks the `/~jntckkaf/` userdir).
+- **REPLACE** the docroot `.htaccess` with current `seo/redirects.htaccess` — the file
+  already sitting on the host is the STALE 2026-05-21 generation (no slashless
+  RewriteRule, no ru/es 301s, no contact-us→help, no donate). Replace, don't append.
+  (Inert on the preview — anchored `^/` patterns never match `/~jntckkaf/` URIs.)
+- **Fix `.cfg` serving BEFORE cutover (BLOCKER, found 2026-07-02):** the new host 403s
+  `win-download/update/*.cfg` (`ingests.cfg`, `ingests2.cfg`, `proxy.cfg`) while live
+  splitcam.com serves them 200 `application/octet-stream` — the app reads these (RTMP
+  ingest lists / proxy config). Add a `win-download/update/.htaccess` override
+  (`<FilesMatch "\.cfg$"> Require all granted </FilesMatch>` +
+  `AddType application/octet-stream .cfg`) and verify 200; if 403 persists it's a global
+  Apache/Imunify rule → hoster ticket.
 - Re-deploy the redesign if the repo changed since (host pulls the GitHub main tarball and
   overlay-copies, excluding `.git/seo/v2/.claude/*.md/.nojekyll`; never `--delete` or you
   wipe win-download).

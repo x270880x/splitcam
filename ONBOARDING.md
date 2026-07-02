@@ -54,11 +54,24 @@
   `/ver.txt` + its mtime. **Standing rule:** ~10 days after a new SplitCam release ships,
   set all three to the new version string — plain text, **no trailing newline** — with
   the matching installer deployed first.
-- **Antivirus scan COMPLETE — 0 infected site-wide.** Host: 529 HTML+PHP pages + 45
-  `win-download/` installers clean. The 24 big installers that OOM-killed `clamscan` on
-  the host (CloudLinux LVE PMEM cap, not hardware) were pulled to the Mac (1.8 GB via the
-  `~jntckkaf` preview URL) and scanned with Homebrew ClamAV 1.5.2 (fresh DB, deep unpack,
-  no memory cap): **24/24 clean**. Settled fact for the migration go-checklist.
+- **Antivirus scan COMPLETE — 0 infected site-wide, 100% coverage.** Host: 529 HTML+PHP
+  pages clean. `win-download/` audited in three passes: 24 big installers that OOM-killed
+  `clamscan` on the host (CloudLinux LVE PMEM cap, not hardware) → Mac ClamAV 1.5.2, 24/24
+  clean (2026-07-01); then 2026-07-02 the remaining **42 files with no persisted verdict**
+  (the first host pass logged only SKIP paths, not the clean ones, and installers were
+  updated after it) — incl. all 3 current installers + the whole 10.5→10.9 x64 series —
+  downloaded to the Mac with md5 integrity check vs the host and scanned: **42/42 clean**.
+  Full audit manifest (`path|md5|verdict` for every win-download file):
+  `~/clamav/fullscan-2026-07-02.log` on the host. Lesson: always persist CLEAN paths, not
+  just counters.
+- **Full host↔repo sweep (2026-07-02): 0 drift.** All **578** deployable repo files
+  (pages, assets, sitemap, robots, favicons…) are byte-identical (md5) on the new host.
+  The only drift found — a stale `hero-spotlight.mp4`+poster (pre-watermark-fix, deployed
+  Jun 30) — was re-deployed from GitHub raw and re-verified. Host-managed extras
+  (`ver.php`, `ver.txt`, `ofcf-turnstile.php`, `.htaccess`) intact; all `ver.txt` 10.9.2.
+  **Found a cutover BLOCKER:** the new host 403s `win-download/update/*.cfg` (app config:
+  ingest lists / proxy) while live serves them 200 — fix before DNS switch (details in
+  `seo/REMINDERS.md` cutover checklist).
 - **Skype is fully removed site-wide (0 mentions)** — Microsoft retired it May 2025.
 - The whole language system is two files: **`seo/i18n.py`** (config + render helpers +
   `RTL_CSS`) and **`seo/i18n_wire.py`** (rebuilds dropdown/hreflang/auto-detect/sitemap +
