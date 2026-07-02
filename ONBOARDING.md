@@ -69,9 +69,11 @@
   The only drift found — a stale `hero-spotlight.mp4`+poster (pre-watermark-fix, deployed
   Jun 30) — was re-deployed from GitHub raw and re-verified. Host-managed extras
   (`ver.php`, `ver.txt`, `ofcf-turnstile.php`, `.htaccess`) intact; all `ver.txt` 10.9.2.
-  **Found a cutover BLOCKER:** the new host 403s `win-download/update/*.cfg` (app config:
-  ingest lists / proxy) while live serves them 200 — fix before DNS switch (details in
-  `seo/REMINDERS.md` cutover checklist).
+  Found (and same-day RESOLVED) a cutover blocker: the new host 403s
+  `win-download/update/*.cfg` (app config: ingest lists / proxy) at the server level —
+  unfixable from the account. **Fixed via 3 Cloudflare Transform rules** rewriting the
+  `.cfg` URLs to `_cfg.bin` twins that exist on both origins; verified 200 + md5-identical
+  through live CF. Details + sync/rollback notes in `seo/REMINDERS.md` cutover checklist.
 - **Skype is fully removed site-wide (0 mentions)** — Microsoft retired it May 2025.
 - The whole language system is two files: **`seo/i18n.py`** (config + render helpers +
   `RTL_CSS`) and **`seo/i18n_wire.py`** (rebuilds dropdown/hreflang/auto-detect/sitemap +

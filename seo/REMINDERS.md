@@ -68,13 +68,17 @@ on the host, 0 drift; win-download fully AV-audited 0 infected (manifest
   already sitting on the host is the STALE 2026-05-21 generation (no slashless
   RewriteRule, no ru/es 301s, no contact-us→help, no donate). Replace, don't append.
   (Inert on the preview — anchored `^/` patterns never match `/~jntckkaf/` URIs.)
-- **Fix `.cfg` serving BEFORE cutover (BLOCKER, found 2026-07-02):** the new host 403s
-  `win-download/update/*.cfg` (`ingests.cfg`, `ingests2.cfg`, `proxy.cfg`) while live
-  splitcam.com serves them 200 `application/octet-stream` — the app reads these (RTMP
-  ingest lists / proxy config). Add a `win-download/update/.htaccess` override
-  (`<FilesMatch "\.cfg$"> Require all granted </FilesMatch>` +
-  `AddType application/octet-stream .cfg`) and verify 200; if 403 persists it's a global
-  Apache/Imunify rule → hoster ticket.
+- ~~Fix `.cfg` serving BEFORE cutover~~ — **RESOLVED 2026-07-02 via Cloudflare.** The new
+  host 403s `*.cfg` at the SERVER level (extension-based, pre-file-check, applies to real
+  vhosts too — `.htaccess` Require/rewrite/Options all tested, cannot override; hoster
+  ticket would be the only host-side fix). Solution in place: **3 Cloudflare Transform
+  rules** on the splitcam.com zone (ids `999f7264…`/`ec0c8b86…`/`5d64c6c8…`) rewrite
+  `/win-download/update/{proxy,ingests,ingests2}.cfg` → `…/{…}_cfg.bin`; the `.bin`
+  hardlink copies exist on BOTH origins (old host via SFTP, new host via `ln`), so the
+  rule is live-neutral now and cutover-proof later. Verified through live CF: all three
+  .cfg URLs 200, md5 byte-identical. **Sync rule:** if a `.cfg` ever changes, refresh its
+  `_cfg.bin` twin (hardlink on the new host survives in-place edits, NOT replace-by-rename).
+  Rollback: delete the zone's `http_request_transform` ruleset.
 - Re-deploy the redesign if the repo changed since (host pulls the GitHub main tarball and
   overlay-copies, excluding `.git/seo/v2/.claude/*.md/.nojekyll`; never `--delete` or you
   wipe win-download).
