@@ -630,7 +630,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   ['windows','mac','ios','android'].forEach(function(key){
     var d = SC[key];
     var active = (key === os) ? ' style="background:rgba(40,120,252,.08)"' : '';
-    menuHTML += '<a href="https://splitcam.com/hi/features/'+d.url+'" data-os="'+key+'"'+active+'>'
+    menuHTML += '<a href="'+d.url+'" data-os="'+key+'"'+active+'>'
       + '<span class="os-ico">'+d.ico+'</span>'
       + '<span class="os-meta"><span class="os-name">'+({windows:'Windows',mac:'Mac',ios:'App Store',android:'Google Play'}[key]||d.label)+'</span><span class="os-sub">'+d.sub+'</span></span>'
       + '</a>';
