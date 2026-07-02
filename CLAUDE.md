@@ -190,10 +190,14 @@ download split-button radii, vc-arrow connector) injected per RTL page by
 
 ## Important notes
 
-0. **Subresources must be FULL absolute URLs** (`https://splitcam.com/...`) — pages are
-   served at slashless canonical URLs in production, so page-relative `src`/`poster`/icon
-   paths resolve against the wrong base and 404 (bug found 2026-07-02: orbit logos).
-   Enforced across all 527 pages; any NEW page/image must follow this.
+0. **ALL internal URLs must be FULL absolute canonical** (`https://splitcam.com/...`,
+   slashless for sub-pages, slash only for `/` and locale roots `/ru/`) — this covers
+   `src`/`poster`/icons AND every `<a href>`. Pages are served at slashless canonical
+   URLs, so page-relative paths resolve against the wrong base: images 404'd (orbit
+   logos, 2026-07-02) and nav links DROPPED THE LOCALE (he/features -> EN products,
+   2026-07-03). Enforced across all 527 pages (5369 subresources + 15807 anchors);
+   `i18n.dropdown()` emits absolute; `linkcheck.py` validates absolute-internal against
+   disk. Any NEW page/link/image must follow this.
 
 
 1. **`AHREFS_TOKEN` must be regenerated** — it was exposed in chat. Set the new
