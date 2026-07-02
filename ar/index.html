@@ -896,7 +896,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
         <div class="pill"><div class="pill-dot"></div><span class="pill-text">استوديو بث مباشر متعدد</span></div>
         <span class="rating-chip"><span class="stars" aria-label="4.7 من 5 نجوم"><span class="stars-on"></span></span><span class="rating-text"><strong>4.7</strong> · 357 تقييمًا</span></span>
       </div>
-      <h1 class="hero-title"><span class="h1-promise">انطلق في البث على كل المنصات.</span><br>‏<span class="blue">برنامج بث مباشر</span> مجاني<br>‏لـ <span class="hero-cyc" data-cyc>صنّاع المحتوى.</span></h1>
+      <h1 class="hero-title"><span class="h1-promise">انطلق في البث على كل المنصات.</span><br>‏<span class="blue">برنامج بث مباشر</span> مجاني<br>‏<span class="hero-cyc" data-cyc>لصنّاع المحتوى.</span></h1>
       <p class="hero-desc"><strong style="color:var(--text);font-weight:600">برنامج بث مباشر مجاني بكاميرا افتراضية مدمجة.</strong> امزج المشاهد، بدّل المصادر، وابثّ مباشرةً إلى Twitch وYouTube وFacebook وKick وغيرها — كل ذلك من تطبيق سطح مكتب واحد. مجاني للأبد، بلا علامة مائية.</p>
       <div class="hero-btns">
         <span class="dl">
@@ -1525,7 +1525,7 @@ document.querySelectorAll('.app-shot video, .aud-scene video, .aud-game video').
 (function(){
   var slot = document.querySelector('[data-cyc]');
   if (!slot) return;
-  var words = ['صنّاع المحتوى.','المُبثّين.','اللاعبين.','الـ VTubers.','صنّاع البودكاست.','المعلّمين.'];
+  var words = ['لصنّاع المحتوى.','للمُبثّين.','للاعبين.','لـ VTubers.','لصنّاع البودكاست.','للمعلّمين.'];
   slot.textContent = words[0];
 
   /* Reserve width for the widest word so the H1 doesn't jiggle when it cycles.
