@@ -8,7 +8,7 @@
 
 | Do by | Status | Task | What to do |
 |---|---|---|---|
-| **2026-05-25** | ✅ 2026-06-11 done | SplitCam Android — Play Store approval check | See section below |
+| **2026-05-25** | ✅ 2026-07-02 CONFIRMED LIVE — play.google.com com.splitcam = 200, links active site-wide | SplitCam Android — Play Store approval check | See section below |
 | **2026-05-27** | ✅ 2026-06-11 done — NOT indexed | Week 1 indexing check | See section below |
 | **2026-06-03** | ✅ 2026-06-11 done — 0 keywords | Week 2 ranking check | See section below |
 | **2026-06-10** | ⏸ postponed by user 2026-06-11 — revisit at Month-1 review (2026-06-19) | Wave 2 — 4 SEO pages + dropdown nav rebuild | See section below |
