@@ -181,7 +181,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .sec-p strong{color:var(--text);font-weight:600}
 
 /* Channel cards — telegram */
-.channels{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px}
+.channels{display:grid;grid-template-columns:minmax(0,640px);justify-content:center;gap:16px;margin-top:8px}
 .channel{display:block;padding:28px 28px 26px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:all .2s;position:relative;overflow:hidden}
 .channel:hover{border-color:var(--app-border2);transform:translateY(-2px);background:linear-gradient(180deg,var(--app-panel),var(--app-surface))}
 .channel-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
