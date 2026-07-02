@@ -89,8 +89,8 @@ Old server: no active role left; keep ~2 weeks as fallback, then decommission de
 - Mail: watch AutoSSL issues cert for mail./webmail. (until then clients may see a
   name-mismatch warning); after ~2 weeks remove old IPs (77.83.100.124, 185.67.0.5,
   194.28.87.164) from SPF; user should test-login each mailbox.
-- Submit sitemap in GSC (property verified via DNS TXT); watch indexing of 34 locales
-  (old robots blocked /de/ /tr/ /hi/ /ar/ — now open).
+- ~~Submit sitemap in GSC~~ ✅ done 2026-07-02; watch indexing of 34 locales
+  (old robots blocked /de/ /tr/ /hi/ /ar/ — now open) — first coverage check +7d.
 - Build /for/streamers + /for/educators, retarget the 6 blog rules from /for.
 - Re-issue the CF Origin cert pair (private key transited chat 2026-07-02) — low risk, free.
 - Re-run indexing/ranking checks (+7d, +14d) and Month-1-style Ahrefs vs baseline (+30d).
@@ -346,7 +346,7 @@ Compare DR / ranked keyword count / traffic estimate vs baseline in `seo/reports
   in public_html; NOT in the repo — re-upload if docroot is ever rebuilt from scratch).
   **Practice:** after adding/renaming pages, re-submit changed URLs:
   POST https://api.indexnow.org/indexnow {host, key, keyLocation, urlList}.
-- **Google:** domain property sc-domain:splitcam.com verified via DNS TXT; sitemap
-  declared in robots.txt (auto-discovery). GSC manual sitemap submit = user action.
+- **Google — DONE:** sitemap.xml submitted in GSC by user 2026-07-02 (property
+  sc-domain:splitcam.com, DNS-verified). Check coverage report in ~2-3 days.
 - Optional later: Bing Webmaster Tools (import from GSC), Yandex Webmaster UI for RU market.
 
