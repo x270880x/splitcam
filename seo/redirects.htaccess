@@ -333,6 +333,8 @@ RedirectMatch 301 ^/es/gira(/.*)?$                       https://splitcam.com/es
 
 # --- canonical URL form: strip trailing slash + serve directory index ---------
 # Keep this block LAST. mod_rewrite; requires AllowOverride FileInfo.
+AddType application/manifest+json .webmanifest
+
 # --- custom 404 (branded page, added 2026-07-02; GitHub Pages picks /404.html automatically) ---
 ErrorDocument 404 /404.html
 
