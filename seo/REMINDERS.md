@@ -79,7 +79,16 @@ MX -> mail.splitcam.com — old server must stay alive for mail. www->apex 301 v
 redirect rule. Origin cert = CF Origin CA (to 2041). Rollback: A records back to
 77.83.100.124. Post-cutover follow-ups below.
 
+**MAIL MIGRATED — 2026-07-02 ~20:40.** All 7 mailboxes (admin, pola, wpscmail + 4 stubs,
+~35 MB) moved old->new cPanel with passwords (etc/shadow copy); local delivery verified;
+delta-check = 0 lost messages. DNS: mail/webmail A -> 91.223.223.113, MX -> mail.splitcam.com,
+SPF += new IP, DKIM TXT -> new host key. Client settings unchanged (mail.splitcam.com).
+Old server: no active role left; keep ~2 weeks as fallback, then decommission decision.
+
 **Post-cutover follow-ups:**
+- Mail: watch AutoSSL issues cert for mail./webmail. (until then clients may see a
+  name-mismatch warning); after ~2 weeks remove old IPs (77.83.100.124, 185.67.0.5,
+  194.28.87.164) from SPF; user should test-login each mailbox.
 - Submit sitemap in GSC (property verified via DNS TXT); watch indexing of 34 locales
   (old robots blocked /de/ /tr/ /hi/ /ar/ — now open).
 - Build /for/streamers + /for/educators, retarget the 6 blog rules from /for.
