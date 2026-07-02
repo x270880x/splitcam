@@ -1,48 +1,83 @@
 # SplitCam — Project Onboarding
 
-*Last updated: 2026-06-30. Open this at the start of any new chat to get up to speed.*
+*Last updated: 2026-07-02. Open this at the start of any new chat to get up to speed.*
 
 ## ⭐ Current state (read first)
-- Site is live in **all 35 languages** (525 indexable pages; sitemap 526 incl. EN-only
-  `/download`). EN root + 34 under
-  `/<lang>/`: ru es de fr pt tr fil uk it vi id nl ro hi ja ms bg ar ko th pl hu
-  sv zh el cs he sr hr da fi no sk fa. **RTL locales: ar, he, fa** (sr = Latin script).
+- Site is live in **all 35 languages**. Disk math (self-checking): **528** total
+  `index.html` = 34 locales × 15 pages (510) + 18 EN-root pages, **minus 2 `noindex`**
+  (`v2/` archived, `for/vtubers/` draft) = **526 indexable** = **526 `<loc>` in
+  `sitemap.xml`** (exact match). EN root + 34 under `/<lang>/`: ru es de fr pt tr fil
+  uk it vi id nl ro hi ja ms bg ar ko th pl hu sv zh el cs he sr hr da fi no sk fa.
+  **RTL locales: ar, he, fa** (sr = Latin-script Serbian → LTR).
+- **EN-only (non-localized) pages** — this is why EN root has 18 index.html but each
+  locale has 15: `/download/` (real indexed landing page, canonical
+  `https://splitcam.com/download`; referenced by 3 sitemap `<loc>` for platform URLs),
+  `/for/vtubers/` (`noindex` draft — review + enable, don't rebuild), `/v2/` (`noindex`
+  archived Variant B, unlinked, own assets/nav — never ships).
 - **URL form = slashless (2026-06-28).** canonical / og:url / hreflang / sitemap /
   JSON-LD URLs have **no trailing slash** on sub-pages (`/download`, `/features`,
-  `/ru/products`) — only the site root `/` and locale roots `/ru/` keep a slash. This
-  matches live splitcam.com (it serves `/download`, 301s `/download/` away) so Google
-  maps the redesign onto the indexed URLs instantly on migration. Single source of
-  truth: `i18n.page_url()`. Production Apache enforces it via the RewriteRule block in
+  `/ru/products`) — only the site root `/` and locale roots `/ru/` keep a slash. Exact
+  rule (single source `i18n.page_url()`): keep the slash iff `page_path == ''`, else
+  `rstrip('/')`. This matches live splitcam.com byte-for-byte (it serves `/download`,
+  301s `/download/` away) so Google maps the redesign onto the indexed URLs instantly on
+  migration. Production Apache enforces it via the RewriteRule block at the **end** of
   `seo/redirects.htaccess`; GitHub Pages staging keeps serving the directory form
   (`/download/`) and that's fine (canonical points to production). Internal nav links
   keep their slash so staging never 301-hops and `linkcheck` stays green.
-- **`/features/` hub** (built 2026-06-28, all 35 locales) — replaces live
-  splitcam.com/features (ranks for "splitcam"). Features overview: virtual camera,
-  multistreaming, AI background, scenes/layers, effects, audio mixer, capture, OBS
-  import + Remote panel + FAQ. **Not yet in the global nav** (reachable via sitemap,
-  language dropdown, breadcrumb, footer) — adding it as a nav item is an open option.
-- **`/donate-us/`** (built 2026-06-29, all 35 locales) — keep-URL donate page.
-  Donations go to **`paypal.me/Katzovich`**; amount chips ($25/$50/$100/$200/$500/$1000)
-  are clickable `paypal.me/Katzovich/<amt>USD` links (the old PayPal hosted-button was
-  replaced). **Features + Donate are now footer links on every page.**
-- **MIGRATED to the new cPanel host (2026-06-29/30) — see the session log below.** The
-  redesign + the live-site infra (`win-download/` installers, `ver.php`,
-  `ofcf-turnstile.php`, `ver.txt`, `.well-known/assetlinks.json`) are now on
-  `~jntckkaf/public_html` (preview http://rocket-cp2.hostsila.org/~jntckkaf/). splitcam.com
-  DNS NOT cut over yet. **Open: the staged `ver.txt` rollout plan** (weekly +1 minor →
-  10.9.2) is in `seo/REMINDERS.md`, awaiting the user's which-files decision.
+- **`/features/` hub** (all 35 locales) — replaces live splitcam.com/features (ranks
+  for "splitcam"). Overview: virtual camera, multistreaming, AI background,
+  scenes/layers, effects, audio mixer, capture, OBS import + Remote panel + FAQ. Sitemap
+  weight: priority **0.9**, changefreq monthly. **Not yet in the global nav** (reachable
+  via sitemap, language dropdown, breadcrumb, footer) — adding it as a nav item is an
+  open option.
+- **`/donate-us/`** (all 35 locales) — keep-URL donate page. Donations go to
+  **`paypal.me/Katzovich`**; amount chips ($25/$50/$100/$200/$500/$1000) are clickable
+  `paypal.me/Katzovich/<amt>USD` links (the old PayPal hosted-button was replaced — **0
+  `hosted_button_id` remain** in any HTML). Sitemap weight: priority **0.3**, changefreq
+  yearly. **Features + Donate are footer links on every page.**
+- **Host migration is COMPLETE; cutover is the only thing pending.** The full redesign
+  + the live-site infra (`win-download/` installers, `ver.php`, `ofcf-turnstile.php`,
+  `ver.txt`, `.well-known/assetlinks.json`) are staged on the new cPanel host
+  `~jntckkaf/public_html` (preview http://rocket-cp2.hostsila.org/~jntckkaf/).
+  splitcam.com DNS is **NOT cut over yet**. Cutover checklist (in `seo/REMINDERS.md`):
+  (1) point splitcam.com DNS → **91.223.223.113**; (2) drop `seo/redirects.htaccess`
+  into the **live** docroot `.htaccess` (never on the preview — its slashless RewriteRule
+  breaks the `/~jntckkaf/` userdir); (3) re-deploy the overlay if the repo changed (host
+  pulls the GitHub main tarball, excludes `.git/seo/v2/.claude/*.md/.nojekyll`, **never
+  `--delete`** or `win-download/` is wiped); (4) purge Cloudflare cache for
+  `win-download/SplitCamSetup_x64.msi`.
+- **`ver.txt` policy — RESOLVED (host-managed).** The earlier weekly-ramp idea was
+  dropped. All three `ver.txt` track the **current** release and are set to **10.9.2**:
+  root `/ver.txt`, `win-download/update/ver.txt`, `win-download/update/light/ver.txt`.
+  They live **only on the host** (root `/ver.txt` was removed from the git repo so an
+  overlay re-deploy can't reset it); edit them on the host via SSH. `ver.php` echoes root
+  `/ver.txt` + its mtime. **Standing rule:** ~10 days after a new SplitCam release ships,
+  set all three to the new version string — plain text, **no trailing newline** — with
+  the matching installer deployed first.
+- **Antivirus scan COMPLETE — 0 infected site-wide.** Host: 529 HTML+PHP pages + 45
+  `win-download/` installers clean. The 24 big installers that OOM-killed `clamscan` on
+  the host (CloudLinux LVE PMEM cap, not hardware) were pulled to the Mac (1.8 GB via the
+  `~jntckkaf` preview URL) and scanned with Homebrew ClamAV 1.5.2 (fresh DB, deep unpack,
+  no memory cap): **24/24 clean**. Settled fact for the migration go-checklist.
 - **Skype is fully removed site-wide (0 mentions)** — Microsoft retired it May 2025.
-- The whole language system is two files: **`seo/i18n.py`** (config + render
-  helpers + `RTL_CSS`) and **`seo/i18n_wire.py`** (rebuilds dropdown/hreflang/
-  auto-detect/sitemap + per-RTL-page CSS across every page). See the "Localization
-  — all 35 languages" section in **CLAUDE.md** for the full how-to. Run
-  `i18n_wire.py` then `linkcheck.py --no-network` (must be 0) after any add/translate.
-- Per-locale keyword maps: `seo/I18N-KEYWORDS.md` (waves 1-3; waves 4-7 were
-  brand-led, ~0 demand). Binding spec: `seo/I18N-PLAN.md`.
-- The 17 lowest-demand locales (waves 4–7, ≤10/mo, mostly 0) were completed
-  2026-06-15 for brand completeness — **see the 2026-06-15 session log below** (it
-  involved cleaning up an unattended mass-translation run; lessons recorded there).
-- Working tree clean & pushed; `linkcheck` 0 broken across 525 pages.
+- The whole language system is two files: **`seo/i18n.py`** (config + render helpers +
+  `RTL_CSS`) and **`seo/i18n_wire.py`** (rebuilds dropdown/hreflang/auto-detect/sitemap +
+  per-RTL-page CSS across every page). See the "Localization — all 35 languages" section
+  in **CLAUDE.md** for the full how-to. Run `i18n_wire.py` then `linkcheck.py --no-network`
+  (must be 0) after any add/translate.
+- Per-locale keyword maps: `seo/I18N-KEYWORDS.md` (waves 1-3; waves 4-7 were brand-led,
+  ~0 demand). Binding spec: `seo/I18N-PLAN.md`.
+- The 17 lowest-demand locales (waves 4–7, ≤10/mo, mostly 0) were completed 2026-06-15
+  for brand completeness — **see the 2026-06-15 session log below** (it involved cleaning
+  up an unattended mass-translation run; lessons recorded there).
+- **Working tree has 3 untracked files** (not clean): `AGENTS.md` (a STALE duplicate of
+  `CLAUDE.md` — do NOT commit as-is; it would regress page counts and drop the
+  `/features/` + `/donate-us/` rows; delete it or regenerate from `CLAUDE.md`), plus
+  `seo/screenshots/download_desktop_1440.png` + `download_mobile_390.png` (mobile/desktop
+  proof shots for the `/download` page — safe to commit). `CLAUDE.md` is the fuller
+  reference but is itself slightly stale on the headline count (still says 525 indexable,
+  predates `/features/` + `/donate-us/`) — the real source of truth for page counts is the
+  sitemap/disk (**526**). `linkcheck` 0 broken across 526 pages.
 
 ## Two projects
 
@@ -61,58 +96,94 @@ Both are static HTML deployed via GitHub Pages (auto-deploy 30–90 sec after pu
 # PROJECT 1 — Main SplitCam site (`/splitcam/`)
 
 Marketing site for SplitCam — free streaming / virtual-camera software. Static HTML/CSS/JS.
-Destined to replace the redesign of the real **splitcam.com** (see `seo/MIGRATION.md`).
+The redesign destined to replace the real **splitcam.com** (see `seo/MIGRATION.md`).
+Platforms: **Win · macOS · iOS · Android**. Version **v10.9.2** site-wide.
 
-## Pages deployed (11 public + 1 archived)
+## Pages deployed (15 localized page-types + `/download` (EN-only) = 16 public URL-types; + 2 `noindex`)
+
+Every locale ships 15 page-types; EN root additionally has `/download/` (public) plus the
+2 `noindex` pages. Nav-facing subset below.
+
 | Path | Note |
 |---|---|
 | `/` | Main landing — **Variant A is the final homepage** |
-| `/v2/` | Variant B — **archived** (A won the A/B). `noindex`, unlinked. Kept for reference only, never goes to splitcam.com. |
-| `/products/` | Products hub — Windows/Mac/iOS/Android + SplitCam Remote. iOS card has 2 features tagged "in development" (AR filters, Picture-in-picture) — don't reword as shipped. Remote: **iOS app LIVE** (App Store id6760961594, button live since 2026-06-11); Android Remote not released — Google Play stays "Coming soon". |
+| `/download/` | **Download landing (EN-only, indexed).** Preserves splitcam.com/download equity (crown-jewel URL, 556 referring domains). Canonical `https://splitcam.com/download`. Win/Mac/iOS/Android. Referenced by 3 sitemap `<loc>` (platform download URLs resolve here). Not localized. |
+| `/v2/` | Variant B — **archived** (A won the A/B). `noindex`, unlinked, own assets/nav. Never goes to splitcam.com. |
+| `/products/` | Products hub — Win/macOS/iOS/Android + SplitCam Remote. iOS card has 2 features tagged "in development" (AR filters, Picture-in-picture) — don't reword as shipped. Remote: **iOS app LIVE** (App Store id6760961594, button live since 2026-06-11); Android Remote not released — Google Play stays "Coming soon". |
 | `/features/` | **Features hub** (all 35 locales) — virtual camera, multistreaming, AI background, scenes/layers, effects, audio mixer, capture, OBS import + Remote panel + FAQ. Replaces live splitcam.com/features. Not in global nav yet. |
-| `/donate-us/` | **Donate page** (all 35 locales) — keep-URL, matches live splitcam.com/donate-us. PayPal **hosted button** (`hosted_button_id=32FNT59FAVDPN`, `_s-xclick`); if it ever changes, update all 35. ru/es `pozhertvovat`/`donarnos` 301 here. |
+| `/donate-us/` | **Donate page** (all 35 locales) — keep-URL, matches live splitcam.com/donate-us. Donations to **`paypal.me/Katzovich`**; amount chips are clickable `paypal.me/Katzovich/<amt>USD` links ($25–$1000). ru/es `pozhertvovat`/`donarnos` 301 here. |
 | `/virtual-camera/` | Feature page |
-| `/multistreaming/` | Feature page |
+| `/multistreaming/` | Feature page (Twitch simulcast date = **October 2023** everywhere) |
 | `/alternatives/` | Hub for "vs X" comparisons. Live cards: OBS. "Soon" cards: Streamlabs, Restream, StreamYard, vMix, ManyCam. |
 | `/alternatives/obs/` | SEO Wave 1 — "obs alternative" |
 | `/for/` | Use-cases hub (labelled "Use Cases" in nav). Live cards: YouTubers, Churches. "Soon" cards: VTubers, Gamers, Educators, Streamers. |
-| `/for/youtubers/` | SEO Wave 1 — "how to live stream on youtube" |
+| `/for/youtubers/` | SEO Wave 1 — "how to live stream on youtube" (structural template for SEO pages) |
 | `/for/churches/` | SEO Wave 1 — "church streaming software" |
+| `/for/vtubers/` | **`noindex` draft, EN-only, unlinked** — review + enable, don't rebuild. |
+| `/help/` · `/changelog/` · `/privacy-policy/` · `/license-agreement/` | Utility pages (all 35 locales; `changelog/` shell localized, its ~1860 release bullets stay EN). |
 
-Nav order site-wide: **Products · Virtual Camera · Multistreaming · Alternatives · Use Cases · Help**. (Dropdown nav rebuild is queued — see `seo/REMINDERS.md`.)
+Nav order site-wide (6 items): **Products · Virtual Camera · Multistreaming · Alternatives · Use Cases · Help**. Features is a footer link (not in the global nav yet). (Dropdown nav rebuild is queued — see `seo/REMINDERS.md`.)
 
 ## SEO status
 - **Wave 1 — DONE** ✅ (youtubers, churches, obs — all built & live).
-- **Wave 2 — pending (~2026-06-10):** `/alternatives/` hub, `/for/` hub, `/alternatives/{restream,streamyard,streamlabs}/`, `/for/vtubers/`.
-- **Wave 3 — later:** remaining alternatives + `/for/{streamers,educators}/`.
+- **Wave 2 — POSTPONED** by the user (2026-06-11), revisit at the Month-1 review:
+  `/alternatives/{restream,streamyard,streamlabs}/`, `/for/vtubers/` (exists as a
+  `noindex` draft — enable, don't rebuild), + desktop dropdown-nav rebuild. (`/alternatives/`
+  and `/for/` hubs are already built.)
+- **Wave 3 — later:** `/alternatives/{vmix,manycam,meld-studio,snap-camera}/`, `/for/{streamers,educators}/`.
+- **Standing rule:** every new feature/product page must be linked FROM its matching
+  `/features/` hub card (`<a class="product-changelog">Learn more</a>` in `.product-cta`),
+  mirrored into all 35 locale `/features/` pages, then rerun `i18n_wire.py` + `linkcheck.py
+  --no-network` (0). Still unlinked (no dedicated page yet): AI Background Removal,
+  Scenes/Sources/Layers, Effects/Filters/Beauty, Audio Mixer, Screen & Window Capture.
+- `/products/remote/` is **parked** until the Android SplitCam Remote app ships.
+- Indexing/ranking checks only become meaningful **after** the splitcam.com cutover —
+  staging is unindexable by design (canonicals all point at splitcam.com). Month-1 review
+  (write `seo/reports/month1.md` from GSC + Ahrefs) is still pending.
 - Full plan: `seo/PLAN.md`. Recommended IA: `seo/SITEMAP.md`.
-- **Schedule & follow-ups: `seo/REMINDERS.md`** — open it in any SEO chat (indexing checks, ranking checks, wave launches with dates). Do NOT use `CronCreate` — it doesn't persist.
+- **Schedule & follow-ups: `seo/REMINDERS.md`** — open it in any SEO chat. Do NOT use `CronCreate` — it doesn't persist.
 
 ## Migration to live splitcam.com
-`seo/MIGRATION.md` — only the homepage `/` is a true same-URL replacement; everything else is new URLs. `seo/REDIRECTS.md` — 301 strategy + per-page weights from Ahrefs. **All 35 locales — DONE 2026-06-15** (15 pages each, 525 total; specs in `seo/I18N-PLAN.md` + `seo/I18N-KEYWORDS.md`). (Homepage A vs B — resolved 2026-05-22: A is final, `/v2/` archived.)
+`seo/MIGRATION.md` (strategy) + `seo/redirects.htaccess` (301 map). Only the homepage `/`
+is a true same-URL replacement; every other page is a net-new additive URL or a slashless
+match to an existing live URL. `seo/redirects.htaccess` structure: (a) dead-URL 301s (apply
+now), (b) removed/changed-page 301s incl. `/contact-us → /help` (apply at migration), (c)
+ru/es old-slug 301s → uniform English locale slugs (incl. donate), (d) the slashless
+RewriteRule block **kept LAST**. Placement: paste the block **above** `# BEGIN WordPress` in
+the site-root `.htaccess`; requires `AllowOverride FileInfo`; remove any pre-existing WP
+trailing-slash rule first to avoid redirect loops. `/download` is KEPT (not redirected).
+`/contact-us` (+ `/ru/kontakty`, `/es/contactenos`) 301 → `/help` (no static page rebuilt).
 
 ## Critical design rules
 1. Brand logos stored LOCALLY in `/virtual-camera/assets/logos/` — no external CDN refs.
 2. SplitCam logo PNG at `/assets/splitcam.png` — used via `<img>`, not base64.
 3. No "Restream server" / "cloud middleman" wording — SplitCam is **peer-to-peer direct**.
-4. iOS belongs in the platforms list (Win · macOS · iOS · Android).
+4. iOS belongs in the platforms list (**Win · macOS · iOS · Android**).
 5. Skype is DEAD (Microsoft retired it May 2025) — never mention as a live product.
-6. CNET 4.5/357 rating is UNVERIFIED — still in Schema.org/Hero; user hasn't decided to remove. Real ratings: Softonic 4.7, UpdateStar 4.0, G2.
+6. Rating = **4.7 / 357 reviews**, shown ONLY as a visible trust signal (homepage hero chip
+   + stats box). **Never put it back into Schema.org** — `aggregateRating` was deliberately
+   stripped from every page's JSON-LD (0 present) to avoid a self-asserted-rating structured-
+   data manual action. Real source ratings: Softonic 4.7, UpdateStar 4.0, G2.
 7. LIVE badges blink (badge opacity + red dot pulse).
-8. Current version is **v10.9.2** — used site-wide. No installer size shown ("~85 MB" was removed as unverified).
+8. Current version is **v10.9.2** — used site-wide, the only app version present. No
+   installer size shown ("~85 MB" was removed as unverified). ("FFMPEG 7.1" / "version 6.1"
+   are dependency mentions, not SplitCam's version.)
 
 ## UI conventions
 - Dark theme: `--app-base:#141420`, `--blue:#2878fc`, `--purple:#9c5bff`. Font: Geist.
-- Nav (7 pages): Products · Virtual Camera · Multistreaming · What's New · Help. (`/v2/` is archived and has its own separate nav.)
-- Each page: favicon set + Schema.org (≥ BreadcrumbList + SoftwareApplication; bigger pages add HowTo + FAQPage).
-- `/for/youtubers/` is the structural template for SEO pages: NAV / BREADCRUMBS / HERO / QUICK ANSWER / STEP-BY-STEP / BONUS / PRO TIPS / COMPARISON / FAQ / RELATED / CTA / FOOTER.
+- Nav (6 items): **Products · Virtual Camera · Multistreaming · Alternatives · Use Cases · Help** (`/v2/` is archived and has its own separate nav).
+- Each page: favicon set + Schema.org (≥ BreadcrumbList + SoftwareApplication; bigger pages add HowTo + FAQPage) — **never** `aggregateRating`.
+- `/for/youtubers/` is the structural template for SEO pages: NAV / BREADCRUMBS / HERO / QUICK ANSWER / STEP-BY-STEP / BONUS / PRO TIPS / COMPARISON / FAQ / RELATED / CTA / FOOTER. SEO pages get **unique body prose** — never copy-paste blocks between `/for/` and `/alternatives/` (cannibalization).
+- Homepage hero uses **one `<video>` + canvas mirrors** and a single-decoder pattern (video-flicker/keyframes-are-global lessons in the 2026-06-12 session logs). Hero clips live at `assets/`: `audience-game.mp4`, `audience-scene.mp4`, `hero-spotlight.mp4`, `vc-presenter.mp4`.
 
 ## /seo/ folder
 - `ahrefs.py` — domain + keyword collector · `pages.py` — per-URL weight · `domains.py` — domain weight checker
-- `linkcheck.py` — site-wide link & interlinking audit (broken links/anchors/resources, external HTTP, nav-vs-contextual graph, sitemap sync). Run before migration and after adding pages.
-- `PLAN.md` (master plan) · `SITEMAP.md` · `MIGRATION.md` · `REDIRECTS.md` · `REMINDERS.md`
-- `reports/` — 3 analysis reports · `data/*.json` — raw Ahrefs output (gitignored)
-- Ahrefs: set `AHREFS_TOKEN` env var. **The token shared in chat must be regenerated — it was exposed.** Lite plan, 100k units/mo.
+- `i18n.py` + `i18n_wire.py` — the no-build-step localization engine (see CLAUDE.md).
+- `linkcheck.py` — site-wide link & interlinking audit (broken links/anchors/resources, external HTTP, nav-vs-contextual graph, sitemap-vs-disk sync). Run before migration and after adding pages.
+- `deploy_preview.py` — local-only, gitignored preview uploader (cPanel-API HTTPS:2083, not FTP) → the `~jntckkaf` preview only, never the live site.
+- `PLAN.md` · `SITEMAP.md` · `MIGRATION.md` · `redirects.htaccess` · `redirects-cloudflare.csv` · `REMINDERS.md` (the operational cutover + ver.txt truth) · `I18N-PLAN.md` · `I18N-KEYWORDS.md`
+- `reports/` — analysis reports · `screenshots/` — proof shots (tracked) · `data/*.json` — raw Ahrefs output (gitignored)
+- Ahrefs: set `AHREFS_TOKEN` env var from `~/.ahrefs_token`. Lite plan, 100k units/mo.
 
 ---
 
@@ -131,7 +202,7 @@ adult = revenue, so it gets its own domain + 301s, not deletion).
 - Asset slots: `logos/<slug>.svg` (platform logos) and `shots/<slug>-<n>.png` (screenshots) — drop files, rerun build.
 
 ## Pending for launch
-- Register a neutral adult domain → replace `NEWDOMAIN.com` everywhere, connect domain, remove `noindex`.
+- Register / connect the neutral adult domain (`camstreamguide.com`, registered) → replace `NEWDOMAIN.com` everywhere, connect domain, remove `noindex`.
 - Apply the `.htaccess` 301 block on splitcam.com **after** the new site is live.
 - Optional: official platform logos into `logos/`, screenshots into `shots/`, Android SplitCam Remote link.
 
@@ -143,69 +214,40 @@ Any content added/changed in one language must be replicated to all locales (EN/
 ## Domain portfolio (all owned by the user)
 | Domain | DR | Note |
 |---|---|---|
-| splitcam.com | 55 | main site — the authority anchor |
-| splitcamera.com | 45 | legacy SplitCam domain — fully 301 → splitcam.com via one Cloudflare rule `http.host contains "splitcamera.com"` (apex + www + blog + forum, completed 2026-05-22). DR 45 from ~950 live refdomains, 0 organic keywords. `blog`/`forum` were empty placeholder WordPress installs (no posts) — redirected, nothing to preserve. |
-| multi-stream.io | 14 | live, ranks for "free multistreaming" — possible cannibalization with `/multistreaming/` |
-| splitstream.com | 4 | live, weak — candidate to 301 → splitcam.com |
-| split.cam | 0 | dormant, clean brand domain — reserve / short links |
-| camstreamguide.com | — | neutral adult domain for cam-streaming-guides (registered; DNS/Pages connect pending) |
+| splitcam.com | 55 | main site — the authority anchor. Cloudflare zone `d78682c510a9fa3285c47bb52a11e0f4`; anti-bot custom WAF rule active. |
+| splitcamera.com | 45 | legacy SplitCam domain — fully 301 → splitcam.com. DR 45 from ~950 refdomains, 0 organic keywords. Cloudflare zone `ab15c739562f274acdb762ab8f96fa49`; anti-bot custom WAF rule active (bot magnet). |
+| splitstream.com | 4 | live, weak — candidate to 301 → splitcam.com. Cloudflare zone `b1263e196d8f2c3edc0822bf66d79dd8`; **no** custom WAF rule yet. |
+| multi-stream.io | 14 | live, ranks for "free multistreaming" — possible cannibalization with `/multistreaming/`. |
+| split.cam | 0 | dormant, clean brand domain — reserve / short links. |
+| camstreamguide.com | — | neutral adult domain for cam-streaming-guides (registered; DNS/Pages connect pending). |
 
-## Infrastructure access (set up 2026-05-22 / 23)
-
-Files kept locally on the Mac (chmod 600), referenced via `$(cat …)` in
-commands so the secret never appears in command output or chat.
+## Infrastructure access
+All secrets live in **chmod-600 dotfiles in the user's home dir**. Reference them ONLY by
+file path inside curl/ssh (e.g. `$(cat ~/.hostsila_ssh)`) — **never echo, paste, log, or
+commit the secret value.**
 
 ### GitHub repositories
-- **`x270880x/splitcam-release`** (public) — 36 releases, all Windows `.msi`
-  installers mirrored from `splitcam.com/win-download/update/` (versions
-  `v9.0.9` → `v10.9.2`, plus the `v10.8.62-restream-test` prerelease). Each
-  release carries the matching changelog from `splitcam-changes-win` /
-  `history.txt` (24 with full notes; 11 interim builds with a generic note
-  + link to the full history). `v10.9.2` is marked Latest. Filenames are
-  versioned (`10.9.2_x64.msi`), so the canonical "latest" download URL is
-  `releases/download/v10.9.2/10.9.2_x64.msi`. Open follow-up: also drop a
-  fixed-name copy in the latest release if/when site Download buttons need
-  a stable `releases/latest/download/SplitCamSetup_x64.msi` URL.
-- **`x270880x/old_splitcam_site`** (**PRIVATE 🔒**) — full backup of the old
-  splitcam.com `public_html` (excluding the installer archive — that's in
-  `splitcam-release`). Stored as `old_splitcam_site.tar.gz` (~1.4 GB) on
-  the release `backup-2026-05-23`. **Keep private** — contains
-  `wp-config.php` with DB credentials and other secrets.
+- **`x270880x/splitcam`** (public) — this repo; GitHub Pages staging https://x270880x.github.io/splitcam/ (auto-deploy 30–90 s after push to main).
+- **`x270880x/splitcam-release`** (public) — 36 Windows `.msi` releases (`v9.0.9` → `v10.9.2`, + `v10.8.62-restream-test` prerelease). `v10.9.2` is Latest. Canonical latest URL: `releases/download/v10.9.2/10.9.2_x64.msi`.
+- **`x270880x/old_splitcam_site`** (**PRIVATE 🔒**) — full backup of the old splitcam.com `public_html` as `old_splitcam_site.tar.gz` (~1.4 GB) on release `backup-2026-05-23`. Contains `wp-config.php` DB creds — **never make public**.
 
-### SSH to splitcam.com origin server
-- Key: `~/.ssh/splitcam_deploy` (Ed25519, only on Mac — never copy to other
-  machines). Public part lives in the server's `~/.ssh/authorized_keys`.
-- Server: `dfadnfvi@77.83.100.124` (Hetzner box, cPanel host
-  `pl-rocket-cms1.hostsila.org`), port 22.
-- Quick connect: `ssh -i ~/.ssh/splitcam_deploy dfadnfvi@77.83.100.124`.
-- Note: `splitcam.com` itself is fronted by Cloudflare, so SSH only via the
-  direct IP — `ssh dfadnfvi@splitcam.com` fails (CF doesn't proxy SSH).
-- Site root on server: `~/public_html` (19 GB; 17 GB is the
-  `win-download/update/` installer archive, the rest is the live PHP site
-  + WP blog/forum).
+### NEW production / cutover host (redesign target)
+- cPanel/Apache on **rocket-cp2.hostsila.org**, account user **jntckkaf**, cutover server IP **91.223.223.113**. cPanel UI https://rocket-cp2.hostsila.org:2083/.
+- Full SSH shell: `ssh jntckkaf@91.223.223.113 -p 22` (wget/curl available, ~336 GB free). **scp/sftp subsystem is DISABLED** — push files via base64-over-ssh-exec or cPanel-API HTTPS:2083 upload.
+- Docroot `/home/jntckkaf/public_html`. Work is deployed to **preview only**, live at http://rocket-cp2.hostsila.org/~jntckkaf/, via `seo/deploy_preview.py`. **splitcam.com live is NOT touched until the user says go.**
+- Creds (chmod 600): cPanel password `~/.hostsila_cpanel`; SSH password `~/.hostsila_ssh` (same cPanel account, full shell). The three host-managed `ver.txt` are edited here over SSH.
 
-### API tokens (saved locally; rotate when convenient)
-- **Cloudflare** — `~/.cloudflare_token`, scoped to zones `splitcamera.com`
-  + `splitcam.com`, **Analytics: Read only**. Use:
-  `curl -H "Authorization: Bearer $(cat ~/.cloudflare_token)" …`.
-- **Ahrefs** — `~/.ahrefs_token`, used by `seo/ahrefs.py` as:
-  `AHREFS_TOKEN=$(cat ~/.ahrefs_token) python3 ahrefs.py`. Lite plan, 100k
-  units/mo.
-- ⚠️ Both tokens were pasted in chat earlier — rotate when you can
-  (Cloudflare → API Tokens → Roll; Ahrefs → Account → API → regenerate),
-  then overwrite the file with the new value. The file paths don't change.
-- The server password the user pasted in chat — **never saved on disk**.
-  SSH-key login replaces it; change the password in the cPanel panel when
-  you can.
+### OLD host (current live splitcam.com origin, behind Cloudflare) — legacy
+- IP **77.83.100.124**, port 22, user **dfadnfvi**, cPanel host `pl-rocket-cms1.hostsila.org`, docroot `/home/dfadnfvi/public_html` (the bulk is the `win-download/` installer archive — **~16 GB**, measured 1:1 on the new host — plus the live PHP/WP site + blog/forum).
+- SSH command-exec works: `ssh -oPubkeyAuthentication=no dfadnfvi@77.83.100.124 "<cmd>"` (SFTP works too but recursive get truncates large dirs — prefer SSH-grep). Origin can be hit directly, bypassing Cloudflare: `curl --resolve splitcam.com:443:77.83.100.124 -k`.
+- Creds (chmod 600): password `~/.splitcam_old_ssh`; Ed25519 key `~/.ssh/splitcam_deploy` (Mac-local, never copy off).
 
-### What the redirect-rule fix bought us (2026-05-22)
-Side-effect worth knowing: after the `http.host contains "splitcamera.com"`
-rule went live, Cloudflare's auto-protection started 403-blocking a
-botnet (~3.5 M req/14 h, 49% PH, 17% CI) hitting `www.splitcamera.com`. As
-a result, splitcam.com Cloudflare traffic dropped **−86.6%** in the same
-10-hour window vs the previous day, origin-server traffic dropped −20%
-(~70k fewer requests/day). The blocking is correct — bots, not users.
-Documented in Cloudflare Analytics (free plan).
+### Cloudflare
+- Fronts the domains (DNS/CDN, Free plan). API token `~/.cloudflare_token` (chmod 600); scope includes Analytics Read + Firewall/Rulesets Edit + Cache Rules Edit (Cache Purge **not** granted). Three zones (see Domain portfolio). Anti-bot custom firewall rule (block) on splitcam.com + splitcamera.com; splitstream.com has none yet.
+- Cache rule caches `win-download/SplitCamSetup_x64.msi` (1-day TTL) → **purge on every new installer release**.
+
+### Ahrefs
+- Token `~/.ahrefs_token` (chmod 600). Use with `seo/ahrefs.py`: `AHREFS_TOKEN=$(cat ~/.ahrefs_token) python3 ahrefs.py`. Lite plan, 100k units/mo.
 
 ## Communication style with user
 - Russian (mostly) + English code/labels. Concise, concrete next steps.
@@ -219,6 +261,30 @@ cd "/Users/splitcam/Documents/Дизайны/SplitCam/SPLITCAM DEV./<repo>"
 git add . && git commit -m "..." && git push origin main
 ```
 Revert: `git revert HEAD --no-edit && git push`.
+**Auto-push:** after meaningful complete edits, commit + push `origin main` without asking; still ask before destructive git ops (force push, `reset --hard`, revert of published commits, branch deletion).
+
+## Session log — 2026-06-30 -> 07-02 (features + donate, Skype scrub, footers, slashless URLs, host migration finalized, AV scan, hero-video redesign)
+
+Covers the block after the 2026-06-29/30 log (commit `958c429`). Newest-first.
+
+**Hero-video redesign (2026-07-01 → 07-02, 12 commits, HEAD `dd92b72`):**
+- Swapped the presenter to a new creator clip (`6875068`) and removed the trial watermark (`14169ae`, `f9afc79`). Hero clips live at `assets/`: `audience-game.mp4`, `audience-scene.mp4`, `hero-spotlight.mp4`, `vc-presenter.mp4`.
+- Fully covered the right transition panel to hide old-video edge remnants (`6dd870f`).
+- Playback-speed tuning: 1.15x → ~1.32x → settled on **1.2x** for clean 30fps / no judder; livelier source window (src t=12..30.7s) (`1e383ec`, `8be62bf`, `d988017`).
+- Restored then thickened (4px) the vivid red top-border on the right vertical transition panel (`0a87173`, `71f4f25`).
+- Panel relayout: bigger panels (+10% compound), gap tuned 21px → 10px, then panels −5% for edge breathing room (`2367384`, `c91563b`, `dd92b72`).
+
+**Antivirus scan finished (2026-07-01, `75a3667`):** the 24 big installers that OOM-killed `clamscan` on the host (CloudLinux LVE PMEM cap, not hardware) were pulled to the Mac (1.8 GB via the `~jntckkaf` preview URL) and scanned with Homebrew ClamAV 1.5.2 (fresh DB, deep unpack, no cap) → **24/24 clean**. Combined with the earlier host scan (529 HTML+PHP + 45 `win-download/` installers clean), the site is now **0 infected everywhere**.
+
+**`ver.txt` finalized + policy recorded (2026-06-30, `e2861c0`, `6469baf`):** the weekly-ramp idea was dropped. All three `ver.txt` (root `/ver.txt`, `win-download/update/ver.txt`, `win-download/update/light/ver.txt`) set to **10.9.2** on the host. Root `/ver.txt` was **dropped from the repo** (host-managed, so an overlay re-deploy can't reset it); it had briefly been added as legacy 8.4.0.0 in `156a37e`, then removed. `ver.php` echoes root `/ver.txt` + mtime. Standing rule: ~10 days after each new release, set all three to the new version string (plain text, no trailing newline), installer deployed first.
+
+**Already in the 06-29/30 log (`958c429`), recapped for continuity:** `/features/` hub + `/donate-us/` built EN then natively localized to all 34 locales; donate switched to `paypal.me/Katzovich` with clickable amount chips ($25/$50/$100/$200/$500/$1000 → `/<amt>USD`), old hosted-button dropped (`0ec26af`, `51a7987`); Features + Donate footer links on every page (`45d4c7a`); slashless canonical/og/hreflang/sitemap URLs; Skype removed site-wide (0 mentions); the old→new cPanel host migration finalized; `.well-known/assetlinks.json` + `.nojekyll` added (`bfda3a8`).
+
+**Counts reconciled to disk (2026-07-02):** 528 total `index.html` − 2 `noindex` (`v2/`, `for/vtubers/`) = **526 indexable = 526 sitemap `<loc>`**. 0 `hosted_button_id` remain in HTML; 35 files use `paypal.me/Katzovich`; 603 `10.9.2` occurrences, no other version.
+
+**Working-tree note:** 3 untracked files — `AGENTS.md` (a STALE duplicate of `CLAUDE.md`: "455 indexable pages", "7 public", "2026-06-15 audit", missing the `/features/` + `/donate-us/` rows — do NOT commit as-is; delete or regenerate from `CLAUDE.md`), and `seo/screenshots/download_desktop_1440.png` + `download_mobile_390.png` (proof shots for the `/download` page — safe to commit).
+
+**Cutover still pending** (user hasn't said go): point splitcam.com DNS → 91.223.223.113; drop `seo/redirects.htaccess` into the live docroot `.htaccess` (never on the preview); re-deploy overlay without `--delete`; purge Cloudflare cache for `win-download/SplitCamSetup_x64.msi`.
 
 ## Session log — 2026-06-29/30 (new pages, URL form, + full old→new host migration)
 
@@ -612,29 +678,28 @@ Built `seo/linkcheck.py` and ran a site-wide audit (user request):
   obs 6 contextual inlinks.
 
 ## Recent commits — main splitcam repo (most recent first)
+
 ```
-65e5745 seo/linkcheck.py: site-wide link & interlinking audit tool
-2fcad1c Interlinking: keyword-anchor links from feature pages down to SEO leaves
-5311488 REMINDERS: Wave 2 + GSC-staging postponed by user; revisit at Month-1 review
-684e45c REMINDERS: staging is unindexable by design (canonicals -> splitcam.com)
-a496694 ONBOARDING + REMINDERS: log 2026-06-11 sweep
-4ba08fd SplitCam Remote for iOS is live: activate App Store button on /products/
-28be593 Virtual-camera hero: shrink mobile orbit-center logo (54 → 49px); desktop 60
-c243ef9 Virtual-camera hero: bump orbit-center logo 10% on desktop (55 → 60px)
-717e327 Virtual-camera hero: orbit-center logo 2% smaller on mobile (54px)
-d1dc7b7 Virtual-camera hero: orbit-center logo 57 → 55px
-cd3429d Virtual-camera hero: shrink the orbit-center SplitCam logo 13% (66 → 57px)
-3dab94f ONBOARDING: log the 2026-06-07 UI/perf/SEO session + refresh commit list
-e8d0b05 Center hero CTA on mobile (/alternatives/obs/)
-79f4794 Mobile hero reorder + centered CTA on /virtual-camera/
-9cfaf9a Mobile hero reorder + centered CTA on /multistreaming/
-8f049f9 Mobile hero reorder on /for/churches/: H1 → visual → Download → copy
-b1f2504 Virtual-camera viz: 6 videos → static (flicker fix)
-3d5ce08 Multistreaming viz: go fully static — kill the last looping video
-5acd204 Multistreaming viz: stop the flicker — 6 videos → 1 + posters
-c02721f Homepage mobile: center section CTA buttons + fix cramped multistream viz
-f4229bd Homepage hero: center everything on mobile
-18bbc00 Products hero: drop the download split-button, dropdown and Compare
-fe536c1 Products: bottom-align the download buttons across each card row
+dd92b72 hero video: panels -5% for edge breathing room
+c91563b hero video: panels +10% (compound), gap halved to 10px
+2367384 hero video: relayout — bigger panels (+10%), wider gap (21px), vivid red top-border
+71f4f25 hero video: thicker red top-border (4px) at very top edge of vertical panel
+d988017 hero video: 1.2x speed = clean 30fps (fix judder)
+0a87173 hero video: restore red top-border on right (vertical) transition panel
+8be62bf hero video: extra 1.15x speed (total ~1.32x)
+1e383ec hero video: speed 1.15x + livelier source window (src t=12..30.7s)
+6dd870f hero video: fully cover right transition panel (fix old-video edge remnants)
+f9afc79 hero video: swap presenter to new creator clip (6875068)
+14169ae hero video: swap presenter to new clip, remove trial watermark
+75a3667 docs: AV scan complete — 24 host-unscannable installers verified clean on Mac (ClamAV 1.5.2), 0 infected site-wide
+6469baf docs: ver.txt policy (host-managed, 10.9.2, bump 10d after release) in ONBOARDING + REMINDERS
+e2861c0 ops: all ver.txt -> 10.9.2 (host); record ver policy (host-managed, bump 10d after release); drop /ver.txt from repo
+958c429 docs: session log 2026-06-29/30 (new pages + URL form + old→new host migration) + cutover/ver-rollout reminders
+156a37e chore: add /ver.txt (legacy app update-check file, 8.4.0.0) from live splitcam.com
+fdc30a1 chore: nudge GitHub Pages rebuild for .well-known/assetlinks.json
+bfda3a8 chore: add /.well-known/assetlinks.json (Android Digital Asset Links) + .nojekyll
+51a7987 donate: switch to paypal.me/Katzovich; amount chips are now clickable links (all 35 locales)
+0ec26af donate: change suggested amount chips to $25/$50/$100/$200/$500/$1000 (all 35 locales)
 ```
+
 (cam-streaming-guides repo has its own history — full adult-guides build.)
