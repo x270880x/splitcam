@@ -1071,10 +1071,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
   v.loop = true;
   v.playsInline = true; v.setAttribute('playsinline','');
   v.preload = 'metadata';
-  v.poster = '../../multistreaming/assets/stream-preview-poster.jpg';
+  v.poster = 'https://splitcam.com/multistreaming/assets/stream-preview-poster.jpg';
   v.setAttribute('aria-hidden','true');
-  [['../../multistreaming/assets/stream-preview-av1.mp4','video/mp4; codecs="av01.0.04M.08"'],
-   ['../../multistreaming/assets/stream-preview-h264.mp4','video/mp4']].forEach(function(s){
+  [['https://splitcam.com/multistreaming/assets/stream-preview-av1.mp4','video/mp4; codecs="av01.0.04M.08"'],
+   ['https://splitcam.com/multistreaming/assets/stream-preview-h264.mp4','video/mp4']].forEach(function(s){
     var el = document.createElement('source'); el.src = s[0]; el.type = s[1]; v.appendChild(el);
   });
 
@@ -1083,7 +1083,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
   document.querySelectorAll('.ms-fans .ms-platform-card > img').forEach(function(im){
     var c = document.createElement('canvas');
     c.width = 320; c.height = 180;
-    c.style.background = "url('../../multistreaming/assets/stream-preview-poster.jpg') center/cover";
+    c.style.background = "url('https://splitcam.com/multistreaming/assets/stream-preview-poster.jpg') center/cover";
     c.setAttribute('aria-hidden','true');
     im.parentNode.replaceChild(c, im);
     thumbs.push(c.getContext('2d'));
