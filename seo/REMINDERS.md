@@ -32,6 +32,15 @@ UNLINKED (no dedicated page yet — link them the moment one ships): **AI Backgr
 Removal · Scenes/Sources/Layers · Effects/Filters/Beauty · Audio Mixer · Screen & Window
 Capture.** Don't forget.
 
+## Standing rule — Hebrew locale: SplitCam is FEMININE (2026-07-02)
+
+In `he/`, the brand **SplitCam takes feminine agreement** (as תוכנה): verbs, adjectives,
+pronouns — `SplitCam עובדת / תומכת / חינמית / זמינה`, `היא / אותה`. The whole locale was
+unified 2026-07-02 (all 15 pages, JSON-LD included). **Any new or edited `he/` copy must
+keep feminine agreement** — don't reintroduce `SplitCam עובד / חינמי / הוא`. Same applies
+to SplitCam Remote (אפליקציה). Words agreeing with other subjects (צוות, דרייבר, שידור,
+OBS…) keep their own gender.
+
 ## Pre-migration — legacy page decisions (2026-06-28, both RESOLVED)
 
 - `/contact-us` (+ `/ru/kontakty`, `/es/contactenos`) — **RESOLVED 2026-06-28: 301 →
@@ -63,6 +72,9 @@ on the host, 0 drift; win-download fully AV-audited 0 infected (manifest
 `~/clamav/fullscan-2026-07-02.log` on the host: path|md5|verdict for every file).
 
 **At CUTOVER (when user says go):**
+- **SHIP `/for/streamers` + `/for/educators` BEFORE cutover** (user 2026-07-02: blog 301s
+  already point at these planned Wave-3 URLs — 5 rules → /for/streamers, 1 → /for/educators.
+  If they can't ship in time, flip those 6 rules in `seo/redirects.htaccess` to `/for`).
 - Point splitcam.com DNS → `91.223.223.113`.
 - **REPLACE** the docroot `.htaccess` with current `seo/redirects.htaccess` — the file
   already sitting on the host is the STALE 2026-05-21 generation (no slashless
