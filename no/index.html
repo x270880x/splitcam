@@ -424,13 +424,13 @@ h1.hero-title .h1-promise { font-size: 1.1em; display: inline-block; line-height
 .bc-row { display: flex; align-items: center; gap: 12px; background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 7px; padding: 10px 14px; }
 .bc-nm { font-size: 12.5px; font-weight: 600; width: 110px; }
 .bc-line { flex: 1; height: 4px; background: var(--blue-dim); border-radius: 2px; overflow: hidden; position: relative; box-shadow: 0 0 8px rgba(40,120,252,.18); }
-.bc-pulse { position: absolute; top: 0; left: -60%; width: 60%; height: 100%; background: linear-gradient(90deg,transparent,#7ab1ff,transparent); animation: pl 2s linear infinite; }
+.bc-pulse { position: absolute; top: 0; left: 0; width: 60%; height: 100%; background: linear-gradient(90deg,transparent,#7ab1ff,transparent); transform: translateX(-110%); will-change: transform; animation: pl 2s linear infinite; }
 .bc-row:nth-child(2) .bc-pulse{animation-delay:.5s} .bc-row:nth-child(3) .bc-pulse{animation-delay:1s} .bc-row:nth-child(4) .bc-pulse{animation-delay:1.5s} .bc-row:nth-child(5) .bc-pulse{animation-delay:2s}
 .bc-header{display:inline-flex;align-self:center;align-items:center;gap:8px;padding:5px 12px 5px 10px;margin-bottom:12px;border-radius:99px;border:1px solid rgba(40,120,252,.38);background:rgba(40,120,252,.06);font-size:10.5px;font-weight:700;letter-spacing:.4px}
 .bc-header .bc-live-dot{width:7px;height:7px;border-radius:50%;background:#ff5454;animation:blink 1.4s infinite;flex-shrink:0}
 .bc-header .bc-live{color:#ff5454;text-transform:uppercase;letter-spacing:.5px}
 .bc-header .bc-info{color:#7ab1ff;text-transform:none;font-weight:600;letter-spacing:.2px}
-@keyframes pl{to{left:110%}}
+@keyframes pl{to{transform:translateX(280%)}}
 .bc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: blink 1.5s infinite; }
 .bc-kbps { font-size: 10.5px; color: var(--text-dim); font-family: 'Geist Mono', monospace; width: 70px; text-align: right; }
 
