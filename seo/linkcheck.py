@@ -107,8 +107,30 @@ def resolve(page, href, kind, anchor_text='', ctx='body'):
         if host_path.startswith('x270880x.github.io/splitcam'):
             broken_internal.append((page, href, 'absolute staging URL — make relative'))
             return
-        target = splitcam_links if host_path.startswith(('splitcam.com', 'www.splitcam.com')) else external
-        target.setdefault(raw.split('#')[0], []).append((page, ctx))
+        if host_path.startswith(('splitcam.com/', 'www.splitcam.com/')) or host_path in ('splitcam.com','www.splitcam.com'):
+            # absolute-canonical internal link (site policy since 2026-07-03):
+            # validate against disk; slashless dir form is CORRECT (prod serves it).
+            p2 = host_path.split('/', 1)[1] if '/' in host_path else ''
+            p2 = p2.split('?')[0]
+            p2, _, frag2 = p2.partition('#')
+            full2 = posixpath.normpath('/' + p2).lstrip('/')
+            full2 = '' if full2 in ('.', '') else full2
+            fs2 = os.path.join(ROOT, full2.replace('/', os.sep))
+            idx2 = posixpath.join(full2, 'index.html') if full2 else 'index.html'
+            if full2 and os.path.isfile(fs2):
+                res2 = full2
+            elif os.path.isfile(os.path.join(ROOT, idx2)):
+                res2 = idx2
+            else:
+                # not in repo (win-download, ver.php, legacy live URLs) — info bucket
+                splitcam_links.setdefault(raw.split('#')[0], []).append((page, ctx))
+                return
+            if kind == 'link':
+                graph.append((canon_page(page), canon_page(res2), ctx, anchor_text))
+            elif kind == 'res':
+                pass
+            return
+        external.setdefault(raw.split('#')[0], []).append((page, ctx))
         return
     path, _, frag = raw.partition('#')
     path = path.split('?')[0]

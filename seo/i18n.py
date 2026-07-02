@@ -116,14 +116,15 @@ def hreflang_block(page_path, available):
 
 def dropdown(cur, available, page_path, depth):
     """Render the <details> language dropdown.
-    depth: relative prefix back to site root from the page, e.g. '' (home),
-    '../' (depth-2), '../../' (depth-3). Links target the localized sibling.
+    depth: kept for call-site compatibility; links are ABSOLUTE canonical URLs
+    (https://splitcam.com/..., slashless sub-pages) since 2026-07-03 — relative links
+    broke locale on slashless production URLs.
     """
     items = []
     for L in LANG_ORDER:
         if L not in available:
             continue
-        href = f"{depth}{LANG_PATH[L]}{page_path}" or "./"
+        href = page_url(LANG_PATH[L], page_path)  # absolute canonical (slashless sub-pages)
         cls = ' class="cur"' if L == cur else ""
         items.append(
             f'<a href="{href}" data-lang="{L}" hreflang="{L}" lang="{L}"{cls}>'
