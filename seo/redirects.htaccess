@@ -53,7 +53,10 @@ RedirectMatch 301 ^/cgi-sys/suspendedpage\.cgi$     https://splitcam.com/
 RedirectMatch 301 ^/help/.+$                        https://splitcam.com/help
 RedirectMatch 301 ^/download-archive-for-windows/?$ https://splitcam.com/changelog
 # --- /blog/* per-post thematic 301s (user decision 2026-07-02: map each article
-# to the closest-topic page; generated from the live blog's 109 posts) ---
+# to the closest-topic page; generated from the live blog's 109 posts).
+# NOTE (user, 2026-07-02): posts whose BEST match is a PLANNED page point at the
+# future URL already: /for/streamers (5 rules), /for/educators (1 rule) — Wave 3.
+# !! SHIP those two pages BEFORE cutover, or flip these 6 rules to /for. ---
 RedirectMatch 301 ^/blog/2011/splitcam\-blog\-started\.html$ https://splitcam.com/
 RedirectMatch 301 ^/blog/2011/splitcam\-site\-redesigned\.html$ https://splitcam.com/
 RedirectMatch 301 ^/blog/2012/multilingual\-splitcam\-version\-is\-coming\-soon\-translators\-wanted\.html$ https://splitcam.com/
@@ -112,11 +115,11 @@ RedirectMatch 301 ^/blog/2020/how\-to\-add\-video\-to\-broadcast\.html$ https://
 RedirectMatch 301 ^/blog/2020/how\-to\-add\-webcam\.html$ https://splitcam.com/features
 RedirectMatch 301 ^/blog/2020/layer\-management\.html$ https://splitcam.com/features
 RedirectMatch 301 ^/blog/2021/23\-and\-1\-reasons\-why\-splitcam\-is\-the\-best\.html$ https://splitcam.com/features
-RedirectMatch 301 ^/blog/2021/9\-streaming\-ideas\-you\-can\-make\-millions\-from\.html$ https://splitcam.com/for
-RedirectMatch 301 ^/blog/2021/choosing\-a\-webcam\-for\-streaming\.html$ https://splitcam.com/for
-RedirectMatch 301 ^/blog/2021/how\-to\-start\-streaming\.html$ https://splitcam.com/for
-RedirectMatch 301 ^/blog/2021/what\-a\-streamer\-needs\-to\-know\-20\-tips\.html$ https://splitcam.com/for
-RedirectMatch 301 ^/blog/2021/what\-is\-streaming\-and\-how\-do\-you\-make\-money\-on\-it\.html$ https://splitcam.com/for
+RedirectMatch 301 ^/blog/2021/9\-streaming\-ideas\-you\-can\-make\-millions\-from\.html$ https://splitcam.com/for/streamers
+RedirectMatch 301 ^/blog/2021/choosing\-a\-webcam\-for\-streaming\.html$ https://splitcam.com/for/streamers
+RedirectMatch 301 ^/blog/2021/how\-to\-start\-streaming\.html$ https://splitcam.com/for/streamers
+RedirectMatch 301 ^/blog/2021/what\-a\-streamer\-needs\-to\-know\-20\-tips\.html$ https://splitcam.com/for/streamers
+RedirectMatch 301 ^/blog/2021/what\-is\-streaming\-and\-how\-do\-you\-make\-money\-on\-it\.html$ https://splitcam.com/for/streamers
 RedirectMatch 301 ^/blog/2011/how\-to\-connect\-splitcam\-to\-youtube\.html$ https://splitcam.com/for/youtubers
 RedirectMatch 301 ^/blog/2011/recommendations\-for\-splitcam\-faster\-work\.html$ https://splitcam.com/help
 RedirectMatch 301 ^/blog/2011/splitcam\-installation\-guide\-video\-tutorial\.html$ https://splitcam.com/help
@@ -158,7 +161,7 @@ RedirectMatch 301 ^/blog/2012/skype\-via\-splitcam\-video\-guide\.html$ https://
 RedirectMatch 301 ^/blog/2012/video\-splitcam\-your\-webcam\-in\-yahoo\-skype\-windows\-live\-at\-the\-same\-time\.html$ https://splitcam.com/virtual-camera
 RedirectMatch 301 ^/blog/2012/yahoo\-messenger\-windows\-live\-messenger\-and\-skype\-at\-the\-same\-time\-with\-splitcam\-russian\.html$ https://splitcam.com/virtual-camera
 RedirectMatch 301 ^/blog/2021/5\-reasons\-to\-switch\-to\-video\-conferencing\.html$ https://splitcam.com/virtual-camera
-RedirectMatch 301 ^/blog/2021/how\-to\-create\-a\-webinar\-thats\-appreciated\.html$ https://splitcam.com/virtual-camera
+RedirectMatch 301 ^/blog/2021/how\-to\-create\-a\-webinar\-thats\-appreciated\.html$ https://splitcam.com/for/educators
 RedirectMatch 301 ^/blog/2021/how\-to\-stream\-to\-skout\-with\-a\-virtual\-camera\.html$ https://splitcam.com/virtual-camera
 RedirectMatch 301 ^/blog/2021/how\-to\-use\-microsoft\-teams\-with\-splitcam\.html$ https://splitcam.com/virtual-camera
 RedirectMatch 301 ^/blog/2021/how\-to\-work\-with\-google\-meet\.html$ https://splitcam.com/virtual-camera
@@ -206,6 +209,9 @@ RedirectMatch 301 ^/es/gira(/.*)?$                       https://splitcam.com/es
 
 # --- canonical URL form: strip trailing slash + serve directory index ---------
 # Keep this block LAST. mod_rewrite; requires AllowOverride FileInfo.
+# --- custom 404 (branded page, added 2026-07-02; GitHub Pages picks /404.html automatically) ---
+ErrorDocument 404 /404.html
+
 RewriteEngine On
 # 1) 301 the trailing-slash form to slashless — but NOT the site root or a locale
 #    root (/ru/, /es/, /fil/ …), which legitimately keep their slash.

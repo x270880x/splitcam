@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S1THLDP1XV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S1THLDP1XV');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Page not found | SplitCam</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --app-base: #141420; --app-panel: #1c1c2e; --app-border: rgba(255,255,255,.07);
+  --app-border2: rgba(255,255,255,.12); --text: #f2f2f7; --text-sub: #9a9aad;
+  --blue: #2878fc; --blue-hover: #4d8eff; --blue-dim: rgba(40,120,252,.13);
+  --blue-glow: rgba(40,120,252,.28); --purple: #9c5bff; --red: #e74c3c;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Geist', sans-serif; background: var(--app-base); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+.top { padding: 20px 32px; display: flex; align-items: center; }
+.top a { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 700; font-size: 16px; letter-spacing: -.3px; }
+.top img { width: 28px; height: 28px; }
+
+.stage { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 24px 72px; position: relative; }
+.glow { position: absolute; width: 720px; height: 540px; background: radial-gradient(ellipse, rgba(40,120,252,.09) 0%, rgba(156,91,255,.05) 45%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-52%); pointer-events: none; }
+
+.card { position: relative; text-align: center; max-width: 640px; width: 100%; }
+
+/* camera viewfinder frame */
+.vf { position: relative; margin: 0 auto 34px; width: min(420px, 86vw); aspect-ratio: 16/9; background: #0d0d16; border: 1px solid var(--app-border2); border-radius: 14px; overflow: hidden; box-shadow: 0 0 0 1px rgba(40,120,252,.12), 0 0 70px -18px rgba(40,120,252,.35), 0 26px 60px -22px rgba(0,0,0,.65); }
+.vf .noise { position: absolute; inset: 0; opacity: .5; background-image: repeating-conic-gradient(rgba(255,255,255,.05) 0% .0001%, transparent .0002% .0004%); animation: nz .32s steps(4) infinite; }
+.vf .scan { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,.22) 2px 4px); pointer-events: none; }
+.vf .beam { position: absolute; left: 0; right: 0; height: 34%; top: -40%; background: linear-gradient(180deg, transparent, rgba(40,120,252,.10), transparent); animation: sweep 3.4s linear infinite; }
+@keyframes nz { to { transform: translateX(-2px); } }
+@keyframes sweep { to { top: 130%; } }
+
+.badge { position: absolute; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 7px; padding: 5px 11px; background: rgba(231,76,60,.92); border-radius: 5px; font-family: 'Geist Mono', monospace; font-size: 10px; font-weight: 800; letter-spacing: 1.2px; color: #fff; animation: badge 1.5s ease-in-out infinite; }
+.badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: blink 1.4s infinite; }
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: .15; } }
+@keyframes badge { 0%,100% { opacity: 1; } 50% { opacity: .82; } }
+
+.big { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-weight: 700; font-size: clamp(72px, 18vw, 118px); letter-spacing: 6px; color: var(--text); text-shadow: 0 0 34px rgba(40,120,252,.4); }
+.big .g { position: relative; display: inline-block; animation: jit 2.8s infinite; }
+.big .g::before, .big .g::after { content: '404'; position: absolute; inset: 0; opacity: 0; }
+.big .g::before { color: var(--blue); animation: gl1 2.8s infinite; }
+.big .g::after { color: var(--purple); animation: gl2 2.8s infinite; }
+@keyframes jit { 0%,91%,100% { transform: none; } 93% { transform: translateX(2px) skewX(1.6deg); } 96% { transform: translateX(-2px); } }
+@keyframes gl1 { 0%,90%,100% { opacity: 0; transform: none; } 92% { opacity: .75; transform: translate(-4px,1px); } 95% { opacity: 0; } }
+@keyframes gl2 { 0%,90%,100% { opacity: 0; transform: none; } 93% { opacity: .65; transform: translate(4px,-1px); } 97% { opacity: 0; } }
+
+h1 { font-size: clamp(22px, 3.4vw, 30px); font-weight: 700; letter-spacing: -.6px; margin-bottom: 10px; }
+.sub { color: var(--text-sub); font-size: 15.5px; line-height: 1.6; max-width: 440px; margin: 0 auto 28px; overflow-wrap: break-word; }
+
+.btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 8px; background: var(--blue); color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; transition: background .18s, transform .15s, box-shadow .2s; }
+.btn-primary:hover { background: var(--blue-hover); transform: translateY(-1px); box-shadow: 0 8px 24px var(--blue-glow); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; border: 1px solid var(--app-border2); color: var(--text-sub); font-size: 14px; font-weight: 500; text-decoration: none; transition: all .18s; }
+.btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,.25); }
+
+.links { display: flex; gap: 7px 20px; justify-content: center; flex-wrap: wrap; font-size: 13.5px; }
+.links a { color: var(--text-sub); text-decoration: none; transition: color .15s; }
+.links a:hover { color: var(--blue-hover); }
+.links span { color: rgba(255,255,255,.18); }
+
+.foot { text-align: center; padding: 18px; color: rgba(255,255,255,.32); font-size: 12px; }
+@media (max-width: 480px) { .top { padding: 16px 20px; } .stage { padding: 24px 18px 56px; } }
+</style>
+</head>
+<body>
+
+<div class="top"><a href="/"><img src="/assets/splitcam.png" alt="SplitCam"> SplitCam</a></div>
+
+<div class="stage">
+  <div class="glow"></div>
+  <div class="card">
+    <div class="vf">
+      <div class="noise"></div>
+      <div class="beam"></div>
+      <div class="scan"></div>
+      <div class="badge"><span class="dot"></span> <span id="t-badge">SIGNAL LOST</span></div>
+      <div class="big"><span class="g">404</span></div>
+    </div>
+    <h1 id="t-h1">This page isn&rsquo;t live</h1>
+    <p class="sub" id="t-sub">The page you&rsquo;re looking for doesn&rsquo;t exist or has moved. The stream goes on &mdash; pick a scene below.</p>
+    <div class="btns">
+      <a class="btn-primary" id="b-home" href="/">Go to homepage</a>
+      <a class="btn-ghost" id="b-dl" href="https://splitcam.com/download">Download SplitCam</a>
+    </div>
+    <div class="links" id="qlinks">
+      <a href="/features/">Features</a><span>&middot;</span>
+      <a href="/virtual-camera/">Virtual Camera</a><span>&middot;</span>
+      <a href="/multistreaming/">Multistreaming</a><span>&middot;</span>
+      <a href="/help/">Help</a>
+    </div>
+  </div>
+</div>
+
+<div class="foot">SplitCam &mdash; free live streaming studio &middot; v10.9.2</div>
+
+<script>
+(function(){
+  var T = {
+    ru:["Эта страница не в эфире","Страница, которую вы ищете, не существует или переехала. Эфир продолжается — выберите сцену ниже.","На главную","Скачать SplitCam"],
+    es:["Esta página no está en vivo","La página que buscas no existe o se ha movido. El directo continúa: elige una escena abajo.","Ir al inicio","Descargar SplitCam"],
+    de:["Diese Seite ist nicht live","Die gesuchte Seite existiert nicht oder wurde verschoben. Der Stream läuft weiter — wähle unten eine Szene.","Zur Startseite","SplitCam herunterladen"],
+    fr:["Cette page n'est pas en direct","La page recherchée n'existe pas ou a été déplacée. Le stream continue : choisissez une scène ci-dessous.","Accueil","Télécharger SplitCam"],
+    pt:["Esta página não está no ar","A página que você procura não existe ou foi movida. A live continua — escolha uma cena abaixo.","Ir para o início","Baixar SplitCam"],
+    tr:["Bu sayfa yayında değil","Aradığınız sayfa yok ya da taşındı. Yayın devam ediyor — aşağıdan bir sahne seçin.","Ana sayfaya git","SplitCam'i indir"],
+    fil:["This page isn't live","The page you're looking for doesn't exist or has moved. The stream goes on — pick a scene below.","Go to homepage","Download SplitCam"],
+    uk:["Ця сторінка не в ефірі","Сторінка, яку ви шукаєте, не існує або переїхала. Ефір триває — оберіть сцену нижче.","На головну","Завантажити SplitCam"],
+    it:["Questa pagina non è in onda","La pagina che cerchi non esiste o è stata spostata. La diretta continua: scegli una scena qui sotto.","Vai alla home","Scarica SplitCam"],
+    vi:["Trang này không lên sóng","Trang bạn tìm không tồn tại hoặc đã chuyển đi. Buổi phát vẫn tiếp tục — chọn một cảnh bên dưới.","Về trang chủ","Tải SplitCam"],
+    id:["Halaman ini tidak tayang","Halaman yang Anda cari tidak ada atau sudah pindah. Siaran tetap berjalan — pilih scene di bawah.","Ke beranda","Download SplitCam"],
+    nl:["Deze pagina is niet live","De pagina die je zoekt bestaat niet of is verplaatst. De stream gaat door — kies hieronder een scène.","Naar de homepage","SplitCam downloaden"],
+    ro:["Această pagină nu este în direct","Pagina căutată nu există sau a fost mutată. Transmisiunea continuă — alege o scenă mai jos.","Spre pagina principală","Descarcă SplitCam"],
+    hi:["This page isn't live","The page you're looking for doesn't exist or has moved. The stream goes on — pick a scene below.","Go to homepage","Download SplitCam"],
+    ja:["このページは配信されていません","お探しのページは存在しないか、移動しました。配信は続きます — 下からシーンを選んでください。","ホームへ","SplitCam をダウンロード"],
+    ms:["Halaman ini tidak bersiaran","Halaman yang anda cari tiada atau telah berpindah. Siaran diteruskan — pilih scene di bawah.","Ke halaman utama","Muat turun SplitCam"],
+    bg:["Тази страница не е в ефир","Страницата, която търсите, не съществува или е преместена. Излъчването продължава — изберете сцена по-долу.","Към началото","Свали SplitCam"],
+    ar:["هذه الصفحة ليست على الهواء","الصفحة التي تبحث عنها غير موجودة أو تم نقلها. البث مستمر — اختر مشهدًا أدناه.","إلى الصفحة الرئيسية","تحميل SplitCam"],
+    ko:["이 페이지는 방송 중이 아닙니다","찾으시는 페이지가 없거나 이동되었습니다. 방송은 계속됩니다 — 아래에서 장면을 선택하세요.","홈으로 가기","SplitCam 다운로드"],
+    th:["หน้านี้ไม่ได้ออกอากาศ","หน้าที่คุณค้นหาไม่มีอยู่หรือถูกย้ายแล้ว การไลฟ์ยังดำเนินต่อ — เลือกซีนด้านล่าง","ไปหน้าแรก","ดาวน์โหลด SplitCam"],
+    pl:["Ta strona nie jest na żywo","Szukana strona nie istnieje lub została przeniesiona. Transmisja trwa — wybierz scenę poniżej.","Na stronę główną","Pobierz SplitCam"],
+    hu:["Ez az oldal nincs adásban","A keresett oldal nem létezik vagy elköltözött. Az adás megy tovább — válassz egy jelenetet lent.","A kezdőlapra","SplitCam letöltése"],
+    sv:["Den här sidan är inte live","Sidan du letar efter finns inte eller har flyttats. Sändningen fortsätter — välj en scen nedan.","Till startsidan","Ladda ner SplitCam"],
+    zh:["此页面未在直播","您要找的页面不存在或已移动。直播仍在继续——请在下方选择一个场景。","回到首页","下载 SplitCam"],
+    el:["Αυτή η σελίδα δεν είναι στον αέρα","Η σελίδα που ψάχνετε δεν υπάρχει ή έχει μετακινηθεί. Η μετάδοση συνεχίζεται — διαλέξτε μια σκηνή παρακάτω.","Στην αρχική","Λήψη SplitCam"],
+    cs:["Tato stránka nevysílá","Hledaná stránka neexistuje nebo se přestěhovala. Vysílání pokračuje — vyberte si scénu níže.","Na hlavní stránku","Stáhnout SplitCam"],
+    he:["הדף הזה לא בשידור","הדף שחיפשתם לא קיים או הועבר. השידור נמשך — בחרו סצנה למטה.","לדף הבית","הורדת SplitCam"],
+    sr:["Ova stranica nije u programu","Stranica koju tražite ne postoji ili je premeštena. Prenos se nastavlja — izaberite scenu ispod.","Na početnu","Preuzmi SplitCam"],
+    hr:["Ova stranica nije u eteru","Stranica koju tražite ne postoji ili je premještena. Prijenos se nastavlja — odaberite scenu ispod.","Na početnu","Preuzmi SplitCam"],
+    da:["Denne side er ikke live","Siden, du leder efter, findes ikke eller er flyttet. Streamen fortsætter — vælg en scene nedenfor.","Til forsiden","Download SplitCam"],
+    fi:["Tämä sivu ei ole lähetyksessä","Etsimääsi sivua ei ole tai se on siirretty. Lähetys jatkuu — valitse kohtaus alta.","Etusivulle","Lataa SplitCam"],
+    no:["Denne siden er ikke live","Siden du leter etter finnes ikke eller er flyttet. Sendingen fortsetter — velg en scene nedenfor.","Til forsiden","Last ned SplitCam"],
+    sk:["Táto stránka nevysiela","Hľadaná stránka neexistuje alebo sa presťahovala. Vysielanie pokračuje — vyberte si scénu nižšie.","Na hlavnú stránku","Stiahnuť SplitCam"],
+    fa:["این صفحه روی آنتن نیست","صفحه‌ای که دنبالش هستید وجود ندارد یا منتقل شده است. پخش ادامه دارد — یک صحنه را از پایین انتخاب کنید.","به صفحه اصلی","دانلود SplitCam"]
+  };
+  var LOCS = Object.keys(T), RTL = {ar:1, he:1, fa:1};
+  // 1) если битый URL был внутри /<lang>/ — используем его; 2) иначе язык браузера
+  var m = location.pathname.match(/^\/([a-z]{2,3})(\/|$)/), lang = null;
+  if (m && T[m[1]]) lang = m[1];
+  if (!lang) {
+    var nav = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+    if (/^fil|,fil|tl(,|-)/.test(nav)) lang = 'fil';
+    else {
+      for (var i = 0; i < LOCS.length; i++) {
+        if (new RegExp('(^|,)' + LOCS[i] + '(-|,|$)').test(nav)) { lang = LOCS[i]; break; }
+      }
+    }
+    if (!lang && /(^|,)pt-br/.test(nav)) lang = 'pt';
+    if (!lang && /(^|,)nb|nn(-|,|$)/.test(nav)) lang = 'no';
+  }
+  if (lang && T[lang]) {
+    var t = T[lang];
+    document.getElementById('t-h1').textContent = t[0];
+    document.getElementById('t-sub').textContent = t[1];
+    document.getElementById('b-home').textContent = t[2];
+    document.getElementById('b-dl').textContent = t[3];
+    document.getElementById('b-home').setAttribute('href', '/' + lang + '/');
+    document.documentElement.setAttribute('lang', lang);
+    if (RTL[lang]) { document.getElementById('t-h1').setAttribute('dir','rtl'); document.getElementById('t-sub').setAttribute('dir','rtl'); }
+    // быстрые ссылки — в локаль
+    var q = document.getElementById('qlinks').getElementsByTagName('a');
+    for (var j = 0; j < q.length; j++) {
+      q[j].setAttribute('href', '/' + lang + q[j].getAttribute('href'));
+    }
+  }
+})();
+</script>
+</body>
+</html>
