@@ -333,6 +333,12 @@ RedirectMatch 301 ^/es/gira(/.*)?$                       https://splitcam.com/es
 
 # --- canonical URL form: strip trailing slash + serve directory index ---------
 # Keep this block LAST. mod_rewrite; requires AllowOverride FileInfo.
+# .msi: correct MIME + force attachment (x-msdownload made some browsers rename to .exe)
+AddType application/x-msi .msi
+<FilesMatch "\.msi$">
+  Header set Content-Disposition "attachment"
+</FilesMatch>
+
 AddType application/manifest+json .webmanifest
 
 # --- custom 404 (branded page, added 2026-07-02; GitHub Pages picks /404.html automatically) ---
