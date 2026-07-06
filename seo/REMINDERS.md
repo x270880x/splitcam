@@ -388,6 +388,24 @@ The 7 boxes = **~29 MB total**: `admin@` ~28 MB is the only substantial one; `po
 `wpscmail@` ~0.25 MB; 4 persona stubs (`damonwilson/michaelfroman/frederickkempe/martinkimani`)
 ~77 KB each. SSL scaffold already done, so cutover = mail (one of A/B/C) + DNS flip + purge.
 
+**✅ FULL PARITY AUDIT — DA vs live cPanel, 2026-07-06.** Everything except mail is byte-clean:
+- **Site:** 579 deployable repo files → **0 missing, 0 md5 drift** on DA (byte-identical). DA
+  has only the expected host-managed extras (`.htaccess`=repo md5, IndexNow key, `ver.php`,
+  `ver.txt`, `ofcf-turnstile.php`, default `cgi-bin/.htaccess`).
+- **win-download:** was missing **2** update-mechanism files (`update/2024-05-26.txt` = v10.7.44
+  release-notes, `update/ingests.tar.gz` = ingest bundle) — both were live-200/DA-404; **copied
+  cPanel→DA + verified** (200, md5 match). Now 32/32 at parity. Installer sizes all match.
+- **Redirects (curl --resolve on DA):** every class fires — slashless 301, contact/ru/es→help,
+  donate localized, blog→camstreamguide, forum→help, adult→camstreamguide, installer+archive→
+  github, branded 404 (SIGNAL LOST), `.msi`=`application/x-msi`+`attachment`.
+- **PHP:** `ver.php` & `ofcf-turnstile.php` DA≡live (byte-identical responses).
+- **SEO files on DA:** robots (→splitcam.com/sitemap.xml), sitemap.xml (526 URLs), favicon,
+  apple-touch, assetlinks — all 200. **Domains:** only `splitcam.com`, no sub/addon/parked
+  on either side — nothing extra to move.
+- **Couldn't verify:** cPanel cron list (its Cron API module is server-side broken) — low risk
+  (ver-ramp was dropped, nothing time-based), glance at cPanel→Cron Jobs UI if paranoid.
+So the ONLY thing left to move at cutover is **mail**; content+infra+redirects+SSL are done.
+
 ## Installers split: pre-10.8 → GitHub-only (2026-07-06, user request)
 Host keeps ONLY 10.8.x–10.9.2 (+ boevye + light) = 9.3G (was 16G). Everything older lives
 on **GitHub `x270880x/splitcam-release`**: releases v9.0.9–v10.7.44 (per-version msi/x64
