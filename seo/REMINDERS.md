@@ -406,6 +406,28 @@ The 7 boxes = **~29 MB total**: `admin@` ~28 MB is the only substantial one; `po
   (ver-ramp was dropped, nothing time-based), glance at cPanel→Cron Jobs UI if paranoid.
 So the ONLY thing left to move at cutover is **mail**; content+infra+redirects+SSL are done.
 
+## ✅✅ DA CUTOVER EXECUTED — 2026-07-06 (WEB now on DirectAdmin)
+Flipped **web only**: Cloudflare A `splitcam.com` + `www` → **185.67.3.44** (proxied), cache
+purged. **Mail LEFT on cPanel** on purpose — `mail`/`webmail` A (91.223.223.113) + `MX →
+mail.splitcam.com` untouched, so mail keeps flowing to cPanel (no mail-migration risk today).
+Confirmed DA is the live origin via a unique probe file served through live CF (exact match,
+then removed). Live battery all green through CF: pages incl. /ru/, slashless 301, contact→help,
+blog→camstreamguide, installer→github, `.cfg` 200, `.msi`=x-msi+attachment, branded 404, ver.php.
+- **Live origin now: DA `lwanngbs@185.67.3.44`** (SSH `~/.hostsila_da_ssh`, panel API :2222).
+- **cPanel `jntckkaf@91.223.223.113` = FALLBACK** (still serves mail; keep ~2 wks, then decide).
+- **ROLLBACK (fast):** CF A `splitcam.com`+`www` back to `91.223.223.113` + purge. cPanel web
+  is untouched and still fully deployed, so rollback is instant.
+- **Record IDs** (for future flips): apex `d824889430ec8c50ca7ce74ea0a52636`, www
+  `29269e69d16ba4434327c3439067cf66`.
+**Post-cutover follow-ups:**
+1. Watch 48 h (traffic, errors, new-host bandwidth — 9.3 GB installers now on DA egress).
+2. **Delete the 3 CF `.cfg` transform rules** (`http_request_transform` ruleset) — DA serves
+   `.cfg` natively; left them today to change one thing at a time. Verified `.cfg`=200 via CF WITH
+   rules still on, so removal is safe anytime after stability confirmed.
+3. **Mail migration** (method A/B/C above) — do BEFORE cancelling cPanel; until then cPanel must
+   stay alive for mail. User: send a test mail to confirm delivery still works (should — untouched).
+4. Then flip `mail`/`webmail` A + re-point once mail is on DA, and decommission cPanel.
+
 ## Installers split: pre-10.8 → GitHub-only (2026-07-06, user request)
 Host keeps ONLY 10.8.x–10.9.2 (+ boevye + light) = 9.3G (was 16G). Everything older lives
 on **GitHub `x270880x/splitcam-release`**: releases v9.0.9–v10.7.44 (per-version msi/x64

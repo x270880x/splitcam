@@ -64,11 +64,13 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 
 ## Current state
 
-- **splitcam.com is LIVE on the new host** (cutover 2026-07-02: cPanel
-  `jntckkaf@91.223.223.113`, Cloudflare in front). Mail migrated too. A cheaper
-  DirectAdmin trial (`185.67.3.44`, creds `~/.hostsila_da_ssh`) is staged in parallel,
-  not cut over. Full status + cutover/migration checklist: `seo/REMINDERS.md`; fuller
-  history: `ONBOARDING.md` (⚡ box at top).
+- **splitcam.com WEB is LIVE on DirectAdmin** (2nd cutover 2026-07-06: CF A apex+www →
+  `185.67.3.44`, DA `lwanngbs@185.67.3.44`, creds `~/.hostsila_da_ssh`, panel API :2222,
+  Cloudflare in front with a CF Origin cert to 2041). **MAIL still on the old cPanel**
+  `jntckkaf@91.223.223.113` (mail/webmail A + MX left untouched) — cPanel = fallback, keep
+  ~2 wks, migrate mail before cancelling it (method A/B/C in REMINDERS). Rollback = CF
+  apex+www A back to `91.223.223.113` + purge. Full status: `seo/REMINDERS.md` ("DA CUTOVER
+  EXECUTED"); history: `ONBOARDING.md`. (1st cutover 2026-07-02 was onto that cPanel.)
 - Homepage A/B resolved (2026-05-22): Variant A is final, `/v2/` archived.
 - Site-wide version is **v10.9.2**. No installer size shown.
 - **Deploy is site-wide via GitHub tarball → host overlay-copy** (not GitHub Pages, though

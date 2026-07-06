@@ -3,9 +3,11 @@
 *Last updated: 2026-07-06. Open this at the start of any new chat to get up to speed.*
 
 > **⚡ SINCE 2026-07-02 (read this first — the rest of "Current state" predates cutover):**
-> - **splitcam.com is LIVE on the new host** — DNS cut over 2026-07-02 (A apex+www →
->   `91.223.223.113`, Cloudflare-proxied). Old cPanel `dfadnfvi@77.83.100.124` kept as
->   fallback. **Mail migrated** to the new host (7 mailboxes; `mail`/`webmail`/MX moved).
+> - **splitcam.com WEB is LIVE on DirectAdmin** — 2nd cutover **2026-07-06** (CF A apex+www →
+>   `185.67.3.44`, DA `lwanngbs@…`, CF Origin cert to 2041). **MAIL still on cPanel**
+>   `jntckkaf@91.223.223.113` (`mail`/`webmail`/MX left there) → cPanel = fallback, keep ~2 wks,
+>   migrate mail before cancelling. Rollback = CF apex+www A back to `91.223.223.113` + purge.
+>   (1st cutover 2026-07-02 was old host `dfadnfvi@77.83.100.124` → that cPanel; mail moved then.)
 > - **All internal URLs are now FULL absolute canonical** (`https://splitcam.com/...`) —
 >   subresources AND `<a href>` (see CLAUDE.md rule 0). Fixed slashless-URL breakage
 >   (orbit-logo 404s, locale-dropping nav, JS platform-menu double-domain).
@@ -18,9 +20,11 @@
 >   everything ≤10.7 + museum 4.x–8.x → GitHub `x270880x/splitcam-release` (incl. new
 >   `legacy-archive` release). Old URLs 301 to the **same version's** GitHub asset.
 > - **Search engines registered:** GSC sitemap submitted + IndexNow (526 URLs → Bing/Yandex).
-> - **DirectAdmin trial server staged** (`185.67.3.44`, creds `~/.hostsila_da_ssh`) as a
->   2×-cheaper cPanel replacement — full parallel copy, battery green, `.cfg` works natively.
->   Not cut over. Plan + all cutover details: `seo/REMINDERS.md`.
+> - **DirectAdmin cutover DONE 2026-07-06** (`185.67.3.44`, creds `~/.hostsila_da_ssh`, panel
+>   API :2222) — 2×-cheaper than cPanel. Full byte-parity audit passed pre-flip (579 files 0
+>   drift; 2 win-download update files copied; all redirects/404/PHP/SEO verified), CF Origin
+>   cert installed, DA confirmed live origin via probe. `.cfg` native → **still-TODO: delete the
+>   3 CF `.cfg` transform rules** after 48h. Details: `seo/REMINDERS.md` "DA CUTOVER EXECUTED".
 
 ## ⭐ Current state (read first)
 - Site is live in **all 35 languages**. Disk math (self-checking): **528** total
