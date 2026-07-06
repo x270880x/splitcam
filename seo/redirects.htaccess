@@ -333,39 +333,46 @@ RedirectMatch 301 ^/es/gira(/.*)?$                       https://splitcam.com/es
 
 # --- canonical URL form: strip trailing slash + serve directory index ---------
 # Keep this block LAST. mod_rewrite; requires AllowOverride FileInfo.
-# --- pre-10.8 installers moved to GitHub (x270880x/splitcam-release) 2026-07-06;
-# external hits get the CURRENT version instead (x64->x64, 32-bit->32-bit, museum->/download) ---
-RedirectMatch 301 ^/win-download/update/10\.3\.42_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.3\.78_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.3\.85_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.4\.5_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.4\.8_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.4\.96_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.5\.12_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.5\.92_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.6\.12_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.6\.54_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.7\.11_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.7\.24_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.7\.32_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.7\.38_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/10\.7\.44_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
-RedirectMatch 301 ^/win-download/update/9\.0\.9\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/update/10\.0\.58\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/update/10\.1\.4\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/update/10\.2\.16\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/update/10\.3\.42\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/update/10\.3\.78\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/update/10\.3\.85\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/update/10\.4\.5\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/update/10\.4\.8\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/update/10\.4\.96\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/update/10\.5\.12\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/update/10\.5\.92\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/update/10\.6\.12\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/update/10\.6\.54\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
-RedirectMatch 301 ^/win-download/archive/.+$ https://splitcam.com/download
-RedirectMatch 301 ^/win-download/splitcam\.exe$ https://splitcam.com/win-download/SplitCamSetup.msi
+# --- pre-10.8 installers live on GitHub (x270880x/splitcam-release); old URLs 301
+# to the SAME version's GitHub asset (user 2026-07-06: serve the old version, not the new) ---
+RedirectMatch 301 ^/win-download/update/10\.3\.42_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.3.42/10.3.42_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.3\.78_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.3.78/10.3.78_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.3\.85_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.3.85/10.3.85_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.4\.5_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.4.5/10.4.5_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.4\.8_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.4.8/10.4.8_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.4\.96_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.4.96/10.4.96_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.5\.12_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.5.12/10.5.12_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.5\.92_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.5.92/10.5.92_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.6\.12_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.6.12/10.6.12_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.6\.54_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.6.54/10.6.54_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.7\.11_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.7.11/10.7.11_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.7\.24_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.7.24/10.7.24_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.7\.32_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.7.32/10.7.32_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.7\.38_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.7.38/10.7.38_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.7\.44_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.7.44/10.7.44_x64.msi
+RedirectMatch 301 ^/win-download/update/9\.0\.9\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v9.0.9/9.0.9.msi
+RedirectMatch 301 ^/win-download/update/10\.0\.58\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.0.58/10.0.58.msi
+RedirectMatch 301 ^/win-download/update/10\.1\.4\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.1.4/10.1.4.msi
+RedirectMatch 301 ^/win-download/update/10\.2\.16\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.2.16/10.2.16.msi
+RedirectMatch 301 ^/win-download/update/10\.3\.42\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.3.42/10.3.42.msi
+RedirectMatch 301 ^/win-download/update/10\.3\.78\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.3.78/10.3.78.msi
+RedirectMatch 301 ^/win-download/update/10\.3\.85\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.3.85/10.3.85.msi
+RedirectMatch 301 ^/win-download/update/10\.4\.5\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.4.5/10.4.5.msi
+RedirectMatch 301 ^/win-download/update/10\.4\.8\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.4.8/10.4.8.msi
+RedirectMatch 301 ^/win-download/update/10\.4\.96\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.4.96/10.4.96.msi
+RedirectMatch 301 ^/win-download/update/10\.5\.12\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.5.12/10.5.12.msi
+RedirectMatch 301 ^/win-download/update/10\.5\.92\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.5.92/10.5.92.msi
+RedirectMatch 301 ^/win-download/update/10\.6\.12\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.6.12/10.6.12.msi
+RedirectMatch 301 ^/win-download/update/10\.6\.54\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.6.54/10.6.54.msi
+RedirectMatch 301 ^/win-download/archive/SplitCamSetup\-4\.2\.2\.0\.exe$ https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-4.2.2.0.exe
+RedirectMatch 301 ^/win-download/archive/SplitCamSetup\-4\.2\.3\.2\.exe$ https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-4.2.3.2.exe
+RedirectMatch 301 ^/win-download/archive/SplitCamSetup\-5\.4\.6\.3\-beta\.exe$ https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-5.4.6.3-beta.exe
+RedirectMatch 301 ^/win-download/archive/SplitCamSetup\-6\.9\.4\.1\.exe$ https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-6.9.4.1.exe
+RedirectMatch 301 ^/win-download/archive/SplitCamSetup\-7\.1\.3\.1\.exe$ https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-7.1.3.1.exe
+RedirectMatch 301 ^/win-download/archive/SplitCamSetup\-7\.4\.4\.1\.exe$ https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-7.4.4.1.exe
+RedirectMatch 301 ^/win-download/archive/SplitCamSetup\-8\.1\.4\.1\.exe$ https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-8.1.4.1.exe
+RedirectMatch 301 ^/win-download/archive/.+$ https://github.com/x270880x/splitcam-release/releases/tag/legacy-archive
+RedirectMatch 301 ^/win-download/splitcam\.exe$ https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/splitcam.exe
 
 # .msi: correct MIME + force attachment (x-msdownload made some browsers rename to .exe)
 AddType application/x-msi .msi
