@@ -64,9 +64,18 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 
 ## Current state
 
+- **splitcam.com is LIVE on the new host** (cutover 2026-07-02: cPanel
+  `jntckkaf@91.223.223.113`, Cloudflare in front). Mail migrated too. A cheaper
+  DirectAdmin trial (`185.67.3.44`, creds `~/.hostsila_da_ssh`) is staged in parallel,
+  not cut over. Full status + cutover/migration checklist: `seo/REMINDERS.md`; fuller
+  history: `ONBOARDING.md` (⚡ box at top).
 - Homepage A/B resolved (2026-05-22): Variant A is final, `/v2/` archived.
 - Site-wide version is **v10.9.2**. No installer size shown.
-- Working tree clean as of last check; branch `main`.
+- **Deploy is site-wide via GitHub tarball → host overlay-copy** (not GitHub Pages, though
+  that still auto-builds as staging). After any redirect change, keep the host docroot
+  `.htaccess` = `seo/redirects.htaccess` and **purge Cloudflare cache**.
+- Installers: host keeps 10.8.x–10.9.2 only; ≤10.7 + 4.x–8.x museum live on GitHub
+  `x270880x/splitcam-release` (old URLs 301 to the same version's GitHub asset).
 
 ## Infrastructure access (set up 2026-05-22 / 23)
 

@@ -1,6 +1,26 @@
 # SplitCam — Project Onboarding
 
-*Last updated: 2026-07-02. Open this at the start of any new chat to get up to speed.*
+*Last updated: 2026-07-06. Open this at the start of any new chat to get up to speed.*
+
+> **⚡ SINCE 2026-07-02 (read this first — the rest of "Current state" predates cutover):**
+> - **splitcam.com is LIVE on the new host** — DNS cut over 2026-07-02 (A apex+www →
+>   `91.223.223.113`, Cloudflare-proxied). Old cPanel `dfadnfvi@77.83.100.124` kept as
+>   fallback. **Mail migrated** to the new host (7 mailboxes; `mail`/`webmail`/MX moved).
+> - **All internal URLs are now FULL absolute canonical** (`https://splitcam.com/...`) —
+>   subresources AND `<a href>` (see CLAUDE.md rule 0). Fixed slashless-URL breakage
+>   (orbit-logo 404s, locale-dropping nav, JS platform-menu double-domain).
+> - **526-locale SEO audit + all 287 fixes applied** (titles/desc/keywords/native grammar),
+>   report `seo/reports/seo-audit-2026-07-02.md`.
+> - **Forum shut down** — scrubbed from `/help` (35 locales); support = Telegram + FAQ.
+> - **Blog: 109 posts → thematic 301s**; `.cfg` served via 3 Cloudflare transform rules
+>   (`_cfg.bin` twins); custom branded **404** live; `no-ads` firewall rule re-enabled.
+> - **Installers split (2026-07-06):** host keeps only 10.8.x–10.9.2 (9.3G, was 16G);
+>   everything ≤10.7 + museum 4.x–8.x → GitHub `x270880x/splitcam-release` (incl. new
+>   `legacy-archive` release). Old URLs 301 to the **same version's** GitHub asset.
+> - **Search engines registered:** GSC sitemap submitted + IndexNow (526 URLs → Bing/Yandex).
+> - **DirectAdmin trial server staged** (`185.67.3.44`, creds `~/.hostsila_da_ssh`) as a
+>   2×-cheaper cPanel replacement — full parallel copy, battery green, `.cfg` works natively.
+>   Not cut over. Plan + all cutover details: `seo/REMINDERS.md`.
 
 ## ⭐ Current state (read first)
 - Site is live in **all 35 languages**. Disk math (self-checking): **528** total
@@ -35,17 +55,14 @@
   `paypal.me/Katzovich/<amt>USD` links (the old PayPal hosted-button was replaced — **0
   `hosted_button_id` remain** in any HTML). Sitemap weight: priority **0.3**, changefreq
   yearly. **Features + Donate are footer links on every page.**
-- **Host migration is COMPLETE; cutover is the only thing pending.** The full redesign
-  + the live-site infra (`win-download/` installers, `ver.php`, `ofcf-turnstile.php`,
-  `ver.txt`, `.well-known/assetlinks.json`) are staged on the new cPanel host
-  `~jntckkaf/public_html` (preview http://rocket-cp2.hostsila.org/~jntckkaf/).
-  splitcam.com DNS is **NOT cut over yet**. Cutover checklist (in `seo/REMINDERS.md`):
-  (1) point splitcam.com DNS → **91.223.223.113**; (2) drop `seo/redirects.htaccess`
-  into the **live** docroot `.htaccess` (never on the preview — its slashless RewriteRule
-  breaks the `/~jntckkaf/` userdir); (3) re-deploy the overlay if the repo changed (host
-  pulls the GitHub main tarball, excludes `.git/seo/v2/.claude/*.md/.nojekyll`, **never
-  `--delete`** or `win-download/` is wiped); (4) purge Cloudflare cache for
-  `win-download/SplitCamSetup_x64.msi`.
+- **Host migration DONE — cutover executed 2026-07-02** (see the ⚡ box at top). Live host
+  = cPanel `jntckkaf@91.223.223.113`, docroot `~/public_html`, Cloudflare in front. Deploy
+  = host pulls the GitHub `main` tarball and overlay-copies (excludes
+  `.git/seo/v2/.claude/*.md/.nojekyll`, **never `--delete`** or `win-download/` is wiped);
+  the boevoy `.htaccess` in the docroot = `seo/redirects.htaccess` (kept in sync on every
+  redirect change). After each deploy: **purge Cloudflare cache**. SSH creds
+  `~/.hostsila_ssh`. A DirectAdmin trial (`185.67.3.44`) is staged as a cheaper replacement
+  (not cut over) — details in `seo/REMINDERS.md`.
 - **`ver.txt` policy — RESOLVED (host-managed).** The earlier weekly-ramp idea was
   dropped. All three `ver.txt` track the **current** release and are set to **10.9.2**:
   root `/ver.txt`, `win-download/update/ver.txt`, `win-download/update/light/ver.txt`.
@@ -277,6 +294,43 @@ git add . && git commit -m "..." && git push origin main
 ```
 Revert: `git revert HEAD --no-edit && git push`.
 **Auto-push:** after meaningful complete edits, commit + push `origin main` without asking; still ask before destructive git ops (force push, `reset --hard`, revert of published commits, branch deletion).
+
+## Session log — 2026-07-02 → 07-06 (CUTOVER + mail + SEO fixes + UI hardening + installer split + DA trial)
+
+- **CUTOVER (07-02):** DNS apex+www → `91.223.223.113` via Cloudflare API; installed a
+  **Cloudflare Origin CA cert** on the host (origin was serving an expired mm.hostpro.ua
+  self-signed → would break Full-strict); www→apex 301 as a CF dynamic-redirect rule;
+  purge-everything. Live battery green. Mail pinned to old server first, then **fully
+  migrated** (7 mailboxes, passwords, DKIM/SPF) to the new host.
+- **Cloudflare `.cfg` fix:** the new cPanel 403s `*.cfg` server-wide (extension-based,
+  unfixable from the account) → 3 **Transform rules** rewrite
+  `/win-download/update/{proxy,ingests,ingests2}.cfg` → `_cfg.bin` twins (hardlinks on
+  both origins). DirectAdmin serves `.cfg` natively, so these rules become removable after
+  a DA cutover.
+- **SEO audit (35 locales, ~70 agents) + 287 fixes applied** — keyword placement, native
+  grammar, EN products/download de-cannibalization, EN-template calques, meta lengths.
+  Report: `seo/reports/seo-audit-2026-07-02.md`.
+- **Redirects grew to a full 301 map:** legacy WP `/help/*`, `/blog/*` (109 posts routed
+  by topic to vc/multistreaming/changelog/features/for), `/forum/*`→/help, adult cluster
+  (75 rules) → camstreamguide.com, mac-privacy/mojave pages, contact-us→help. Forum
+  removed from `/help` (35 locales, native).
+- **Absolute-URL sweep** (CLAUDE.md rule 0): 5369 subresources + 15807 `<a href>` made full
+  canonical across 527 pages; `i18n.dropdown()` + `linkcheck.py` updated to match. Fixed:
+  orbit-logo/help/multistreaming-video 404s, locale-dropping nav, the JS platform-menu
+  double-domain bug, stale `/splitcam/` manifest paths.
+- **UI hardening (all mobile-verified via headless Chrome):** branded multilingual **404**;
+  changelog per-version **download buttons** (merged chip+arrow, hover-highlight, dimmed
+  when no file) + removed "Older builds" block; **compact sticky header** ≤520px (logo
+  shrinks, download+burger pinned); hero `overflow-x: clip` (an 800px glow was inflating
+  the mobile viewport and pushing the header off-screen); bitrate pulse → GPU transform;
+  header Download buttons on help/changelog/privacy/license (211) fixed to `/download`;
+  `.msi` MIME/attachment header (was renaming to .exe).
+- **Installer split (07-06):** pre-10.8 → GitHub-only; host 16G → 9.3G; 38 same-version
+  301s; new `legacy-archive` GitHub release for the 4.x–8.x .exe + stub.
+- **Search-engine registration:** GSC sitemap submitted; IndexNow 526 URLs (key file on
+  host). `no-ads` firewall rule re-enabled. Cloudflare stats healthy (~30k uniques/day,
+  blocks = bot scanners only).
+- **DirectAdmin trial** provisioned + fully staged in parallel (see `seo/REMINDERS.md`).
 
 ## Session log — 2026-06-30 -> 07-02 (features + donate, Skype scrub, footers, slashless URLs, host migration finalized, AV scan, hero-video redesign)
 
