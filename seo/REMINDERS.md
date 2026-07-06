@@ -340,6 +340,24 @@ Compare DR / ranked keyword count / traffic estimate vs baseline in `seo/reports
 - **Open at start of any SEO chat** — Claude can `Read` this file and pick up exactly where things left off
 - **Update status** in the table as tasks complete (don't delete sections — useful for context later)
 - **Don't trust the cron tool for durable reminders** — it lied about `durable: true` in May 2026; reminders set that way died with the chat session. Use this file + iCloud Calendar instead.
+## Panel migration cPanel -> DirectAdmin (planned ~2026-08-01, user 2026-07-06: DA plan is 2x cheaper)
+Wait until Google digests the 526 pages (check GSC coverage first). New DA plan = new server/IP.
+Checklist (mirror of the 2026-07-02 cutover, proven twice):
+1. User: order the DA plan KEEPING the cPanel plan active in parallel; save creds to a
+   chmod-600 file (like ~/.hostsila_ssh) — never in chat.
+2. Transfer: site tarball via GitHub (deploy2.sh pattern) + win-download 16GB host-to-host
+   (wget/rsync) + docroot .htaccess from seo/redirects.htaccess + ver.php/ofcf-turnstile.php
+   + ver.txt x3 (host-managed!) + win-download/update/.htaccess + *_cfg.bin hardlinks
+   + IndexNow key file (485c...txt) + 7 mailboxes (mail dirs + passwords).
+3. SSL: install CF Origin cert (pair reused or re-issue — re-issue anyway per key-in-chat note).
+4. Domain: add splitcam.com alias on DA BEFORE DNS flip.
+5. Test EVERYTHING via curl --resolve on the new IP (redirect battery 35+, cfg via CF,
+   installer range, ver.php, mail ports) BEFORE touching DNS.
+6. Flip A records (apex+www) via CF API, purge everything, live battery, watch 48h.
+7. Keep cPanel plan ~2 weeks as fallback, then cancel. Update memory/ONBOARDING/REMINDERS creds+IP.
+Known trap to re-verify on the new server: global Apache quirks (the .cfg 403 story) — CF
+transform rules cover .cfg regardless; adapt deploy tooling from cPanel UAPI to DA API.
+
 ## Search-engine registration (2026-07-02, post-cutover)
 - **IndexNow — DONE:** all 526 sitemap URLs submitted (api.indexnow.org 200, bing 200,
   yandex 202). Key file: https://splitcam.com/485c229ee85ee55f1967363aabec7e9a.txt (host-managed,
