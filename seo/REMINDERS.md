@@ -370,6 +370,24 @@ so it can't overwrite the Origin cert. Key files shredded from scratchpad after 
 transited chat 2026-07-02) — needs the CF dashboard or the Origin CA Key (our zone API token
 returns 1016 on the Origin CA endpoint, can't automate).
 
+**⚠️ MAIL CANNOT be pre-staged on DA (found 2026-07-06).** Tried; hit an access wall:
+DA's mail-auth store is root/mail-owned and invisible to the user (`/etc/virtual/` absent,
+`~/etc/` absent, per-box `$6$` hash not readable/writable over SSH), and DA API `CMD_API_POP`
+only accepts **plaintext** passwords — we hold only the cPanel `$6$` hashes (irreversible,
+readable via cPanel UAPI `Fileman` on `~/etc/splitcam.com/shadow`). So passwords can't be
+ported "unchanged" by us, and messages would go **stale** anyway (MX stays on cPanel until
+the flip). → **Do mail AT cutover**, pick one:
+  - **(A) hostsila support server-side migration** [recommended — both plans are the SAME
+    provider (cPanel + DA on hostsila); they have root, preserve passwords + messages, zero
+    client reconfig]. Open a ticket on cutover day.
+  - **(B) imapsync** cPanel-IMAP→DA-IMAP with **user-supplied plaintext** box passwords:
+    create the 7 DA boxes via `CMD_API_POP` with the SAME plaintext passwords (→ clients
+    unchanged) then imapsync copies all folders/messages. Needs the plaintext from the user.
+  - **(C) fresh passwords** on DA + user updates the ~3 real clients once (simplest).
+The 7 boxes = **~29 MB total**: `admin@` ~28 MB is the only substantial one; `pola@` ~0.6 MB,
+`wpscmail@` ~0.25 MB; 4 persona stubs (`damonwilson/michaelfroman/frederickkempe/martinkimani`)
+~77 KB each. SSL scaffold already done, so cutover = mail (one of A/B/C) + DNS flip + purge.
+
 ## Installers split: pre-10.8 → GitHub-only (2026-07-06, user request)
 Host keeps ONLY 10.8.x–10.9.2 (+ boevye + light) = 9.3G (was 16G). Everything older lives
 on **GitHub `x270880x/splitcam-release`**: releases v9.0.9–v10.7.44 (per-version msi/x64
