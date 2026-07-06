@@ -333,6 +333,40 @@ RedirectMatch 301 ^/es/gira(/.*)?$                       https://splitcam.com/es
 
 # --- canonical URL form: strip trailing slash + serve directory index ---------
 # Keep this block LAST. mod_rewrite; requires AllowOverride FileInfo.
+# --- pre-10.8 installers moved to GitHub (x270880x/splitcam-release) 2026-07-06;
+# external hits get the CURRENT version instead (x64->x64, 32-bit->32-bit, museum->/download) ---
+RedirectMatch 301 ^/win-download/update/10\.3\.42_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.3\.78_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.3\.85_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.4\.5_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.4\.8_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.4\.96_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.5\.12_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.5\.92_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.6\.12_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.6\.54_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.7\.11_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.7\.24_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.7\.32_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.7\.38_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.7\.44_x64\.msi$ https://splitcam.com/win-download/SplitCamSetup_x64.msi
+RedirectMatch 301 ^/win-download/update/9\.0\.9\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/update/10\.0\.58\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/update/10\.1\.4\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/update/10\.2\.16\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/update/10\.3\.42\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/update/10\.3\.78\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/update/10\.3\.85\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/update/10\.4\.5\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/update/10\.4\.8\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/update/10\.4\.96\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/update/10\.5\.12\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/update/10\.5\.92\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/update/10\.6\.12\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/update/10\.6\.54\.msi$ https://splitcam.com/win-download/SplitCamSetup.msi
+RedirectMatch 301 ^/win-download/archive/.+$ https://splitcam.com/download
+RedirectMatch 301 ^/win-download/splitcam\.exe$ https://splitcam.com/win-download/SplitCamSetup.msi
+
 # .msi: correct MIME + force attachment (x-msdownload made some browsers rename to .exe)
 AddType application/x-msi .msi
 <FilesMatch "\.msi$">
