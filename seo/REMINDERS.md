@@ -352,11 +352,23 @@ IndexNow key, real `.cfg` files) + 21 installers (10.8.x–10.9.2 + light, 9.3G)
 origin (curl --resolve …:185.67.3.44) = all green: pages 200, slashless 301, redirect
 classes incl. blog/adult/installer-to-GitHub, `.cfg` 200, custom 404. `ver.php` outputs
 empty — but SAME as live cPanel (it reads ver.txt, never echoes; app reads ver.txt
-directly), so parity confirmed. Origin cert on DA = Let's Encrypt for
-`rocket-da4.hostsila.org` (wrong CN for splitcam.com → CF must stay Full non-strict OR
-install CF Origin cert before flip). Trial has NO mail yet — mail migration is a separate
-step. Remaining before real cutover: install CF Origin cert on DA, verify mail plan, flip
-DNS to 185.67.3.44 + purge, keep cPanel ~2wk fallback.
+directly), so parity confirmed. Trial has NO mail yet — mail migration is a separate
+step. Remaining before real cutover: ~~install CF Origin cert on DA~~ ✅ DONE 2026-07-06,
+verify mail plan, flip DNS to 185.67.3.44 + purge, keep cPanel ~2wk fallback.
+
+**✅ SSL on DA — DONE 2026-07-06.** DA now serves the **CloudFlare Origin Certificate**
+(CN=CloudFlare Origin Certificate, SAN `splitcam.com`+`*.splitcam.com`, valid to 2041) on
+:443 for both apex+www SNI → works in CF Full **and** Full-strict, so the DNS flip won't
+need any CF SSL-mode change. Method (fully API, no dashboard, private key never in chat):
+pulled the SAME CF Origin cert+key already installed on live cPanel — cert via UAPI
+`SSL/installed_hosts` (`certificate_text`), key via UAPI `Fileman/get_file_content` on
+`~/ssl/keys/b2c9b_….key` (matched to cert by modulus md5 `26fd59…`) — then installed on DA
+via panel API `CMD_API_SSL action=save type=paste` (DA API reachable at
+`https://185.67.3.44:2222` with the SSH creds). Disabled DA's LE auto-renew for splitcam.com
+so it can't overwrite the Origin cert. Key files shredded from scratchpad after install.
+**Still pending (hygiene, NOT blocking):** re-issue a FRESH CF Origin pair (the reused key
+transited chat 2026-07-02) — needs the CF dashboard or the Origin CA Key (our zone API token
+returns 1016 on the Origin CA endpoint, can't automate).
 
 ## Installers split: pre-10.8 → GitHub-only (2026-07-06, user request)
 Host keeps ONLY 10.8.x–10.9.2 (+ boevye + light) = 9.3G (was 16G). Everything older lives
@@ -377,7 +389,7 @@ Checklist (mirror of the 2026-07-02 cutover, proven twice):
    (wget/rsync) + docroot .htaccess from seo/redirects.htaccess + ver.php/ofcf-turnstile.php
    + ver.txt x3 (host-managed!) + win-download/update/.htaccess + *_cfg.bin hardlinks
    + IndexNow key file (485c...txt) + 7 mailboxes (mail dirs + passwords).
-3. SSL: install CF Origin cert (pair reused or re-issue — re-issue anyway per key-in-chat note).
+3. SSL: ✅ DONE 2026-07-06 — CF Origin cert (reused from cPanel) installed on DA, serves apex+www. (Re-issue a fresh pair later via dashboard — hygiene only.)
 4. Domain: add splitcam.com alias on DA BEFORE DNS flip.
 5. Test EVERYTHING via curl --resolve on the new IP (redirect battery 35+, cfg via CF,
    installer range, ver.php, mail ports) BEFORE touching DNS.
