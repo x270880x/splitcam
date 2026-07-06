@@ -340,6 +340,34 @@ Compare DR / ranked keyword count / traffic estimate vs baseline in `seo/reports
 - **Open at start of any SEO chat** — Claude can `Read` this file and pick up exactly where things left off
 - **Update status** in the table as tasks complete (don't delete sections — useful for context later)
 - **Don't trust the cron tool for durable reminders** — it lied about `durable: true` in May 2026; reminders set that way died with the chat session. Use this file + iCloud Calendar instead.
+## ✅ DirectAdmin TRIAL server provisioned + fully staged (2026-07-06)
+Turbo NVMe Trial ordered. **SSH creds: `~/.hostsila_da_ssh`** (chmod 600). Server
+`rocket-da4.hostsila.org`, IP **185.67.3.44**, user **lwanngbs**, docroot
+`/home/lwanngbs/domains/splitcam.com/public_html`. PHP 7.4, wget/curl present.
+Already deployed there (parallel to live cPanel, NOT cut over): all 527 pages + infra
+(`ver.php`, `ofcf-turnstile.php`, `.htaccess`=redirects, `ver.txt`x3, `site.webmanifest`,
+IndexNow key, real `.cfg` files) + 21 installers (10.8.x–10.9.2 + light, 9.3G).
+**KEY WIN: DA serves `.cfg` natively (200, no 403!)** → at cutover the 3 Cloudflare
+`.cfg`→`_cfg.bin` transform rules become UNNEEDED (can delete them). Battery on the DA
+origin (curl --resolve …:185.67.3.44) = all green: pages 200, slashless 301, redirect
+classes incl. blog/adult/installer-to-GitHub, `.cfg` 200, custom 404. `ver.php` outputs
+empty — but SAME as live cPanel (it reads ver.txt, never echoes; app reads ver.txt
+directly), so parity confirmed. Origin cert on DA = Let's Encrypt for
+`rocket-da4.hostsila.org` (wrong CN for splitcam.com → CF must stay Full non-strict OR
+install CF Origin cert before flip). Trial has NO mail yet — mail migration is a separate
+step. Remaining before real cutover: install CF Origin cert on DA, verify mail plan, flip
+DNS to 185.67.3.44 + purge, keep cPanel ~2wk fallback.
+
+## Installers split: pre-10.8 → GitHub-only (2026-07-06, user request)
+Host keeps ONLY 10.8.x–10.9.2 (+ boevye + light) = 9.3G (was 16G). Everything older lives
+on **GitHub `x270880x/splitcam-release`**: releases v9.0.9–v10.7.44 (per-version msi/x64
+assets) + new **`legacy-archive`** release (7 museum .exe 4.2–8.1 + `splitcam.exe` stub).
+Changelog download-arrows already point straight at the GitHub assets. Old host URLs
+`/win-download/update/*` + `/archive/*` + `/splitcam.exe` → **301 to the SAME version's
+GitHub asset** (38 rules in `seo/redirects.htaccess`, NOT to the new version — user wants
+the requested old version to actually download). Verified live end-to-end (206 through
+2 hops).
+
 ## Panel migration cPanel -> DirectAdmin (planned ~2026-08-01, user 2026-07-06: DA plan is 2x cheaper)
 Wait until Google digests the 526 pages (check GSC coverage first). New DA plan = new server/IP.
 Checklist (mirror of the 2026-07-02 cutover, proven twice):
