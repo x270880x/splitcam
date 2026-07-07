@@ -466,3 +466,15 @@ transform rules cover .cfg regardless; adapt deploy tooling from cPanel UAPI to 
   sc-domain:splitcam.com, DNS-verified). Check coverage report in ~2-3 days.
 - Optional later: Bing Webmaster Tools (import from GSC), Yandex Webmaster UI for RU market.
 
+
+## Developer docs resurrected at /plugins/ (2026-07-07)
+The old site's Developers section is BACK: full Doxygen mirror (94 files — SplitCam Plugin
+API: IPlugin/IImageSource/IWebSource, `splitcam_plugin.h`, `SamplePlugin.zip`) rescued from
+the old origin (77.83.100.124, still serving) into repo `/plugins/`, GA injected. Footer
+"Developers" link (translated) on ALL 527 pages → `https://splitcam.com/plugins/`.
+Rules: **/plugins/ is the ONE trailing-slash dir** (relative hrefs; `/plugins` 301s back to
+`/plugins/` — exception carved into the slashless RewriteRule block); `/help/developers-docs`
++ `/es/ayuda/guia-para-desarrolladores` 301 → `/plugins/` (above the /help catch-all).
+`linkcheck.py` SKIP_DIRS includes `plugins`; **deliberately NOT in sitemap.xml** (legacy
+tech docs; discovery via 527 footer links) — do not "fix" that. If the plugin API ever gets
+a real product page, build it as a normal locale page and keep /plugins/ as the docs.
