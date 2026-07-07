@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1THLDP1XV"></script>
@@ -7,127 +7,416 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+
   gtag('config', 'G-S1THLDP1XV');
 </script>
 
-<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.17"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SplitCam plugins: Develop your own plugins for SplitCam</title>
-<link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SplitCam Plugin API — Develop Your Own Plugins | SplitCam</title>
+<meta name="description" content="Build your own plugins for SplitCam: C++ header, sample Visual Studio project and full API reference. Add image sources, videos and dynamic content to SplitCam scenes.">
+<meta name="keywords" content="splitcam plugin, splitcam api, splitcam sdk, splitcam plugin development, develop splitcam plugin">
+<meta name="author" content="SplitCam">
+<link rel="canonical" href="https://splitcam.com/plugins/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://splitcam.com/plugins/">
+<meta property="og:title" content="SplitCam Plugin API — Develop Your Own Plugins">
+<meta property="og:description" content="Build your own plugins for SplitCam: C++ header, sample Visual Studio project and full API reference.">
+<meta property="og:image" content="https://splitcam.com/assets/og-cover.png">
+<meta property="og:site_name" content="SplitCam">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SplitCam Plugin API — Develop Your Own Plugins">
+<meta name="twitter:description" content="Build your own plugins for SplitCam: C++ header, sample Visual Studio project and full API reference.">
+<meta name="twitter:image" content="https://splitcam.com/assets/og-cover.png">
+
+<meta name="theme-color" content="#141420">
+<link rel="icon" type="image/png" sizes="32x32" href="https://splitcam.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://splitcam.com/favicon-16x16.png">
+<link rel="shortcut icon" href="https://splitcam.com/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://splitcam.com/apple-touch-icon.png">
+<link rel="manifest" href="https://splitcam.com/site.webmanifest">
+
+<!-- Schema.org: BreadcrumbList + TechArticle -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "SplitCam", "item": "https://splitcam.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Developers", "item": "https://splitcam.com/plugins/"}
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "SplitCam Plugin API — Develop Your Own Plugins",
+      "url": "https://splitcam.com/plugins/",
+      "description": "Documentation, C++ header and sample project for building SplitCam plugins — stand-alone DLL libraries that add image sources, videos and dynamic content to SplitCam scenes.",
+      "proficiencyLevel": "Expert",
+      "author": {"@type": "Organization", "name": "SplitCam"}
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --app-base:#141420;
+  --app-panel:#1c1c2e;
+  --app-surface:#22223a;
+  --app-border:rgba(255,255,255,.08);
+  --app-border2:rgba(255,255,255,.14);
+  --blue:#2878fc;
+  --blue-hover:#4d8eff;
+  --blue-dim:rgba(40,120,252,.13);
+  --purple:#9c5bff;
+  --green:#5ee572;
+  --text:#eeeeff;
+  --text-sub:#9090bb;
+  --text-dim:#50506a;
+}
+html{scroll-behavior:smooth;background:var(--app-base);scroll-padding-top:60px}
+body{font-family:'Geist',sans-serif;background:var(--app-base);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+code{font-family:'Geist Mono',monospace;font-size:.92em;background:rgba(255,255,255,.06);border:1px solid var(--app-border);border-radius:6px;padding:1px 6px;color:var(--text);white-space:nowrap}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(20,20,32,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--app-border)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:26px;height:26px;flex-shrink:0}
+.nav-logo-wordmark{font-size:24px;font-weight:700;letter-spacing:.5px}
+.nav-links{display:flex;gap:18px;list-style:none}
+.nav-links a{font-size:14px;color:var(--text-sub);font-weight:500;transition:color .15s;white-space:nowrap}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:8px;background:var(--blue);color:#fff;font-size:13px;font-weight:600;transition:background .15s}
+.btn-primary:hover{background:var(--blue-hover)}
+.btn-lg{padding:13px 24px;font-size:14px;border-radius:10px}
+
+/* Hamburger */
+.nav-burger{display:none;width:40px;height:40px;border:1px solid var(--app-border2);border-radius:8px;background:transparent;cursor:pointer;align-items:center;justify-content:center;padding:0;color:var(--text);transition:background .15s,border-color .15s}
+.nav-burger:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.22)}
+.nav-burger svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav-burger .ico-close{display:none}
+.nav-burger.open .ico-open{display:none}
+.nav-burger.open .ico-close{display:block}
+.nav-mobile{position:fixed;top:60px;left:0;right:0;background:rgba(20,20,32,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--app-border);padding:14px 20px 18px;display:none;flex-direction:column;gap:4px;z-index:99}
+.nav-mobile.open{display:flex}
+.nav-mobile a{display:block;padding:12px 14px;font-size:15px;color:var(--text-sub);font-weight:500;border-radius:8px;transition:background .15s,color .15s}
+.nav-mobile a:hover,.nav-mobile a.active{background:rgba(255,255,255,.05);color:var(--text)}
+
+/* Breadcrumbs */
+.breadcrumbs{padding:80px 40px 0;max-width:900px;margin:0 auto;font-size:13px;color:var(--text-dim)}
+.breadcrumbs a{color:var(--text-sub);transition:color .15s}
+.breadcrumbs a:hover{color:var(--text)}
+.breadcrumbs .sep{margin:0 8px}
+
+/* HERO */
+.hero{padding:32px 40px 50px;max-width:900px;margin:0 auto;position:relative;text-align:center;overflow-x:clip}
+.hero-glow{position:absolute;top:-50px;left:50%;transform:translateX(-50%);width:600px;height:420px;background:radial-gradient(ellipse,rgba(40,120,252,.1),transparent 70%);pointer-events:none;z-index:0}
+.eyebrow{display:inline-block;padding:5px 12px;background:var(--blue-dim);color:var(--blue);font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:18px;position:relative;z-index:1}
+.h1{font-size:clamp(32px,4.2vw,52px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin:0 auto 18px;max-width:720px;position:relative;z-index:1}
+.h1 .accent{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:18px;color:var(--text-sub);max-width:640px;line-height:1.6;margin:0 auto;position:relative;z-index:1}
+.sub strong{color:var(--text);font-weight:600}
+
+/* Section */
+.section{padding:32px 40px 48px;max-width:900px;margin:0 auto}
+.sec-eyebrow{display:inline-block;padding:4px 10px;background:rgba(255,255,255,.04);color:var(--text-sub);font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:14px}
+.sec-h{font-size:28px;font-weight:700;letter-spacing:-.8px;line-height:1.2;margin-bottom:12px}
+.sec-p{font-size:15.5px;color:var(--text-sub);line-height:1.7;margin-bottom:24px;max-width:680px}
+.sec-p strong{color:var(--text);font-weight:600}
+
+/* Download cards */
+.dl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px}
+.dl-card{display:block;padding:26px 26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:all .2s;position:relative;overflow:hidden}
+.dl-card:hover{border-color:var(--app-border2);transform:translateY(-2px);background:linear-gradient(180deg,var(--app-panel),var(--app-surface))}
+.dl-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.dl-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:linear-gradient(135deg,rgba(40,120,252,.22),rgba(40,120,252,.06));border:1px solid rgba(40,120,252,.32);color:var(--blue-hover)}
+.dl-card.zip .dl-icon{background:linear-gradient(135deg,rgba(156,91,255,.22),rgba(156,91,255,.06));border:1px solid rgba(156,91,255,.32);color:var(--purple)}
+.dl-icon svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.dl-card h3{font-size:18px;font-weight:700;letter-spacing:-.3px;line-height:1.2;margin-bottom:3px}
+.dl-tag{font-family:'Geist Mono',monospace;font-size:11.5px;color:var(--text-sub);font-weight:500;letter-spacing:.4px}
+.dl-desc{font-size:14px;color:var(--text-sub);line-height:1.6;margin-bottom:18px}
+.dl-cta{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:10px;font-size:13px;font-weight:600;background:var(--blue);color:#fff;transition:background .15s}
+.dl-card:hover .dl-cta{background:var(--blue-hover)}
+.dl-card.zip .dl-cta{background:var(--purple)}
+.dl-card.zip:hover .dl-cta{background:#ab74ff}
+.dl-cta svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Requirement list */
+.req-list{list-style:none;font-size:14.5px;color:var(--text-sub);line-height:1.75;max-width:680px}
+.req-list li{padding:10px 0 10px 30px;position:relative;border-bottom:1px solid var(--app-border)}
+.req-list li:last-child{border-bottom:none}
+.req-list li::before{content:'';position:absolute;left:4px;top:19px;width:7px;height:7px;border-radius:50%;background:var(--blue)}
+.req-list b{color:var(--text);font-weight:600}
+
+/* Plugin types */
+.types{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.type{padding:18px 20px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:12px}
+.type-h{font-size:14px;font-weight:600;color:var(--text);margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.type-p{font-size:12.5px;color:var(--text-sub);line-height:1.55}
+.tag{display:inline-block;padding:1px 8px;border-radius:99px;font-size:9.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;vertical-align:1px}
+.tag-live{background:rgba(94,229,114,.12);color:var(--green);border:1px solid rgba(94,229,114,.3)}
+.tag-soon{background:rgba(255,164,64,.1);color:#ffa372;border:1px solid rgba(255,164,64,.28)}
+
+/* Reference links */
+.resources{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+.resource{display:block;padding:18px 20px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:12px;transition:all .15s}
+.resource:hover{border-color:var(--app-border2);background:var(--app-surface)}
+.resource-h{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.resource-h svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;color:var(--text-sub);flex-shrink:0}
+.resource-p{font-size:12.5px;color:var(--text-sub);line-height:1.55}
+
+/* Note panel */
+.note{margin-top:24px;padding:16px 20px;background:rgba(0,0,0,.18);border:1px solid var(--app-border);border-radius:12px;font-size:13.5px;color:var(--text-sub);line-height:1.65}
+.note b{color:var(--text)}
+.note code{white-space:normal}
+
+/* CTA block */
+.cta-block{padding:56px 40px;background:linear-gradient(135deg,var(--app-panel),var(--app-surface));border-top:1px solid var(--app-border);border-bottom:1px solid var(--app-border);text-align:center;margin-top:48px}
+.cta-block h2{font-size:28px;font-weight:700;letter-spacing:-.6px;margin-bottom:12px}
+.cta-block p{font-size:15.5px;color:var(--text-sub);max-width:520px;margin:0 auto 24px;line-height:1.6}
+
+/* Footer */
+footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-panel)}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text-dim)}
+.footer-inner a{color:var(--text-sub);transition:color .15s}
+.footer-inner a:hover{color:var(--text)}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap}
+
+@media(max-width:1100px){nav .nav-links{display:none}nav .nav-burger{display:inline-flex}}
+@media(max-width:900px){
+  nav{padding:0 16px}
+  .breadcrumbs{padding:80px 20px 0}
+  .hero,.section{padding-left:20px;padding-right:20px}
+  .cta-block{padding:48px 20px}
+  .dl-grid{grid-template-columns:1fr}
+  .types{grid-template-columns:1fr}
+  .resources{grid-template-columns:1fr}
+  footer{padding:32px 20px}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+@media (max-width:520px){nav{padding:0 12px;gap:8px}.nav-logo{gap:7px;flex:0 1 auto;min-width:0;overflow:hidden}.nav-logo-wordmark{font-size:20px}.nav-right{flex-shrink:0}.nav-burger{flex-shrink:0}}
+</style>
 </head>
 <body>
-<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-<div id="titlearea">
-<table cellspacing="0" cellpadding="0">
- <tbody>
- <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="plugin.png"/></td>
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">SplitCam plugins
-   &#160;<span id="projectnumber">1.0.0</span>
-   </div>
-   <div id="projectbrief">Get your own video or still image source as an integral part of SplitCam user interface</div>
-  </td>
- </tr>
- </tbody>
-</table>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="https://splitcam.com/">
+    <img class="nav-logo-icon" src="https://splitcam.com/assets/splitcam.png" alt="SplitCam">
+    <span class="nav-logo-wordmark">splitcam</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://splitcam.com/products">Products</a></li>
+    <li><a href="https://splitcam.com/virtual-camera">Virtual Camera</a></li>
+    <li><a href="https://splitcam.com/multistreaming">Multistreaming</a></li>
+    <li><a href="https://splitcam.com/alternatives">Alternatives</a></li>
+    <li><a href="https://splitcam.com/for">Use Cases</a></li>
+    <li><a href="https://splitcam.com/help">Help</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://splitcam.com/download" class="btn-primary">⬇ Download</a>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+      <svg class="ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-6 6-6 6"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile" role="menu" aria-hidden="true">
+  <a href="https://splitcam.com/products" role="menuitem">Products</a>
+  <a href="https://splitcam.com/virtual-camera" role="menuitem">Virtual Camera</a>
+  <a href="https://splitcam.com/multistreaming" role="menuitem">Multistreaming</a>
+  <a href="https://splitcam.com/alternatives" role="menuitem">Alternatives</a>
+  <a href="https://splitcam.com/for" role="menuitem">Use Cases</a>
+  <a href="https://splitcam.com/help" role="menuitem">Help</a>
 </div>
-<!-- end header part -->
-<!-- Generated by Doxygen 1.8.17 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search');
-/* @license-end */
+
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+  <a href="https://splitcam.com/">SplitCam</a><span class="sep">/</span><span>Developers</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <span class="eyebrow">Developers · Plugin API 1.0.0</span>
+  <h1 class="h1">Develop your own <span class="accent">plugins for SplitCam.</span></h1>
+  <p class="sub">Use the SplitCam API to add plugins that display <strong>still images, dynamic content and videos</strong> on the scene. The user selects your plugin as a layer on a scene — no plugin can run without being activated by the SplitCam user first.</p>
+</section>
+
+<!-- DOWNLOADS -->
+<section class="section">
+  <span class="sec-eyebrow">Downloads</span>
+  <h2 class="sec-h">Everything you need to start.</h2>
+  <p class="sec-p">The documentation, example code and the accompanying header file are primarily aimed at <strong>C++ developers</strong> — but you can use any language, as long as your output is a DLL with the required exported functions.</p>
+
+  <div class="dl-grid">
+    <a class="dl-card" href="https://splitcam.com/plugins/splitcam_plugin.h" download>
+      <div class="dl-head">
+        <div class="dl-icon"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Zm0 0v6h6"/><path d="m9 13-2 2 2 2m6-4 2 2-2 2"/></svg></div>
+        <div>
+          <h3>C++ header file</h3>
+          <span class="dl-tag">splitcam_plugin.h · 20 KB</span>
+        </div>
+      </div>
+      <p class="dl-desc">The commented header declaring all required exports and interfaces — <code>IPlugin</code>, <code>IImageSource</code> and friends. The single source of truth for the API.</p>
+      <span class="dl-cta">Download header <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg></span>
+    </a>
+
+    <a class="dl-card zip" href="https://splitcam.com/plugins/SamplePlugin.zip" download>
+      <div class="dl-head">
+        <div class="dl-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v4m0 4v2m0 4v4M9 7h6M9 13h6"/></svg></div>
+        <div>
+          <h3>Sample Plugin project</h3>
+          <span class="dl-tag">SamplePlugin.zip · MS Visual Studio 2019</span>
+        </div>
+      </div>
+      <p class="dl-desc">A complete, buildable example plugin for Visual Studio — the fastest way to see the exported function set and the plugin lifecycle in working code.</p>
+      <span class="dl-cta">Download sample <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<!-- REQUIREMENTS -->
+<section class="section">
+  <span class="sec-eyebrow">Requirements</span>
+  <h2 class="sec-h">How a SplitCam plugin works.</h2>
+  <ul class="req-list">
+    <li>A plugin is a <b>stand-alone DLL library</b> with a well-defined exported function set. Any language works, as long as the output is a DLL with the required unmangled exports.</li>
+    <li>Every plugin must implement at least the minimum <b><code>IPlugin</code></b> interface. The actual functionality is defined by the value returned from <code>IPlugin::getType()</code>.</li>
+    <li>Image source plugins must implement the <b><code>IImageSource</code></b> interface.</li>
+    <li>Every exported function name must start with the <b><code>splitcam::plugin</code></b> predicate.</li>
+    <li>Design for <b>multiple instances</b>: SplitCam scenes can contain several instances of your plugin layer, and the user can add one on any scene they find suitable.</li>
+    <li>Every plugin must have a <b>unique identifier</b> to distinguish it from other plugins.</li>
+  </ul>
+
+  <div class="note">
+    <b>Deploying your plugin:</b> place the DLL inside the <code>plugins</code> folder next to the SplitCam executable. On startup SplitCam scans this folder, verifies that each plugin exports enough functions for its type, and adds it to the user interface automatically — where it appears depends on the plugin type.
+  </div>
+</section>
+
+<!-- PLUGIN TYPES -->
+<section class="section">
+  <span class="sec-eyebrow">Plugin types</span>
+  <h2 class="sec-h">Available now — and planned.</h2>
+  <p class="sec-p">Currently SplitCam supports <strong>image source</strong> plugins: they add still images and videos to any scene inside the SplitCam user interface. Audio sources cannot be added yet. Other types may be added in future versions:</p>
+
+  <div class="types">
+    <div class="type">
+      <div class="type-h">Image source <span class="tag tag-live">Available</span></div>
+      <p class="type-p">Add your own still images, dynamic content and videos as a scene layer.</p>
+    </div>
+    <div class="type">
+      <div class="type-h">Image processor <span class="tag tag-soon">Planned</span></div>
+      <p class="type-p">Custom filters processing the video image on the scene.</p>
+    </div>
+    <div class="type">
+      <div class="type-h">Event handler <span class="tag tag-soon">Planned</span></div>
+      <p class="type-p">React to SplitCam events from your own code.</p>
+    </div>
+    <div class="type">
+      <div class="type-h">Audio source <span class="tag tag-soon">Planned</span></div>
+      <p class="type-p">Provide your own audio streams to the mixer.</p>
+    </div>
+    <div class="type">
+      <div class="type-h">Network provider <span class="tag tag-soon">Planned</span></div>
+      <p class="type-p">Custom network transports and integrations.</p>
+    </div>
+    <div class="type">
+      <div class="type-h">Other types</div>
+      <p class="type-p">The plugin system is designed to grow — more types may follow.</p>
+    </div>
+  </div>
+</section>
+
+<!-- API REFERENCE -->
+<section class="section">
+  <span class="sec-eyebrow">API reference</span>
+  <h2 class="sec-h">Full class-level documentation.</h2>
+  <p class="sec-p">The complete generated reference for the <code>splitcam::plugin</code> namespace — every interface, method, enum and type, straight from the header.</p>
+
+  <div class="resources">
+    <a class="resource" href="https://splitcam.com/plugins/annotated.html">
+      <div class="resource-h"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg> Class list</div>
+      <p class="resource-p">IPlugin · ISource · IImageSource · IWebSource · IEventHandler — all interfaces with member docs.</p>
+    </a>
+    <a class="resource" href="https://splitcam.com/plugins/namespacesplitcam_1_1plugin.html">
+      <div class="resource-h"><svg viewBox="0 0 24 24"><path d="M4 7c0-1.7 1.3-3 3-3h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7Z"/><path d="M9 8v8m6-8v8M9 12h6"/></svg> Namespace</div>
+      <p class="resource-p">splitcam::plugin — functions, typedefs, enumerations and exported entry points.</p>
+    </a>
+    <a class="resource" href="https://splitcam.com/plugins/splitcam__plugin_8h.html">
+      <div class="resource-h"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Zm0 0v6h6"/></svg> Header reference</div>
+      <p class="resource-p">splitcam_plugin.h documented line by line — macros, exports and usage comments.</p>
+    </a>
+  </div>
+
+  <div class="note">
+    <b>Questions about the API?</b> The fastest way to reach the team is the <a href="https://splitcam.com/help" style="color:var(--blue)">Telegram support chat</a> — the same developers who build SplitCam read every message.
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block">
+  <h2>Test your plugin against the real thing.</h2>
+  <p>The free download is the full app — no watermark, no signup, no card. Drop your DLL into the plugins folder and go.</p>
+  <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 SplitCam · Free streaming software since 2003</div>
+    <div class="footer-links">
+      <a href="https://splitcam.com/">Home</a>
+      <a href="https://splitcam.com/features">Features</a>
+      <a href="https://splitcam.com/multistreaming">Multistreaming</a>
+      <a href="https://splitcam.com/virtual-camera">Virtual Camera</a>
+      <a href="https://splitcam.com/products">Products</a>
+      <a href="https://splitcam.com/alternatives">Alternatives</a>
+      <a href="https://splitcam.com/for">Use Cases</a>
+      <a href="https://splitcam.com/help">Help</a>
+      <a href="https://splitcam.com/donate-us">Donate</a>
+      <a href="https://splitcam.com/plugins/">Developers</a>
+      <a href="https://splitcam.com/license-agreement">License</a>
+      <a href="https://splitcam.com/privacy-policy">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Mobile hamburger menu */
+(function(){
+  var burger = document.querySelector('.nav-burger');
+  var menu = document.getElementById('nav-mobile');
+  if (!burger || !menu) return;
+  function close(){ burger.classList.remove('open'); menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); menu.setAttribute('aria-hidden','true'); }
+  function open(){ burger.classList.add('open'); menu.classList.add('open'); burger.setAttribute('aria-expanded','true'); menu.setAttribute('aria-hidden','false'); }
+  burger.addEventListener('click', function(e){
+    e.stopPropagation();
+    if (menu.classList.contains('open')) close(); else open();
+  });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+  document.addEventListener('click', function(e){
+    if (!menu.contains(e.target) && !burger.contains(e.target) && menu.classList.contains('open')) close();
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 900) close(); });
+})();
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
-</div><!-- top -->
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
-<div class="PageDoc"><div class="header">
-  <div class="headertitle">
-<div class="title">Develop your own plugins for SplitCam </div>  </div>
-</div><!--header-->
-<div class="contents">
-<div class="textblock"><p>Developers can use SplitCam API to add their own plugins which display still images, dynamic content and videos on the scene. The user must select a plugin to be used as a layer on the scene or to add additional image processing filter. No plugin can run forcibly without being first activated by the SplitCam user.</p>
-<h2><a class="anchor" id="autotoc_md0"></a>
-Downloads</h2>
-<ul>
-<li><a href="splitcam_plugin.h">C++ header file</a></li>
-<li><a href="SamplePlugin.zip">Sample Plugin project for MS Visual Studio 2019</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md1"></a>
-Requirements</h2>
-<ul>
-<li>A plugin is a stand-alone <b>DLL</b> library with a well defined exported function sets.</li>
-<li>You can use any language to develop plugins as soon as you have a <b>DLL</b> file as an output with required exported functions.</li>
-<li>Every plugin must implement at least the minimum <b>IPlugin</b> interface.</li>
-<li>The actual plugin functionality is defined by a value returned from <b><a class="el" href="group___plugin.html#ga7d0fed78ed0d651a49c39d65861197ea">IPlugin::getType()</a></b> method.</li>
-<li>Image source plugins must implement <b>IImageSource</b> interface.</li>
-<li>Every plugin must be developed with multiple instances in mind. SplitCam scenes can contain multiple instances of plugin layers and user can add a plugin instance on any scene she finds suitable.</li>
-<li>Every plugin must have a unique identifier to distinguish it from other plugins.</li>
-</ul>
-<p>The documentation, example code and accompanying header file are primarily aimed at C++ developers. The header file containing comments and declaring required exports can be <a href="splitcam_plugin.h">downloaded here</a>.</p>
-<h2><a class="anchor" id="autotoc_md2"></a>
-Types of plugin</h2>
-<p>Currently SplitCam supports only image source plgin types. These plugins can add still images and videos to any scene inside SplitCam user interface. At this moment you cannot add your own audio sources to SplitCam.</p>
-<p>Other plugin types may be added in future versions of SplitCam:</p>
-<ul>
-<li>Image source (already exists)</li>
-<li>Image processor or custom filter</li>
-<li>Event handler</li>
-<li>Audio source</li>
-<li>Network provider</li>
-<li>Other...</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md3"></a>
-API</h2>
-<p>SplitCam plugin API is described in this document. The only absolute requirement is that a plugin must be a DLL and it must export a function set with unmangled names corresponding to its type.</p>
-<p>Every exported function name must start with the <em><a class="el" href="namespacesplitcam_1_1plugin.html" title="splitcam::plugin namespace">splitcam::plugin</a>::</em> predicate.</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
-Plugin usage</h2>
-<p>When you have the plugin ready for deployment you can place it inside <b>plugins</b> folder relative to SplitCam main executable location. When started SplitCam will search this folder for available plugins, check every found plugin if it corresponds to requirements, that is if it exports enough functions to support its functionality, and upon successfull verification the plugin will be added to SplitCam user interface.</p>
-<p>The actual location of a plugin inside user interface depends on the plugin type. The image source plugins are added to the bottom of <b>Add media layer</b> context menu.</p>
-<p>If SplitCam failes to verify a plugin, for example if not all required functions are exported, then SplitCam will unload the DLL and the plugin will be silently ignored.</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
-Example code</h2>
-<p>You can download the <b>Sample plugin</b> source code and use it as a template for your own project or just for fun. The sample project was created in <b>MS Visual Studio 2019</b>.</p>
-<p><a href="SamplePlugin.zip">Sample Plugin project</a> </p>
-</div></div><!-- PageDoc -->
-</div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
 </body>
 </html>
