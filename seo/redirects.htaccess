@@ -386,6 +386,12 @@ AddType application/manifest+json .webmanifest
 ErrorDocument 404 /404.html
 
 RewriteEngine On
+# 0) Force https for plain-http visitors. Behind Cloudflare the origin always gets an
+#    https connection, so detect the VISITOR scheme via the CF-Visitor header (Cloudflare
+#    sets it on every proxied request). Our CF token lacks Zone-Settings rights to flip
+#    "Always Use HTTPS" at the edge, so this origin rule is the enforcement (2026-07-07).
+RewriteCond %{HTTP:CF-Visitor} "scheme\":\"http\""
+RewriteRule ^(.*)$ https://splitcam.com/$1 [R=301,L]
 # 1) 301 the trailing-slash form to slashless — but NOT the site root or a locale
 #    root (/ru/, /es/, /fil/ …), which legitimately keep their slash.
 RewriteCond %{REQUEST_URI} !^/[a-z]{2,3}/$
