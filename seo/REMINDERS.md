@@ -481,8 +481,11 @@ a real product page, build it as a normal locale page and keep /plugins/ as the 
 
 ## macOS direct download + auto-update feed (2026-07-07, host-managed, NOT in git)
 Rescued from the dying old host `77.83.100.124` onto DA — all under docroot `/mac-download/`:
-- **`SplitCam.dmg`** — current Mac build **v1.22 (build 259)**, 282 MB, macOS 12+, signed
-  (Team QRBUBRN5RF). Linked from the changelog Mac panel (version label = download link).
+- **`SplitCam.dmg`** = ALWAYS the latest Mac build (the auto-update `downloadURL` points here).
+  Currently **v1.22 (build 259)**, 282 MB, macOS 12+, signed (Team QRBUBRN5RF). Each build is
+  ALSO kept as a versioned archive **`SplitCam-<ver>-<build>.dmg`** (now `SplitCam-1.22-259.dmg`);
+  the changelog Mac-panel version label links to the **versioned** file so old entries stay
+  downloadable when `SplitCam.dmg` moves to a newer build.
 - **`update/macver.plist`** (old feed format) + **`update/versions.json`** (new format) — the
   Mac app polls `https://splitcam.com/mac-download/update/` for these. Both now advertise
   **actualVersion 1.22 / actualBuildNumber 259**, `downloadURL = /mac-download/SplitCam.dmg`.
@@ -491,9 +494,11 @@ Rescued from the dying old host `77.83.100.124` onto DA — all under docroot `/
   do NOT reserialize). Left unchanged.
 These files are **host-managed** (like ver.txt / win-download / IndexNow key — NOT in the git
 repo, so a docroot rebuild won't touch them; re-upload from scratch if the docroot is ever wiped).
-**STANDING RULE — when a new macOS build ships:** replace `SplitCam.dmg`, then bump BOTH
+**STANDING RULE — when a new macOS build ships:** upload the new DMG to `mac-download/` as
+BOTH `SplitCam.dmg` (overwrite = new latest) AND `SplitCam-<newver>-<newbuild>.dmg` (server-side
+`cp` is fine — same bytes); the previous versioned archive stays. Then bump BOTH
 `update/macver.plist` (actualVersion + actualBuildNumber + downloadURL) AND the `macOS` block of
 `update/versions.json`, and add the release to the Mac changelog panel (localized New/Updated/Fixed
-labels, English notes, version label → DMG, bump the macOS tab-count incl. fa Persian numerals).
+labels, English notes, version label → the NEW versioned DMG, bump the macOS tab-count incl. fa Persian numerals).
 (versions.json's `windows` block synced to 10.9.2 / build 2 on 2026-07-07 — though the Windows
 app actually reads `win-download/update/ver.txt` = 10.9.2, not this file. Keep both in step anyway.)
