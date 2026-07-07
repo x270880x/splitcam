@@ -478,3 +478,22 @@ Rules: **/plugins/ is the ONE trailing-slash dir** (relative hrefs; `/plugins` 3
 `linkcheck.py` SKIP_DIRS includes `plugins`; **deliberately NOT in sitemap.xml** (legacy
 tech docs; discovery via 527 footer links) — do not "fix" that. If the plugin API ever gets
 a real product page, build it as a normal locale page and keep /plugins/ as the docs.
+
+## macOS direct download + auto-update feed (2026-07-07, host-managed, NOT in git)
+Rescued from the dying old host `77.83.100.124` onto DA — all under docroot `/mac-download/`:
+- **`SplitCam.dmg`** — current Mac build **v1.22 (build 259)**, 282 MB, macOS 12+, signed
+  (Team QRBUBRN5RF). Linked from the changelog Mac panel (version label = download link).
+- **`update/macver.plist`** (old feed format) + **`update/versions.json`** (new format) — the
+  Mac app polls `https://splitcam.com/mac-download/update/` for these. Both now advertise
+  **actualVersion 1.22 / actualBuildNumber 259**, `downloadURL = /mac-download/SplitCam.dmg`.
+- **`update/restream.json`** + **`update/services.json`** — restream-server + channel/service
+  config the app also fetches (services.json is JSON5: has trailing commas — mirror byte-for-byte,
+  do NOT reserialize). Left unchanged.
+These files are **host-managed** (like ver.txt / win-download / IndexNow key — NOT in the git
+repo, so a docroot rebuild won't touch them; re-upload from scratch if the docroot is ever wiped).
+**STANDING RULE — when a new macOS build ships:** replace `SplitCam.dmg`, then bump BOTH
+`update/macver.plist` (actualVersion + actualBuildNumber + downloadURL) AND the `macOS` block of
+`update/versions.json`, and add the release to the Mac changelog panel (localized New/Updated/Fixed
+labels, English notes, version label → DMG, bump the macOS tab-count incl. fa Persian numerals).
+(Note: versions.json's `windows` block is stale at 10.7.18 — the Windows app uses `win-download/
+update/ver.txt` = 10.9.2 instead, so it's harmless; fix only if something starts reading it.)
