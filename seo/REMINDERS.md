@@ -495,5 +495,5 @@ repo, so a docroot rebuild won't touch them; re-upload from scratch if the docro
 `update/macver.plist` (actualVersion + actualBuildNumber + downloadURL) AND the `macOS` block of
 `update/versions.json`, and add the release to the Mac changelog panel (localized New/Updated/Fixed
 labels, English notes, version label → DMG, bump the macOS tab-count incl. fa Persian numerals).
-(Note: versions.json's `windows` block is stale at 10.7.18 — the Windows app uses `win-download/
-update/ver.txt` = 10.9.2 instead, so it's harmless; fix only if something starts reading it.)
+(versions.json's `windows` block synced to 10.9.2 / build 2 on 2026-07-07 — though the Windows
+app actually reads `win-download/update/ver.txt` = 10.9.2, not this file. Keep both in step anyway.)
