@@ -172,6 +172,9 @@ RedirectMatch 301 ^/ru/help\-ru/video\-rukovodstva/kak\-odnovremenno\-provodit\-
 # that block must be pasted ABOVE this catch-all.
 # (?!index\.html$) — the slashless RewriteRule internally rewrites /help -> /help/index.html;
 # without the exclusion this catch-all re-catches it and loops /help onto itself
+# Developer docs -> resurrected Doxygen mirror at /plugins/ (2026-07-07); MUST stay above the catch-all
+RedirectMatch 301 ^/help/developers\-docs/?$        https://splitcam.com/plugins/
+RedirectMatch 301 ^/es/ayuda/guia\-para\-desarrolladores/?$ https://splitcam.com/plugins/
 RedirectMatch 301 ^/help/(?!index\.html$).+$       https://splitcam.com/help
 RedirectMatch 301 ^/privacy-policy-for-mac-apps/?$  https://splitcam.com/privacy-policy
 RedirectMatch 301 ^/download-splitcam-for-macos-mojave-and-catalina/?$ https://splitcam.com/download
@@ -392,9 +395,14 @@ RewriteEngine On
 #    "Always Use HTTPS" at the edge, so this origin rule is the enforcement (2026-07-07).
 RewriteCond %{HTTP:CF-Visitor} "scheme\":\"http\""
 RewriteRule ^(.*)$ https://splitcam.com/$1 [R=301,L]
-# 1) 301 the trailing-slash form to slashless — but NOT the site root or a locale
-#    root (/ru/, /es/, /fil/ …), which legitimately keep their slash.
+# 0.5) /plugins/ (mirrored Doxygen dev docs) is the ONE dir that keeps its trailing
+#      slash — its pages use relative hrefs (doxygen.css, class*.html), which break on
+#      a slashless URL. Slashless form 301s BACK to the slashed dir.
+RewriteRule ^plugins$ /plugins/ [R=301,L]
+# 1) 301 the trailing-slash form to slashless — but NOT the site root, a locale
+#    root (/ru/, /es/, /fil/ …), or /plugins/ — those legitimately keep their slash.
 RewriteCond %{REQUEST_URI} !^/[a-z]{2,3}/$
+RewriteCond %{REQUEST_URI} !^/plugins/
 RewriteRule ^(.+)/$ /$1 [R=301,L]
 # 2) Internally serve <dir>/index.html for the slashless URL (no visible redirect).
 RewriteCond %{REQUEST_FILENAME} !-f

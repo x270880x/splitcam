@@ -17,7 +17,7 @@ from html.parser import HTMLParser
 from concurrent.futures import ThreadPoolExecutor
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKIP_DIRS = {'.git', '.claude', 'node_modules', 'seo'}
+SKIP_DIRS = {'.git', '.claude', 'node_modules', 'seo', 'plugins'}  # plugins/ = mirrored Doxygen dev docs (self-contained, relative links by design)
 ARCHIVED_PREFIXES = ('v2/',)          # checked for broken links, excluded from graph
 UA = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
       '(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36')

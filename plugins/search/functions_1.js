@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['geteventsinterfaceid_69',['getEventsInterfaceId',['../group___event_handler.html#ga095958d3d41d746a9c5857756a817461',1,'splitcam::plugin']]],
+  ['getformat_70',['getFormat',['../classsplitcam_1_1plugin_1_1_i_image_source.html#a65e809955eeae1426baf9a8f48036b19',1,'splitcam::plugin::IImageSource']]],
+  ['getid_71',['getId',['../classsplitcam_1_1plugin_1_1_i_plugin.html#aa1a9406f1b3b45001dd5db576f3eea00',1,'splitcam::plugin::IPlugin']]],
+  ['getimageformat_72',['getImageFormat',['../group___image_source.html#gabdca03cc5cdbb7be80b7899ba7b9348f',1,'splitcam::plugin']]],
+  ['getimageinterfaceid_73',['getImageInterfaceId',['../group___image_source.html#ga9f375d6d195023c08a072e9a031cb87d',1,'splitcam::plugin']]],
+  ['getname_74',['getName',['../classsplitcam_1_1plugin_1_1_i_plugin.html#a5172da2301c57793d5a18f7120926a4d',1,'splitcam::plugin::IPlugin::getName()'],['../classsplitcam_1_1plugin_1_1_i_source.html#a231df0f63a7bd4fd0b43645fe3f05964',1,'splitcam::plugin::ISource::getName()']]],
+  ['getpluginid_75',['getPluginId',['../group___plugin.html#ga2633f97338b3437f03e9fbb7bf1601b0',1,'splitcam::plugin']]],
+  ['getplugininterfaceid_76',['getPluginInterfaceId',['../group___plugin.html#ga75a2032ce95d016cd659d014a613c33d',1,'splitcam::plugin']]],
+  ['getpluginname_77',['getPluginName',['../group___plugin.html#gaa8c580cb75cb5912041a09eef14e2f46',1,'splitcam::plugin']]],
+  ['getpluginprovider_78',['getPluginProvider',['../group___plugin.html#ga618016792d2957444c60e47edb6b1737',1,'splitcam::plugin']]],
+  ['getpluginversion_79',['getPluginVersion',['../group___plugin.html#ga61128d64e82f4ae5e2fb5cf694656524',1,'splitcam::plugin']]],
+  ['getprovider_80',['getProvider',['../classsplitcam_1_1plugin_1_1_i_plugin.html#afc68a8dbd872b3015f565aab6e159c99',1,'splitcam::plugin::IPlugin']]],
+  ['getsize_81',['getSize',['../classsplitcam_1_1plugin_1_1_i_source.html#af31058f71964b3844f9e24edc48f12a6',1,'splitcam::plugin::ISource']]],
+  ['getsourceinterfaceid_82',['getSourceInterfaceId',['../group___i_source.html#gad5b20fcf5d79178a8c53e2bbfa3620cc',1,'splitcam::plugin']]],
+  ['getsourcename_83',['getSourceName',['../group___i_source.html#ga8e22b8f6bc7690457e76e58ca427f799',1,'splitcam::plugin']]],
+  ['getsourcesize_84',['getSourceSize',['../group___i_source.html#gab53756f7500b04e1a93e47f7b528864e',1,'splitcam::plugin']]],
+  ['gettype_85',['getType',['../classsplitcam_1_1plugin_1_1_i_plugin.html#a5fd7be9137886590ab4bf3ce40e2b2bd',1,'splitcam::plugin::IPlugin::getType()'],['../group___plugin.html#ga7d0fed78ed0d651a49c39d65861197ea',1,'splitcam::plugin::getType()']]],
+  ['geturl_86',['getUrl',['../classsplitcam_1_1plugin_1_1_i_web_source.html#aaf8ee6ff29b9ebe42d40a5bd374236e9',1,'splitcam::plugin::IWebSource']]],
+  ['getversion_87',['getVersion',['../classsplitcam_1_1plugin_1_1_i_plugin.html#ad30c1eeefd66e1dcbde45ee40946f124',1,'splitcam::plugin::IPlugin']]],
+  ['getwebinterfaceid_88',['getWebInterfaceId',['../group___web_source.html#ga045763179ac388e54a921705491c2031',1,'splitcam::plugin']]],
+  ['getweburl_89',['getWebUrl',['../group___web_source.html#ga3181d6fa807de51d086ab45ed2f2fe97',1,'splitcam::plugin']]]
+];
