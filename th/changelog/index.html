@@ -3321,6 +3321,39 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </div>
   </div>
   <div class="releases">
+    <article class="release open" id="mac-v1.22-build-259">
+      <header class="rel-head">
+        <a class="rel-ver" href="https://splitcam.com/mac-download/SplitCam.dmg" title="Download SplitCam 1.22 for macOS (.dmg)" onclick="event.stopPropagation()">v1.22 (build 259)<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
+        <time class="rel-date">06/05/2026</time>
+      </header>
+      <div class="rel-sec new">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>ใหม่</h4>
+        <ul class="rel-ul">
+        <li>Added a YouTube extension that allows users to browse, edit, and add broadcasts directly from the main window through a convenient popup interface.</li>
+        <li>Added a restreaming server in Russia.</li>
+        <li>Added Russian and Ukrainian localization for the OnlyFans and YouTube extensions.</li>
+        <li>Added support for the SplitCam Remote iOS app, allowing users to control SplitCam remotely.</li>
+        <li>Added the Amateur channel.</li>
+        <li>Added support for custom channel templates, enabling users to add their own channels to the list.</li>
+        </ul>
+      </div>
+      <div class="rel-sec updated">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>ปรับปรุง</h4>
+        <ul class="rel-ul">
+        <li>Updated NDI to version 6.x.</li>
+        </ul>
+      </div>
+      <div class="rel-sec fixed">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>แก้ไข</h4>
+        <ul class="rel-ul">
+        <li>Adjusted button widths to properly accommodate Russian text.</li>
+        <li>Fixed an intermittent crash during scene rendering.</li>
+        <li>Fixed an intermittent crash that could occur while streaming.</li>
+        <li>Fixed an issue that prevented the OnlyFans extension view from being opened more than once.</li>
+        </ul>
+      </div>
+    </article>
+
     <article class="release open" id="mac-v1.19-build-231">
       <header class="rel-head">
         <span class="rel-ver">v1.19 (build 231)</span>
@@ -3357,11 +3390,12 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </div>
     </article>
 
-    <article class="release open" id="mac-v1.18-build-208">
-      <header class="rel-head">
+    <details class="release" id="mac-v1.18-build-208">
+      <summary class="rel-head">
         <span class="rel-ver">v1.18 (build 208)</span>
         <time class="rel-date">07/05/2025</time>
-      </header>
+        <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
       <div class="rel-sec new">
         <h4 class="rel-h"><span class="rel-h-dot"></span>ใหม่</h4>
         <ul class="rel-ul">
@@ -3382,7 +3416,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <li>Fixed audio glitches in the stream.</li>
         </ul>
       </div>
-    </article>
+    </details>
 
     <details class="release" id="mac-v1.16.189-build-189">
       <summary class="rel-head">
