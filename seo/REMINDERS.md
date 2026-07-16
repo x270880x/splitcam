@@ -122,6 +122,29 @@ Old server: no active role left; keep ~2 weeks as fallback, then decommission de
   wipe win-download).
 - Purge Cloudflare cache for `win-download/SplitCamSetup_x64.msi` (cache rule, 1-day TTL).
 
+## 🧪 STANDING RULE — BETA builds are CHANGELOG-ONLY (user, 2026-07-14)
+
+When the user hands over a build and calls it **beta**, it goes **ONLY into the changelog**.
+It is NOT a release, no matter what its number says.
+
+**DO:**
+- Add the changelog entry (Windows or Mac panel), clearly marked as **beta**, linking to its
+  own **versioned** installer only — e.g. `update/10.9.5_x64_beta.msi`,
+  `mac-download/SplitCam-1.23-260-beta.dmg`. Bump the panel's release count.
+
+**DO NOT:**
+- ❌ Touch the **homepage** — the hero/`#whats-new` label ("What's new · v10.9.2"), the
+  `softwareVersion` in JSON-LD, any "Latest vX" text, or the platform-menu `ver:` strings.
+  The site keeps advertising the current **stable**.
+- ❌ Overwrite the **latest pointers**: `win-download/SplitCamSetup_x64.msi` /
+  `SplitCamSetup.msi` (Windows) or `mac-download/SplitCam.dmg` (macOS). Those are stable-only.
+- ❌ Bump **any `ver.txt`** (root, `update/`, `update/light/`) and do NOT touch
+  `update/macver.plist` or `update/versions.json` — **auto-update must never pull a beta**.
+
+**⚠️ This holds even when the beta's version number is HIGHER than the current stable.**
+A bigger number does not promote it. Only an explicit "this is the release" from the user does —
+and then the normal rules apply (latest pointer + changelog + `ver.txt` 10 days later).
+
 ## ver.txt policy — RESOLVED (user, 2026-06-30)
 
 The weekly-ramp idea was dropped. **All ver.txt track the current release.** Set
@@ -129,9 +152,10 @@ The weekly-ramp idea was dropped. **All ver.txt track the current release.** Set
 `win-download/update/ver.txt` (already 10.9.2), `win-download/update/light/ver.txt`
 (was 10.5.0). `ver.php` just echoes the root `/ver.txt` + its mtime.
 
-**STANDING RULE:** when a new SplitCam version ships on the site, **10 days after the
-release** set **all three ver.txt** to the new version string (plain text, no trailing
+**STANDING RULE:** when a new SplitCam **stable** version ships on the site, **10 days after
+the release** set **all three ver.txt** to the new version string (plain text, no trailing
 newline, e.g. `10.9.2`). The matching new installer must already be deployed first.
+**Betas are excluded — never bump ver.txt for a beta** (see the BETA standing rule above).
 
 All three ver.txt are **host-managed** (NOT in the git repo — removed root `/ver.txt`
 from the repo so a re-deploy overlay can't reset it). Edit them directly on the host via
@@ -494,7 +518,8 @@ Rescued from the dying old host `77.83.100.124` onto DA — all under docroot `/
   do NOT reserialize). Left unchanged.
 These files are **host-managed** (like ver.txt / win-download / IndexNow key — NOT in the git
 repo, so a docroot rebuild won't touch them; re-upload from scratch if the docroot is ever wiped).
-**STANDING RULE — when a new macOS build ships:** upload the new DMG to `mac-download/` as
+**STANDING RULE — when a new macOS **stable** build ships** (betas: see the BETA rule —
+changelog only, no latest pointer, no feed bump)**:** upload the new DMG to `mac-download/` as
 BOTH `SplitCam.dmg` (overwrite = new latest) AND `SplitCam-<newver>-<newbuild>.dmg` (server-side
 `cp` is fine — same bytes); the previous versioned archive stays. Then bump BOTH
 `update/macver.plist` (actualVersion + actualBuildNumber + downloadURL) AND the `macOS` block of

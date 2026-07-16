@@ -59,6 +59,12 @@ git add . && git commit -m "..." && git push origin main
 
 Revert: `git revert HEAD --no-edit && git push`.
 **Workflow rule:** after meaningful edits, commit + push immediately — don't ask.
+
+**Release rule (user, 2026-07-14):** a build the user calls **beta** is **changelog-only** —
+never touch the homepage version, never overwrite the latest pointers
+(`win-download/SplitCamSetup_x64.msi`, `mac-download/SplitCam.dmg`), never bump `ver.txt` /
+`macver.plist` / `versions.json`. **Applies even if the beta's number is higher than the
+current stable.** Full rule + the stable-release flow: `seo/REMINDERS.md`.
 Commit individually so any single change is easy to revert. After a push, share
 the live URL and remind about `Cmd+Shift+R` (browser cache).
 
