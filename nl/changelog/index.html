@@ -231,7 +231,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .rel-head::-webkit-details-marker{display:none}
 .rel-ver{font-family:'Geist Mono',monospace;font-size:15px;font-weight:700;color:var(--text);letter-spacing:.2px;padding:5px 11px;background:var(--blue-dim);border-radius:8px;color:var(--blue)}.rel-ver{transition:background .15s,color .15s,box-shadow .15s}a.rel-ver{display:inline-flex;align-items:center;gap:7px;text-decoration:none;cursor:pointer}a.rel-ver svg{opacity:.85}a.rel-ver:hover{background:var(--blue);color:#fff;box-shadow:0 4px 14px var(--blue-glow)}a.rel-ver:hover svg{opacity:1}.release.open a.rel-ver:hover{background:var(--blue-hover)}span.rel-ver{background:rgba(255,255,255,.06);color:var(--text-sub)}.release.open span.rel-ver{background:rgba(255,255,255,.12);color:var(--text)}
 .release.open .rel-ver{background:var(--blue);color:#fff}
-.rel-date{font-size:13px;color:var(--text-sub);font-weight:500;font-family:'Geist Mono',monospace;letter-spacing:.2px}
+.rel-date{font-size:13px;color:var(--text-sub);font-weight:500;font-family:'Geist Mono',monospace;letter-spacing:.2px}.rel-beta{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:2px 7px;border-radius:99px;background:rgba(255,164,64,.1);color:#ffa372;border:1px solid rgba(255,164,64,.28)}
 .rel-chev{margin-left:auto;color:var(--text-sub);transition:transform .2s}
 details[open] .rel-chev{transform:rotate(180deg)}
 .rel-sec{padding:6px 22px 6px;border-top:1px solid var(--app-border)}
@@ -376,7 +376,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- TABS -->
 <div class="tabs-wrap">
   <div class="tabs" role="tablist">
-    <button class="tab active" role="tab" aria-selected="true" data-target="panel-win">Windows<span class="tab-count">64</span></button>
+    <button class="tab active" role="tab" aria-selected="true" data-target="panel-win">Windows<span class="tab-count">65</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="panel-mac">macOS<span class="tab-count">32</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="panel-ios">iOS<span class="tab-count">binnenkort</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="panel-and">Android<span class="tab-count">binnenkort</span></button>
@@ -393,7 +393,51 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </div>
   </div>
   <div class="releases">
-    <article class="release open" id="win-v10.9.2">
+        <article class="release open" id="win-v10.9.4">
+      <header class="rel-head">
+        <span class="rel-ver">v10.9.4</span>
+        <span class="rel-beta">beta</span>
+        <time class="rel-date">July 15, 2026</time>
+      </header>
+      <div class="rel-sec new">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>Nieuw</h4>
+        <ul class="rel-ul">
+        <li>Added Remote Control.</li>
+        <li>Install SplitCam Remote on your smartphone and scan the QR code on the Remote Control tab in SplitCam Settings. The app can start or stop streaming and recording, take snapshots, pause or mute SplitCam, switch scenes, and control individual video and audio sources.</li>
+        <li>Added new Windows Media Foundation virtual cameras for horizontal and vertical video on Windows 11.</li>
+        <li>Added 27 new UI languages, bringing the total number of available languages to 37.</li>
+        </ul>
+      </div>
+      <div class="rel-sec updated">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>Verbeterd</h4>
+        <ul class="rel-ul">
+        <li>Media Foundation virtual cameras can now be used by several applications at the same time.</li>
+        <li>Updated the installer to safely register and remove the Media Foundation virtual cameras.</li>
+        <li>Added separate horizontal and vertical placeholder images for virtual cameras.</li>
+        <li>Updated existing UI translations.</li>
+        <li>Remote Control now reports stream names and statuses.</li>
+        <li>Improved cancellation and synchronization of network requests, speed tests and streaming code.</li>
+        <li>Improved resource cleanup when unloading plugins and exiting SplitCam.</li>
+        <li>Improved video file playback and cleanup of playback threads.</li>
+        </ul>
+      </div>
+      <div class="rel-sec fixed">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>Opgelost</h4>
+        <ul class="rel-ul">
+        <li>Fixed activation and deactivation of sources in hidden canvases.</li>
+        <li>Fixed canvas image corruption caused by incorrect image data pitch.</li>
+        <li>Fixed deleting the vertical effects preview renderer.</li>
+        <li>Fixed bugs with Move transition preview.</li>
+        <li>Fixed the resolution button not updating when switching between horizontal and vertical canvases.</li>
+        <li>Fixed 1080x1920 output of the vertical Media Foundation virtual camera in OBS.</li>
+        <li>Fixed video playback crashes and hangs while seeking, stopping, deleting video sources, or exiting SplitCam.</li>
+        <li>Fixed several crashes in video driver, streaming and shutdown code.</li>
+        <li>Prevented plugins and pending network operations from blocking program exit.</li>
+        </ul>
+      </div>
+    </article>
+
+<article class="release open" id="win-v10.9.2">
       <header class="rel-head">
         <a class="rel-ver" href="https://github.com/x270880x/splitcam-release/releases/download/v10.9.2/10.9.2_x64.msi" title="Download v10.9.2 installer (.msi)" target="_blank" rel="noopener" onclick="event.stopPropagation()">v10.9.2<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
         <time class="rel-date">March 18, 2026</time>
