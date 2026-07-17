@@ -2,6 +2,39 @@
 
 **Status: form is LIVE. Site button NOT deployed yet.**
 
+## Semi-automation (built 2026-07-18)
+
+**Full zero-touch is NOT possible on this setup** and was not built. Verified against official
+docs: the Play Developer API `edits.testers` manages only Google GROUPS ("email lists are not
+supported by this resource"), and consumer-Gmail groups have no member-add API — so adding a
+signup to the Console tester list is inherently manual here. Automating it would require a paid
+Workspace/Cloud Identity domain AND switching the live track from email-list to group, which
+risks zeroing the 12 testers' 14-day streak. Not worth it before the gate clears.
+
+What WAS built (safe, no risk to the streak):
+- **Form email notifications: ON** — you get an email per new signup.
+- **Responses linked to a Google Sheet:**
+  https://docs.google.com/spreadsheets/d/1qEGIHXiwP0od9o8RXmZ_VGQ6ObeFszZBOMDOJttfm5o/edit
+  (col A timestamp, B = Google account, C = use-case)
+- **Apps Script written:** `seo/tester-funnel.gs` — a "SplitCam" menu in that Sheet that
+  emails the opt-in link (RU+EN) to rows you tick as "Added to Console", and stamps "Link sent".
+  The link is sent on YOUR tick (after you add them to Console), never on submit — sending
+  before they're on a list would give them "app not available".
+
+The ONE manual step that can't be automated: adding the email to the Console tester list.
+
+### Finish the setup (owner, ~3 min — the OAuth grant is yours to make)
+1. Open the responses Sheet (link above) → **Extensions → Apps Script**.
+2. Delete the stub `Code.gs`, paste all of `seo/tester-funnel.gs`, **Save**.
+3. Reload the Sheet → new **SplitCam** menu → **Set up sheet (add columns)**.
+4. Approve the one-time Google authorization (it grants the script Gmail-send + Sheets; the
+   "app isn't verified → Advanced → Go to project → Allow" screen is expected for a personal
+   script). This grant is deliberately left to you — it lets the script send email as you.
+
+### Daily use
+Notification arrives → add the Google account(s) to the Console list → in the Sheet tick
+**Added to Console** on those rows → **SplitCam → Send opt-in link to ticked rows**. Done.
+
 ## Contact address — read this before "improving" it
 
 **The address is `splitcameramail@gmail.com`.** Chosen by the user 2026-07-17.
