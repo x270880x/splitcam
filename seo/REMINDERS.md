@@ -529,3 +529,26 @@ BOTH `SplitCam.dmg` (overwrite = new latest) AND `SplitCam-<newver>-<newbuild>.d
 labels, English notes, version label → the NEW versioned DMG, bump the macOS tab-count incl. fa Persian numerals).
 (versions.json's `windows` block synced to 10.9.2 / build 2 on 2026-07-07 — though the Windows
 app actually reads `win-download/update/ver.txt` = 10.9.2, not this file. Keep both in step anyway.)
+
+## ✅✅ MAIL CUTOVER to DirectAdmin — 2026-07-14
+Mail now on **DA (185.67.3.44)**. CF DNS: `mail`/`webmail` A → 185.67.3.44, MX → `mail.splitcam.com`
+(now DA). SPF += `ip4:185.67.3.44` (record id `f8cb1e98…`; DA also authorized via `+a`/`+mx`).
+**Verified end-to-end 2026-07-14:** external sender → `admin@` delivered; `pola@` → forwards to
+`support@` (pola keeps a copy too — mailbox + forwarder). DA Exim accepts external mail for
+admin/pola/support, rejects unknown recipients (550).
+- **Mailboxes on DA:** `admin@` (1256 msgs), `pola@` (14 + forwarder→support), `support@` (new).
+  Passwords (fresh, set during staging) in **`~/.splitcam_mailpw_new`** (chmod 600) — NOT the old
+  cPanel passwords. wpscmail@ + the 4 persona stubs were NOT recreated (user: keep only admin/pola)
+  → mail to those addresses now bounces.
+- **DKIM:** DA has NO DKIM key for the domain (jailed user can't create). DMARC `p=reject` is
+  satisfied by **SPF alignment** (envelope-from @splitcam.com + DA authorized). The published
+  `default._domainkey` is the old cPanel key — orphaned but harmless (old host won't send).
+  *Optional deliverability upgrade:* ask hostsila to enable DA DKIM for splitcam.com, then replace
+  the `default._domainkey` TXT with DA's public key.
+- **⚠️ PENDING delta-sync:** the ~8 days (2026-07-06 → 07-14) of mail that landed on the OLD cPanel
+  (while MX still pointed there) is NOT yet on DA — the cPanel UAPI was unreachable at cutover time.
+  It's safe on cPanel (fallback). **Before decommissioning cPanel, do a final admin@/pola@ delta-sync**
+  cPanel→DA (same UAPI-read → DA-Maildir-write method as the 07-06 staging).
+- **CLIENT ACTION (user):** reconfigure mail clients with the NEW passwords — host `mail.splitcam.com`,
+  IMAP 993 SSL, SMTP 465 (SSL) or 587 (STARTTLS). Old cPanel passwords won't work on DA.
+- **Rollback (fast):** CF `mail`/`webmail` A back to `91.223.223.113`. cPanel still fully alive.
