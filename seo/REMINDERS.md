@@ -13,6 +13,8 @@
 | **2026-06-03** | ✅ 2026-06-11 done — 0 keywords | Week 2 ranking check | See section below |
 | **2026-06-10** | ⏸ postponed by user 2026-06-11 — revisit at Month-1 review (2026-06-19) | Wave 2 — 4 SEO pages + dropdown nav rebuild | See section below |
 | **2026-06-19** | ⏳ pending | Month 1 full review | See section below |
+| **2026-07-18** | 🔴 BLOCKED on account owner | SplitCam Remote **Android** — closed-testing tester CTA | Copy for all 35 locales is PREPARED in `seo/ANDROID-TESTER-CTA.md`. Needs: (1) closed-test opt-in URL, (2) a Google Group. **Read the migration-risk section first** — attaching a Group to the live track may disqualify the current 12 testers and burn the 14-day streak. |
+| **when Android Remote ships** | ⏳ trigger, not a date | Revert the tester CTA + re-open `/products/remote/` | Chip goes back to a normal Play link; Step-02 prose drops the closed-testing sentence. See `seo/ANDROID-TESTER-CTA.md` ("Revert trigger"). Android shipping is also the stated condition for un-parking the `/products/remote/` page decision below. |
 
 When a task is done, change `⏳ pending` → `✅ YYYY-MM-DD done` so future-you/Claude can skip it.
 
