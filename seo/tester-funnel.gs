@@ -14,19 +14,21 @@
  *   3. You TICK the "Added to Console" checkbox on their row(s).
  *   4. Menu: SplitCam -> "Send opt-in link to ticked rows"  -> emails them the opt-in link
  *      and stamps "Link sent".
+ *   +  A daily 13:00 email digest reports how many people submitted the form.
  *
  * The opt-in link only works AFTER the address is on a tester list, which is exactly why
  * the link goes out on YOUR tick, not on form submit (sending earlier = "app not available").
  *
  * SETUP (once): open this Sheet -> Extensions -> Apps Script -> paste this file -> Save.
- * Back in the Sheet, reload; run SplitCam -> "Set up sheet (add columns)" and approve the
- * one-time Google authorization (Gmail send + Sheets). Consumer-Gmail mail quota is
- * ~100 recipients/day (plenty for a 12-tester test).
+ * Reload the Sheet. Run SplitCam -> "Set up sheet (add columns)" and approve the one-time
+ * Google authorization (Gmail send + Sheets). Then SplitCam -> "Enable daily 13:00 report".
+ * Consumer-Gmail mail quota is ~100 recipients/day (plenty for a 12-tester test).
+ * If the report fires at the wrong local time, set the timezone in File -> Project Settings.
  */
 
 var OPT_IN_URL   = 'https://play.google.com/apps/testing/com.splitcam.remote';
 var PLAY_LISTING = 'https://play.google.com/store/apps/details?id=com.splitcam.remote';
-var REPLY_TO     = 'splitcameramail@gmail.com';
+var REPORT_TO    = 'splitcameramail@gmail.com';  // daily digest + reply-to
 var FROM_NAME    = 'SplitCam';
 var ADDED_HEADER = 'Added to Console';
 var SENT_HEADER  = 'Link sent';
@@ -37,12 +39,19 @@ function onOpen() {
     .addItem('Send opt-in link to ticked rows', 'sendOptInToTicked')
     .addSeparator()
     .addItem('Set up sheet (add columns)', 'setupSheet')
+    .addItem('Enable daily 13:00 report', 'installDailyTrigger')
+    .addItem('Send report now (test)', 'dailyDigest')
     .addToUi();
+}
+
+/** The Form-responses sheet is always the first tab; use this everywhere so time-triggers work too. */
+function respSheet_() {
+  return SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
 }
 
 /** Adds the "Added to Console" checkbox column and the "Link sent" column if missing. */
 function setupSheet() {
-  var sh = SpreadsheetApp.getActiveSheet();
+  var sh = respSheet_();
   var lastCol = Math.max(sh.getLastColumn(), 1);
   var headers = sh.getRange(1, 1, 1, lastCol).getValues()[0];
   function ensure(name) {
@@ -74,7 +83,7 @@ function findEmailColumn_(headers) {
 
 function sendOptInToTicked() {
   var ui = SpreadsheetApp.getUi();
-  var sh = SpreadsheetApp.getActiveSheet();
+  var sh = respSheet_();
   var data = sh.getDataRange().getValues();
   var headers = data[0];
   var emailC = findEmailColumn_(headers);
@@ -93,7 +102,7 @@ function sendOptInToTicked() {
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { skipped++; continue; }
     if (sent >= quota) { hitQuota = true; break; }
     MailApp.sendEmail({
-      to: email, replyTo: REPLY_TO, name: FROM_NAME,
+      to: email, replyTo: REPORT_TO, name: FROM_NAME,
       subject: 'SplitCam Remote: два нажатия с телефона — и приложение у вас',
       body: buildBody_(email)
     });
@@ -104,6 +113,64 @@ function sendOptInToTicked() {
             '. Остаток квоты на сегодня: ' + (quota - sent) + '.';
   if (hitQuota) msg += '\n\nДневная квота исчерпана — остальные уйдут завтра.';
   ui.alert(msg);
+}
+
+/** Creates (or re-creates) the daily 13:00 digest trigger. */
+function installDailyTrigger() {
+  var existing = ScriptApp.getProjectTriggers();
+  for (var i = 0; i < existing.length; i++) {
+    if (existing[i].getHandlerFunction() === 'dailyDigest') ScriptApp.deleteTrigger(existing[i]);
+  }
+  ScriptApp.newTrigger('dailyDigest').timeBased().everyDays(1).atHour(13).create();
+  SpreadsheetApp.getUi().alert(
+    'Готово. Сводка будет приходить на ' + REPORT_TO + ' каждый день около 13:00 (часовой пояс — ' +
+    Session.getScriptTimeZone() + '; поменять: File -> Project Settings).');
+}
+
+/** Daily digest: how many people submitted the form. Emailed to the owner. */
+function dailyDigest() {
+  var sh = respSheet_();
+  var data = sh.getDataRange().getValues();
+  if (data.length < 1) return;
+  var headers = data[0];
+  var addedC = headers.indexOf(ADDED_HEADER);
+  var sentC = headers.indexOf(SENT_HEADER);
+
+  var now = new Date();
+  var last24 = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+  var total = 0, newLast24 = 0, awaitingAdd = 0, linkSent = 0;
+  for (var r = 1; r < data.length; r++) {
+    var row = data[r];
+    if (!String(row[0] || '').length && !String(row[1] || '').length) continue;
+    total++;
+    var ts = row[0];
+    if (ts instanceof Date && ts >= last24) newLast24++;
+    if (addedC !== -1 && row[addedC] !== true) awaitingAdd++;
+    if (sentC !== -1 && String(row[sentC] || '').length > 0) linkSent++;
+  }
+
+  var tz = Session.getScriptTimeZone();
+  var stamp = Utilities.formatDate(now, tz, 'dd.MM.yyyy HH:mm');
+  var url = SpreadsheetApp.getActiveSpreadsheet().getUrl();
+  var lines = [
+    'SplitCam Remote — заявки в тестеры, сводка на ' + stamp,
+    '',
+    'Новых заявок за 24 часа: ' + newLast24,
+    'Всего заявок с формы:    ' + total
+  ];
+  if (addedC !== -1) lines.push('Ждут добавления в Console: ' + awaitingAdd);
+  if (sentC !== -1) lines.push('Ссылка уже отправлена:     ' + linkSent);
+  lines.push('');
+  lines.push('Это только данные ФОРМЫ (кто подал запрос). Сколько opted-in / установили —');
+  lines.push('смотреть в Play Console вручную, туда API нет.');
+  lines.push('');
+  lines.push('Таблица: ' + url);
+
+  MailApp.sendEmail({
+    to: REPORT_TO, replyTo: REPORT_TO, name: FROM_NAME,
+    subject: 'SplitCam Remote — заявок за сутки: ' + newLast24 + ' (всего ' + total + ')',
+    body: lines.join('\n')
+  });
 }
 
 /** Bilingual opt-in email (RU first, EN below). */
