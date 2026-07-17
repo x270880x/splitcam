@@ -19,8 +19,21 @@ Built to the spec below. Verified settings:
   resubmit if they typo'd their address.
 - Field 1 is required and is NOT called "email"; field 2 is optional so it can never block submit.
 
-Still needed: real values for [OPT-IN URL] / [PLAY LISTING URL] in the email below, a
-`web-testers` email list in Play Console, and the site button wired to the form URL.
+## The opt-in URL (read from Play Console 2026-07-17)
+
+**https://play.google.com/apps/testing/com.splitcam.remote = `https://play.google.com/apps/testing/com.splitcam.remote`**
+
+This is the "Join on the web" link from Testing -> Closed testing -> RC-1 -> Testers.
+It only works for addresses that are already on an attached email list — a stranger who
+opens it gets "app not available", which is exactly why the funnel needs the manual add
+step in between.
+
+https://play.google.com/store/apps/details?id=com.splitcam.remote = `https://play.google.com/store/apps/details?id=com.splitcam.remote`
+(same destination as the "Download it on Google Play" link on the opt-in page; also only
+resolves for opted-in testers while the app is in closed testing).
+
+Still needed: a `web-testers` email list in Play Console, and the site button wired to the
+form URL.
 
 Companion doc: `seo/ANDROID-TESTER-CTA.md` (the 35-locale button copy for /products/).
 
@@ -78,7 +91,7 @@ opt-in link -> they opt in -> **they install** -> they use it once for real.
 
 # SplitCam Remote — Android closed testing: final copy
 
-Everything below is paste-ready. Only `[OPT-IN URL]`, `[PLAY LISTING URL]` and `[QR]` need real values.
+Everything below is paste-ready. Only `https://play.google.com/apps/testing/com.splitcam.remote`, `https://play.google.com/store/apps/details?id=com.splitcam.remote` and `[QR]` need real values.
 
 ---
 
@@ -253,7 +266,7 @@ It's most likely a typo in the address, and we'll never know unless you tell us.
 ШАГ 1. Откройте страницу теста
 --------------------------------------------------
 
-Ссылка: [OPT-IN URL]
+Ссылка: https://play.google.com/apps/testing/com.splitcam.remote
 
 Нажмите "Стать тестировщиком".
 
@@ -270,7 +283,7 @@ It's most likely a typo in the address, and we'll never know unless you tell us.
 пока кнопка не превратится в "Открыть". Вот теперь приложение у вас.
 
 Потеряли ту страницу? Вот прямая ссылка на Remote в Play, ведёт туда же:
-[PLAY LISTING URL]
+https://play.google.com/store/apps/details?id=com.splitcam.remote
 
 Если ссылка открыла play.google.com в браузере, а не приложение Play — нажмите
 "Открыть в приложении". Устанавливать надо из приложения Play.
@@ -363,7 +376,7 @@ the phone. Open this email in your phone's mail app.
 STEP 1. Open the test page
 --------------------------------------------------
 
-Link: [OPT-IN URL]
+Link: https://play.google.com/apps/testing/com.splitcam.remote
 
 Tap "Become a tester".
 
@@ -380,7 +393,7 @@ Google Play". Tap it, then on the app page tap "Install". Wait until the button
 turns into "Open". Now you actually have the app.
 
 Lost that page? Here's the direct link to Remote in Play, same destination:
-[PLAY LISTING URL]
+https://play.google.com/store/apps/details?id=com.splitcam.remote
 
 If the link opened play.google.com in a browser rather than the Play app, tap
 "Open in app". You need to install from the Play app.
@@ -469,7 +482,7 @@ Play Console tells you who opted in and who never installed. That list is where 
 Вы нажали "Стать тестировщиком" — спасибо. Но само приложение так и не
 установилось: это отдельное нажатие, и его пропускают почти все.
 
-С телефона: [PLAY LISTING URL] -> "Установить".
+С телефона: https://play.google.com/store/apps/details?id=com.splitcam.remote -> "Установить".
 
 Не получается или Play пишет, что приложение недоступно? Ответьте одной строкой,
 что видите на экране. Разберёмся.
@@ -480,7 +493,7 @@ Play Console tells you who opted in and who never installed. That list is where 
 You tapped "Become a tester" — thank you. But the app itself never installed: that's
 a separate tap, and almost everyone skips it.
 
-From your phone: [PLAY LISTING URL] -> "Install".
+From your phone: https://play.google.com/store/apps/details?id=com.splitcam.remote -> "Install".
 
 Not working, or Play says the app isn't available? Reply with one line about what's
 on your screen. We'll sort it.
