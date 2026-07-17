@@ -1,7 +1,20 @@
 # Android tester recruitment CTA — /products/ (34 locales + EN)
 
-**Status: PREPARED, NOT SHIPPED.** Blocked on two things only the account owner can get
-from Play Console (see "Blocked on" below).
+**Status: SHIPPED 2026-07-17.** The disabled "Coming soon" Google Play chip in the SplitCam
+Remote panel on `/products/` is now a live outlined "Become a tester" button in all 35
+locales, linking to the signup form (NOT the opt-in URL directly — a stranger clicking the
+opt-in link gets "app not available"; the form → manual add → email flow is what works).
+The Step-02 prose was updated from "coming soon" to "in closed testing — join the tester
+program". Button uses `btn-store btn-store-2` (outlined/secondary) so it reads as "join
+testing", distinct from the solid App Store button ("download now").
+
+Form: https://docs.google.com/forms/d/e/1FAIpQLSeJmQt04MVYcil0nzVRg9s3_QdvEV41tm3bh9WR5CObAeIbdA/viewform
+Verified: linkcheck 0 broken, tags balanced + JSON-LD valid across all 35, and 390px render
+clean on EN / ru (longest label "Стать тестировщиком" fits) / ar (RTL); 1440px no regress.
+
+The Google-Group approach was dropped — the Testers radio is Email-list-OR-Group, so a Group
+would have detached the existing lists. Website signups instead go to a NEW `web-testers`
+email list (see `seo/TESTER-FUNNEL-COPY.md`), added alongside the existing lists.
 
 ## What this is
 
