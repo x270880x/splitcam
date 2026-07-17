@@ -2,6 +2,24 @@
 
 **Status: form is LIVE. Site button NOT deployed yet.**
 
+## Contact address — read this before "improving" it
+
+**The address is `splitcameramail@gmail.com`.** Chosen by the user 2026-07-17.
+
+`support@splitcam.com` DOES NOT EXIST. An earlier draft of this document invented it as a
+plausible-looking address; it was never real. Verified 2026-07-17:
+- Zero email addresses appear anywhere on splitcam.com (527 pages, no mailto:, no contact page).
+- The only occurrences of `support@splitcam.com` in the whole repo were in this file.
+- splitcam.com does accept mail (MX -> mail.splitcam.com -> 91.223.223.113, the old cPanel),
+  but whether a `support@` mailbox exists could not be confirmed: the stored
+  `~/.hostsila_cpanel` password returns 401 against rocket-cp2.hostsila.org:2083.
+- The real, publicly listed addresses on the live `com.splitcam` Play listing are
+  `splitcam2010@gmail.com` and `splitcameramail@gmail.com`.
+
+`splitcameramail@gmail.com` is also the Play Console account and the destination for the
+testing-feedback email notifications turned on 2026-07-17 — so tester replies, Play feedback
+notifications, and Console mail all land in one inbox.
+
 ## The live form (created 2026-07-17)
 
 **https://docs.google.com/forms/d/e/1FAIpQLSeJmQt04MVYcil0nzVRg9s3_QdvEV41tm3bh9WR5CObAeIbdA/viewform**
@@ -196,14 +214,14 @@ Play Console и пришлёт письмо со ссылкой. Автомат�
 
 Три вещи, пока ждёте:
 
-1. Добавьте support@splitcam.com в контакты. Письмо любит падать в "Промоакции".
+1. Добавьте splitcameramail@gmail.com в контакты. Письмо любит падать в "Промоакции".
 2. Не ищите SplitCam Remote в Play прямо сейчас — вы его не найдёте, и это нормально:
    пока вас нет в списке, для вашего аккаунта приложения не существует.
 3. Когда придёт ссылка, запустите SplitCam на компьютере, прежде чем открывать
    Remote. Это пульт — ему нужно чем управлять.
 
 Ошиблись адресом? Отправьте форму ещё раз — возьмём последний.
-Письма нет через сутки? Напишите на support@splitcam.com, тема "Remote — нет ссылки".
+Письма нет через сутки? Напишите на splitcameramail@gmail.com, тема "Remote — нет ссылки".
 Скорее всего, в адресе опечатка, и без вас мы об этом не узнаем.
 ```
 
@@ -221,14 +239,14 @@ after the first one.
 
 Three things while you wait:
 
-1. Add support@splitcam.com to your contacts. The email likes to land in Promotions.
+1. Add splitcameramail@gmail.com to your contacts. The email likes to land in Promotions.
 2. Don't go looking for SplitCam Remote in Play right now — you won't find it, and
    that's correct: until you're on the list, the app doesn't exist for your account.
 3. When the link arrives, start SplitCam on your computer before you open Remote.
    It's a remote — it needs something to control.
 
 Wrong address? Just submit the form again — we take the last one.
-No email after 24 hours? Write to support@splitcam.com, subject "Remote — no link".
+No email after 24 hours? Write to splitcameramail@gmail.com, subject "Remote — no link".
 It's most likely a typo in the address, and we'll never know unless you tell us.
 ```
 
@@ -352,7 +370,7 @@ Remote не видит компьютер? Почти всегда дело в �
 мало, и каждый на счету.
 
 Команда SplitCam
-support@splitcam.com
+splitcameramail@gmail.com
 ```
 
 ### Body — EN
@@ -463,7 +481,7 @@ like you changed your mind — and we never find out what broke. There really ar
 many of you, and every one counts.
 
 The SplitCam team
-support@splitcam.com
+splitcameramail@gmail.com
 ```
 
 ---
