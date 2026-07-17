@@ -37,6 +37,32 @@ Built to the spec below. Verified settings:
   resubmit if they typo'd their address.
 - Field 1 is required and is NOT called "email"; field 2 is optional so it can never block submit.
 
+## Play Console state after the 2026-07-17 working session
+
+Done live, via the Console UI (all on the RADIO = Email lists; the Google Groups radio was
+never touched):
+
+1. **Manual tester added.** `Forveo134@gmail.com` -> the `test` email list (34 -> 35).
+   Applies immediately (adding to an already-attached list needs no review). That person
+   still has to opt in + install + use it themselves via
+   https://play.google.com/apps/testing/com.splitcam.remote.
+2. **Feedback channel set + submitted.** Testers tab "Feedback URL or email address" =
+   `splitcameramail@gmail.com`. Submitted for review; **in review since 2026-07-17**
+   (Google review typically <=7 days). This is independent of the 14-day tester streak.
+3. **`web-testers` email list created**, seeded with `splitcameramail@gmail.com` (the seed
+   only satisfies Google's "at least one address" requirement on a list). Creating it
+   auto-attached it to the RC-1 track, so there is now a **staged, NOT-yet-submitted**
+   change: "Add 1 email list: web-testers". It was deliberately NOT submitted, because
+   submitting it would cancel + restart the in-progress feedback-URL review and add wait
+   time. It will ride along with the next submission (e.g. the 1.2 build / when the site
+   button ships).
+
+   **Caveat for whoever adds website signups next:** the list EXISTS but its ATTACHMENT to
+   the RC-1 track is still staged. Emails added to `web-testers` are not live testers until
+   that attach is published. Either submit the staged change once the feedback-URL review
+   finishes, or bundle it with the next release. (Meanwhile, to make a signup live
+   immediately, add them to the already-attached `test` list instead.)
+
 ## The opt-in URL (read from Play Console 2026-07-17)
 
 **https://play.google.com/apps/testing/com.splitcam.remote = `https://play.google.com/apps/testing/com.splitcam.remote`**
