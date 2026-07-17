@@ -1,7 +1,26 @@
 # SplitCam Remote — tester funnel copy (form + opt-in email)
 
-**Status: PREPARED, NOT DEPLOYED.** Needs a Google Form URL to wire the site button,
-and real values for [OPT-IN URL] / [PLAY LISTING URL].
+**Status: form is LIVE. Site button NOT deployed yet.**
+
+## The live form (created 2026-07-17)
+
+**https://docs.google.com/forms/d/e/1FAIpQLSeJmQt04MVYcil0nzVRg9s3_QdvEV41tm3bh9WR5CObAeIbdA/viewform**
+
+Editor: https://docs.google.com/forms/d/1ppkogblkrtiebFL_Sgm4vtvAlUcjTgqoTC7yXc44Y6I/edit
+(owned by splitcameramail@gmail.com, the Play Console account — authuser=5)
+
+Built to the spec below. Verified settings:
+- Access **Anyone with the link**; nobody notified on publish.
+- **Collect email addresses = Do not collect** — deliberate. An auto-stamped browser account
+  (whatever Google the desktop is signed into) would fight the hand-typed PHONE account and
+  we would not know which to trust. The viewform notice "your email will not be visible to
+  the recipient" is Google reassuring the respondent, not a leak.
+- **Limit to 1 response = off** — deliberate, the confirmation message tells people to
+  resubmit if they typo'd their address.
+- Field 1 is required and is NOT called "email"; field 2 is optional so it can never block submit.
+
+Still needed: real values for [OPT-IN URL] / [PLAY LISTING URL] in the email below, a
+`web-testers` email list in Play Console, and the site button wired to the form URL.
 
 Companion doc: `seo/ANDROID-TESTER-CTA.md` (the 35-locale button copy for /products/).
 
