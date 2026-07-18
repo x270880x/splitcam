@@ -29,7 +29,7 @@ PAGE_PATHS = ["", "products/", "features/", "download/", "virtual-camera/", "mul
 PRIO = {"": "1.0", "multistreaming/": "0.9", "virtual-camera/": "0.9", "products/": "0.9", "features/": "0.9", "download/": "0.9",
         "changelog/": "0.6", "help/": "0.6", "donate-us/": "0.3", "privacy-policy/": "0.3", "license-agreement/": "0.3"}
 FREQ = {"": "weekly", "download/": "weekly", "changelog/": "weekly", "donate-us/": "yearly", "privacy-policy/": "yearly", "license-agreement/": "yearly"}
-LASTMOD = "2026-07-13"
+LASTMOD = "2026-07-18"
 # (path, priority, changefreq) — EN-only pages outside the 35-locale matrix
 EXTRA_EN_ONLY = [("/plugins/", "0.5", "yearly")]
 
