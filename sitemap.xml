@@ -22059,4 +22059,10 @@
     <xhtml:link rel="alternate" hreflang="fa" href="https://splitcam.com/fa/license-agreement"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/license-agreement"/>
   </url>
+  <url>
+    <loc>https://splitcam.com/plugins/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

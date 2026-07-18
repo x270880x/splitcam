@@ -30,6 +30,8 @@ PRIO = {"": "1.0", "multistreaming/": "0.9", "virtual-camera/": "0.9", "products
         "changelog/": "0.6", "help/": "0.6", "donate-us/": "0.3", "privacy-policy/": "0.3", "license-agreement/": "0.3"}
 FREQ = {"": "weekly", "download/": "weekly", "changelog/": "weekly", "donate-us/": "yearly", "privacy-policy/": "yearly", "license-agreement/": "yearly"}
 LASTMOD = "2026-07-13"
+# (path, priority, changefreq) — EN-only pages outside the 35-locale matrix
+EXTRA_EN_ONLY = [("/plugins/", "0.5", "yearly")]
 
 
 def file_for(locale, page):
@@ -154,10 +156,21 @@ def build_sitemap():
             out.append(f'  <url>\n    <loc>{loc}</loc>\n    <lastmod>{LASTMOD}</lastmod>\n'
                        f'    <changefreq>{FREQ.get(page, "monthly")}</changefreq>\n'
                        f'    <priority>{PRIO.get(page, "0.7")}</priority>\n{alts}  </url>')
+    # EN-only extras that live outside the locale matrix. /plugins/ is the mirrored
+    # Doxygen developer-docs tree: English-only, and the ONE path that must keep its
+    # trailing slash (its pages use relative hrefs), so it can't go through PAGE_PATHS.
+    for extra, prio, freq in EXTRA_EN_ONLY:
+        if os.path.isfile(os.path.join(ROOT, extra.strip("/"), "index.html")):
+            out.append(f'  <url>\n    <loc>https://splitcam.com{extra}</loc>\n'
+                       f'    <lastmod>{LASTMOD}</lastmod>\n'
+                       f'    <changefreq>{freq}</changefreq>\n'
+                       f'    <priority>{prio}</priority>\n  </url>')
     out.append("</urlset>")
     if not CHECK:
         open(os.path.join(ROOT, "sitemap.xml"), "w").write("\n".join(out) + "\n")
-    return sum(len(available(p)) for p in PAGE_PATHS if available(p))
+    n_extra = sum(1 for e, _, _ in EXTRA_EN_ONLY
+                  if os.path.isfile(os.path.join(ROOT, e.strip("/"), "index.html")))
+    return sum(len(available(p)) for p in PAGE_PATHS if available(p)) + n_extra
 
 
 def main():

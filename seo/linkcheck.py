@@ -277,8 +277,12 @@ print('\n--- SITEMAP vs DISK ---')
 # page keys carry the directory slash. Normalise both before diffing.
 _norm = lambda S: {x.rstrip('/') for x in S}
 sm_n, pk_n, ni_n = _norm(sitemap_paths), _norm(page_keys), _norm(noindex_pages)
+# Pages that are legitimately in the sitemap but deliberately NOT crawled by this
+# audit (SKIP_DIRS) — e.g. /plugins/, the mirrored Doxygen dev-docs tree, whose
+# relative hrefs would otherwise flood the report with false "broken link" noise.
+SITEMAP_ONLY = {p.rstrip('/') for p in ('plugins',)}
 print('in sitemap, no matching page on disk:',
-      sorted(sm_n - pk_n) or '—')
+      sorted(sm_n - pk_n - SITEMAP_ONLY) or '—')
 print('page on disk, not in sitemap (excl. noindex):',
       sorted((pk_n - ni_n) - sm_n) or '—')
 print('noindex pages listed in sitemap (bad):',
