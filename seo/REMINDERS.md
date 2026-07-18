@@ -581,3 +581,49 @@ Added as an EN-only special case via `EXTRA_EN_ONLY` in `seo/i18n_wire.py` (keep
 slash — Doxygen relative hrefs). It already ranks #1 for "splitcam plugin api" / "splitcam sdk" /
 "develop splitcam plugin", but Google was serving the pre-2026-07-07 snapshot because nothing
 triggered a recrawl. `linkcheck.py` knows it is sitemap-only (in SKIP_DIRS) — audit stays 0.
+
+## Verifying indexing WITHOUT Search Console access (2026-07-18)
+
+**Where GSC mail is NOT.** Searched for Search Console notifications and found none in:
+the connected Gmail (`youtjack365@gmail.com` — 8 Google mails in 180 days, all Play/ToS/
+security), `admin@splitcam.com` (1257 mails; its only 5 google.com senders are from
+**October 2024**), `support@`, `pola@`. GSC notifications go to whichever Google account
+owns the `sc-domain:splitcam.com` property — **we still do not know which one**. Ask the
+user before hunting again; do not re-search these four mailboxes.
+
+**Server logs answer the crawl question directly** — and unlike GSC they need no
+credentials. Daily rotated tarballs live in `~/domains/splitcam.com/logs/Jul-2026.tar.gz*`
+(`.gz` = yesterday, `.gz.1` = the day before, …). Read them **streaming**, never extract to
+disk — the account is near its quota:
+
+```bash
+tar xzOf Jul-2026.tar.gz | grep -a Googlebot | awk '$9==404' | grep -aoE 'GET [^ ]+'
+```
+
+Baseline as of 2026-07-18: Googlebot makes **~350–400 origin requests/day**, of which
+**~35–75 are locale pages, all HTTP 200**, spread across most of the 34 locales. At that
+rate a full pass over 512 locale pages takes ~10 days. Origin logs **undercount** — anything
+Cloudflare serves from cache never reaches the origin.
+
+⚠️ **Regex trap:** matching locale prefixes with `/(ru|de|he|…)` also matches `/help/...`
+as `/he`. It once produced a phantom "104 hits on /he" anomaly. Always anchor the boundary:
+`GET /(ru|de|…)(/[^ ?"]*)? `.
+
+**The daily 404s are not a defect.** They are legacy WordPress and old-host URLs
+(`/wp-content/*`, `/wp-admin/*`, `/win-download/{reports,images,archive}/*`,
+`/privace_policy_ofl.html`). The `?SA`/`?MD`/`?ND` suffixes are Apache mod_autoindex sort
+links — those directories once had listing enabled and Google indexed the listings.
+None of them exist on DA, and none redirect to the homepage, so there is **no soft-404
+risk**; GSC files these under the informational "Not found (404)". Optional cleanup, not
+urgent: serve `410 Gone` for the dead trees so Google drops them faster and skip the
+pointless trailing-slash 301 hop.
+
+**`lastmod` is a recrawl lever — bump it when pages actually change.** The redirect fix
+rewrote all 526 pages on 2026-07-18 while the sitemap still advertised `2026-07-13`,
+telling Google nothing had changed on exactly the pages that most needed re-reading.
+Bumped `LASTMOD` in `seo/i18n_wire.py`, redeployed, purged.
+
+**Google's sitemap ping endpoint is dead** — `google.com/ping?sitemap=` returns **404**
+(retired in 2023). The only ways in are GSC's UI and the sitemap being recrawled on its own.
+**IndexNow still works** (key `485c229ee85ee55f1967363aabec7e9a`, HTTP 200) but feeds
+Bing/Yandex only, never Google.
