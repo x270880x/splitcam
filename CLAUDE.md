@@ -205,6 +205,24 @@ download split-button radii, vc-arrow connector) injected per RTL page by
 - Full SEO plan: `seo/PLAN.md`. Recommended IA: `seo/SITEMAP.md`.
   Schedule & follow-ups: `seo/REMINDERS.md` (open it in any SEO chat).
 
+## RTL trap — never add CSS right after `<!--/RTLCSS-->`
+
+The RTL locales (`ar`, `he`, `fa`) carry a `<!--RTLCSS-->` … `<!--/RTLCSS-->` marker region
+**inside the page's `<style>` block**. Those markers are HTML comments, and HTML comments are
+NOT valid CSS. The parser reads `<!--` as an ignorable CDO token, then treats `/RTLCSS` as the
+start of a selector and swallows everything up to the next `{` — **silently eating the first
+CSS rule that follows the closing marker**.
+
+Hit for real 2026-07-18: a new `.rt-strip{max-width:1100px;…}` inserted right after
+`<!--/RTLCSS-->` was destroyed on all three RTL pages (the strip stretched full-width), while
+every later rule in the same block applied normally — which makes it look like a layout bug,
+not a parsing bug.
+
+**Rule: append new CSS BEFORE `<!--RTLCSS-->`, or before `</style>` on non-RTL pages.**
+Inserting before the marker is also safe against `i18n_wire.py`, which regenerates only the
+marker region. After any CSS insertion, verify on an RTL page that the first new rule actually
+computes (`getComputedStyle(el).maxWidth` etc.), not just that the file contains the text.
+
 ## Important notes
 
 0. **ALL internal URLs must be FULL absolute canonical** (`https://splitcam.com/...`,

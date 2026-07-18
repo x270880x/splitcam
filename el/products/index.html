@@ -442,6 +442,15 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 @media(max-width:1100px){.nav-right .lang-dl{display:none}}
 #nav-mobile .lang-dl{display:block;margin:10px 16px 4px}
 #nav-mobile .lang-dl-menu{position:static;max-height:none;box-shadow:none;margin-top:6px}
+/* Remote tester-recruitment strip (under hero) */
+.rt-strip{max-width:1100px;margin:-14px auto 0;padding:0 40px}
+.rt-in{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap;padding:14px 18px;border-radius:14px;background:linear-gradient(135deg,rgba(156,91,255,.14),rgba(40,120,252,.07));border:1px solid rgba(156,91,255,.28)}
+.rt-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;background:rgba(156,91,255,.18);border:1px solid rgba(156,91,255,.35);font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#c8b6ff;white-space:nowrap;flex-shrink:0}
+.rt-txt{flex:1;min-width:230px;font-size:14px;line-height:1.55;color:var(--text-sub);text-align:start;overflow-wrap:break-word}
+.rt-txt strong{color:var(--text);font-weight:700}
+.rt-cta{display:inline-flex;align-items:center;gap:7px;padding:10px 17px;border-radius:9px;background:var(--purple);color:#fff;font-size:13px;font-weight:700;white-space:nowrap;flex-shrink:0;transition:filter .15s,transform .15s}
+.rt-cta:hover{filter:brightness(1.12);transform:translateY(-1px)}
+@media(max-width:900px){.rt-strip{padding:0 20px;margin-top:-6px}.rt-in{flex-direction:column;align-items:center;gap:11px;padding:16px}.rt-txt{flex:none;min-width:0;text-align:center;font-size:13.5px}}
 </style>
 </head>
 <body>
@@ -498,6 +507,15 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <span class="h-badge">Από το 2003</span>
   </div>
 </section>
+
+<!-- REMOTE TESTER RECRUITMENT -->
+<div class="rt-strip">
+  <div class="rt-in">
+    <span class="rt-pill">Κλειστή δοκιμή</span>
+    <p class="rt-txt"><strong>Το SplitCam Remote για Android ζητά δοκιμαστές</strong> — ελέγχετε το stream του υπολογιστή από το κινητό. Δοκιμάστε το πριν βγει.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJmQt04MVYcil0nzVRg9s3_QdvEV41tm3bh9WR5CObAeIbdA/viewform" class="rt-cta" target="_blank" rel="noopener">Γίνετε δοκιμαστές →</a>
+  </div>
+</div>
 
 <!-- STREAMING APPS -->
 <section class="section" id="all-apps">
