@@ -14,8 +14,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SplitCam 변경 내역 — 전체 버전 기록 | SplitCam</title>
-<meta name="description" content="SplitCam 전체 버전 기록 — v10.0.26(2020년 1월) 이후 모든 Windows 릴리스와 macOS, iOS, Android, Remote 변경 내역.">
+<title>SplitCam 구버전 다운로드 — Windows 변경 내역과 버전 기록</title>
+<meta name="description" content="v10.0.26(2020년 1월) 이후 모든 SplitCam Windows 릴리스 기록과 SplitCam 4까지 거슬러 올라가는 구버전 설치 파일 다운로드. macOS, iOS, Android, Remote 변경 내역도 함께 제공합니다. 각 릴리스의 변경 사항을 한 곳에서 확인하세요.">
 <meta name="keywords" content="splitcam 변경 내역, splitcam 버전 기록, splitcam 업데이트, splitcam 릴리스 노트, splitcam windows 변경 내역">
 <meta name="author" content="SplitCam">
 <link rel="canonical" href="https://splitcam.com/ko/changelog">
@@ -60,15 +60,15 @@
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://splitcam.com/ko/changelog">
-<meta property="og:title" content="SplitCam 변경 내역 — 전체 버전 기록 | SplitCam">
-<meta property="og:description" content="SplitCam 전체 버전 기록 — v10.0.26(2020년 1월) 이후 모든 Windows 릴리스와 macOS, iOS, Android, Remote 변경 내역.">
+<meta property="og:title" content="SplitCam 구버전 다운로드 — Windows 변경 내역과 버전 기록">
+<meta property="og:description" content="v10.0.26(2020년 1월) 이후 모든 SplitCam Windows 릴리스 기록과 SplitCam 4까지 거슬러 올라가는 구버전 설치 파일 다운로드. macOS, iOS, Android, Remote 변경 내역도 함께 제공합니다. 각 릴리스의 변경 사항을 한 곳에서 확인하세요.">
 <meta property="og:image" content="https://splitcam.com/assets/og-cover.png">
 <meta property="og:site_name" content="SplitCam">
 <meta property="og:locale" content="ko_KR">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SplitCam 변경 내역 — 전체 버전 기록 | SplitCam">
-<meta name="twitter:description" content="SplitCam 전체 버전 기록 — v10.0.26(2020년 1월) 이후 모든 Windows 릴리스와 macOS, iOS, Android, Remote 변경 내역.">
+<meta name="twitter:title" content="SplitCam 구버전 다운로드 — Windows 변경 내역과 버전 기록">
+<meta name="twitter:description" content="v10.0.26(2020년 1월) 이후 모든 SplitCam Windows 릴리스 기록과 SplitCam 4까지 거슬러 올라가는 구버전 설치 파일 다운로드. macOS, iOS, Android, Remote 변경 내역도 함께 제공합니다. 각 릴리스의 변경 사항을 한 곳에서 확인하세요.">
 <meta name="twitter:image" content="https://splitcam.com/assets/og-cover.png">
 
 <meta name="theme-color" content="#141420">
@@ -320,6 +320,17 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 @media(max-width:1100px){.nav-right .lang-dl{display:none}}
 #nav-mobile .lang-dl{display:block;margin:10px 16px 4px}
 #nav-mobile .lang-dl-menu{position:static;max-height:none;box-shadow:none;margin-top:6px}
+/* --- archive of pre-2020 installers (2026-07-18) --- */
+.rel-archive{margin-top:26px;padding:20px 22px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:14px}
+.ra-h{margin:0 0 8px;font-size:16px;font-weight:700;color:var(--text);line-height:1.4}
+.ra-note{margin:0 0 16px;font-size:13.5px;line-height:1.65;color:var(--text-sub)}
+.ra-sub{margin:20px 0 10px;font-size:11.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-sub)}
+.ra-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.ra-list a{display:inline-flex;align-items:center;gap:6px;font-family:'Geist Mono',monospace;font-size:13.5px;font-weight:600;color:var(--blue);background:var(--blue-dim);border-radius:8px;padding:6px 11px;text-decoration:none;transition:background .15s,color .15s,box-shadow .15s}
+.ra-list a:hover{background:var(--blue);color:#fff;box-shadow:0 4px 14px var(--blue-glow)}
+.ra-list .ra-beta{font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#ffa372}
+.ra-list a:hover .ra-beta{color:#fff}
+@media(max-width:560px){.rel-archive{padding:16px}.ra-list a{font-size:12.5px;padding:5px 9px}}
 </style>
 </head>
 <body>
@@ -387,7 +398,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="platform-intro">
     <div class="pi-ico"><svg viewBox="0 0 24 24"><path d="M3 5.5 10.5 4v7.5H3zM10.5 12.5H3V20l7.5 1.5zM11.5 3.85 21 2v9.5h-9.5zM11.5 12.5H21V22l-9.5-1.65z"/></svg></div>
     <div>
-      <strong>Windows용 SplitCam.</strong> v10.0.26(2020년 1월) 이후 모든 릴리스. 상위 3개는 기본으로 펼쳐져 있습니다 — 이전 버전을 클릭하면 변경 사항을 볼 수 있습니다. 최신 설치 파일은 언제나 홈페이지에서 무료로 다운로드할 수 있습니다.
+      <strong>Windows용 SplitCam.</strong> v10.0.26(2020년 1월) 이후 모든 릴리스. 상위 3개는 기본으로 펼쳐져 있습니다 — 이전 버전을 클릭하면 변경 사항을 볼 수 있습니다. 최신 설치 파일은 언제나 홈페이지에서 무료로 다운로드할 수 있습니다. SplitCam 4까지 거슬러 올라가는 구버전 설치 파일은 <a href="https://splitcam.com/ko/changelog#win-older">이 페이지 맨 아래</a>에 정리되어 있습니다.
     </div>
   </div>
   <div class="releases">
@@ -3353,6 +3364,34 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         </ul>
       </div>
     </details>
+    <div class="rel-archive" id="win-older">
+      <h3 class="ra-h">SplitCam 구버전 다운로드</h3>
+      <p class="ra-note">위 릴리스 노트는 v10.0.26부터 시작합니다. 아래 설치 파일은 사양이 낮은 PC와 Windows 7을 위해 남겨 둔 것입니다 &mdash; 더 이상 지원되거나 업데이트되지 않으며, 원래 출시일도 남아 있지 않습니다. 특별히 이 버전들이 필요한 경우가 아니라면 최신 버전을 설치하시기 바랍니다.</p>
+      <ul class="ra-list">
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-8.1.4.1.exe" target="_blank" rel="noopener" title="SplitCam 8.1.4.1 설치 파일 다운로드">SplitCam 8.1.4.1</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-7.4.4.1.exe" target="_blank" rel="noopener" title="SplitCam 7.4.4.1 설치 파일 다운로드">SplitCam 7.4.4.1</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-7.1.3.1.exe" target="_blank" rel="noopener" title="SplitCam 7.1.3.1 설치 파일 다운로드">SplitCam 7.1.3.1</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-6.9.4.1.exe" target="_blank" rel="noopener" title="SplitCam 6.9.4.1 설치 파일 다운로드">SplitCam 6.9.4.1</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-5.4.6.3-beta.exe" target="_blank" rel="noopener" title="SplitCam 5.4.6.3 설치 파일 다운로드">SplitCam 5.4.6.3<span class="ra-beta">beta</span></a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-4.2.3.2.exe" target="_blank" rel="noopener" title="SplitCam 4.2.3.2 설치 파일 다운로드">SplitCam 4.2.3.2</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/SplitCamSetup-4.2.2.0.exe" target="_blank" rel="noopener" title="SplitCam 4.2.2.0 설치 파일 다운로드">SplitCam 4.2.2.0</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/legacy-archive/splitcam.exe" target="_blank" rel="noopener" title="splitcam.exe 설치 파일 다운로드">splitcam.exe</a></li>
+      </ul>
+      <p class="ra-sub">9.x 및 10.x 중간 빌드</p>
+      <ul class="ra-list">
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/v9.0.9/9.0.9.msi" target="_blank" rel="noopener" title="v9.0.9 설치 파일 다운로드">v9.0.9</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/v10.7.38/10.7.38_x64.msi" target="_blank" rel="noopener" title="v10.7.38 설치 파일 다운로드">v10.7.38</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.2/10.8.2_x64.msi" target="_blank" rel="noopener" title="v10.8.2 설치 파일 다운로드">v10.8.2</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.3/10.8.3_x64.msi" target="_blank" rel="noopener" title="v10.8.3 설치 파일 다운로드">v10.8.3</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.61/10.8.61_x64.msi" target="_blank" rel="noopener" title="v10.8.61 설치 파일 다운로드">v10.8.61</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.64/10.8.64_x64.msi" target="_blank" rel="noopener" title="v10.8.64 설치 파일 다운로드">v10.8.64</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.65/10.8.65_x64.msi" target="_blank" rel="noopener" title="v10.8.65 설치 파일 다운로드">v10.8.65</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.66/10.8.66_x64.msi" target="_blank" rel="noopener" title="v10.8.66 설치 파일 다운로드">v10.8.66</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.67/10.8.67_x64.msi" target="_blank" rel="noopener" title="v10.8.67 설치 파일 다운로드">v10.8.67</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.68/10.8.68_x64.msi" target="_blank" rel="noopener" title="v10.8.68 설치 파일 다운로드">v10.8.68</a></li>
+        <li><a href="https://github.com/x270880x/splitcam-release/releases/download/v10.8.69/10.8.69_x64.msi" target="_blank" rel="noopener" title="v10.8.69 설치 파일 다운로드">v10.8.69</a></li>
+      </ul>
+    </div>
   </div>
 </section>
 
