@@ -685,3 +685,24 @@ overwhelmingly brand-led: `splitcam` 46 138 clicks / 76 026 impressions, `split 
 `splitcam download` 7 007. Meanwhile `bongacams` (586 833 impressions, 1 312 clicks) and
 `xlovecam` (81 576 / 867) still dump ~668 k near-zero-CTR impressions into the profile —
 residue of the adult cluster that was deliberately moved to camstreamguide.com.
+
+## IndexNow — submit the full sitemap, both domains (2026-07-19)
+
+Two sites, two keys, both verified serving their key file:
+
+| Domain | Key | URLs |
+|---|---|---|
+| splitcam.com | `485c229ee85ee55f1967363aabec7e9a` | 527 |
+| camstreamguide.com | `1dce1f527c611c22daebaf1b00b0649a` | 2 135 |
+
+Post the **entire sitemap** in chunks of 500 to all three endpoints —
+`api.indexnow.org/IndexNow`, `www.bing.com/indexnow`, `yandex.com/indexnow`. 200 or 202 both
+mean accepted. There is **no daily quota**; the instinct to ration submissions comes from
+GSC's ~10-12 Request-Indexing limit and does not apply here.
+
+⚠️ That GSC limit is **per Google ACCOUNT, not per property** — spending it on splitcam.com
+exhausts camstreamguide's allowance the same day. Decide each morning which property needs
+it more; splitcam.com is already indexed, camstreamguide is not.
+
+Google's own `google.com/ping?sitemap=` is dead (404, retired 2023). IndexNow reaches only
+Bing and Yandex — never Google — but for a young domain those are the realistic first wins.
