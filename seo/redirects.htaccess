@@ -388,6 +388,13 @@ AddType application/manifest+json .webmanifest
 # --- custom 404 (branded page, added 2026-07-02; GitHub Pages picks /404.html automatically) ---
 ErrorDocument 404 /404.html
 
+# --- no directory listings (2026-07-18) ---
+# The OLD host had mod_autoindex enabled, so Google crawled and indexed the generated
+# listings for /win-download/reports/ and /win-download/images/ — including the ?SA/?MD/?ND
+# column-sort links, which is why those still show up as 404s in Search Console today.
+# Those listings also exposed internal development reports. Never serve one again.
+Options -Indexes
+
 RewriteEngine On
 # 0) Force https for plain-http visitors. Behind Cloudflare the origin always gets an
 #    https connection, so detect the VISITOR scheme via the CF-Visitor header (Cloudflare
@@ -399,10 +406,31 @@ RewriteRule ^(.*)$ https://splitcam.com/$1 [R=301,L]
 #      slash — its pages use relative hrefs (doxygen.css, class*.html), which break on
 #      a slashless URL. Slashless form 301s BACK to the slashed dir.
 RewriteRule ^plugins$ /plugins/ [R=301,L]
+# 0.7) The two download dirs hold installers, not pages, and have no index.html. Send both
+#      forms to the real download page instead of letting rule 1 hand them to mod_dir.
+#      Anchored with $ so /win-download/SplitCamSetup_x64.msi is untouched.
+RewriteRule ^win-download/?$ https://splitcam.com/download [R=301,L]
+RewriteRule ^mac-download/?$ https://splitcam.com/download [R=301,L]
 # 1) 301 the trailing-slash form to slashless — but NOT the site root, a locale
 #    root (/ru/, /es/, /fil/ …), or /plugins/ — those legitimately keep their slash.
+#
+#    ⚠️ The last two conditions are what keep this from looping forever. Rule 1 strips
+#    the slash; Apache's mod_dir (DirectorySlash On) puts it straight back on any request
+#    that resolves to a real directory. For a directory WITH index.html that never happens
+#    — rule 2 below serves the file first. For a directory WITHOUT one, rule 2 does not
+#    match, mod_dir 301s back to the slashed form, rule 1 strips it again, forever.
+#    Google hit exactly this on /win-download/ and reported "Ошибка переадресации"
+#    (2026-07-18); 12 directories were affected.
+#
+#    The two are OR'd: strip when the path is NOT a real directory (every legacy URL —
+#    160 of the RedirectMatch rules above are anchored slashless and still need the strip
+#    to reach them), OR when it IS a directory holding an index.html (all 528 content
+#    pages). A real directory without one — the only case that loops — matches neither
+#    and keeps its slash.
 RewriteCond %{REQUEST_URI} !^/[a-z]{2,3}/$
 RewriteCond %{REQUEST_URI} !^/plugins/
+RewriteCond %{DOCUMENT_ROOT}/$1 !-d [OR]
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
 RewriteRule ^(.+)/$ /$1 [R=301,L]
 # 2) Internally serve <dir>/index.html for the slashless URL (no visible redirect).
 RewriteCond %{REQUEST_FILENAME} !-f
