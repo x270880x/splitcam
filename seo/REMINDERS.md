@@ -584,12 +584,14 @@ triggered a recrawl. `linkcheck.py` knows it is sitemap-only (in SKIP_DIRS) — 
 
 ## Verifying indexing WITHOUT Search Console access (2026-07-18)
 
-**Where GSC mail is NOT.** Searched for Search Console notifications and found none in:
-the connected Gmail (`youtjack365@gmail.com` — 8 Google mails in 180 days, all Play/ToS/
-security), `admin@splitcam.com` (1257 mails; its only 5 google.com senders are from
-**October 2024**), `support@`, `pola@`. GSC notifications go to whichever Google account
-owns the `sc-domain:splitcam.com` property — **we still do not know which one**. Ask the
-user before hunting again; do not re-search these four mailboxes.
+**Search Console is reachable — through the browser, not through mail.** The property is
+`sc-domain:splitcam.com`, verified, and it opens in the user's own Chrome profile via the
+claude-in-chrome MCP (`https://search.google.com/search-console?resource_id=sc-domain:splitcam.com`).
+Its alerts live in the in-console **Сообщения** panel (33 of them, 30 unread as of 2026-07-18)
+— they are NOT emailed anywhere we can read. Searching for them by mail is a dead end and was
+already tried: the connected Gmail (`youtjack365@gmail.com`) held 8 Google mails in 180 days,
+none from Search Console, and `admin@splitcam.com` (1257 mails) had 5 google.com senders, all
+from October 2024. Go to the browser first; do not re-search those mailboxes.
 
 **Server logs answer the crawl question directly** — and unlike GSC they need no
 credentials. Daily rotated tarballs live in `~/domains/splitcam.com/logs/Jul-2026.tar.gz*`
@@ -627,3 +629,59 @@ Bumped `LASTMOD` in `seo/i18n_wire.py`, redeployed, purged.
 (retired in 2023). The only ways in are GSC's UI and the sitemap being recrawled on its own.
 **IndexNow still works** (key `485c229ee85ee55f1967363aabec7e9a`, HTTP 200) but feeds
 Bing/Yandex only, never Google.
+
+## Search Console — the real numbers (read 2026-07-18, first direct access)
+
+**691 indexed · 4 400 not indexed.** Do not read that second number as 4 400 broken pages —
+the site only has 527. It is dominated by the dead WordPress site and forum:
+
+| Reason | Pages | What it actually is |
+|---|---|---|
+| Blocked by robots.txt | 1 086 | old WP robots rules; our robots.txt only disallows `/v2/` |
+| Crawled, not indexed | 1 014 | legacy thin pages |
+| noindex | 673 | old site; ours carry it only on `/v2/` and `/for/vtubers/` |
+| Page with redirect | 629 | our own migration 301s — expected, this is consolidation |
+| Canonical variant | 359 | duplicate consolidation |
+| Discovered, not indexed | 340 | queued |
+| Soft 404 | 195 | legacy |
+| Not found (404) | 56 | the `/wp-*` and `/win-download/{reports,images}/` set |
+| Blocked by 403 | 21 | **all** `/forum/index.php?action=profileInfo` — dead forum, NOT Cloudflare |
+| Server error (5xx) | 18 | **all** `/forum/index.php?action=extauth;provider=github` — dead forum |
+| Duplicate, no canonical | 6 | |
+| **Redirect error** | **2** | the real defect — see below |
+| Blocked by 4xx | 1 | |
+
+Two things worth knowing before panicking about 403/5xx: both are **entirely the dead
+forum**, so Cloudflare's anti-bot rule is *not* blocking Googlebot. And "Проиндексировано,
+несмотря на блокировку в robots.txt" is **0**.
+
+**The locale de-indexing is confirmed, with the mechanism visible.** URL inspection on
+`/ru/`, `/es/`, `/de/`, `/pt/`, `/tr/` all returned *"Эта страница не проиндексирована:
+Страница с переадресацией"* — Google classified the JS language redirect as a redirect and
+dropped the page. `/fr/` and the English pages (`/download`, `/multistreaming`) were indexed
+throughout, so the damage was never uniform; do not assume a locale is broken without
+checking it.
+
+**Проверка опубликованной версии is the fastest way to prove a fix.** Indexed data reflects
+the last crawl and lags badly — Googlebot last fetched `/ru/` at 05:13 on 2026-07-18 while
+the fix only reached the server at 13:10, so the report still showed the old verdict. The
+live test immediately returned *"URL доступен Google"* + *"Эту страницу можно
+проиндексировать"*. Always compare "из индекса" against "опубликованную версию" before
+concluding anything is still broken.
+
+**Request Indexing quota is ~10-12 URLs/day**, and the UI's own note says repeating a URL
+does not raise its priority. Spend it on de-indexed pages, not on ones already indexed.
+Submitted 2026-07-18: `/ru/ /es/ /de/ /fr/ /pt/ /tr/ /download /multistreaming`.
+
+⚠️ **Driving this UI:** clicking the URL-inspection search box does not reliably take focus
+after a dialog has been open — typed text silently goes nowhere and the next click lands on
+the *previous* URL's button (this re-submitted `/es/` once). Use `form_input` on the
+combobox ref instead; that always works.
+
+**Not an indexing problem, but flagged by GSC and worth its own pass:** the query
+`splitcam download` lost **82 % of its clicks** recently while `/download` is indexed and
+healthy — so that is ranking or snippet, not crawling. Over 6 months the profile is
+overwhelmingly brand-led: `splitcam` 46 138 clicks / 76 026 impressions, `split cam` 8 401,
+`splitcam download` 7 007. Meanwhile `bongacams` (586 833 impressions, 1 312 clicks) and
+`xlovecam` (81 576 / 867) still dump ~668 k near-zero-CTR impressions into the profile —
+residue of the adult cluster that was deliberately moved to camstreamguide.com.
