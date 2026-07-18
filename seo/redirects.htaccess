@@ -406,6 +406,29 @@ RewriteRule ^(.*)$ https://splitcam.com/$1 [R=301,L]
 #      slash — its pages use relative hrefs (doxygen.css, class*.html), which break on
 #      a slashless URL. Slashless form 301s BACK to the slashed dir.
 RewriteRule ^plugins$ /plugins/ [R=301,L]
+# 0.6) Legacy hubs that need the QUERY STRING DROPPED (mod_rewrite runs before mod_alias, so
+#      these win over the RedirectMatch equivalents further up — those stay as a fallback).
+#
+#      The forum is the reason: 366 702 of 367 051 /forum requests over six days carried a
+#      query string, and mod_alias faithfully re-attached it, so every one produced a
+#      distinct /help?action=profileInfo;… /help?topic=1234.0 … URL. [QSD] collapses the
+#      whole swarm onto one clean /help.
+#
+#      NOT applied to /help itself — 34 thematic rules live under ^/help/ (the camstreamguide
+#      set among them) and a broad rewrite here would preempt every one of them. Killing the
+#      query at the forum removes the source anyway.
+RewriteRule ^forum(/.*)?$ https://splitcam.com/help [R=301,L,QSD]
+
+#      /tour was the old feature tour — seven pages, all of them previously dumped on
+#      /products by a single catch-all. Each one has an obvious home; specific rules first.
+RewriteRule ^tour/upload-your-video-to-youtube-in-a-few-clicks/?$   https://splitcam.com/for/youtubers [R=301,L,QSD]
+RewriteRule ^tour/connect-services-to-splitcam/?$                   https://splitcam.com/multistreaming [R=301,L,QSD]
+RewriteRule ^tour/use-different-video-sources-not-only-webcam/?$    https://splitcam.com/virtual-camera [R=301,L,QSD]
+RewriteRule ^tour/use-effects-for-your-webcam-video-and-have-fun/?$ https://splitcam.com/features [R=301,L,QSD]
+RewriteRule ^tour/zoom-your-video-in-splitcam/?$                    https://splitcam.com/features [R=301,L,QSD]
+RewriteRule ^tour/run-splitcam-and-main-window-will-appear/?$       https://splitcam.com/help [R=301,L,QSD]
+RewriteRule ^tour(/.*)?$                                            https://splitcam.com/products [R=301,L,QSD]
+
 # 0.7) The two download dirs hold installers, not pages, and have no index.html. Send both
 #      forms to the real download page instead of letting rule 1 hand them to mod_dir.
 #      Anchored with $ so /win-download/SplitCamSetup_x64.msi is untouched.
