@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Czy mogę streamować rozgrywkę na Twitch, YouTube i Kick jednocześnie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak — dodaj wszystkie trzy jako platformy docelowe i wejdź na żywo raz. SplitCam przechwytuje gry DirectX i OpenGL i koduje obraz na GPU (NVENC, QuickSync lub AMF), a potem wysyła to jedno kodowanie na każdą platformę — dodatkowe platformy kosztują więc przepustowość wysyłania, a nie liczbę klatek w grze. Kodowanie sprzętowe sprawia, że na przeciętnym PC do gier spadek FPS jest niewielki; praktyczną granicą jest prędkość wysyłania, bo każda platforma zjada swój kawałek przepustowości."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Na ile platform mogę streamować jednocześnie?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Streamerzy gamingowi</h3>
-        <p>Ten sam stream widzą widzowie Twitcha, widownia YouTube'a i pierwsi użytkownicy Kicka. Buduj widownię na kilku platformach naraz, zanim zwiążesz się z jedną — i bez budowania każdej od zera. <a href="https://splitcam.com/pl/for/youtubers" style="color:var(--blue);font-weight:600">Jak streamować na YouTube →</a></p>
+        <p>Przechwytuj gry DirectX i OpenGL i koduj obraz na GPU — NVENC, QuickSync lub AMF — a potem wyślij to jedno kodowanie naraz na Twitch, YouTube i Kick. Dodatkowe platformy kosztują przepustowość wysyłania, a nie FPS w grze. Buduj widownię na wszystkich trzech, zanim zwiążesz się z jedną. <a href="https://splitcam.com/pl/for/youtubers" style="color:var(--blue);font-weight:600">Jak streamować na YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Pytania o multistreaming.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Wszystko, co warto wiedzieć, zanim wejdziesz na żywo wszędzie naraz.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Czy mogę streamować rozgrywkę na Twitch, YouTube i Kick jednocześnie?</summary>
+        <p>Tak — dodaj wszystkie trzy jako platformy docelowe i wejdź na żywo raz. SplitCam przechwytuje gry DirectX i OpenGL i koduje obraz na GPU (NVENC, QuickSync lub AMF), a potem wysyła to jedno kodowanie na każdą platformę — dodatkowe platformy kosztują więc przepustowość wysyłania, a nie liczbę klatek w grze. Kodowanie sprzętowe sprawia, że na przeciętnym PC do gier spadek FPS jest niewielki; praktyczną granicą jest prędkość wysyłania, bo każda platforma zjada swój kawałek przepustowości.</p>
+      </details>
       <details class="faq-item">
         <summary>Na ile platform mogę streamować jednocześnie?</summary>
         <p>Komfortowo do 8 platform; technicznie bez ograniczeń, dopóki CPU/GPU i łącze wysyłające radzą sobie z sumarycznym obciążeniem. Każda platforma zjada swój kawałek przepustowości — to praktyczna granica. Na przeciętnym PC z wysyłaniem 10 Mb/s typowe są 3–5 platform. Przy światłowodzie 50 Mb/s i karcie Nvidia realne jest 8 i więcej.</p>

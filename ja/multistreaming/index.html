@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "ゲームプレイを Twitch・YouTube・Kick へ同時に配信できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい — 3つとも配信先に追加して、配信を1回始めるだけです。SplitCam が DirectX と OpenGL のゲームを取り込み、お使いのGPU（NVENC・QuickSync・AMF）でエンコードし、その1本のエンコードを各プラットフォームへ送ります。だから配信先が増えても、減るのはアップロード帯域であって、ゲーム中のフレームレートではありません。ハードウェアエンコードのおかげで、中位スペックのゲーミングPCならFPSの低下はごくわずか。配信先ごとに帯域を使うので、実用上の上限はアップロード速度です。"
+          }
+        },
+        {
+          "@type": "Question",
           "name": "同時に何プラットフォームへマルチ配信できますか？",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>ゲーム配信者</h3>
-        <p>同じ配信で、Twitch の視聴者にも、YouTube の視聴者にも、Kick の早期ユーザーにもリーチ。1つに絞り込む前に、複数のプラットフォームで同時にファンを増やせます。それぞれをゼロから育てる必要はありません。<a href="https://splitcam.com/ja/for/youtubers" style="color:var(--blue);font-weight:600">YouTube 配信のやり方 →</a></p>
+        <p>DirectX と OpenGL のゲームを取り込み、GPUでエンコード — NVENC・QuickSync・AMF。その1本のエンコードを Twitch・YouTube・Kick へまとめて送るので、配信先が増えても減るのはアップロード帯域で、ゲーム中のFPSではありません。1つに絞り込む前に、3つすべてでファンを増やせます。<a href="https://splitcam.com/ja/for/youtubers" style="color:var(--blue);font-weight:600">YouTube 配信のやり方 →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">マルチ配信についての質問。</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">どこへでも一斉に配信する前に、知っておきたいこと。</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>ゲームプレイを Twitch・YouTube・Kick へ同時に配信できますか？</summary>
+        <p>はい — 3つとも配信先に追加して、配信を1回始めるだけです。SplitCam が DirectX と OpenGL のゲームを取り込み、お使いのGPU（NVENC・QuickSync・AMF）でエンコードし、その1本のエンコードを各プラットフォームへ送ります。だから配信先が増えても、減るのはアップロード帯域であって、ゲーム中のフレームレートではありません。ハードウェアエンコードのおかげで、中位スペックのゲーミングPCならFPSの低下はごくわずか。配信先ごとに帯域を使うので、実用上の上限はアップロード速度です。</p>
+      </details>
       <details class="faq-item">
         <summary>同時に何プラットフォームへマルチ配信できますか？</summary>
         <p>8配信先までなら快適に。技術的には、CPU/GPUとアップロード帯域が合計負荷に耐えられる限り無制限です。各プラットフォームが帯域を消費する — それが実用上の上限です。アップロード10Mbpsの中位スペックPCなら、3〜5プラットフォームが一般的。50Mbpsの光回線とNvidiaのカードがあれば、8以上も実現できます。</p>

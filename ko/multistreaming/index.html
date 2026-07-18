@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "게임 플레이를 Twitch, YouTube, Kick에 동시에 송출할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네 — 세 곳을 모두 송출 대상으로 추가하고 방송을 한 번만 시작하면 됩니다. SplitCam이 DirectX와 OpenGL 게임을 캡처해 GPU에서 인코딩하고(NVENC, QuickSync, AMF), 그 인코딩 하나를 모든 플랫폼에 보냅니다. 대상을 추가할 때 드는 대가는 게임 내 프레임레이트가 아니라 업로드 대역폭입니다. 하드웨어 인코딩 덕분에 중급 게이밍 PC에서도 FPS 손실은 크지 않습니다. 플랫폼마다 대역폭을 나눠 쓰기 때문에 현실적인 한계는 업로드 속도입니다."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "몇 개의 플랫폼에 동시에 송출할 수 있나요?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>게임 스트리머</h3>
-        <p>같은 방송을 Twitch 시청자, YouTube 시청층, Kick의 얼리어답터가 함께 봅니다. 한 곳을 미리 고르지 않고도, 또 각각을 처음부터 키우지 않고도 여러 플랫폼에서 동시에 시청자를 늘리세요. <a href="https://splitcam.com/ko/for/youtubers" style="color:var(--blue);font-weight:600">YouTube 방송하는 법 →</a></p>
+        <p>DirectX와 OpenGL 게임을 캡처해 GPU에서 인코딩하고 — NVENC, QuickSync, AMF — 그 인코딩 하나를 Twitch, YouTube, Kick에 함께 보냅니다. 플랫폼을 추가할 때 드는 대가는 게임 내 FPS가 아니라 업로드 대역폭입니다. 한 곳에 정착하기 전에 세 곳 모두에서 시청자를 키우세요. <a href="https://splitcam.com/ko/for/youtubers" style="color:var(--blue);font-weight:600">YouTube 방송하는 법 →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">동시 송출 관련 질문.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">어디서나 한 번에 라이브를 시작하기 전에 알아두면 좋은 모든 것.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>게임 플레이를 Twitch, YouTube, Kick에 동시에 송출할 수 있나요?</summary>
+        <p>네 — 세 곳을 모두 송출 대상으로 추가하고 방송을 한 번만 시작하면 됩니다. SplitCam이 DirectX와 OpenGL 게임을 캡처해 GPU에서 인코딩하고(NVENC, QuickSync, AMF), 그 인코딩 하나를 모든 플랫폼에 보냅니다. 대상을 추가할 때 드는 대가는 게임 내 프레임레이트가 아니라 업로드 대역폭입니다. 하드웨어 인코딩 덕분에 중급 게이밍 PC에서도 FPS 손실은 크지 않습니다. 플랫폼마다 대역폭을 나눠 쓰기 때문에 현실적인 한계는 업로드 속도입니다.</p>
+      </details>
       <details class="faq-item">
         <summary>몇 개의 플랫폼에 동시에 송출할 수 있나요?</summary>
         <p>8개 채널까지는 무리 없이 가능하며, CPU/GPU와 업로드 회선이 전체 부하를 감당하는 한 사실상 제한이 없습니다. 플랫폼마다 대역폭을 나눠 쓰는 것이 현실적인 한계입니다. 업로드 10Mbps의 중급 PC에서는 보통 3~5개 플랫폼이 적당합니다. 50Mbps 광랜과 Nvidia 그래픽카드라면 8개 이상도 가능합니다.</p>

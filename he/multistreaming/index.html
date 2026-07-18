@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "אפשר לשדר משחקים ל-Twitch, ל-YouTube ול-Kick בו-זמנית?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "כן — הוסיפו את שלושתן כיעדי שידור ועלו לשידור חי פעם אחת. SplitCam קולטת משחקי DirectX ו-OpenGL ומקודדת על כרטיס המסך שלכם ‏(NVENC, QuickSync או AMF), ואז שולחת את אותו קידוד יחיד לכל הפלטפורמות — כך שכל פלטפורמה נוספת עולה ברוחב פס בהעלאה ולא בקצב הפריימים במשחק. הקידוד החומרתי משאיר את הפגיעה ב-FPS זניחה במחשב גיימינג ממוצע; הגבול המעשי הוא מהירות ההעלאה שלכם, כי כל פלטפורמה אוכלת את חלקה ברוחב הפס."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "לכמה פלטפורמות אפשר לשדר בו-זמנית?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -799,7 +807,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>גיימרים סטרימרים</h3>
-        <p>אותו שידור נראה לצופי Twitch, לקהל YouTube ולחלוצי Kick. הגדילו את הקהל שלכם בכמה פלטפורמות בבת אחת, בלי לבחור אחת מראש — ובלי לבנות כל אחת מאפס. <a href="https://splitcam.com/he/for/youtubers" style="color:var(--blue);font-weight:600">איך לשדר ל-YouTube →</a></p>
+        <p>SplitCam קולטת משחקי DirectX ו-OpenGL ומקודדת על כרטיס המסך — NVENC, QuickSync או AMF — ואז שולחת את אותו קידוד ל-Twitch, ל-YouTube ול-Kick יחד, כך שפלטפורמות נוספות עולות לכם ברוחב פס בהעלאה ולא ב-FPS במשחק. בנו קהל בשלושתן לפני שאתם מתחייבים לאחת. <a href="https://splitcam.com/he/for/youtubers" style="color:var(--blue);font-weight:600">איך לשדר ל-YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -950,6 +958,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">שאלות על שידור לכמה פלטפורמות.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">כל מה ששווה לדעת לפני שעולים לשידור חי בכל מקום בבת אחת.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>אפשר לשדר משחקים ל-Twitch, ל-YouTube ול-Kick בו-זמנית?</summary>
+        <p>כן — הוסיפו את שלושתן כיעדי שידור ועלו לשידור חי פעם אחת. SplitCam קולטת משחקי DirectX ו-OpenGL ומקודדת על כרטיס המסך שלכם ‏(NVENC, QuickSync או AMF), ואז שולחת את אותו קידוד יחיד לכל הפלטפורמות — כך שכל פלטפורמה נוספת עולה ברוחב פס בהעלאה ולא בקצב הפריימים במשחק. הקידוד החומרתי משאיר את הפגיעה ב-FPS זניחה במחשב גיימינג ממוצע; הגבול המעשי הוא מהירות ההעלאה שלכם, כי כל פלטפורמה אוכלת את חלקה ברוחב הפס.</p>
+      </details>
       <details class="faq-item">
         <summary>לכמה פלטפורמות אפשר לשדר בו-זמנית?</summary>
         <p>עד 8 פלטפורמות זה נוח; טכנית — ללא הגבלה, כל עוד המעבד/כרטיס המסך וערוץ ההעלאה עומדים בעומס הכולל. כל פלטפורמה אוכלת את חלקה ברוחב הפס — זה הגבול המעשי. במחשב ממוצע עם העלאה של 10 Mbps בדרך כלל יוצא 3–5 פלטפורמות. עם סיב אופטי של 50 Mbps וכרטיס Nvidia אפשרי 8 ויותר.</p>

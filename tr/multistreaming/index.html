@@ -181,6 +181,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Oyun yayınımı aynı anda Twitch, YouTube ve Kick'e gönderebilir miyim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet — üçünü de hedef olarak ekleyin ve tek seferde yayına geçin. SplitCam, DirectX ve OpenGL oyunlarını yakalar ve GPU'nuzda kodlar (NVENC, QuickSync veya AMF), ardından bu tek kodlamayı her platforma gönderir; böylece eklediğiniz hedefler oyun içi kare hızından değil, yükleme bant genişliğinden götürür. Donanım kodlaması sayesinde orta seviye bir oyun bilgisayarında FPS kaybı düşük kalır; her hedef kendi bant genişliğini kullandığı için pratik sınır yükleme hızınızdır."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Aynı anda kaç platforma multistream yapabilirim?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -791,7 +799,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Oyun yayıncıları</h3>
-        <p>Twitch izleyicilerine, YouTube takipçilerine ve Kick'in erken kullanıcılarına aynı yayınla ulaşın. Birine bağlanmadan önce birden çok platformda kitle oluşturun. Her birini ayrı ayrı büyütmeye gerek yok. <a href="https://splitcam.com/tr/for/youtubers" style="color:var(--blue);font-weight:600">YouTube'da nasıl canlı yayın açılır →</a></p>
+        <p>DirectX ve OpenGL oyunlarını yakalayın, GPU üzerinde kodlayın — NVENC, QuickSync veya AMF — ve bu tek kodlamayı Twitch, YouTube ve Kick'e birlikte gönderin; böylece eklediğiniz platformlar oyun içi FPS'inizden değil, yükleme bant genişliğinizden götürür. Birine bağlanmadan önce üçünde birden kitle oluşturun. <a href="https://splitcam.com/tr/for/youtubers" style="color:var(--blue);font-weight:600">YouTube'da nasıl canlı yayın açılır →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -942,6 +950,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Multistream hakkında sorular.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Her yere yayına geçmeden önce bilmek isteyebileceğiniz her şey.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Oyun yayınımı aynı anda Twitch, YouTube ve Kick'e gönderebilir miyim?</summary>
+        <p>Evet — üçünü de hedef olarak ekleyin ve tek seferde yayına geçin. SplitCam, DirectX ve OpenGL oyunlarını yakalar ve GPU'nuzda kodlar (NVENC, QuickSync veya AMF), ardından bu tek kodlamayı her platforma gönderir; böylece eklediğiniz hedefler oyun içi kare hızından değil, yükleme bant genişliğinden götürür. Donanım kodlaması sayesinde orta seviye bir oyun bilgisayarında FPS kaybı düşük kalır; her hedef kendi bant genişliğini kullandığı için pratik sınır yükleme hızınızdır.</p>
+      </details>
       <details class="faq-item">
         <summary>Aynı anda kaç platforma yayın yapabilirim?</summary>
         <p>Rahatça 8 hedefe kadar; teknik olarak ise işlemciniz/ekran kartınız ve yükleme bant genişliğiniz toplam yükü kaldırabildiği sürece sınırsız. Her hedef kendi bant genişliğini kullanır — pratik sınır budur. 10 Mbps yüklemeli orta seviye bir bilgisayarda tipik olarak 3–5 platform mümkündür. 50 Mbps fiber ve bir Nvidia kartla 8+ ulaşılabilir.</p>

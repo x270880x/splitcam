@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Voinko lähettää pelikuvaa Twitchiin, YouTubeen ja Kickiin yhtä aikaa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kyllä — lisää kaikki kolme kohteiksi ja aloita lähetys kerran. SplitCam kaappaa DirectX- ja OpenGL-pelit ja koodaa ne GPU:llasi (NVENC, QuickSync tai AMF), minkä jälkeen sama koodaus lähtee jokaiseen palveluun. Näin lisäkohteet vievät lähetyskaistaa eivätkä pelin kuvataajuutta. Laitteistokoodauksen ansiosta FPS-pudotus jää pieneksi keskitason pelikoneella; käytännön rajaksi muodostuu lähetysnopeutesi, sillä jokainen kohde käyttää omaa kaistaansa."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Kuinka moneen palveluun voin lähettää multistreamilla yhtä aikaa?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Pelistriimaajat</h3>
-        <p>Tavoita Twitchin katsojat, YouTuben seuraajat ja Kickin varhaiset käyttäjät samalla lähetyksellä. Kasvata yleisöä useassa palvelussa ennen kuin sitoudut yhteen. Ei tarvetta kasvattaa jokaista erikseen. <a href="https://splitcam.com/fi/for/youtubers" style="color:var(--blue);font-weight:600">Näin lähetät suorana YouTubessa →</a></p>
+        <p>Kaappaa DirectX- ja OpenGL-pelit ja koodaa ne GPU:lla — NVENC, QuickSync tai AMF — ja lähetä sama koodaus Twitchiin, YouTubeen ja Kickiin yhtä aikaa. Näin lisäpalvelut vievät lähetyskaistaa eivätkä pelin FPS:ää. Kasvata yleisöä kaikissa kolmessa ennen kuin sitoudut yhteen. <a href="https://splitcam.com/fi/for/youtubers" style="color:var(--blue);font-weight:600">Näin lähetät suorana YouTubessa →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Kysymyksiä monilähetyksestä.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Kaikki, mitä saatat haluta tietää ennen kuin menet suoraan lähetykseen kaikkialle.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Voinko lähettää pelikuvaa Twitchiin, YouTubeen ja Kickiin yhtä aikaa?</summary>
+        <p>Kyllä — lisää kaikki kolme kohteiksi ja aloita lähetys kerran. SplitCam kaappaa DirectX- ja OpenGL-pelit ja koodaa ne GPU:llasi (NVENC, QuickSync tai AMF), minkä jälkeen sama koodaus lähtee jokaiseen palveluun. Näin lisäkohteet vievät lähetyskaistaa eivätkä pelin kuvataajuutta. Laitteistokoodauksen ansiosta FPS-pudotus jää pieneksi keskitason pelikoneella; käytännön rajaksi muodostuu lähetysnopeutesi, sillä jokainen kohde käyttää omaa kaistaansa.</p>
+      </details>
       <details class="faq-item">
         <summary>Kuinka moneen palveluun voin lähettää yhtä aikaa?</summary>
         <p>Mukavasti jopa 8 kohteeseen; teknisesti ilman rajaa niin kauan kuin suorittimesi/näytönohjaimesi ja lähetysnopeutesi kestävät yhteiskuorman. Jokainen kohde käyttää omaa kaistaansa — siinä on käytännön raja. Keskitason koneella ja 10 Mbit/s lähetyksellä tyypillinen määrä on 3–5 palvelua. 50 Mbit/s valokuidulla ja Nvidia-kortilla 8 tai enemmän on mahdollista.</p>

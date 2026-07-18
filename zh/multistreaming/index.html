@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "我可以把游戏画面同时直播到 Twitch、YouTube 和 Kick 吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以——把这三个都添加为目标平台，开播一次即可。SplitCam 会捕获 DirectX 和 OpenGL 游戏画面，交给你的 GPU 编码（NVENC、QuickSync 或 AMF），再把这一路编码发送到每个平台，所以多加的平台消耗的是上传带宽，而不是游戏帧率。硬件编码让中端游戏电脑上的 FPS 损失很小；真正的上限是你的上传速度，因为每个平台都会占用一份带宽。"
+          }
+        },
+        {
+          "@type": "Question",
           "name": "我可以同时多平台直播到多少个平台？",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>游戏主播</h3>
-        <p>Twitch 的观众、YouTube 的受众和 Kick 上爱尝鲜的观众看到的是同一路直播。在多个平台同时积累观众，无需提前押注某一个，也不必从零经营每一个。<a href="https://splitcam.com/zh/for/youtubers" style="color:var(--blue);font-weight:600">如何在 YouTube 直播 →</a></p>
+        <p>捕获 DirectX 和 OpenGL 游戏画面，交给 GPU 编码——NVENC、QuickSync 或 AMF——再把这一路编码同时推送到 Twitch、YouTube 和 Kick，所以多加平台消耗的是上传带宽，而不是游戏里的 FPS。先在这三个平台一起积累观众，再决定主攻哪一个。<a href="https://splitcam.com/zh/for/youtubers" style="color:var(--blue);font-weight:600">如何在 YouTube 直播 →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">关于多平台直播的问题。</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">在你同时直播到所有平台之前，值得了解的一切。</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>我可以把游戏画面同时直播到 Twitch、YouTube 和 Kick 吗？</summary>
+        <p>可以——把这三个都添加为目标平台，开播一次即可。SplitCam 会捕获 DirectX 和 OpenGL 游戏画面，交给你的 GPU 编码（NVENC、QuickSync 或 AMF），再把这一路编码发送到每个平台，所以多加的平台消耗的是上传带宽，而不是游戏帧率。硬件编码让中端游戏电脑上的 FPS 损失很小；真正的上限是你的上传速度，因为每个平台都会占用一份带宽。</p>
+      </details>
       <details class="faq-item">
         <summary>我可以同时直播到多少个平台？</summary>
         <p>轻松支持最多 8 个平台；理论上不限数量，只要你的 CPU/GPU 和上传带宽能承受总负载即可。每个平台都会占用一份带宽——这是实际的上限。在上传 10 Mbps 的中端电脑上，通常能跑 3–5 个平台。配上 50 Mbps 光纤和 Nvidia 显卡，8 个以上也能实现。</p>

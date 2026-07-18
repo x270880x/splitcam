@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Bisakah saya live gameplay ke Twitch, YouTube, dan Kick sekaligus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa — tambahkan ketiganya ke daftar platform lalu go live satu kali. SplitCam menangkap game DirectX dan OpenGL dan meng-encode-nya di GPU kamu (NVENC, QuickSync, atau AMF), lalu mengirim satu hasil encode itu ke setiap platform, jadi platform tambahan memakan bandwidth upload, bukan frame rate di dalam game. Karena encoding ditangani hardware, penurunan FPS tetap kecil di PC gaming kelas menengah; batas praktisnya ada di kecepatan upload kamu, sebab tiap platform memakan jatah bandwidth-nya sendiri."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Ke berapa platform saya bisa live sekaligus?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Streamer gaming</h3>
-        <p>Satu live yang sama dilihat penonton Twitch, audiens YouTube, dan komunitas awal Kick. Tumbuhkan audiens di beberapa platform sekaligus tanpa harus memilih satu lebih dulu — dan tanpa membangun tiap platform dari nol. <a href="https://splitcam.com/id/for/youtubers" style="color:var(--blue);font-weight:600">Cara live streaming di YouTube →</a></p>
+        <p>Tangkap game DirectX dan OpenGL lalu encode di GPU — NVENC, QuickSync, atau AMF — dan kirim satu hasil encode itu ke Twitch, YouTube, dan Kick sekaligus, jadi platform tambahan memakan bandwidth upload, bukan FPS di dalam game. Bangun audiens di ketiganya dulu sebelum bertumpu pada satu. <a href="https://splitcam.com/id/for/youtubers" style="color:var(--blue);font-weight:600">Cara live streaming di YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Seputar multistream.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Semua yang perlu kamu tahu sebelum live di semua tempat sekaligus.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Bisakah saya live gameplay ke Twitch, YouTube, dan Kick sekaligus?</summary>
+        <p>Bisa — tambahkan ketiganya ke daftar platform lalu go live satu kali. SplitCam menangkap game DirectX dan OpenGL dan meng-encode-nya di GPU kamu (NVENC, QuickSync, atau AMF), lalu mengirim satu hasil encode itu ke setiap platform, jadi platform tambahan memakan bandwidth upload, bukan frame rate di dalam game. Karena encoding ditangani hardware, penurunan FPS tetap kecil di PC gaming kelas menengah; batas praktisnya ada di kecepatan upload kamu, sebab tiap platform memakan jatah bandwidth-nya sendiri.</p>
+      </details>
       <details class="faq-item">
         <summary>Ke berapa platform saya bisa live sekaligus?</summary>
         <p>Sampai 8 platform terasa nyaman; secara teknis tanpa batas, selama CPU/GPU dan kanal upload kamu sanggup menanggung total bebannya. Tiap platform memakan jatah bandwidth-nya sendiri — itulah batas praktisnya. Di PC menengah dengan upload 10 Mbps biasanya muat 3–5 platform. Dengan fiber 50 Mbps dan kartu Nvidia, 8 atau lebih sangat realistis.</p>

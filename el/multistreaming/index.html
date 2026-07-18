@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Μπορώ να μεταδίδω gameplay σε Twitch, YouTube και Kick ταυτόχρονα;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ναι — προσθέστε και τους τρεις ως προορισμούς και βγείτε ζωντανά μία φορά. Το SplitCam καταγράφει παιχνίδια DirectX και OpenGL και κωδικοποιεί στην GPU σας (NVENC, QuickSync ή AMF), και μετά στέλνει αυτό το ένα encode σε κάθε πλατφόρμα, ώστε οι επιπλέον προορισμοί να κοστίζουν εύρος ζώνης αποστολής και όχι ρυθμό καρέ μέσα στο παιχνίδι. Η κωδικοποίηση από το υλικό κρατά μικρή την απώλεια FPS σε έναν μεσαίο gaming υπολογιστή· το πρακτικό όριο είναι η ταχύτητα αποστολής σας, αφού κάθε προορισμός καταναλώνει το δικό του εύρος ζώνης."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Σε πόσες πλατφόρμες μπορώ να μεταδίδω ταυτόχρονα;",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Streamers gaming</h3>
-        <p>Η ίδια ροή φτάνει ταυτόχρονα στους θεατές του Twitch, του YouTube και στο πρώιμο κοινό του Kick. Χτίστε κοινό σε πολλές πλατφόρμες μαζί, χωρίς να δεσμευτείτε σε μία. <a href="https://splitcam.com/el/for/youtubers" style="color:var(--blue);font-weight:600">Πώς να κάνετε live stream στο YouTube →</a></p>
+        <p>Καταγράψτε παιχνίδια DirectX και OpenGL και κωδικοποιήστε στην GPU — NVENC, QuickSync ή AMF — και μετά στείλτε αυτό το ένα encode ταυτόχρονα σε Twitch, YouTube και Kick, ώστε οι επιπλέον πλατφόρμες να κοστίζουν εύρος ζώνης αποστολής αντί για FPS μέσα στο παιχνίδι. Χτίστε κοινό και στις τρεις πριν δεσμευτείτε σε μία. <a href="https://splitcam.com/el/for/youtubers" style="color:var(--blue);font-weight:600">Πώς να κάνετε live stream στο YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Ερωτήσεις για το multistreaming.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Όλα όσα αξίζει να ξέρετε πριν βγείτε ζωντανά παντού ταυτόχρονα.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Μπορώ να μεταδίδω gameplay σε Twitch, YouTube και Kick ταυτόχρονα;</summary>
+        <p>Ναι — προσθέστε και τους τρεις ως προορισμούς και βγείτε ζωντανά μία φορά. Το SplitCam καταγράφει παιχνίδια DirectX και OpenGL και κωδικοποιεί στην GPU σας (NVENC, QuickSync ή AMF), και μετά στέλνει αυτό το ένα encode σε κάθε πλατφόρμα, ώστε οι επιπλέον προορισμοί να κοστίζουν εύρος ζώνης αποστολής και όχι ρυθμό καρέ μέσα στο παιχνίδι. Η κωδικοποίηση από το υλικό κρατά μικρή την απώλεια FPS σε έναν μεσαίο gaming υπολογιστή· το πρακτικό όριο είναι η ταχύτητα αποστολής σας, αφού κάθε προορισμός καταναλώνει το δικό του εύρος ζώνης.</p>
+      </details>
       <details class="faq-item">
         <summary>Σε πόσες πλατφόρμες μπορώ να μεταδίδω ταυτόχρονα;</summary>
         <p>Μέχρι 8 πλατφόρμες άνετα. Τεχνικά δεν υπάρχει όριο, αρκεί ο επεξεργαστής/η κάρτα γραφικών και η ταχύτητα αποστολής σας να αντέχουν το συνολικό φορτίο. Κάθε πλατφόρμα καταναλώνει το δικό της μερίδιο εύρους ζώνης — εκεί είναι το πρακτικό όριο. Σε μέτριο υπολογιστή με αποστολή 10 Mbps συνήθως λειτουργούν 3–5 πλατφόρμες. Με οπτική ίνα 50 Mbps και κάρτα Nvidia, οι 8 και πάνω είναι εφικτές.</p>

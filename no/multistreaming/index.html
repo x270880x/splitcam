@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Kan jeg strømme gameplay til Twitch, YouTube og Kick samtidig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja — legg til alle tre som destinasjoner og gå live én gang. SplitCam fanger DirectX- og OpenGL-spill og koder på GPU-en din (NVENC, QuickSync eller AMF), og sender så den ene kodingen til hver plattform, slik at de ekstra destinasjonene koster opplastingsbåndbredde i stedet for bildefrekvens i spillet. Maskinvarekoding holder FPS-tapet lite på en mellomklasse gaming-PC; opplastingshastigheten din er den praktiske grensen, siden hver destinasjon bruker sin egen båndbredde."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Hvor mange plattformer kan jeg multistreame til samtidig?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Gaming-streamere</h3>
-        <p>Nå Twitch-seere og YouTube-seere og tidlige Kick-brukere med samme strøm. Bygg publikum på flere plattformer før du satser på én. Du trenger ikke vokse hver for seg. <a href="https://splitcam.com/no/for/youtubers" style="color:var(--blue);font-weight:600">Slik direktesender du på YouTube →</a></p>
+        <p>Fang DirectX- og OpenGL-spill og kod på GPU-en — NVENC, QuickSync eller AMF — og send så den ene kodingen til Twitch, YouTube og Kick samtidig, slik at ekstra plattformer koster opplastingsbåndbredde i stedet for FPS i spillet. Bygg publikum på alle tre før du satser på én. <a href="https://splitcam.com/no/for/youtubers" style="color:var(--blue);font-weight:600">Slik direktesender du på YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Spørsmål om multistream.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Alt du måtte lure på før du går live overalt.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Kan jeg strømme gameplay til Twitch, YouTube og Kick samtidig?</summary>
+        <p>Ja — legg til alle tre som destinasjoner og gå live én gang. SplitCam fanger DirectX- og OpenGL-spill og koder på GPU-en din (NVENC, QuickSync eller AMF), og sender så den ene kodingen til hver plattform, slik at de ekstra destinasjonene koster opplastingsbåndbredde i stedet for bildefrekvens i spillet. Maskinvarekoding holder FPS-tapet lite på en mellomklasse gaming-PC; opplastingshastigheten din er den praktiske grensen, siden hver destinasjon bruker sin egen båndbredde.</p>
+      </details>
       <details class="faq-item">
         <summary>Hvor mange plattformer kan jeg strømme til samtidig?</summary>
         <p>Opptil 8 destinasjoner uten problemer; teknisk sett ubegrenset så lenge CPU/GPU og opplastingsbåndbredden din klarer den samlede belastningen. Hver destinasjon bruker sin egen båndbredde — det er den praktiske grensen. På en mellomklasse-PC med 10 Mbps opplasting er 3–5 plattformer vanlig. Med 50 Mbps fiber og et Nvidia-kort er 8+ fullt mulig.</p>

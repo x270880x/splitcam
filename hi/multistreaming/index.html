@@ -181,6 +181,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "क्या gameplay को Twitch, YouTube और Kick पर एक साथ stream कर सकता हूँ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "हाँ — तीनों को destinations में add करें और एक बार Go Live करें. SplitCam DirectX और OpenGL games capture करता है और आपके GPU पर encode करता है (NVENC, QuickSync या AMF), फिर वही एक encode हर platform को भेज देता है — यानी extra destinations की कीमत upload bandwidth में जाती है, in-game framerate में नहीं. Hardware encoding की वजह से एक mid-range gaming PC पर FPS का नुकसान भी कम रहता है; असली practical limit आपकी upload speed है, क्योंकि हर destination अपना bandwidth use करता है."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "How many platforms can I multistream to simultaneously?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -791,7 +799,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Gaming streamers</h3>
-        <p>Twitch viewers, YouTube watchers और Kick early adopters तक एक ही stream से पहुँचें. किसी एक platform पर commit करने से पहले कई platforms पर audience बनाएँ. हर एक को अलग grow करने की ज़रूरत नहीं. <a href="https://splitcam.com/hi/for/youtubers" style="color:var(--blue);font-weight:600">How to live stream on YouTube →</a></p>
+        <p>DirectX और OpenGL games capture करें और GPU पर encode करें — NVENC, QuickSync या AMF — फिर वही एक encode Twitch, YouTube और Kick को एक साथ भेजें, ताकि extra platforms की कीमत upload bandwidth में चुकानी पड़े, in-game FPS में नहीं. किसी एक पर commit करने से पहले तीनों पर audience बनाएँ. <a href="https://splitcam.com/hi/for/youtubers" style="color:var(--blue);font-weight:600">How to live stream on YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -942,6 +950,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Multistreaming से जुड़े सवाल.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">हर जगह live जाने से पहले जो कुछ आप जानना चाहें.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>क्या gameplay को Twitch, YouTube और Kick पर एक साथ stream कर सकता हूँ?</summary>
+        <p>हाँ — तीनों को destinations में add करें और एक बार Go Live करें. SplitCam DirectX और OpenGL games capture करता है और आपके GPU पर encode करता है (NVENC, QuickSync या AMF), फिर वही एक encode हर platform को भेज देता है — यानी extra destinations की कीमत upload bandwidth में जाती है, in-game framerate में नहीं. Hardware encoding की वजह से एक mid-range gaming PC पर FPS का नुकसान भी कम रहता है; असली practical limit आपकी upload speed है, क्योंकि हर destination अपना bandwidth use करता है.</p>
+      </details>
       <details class="faq-item">
         <summary>एक साथ कितने platforms पर stream कर सकता हूँ?</summary>
         <p>आराम से 8 destinations तक; technically unlimited — जब तक आपका CPU/GPU और upload bandwidth combined load संभाल ले. हर destination अपना bandwidth use करता है — practical limit यही है. 10 Mbps upload वाले एक mid-range PC पर 3–5 platforms आम बात है. 50 Mbps fiber और एक Nvidia card के साथ 8+ भी मुमकिन है.</p>

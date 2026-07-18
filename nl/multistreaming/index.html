@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Kan ik mijn gameplay tegelijk naar Twitch, YouTube en Kick streamen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja — voeg alle drie toe als bestemming en ga één keer live. SplitCam legt DirectX- en OpenGL-games vast en encodeert op je GPU (NVENC, QuickSync of AMF), en stuurt dat ene gecodeerde signaal naar elk platform. De extra bestemmingen kosten je daardoor uploadsnelheid in plaats van framerate in je game. Dankzij hardwarematige encoding blijft het FPS-verlies klein op een doorsnee gaming-pc; je uploadsnelheid is de praktische grens, want elke bestemming gebruikt zijn eigen bandbreedte."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Naar hoeveel platforms kan ik tegelijk multistreamen?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Gaming-streamers</h3>
-        <p>Bereik kijkers op Twitch én op YouTube én de early adopters op Kick met dezelfde stream. Bouw publiek op meerdere platforms op voordat je voor één kiest. Je hoeft ze niet los van elkaar te laten groeien. <a href="https://splitcam.com/nl/for/youtubers" style="color:var(--blue);font-weight:600">Zo livestream je op YouTube →</a></p>
+        <p>Leg DirectX- en OpenGL-games vast en encodeer op de GPU — NVENC, QuickSync of AMF — en stuur dat ene gecodeerde signaal tegelijk naar Twitch, YouTube en Kick. Extra platforms kosten je zo uploadsnelheid in plaats van FPS in je game. Bouw publiek op alle drie op voordat je voor één kiest. <a href="https://splitcam.com/nl/for/youtubers" style="color:var(--blue);font-weight:600">Zo livestream je op YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Vragen over multistream.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Alles wat je wilt weten voordat je overal tegelijk live gaat.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Kan ik mijn gameplay tegelijk naar Twitch, YouTube en Kick streamen?</summary>
+        <p>Ja — voeg alle drie toe als bestemming en ga één keer live. SplitCam legt DirectX- en OpenGL-games vast en encodeert op je GPU (NVENC, QuickSync of AMF), en stuurt dat ene gecodeerde signaal naar elk platform. De extra bestemmingen kosten je daardoor uploadsnelheid in plaats van framerate in je game. Dankzij hardwarematige encoding blijft het FPS-verlies klein op een doorsnee gaming-pc; je uploadsnelheid is de praktische grens, want elke bestemming gebruikt zijn eigen bandbreedte.</p>
+      </details>
       <details class="faq-item">
         <summary>Naar hoeveel platforms kan ik tegelijk streamen?</summary>
         <p>Tot 8 bestemmingen comfortabel; technisch onbeperkt zolang je CPU/GPU en je uploadsnelheid de gecombineerde belasting aankunnen. Elke bestemming gebruikt zijn eigen bandbreedte — dat is de praktische grens. Op een doorsnee-pc met 10 Mbps upload zijn 3–5 platforms gebruikelijk. Met 50 Mbps glasvezel en een Nvidia-kaart zijn 8 of meer haalbaar.</p>

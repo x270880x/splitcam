@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Streamelhetek játékmenetet egyszerre a Twitchre, a YouTube-ra és a Kickre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Igen — add hozzá mindhármat platformként, és indíts egyetlen élő adást. A SplitCam rögzíti a DirectX- és OpenGL-játékokat, a GPU-don kódol (NVENC, QuickSync vagy AMF), majd ezt az egyetlen kódolt streamet küldi el minden platformra — így a további platformok feltöltési sávszélességbe kerülnek, nem a játékbeli képkockaszámba. A hardveres kódolásnak köszönhetően az FPS-veszteség egy középkategóriás játékgépen is csekély; a gyakorlati korlátot a feltöltési sebességed jelenti, mivel minden platform a saját sávszélességét foglalja."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Hány platformra streamelhetek egyszerre?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Gamer streamerek</h3>
-        <p>Ugyanazt a streamet látják a Twitch nézői, a YouTube közönsége és a Kick korai felhasználói. Növeld a közönséged több platformon egyszerre, anélkül, hogy előre választanál egyet — és anélkül, hogy mindegyiket a nulláról építenéd. <a href="https://splitcam.com/hu/for/youtubers" style="color:var(--blue);font-weight:600">Hogyan streamelj a YouTube-on →</a></p>
+        <p>Rögzítsd a DirectX- és OpenGL-játékokat, és kódold a képet a GPU-n — NVENC, QuickSync vagy AMF —, majd küldd ezt az egyetlen kódolt streamet egyszerre a Twitchre, a YouTube-ra és a Kickre. Így a további platformok feltöltési sávszélességbe kerülnek, nem a játékbeli FPS-be. Építsd a közönséged mindhármon, mielőtt egy mellett elköteleződnél. <a href="https://splitcam.com/hu/for/youtubers" style="color:var(--blue);font-weight:600">Hogyan streamelj a YouTube-on →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Kérdések a multistreamingről.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Minden, amit érdemes tudni, mielőtt egyszerre mindenhol élőben mész.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Streamelhetek játékmenetet egyszerre a Twitchre, a YouTube-ra és a Kickre?</summary>
+        <p>Igen — add hozzá mindhármat platformként, és indíts egyetlen élő adást. A SplitCam rögzíti a DirectX- és OpenGL-játékokat, a GPU-don kódol (NVENC, QuickSync vagy AMF), majd ezt az egyetlen kódolt streamet küldi el minden platformra — így a további platformok feltöltési sávszélességbe kerülnek, nem a játékbeli képkockaszámba. A hardveres kódolásnak köszönhetően az FPS-veszteség egy középkategóriás játékgépen is csekély; a gyakorlati korlátot a feltöltési sebességed jelenti, mivel minden platform a saját sávszélességét foglalja.</p>
+      </details>
       <details class="faq-item">
         <summary>Hány platformra streamelhetek egyszerre?</summary>
         <p>Akár 8 platformra kényelmesen; technikailag korlátlanul, amíg a processzorod/videokártyád és a feltöltési sávszélességed bírja az összesített terhelést. Minden platform megeszi a maga sávszélességét — ez a gyakorlati korlát. Egy középkategóriás gépen 10 Mbps feltöltéssel jellemzően 3–5 platform megy. 50 Mbps optikával és egy Nvidia-kártyával 8 vagy több is reális.</p>

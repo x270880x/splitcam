@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Có stream game lên Twitch, YouTube và Kick cùng lúc được không?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Được — thêm cả ba làm điểm nhận rồi lên sóng một lần. SplitCam bắt hình game DirectX và OpenGL và mã hoá trên GPU của bạn (NVENC, QuickSync hay AMF), sau đó gửi đúng một bản mã hoá đó tới mọi nền tảng, nên các điểm nhận thêm vào chỉ tốn thêm băng thông tải lên chứ không ăn vào khung hình/giây trong game. Nhờ mã hoá bằng phần cứng, mức hao FPS trên một PC chơi game tầm trung là không đáng kể; giới hạn thực tế nằm ở tốc độ tải lên, vì mỗi điểm nhận ngốn phần băng thông riêng."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Có thể stream lên bao nhiêu nền tảng cùng lúc?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Game streamer</h3>
-        <p>Cùng một buổi stream đến với khán giả Twitch, người xem YouTube và nhóm khán giả tiên phong trên Kick. Phát triển khán giả trên nhiều nền tảng cùng lúc, không phải chọn trước một nơi — và không phải gây dựng lại từ đầu ở từng nơi. <a href="https://splitcam.com/vi/for/youtubers" style="color:var(--blue);font-weight:600">Cách live trên YouTube →</a></p>
+        <p>Bắt hình game DirectX và OpenGL rồi mã hoá ngay trên GPU — NVENC, QuickSync hay AMF — và gửi đúng một bản mã hoá đó tới Twitch, YouTube và Kick cùng lúc, nên thêm nền tảng chỉ tốn thêm băng thông tải lên chứ không ăn vào FPS trong game. Gây dựng khán giả ở cả ba nơi trước khi quyết định gắn bó với một. <a href="https://splitcam.com/vi/for/youtubers" style="color:var(--blue);font-weight:600">Cách live trên YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Hỏi đáp về multistream.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Tất cả những gì nên biết trước khi lên sóng khắp nơi cùng lúc.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Có stream game lên Twitch, YouTube và Kick cùng lúc được không?</summary>
+        <p>Được — thêm cả ba làm điểm nhận rồi lên sóng một lần. SplitCam bắt hình game DirectX và OpenGL và mã hoá trên GPU của bạn (NVENC, QuickSync hay AMF), sau đó gửi đúng một bản mã hoá đó tới mọi nền tảng, nên các điểm nhận thêm vào chỉ tốn thêm băng thông tải lên chứ không ăn vào khung hình/giây trong game. Nhờ mã hoá bằng phần cứng, mức hao FPS trên một PC chơi game tầm trung là không đáng kể; giới hạn thực tế nằm ở tốc độ tải lên, vì mỗi điểm nhận ngốn phần băng thông riêng.</p>
+      </details>
       <details class="faq-item">
         <summary>Có thể stream lên bao nhiêu nền tảng cùng lúc?</summary>
         <p>Tới 8 nền tảng là thoải mái; về mặt kỹ thuật thì không giới hạn, miễn CPU/GPU và đường tải lên kham được tổng tải. Mỗi nền tảng ngốn một phần băng thông — đó là giới hạn thực tế. Trên một PC tầm trung với 10 Mbps tải lên, thường được 3–5 nền tảng. Với cáp quang 50 Mbps và card Nvidia, 8 nền tảng trở lên là hoàn toàn khả thi.</p>

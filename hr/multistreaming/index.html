@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Može li se gameplay streamati na Twitch, YouTube i Kick istovremeno?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da — dodajte sve tri platforme i pokrenite prijenos jedanput. SplitCam hvata DirectX i OpenGL igre i kodira ih na vašem GPU-u (NVENC, QuickSync ili AMF), a to jedno kodiranje zatim šalje na svaku platformu, pa dodatne platforme troše brzinu prijenosa, a ne brzinu sličica u igri. Hardversko kodiranje drži gubitak FPS-a malim na prosječnom gaming računalu; praktično ograničenje je vaša brzina prijenosa, jer svaka platforma troši svoj dio propusnosti."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Na koliko platformi se može streamati istovremeno?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Gaming streameri</h3>
-        <p>Isti stream vide gledatelji Twitcha, publika YouTubea i pioniri Kicka. Rastite svoju publiku na više platformi odjednom, bez odabira jedne unaprijed — i bez izgradnje svake od nule. <a href="https://splitcam.com/hr/for/youtubers" style="color:var(--blue);font-weight:600">Kako streamati na YouTube →</a></p>
+        <p>SplitCam hvata DirectX i OpenGL igre i kodira ih na GPU-u — NVENC, QuickSync ili AMF — a to jedno kodiranje ide istovremeno na Twitch, YouTube i Kick, pa dodatne platforme troše brzinu prijenosa, a ne FPS u igri. Izgradite publiku na sve tri prije nego se vežete za jednu. <a href="https://splitcam.com/hr/for/youtubers" style="color:var(--blue);font-weight:600">Kako streamati na YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Pitanja o multistreamingu.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Sve što vrijedi znati prije izlaska uživo posvuda odjednom.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Može li se gameplay streamati na Twitch, YouTube i Kick istovremeno?</summary>
+        <p>Da — dodajte sve tri platforme i pokrenite prijenos jedanput. SplitCam hvata DirectX i OpenGL igre i kodira ih na vašem GPU-u (NVENC, QuickSync ili AMF), a to jedno kodiranje zatim šalje na svaku platformu, pa dodatne platforme troše brzinu prijenosa, a ne brzinu sličica u igri. Hardversko kodiranje drži gubitak FPS-a malim na prosječnom gaming računalu; praktično ograničenje je vaša brzina prijenosa, jer svaka platforma troši svoj dio propusnosti.</p>
+      </details>
       <details class="faq-item">
         <summary>Na koliko platformi se može streamati istovremeno?</summary>
         <p>Do 8 platformi je ugodno; tehnički — bez ograničenja, dok CPU/GPU i kanal prijenosa mogu podnijeti ukupno opterećenje. Svaka platforma troši svoj dio propusnosti — to je praktično ograničenje. Na prosječnom računalu s prijenosom 10 Mbps obično se dobivaju 3–5 platformi. S optikom 50 Mbps i Nvidia karticom realno je 8 i više.</p>

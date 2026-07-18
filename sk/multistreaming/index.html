@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Môžem streamovať hranie na Twitch, YouTube a Kick naraz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Áno — pridajte všetky tri ako ciele a spustite stream raz. SplitCam zachytí hry v DirectX aj OpenGL a zakóduje ich na vašom GPU (NVENC, QuickSync alebo AMF), potom to isté zakódovanie pošle na každú platformu. Ďalšie ciele vás tak stoja šírku pásma pri odosielaní, nie snímkovú frekvenciu v hre. Vďaka hardvérovému kódovaniu je pokles FPS na bežnom hernom PC minimálny; praktickým limitom je vaša rýchlosť odosielania, keďže každý cieľ si berie svoju vlastnú šírku pásma."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Na koľko platforiem môžem streamovať naraz?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Herní streameri</h3>
-        <p>Oslovte divákov na Twitchi, sledovateľov na YouTube aj prvých používateľov na Kicku tým istým streamom. Budujte publikum na viacerých platformách skôr, než sa upnete na jednu. Nemusíte rozbiehať každú zvlášť. <a href="https://splitcam.com/sk/for/youtubers" style="color:var(--blue);font-weight:600">Ako naživo streamovať na YouTube →</a></p>
+        <p>Zachytávajte hry v DirectX aj OpenGL a kódujte na GPU — NVENC, QuickSync alebo AMF — a to isté zakódovanie pošlite naraz na Twitch, YouTube aj Kick. Ďalšie platformy vás tak stoja šírku pásma pri odosielaní, nie FPS v hre. Budujte publikum na všetkých troch skôr, než sa upnete na jednu. <a href="https://splitcam.com/sk/for/youtubers" style="color:var(--blue);font-weight:600">Ako naživo streamovať na YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Otázky o multistreame.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Všetko, čo možno chcete vedieť, než vyrazíte naživo všade.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Môžem streamovať hranie na Twitch, YouTube a Kick naraz?</summary>
+        <p>Áno — pridajte všetky tri ako ciele a spustite stream raz. SplitCam zachytí hry v DirectX aj OpenGL a zakóduje ich na vašom GPU (NVENC, QuickSync alebo AMF), potom to isté zakódovanie pošle na každú platformu. Ďalšie ciele vás tak stoja šírku pásma pri odosielaní, nie snímkovú frekvenciu v hre. Vďaka hardvérovému kódovaniu je pokles FPS na bežnom hernom PC minimálny; praktickým limitom je vaša rýchlosť odosielania, keďže každý cieľ si berie svoju vlastnú šírku pásma.</p>
+      </details>
       <details class="faq-item">
         <summary>Na koľko platforiem môžem streamovať naraz?</summary>
         <p>Pohodlne až na 8 cieľov; technicky bez obmedzenia, pokiaľ to zvládne váš procesor/grafika a rýchlosť odosielania pri spoločnej záťaži. Každý cieľ si berie svoju vlastnú šírku pásma — to je praktický limit. Na bežnom PC s odosielaním 10 Mbit/s sú typické 3–5 platformy. S optikou 50 Mbit/s a kartou Nvidia je reálnych 8 a viac.</p>

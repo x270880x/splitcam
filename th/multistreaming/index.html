@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "สตรีมเกมไป Twitch, YouTube และ Kick พร้อมกันได้ไหม?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ได้ — เพิ่มทั้งสามเป็นแพลตฟอร์มปลายทาง แล้วกดเริ่มไลฟ์ครั้งเดียว SplitCam จับภาพเกม DirectX และ OpenGL แล้วเข้ารหัสด้วย GPU ของคุณ (NVENC, QuickSync หรือ AMF) จากนั้นส่งงานเข้ารหัสชิ้นเดียวนั้นไปทุกแพลตฟอร์ม ปลายทางที่เพิ่มเข้ามาจึงกินแบนด์วิดท์อัปโหลด ไม่ใช่เฟรมเรตในเกม การเข้ารหัสด้วยฮาร์ดแวร์ทำให้ FPS ตกน้อยมากบนพีซีเกมมิ่งระดับกลาง ขีดจำกัดจริง ๆ อยู่ที่ความเร็วอัปโหลด เพราะแต่ละปลายทางกินแบนด์วิดท์ส่วนของมันเอง"
+          }
+        },
+        {
+          "@type": "Question",
           "name": "มัลติสตรีมได้กี่แพลตฟอร์มพร้อมกัน?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>เกมเมอร์สตรีมเมอร์</h3>
-        <p>สตรีมเดียวกัน ผู้ชม Twitch, ผู้ชม YouTube และคนรุ่นบุกเบิกบน Kick เห็นพร้อมกัน เพิ่มผู้ชมหลายแพลตฟอร์มพร้อมกัน โดยไม่ต้องเลือกแพลตฟอร์มเดียวล่วงหน้า — และไม่ต้องปั้นฐานผู้ชมขึ้นใหม่ในแต่ละแพลตฟอร์ม <a href="https://splitcam.com/th/for/youtubers" style="color:var(--blue);font-weight:600">วิธีสตรีมบน YouTube →</a></p>
+        <p>จับภาพเกม DirectX และ OpenGL แล้วเข้ารหัสด้วย GPU — NVENC, QuickSync หรือ AMF — จากนั้นส่งงานเข้ารหัสชิ้นเดียวนั้นไป Twitch, YouTube และ Kick พร้อมกัน แพลตฟอร์มที่เพิ่มเข้ามาจึงกินแบนด์วิดท์อัปโหลด ไม่ใช่ FPS ในเกม ปั้นฐานผู้ชมทั้งสามแพลตฟอร์มไปพร้อมกันก่อนตัดสินใจทุ่มให้ที่เดียว <a href="https://splitcam.com/th/for/youtubers" style="color:var(--blue);font-weight:600">วิธีสตรีมบน YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">คำถามเกี่ยวกับมัลติสตรีม</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">ทุกอย่างที่ควรรู้ก่อนไลฟ์สดไปทุกที่พร้อมกัน</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>สตรีมเกมไป Twitch, YouTube และ Kick พร้อมกันได้ไหม?</summary>
+        <p>ได้ — เพิ่มทั้งสามเป็นแพลตฟอร์มปลายทาง แล้วกดเริ่มไลฟ์ครั้งเดียว SplitCam จับภาพเกม DirectX และ OpenGL แล้วเข้ารหัสด้วย GPU ของคุณ (NVENC, QuickSync หรือ AMF) จากนั้นส่งงานเข้ารหัสชิ้นเดียวนั้นไปทุกแพลตฟอร์ม ปลายทางที่เพิ่มเข้ามาจึงกินแบนด์วิดท์อัปโหลด ไม่ใช่เฟรมเรตในเกม การเข้ารหัสด้วยฮาร์ดแวร์ทำให้ FPS ตกน้อยมากบนพีซีเกมมิ่งระดับกลาง ขีดจำกัดจริง ๆ อยู่ที่ความเร็วอัปโหลด เพราะแต่ละปลายทางกินแบนด์วิดท์ส่วนของมันเอง</p>
+      </details>
       <details class="faq-item">
         <summary>มัลติสตรีมได้กี่แพลตฟอร์มพร้อมกัน?</summary>
         <p>ได้สบาย ๆ ถึง 8 แพลตฟอร์ม ในทางเทคนิคไม่จำกัด ตราบใดที่ CPU/GPU และความเร็วอัปโหลดรับภาระรวมไหว แต่ละแพลตฟอร์มกินแบนด์วิดท์ส่วนของมัน — นั่นคือขีดจำกัดในทางปฏิบัติ บนพีซีระดับกลางที่อัปโหลด 10 Mbps มักได้ 3–5 แพลตฟอร์ม ถ้ามีไฟเบอร์ 50 Mbps และการ์ด Nvidia ก็ทำได้ 8 ขึ้นไป</p>

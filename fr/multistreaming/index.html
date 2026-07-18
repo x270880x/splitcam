@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Puis-je diffuser mes sessions de jeu sur Twitch, YouTube et Kick en même temps ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui — ajoutez les trois comme destinations et lancez le direct une seule fois. SplitCam capture les jeux DirectX et OpenGL et encode sur votre GPU (NVENC, QuickSync ou AMF), puis envoie cet unique encodage à chaque plateforme : les destinations supplémentaires coûtent du débit montant plutôt que de la fréquence d'images en jeu. L'encodage matériel limite la perte de FPS sur un PC de jeu milieu de gamme ; c'est votre débit montant qui fixe la limite pratique, puisque chaque destination consomme sa propre bande passante."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Sur combien de plateformes puis-je faire du multistream en même temps ?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Streamers de jeux vidéo</h3>
-        <p>Touchez les spectateurs Twitch, l'audience YouTube et les premiers adeptes de Kick avec le même stream. Faites grandir votre public sur plusieurs plateformes avant d'en choisir une — sans avoir à développer chacune séparément. <a href="https://splitcam.com/fr/for/youtubers" style="color:var(--blue);font-weight:600">Comment streamer sur YouTube →</a></p>
+        <p>Capturez vos jeux DirectX et OpenGL et encodez sur le GPU — NVENC, QuickSync ou AMF — puis envoyez cet unique encodage vers Twitch, YouTube et Kick à la fois : les plateformes supplémentaires coûtent du débit montant, pas des FPS en jeu. Faites grandir votre public sur les trois avant d'en choisir une. <a href="https://splitcam.com/fr/for/youtubers" style="color:var(--blue);font-weight:600">Comment streamer sur YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Vos questions sur le multistream.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Tout ce qu'il faut savoir avant de passer en direct partout.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Puis-je diffuser mes sessions de jeu sur Twitch, YouTube et Kick en même temps ?</summary>
+        <p>Oui — ajoutez les trois comme destinations et lancez le direct une seule fois. SplitCam capture les jeux DirectX et OpenGL et encode sur votre GPU (NVENC, QuickSync ou AMF), puis envoie cet unique encodage à chaque plateforme : les destinations supplémentaires coûtent du débit montant plutôt que de la fréquence d'images en jeu. L'encodage matériel limite la perte de FPS sur un PC de jeu milieu de gamme ; c'est votre débit montant qui fixe la limite pratique, puisque chaque destination consomme sa propre bande passante.</p>
+      </details>
       <details class="faq-item">
         <summary>Sur combien de plateformes puis-je diffuser en même temps ?</summary>
         <p>Jusqu'à 8 destinations confortablement ; techniquement sans limite tant que votre CPU/GPU et votre débit montant encaissent la charge cumulée. Chaque destination consomme sa propre bande passante — c'est là la limite pratique. Sur un PC milieu de gamme avec 10 Mbps en montant, 3 à 5 plateformes sont habituelles. Avec de la fibre à 50 Mbps et une carte Nvidia, 8 et plus sont atteignables.</p>

@@ -183,6 +183,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "می‌توانم گیم‌پلی را همزمان به Twitch، YouTube و Kick پخش کنم؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "بله — هر سه را به‌عنوان مقصد اضافه کنید و یک بار پخش زنده را شروع کنید. SplitCam تصویر بازی‌های DirectX و OpenGL را می‌گیرد و روی GPU شما انکود می‌کند (NVENC، QuickSync یا AMF)، سپس همان یک انکود را به همهٔ پلتفرم‌ها می‌فرستد؛ بنابراین مقصدهای اضافه به‌جای نرخ فریم داخل بازی، پهنای باند آپلود مصرف می‌کنند. انکود سخت‌افزاری باعث می‌شود افت FPS روی یک رایانهٔ گیمینگ میان‌رده ناچیز بماند؛ محدودیت عملی سرعت آپلود شماست، چون هر مقصد پهنای باند خودش را مصرف می‌کند."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "همزمان روی چند پلتفرم می‌توانم پخش کنم؟",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -800,7 +808,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>استریمرهای گیم</h3>
-        <p>با یک پخش به بینندگان Twitch، تماشاگران YouTube و کاربران اولیهٔ Kick برسید. پیش از تعهد به یک پلتفرم، روی چند پلتفرم مخاطب بسازید. لازم نیست هر کدام را جداگانه رشد دهید. <a href="https://splitcam.com/fa/for/youtubers" style="color:var(--blue);font-weight:600">چطور روی YouTube پخش زنده کنیم →</a></p>
+        <p>تصویر بازی‌های DirectX و OpenGL را بگیرید و روی GPU انکود کنید — NVENC، QuickSync یا AMF — سپس همان یک انکود را با هم به Twitch، YouTube و Kick بفرستید؛ این‌طور پلتفرم‌های اضافه به‌جای FPS داخل بازی، پهنای باند آپلود مصرف می‌کنند. پیش از تعهد به یکی، روی هر سه مخاطب بسازید. <a href="https://splitcam.com/fa/for/youtubers" style="color:var(--blue);font-weight:600">چطور روی YouTube پخش زنده کنیم →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -951,6 +959,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">پرسش‌های پخش همزمان.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">هر آنچه ممکن است پیش از شروع پخش در همه‌جا بخواهید بدانید.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>می‌توانم گیم‌پلی را همزمان به Twitch، YouTube و Kick پخش کنم؟</summary>
+        <p>بله — هر سه را به‌عنوان مقصد اضافه کنید و یک بار پخش زنده را شروع کنید. SplitCam تصویر بازی‌های DirectX و OpenGL را می‌گیرد و روی GPU شما انکود می‌کند (NVENC، QuickSync یا AMF)، سپس همان یک انکود را به همهٔ پلتفرم‌ها می‌فرستد؛ بنابراین مقصدهای اضافه به‌جای نرخ فریم داخل بازی، پهنای باند آپلود مصرف می‌کنند. انکود سخت‌افزاری باعث می‌شود افت FPS روی یک رایانهٔ گیمینگ میان‌رده ناچیز بماند؛ محدودیت عملی سرعت آپلود شماست، چون هر مقصد پهنای باند خودش را مصرف می‌کند.</p>
+      </details>
       <details class="faq-item">
         <summary>همزمان روی چند پلتفرم می‌توانم پخش کنم؟</summary>
         <p>تا ۸ مقصد به‌راحتی؛ از نظر فنی نامحدود، تا جایی که پردازنده/کارت گرافیک و پهنای باند آپلود شما از پس بار ترکیبی برآید. هر مقصد پهنای باند خودش را مصرف می‌کند — همین محدودیت عملی است. روی یک رایانهٔ میان‌رده با آپلود ۱۰ مگابیت بر ثانیه، معمولاً ۳ تا ۵ پلتفرم رایج است. با فیبر ۵۰ مگابیت بر ثانیه و یک کارت Nvidia، ۸ پلتفرم یا بیشتر هم شدنی است.</p>

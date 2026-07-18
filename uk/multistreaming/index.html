@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Чи можна стрімити геймплей на Twitch, YouTube і Kick одночасно?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Так — додайте всі три як майданчики й вийдіть в ефір один раз. SplitCam захоплює ігри на DirectX і OpenGL та кодує відео на вашому GPU (NVENC, QuickSync або AMF), а потім відправляє це одне кодування на кожну платформу — тож додаткові майданчики з'їдають смугу віддачі, а не частоту кадрів у грі. Апаратне кодування тримає просідання FPS мінімальним навіть на середньому ігровому ПК; практична межа — швидкість вашої віддачі, бо кожен майданчик використовує власну смугу."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "На скільки платформ можна стрімити одночасно?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Геймери-стрімери</h3>
-        <p>Той самий стрім бачать глядачі Twitch, аудиторія YouTube і ранні глядачі Kick. Ростіть аудиторію на кількох платформах одразу, не вибираючи одну заздалегідь — і не розгойдуючи кожну з нуля. <a href="https://splitcam.com/uk/for/youtubers" style="color:var(--blue);font-weight:600">Як стрімити на ютубі →</a></p>
+        <p>Захоплюйте ігри на DirectX і OpenGL, кодуйте на GPU — NVENC, QuickSync або AMF — і відправляйте одне готове кодування одразу на Twitch, YouTube і Kick. Додаткові платформи коштують смуги віддачі, а не FPS у грі. Ростіть аудиторію на всіх трьох одразу, перш ніж робити ставку на одну. <a href="https://splitcam.com/uk/for/youtubers" style="color:var(--blue);font-weight:600">Як стрімити на ютубі →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Питання про мультистрім.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Усе, що варто знати перед тим, як вийти в ефір одразу всюди.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Чи можна стрімити геймплей на Twitch, YouTube і Kick одночасно?</summary>
+        <p>Так — додайте всі три як майданчики й вийдіть в ефір один раз. SplitCam захоплює ігри на DirectX і OpenGL та кодує відео на вашому GPU (NVENC, QuickSync або AMF), а потім відправляє це одне кодування на кожну платформу — тож додаткові майданчики з'їдають смугу віддачі, а не частоту кадрів у грі. Апаратне кодування тримає просідання FPS мінімальним навіть на середньому ігровому ПК; практична межа — швидкість вашої віддачі, бо кожен майданчик використовує власну смугу.</p>
+      </details>
       <details class="faq-item">
         <summary>На скільки платформ можна стрімити одночасно?</summary>
         <p>До 8 майданчиків комфортно; технічно — без обмежень, поки CPU/GPU і канал віддачі справляються із сумарним навантаженням. Кожен майданчик з'їдає свою смугу — це і є практична межа. На середньому ПК з віддачею 10 Мбіт/с зазвичай виходить 3–5 платформ. З оптикою 50 Мбіт/с і картою Nvidia реальні 8 і більше.</p>

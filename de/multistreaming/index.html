@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Kann ich Gameplay gleichzeitig an Twitch, YouTube und Kick streamen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja — füge alle drei als Ziele hinzu und geh einmal live. SplitCam nimmt DirectX- und OpenGL-Spiele auf, kodiert über deine GPU (NVENC, QuickSync oder AMF) und sendet dieses eine Signal an jede Plattform. Die zusätzlichen Ziele kosten dich deshalb Upload-Bandbreite statt Framerate im Spiel. Hardware-Encoding hält den FPS-Verlust auf einem Mittelklasse-Gaming-PC klein; die praktische Grenze ist dein Upload, denn jedes Ziel verbraucht eigene Bandbreite."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Auf wie viele Plattformen kann ich gleichzeitig streamen?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Gaming-Streamer</h3>
-        <p>Erreiche Twitch-Zuschauer, YouTube-Publikum und Kick-Early-Adopter mit demselben Stream. Baue dir auf mehreren Plattformen Publikum auf, bevor du dich auf eine festlegst. Du musst nicht jede einzeln aufbauen. <a href="https://splitcam.com/de/for/youtubers" style="color:var(--blue);font-weight:600">Auf YouTube streamen →</a></p>
+        <p>Nimm DirectX- und OpenGL-Spiele auf, kodiere über die GPU — NVENC, QuickSync oder AMF — und sende dieses eine Signal gemeinsam an Twitch, YouTube und Kick. Zusätzliche Plattformen kosten dich so Upload-Bandbreite statt FPS im Spiel. Baue dir auf allen dreien Publikum auf, bevor du dich auf eine festlegst. <a href="https://splitcam.com/de/for/youtubers" style="color:var(--blue);font-weight:600">Auf YouTube streamen →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Fragen zum Multistreaming.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Alles, was du wissen möchtest, bevor du überall gleichzeitig live gehst.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Kann ich Gameplay gleichzeitig an Twitch, YouTube und Kick streamen?</summary>
+        <p>Ja — füge alle drei als Ziele hinzu und geh einmal live. SplitCam nimmt DirectX- und OpenGL-Spiele auf, kodiert über deine GPU (NVENC, QuickSync oder AMF) und sendet dieses eine Signal an jede Plattform. Die zusätzlichen Ziele kosten dich deshalb Upload-Bandbreite statt Framerate im Spiel. Hardware-Encoding hält den FPS-Verlust auf einem Mittelklasse-Gaming-PC klein; die praktische Grenze ist dein Upload, denn jedes Ziel verbraucht eigene Bandbreite.</p>
+      </details>
       <details class="faq-item">
         <summary>Auf wie viele Plattformen kann ich gleichzeitig streamen?</summary>
         <p>Bis zu 8 Ziele bequem; technisch unbegrenzt, solange CPU/GPU und Upload-Bandbreite die kombinierte Last tragen. Jedes Ziel verbraucht eigene Bandbreite — das ist die praktische Grenze. Auf einem Mittelklasse-PC mit 10 Mbit/s Upload sind 3–5 Plattformen üblich. Mit 50 Mbit/s Glasfaser und einer Nvidia-Karte sind 8+ machbar.</p>

@@ -181,6 +181,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Puwede ko bang i-stream ang gameplay sa Twitch, YouTube at Kick nang sabay-sabay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oo — idagdag ang tatlo bilang destinasyon at mag-live nang isang beses. Kinukuha ng SplitCam ang DirectX at OpenGL games at nag-e-encode sa GPU mo (NVENC, QuickSync o AMF), tapos ipinapadala ang iisang encode na iyon sa bawat platform, kaya upload bandwidth ang kinakain ng dagdag na destinasyon, hindi ang in-game framerate. Pinapanatiling maliit ng hardware encoding ang bawas sa FPS sa mid-range gaming PC; ang upload speed mo ang practical na limitasyon, dahil bawat destinasyon ay gumagamit ng sariling bandwidth."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "How many platforms can I multistream to simultaneously?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -791,7 +799,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Mga gaming streamer</h3>
-        <p>Abutin ang Twitch viewers at YouTube watchers at Kick early adopters gamit ang iisang stream. Magpalaki ng audience sa maraming platform bago magpasya sa isa. Hindi mo na kailangang palakihin ang bawat isa nang hiwalay. <a href="https://splitcam.com/fil/for/youtubers" style="color:var(--blue);font-weight:600">Paano mag-live stream sa YouTube →</a></p>
+        <p>I-capture ang DirectX at OpenGL games at mag-encode sa GPU — NVENC, QuickSync o AMF — tapos iisang encode lang iyon ang ipapadala sa Twitch, YouTube at Kick nang sabay, kaya upload bandwidth ang kinakain ng dagdag na platform, hindi ang in-game FPS. Magpalaki ng audience sa tatlo bago magpasya sa isa. <a href="https://splitcam.com/fil/for/youtubers" style="color:var(--blue);font-weight:600">Paano mag-live stream sa YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -942,6 +950,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Mga tanong sa multistreaming.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Lahat ng gusto mong malaman bago mag-live everywhere.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Puwede ko bang i-stream ang gameplay sa Twitch, YouTube at Kick nang sabay-sabay?</summary>
+        <p>Oo — idagdag ang tatlo bilang destinasyon at mag-live nang isang beses. Kinukuha ng SplitCam ang DirectX at OpenGL games at nag-e-encode sa GPU mo (NVENC, QuickSync o AMF), tapos ipinapadala ang iisang encode na iyon sa bawat platform, kaya upload bandwidth ang kinakain ng dagdag na destinasyon, hindi ang in-game framerate. Pinapanatiling maliit ng hardware encoding ang bawas sa FPS sa mid-range gaming PC; ang upload speed mo ang practical na limitasyon, dahil bawat destinasyon ay gumagamit ng sariling bandwidth.</p>
+      </details>
       <details class="faq-item">
         <summary>Ilang platform ang puwede kong i-stream nang sabay-sabay?</summary>
         <p>Hanggang 8 destinasyon nang komportable; technically unlimited basta kaya ng CPU/GPU mo at upload bandwidth ang combined load. Bawat destinasyon ay gumagamit ng sariling bandwidth — iyon ang practical na limitasyon. Sa mid-range PC na may 10 Mbps upload, 3–5 platform ang karaniwan. Sa 50 Mbps fiber at Nvidia card, kaya ang 8+.</p>

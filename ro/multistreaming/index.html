@@ -182,6 +182,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Pot transmite gameplay pe Twitch, YouTube și Kick în același timp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da — adaugă toate cele trei platforme și intră în direct o singură dată. SplitCam capturează jocuri DirectX și OpenGL și codează pe GPU-ul tău (NVENC, QuickSync sau AMF), apoi trimite aceeași codare către fiecare platformă, așa că platformele în plus consumă lățime de bandă la upload, nu frecvență de cadre în joc. Codarea hardware ține pierderea de FPS la minimum pe un PC de gaming mediu; limita practică rămâne viteza ta de upload, fiindcă fiecare platformă îți consumă propria lățime de bandă."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Pe câte platforme pot transmite deodată?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -792,7 +800,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎮</div>
         <h3>Streameri de jocuri</h3>
-        <p>Același live ajunge la spectatorii de pe Twitch, la audiența YouTube și la pionierii de pe Kick. Crește-ți publicul pe mai multe platforme deodată, fără să alegi una de la început — și fără să o iei de la zero pe fiecare. <a href="https://splitcam.com/ro/for/youtubers" style="color:var(--blue);font-weight:600">Cum să faci live pe YouTube →</a></p>
+        <p>Capturează jocuri DirectX și OpenGL și codează pe GPU — NVENC, QuickSync sau AMF — apoi trimite aceeași codare pe Twitch, YouTube și Kick deodată, așa că platformele în plus consumă lățime de bandă la upload, nu FPS în joc. Îți crești publicul pe toate trei înainte să te legi de una singură. <a href="https://splitcam.com/ro/for/youtubers" style="color:var(--blue);font-weight:600">Cum să faci live pe YouTube →</a></p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">⛪</div>
@@ -943,6 +951,10 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Întrebări despre multistream.</h2>
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Tot ce ai vrea să știi înainte de a intra în direct peste tot deodată.</p>
     <div class="faq-list">
+      <details class="faq-item">
+        <summary>Pot transmite gameplay pe Twitch, YouTube și Kick în același timp?</summary>
+        <p>Da — adaugă toate cele trei platforme și intră în direct o singură dată. SplitCam capturează jocuri DirectX și OpenGL și codează pe GPU-ul tău (NVENC, QuickSync sau AMF), apoi trimite aceeași codare către fiecare platformă, așa că platformele în plus consumă lățime de bandă la upload, nu frecvență de cadre în joc. Codarea hardware ține pierderea de FPS la minimum pe un PC de gaming mediu; limita practică rămâne viteza ta de upload, fiindcă fiecare platformă îți consumă propria lățime de bandă.</p>
+      </details>
       <details class="faq-item">
         <summary>Pe câte platforme pot transmite deodată?</summary>
         <p>Până la 8 platforme confortabil; tehnic, nu există limită atâta timp cât CPU/GPU-ul și viteza de upload fac față încărcării totale. Fiecare platformă îți consumă propria lățime de bandă — asta e limita practică. Pe un PC mediu cu 10 Mbps upload, de obicei ies 3–5 platforme. Cu fibră de 50 Mbps și o placă Nvidia, 8 sau mai multe sunt realizabile.</p>
