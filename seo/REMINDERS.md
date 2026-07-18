@@ -552,3 +552,32 @@ admin/pola/support, rejects unknown recipients (550).
 - **CLIENT ACTION (user):** reconfigure mail clients with the NEW passwords — host `mail.splitcam.com`,
   IMAP 993 SSL, SMTP 465 (SSL) or 587 (STARTTLS). Old cPanel passwords won't work on DA.
 - **Rollback (fast):** CF `mail`/`webmail` A back to `91.223.223.113`. cPanel still fully alive.
+
+## 🔴 ROOT CAUSE FOUND — locale pages were being de-indexed by our own JS (fixed 2026-07-18)
+The 512 locale pages (97% of the 526-URL sitemap) were **not indexed**, and it was NOT crawl
+latency. The `<!--AD-->` language auto-redirect ran on EVERY page, including explicit `/xx/` URLs:
+on `/ru/features` it compared `document.documentElement.lang` ("ru") against the browser language
+and, for any English-language client, did `location.replace('/features')`. **Googlebot crawls with
+`en-US`**, so Google was bounced off every localized page onto its English twin and never indexed
+them. **Fix:** the redirect now only fires on URLs WITHOUT an explicit locale prefix — an explicit
+`/xx/` URL is always respected; a foreign visitor landing on an English page is still forwarded, so
+the UX intent survives. Verified 9/9 scenarios in node. Applied to all 526 pages **and to
+`seo/i18n.py`** (the generator) so `i18n_wire.py` can't reintroduce it.
+**Standing rule: never auto-redirect away from an explicit `/<locale>/` URL.**
+
+## ⚠️ DA disk quota — deploys fail SILENTLY when full (2026-07-18)
+The tarball deploy died with `tar: Cannot mkdir: Disk quota exceeded` and printed nothing, so a
+deploy looked "successful" while the live site stayed stale. Cause: `~` is ~11 GB — `win-download`
+9.8 GB + `mac-download` 565 MB (two 282 MB DMGs: latest + versioned archive) — plus abandoned
+`_deploy_tmp*` staging dirs (175 MB each) left by earlier runs.
+- **Always verify a deploy landed** (check a changed byte on the host or live), don't trust silence.
+- **Prefer the streaming deploy** — `tar czf - --exclude=... . | ssh 'tar xzf - -C $DOCROOT'` — it
+  needs no server-side staging space and is immune to this.
+- Clean up `~/_deploy_tmp*` after runs. Watch the quota: every new Mac DMG adds ~282 MB (latest +
+  versioned copy), and installers only grow.
+
+## /plugins/ added to sitemap (2026-07-18)
+Added as an EN-only special case via `EXTRA_EN_ONLY` in `seo/i18n_wire.py` (keeps its trailing
+slash — Doxygen relative hrefs). It already ranks #1 for "splitcam plugin api" / "splitcam sdk" /
+"develop splitcam plugin", but Google was serving the pre-2026-07-07 snapshot because nothing
+triggered a recrawl. `linkcheck.py` knows it is sitemap-only (in SKIP_DIRS) — audit stays 0.
