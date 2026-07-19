@@ -24,7 +24,7 @@
 >   API :2222) — 2×-cheaper than cPanel. Full byte-parity audit passed pre-flip (579 files 0
 >   drift; 2 win-download update files copied; all redirects/404/PHP/SEO verified), CF Origin
 >   cert installed, DA confirmed live origin via probe. `.cfg` native → **still-TODO: delete the
->   3 CF `.cfg` transform rules** after 48h. Details: `seo/REMINDERS.md` "DA CUTOVER EXECUTED".
+>   3 CF `.cfg` transform rules** after 48h. Details: `seo/REMINDERS-LOG.md` "DA CUTOVER EXECUTED".
 
 ## ⭐ Current state (read first)
 - Site is live in **all 35 languages**. Disk math (self-checking): **528** total
@@ -94,7 +94,7 @@
   `win-download/update/*.cfg` (app config: ingest lists / proxy) at the server level —
   unfixable from the account. **Fixed via 3 Cloudflare Transform rules** rewriting the
   `.cfg` URLs to `_cfg.bin` twins that exist on both origins; verified 200 + md5-identical
-  through live CF. Details + sync/rollback notes in `seo/REMINDERS.md` cutover checklist.
+  through live CF. Details + sync/rollback notes in `seo/REMINDERS-LOG.md` cutover checklist.
 - **Skype is fully removed site-wide (0 mentions)** — Microsoft retired it May 2025.
 - The whole language system is two files: **`seo/i18n.py`** (config + render helpers +
   `RTL_CSS`) and **`seo/i18n_wire.py`** (rebuilds dropdown/hreflang/auto-detect/sitemap +
@@ -346,7 +346,7 @@ Revert: `git revert HEAD --no-edit && git push`.
 - **Search-engine registration:** GSC sitemap submitted; IndexNow 526 URLs (key file on
   host). `no-ads` firewall rule re-enabled. Cloudflare stats healthy (~30k uniques/day,
   blocks = bot scanners only).
-- **DirectAdmin trial** provisioned + fully staged in parallel (see `seo/REMINDERS.md`).
+- **DirectAdmin trial** provisioned + fully staged in parallel (see `seo/REMINDERS-LOG.md`).
 
 ## Session log — 2026-06-30 -> 07-02 (features + donate, Skype scrub, footers, slashless URLs, host migration finalized, AV scan, hero-video redesign)
 
@@ -394,7 +394,7 @@ new cPanel host and deploying the redesign there.
   donate. **URL set verified one-to-one vs live splitcam.com** (EN pages match exactly;
   new pages are additive 404s; ru/es decided = uniform slugs + 301).
 - Added to repo: `/.well-known/assetlinks.json`, `.nojekyll`. (`/ver.txt` is
-  **host-managed**, not in the repo — see the ver.txt policy in `seo/REMINDERS.md`.)
+  **host-managed**, not in the repo — see the ver.txt rule in the `splitcam-release` skill.)
 
 **(B) OLD → NEW cPanel host migration (the new prod target, `~jntckkaf/public_html`):**
 - **SSH access (saved, see Infrastructure section + memory `project-splitcam-hosting`):**

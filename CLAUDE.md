@@ -64,7 +64,8 @@ Revert: `git revert HEAD --no-edit && git push`.
 never touch the homepage version, never overwrite the latest pointers
 (`win-download/SplitCamSetup_x64.msi`, `mac-download/SplitCam.dmg`), never bump `ver.txt` /
 `macver.plist` / `versions.json`. **Applies even if the beta's number is higher than the
-current stable.** Full rule + the stable-release flow: `seo/REMINDERS.md`.
+current stable.** Full rule + the stable-release flow: the **`splitcam-release` skill**
+(it loads when you publish a build; `seo/REMINDERS.md` keeps only the summary).
 Commit individually so any single change is easy to revert. After a push, share
 the live URL and remind about `Cmd+Shift+R` (browser cache).
 
@@ -72,11 +73,13 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 
 - **splitcam.com WEB is LIVE on DirectAdmin** (2nd cutover 2026-07-06: CF A apex+www →
   `185.67.3.44`, DA `lwanngbs@185.67.3.44`, creds `~/.hostsila_da_ssh`, panel API :2222,
-  Cloudflare in front with a CF Origin cert to 2041). **MAIL still on the old cPanel**
-  `jntckkaf@91.223.223.113` (mail/webmail A + MX left untouched) — cPanel = fallback, keep
-  ~2 wks, migrate mail before cancelling it (method A/B/C in REMINDERS). Rollback = CF
-  apex+www A back to `91.223.223.113` + purge. Full status: `seo/REMINDERS.md` ("DA CUTOVER
-  EXECUTED"); history: `ONBOARDING.md`. (1st cutover 2026-07-02 was onto that cPanel.)
+  Cloudflare in front with a CF Origin cert to 2041). **MAIL is also on DirectAdmin**
+  since 2026-07-14 — verified by DNS 2026-07-19 (`MX → mail.splitcam.com → 185.67.3.44`,
+  webmail same, port 465 answering). The earlier "mail still on cPanel" note is obsolete.
+  ⚠️ **Before cancelling the cPanel plan**, delta-sync the ~8 days of mail (07-06 → 07-14)
+  that landed on cPanel while MX still pointed there — it was never copied to DA. Tracked
+  as a live task in `seo/REMINDERS.md`. Rollback (web) = CF apex+www A back to
+  `91.223.223.113` + purge. Cutover history: `seo/REMINDERS-LOG.md`.
 - Homepage A/B resolved (2026-05-22): Variant A is final, `/v2/` archived.
 - Site-wide version is **v10.9.2**. No installer size shown.
 - **Deploy is site-wide via GitHub tarball → host overlay-copy** (not GitHub Pages, though
