@@ -253,8 +253,15 @@ computes (`getComputedStyle(el).maxWidth` etc.), not just that the file contains
 8. LIVE badges blink (badge opacity + red dot pulse).
 9. Each page needs the full favicon set + Schema.org (≥ BreadcrumbList +
    SoftwareApplication; bigger pages add HowTo + FAQPage).
-10. Do NOT use `CronCreate` for SEO scheduling — it doesn't persist. Use
-    `seo/REMINDERS.md`.
+10. Do NOT use `CronCreate` for SEO scheduling — it is session-only (in-memory,
+    dies with the session, auto-expires after 7 days). **But `scheduled-tasks`
+    IS durable** — it writes to `~/.claude/scheduled-tasks/<id>/SKILL.md` and
+    survives restarts. Since 2026-07-19 three weekly tasks run from there:
+    `splitcam-seo-weekly` (Mon), `reminders-overdue-check` (Mon),
+    `repo-hygiene-weekly` (Fri) — all set to stay silent unless they find
+    something. `seo/REMINDERS.md` remains the record of *what* is scheduled and
+    why; the tasks are what actually fires. Note that a scheduled task only runs
+    while the app is open (a missed run fires on next launch).
 
 ## Content check-list — run before committing any copy change
 
