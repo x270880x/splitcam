@@ -296,12 +296,18 @@ RedirectMatch 301 ^/blog/2021/virtual\-camera\-missing\-after\-skype\-update\.ht
 
 # blog/forum are NOT migrated (user decision 2026-07-02: catch-all fallback below; thematic per-post 301s above, WP dies at cutover):
 RedirectMatch 301 ^/blog(/.*)?$   https://splitcam.com/
-RedirectMatch 301 ^/forum(/.*)?$  https://splitcam.com/help
+# /forum's catch-all moved to a RewriteRule with [QSD] near the bottom of this file (2026-07-19)
+# — mod_alias's RedirectMatch always runs BEFORE mod_rewrite regardless of line order, so
+# leaving this one in place silently preempted the QSD fix and kept re-attaching the query
+# string it exists to strip. Do not re-add a RedirectMatch for /forum.
 
 # --- removed / changed pages (apply at migration) ---
 RedirectMatch 301 ^/more-plugins/?$                 https://splitcam.com/products
 RedirectMatch 301 ^/splitcam-changes-(win|mac)/?$   https://splitcam.com/changelog
-RedirectMatch 301 ^/tour(/.*)?$                     https://splitcam.com/products
+# /tour's catch-all moved to per-page RewriteRules near the bottom of this file (2026-07-19)
+# — same mod_alias-preempts-mod_rewrite trap as /forum above: this line ran first regardless
+# of position and every /tour/* request landed on /products before the specific rules could
+# fire. Do not re-add a RedirectMatch for /tour.
 # contact-us -> help (the support hub: Telegram · Forum · FAQ). No static page rebuilt.
 RedirectMatch 301 ^/contact-us/?$                   https://splitcam.com/help
 RedirectMatch 301 ^/ru/kontakty/?$                  https://splitcam.com/ru/help
