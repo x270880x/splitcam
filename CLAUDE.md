@@ -76,9 +76,9 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
   Cloudflare in front with a CF Origin cert to 2041). **MAIL is also on DirectAdmin**
   since 2026-07-14 — verified by DNS 2026-07-19 (`MX → mail.splitcam.com → 185.67.3.44`,
   webmail same, port 465 answering). The earlier "mail still on cPanel" note is obsolete.
-  ⚠️ **Before cancelling the cPanel plan**, delta-sync the ~8 days of mail (07-06 → 07-14)
-  that landed on cPanel while MX still pointed there — it was never copied to DA. Tracked
-  as a live task in `seo/REMINDERS.md`. Rollback (web) = CF apex+www A back to
+  The ~8 days of mail (07-06 → 07-14) that stayed on cPanel were **written off by the
+  user 2026-07-19** — not recovered, don't reopen. cPanel can be cancelled freely.
+  Rollback (web) = CF apex+www A back to
   `91.223.223.113` + purge. Cutover history: `seo/REMINDERS-LOG.md`.
 - Homepage A/B resolved (2026-05-22): Variant A is final, `/v2/` archived.
 - Site-wide version is **v10.9.2**. No installer size shown.
