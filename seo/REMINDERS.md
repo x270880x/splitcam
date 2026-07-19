@@ -584,14 +584,20 @@ triggered a recrawl. `linkcheck.py` knows it is sitemap-only (in SKIP_DIRS) — 
 
 ## Verifying indexing WITHOUT Search Console access (2026-07-18)
 
-**Search Console is reachable — through the browser, not through mail.** The property is
-`sc-domain:splitcam.com`, verified, and it opens in the user's own Chrome profile via the
-claude-in-chrome MCP (`https://search.google.com/search-console?resource_id=sc-domain:splitcam.com`).
-Its alerts live in the in-console **Сообщения** panel (33 of them, 30 unread as of 2026-07-18)
-— they are NOT emailed anywhere we can read. Searching for them by mail is a dead end and was
-already tried: the connected Gmail (`youtjack365@gmail.com`) held 8 Google mails in 180 days,
-none from Search Console, and `admin@splitcam.com` (1257 mails) had 5 google.com senders, all
-from October 2024. Go to the browser first; do not re-search those mailboxes.
+**GSC mail lands in `splitcameramail@gmail.com`** — Chrome profile **u/5**
+(`https://mail.google.com/mail/u/5/`, account name "SC Smith"). Found 2026-07-19 by opening
+it directly; searching for these alerts anywhere else is a dead end and was already tried —
+the connected Gmail connector points at `youtjack365@gmail.com`, which has never received a
+single Search Console message, and `admin@splitcam.com` only has google.com senders from
+October 2024.
+
+Two properties exist — `sc-domain:splitcam.com` and the URL-prefix `https://splitcam.com/` —
+so **every alert arrives twice**, about an hour apart. Do not read the duplicate as two
+separate problems.
+
+The console itself is reachable in the same browser at
+`https://search.google.com/search-console?resource_id=sc-domain:splitcam.com`, and its
+in-console **Сообщения** panel carries the same alerts.
 
 **Server logs answer the crawl question directly** — and unlike GSC they need no
 credentials. Daily rotated tarballs live in `~/domains/splitcam.com/logs/Jul-2026.tar.gz*`
