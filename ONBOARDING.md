@@ -106,14 +106,14 @@
 - The 17 lowest-demand locales (waves 4–7, ≤10/mo, mostly 0) were completed 2026-06-15
   for brand completeness — **see the 2026-06-15 session log below** (it involved cleaning
   up an unattended mass-translation run; lessons recorded there).
-- **Working tree has 3 untracked files** (not clean): `AGENTS.md` (a STALE duplicate of
-  `CLAUDE.md` — do NOT commit as-is; it would regress page counts and drop the
-  `/features/` + `/donate-us/` rows; delete it or regenerate from `CLAUDE.md`), plus
-  `seo/screenshots/download_desktop_1440.png` + `download_mobile_390.png` (mobile/desktop
-  proof shots for the `/download` page — safe to commit). `CLAUDE.md` is the fuller
-  reference but is itself slightly stale on the headline count (still says 525 indexable,
-  predates `/features/` + `/donate-us/`) — the real source of truth for page counts is the
-  sitemap/disk (**526**). `linkcheck` 0 broken across 526 pages.
+- ~~Working tree has 3 untracked files~~ — **RESOLVED (verified 2026-07-19)**: the tree is
+  clean, `AGENTS.md` no longer exists, and both proof screenshots are committed. The whole
+  warning is dead; kept only so the note isn't re-derived from scratch.
+- **Page counts (verified against disk 2026-07-19): 529 `index.html` on disk, 527 in
+  `sitemap.xml`.** Earlier figures in this file (528/526) are off by one — `/plugins/`
+  was added after they were written. The sitemap/disk is the source of truth, not prose
+  counts in either doc. (`CLAUDE.md` is itself inconsistent: 526 in the localization
+  section, 527 in note #0 — 527 is right.)
 
 ## Two projects
 
@@ -264,13 +264,25 @@ commit the secret value.**
 
 ### GitHub repositories
 - **`x270880x/splitcam`** (public) — this repo; GitHub Pages staging https://x270880x.github.io/splitcam/ (auto-deploy 30–90 s after push to main).
-- **`x270880x/splitcam-release`** (public) — 36 Windows `.msi` releases (`v9.0.9` → `v10.9.2`, + `v10.8.62-restream-test` prerelease). `v10.9.2` is Latest. Canonical latest URL: `releases/download/v10.9.2/10.9.2_x64.msi`.
+- **`x270880x/splitcam-release`** (public) — Windows `.msi` releases (`v9.0.9` → `v10.9.2`, + `v10.8.62-restream-test` prerelease), plus a `legacy-archive` release and a **v10.9.4 beta** added later. **`v10.9.2` is still Latest** — per the standing rule, a build the user calls *beta* is changelog-only and never moves the latest pointers, even when its number is higher. Canonical latest URL: `releases/download/v10.9.2/10.9.2_x64.msi`.
 - **`x270880x/old_splitcam_site`** (**PRIVATE 🔒**) — full backup of the old splitcam.com `public_html` as `old_splitcam_site.tar.gz` (~1.4 GB) on release `backup-2026-05-23`. Contains `wp-config.php` DB creds — **never make public**.
 
-### NEW production / cutover host (redesign target)
-- cPanel/Apache on **rocket-cp2.hostsila.org**, account user **jntckkaf**, cutover server IP **91.223.223.113**. cPanel UI https://rocket-cp2.hostsila.org:2083/.
+### ⚠️ SUPERSEDED — the cPanel host below is NO LONGER the deploy target
+
+> **Read the ⚡ box at the top of this file.** Both cutovers happened
+> (2026-07-02 → this cPanel, then **2026-07-06 → DirectAdmin `185.67.3.44`**).
+> **splitcam.com WEB is live on DirectAdmin**; deploys go there via the
+> streaming procedure in the `splitcam-deploy` skill — **not** via
+> `seo/deploy_preview.py`, and the "live is NOT touched until the user says go"
+> rule below is long expired. **MAIL is still on this cPanel** (mail/webmail A +
+> MX untouched), so the box stays as fallback — don't cancel it.
+>
+> Keeping the access details because the mailbox and the three host-managed
+> `ver.txt` still live here.
+
+- cPanel/Apache on **rocket-cp2.hostsila.org**, account user **jntckkaf**, IP **91.223.223.113**. cPanel UI https://rocket-cp2.hostsila.org:2083/.
 - Full SSH shell: `ssh jntckkaf@91.223.223.113 -p 22` (wget/curl available, ~336 GB free). **scp/sftp subsystem is DISABLED** — push files via base64-over-ssh-exec or cPanel-API HTTPS:2083 upload.
-- Docroot `/home/jntckkaf/public_html`. Work is deployed to **preview only**, live at http://rocket-cp2.hostsila.org/~jntckkaf/, via `seo/deploy_preview.py`. **splitcam.com live is NOT touched until the user says go.**
+- Docroot `/home/jntckkaf/public_html`. (Historic preview URL: http://rocket-cp2.hostsila.org/~jntckkaf/.)
 - Creds (chmod 600): cPanel password `~/.hostsila_cpanel`; SSH password `~/.hostsila_ssh` (same cPanel account, full shell). The three host-managed `ver.txt` are edited here over SSH.
 
 ### OLD host (current live splitcam.com origin, behind Cloudflare) — legacy

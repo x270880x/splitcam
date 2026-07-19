@@ -133,7 +133,7 @@ Every page exists in **35 locales**: EN (root) + 34 under `/<lang>/...`:
 **ru es de fr pt tr fil uk it vi id nl ro hi ja ms bg ar ko th pl hu sv zh el cs
 he sr hr da fi no sk fa** (ar/he/fa are RTL). That's all 15 pages (12 content +
 `privacy-policy/` + `license-agreement/` full, + `changelog/` shell-only — its
-~1817 technical release bullets stay EN) × 35 = **526 indexable pages** (incl. EN-only /download landing).
+~1817 technical release bullets stay EN) × 35 = **527 indexable pages** (incl. EN-only /download landing; verified against `sitemap.xml` 2026-07-19 — the older 526 figure predates `/plugins/`).
 Untranslated: `/v2/` (archived), `for/vtubers/` (noindex draft).
 
 Built by Ahrefs "splitcam" demand: top 18 first (2026-06-13), then the remaining
