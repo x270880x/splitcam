@@ -106,5 +106,8 @@ function createAllForms() {
   sh.clear();
   sh.getRange(1, 1, out.length, 3).setValues(out);
   sh.setFrozenRows(1);
-  SpreadsheetApp.getUi().alert('Created ' + (out.length - 1) + ' forms. See the "FORM URLS" sheet.');
+  // getUi() only exists when run from the Sheet menu; from the script editor it throws.
+  // The forms and the URL sheet are already written by this point, so never let it fail the run.
+  try { SpreadsheetApp.getUi().alert('Created ' + (out.length - 1) + ' forms. See the "FORM URLS" sheet.'); } catch (e) {}
+  Logger.log('DONE: ' + (out.length - 1) + ' forms. See the "FORM URLS" sheet.');
 }
