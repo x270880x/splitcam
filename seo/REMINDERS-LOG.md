@@ -207,7 +207,7 @@ new URLs actually exist on splitcam.com (they'd be 404s today).
 
 **Re-run Ahrefs** to see total keyword count change vs baseline:
 ```bash
-cd "/Users/splitcam/Documents/Дизайны/SplitCam/SplitCam сайт/splitcam/seo"
+cd "/Users/splitcam/Documents/Проекты/SplitCam/SplitCam сайт/splitcam/seo"
 AHREFS_TOKEN='<token from ONBOARDING.md — REGENERATE FIRST>' python3 ahrefs.py
 ```
 Compare result to baseline reports in `seo/reports/`.

@@ -117,7 +117,7 @@
 
 ## Two projects
 
-Both repos live under `/Users/splitcam/Documents/Дизайны/SplitCam/SplitCam сайт/`.
+Both repos live under `/Users/splitcam/Documents/Проекты/SplitCam/SplitCam сайт/`.
 
 | Project | Local folder | GitHub repo | Live (staging) |
 |---|---|---|---|
@@ -305,7 +305,7 @@ commit the secret value.**
 
 ## How to deploy (either repo)
 ```bash
-cd "/Users/splitcam/Documents/Дизайны/SplitCam/SplitCam сайт/<repo>"
+cd "/Users/splitcam/Documents/Проекты/SplitCam/SplitCam сайт/<repo>"
 git add . && git commit -m "..." && git push origin main
 ```
 Revert: `git revert HEAD --no-edit && git push`.

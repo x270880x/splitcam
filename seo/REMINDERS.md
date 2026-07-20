@@ -196,7 +196,7 @@ WITHOUT Search Console access».
 
 **Ahrefs (re-run):**
 ```bash
-cd "/Users/splitcam/Documents/Дизайны/SplitCam/SplitCam сайт/splitcam/seo"
+cd "/Users/splitcam/Documents/Проекты/SplitCam/SplitCam сайт/splitcam/seo"
 AHREFS_TOKEN='<token — REGENERATE FIRST>' python3 ahrefs.py
 ```
 Compare DR / ranked keyword count / traffic estimate vs baseline in `seo/reports/`.

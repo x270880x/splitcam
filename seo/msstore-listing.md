@@ -111,7 +111,7 @@ Fixed
 
 ## 7. Screenshots
 - Current: 8 portrait images (1600×2560), from May 2024 → refresh recommended.
-- Source assets in repo: `~/Documents/Дизайны/SplitCam/Screenshot_appstore/Screenshot_appstore_1..8.png`
+- Source assets in repo: `~/Documents/Проекты/SplitCam/Screenshot_appstore/Screenshot_appstore_1..8.png`
 - Show, in order: (1) main studio UI, (2) multi-streaming destinations, (3) effects/background removal,
   (4) scene composer / layers, (5) vertical + horizontal canvas, (6) virtual camera in a call app,
   (7) phone-as-webcam, (8) audio mixer.
