@@ -117,12 +117,12 @@
 
 ## Two projects
 
-Both repos live under `/Users/splitcam/Documents/Дизайны/SplitCam/SPLITCAM DEV./`.
+Both repos live under `/Users/splitcam/Documents/Дизайны/SplitCam/SplitCam сайт/`.
 
 | Project | Local folder | GitHub repo | Live (staging) |
 |---|---|---|---|
-| **Main SplitCam site** | `SPLITCAM DEV./splitcam/` | `x270880x/splitcam` | https://x270880x.github.io/splitcam/ |
-| **cam-streaming-guides** (adult-cam guides) | `SPLITCAM DEV./cam-streaming-guides/` | `x270880x/cam-streaming-guides` | https://x270880x.github.io/cam-streaming-guides/ |
+| **Main SplitCam site** | `SplitCam сайт/splitcam/` | `x270880x/splitcam` | https://x270880x.github.io/splitcam/ |
+| **cam-streaming-guides** (adult-cam guides) | `SplitCam сайт/cam-streaming-guides/` | `x270880x/cam-streaming-guides` | https://x270880x.github.io/cam-streaming-guides/ |
 
 Both are static HTML deployed via GitHub Pages (auto-deploy 30–90 sec after push).
 **Workflow rule:** after meaningful edits, commit + push immediately — don't ask.
@@ -305,7 +305,7 @@ commit the secret value.**
 
 ## How to deploy (either repo)
 ```bash
-cd "/Users/splitcam/Documents/Дизайны/SplitCam/SPLITCAM DEV./<repo>"
+cd "/Users/splitcam/Documents/Дизайны/SplitCam/SplitCam сайт/<repo>"
 git add . && git commit -m "..." && git push origin main
 ```
 Revert: `git revert HEAD --no-edit && git push`.
