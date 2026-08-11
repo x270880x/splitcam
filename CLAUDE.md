@@ -73,9 +73,17 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 
 - **splitcam.com WEB is LIVE on DirectAdmin** (2nd cutover 2026-07-06: CF A apex+www →
   `185.67.3.44`, DA `lwanngbs@185.67.3.44`, creds `~/.hostsila_da_ssh`, panel API :2222,
-  Cloudflare in front with a CF Origin cert to 2041). **MAIL is also on DirectAdmin**
-  since 2026-07-14 — verified by DNS 2026-07-19 (`MX → mail.splitcam.com → 185.67.3.44`,
-  webmail same, port 465 answering). The earlier "mail still on cPanel" note is obsolete.
+  Cloudflare in front with a CF Origin cert to 2041). **MAIL is NO LONGER on that box:**
+  re-checked by DNS 2026-08-12, `MX → mail.splitcam.com → 77.83.100.153` and `webmail →
+  77.83.100.153`. The 2026-07-19 reading (`… → 185.67.3.44`) is stale; `77.83.100.153`
+  appears nowhere else in these docs, so when and why it moved is not recoverable from the
+  repo. **Web origin was NOT re-verified** — all four candidate IPs (`185.67.3.44`,
+  `77.83.100.153`, `77.83.100.124`, `91.223.223.113`) answer HTTP 200 with an identical
+  page AND Dovecot on IMAPS 993, so "the server responds" proves nothing; only MX is
+  decisive for mail, and the web origin is hidden behind Cloudflare.
+  **`_dmarc.splitcam.com` is `p=reject`** — anything sending as `@splitcam.com` must go out
+  through `mail.splitcam.com` SMTP, never through Gmail/Google IPs, or it is rejected
+  outright (SPF unauthorized + DKIM signed by the wrong domain). Details: `seo/REMINDERS.md`.
   The ~8 days of mail (07-06 → 07-14) that stayed on cPanel were **written off by the
   user 2026-07-19** — not recovered, don't reopen. cPanel can be cancelled freely.
   Rollback (web) = CF apex+www A back to
