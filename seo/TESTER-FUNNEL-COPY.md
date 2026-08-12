@@ -43,9 +43,12 @@ Notification arrives → add the Google account(s) to the Console list → in th
 plausible-looking address; it was never real. Verified 2026-07-17:
 - Zero email addresses appear anywhere on splitcam.com (527 pages, no mailto:, no contact page).
 - The only occurrences of `support@splitcam.com` in the whole repo were in this file.
-- splitcam.com does accept mail (MX -> mail.splitcam.com -> 91.223.223.113, the old cPanel),
-  but whether a `support@` mailbox exists could not be confirmed: the stored
-  `~/.hostsila_cpanel` password returns 401 against rocket-cp2.hostsila.org:2083.
+- ~~splitcam.com does accept mail (MX -> mail.splitcam.com -> 91.223.223.113, the old cPanel),
+  but whether a `support@` mailbox exists could not be confirmed.~~ **Settled 2026-08-12 on the
+  server: the `support@splitcam.com` mailbox EXISTS** (alongside `admin@` and `pola@`) on the
+  current host `77.83.100.153` — `MX -> mail.splitcam.com -> 77.83.100.153`, Exim 4.99.4
+  listening on 25/465/587, external mail demonstrably arriving. It is the sender for the
+  tester mailout; see `seo/REMOTE-TESTER-MAILOUT.md`.
 - The real, publicly listed addresses on the live `com.splitcam` Play listing are
   `splitcam2010@gmail.com` and `splitcameramail@gmail.com`.
 

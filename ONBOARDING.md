@@ -1,12 +1,36 @@
 # SplitCam — Project Onboarding
 
-*Last updated: 2026-07-06. Open this at the start of any new chat to get up to speed.*
+*Last updated: 2026-08-12. Open this at the start of any new chat to get up to speed.*
 
-> **⚡ SINCE 2026-07-02 (read this first — the rest of "Current state" predates cutover):**
+> # 🔴 THE SERVER MOVED — every IP below this box is stale (verified on the box 2026-08-12)
+>
+> **Web AND mail are both on `77.83.100.153`.** Not `185.67.3.44`, not `rocket-da4`, not
+> either cPanel.
+>
+> ```
+> Panel:   https://pl-rocket-da3.hostsila.org:2222/
+> SSH:     lwanngbs@77.83.100.153, port 22, password in ~/.hostsila_da_ssh
+> Docroot: /home/lwanngbs/domains/splitcam.com/public_html
+> Mail:    Exim 4.99.4 + Dovecot; mailboxes admin, support, pola
+> ```
+>
+> Evidence it is live and not a staging copy: the access logs show current Cloudflare edge
+> IPs (`172.69.x`, `172.70.x`, `104.23.x`) proxying `www.splitcam.com:443` to this box,
+> ~20 MB of gzipped log per day; `MX` and `webmail` resolve here too. Dating the move: the
+> `support@` maildir holds messages delivered by `rocket-da4` up to 20 Jul and by
+> `pl-rocket-da3` from 22 Jul on, so it happened in that gap. **No doc recorded it** — the
+> whole `185.67.3.44` story below was written before it and was never revised.
+>
+> ⚠️ **"The server answers" proves nothing here.** `185.67.3.44`, `77.83.100.124` and
+> `91.223.223.113` ALL still serve the site over HTTP with a byte-identical page and ALL
+> still answer Dovecot on 993. Only DNS and the access logs are decisive.
+>
+> **⚡ SINCE 2026-07-02 (the rest of "Current state" predates the 07-06 cutover):**
 > - **splitcam.com WEB is LIVE on DirectAdmin** — 2nd cutover **2026-07-06** (CF A apex+www →
->   `185.67.3.44`, DA `lwanngbs@…`, CF Origin cert to 2041). **MAIL still on cPanel**
->   `jntckkaf@91.223.223.113` (`mail`/`webmail`/MX left there) → cPanel = fallback, keep ~2 wks,
->   migrate mail before cancelling. Rollback = CF apex+www A back to `91.223.223.113` + purge.
+>   `185.67.3.44`, DA `lwanngbs@…`, CF Origin cert to 2041) — *superseded, see the box above*.
+>   **MAIL still on cPanel** `jntckkaf@91.223.223.113` (`mail`/`webmail`/MX left there) →
+>   cPanel = fallback, keep ~2 wks, migrate mail before cancelling — *also superseded; mail
+>   moved to DA on 07-14 and then to `77.83.100.153` with the rest of the server.*
 >   (1st cutover 2026-07-02 was old host `dfadnfvi@77.83.100.124` → that cPanel; mail moved then.)
 > - **All internal URLs are now FULL absolute canonical** (`https://splitcam.com/...`) —
 >   subresources AND `<a href>` (see CLAUDE.md rule 0). Fixed slashless-URL breakage

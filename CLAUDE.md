@@ -81,23 +81,20 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
   in `ONBOARDING.md` predates this move and is stale. **Do not trust "the server answers"
   as evidence** — `185.67.3.44`, `77.83.100.124` and `91.223.223.113` all still serve the
   site over HTTP and answer Dovecot on 993; only DNS and the logs are decisive.
-- **splitcam.com WEB is LIVE on DirectAdmin** (2nd cutover 2026-07-06: CF A apex+www →
-  `185.67.3.44`, DA `lwanngbs@185.67.3.44`, creds `~/.hostsila_da_ssh`, panel API :2222,
-  Cloudflare in front with a CF Origin cert to 2041). **MAIL is NO LONGER on that box:**
-  re-checked by DNS 2026-08-12, `MX → mail.splitcam.com → 77.83.100.153` and `webmail →
-  77.83.100.153`. The 2026-07-19 reading (`… → 185.67.3.44`) is stale; `77.83.100.153`
-  appears nowhere else in these docs, so when and why it moved is not recoverable from the
-  repo. **Web origin was NOT re-verified** — all four candidate IPs (`185.67.3.44`,
-  `77.83.100.153`, `77.83.100.124`, `91.223.223.113`) answer HTTP 200 with an identical
-  page AND Dovecot on IMAPS 993, so "the server responds" proves nothing; only MX is
-  decisive for mail, and the web origin is hidden behind Cloudflare.
+  Dating the move: the `support@` maildir has mail delivered by `rocket-da4` up to 20 Jul
+  and by `pl-rocket-da3` from 22 Jul on, so it happened in that gap and no doc recorded it.
+- **Mail on the current box:** Exim 4.99.4 answering on 25 / 465 / 587, Dovecot on 993,
+  mailboxes `admin`, `support`, `pola`; external mail demonstrably arriving.
   **`_dmarc.splitcam.com` is `p=reject`** — anything sending as `@splitcam.com` must go out
   through `mail.splitcam.com` SMTP, never through Gmail/Google IPs, or it is rejected
   outright (SPF unauthorized + DKIM signed by the wrong domain). Details: `seo/REMINDERS.md`.
+  ⚠️ **SMTP cannot be tested from the work Mac** — 25/587/465 accept TCP there and close
+  without a banner, which looks like a server-side block but is not: `smtp.gmail.com` and
+  `smtp.yandex.ru` behave identically from that machine. Test SMTP over SSH, from inside.
   The ~8 days of mail (07-06 → 07-14) that stayed on cPanel were **written off by the
   user 2026-07-19** — not recovered, don't reopen. cPanel can be cancelled freely.
-  Rollback (web) = CF apex+www A back to
-  `91.223.223.113` + purge. Cutover history: `seo/REMINDERS-LOG.md`.
+  Earlier cutovers (07-02 → cPanel `91.223.223.113`, 07-06 → DA `185.67.3.44`) and the
+  rollback recipes for them: `seo/REMINDERS-LOG.md`.
 - Homepage A/B resolved (2026-05-22): Variant A is final, `/v2/` archived.
 - Site-wide version is **v10.9.2**. No installer size shown.
 - **Deploy is site-wide via GitHub tarball → host overlay-copy** (not GitHub Pages, though
