@@ -71,8 +71,16 @@
   dropped. All three `ver.txt` track the **current** release and are set to **10.9.2**:
   root `/ver.txt`, `win-download/update/ver.txt`, `win-download/update/light/ver.txt`.
   They live **only on the host** (root `/ver.txt` was removed from the git repo so an
-  overlay re-deploy can't reset it); edit them on the host via SSH. `ver.php` echoes root
-  `/ver.txt` + its mtime. **Standing rule:** ~10 days after a new SplitCam release ships,
+  overlay re-deploy can't reset it); edit them on the host via SSH. ~~`ver.php` echoes root
+  `/ver.txt` + its mtime.~~ **Wrong — and `ver.php` was deleted 2026-08-12.** Its source was
+  finally read on the host: it opened `ver.txt`, read it into `$ver`, computed `$rdate` from
+  `filemtime`, and had **no `echo` anywhere** — a fragment meant to be `include`d by some
+  old WordPress template, useless when requested directly, which is why it always answered
+  200 with an empty body. Nothing on the host included it, and in two months of logs it was
+  requested exactly twice (a vulnerability scanner and one verification `curl`), against
+  109 422 hits on `ver.txt`. Backup kept at `~/backups/ver.php.removed-2026-08-12` on the
+  host. **Updates have always run off `ver.txt` alone.**
+  **Standing rule:** ~10 days after a new SplitCam release ships,
   set all three to the new version string — plain text, **no trailing newline** — with
   the matching installer deployed first.
 - **Antivirus scan COMPLETE — 0 infected site-wide, 100% coverage.** Host: 529 HTML+PHP
@@ -361,7 +369,7 @@ Covers the block after the 2026-06-29/30 log (commit `958c429`). Newest-first.
 
 **Antivirus scan finished (2026-07-01, `75a3667`):** the 24 big installers that OOM-killed `clamscan` on the host (CloudLinux LVE PMEM cap, not hardware) were pulled to the Mac (1.8 GB via the `~jntckkaf` preview URL) and scanned with Homebrew ClamAV 1.5.2 (fresh DB, deep unpack, no cap) → **24/24 clean**. Combined with the earlier host scan (529 HTML+PHP + 45 `win-download/` installers clean), the site is now **0 infected everywhere**.
 
-**`ver.txt` finalized + policy recorded (2026-06-30, `e2861c0`, `6469baf`):** the weekly-ramp idea was dropped. All three `ver.txt` (root `/ver.txt`, `win-download/update/ver.txt`, `win-download/update/light/ver.txt`) set to **10.9.2** on the host. Root `/ver.txt` was **dropped from the repo** (host-managed, so an overlay re-deploy can't reset it); it had briefly been added as legacy 8.4.0.0 in `156a37e`, then removed. `ver.php` echoes root `/ver.txt` + mtime. Standing rule: ~10 days after each new release, set all three to the new version string (plain text, no trailing newline), installer deployed first.
+**`ver.txt` finalized + policy recorded (2026-06-30, `e2861c0`, `6469baf`):** the weekly-ramp idea was dropped. All three `ver.txt` (root `/ver.txt`, `win-download/update/ver.txt`, `win-download/update/light/ver.txt`) set to **10.9.2** on the host. Root `/ver.txt` was **dropped from the repo** (host-managed, so an overlay re-deploy can't reset it); it had briefly been added as legacy 8.4.0.0 in `156a37e`, then removed. ~~`ver.php` echoes root `/ver.txt` + mtime.~~ (Wrong; `ver.php` never echoed anything and was deleted 2026-08-12 — see the `ver.txt` policy entry above.) Standing rule: ~10 days after each new release, set all three to the new version string (plain text, no trailing newline), installer deployed first.
 
 **Already in the 06-29/30 log (`958c429`), recapped for continuity:** `/features/` hub + `/donate-us/` built EN then natively localized to all 34 locales; donate switched to `paypal.me/Katzovich` with clickable amount chips ($25/$50/$100/$200/$500/$1000 → `/<amt>USD`), old hosted-button dropped (`0ec26af`, `51a7987`); Features + Donate footer links on every page (`45d4c7a`); slashless canonical/og/hreflang/sitemap URLs; Skype removed site-wide (0 mentions); the old→new cPanel host migration finalized; `.well-known/assetlinks.json` + `.nojekyll` added (`bfda3a8`).
 

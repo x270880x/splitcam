@@ -71,6 +71,16 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 
 ## Current state
 
+- 🔴 **THE SERVER MOVED. Verified on the box 2026-08-12: web AND mail are both on
+  `77.83.100.153`, panel `https://pl-rocket-da3.hostsila.org:2222/`, SSH
+  `lwanngbs@77.83.100.153:22`, creds `~/.hostsila_da_ssh`, docroot
+  `/home/lwanngbs/domains/splitcam.com/public_html`.** Confirmed live, not a staging copy:
+  the access logs show current Cloudflare edge IPs (`172.69.x`, `172.70.x`, `104.23.x`)
+  proxying `www.splitcam.com:443` to this box, ~20 MB of gzipped log per day. Mailboxes
+  here: `admin`, `support`, `pola`. Every `185.67.3.44` / `rocket-da4` reference below and
+  in `ONBOARDING.md` predates this move and is stale. **Do not trust "the server answers"
+  as evidence** — `185.67.3.44`, `77.83.100.124` and `91.223.223.113` all still serve the
+  site over HTTP and answer Dovecot on 993; only DNS and the logs are decisive.
 - **splitcam.com WEB is LIVE on DirectAdmin** (2nd cutover 2026-07-06: CF A apex+www →
   `185.67.3.44`, DA `lwanngbs@185.67.3.44`, creds `~/.hostsila_da_ssh`, panel API :2222,
   Cloudflare in front with a CF Origin cert to 2041). **MAIL is NO LONGER on that box:**
