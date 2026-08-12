@@ -17,7 +17,7 @@
 |---|---|---|---|
 | **Fortinet** | 🔴 держится, `Malware` | заявка подана 12.08 из браузера владельца (из панели дважды `403`) | `https://www.fortiguard.com/webfilter` |
 | **MalwareURL** | 🔴 держится, категория `Trojan JS ClearFake` — подтверждено на их же lookup 12.08 | письмо на `team@malwareurl.com` с `support@splitcam.com`, 12.08 | форма проверки на главной `malwareurl.com` |
-| **Gridinsoft** | 🟡 `Suspicious` | ничего — **и правильно** | `https://gridinsoft.com/online-virus-scanner/` |
+| **Gridinsoft** | 🟡 `Suspicious` | владение подтверждено файлом в докруте, тикет на пересмотр подан 12.08 через `portal.gridinsoft.com` | их же checker; обещают несколько дней |
 | **AlphaSOC** | ✅ снят | письмо на `virustotal@alphasoc.com`, 12.08 | только VT |
 | **CRDF** | ✅ снят (и не был листингом) | заявка не нужна | `https://threatcenter.crdf.fr/check.html` |
 | **ThreatFox** | ⏳ запись жива | нужен аккаунт abuse.ch | карточка IOC 1861022 |
