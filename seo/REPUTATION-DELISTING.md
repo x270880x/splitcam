@@ -145,24 +145,42 @@ MalwareURL записал домен на IP `172.67.148.86` (Cloudflare, AS1333
 
 ## Общая заготовка текста (EN) — вставлять во все формы
 
+Аргумент построен на датах, а не на обещаниях «мы всё почистили». Проверяемая
+хронология — единственное, что двигает такие заявки.
+
 > Subject: False positive / re-review request: splitcam.com
 >
-> I am the owner of splitcam.com (SplitCam — free streaming and virtual-camera software; domain registered 2005).
+> I am the owner of splitcam.com (SplitCam — free streaming and virtual-camera software; the domain was registered in 2005).
 >
-> The previous WordPress installation of this site was compromised. It has been completely removed. Since 2026-07-18 the site is static HTML/CSS/JS with no CMS and no plugins (a single PHP file in the document root), on a different server: origin IP 77.83.100.153. Public traffic is served through Cloudflare (currently 104.21.39.190 / 172.67.148.86).
+> **The timeline matters here, so I am giving it in full rather than just asking for removal.**
 >
-> Remediation evidence:
-> - ClamAV 1.5.2, July 2026: 529 pages and 24 Windows installers scanned — zero detections.
-> - All WordPress paths (wp-login.php, xmlrpc.php, wp-admin/, wp-content/, wp-includes/, wp-json/, readme.html) now return 404.
-> - Sucuri SiteCheck, 2026-08-12: no malware found, no blacklisting, security 6/6.
-> - VirusTotal, 2026-08-12: Google Safe Browsing, Kaspersky, BitDefender, ESET, Sophos, Dr.Web, Emsisoft, G-Data, Forcepoint and Netcraft all report the domain clean. The installer URL https://splitcam.com/win-download/SplitCamSetup_x64.msi is 0/92.
-> - Installers are code-signed; current VirusTotal reports: <ссылки из п. 0.4>.
+> An earlier WordPress installation of this site was compromised, and detections from that period were correct. That installation is gone. Since 2026-07-18 at the latest the site has been static HTML/CSS/JS — no CMS, no plugins, a single PHP file in the document root — on a different server (origin 77.83.100.153, served publicly through Cloudflare at 104.21.39.190 / 172.67.148.86).
 >
-> Note: a file named ICReinstall_file.exe (SHA-256 25e8da914f31f72777198acc739bce98039e037442d2df5317fe6a3e26e3726c) is associated with our domain in third-party graphs. It is NOT our software — it is a third-party InstallCore download wrapper redistributed by download portals. Our official builds are served only from splitcam.com.
+> The current classification appears to trace to a single ThreatFox entry, IOC 1861022, filed 2026-07-27 19:57 UTC, malware ClearFake, threat type payload_delivery. Three things about that entry:
 >
-> Request: please re-scan splitcam.com and remove the current classification. If your verdict originates from a third-party feed, please tell me which source, so that I can address it there as well.
+> - It was filed **nine days after** the site had already been replaced with the static build. The Internet Archive snapshot of 2026-07-18 is byte-for-byte the size of the page served today (144122 bytes), contains no injected script, and loads no external script host other than www.googletagmanager.com.
+> - Its confidence level is **moderate (50%)**, and it carries **no reference or evidence link**.
+> - Its "last seen" field is **never** — in the weeks since, it has not been re-observed by anyone.
+>
+> Independent checks as of 2026-08-12:
+>
+> - VirusTotal: Google Safe Browsing, Kaspersky, BitDefender, ESET, Sophos, Dr.Web, Emsisoft, G-Data, Forcepoint and Netcraft all report the domain clean. The installer URL https://splitcam.com/win-download/SplitCamSetup_x64.msi is rated clean.
+> - Sucuri SiteCheck: no malware, no blacklisting, security 6/6.
+> - AbuseIPDB for the origin IP 77.83.100.153: confidence of abuse 3%, one unrelated port-scan report.
+> - The homepage returns a byte-identical response with an identical SHA-256 across four different user agents and with a Google referer, so no conditional or cloaked content is being served.
+> - All WordPress paths (wp-login.php, xmlrpc.php, wp-admin/, wp-content/, wp-includes/, wp-json/, readme.html) return 404.
+> - ClamAV 1.5.2, July 2026: 529 pages and 24 Windows installers scanned, zero detections. Current VirusTotal reports for the live installers: <ссылки из п. 0.4>.
+>
+> One thing I want to flag myself rather than have you find it: a file named ICReinstall_file.exe (SHA-256 25e8da914f31f72777198acc739bce98039e037442d2df5317fe6a3e26e3726c) is associated with our domain in third-party graphs. It is not our software. It is an InstallCore download wrapper redistributed by third-party download portals that fetch SplitCam from us. Our official builds are served only from splitcam.com.
+>
+> Request: please re-scan splitcam.com and remove the current classification. If your verdict is inherited from a third-party feed rather than your own observation, please tell me which source, so I can address it there as well.
 >
 > Contact: <имя>, <должность>, <you@splitcam.com>, <телефон>
+
+**Чего в этом тексте намеренно нет:** утверждения, что срабатывание было ложным
+с самого начала. Оно таким не было — сайт действительно ломали, и у аналитика
+почти наверняка есть об этом запись. Заявка, отрицающая взлом, отклоняется;
+заявка, которая сама его излагает и показывает даты, — рабочая.
 
 **Почту указывать только на домене splitcam.com** — она же служит доказательством владения. Gmail/одноразовые адреса — прямая причина молчаливого отклонения у CRDF, AlphaSOC и Fortinet.
 
