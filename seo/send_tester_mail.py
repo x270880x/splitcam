@@ -144,6 +144,73 @@ def load_sent(log_path):
     return done
 
 
+class SshSendmail:
+    """Отправка через /usr/sbin/sendmail на сервере по SSH.
+
+    Почему не SMTP: exim на 127.0.0.1:25 принимает письма только для локальных
+    доменов, наружу отдаёт `550 relay not permitted` — релей требует авторизации,
+    а пароля ящика у нас нет. Локальный `sendmail`, запущенный от владельца
+    аккаунта, доверенный и шлёт куда угодно. Именно так 12.08 ушли апелляции
+    в MalwareURL и AlphaSOC.
+
+    Письмо передаётся base64 внутри команды, чтобы не воевать с экранированием.
+    """
+
+    def __init__(self, wrapper, sender):
+        self.wrapper = wrapper
+        self.sender = sender
+        if not pathlib.Path(wrapper).exists():
+            sys.exit(f"нет SSH-обёртки: {wrapper}\n"
+                     "Это expect-скрипт, который логинится паролем из ~/.hostsila_da_ssh\n"
+                     "и выполняет переданную команду. Путь задаётся через --ssh-wrapper.")
+
+    def close(self):
+        pass
+
+    def send(self, msg):
+        import base64
+        import subprocess
+        blob = base64.b64encode(bytes(msg)).decode()
+        cmd = (f"echo '{blob}' | base64 -d | /usr/sbin/sendmail -t -f {self.sender} "
+               f"&& echo SENDMAIL_OK")
+        r = subprocess.run([self.wrapper, cmd], capture_output=True, text=True, timeout=120)
+        if "SENDMAIL_OK" not in (r.stdout or ""):
+            raise RuntimeError((r.stdout or "") .strip()[-200:] or (r.stderr or "").strip()[-200:]
+                               or "sendmail не подтвердил отправку")
+
+
+class SmtpTunnel:
+    """SMTP через SSH-туннель. Годится ТОЛЬКО для адресов на splitcam.com:
+    наружу exim отвечает `550 relay not permitted`."""
+
+    def __init__(self, host, port):
+        self.host, self.port, self.srv, self.n = host, port, None, 0
+
+    def send(self, msg):
+        if self.srv is None or self.n >= PER_CONNECTION:
+            self.close()
+            self.srv = smtplib.SMTP(self.host, self.port, timeout=30)
+            self.n = 0
+        try:
+            self.srv.send_message(msg)
+            self.n += 1
+        except Exception:
+            self.srv = None
+            raise
+
+    def close(self):
+        if self.srv:
+            try: self.srv.quit()
+            except Exception: pass
+            self.srv = None
+
+
+def transport(a):
+    if a.transport == "smtp":
+        return SmtpTunnel(a.host, a.port)
+    return SshSendmail(a.ssh_wrapper, FROM_ADDR)
+
+
 def build(copy, locale, to_addr):
     c = copy.get(locale) or copy.get("EN")
     msg = EmailMessage()
@@ -171,6 +238,9 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--test-to", default="", help="одно письмо на этот адрес и выход")
     ap.add_argument("--no-console-filter", action="store_true")
+    ap.add_argument("--transport", choices=["ssh", "smtp"], default="ssh",
+                    help="ssh = sendmail на сервере (шлёт наружу); smtp = туннель, только локальные адреса")
+    ap.add_argument("--ssh-wrapper", default="", help="expect-обёртка для SSH с паролем")
     a = ap.parse_args()
 
     copy = json.loads(COPY_JSON.read_text(encoding="utf-8"))
@@ -181,8 +251,7 @@ def main():
         print(f"пробное письмо: {a.test_to}, язык {loc}, тема: {msg['Subject']}")
         if a.dry_run:
             return
-        with smtplib.SMTP(a.host, a.port, timeout=30) as s:
-            s.send_message(msg)
+        transport(a).send(msg)
         print("отправлено")
         return
 
@@ -226,31 +295,23 @@ def main():
         w = csv.writer(lf)
         if new_log:
             w.writerow(["ts_utc", "email", "locale", "result"])
-        srv = None
+        tr = transport(a)
         try:
             for i, p in enumerate(queue, 1):
-                if srv is None or i % PER_CONNECTION == 1 and i > 1:
-                    if srv:
-                        try: srv.quit()
-                        except Exception: pass
-                    srv = smtplib.SMTP(a.host, a.port, timeout=30)
                 ts = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
                 try:
-                    srv.send_message(build(copy, p["locale"], p["email"]))
+                    tr.send(build(copy, p["locale"], p["email"]))
                     w.writerow([ts, p["email"], p["locale"], "ok"]); sent += 1
                     print(f"  [{i}/{len(queue)}] {p['email']} ({p['locale']}) — ok")
                 except Exception as e:
                     w.writerow([ts, p["email"], p["locale"], f"FAIL {type(e).__name__}: {e}"])
                     failed += 1
                     print(f"  [{i}/{len(queue)}] {p['email']} — ОШИБКА: {e}")
-                    srv = None
                 lf.flush()
                 if i < len(queue):
                     time.sleep(a.delay)
         finally:
-            if srv:
-                try: srv.quit()
-                except Exception: pass
+            tr.close()
 
     print(f"\nотправлено {sent}, ошибок {failed}. Лог: {log_path}")
 
