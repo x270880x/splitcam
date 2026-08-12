@@ -9,18 +9,34 @@
 
 ## Статус подачи
 
-| Вендор | Статус | Когда | Как проверять результат | Когда напоминать |
-|---|---|---|---|---|
-| **Fortinet** | ✅ подана | 12.08.2026 | `https://www.fortiguard.com/webfilter` (POST со страницы, прямой GET отдаёт 403) | не напоминать — rate-limit; обещают сутки |
-| **MalwareURL** | ✅ отправлено письмом на `team@malwareurl.com` с `support@splitcam.com` | 12.08.2026 | `https://www.malwareurl.com/listing-urls.php` | письмом через неделю, если тишина |
-| **AlphaSOC** | ✅ отправлено письмом на `virustotal@alphasoc.com` с `support@splitcam.com` | 12.08.2026 | только VirusTotal, публичного lookup нет | вежливый follow-up через 10–14 дней |
-| **CRDF** | ⏳ форма заполнена, не отправлена | — | `https://threatcenter.crdf.fr/check.html` — отдельно apex, `www`, `http://77.83.100.153` | ответ ~24 ч, решение до 5 рабочих дней |
-| **ThreatFox** | ⏳ ждёт аккаунт abuse.ch | — | сама карточка `https://threatfox.abuse.ch/ioc/1861022/` | — |
-| **Malwarebytes** | ⏳ ждёт аккаунт + скриншот от Morgan | — | публичной проверки нет, только Browser Guard | staff отвечает за часы–48 ч |
-| Gridinsoft | подавать последним | — | `https://gridinsoft.com/online-virus-scanner/` | только если через 2–3 недели держится |
+**Счётчик VirusTotal: было 4/91 утром 12.08 → стало 2/91 к вечеру того же дня.**
+Отвалились AlphaSOC и CRDF. Данные свежие, не кэш: переанализ на VT показывал
+«25 minutes ago».
 
-Fortinet и AlphaSOC подтверждений не присылают вообще — тишина там норма, а не отказ.
-Общий индикатор успеха — счётчик на VirusTotal: сейчас 4 из 91, цель 0.
+| Вендор | Статус | Что сделано | Проверка результата |
+|---|---|---|---|
+| **Fortinet** | 🔴 держится, `Malware` | заявка подана 12.08 из браузера владельца (из панели дважды `403`) | `https://www.fortiguard.com/webfilter` |
+| **MalwareURL** | 🔴 держится, категория `Trojan JS ClearFake` — подтверждено на их же lookup 12.08 | письмо на `team@malwareurl.com` с `support@splitcam.com`, 12.08 | форма проверки на главной `malwareurl.com` |
+| **Gridinsoft** | 🟡 `Suspicious` | ничего — **и правильно** | `https://gridinsoft.com/online-virus-scanner/` |
+| **AlphaSOC** | ✅ снят | письмо на `virustotal@alphasoc.com`, 12.08 | только VT |
+| **CRDF** | ✅ снят (и не был листингом) | заявка не нужна | `https://threatcenter.crdf.fr/check.html` |
+| **ThreatFox** | ⏳ запись жива | нужен аккаунт abuse.ch | карточка IOC 1861022 |
+| **Malwarebytes** | ⏳ неизвестно | нужен аккаунт + скриншот от Morgan | только Browser Guard |
+
+**CRDF оказался не листингом вообще.** Их FP-форма отклонила заявку словами
+«The domain name "splitcam.com" is not contained in the CRDF Threat Center database»,
+а их же lookup показал: `PRESENCE IN CONFIRMED BLACKLIST: Not listed`,
+`LOOKUP SOURCE: CRDF IA pipeline only`, `VIRUSTOTAL VISIBILITY: Not visible on VirusTotal`,
+статус IA — «analysis in progress», confidence pending. То есть вердикт «CRDF: Malicious»,
+который VirusTotal показывал утром, был устаревшим кэшем. **Урок: проверять вендора
+на его собственном сервисе, а не по витрине VT — она отстаёт.**
+
+**Gridinsoft не подавать до конца.** Его оценка производная: в отчёте ровно два
+негативных сигнала — предупреждения поставщиков и «обнаружения в нескольких
+блоклистах». Их число уже упало с 4 до 2; когда снимутся Fortinet и MalwareURL,
+оснований не останется. Заявка сейчас = просьба снять оценку, опирающуюся на живые
+детекты, то есть отказ. Подавать только если через 2–3 недели после остальных
+вердикт удержится.
 
 ---
 
