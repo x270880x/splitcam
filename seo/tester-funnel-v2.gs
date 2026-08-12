@@ -54,6 +54,14 @@ var SENT_HEADER  = 'Link sent';
 var LOCALE_HEADER = 'Locale';                     // filled in automatically, for your eyes
 var FORM_URLS_SHEET = 'FORM URLS';                // written by seo/make-tester-forms.gs
 
+//<!--COPY-->
+// Generated block — DO NOT EDIT HERE. Edit seo/tester-email-i18n.json and rerun
+// `python3 seo/build_tester_funnel.py`. Everything between the COPY markers is
+// overwritten by that script.
+var COPY = {};
+var LABEL_TO_LOCALE = {};
+//<!--/COPY-->
+
 function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu('SplitCam')
@@ -169,6 +177,17 @@ function copyFor_(locale) {
 
 /* --------------------------------------------------------------- the sheet */
 
+/** Appends `name` to the header row if missing. Returns its 1-based column. */
+function ensureColumn_(sh, headers, name) {
+  var i = headers.indexOf(name);
+  if (i === -1) {
+    headers.push(name);
+    sh.getRange(1, headers.length).setValue(name);
+    i = headers.length - 1;
+  }
+  return i + 1;
+}
+
 /** Adds "Added to Console" / "Link sent" / "Locale" to EVERY response tab. */
 function setupSheet() {
   var sheets = responseSheets_();
@@ -178,19 +197,9 @@ function setupSheet() {
     var sh = sheets[s];
     var lastCol = Math.max(sh.getLastColumn(), 1);
     var headers = sh.getRange(1, 1, 1, lastCol).getValues()[0];
-    function ensure(name) {
-      var i = headers.indexOf(name);
-      if (i === -1) {
-        lastCol += 1;
-        sh.getRange(1, lastCol).setValue(name);
-        headers.push(name);
-        i = headers.length - 1;
-      }
-      return i + 1; // 1-based
-    }
-    var addedCol = ensure(ADDED_HEADER);
-    ensure(SENT_HEADER);
-    var locCol = ensure(LOCALE_HEADER);
+    var addedCol = ensureColumn_(sh, headers, ADDED_HEADER);
+    ensureColumn_(sh, headers, SENT_HEADER);
+    var locCol = ensureColumn_(sh, headers, LOCALE_HEADER);
     var lastRow = Math.max(sh.getLastRow(), 2);
     sh.getRange(2, addedCol, lastRow - 1, 1).insertCheckboxes();
     var loc = sheetLocale_(sh, index);
@@ -248,7 +257,7 @@ function sendOptInToTicked() {
       var email = String(row[emailC] || '').trim();
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { skipped++; continue; }
       if (sent >= quota) { hitQuota = true; break; }
-      var opts = { name: FROM_NAME, replyTo: REPLY_TO, body: c.body };
+      var opts = { name: FROM_NAME, replyTo: REPLY_TO };
       if (sender.mode === 'alias') opts.from = sender.from;
       GmailApp.sendEmail(email, c.subject, c.body, opts);
       sh.getRange(r + 1, sentC + 1).setValue(new Date());

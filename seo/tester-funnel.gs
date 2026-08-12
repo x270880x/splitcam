@@ -1,5 +1,5 @@
 /**
- * SplitCam Remote — Android closed-testing tester funnel (semi-auto).
+ * SplitCam Remote — Android closed-testing tester funnel (semi-auto, 35 locales).
  * Bound to the Form-responses Google Sheet (Extensions -> Apps Script from that Sheet).
  *
  * WHY SEMI and not full auto: the Play Developer API (edits.testers) only manages Google
@@ -8,13 +8,13 @@
  * Console tester list is inherently manual on this setup. Everything else is automated.
  *
  * FLOW
- *   1. Someone submits the form  -> a row auto-appends here (Form link) and you get the
- *      built-in "new response" email (Responses tab -> 3-dot -> Get email notifications).
+ *   1. Someone submits one of the 35 localized forms -> a row appends to THAT form's tab.
  *   2. You add their Google account to the Play Console closed-test list (manual, batch).
- *   3. You TICK the "Added to Console" checkbox on their row(s).
- *   4. Menu: SplitCam -> "Send opt-in link to ticked rows"  -> emails them the opt-in link
- *      and stamps "Link sent".
- *   +  A daily 13:00 email digest reports how many people submitted the form.
+ *   3. You TICK the "Added to Console" checkbox on their row(s), on any tab.
+ *   4. Menu: SplitCam -> "Send opt-in link to ticked rows" -> emails each of them the
+ *      opt-in link IN THE LANGUAGE OF THE FORM THEY SIGNED UP THROUGH, and stamps
+ *      "Link sent".
+ *   +  A daily 13:00 email digest reports how many people submitted, across all tabs.
  *
  * The opt-in link only works AFTER the address is on a tester list, which is exactly why
  * the link goes out on YOUR tick, not on form submit (sending earlier = "app not available").
@@ -22,16 +22,228 @@
  * SETUP (once): open this Sheet -> Extensions -> Apps Script -> paste this file -> Save.
  * Reload the Sheet. Run SplitCam -> "Set up sheet (add columns)" and approve the one-time
  * Google authorization (Gmail send + Sheets). Then SplitCam -> "Enable daily 13:00 report".
- * Consumer-Gmail mail quota is ~100 recipients/day (plenty for a 12-tester test).
+ * Consumer-Gmail mail quota is ~100 recipients/day.
  * If the report fires at the wrong local time, set the timezone in File -> Project Settings.
+ *
+ * SENDING FROM support@splitcam.com
+ *   Apps Script always sends as the Google account that owns the script, and support@ is a
+ *   mailbox on our own DirectAdmin server, not a Google account. The only way to make Gmail
+ *   put it in the From: header is to register it as a verified "Send mail as" alias:
+ *     Gmail (owner account) -> Settings -> Accounts and Import -> "Send mail as" ->
+ *     Add another email address:
+ *         Name:     SplitCam
+ *         Address:  support@splitcam.com
+ *         [x] Treat as an alias
+ *     Next -> SMTP of our own server:
+ *         SMTP server: mail.splitcam.com     Port: 465     SSL
+ *         Username:    support@splitcam.com  Password: the mailbox password (DirectAdmin)
+ *     Google mails a confirmation code to support@splitcam.com — read it in webmail and
+ *     confirm. After that GmailApp.getAliases() lists it and this script uses it.
+ *   Run SplitCam -> "Check sender address" to verify. It refuses to guess: with no alias
+ *   the send is blocked rather than quietly going out from someone's personal Gmail.
  */
 
 var OPT_IN_URL   = 'https://play.google.com/apps/testing/com.splitcam.remote';
 var PLAY_LISTING = 'https://play.google.com/store/apps/details?id=com.splitcam.remote';
-var REPORT_TO    = 'splitcameramail@gmail.com';  // daily digest + reply-to
+var SENDER       = 'support@splitcam.com';       // must be the owner OR a verified alias
+var REPLY_TO     = 'support@splitcam.com';       // where tester feedback lands
+var REPORT_TO    = 'splitcameramail@gmail.com';  // daily digest to the owner
 var FROM_NAME    = 'SplitCam';
 var ADDED_HEADER = 'Added to Console';
 var SENT_HEADER  = 'Link sent';
+var LOCALE_HEADER = 'Locale';                     // filled in automatically, for your eyes
+var FORM_URLS_SHEET = 'FORM URLS';                // written by seo/make-tester-forms.gs
+
+//<!--COPY-->
+// Generated block — DO NOT EDIT HERE. Edit seo/tester-email-i18n.json and rerun
+// `python3 seo/build_tester_funnel.py`. Everything between the COPY markers is
+// overwritten by that script.
+
+/** locale -> the exact mail that locale's signups receive. */
+var COPY = {
+  EN: {
+    subject: "SplitCam Remote: your link to the test",
+    body: "Hi!\n\nYou signed up to test SplitCam Remote for Android — your address is already on\nthe tester list. Two steps left, a couple of minutes in total.\n\nSTEP 1. Join the test (the link from the website):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nOpen it in a browser while signed in to the SAME Google account you gave us, and\npress \"Become a tester\". The page will confirm that you are in — that is not the\ninstall yet, the app will not appear on its own.\n\nSTEP 2. Install it on your phone:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nOpen this link on the Android device itself and press \"Install\". If Play says the\napp is not available, wait 10-15 minutes — the access is still propagating across\nGoogle's servers — and check that the Play Store is signed in to the same account\nas in step 1.\n\nSTEP 3. Give it a real try. Run SplitCam on your computer, open Remote on the\nphone, connect over the same Wi-Fi and switch a scene from across the room. Reply\nto this email and tell us what felt awkward or broke — that is the most valuable\nthing for us, we fix things based on your reports.\n\nOne request: please do not uninstall the app before release. Google only counts\nyour participation in the test while it stays installed on the phone.\n\nThanks for helping out!\n\n— The SplitCam team"
+  },
+  ru: {
+    subject: "SplitCam Remote: ваша ссылка на тест",
+    body: "Здравствуйте!\n\nВы записались в тестировщики SplitCam Remote для Android — ваш адрес уже в\nсписке. Осталось два шага, оба займут пару минут.\n\nШАГ 1. Присоединиться к тесту (со ссылки на сайте):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nОткройте её в браузере, войдя ИМЕННО в тот Google-аккаунт, который указали в\nзаявке, и нажмите «Стать тестировщиком». Страница ответит, что вы приняты, —\nэто ещё не установка, приложение не появится само.\n\nШАГ 2. Установить на телефон:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nОткройте эту ссылку на самом Android-устройстве и нажмите «Установить».\nЕсли Play пишет «приложение недоступно» — подождите 10–15 минут, доступ ещё\nрасходится по серверам Google, и проверьте, что в Play Маркете выбран тот же\nаккаунт, что в шаге 1.\n\nШАГ 3. Попробуйте в деле. Запустите SplitCam на компьютере, откройте Remote на\nтелефоне, подключитесь по одной Wi-Fi сети и переключите сцену с другого конца\nкомнаты. Ответьте на это письмо и напишите, что оказалось неудобным или\nсломалось, — это для нас ценнее всего, мы чиним по вашим отзывам.\n\nИ просьба: не удаляйте приложение до релиза. Google засчитывает участие в\nтестировании, только пока оно установлено на телефоне.\n\nСпасибо, что помогаете!\n\n— Команда SplitCam"
+  },
+  ar: {
+    subject: "SplitCam Remote: رابطك للاختبار",
+    body: "مرحبًا!\n\nسجّلت اسمك في قائمة مختبِري SplitCam Remote لنظام Android، وبريدك الإلكتروني\nمُدرج فيها بالفعل. بقيت خطوتان فقط، ولن تستغرقا معًا سوى دقيقتين.\n\nالخطوة 1. الانضمام إلى الاختبار (الرابط الموجود على الموقع):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nافتح الرابط في المتصفّح وأنت مسجّل الدخول بحساب Google ذاته الذي ذكرته في\nالطلب، لا بحساب آخر، ثم اضغط «انضم كمُختبِر». ستؤكّد لك الصفحة أنك أصبحت ضمن\nالمختبِرين. هذا ليس تثبيتًا بعد؛ لن يظهر التطبيق على الهاتف من تلقاء نفسه.\n\nالخطوة 2. تثبيت التطبيق على الهاتف:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nافتح هذا الرابط على جهاز Android نفسه واضغط «تثبيت». وإذا قال Play إن التطبيق\nغير متوفّر، فانتظر من 10 إلى 15 دقيقة ريثما ينتشر الوصول على خوادم Google،\nوتأكّد من أن الحساب المُختار في Play Store هو نفسه حساب الخطوة 1.\n\nالخطوة 3. جرّبه على أرض الواقع. شغّل SplitCam على الكمبيوتر، وافتح Remote على\nالهاتف، واربط الجهازين بشبكة Wi-Fi واحدة، ثم بدّل المشهد وأنت في الطرف الآخر\nمن الغرفة. ردّ على هذه الرسالة وأخبرنا بما أزعجك أو بما تعطّل؛ لا شيء أثمن\nلدينا من هذا، فنحن نصلح الأمور بناءً على ملاحظاتك.\n\nورجاء أخير: لا تحذف التطبيق قبل الإصدار الرسمي، لأن Google لا تحتسب مشاركتك\nفي الاختبار إلا ما دام التطبيق مثبّتًا على الهاتف.\n\nشكرًا لمساعدتك!\n\n— فريق SplitCam"
+  },
+  bg: {
+    subject: "SplitCam Remote: линкът ви за тестването",
+    body: "Здравейте!\n\nЗаписахте се като изпитател на SplitCam Remote за Android — адресът ви\nвече е в списъка. Остават две стъпки, общо няколко минути.\n\nСТЪПКА 1. Присъединете се към теста (връзката от сайта):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nОтворете я в браузър, след като сте влезли ИМЕННО в профила в Google,\nкойто посочихте в заявката, и натиснете „Станете изпитател“. Страницата\nще потвърди, че вече сте в теста — това още не е инсталация,\nприложението няма да се появи само.\n\nСТЪПКА 2. Инсталирайте го на телефона:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nОтворете тази връзка на самото устройство с Android и натиснете\n„Инсталиране“. Ако Play съобщи, че приложението не е налично, изчакайте\n10–15 минути: достъпът още се разпространява по сървърите на Google.\nПроверете и дали в Play Store сте влезли със същия профил като в стъпка 1.\n\nСТЪПКА 3. Изпробвайте го на практика. Пуснете SplitCam на компютъра,\nотворете Remote на телефона, свържете ги към една и съща Wi-Fi мрежа и\nсменете сцената от другия край на стаята. Отговорете на този имейл и ни\nнапишете какво ви е било неудобно или какво се е счупило — това е\nнай-ценното за нас, поправяме нещата според вашите отзиви.\n\nИ една молба: не деинсталирайте приложението преди официалното пускане.\nGoogle отчита участието ви в теста само докато приложението е\nинсталирано на телефона.\n\nБлагодарим, че помагате!\n\n— Екипът на SplitCam"
+  },
+  cs: {
+    subject: "SplitCam Remote: váš odkaz na testování",
+    body: "Dobrý den,\n\nzaregistrovali jste se do testování aplikace SplitCam Remote pro Android –\nvaši adresu už máme na seznamu. Zbývají dva kroky, dohromady pár minut.\n\nKROK 1. Přihlaste se do testování (odkaz z webu):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nOtevřete ho v prohlížeči, ve kterém jste přihlášeni PRÁVĚ K TOMU účtu\nGoogle, který jste uvedli v přihlášce, a klikněte na „Stát se testerem“.\nStránka potvrdí, že jste přijati – to ale ještě není instalace, aplikace\nse sama neobjeví.\n\nKROK 2. Nainstalujte ji do telefonu:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nTento odkaz otevřete přímo na svém zařízení Android a klepněte\nna „Instalovat“. Pokud Play hlásí, že aplikace není dostupná, počkejte\n10–15 minut, než se přístup rozšíří na všechny servery Google,\na zkontrolujte, že je v Play Store přihlášený stejný účet jako v kroku 1.\n\nKROK 3. Vyzkoušejte ji naostro. Spusťte SplitCam na počítači, otevřete\nRemote v telefonu, připojte obě zařízení ke stejné Wi-Fi a přepněte scénu\nz druhého konce místnosti. Odpovězte na tento e-mail a napište nám, co\nbylo nepohodlné nebo co nefungovalo – právě to je pro nás nejcennější,\nopravujeme přesně podle toho, co nám napíšete.\n\nA ještě prosba: nemažte aplikaci až do vydání. Google započítá vaši účast\nv testování jen po tu dobu, kdy je nainstalovaná v telefonu.\n\nDíky, že pomáháte!\n\n— Tým SplitCam"
+  },
+  da: {
+    subject: "SplitCam Remote: dit link til testen",
+    body: "Hej!\n\nDu har meldt dig som tester af SplitCam Remote til Android — din adresse står\nallerede på listen. Der mangler kun to trin, og de tager et par minutter i\nalt.\n\nTRIN 1. Deltag i testen (linket fra hjemmesiden):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nÅbn det i en browser, mens du er logget ind på DEN SAMME Google-konto, som du\noplyste i tilmeldingen, og klik på \"Bliv tester\". Siden bekræfter, at du er\nmed, men det er ikke installationen endnu — appen kommer ikke af sig selv.\n\nTRIN 2. Installer appen på mobilen:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nÅbn dette link på selve Android-enheden, og tryk på \"Installer\". Hvis Play\nskriver, at appen ikke er tilgængelig, så vent 10-15 minutter: adgangen er\nstadig ved at brede sig ud på Googles servere. Tjek også, at du er logget ind\npå den samme konto i Play Store som i trin 1.\n\nTRIN 3. Prøv den af i praksis. Start SplitCam på computeren, åbn Remote på\nmobilen, sæt dem på det samme Wi-Fi, og skift scene fra den anden ende af\nrummet. Svar på denne mail, og skriv, hvad der føltes besværligt, eller hvad\nder gik i stykker — det har vi allermest brug for, vi retter tingene ud fra\njeres tilbagemeldinger.\n\nEn sidste ting: afinstaller ikke appen før udgivelsen. Google tæller kun din\ndeltagelse i testen med, så længe appen er installeret på mobilen.\n\nTak for hjælpen!\n\n— SplitCam-teamet"
+  },
+  de: {
+    subject: "SplitCam Remote: dein Link zum Testen",
+    body: "Hallo,\n\ndu hast dich zum Testen von SplitCam Remote für Android gemeldet – deine\nAdresse steht schon auf der Testerliste. Es fehlen nur zwei Schritte,\nzusammen ein paar Minuten.\n\nSCHRITT 1. Am Test teilnehmen (der Link von der Website):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nÖffne ihn im Browser, während du mit GENAU dem Google-Konto angemeldet bist,\ndas du uns genannt hast, und tippe auf „Tester werden“. Die Seite bestätigt\ndir, dass du dabei bist – das ist aber noch nicht die Installation, die App\nerscheint nicht von allein.\n\nSCHRITT 2. Auf dem Handy installieren:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nÖffne diesen Link direkt auf dem Android-Gerät und tippe auf „Installieren“.\nWenn Play meldet, die App sei nicht verfügbar, warte 10 bis 15 Minuten: Die\nFreigabe verteilt sich noch über die Server von Google. Prüfe außerdem, ob\nim Play Store dasselbe Konto angemeldet ist wie in Schritt 1.\n\nSCHRITT 3. Probier sie richtig aus. Starte SplitCam am PC, öffne Remote auf\ndem Handy, verbinde beide mit demselben Wi-Fi-Netz und wechsle die Szene vom\nanderen Ende des Raums aus. Antworte einfach auf diese Mail und schreib uns,\nwas umständlich war oder kaputtgegangen ist – das ist für uns am\nwertvollsten, wir bessern genau anhand solcher Rückmeldungen nach.\n\nUnd eine Bitte: Deinstalliere die App nicht vor dem Release. Google zählt\ndeine Teilnahme am Test nur, solange die App auf dem Handy installiert\nbleibt.\n\nDanke, dass du mithilfst!\n\n— Das SplitCam-Team"
+  },
+  el: {
+    subject: "SplitCam Remote: ο σύνδεσμός σας για τη δοκιμή",
+    body: "Γεια σας!\n\nΔηλώσατε συμμετοχή στη δοκιμή του SplitCam Remote για Android — η διεύθυνσή\nσας είναι ήδη στη λίστα των δοκιμαστών. Μένουν δύο βήματα, συνολικά λίγα\nλεπτά.\n\nΒΗΜΑ 1. Μπείτε στη δοκιμή (ο σύνδεσμος από τον ιστότοπο):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nΑνοίξτε τον σε πρόγραμμα περιήγησης, έχοντας συνδεθεί ΑΚΡΙΒΩΣ\nμε τον λογαριασμό Google που δηλώσατε στη φόρμα, και πατήστε\n«Γίνετε δοκιμαστές». Η σελίδα θα σας επιβεβαιώσει ότι μπήκατε — αυτό\nδεν είναι ακόμη η εγκατάσταση, η εφαρμογή δεν θα εμφανιστεί μόνη της.\n\nΒΗΜΑ 2. Εγκαταστήστε την στο κινητό:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nΑυτόν τον σύνδεσμο ανοίξτε τον απευθείας στη συσκευή Android και πατήστε\n«Εγκατάσταση». Αν το Play λέει ότι η εφαρμογή δεν είναι διαθέσιμη,\nπεριμένετε 10–15 λεπτά — η πρόσβαση δεν έχει περάσει ακόμη σε όλους\nτους διακομιστές της Google — και ελέγξτε ότι στο Play Store είστε\nσυνδεδεμένοι με τον ίδιο λογαριασμό όπως στο βήμα 1.\n\nΒΗΜΑ 3. Δοκιμάστε την στην πράξη. Ανοίξτε το SplitCam στον υπολογιστή\nκαι το Remote στο κινητό, συνδέστε τα στο ίδιο δίκτυο Wi-Fi και αλλάξτε\nσκηνή από την άλλη άκρη του δωματίου. Απαντήστε σε αυτό το email\nκαι γράψτε μας τι σας δυσκόλεψε ή τι δεν δούλεψε — αυτό είναι το πιο\nπολύτιμο για εμάς, διορθώνουμε ακριβώς με βάση όσα μας γράφετε.\n\nΚαι μια παράκληση: μην απεγκαταστήσετε την εφαρμογή πριν από\nτην κυκλοφορία. Η Google μετράει τη συμμετοχή σας στη δοκιμή μόνο όσο\nη εφαρμογή παραμένει εγκατεστημένη στο κινητό.\n\nΕυχαριστούμε για τη βοήθεια!\n\n— Η ομάδα του SplitCam"
+  },
+  es: {
+    subject: "SplitCam Remote: tu enlace para la prueba",
+    body: "¡Hola!\n\nTe apuntaste para probar SplitCam Remote para Android: tu dirección ya está\nen la lista de testers. Quedan dos pasos, un par de minutos en total.\n\nPASO 1. Únete a la prueba (el enlace de la web):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nÁbrelo en el navegador con la sesión iniciada en LA MISMA cuenta de Google\nque nos indicaste y pulsa «Hazte tester». La página te confirmará que ya\nestás dentro; eso todavía no es la instalación, la aplicación no aparece\nsola.\n\nPASO 2. Instálala en el teléfono:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nAbre este enlace en el propio dispositivo Android y pulsa «Instalar». Si\nPlay dice que la aplicación no está disponible, espera 10-15 minutos: el\nacceso todavía se está propagando por los servidores de Google. Comprueba\ntambién que en Play Store tienes la misma cuenta que en el paso 1.\n\nPASO 3. Pruébala de verdad. Abre SplitCam en el PC, abre Remote en el\nteléfono, conéctalos a la misma red Wi-Fi y cambia de escena desde el otro\nextremo de la habitación. Responde a este correo y cuéntanos qué te resultó\nincómodo o qué falló: es lo más valioso para nosotros y es así como\narreglamos las cosas.\n\nY una petición: no desinstales la aplicación antes del lanzamiento. Google\nsolo cuenta tu participación en la prueba mientras la aplicación siga\ninstalada en el teléfono.\n\n¡Gracias por echarnos una mano!\n\n— El equipo de SplitCam"
+  },
+  fa: {
+    subject: "SplitCam Remote: لینک تست شما",
+    body: "سلام!\n\nشما برای تست SplitCam Remote روی Android ثبت‌نام کرده‌اید و ایمیل‌تان همین\nحالا در فهرست تست‌کننده‌هاست. فقط دو مرحله مانده که روی‌هم چند دقیقه بیشتر\nطول نمی‌کشد.\n\nمرحله ۱. پیوستن به تست (همان لینکی که در سایت دیدید):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nاین لینک را در مرورگر باز کنید، آن هم دقیقاً با همان حساب Google که در فرم\nثبت‌نام نوشتید، و روی «تست‌کننده شوید» بزنید. صفحه تأیید می‌کند که پذیرفته\nشده‌اید؛ این هنوز نصب نیست و برنامه خودبه‌خود روی گوشی نمی‌آید.\n\nمرحله ۲. نصب روی گوشی:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nاین لینک را روی خودِ دستگاه Android باز کنید و روی «نصب» بزنید. اگر Play\nبنویسد برنامه در دسترس نیست، ۱۰ تا ۱۵ دقیقه صبر کنید؛ دسترسی هنوز روی\nسرورهای Google پخش می‌شود. همچنین بررسی کنید که Play Store با همان حسابی\nوارد شده باشد که در مرحله ۱ استفاده کردید.\n\nمرحله ۳. واقعاً امتحانش کنید. SplitCam را روی کامپیوتر اجرا کنید، Remote را\nروی گوشی باز کنید، هر دو را به یک شبکهٔ Wi-Fi وصل کنید و از آن سر اتاق صحنه\nرا عوض کنید. به همین ایمیل پاسخ دهید و بنویسید چه چیزی اذیت‌تان کرد یا کجا\nخراب شد؛ این برای ما از هر چیزی باارزش‌تر است و دقیقاً بر اساس همین\nگزارش‌ها مشکلات را برطرف می‌کنیم.\n\nیک خواهش: تا زمان انتشار نسخهٔ نهایی، برنامه را حذف نکنید. Google مشارکت شما\nدر تست را فقط تا وقتی به حساب می‌آورد که برنامه روی گوشی نصب مانده باشد.\n\nممنون که کمک می‌کنید!\n\n— تیم SplitCam"
+  },
+  fi: {
+    subject: "SplitCam Remote: linkkisi testiin",
+    body: "Hei!\n\nIlmoittauduit SplitCam Remoten Android-version testaajaksi — osoitteesi on jo\nlistalla. Jäljellä on enää kaksi vaihetta, ja niihin menee pari minuuttia.\n\nVAIHE 1. Liity testiin (linkki sivustolta):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nAvaa linkki selaimessa ja kirjaudu SAMALLE Google-tilille, jonka ilmoitit\nilmoittautuessasi. Napsauta sitten \"Ryhdy testaajaksi\". Sivu vahvistaa, että\nolet mukana, mutta tämä ei ole vielä asennus — sovellus ei ilmesty puhelimeen\nitsestään.\n\nVAIHE 2. Asenna sovellus puhelimeen:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nAvaa tämä linkki itse Android-laitteella ja napauta \"Asenna\". Jos Play sanoo,\nettei sovellus ole saatavilla, odota 10-15 minuuttia: käyttöoikeus leviää\nvielä Googlen palvelimille. Tarkista myös, että Play Storessa on käytössä\nsama tili kuin vaiheessa 1.\n\nVAIHE 3. Kokeile kunnolla. Käynnistä SplitCam tietokoneella, avaa Remote\npuhelimessa, yhdistä ne samaan Wi-Fi-verkkoon ja vaihda kohtausta huoneen\ntoiselta laidalta. Vastaa tähän viestiin ja kerro, mikä tuntui kömpelöltä tai\nmikä meni rikki — juuri siitä on meille eniten hyötyä, korjaamme asioita\npalautteen perusteella.\n\nVielä yksi pyyntö: älä poista sovellusta ennen julkaisua. Google laskee\nosallistumisesi testiin mukaan vain niin kauan kuin sovellus on asennettuna\npuhelimessa.\n\nKiitos avusta!\n\n— SplitCam-tiimi"
+  },
+  fil: {
+    subject: "SplitCam Remote: ang link mo para sa testing",
+    body: "Kumusta!\n\nNag-sign up ka para maging tester ng SplitCam Remote para sa Android — nasa\nlistahan na ng mga tester ang email mo. Dalawang hakbang na lang ang\nnatitira, at ilang minuto lang ang aabutin ng dalawa.\n\nHAKBANG 1. Sumali sa test (ang link mula sa website):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nBuksan mo ito sa browser habang naka-sign in sa MISMONG Google account na\nibinigay mo sa amin, tapos pindutin ang \"Maging tester\". Sasabihin ng page na\ntanggap ka na, pero hindi pa ito ang pag-install; hindi kusang lalabas ang\napp sa phone mo.\n\nHAKBANG 2. I-install sa phone mo:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nBuksan ang link na ito sa mismong Android device at pindutin ang \"I-install\".\nKung sinasabi ng Play na hindi available ang app, maghintay ka ng 10-15\nminuto, kumakalat pa ang access sa mga server ng Google. Tiyakin mo rin na\nnaka-sign in ang Play Store sa parehong account na ginamit mo sa hakbang 1.\n\nHAKBANG 3. Subukan mo talaga. Patakbuhin ang SplitCam sa computer, buksan ang\nRemote sa phone, ikonekta ang dalawa sa iisang Wi-Fi at palitan ang scene\nmula sa kabilang dulo ng kuwarto. Mag-reply ka sa email na ito at sabihin\nkung ano ang nakakalito o kung ano ang sira. Iyon ang pinakamahalaga para sa\namin, inaayos namin ang app base sa mga sinasabi mo.\n\nIsang pakiusap: huwag mong i-uninstall ang app bago ang release. Binibilang\nlang ng Google ang paglahok mo sa test habang naka-install ito sa phone.\n\nSalamat sa tulong mo!\n\n— Ang SplitCam Team"
+  },
+  fr: {
+    subject: "SplitCam Remote : votre lien pour le test",
+    body: "Bonjour !\n\nVous avez demandé à tester SplitCam Remote pour Android : votre adresse est\ndéjà sur la liste des testeurs. Il reste deux étapes, deux minutes en tout.\n\nÉTAPE 1. Rejoindre le test (le lien du site) :\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nOuvrez-le dans un navigateur avec le compte Google que vous nous avez\nindiqué, celui-là et pas un autre, puis appuyez sur « Devenir testeur ». La\npage vous confirmera que votre inscription est enregistrée : ce n'est pas\nencore l'installation, l'application n'apparaîtra pas toute seule.\n\nÉTAPE 2. Installer l'application sur le téléphone :\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nOuvrez ce lien sur l'appareil Android lui-même et appuyez sur « Installer ».\nSi Play indique que l'application n'est pas disponible, patientez 10 à 15\nminutes, le temps que l'accès se propage sur les serveurs de Google, et\nvérifiez que le Play Store utilise bien le même compte qu'à l'étape 1.\n\nÉTAPE 3. Essayez-la pour de vrai. Lancez SplitCam sur l'ordinateur, ouvrez\nRemote sur le téléphone, connectez les deux au même réseau Wi-Fi et changez\nde scène depuis l'autre bout de la pièce. Répondez à cet e-mail et\ndites-nous ce qui vous a paru pénible ou ce qui n'a pas marché : c'est ce\nqui nous aide le plus, et c'est comme ça que nous corrigeons les choses.\n\nUne demande pour finir : ne désinstallez pas l'application avant la sortie\nofficielle. Google ne compte votre participation au test que tant que\nl'application reste installée sur le téléphone.\n\nMerci de votre aide !\n\n— L'équipe SplitCam"
+  },
+  he: {
+    subject: "SplitCam Remote: הקישור שלכם לבדיקה",
+    body: "שלום!\n\nנרשמתם לבדוק את SplitCam Remote ל-Android, וכתובת המייל שלכם כבר ברשימת\nהבודקים. נשארו שני שלבים, ושניהם יחד לוקחים דקה או שתיים.\n\nשלב 1. הצטרפות לבדיקה (הקישור מהאתר):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nפתחו אותו בדפדפן כשאתם מחוברים בדיוק לאותו חשבון Google שציינתם בהרשמה, ולחצו\nעל \"הצטרפו כבודקים\". הדף יאשר לכם שאתם בפנים. זו עדיין לא ההתקנה, האפליקציה\nלא תופיע בטלפון מעצמה.\n\nשלב 2. התקנה בטלפון:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nפתחו את הקישור הזה במכשיר ה-Android עצמו ולחצו על \"התקנה\". אם Play כותב\nשהאפליקציה לא זמינה, חכו 10-15 דקות: ההרשאה עדיין מתפשטת בשרתים של Google.\nבדקו גם ש-Play Store מחובר לאותו חשבון כמו בשלב 1.\n\nשלב 3. נסו אותה באמת. הפעילו את SplitCam במחשב, פתחו את Remote בטלפון, חברו\nאת שניהם לאותה רשת Wi-Fi והחליפו סצנה מהצד השני של החדר. השיבו למייל הזה\nוספרו לנו מה היה מסורבל או מה נשבר. זה הדבר הכי חשוב לנו, ואנחנו מתקנים בדיוק\nלפי הדיווחים שלכם.\n\nובקשה אחת: אל תסירו את האפליקציה עד שהגרסה תצא. ההשתתפות שלכם בבדיקה נחשבת\nאצל Google רק כל עוד האפליקציה מותקנת בטלפון.\n\nתודה על העזרה!\n\n— צוות SplitCam"
+  },
+  hi: {
+    subject: "SplitCam Remote: आपका टेस्ट लिंक",
+    body: "नमस्ते!\n\nआपने Android पर SplitCam Remote टेस्ट करने के लिए नाम दिया था —\nआपका पता Tester की लिस्ट में पहले से जुड़ चुका है। अब सिर्फ़ दो चरण\nबाकी हैं, दोनों में कुल मिलाकर दो-तीन मिनट लगेंगे।\n\nचरण 1. टेस्ट में शामिल हों (वेबसाइट पर दिया गया लिंक):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nपहले यह देख लें कि आप ठीक उसी Google खाते से साइन इन हैं जो फ़ॉर्म\nमें दिया था। फिर इस लिंक को ब्राउज़र में खोलें और \"Tester बनिए\"\nदबाएँ। पेज बता देगा कि आप शामिल हो गए हैं। यह इंस्टॉल नहीं है, ऐप\nअपने आप फ़ोन पर नहीं आएगा।\n\nचरण 2. फ़ोन पर इंस्टॉल करें:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nयह लिंक सीधे उसी Android फ़ोन पर खोलें और \"इंस्टॉल करें\" दबाएँ। अगर\nGoogle Play कहे कि ऐप उपलब्ध नहीं है, तो 10-15 मिनट रुकें, ऐक्सेस\nअभी Google के सर्वर तक पहुँच ही रहा है। साथ ही देख लें कि Play Store\nमें वही खाता साइन इन हो जो चरण 1 में था।\n\nचरण 3. इसे असल में आज़माकर देखें। कंप्यूटर पर SplitCam चलाएँ, फ़ोन पर\nRemote खोलें, दोनों को एक ही Wi-Fi से जोड़ें और कमरे के दूसरे कोने से\nसीन बदलकर देखें। फिर इसी ईमेल का जवाब दें और बताएँ कि क्या अटपटा लगा\nया क्या टूटा। हमारे लिए यही सबसे कीमती है, हम आपकी बताई बातों के\nआधार पर ही चीज़ें ठीक करते हैं।\n\nएक गुज़ारिश: रिलीज़ से पहले ऐप को अनइंस्टॉल न करें। Google आपकी\nभागीदारी तभी गिनता है जब ऐप फ़ोन पर इंस्टॉल रहे।\n\nमदद करने के लिए शुक्रिया!\n\n— SplitCam टीम"
+  },
+  hr: {
+    subject: "SplitCam Remote: vaša poveznica za testiranje",
+    body: "Pozdrav!\n\nPrijavili ste se za testiranje aplikacije SplitCam Remote za Android — vaša\nje adresa već na popisu testera. Ostala su još dva koraka, oba zajedno traju\npar minuta.\n\nKORAK 1. Pridružite se testiranju (poveznica sa stranice):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nOtvorite je u pregledniku i prijavite se TOČNO na onaj Google račun koji ste\nnaveli u prijavi, pa pritisnite „Postanite tester”. Stranica će potvrditi da\nste u testiranju — to još nije instalacija, aplikacija se neće pojaviti sama.\n\nKORAK 2. Instalirajte je na telefon:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nOtvorite ovu poveznicu na samom Android uređaju i pritisnite „Instaliraj”.\nAko Play javi da aplikacija nije dostupna, pričekajte 10–15 minuta: pristup\nse još širi po Google poslužiteljima. Provjerite i je li u aplikaciji Play\nStore prijavljen isti račun kao u koraku 1.\n\nKORAK 3. Iskušajte je na djelu. Pokrenite SplitCam na računalu, otvorite\nRemote na telefonu, spojite ih na istu Wi-Fi mrežu i prebacite scenu s\ndrugog kraja sobe. Odgovorite na ovu poruku i napišite nam što vam je bilo\nnezgodno ili što je puklo — to nam najviše znači, upravo po tome popravljamo\nstvari.\n\nI jedna molba: nemojte deinstalirati aplikaciju prije službenog izlaska.\nGoogle priznaje vaše sudjelovanje u testiranju samo dok je aplikacija\ninstalirana na telefonu.\n\nHvala na pomoći!\n\n— SplitCam tim"
+  },
+  hu: {
+    subject: "SplitCam Remote: a tesztelői linked",
+    body: "Szia!\n\nJelentkeztél a SplitCam Remote Android-verziójának tesztelésére – a címed\nmár rajta van a tesztelői listán. Két lépés maradt, összesen pár perc.\n\n1. LÉPÉS. Csatlakozz a teszthez (ez a link a weboldalról):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nNyisd meg böngészőben, PONTOSAN azzal a Google-fiókkal bejelentkezve,\namelyet a jelentkezéskor megadtál, és kattints a „Legyél tesztelő”\ngombra. Az oldal visszaigazolja, hogy bekerültél – ez még nem a telepítés,\naz alkalmazás nem jelenik meg magától.\n\n2. LÉPÉS. Telepítsd a telefonodra:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nEzt a linket már magán az Android-készüléken nyisd meg, és nyomd meg\na „Telepítés” gombot. Ha a Play azt írja, hogy az alkalmazás nem érhető\nel, várj 10–15 percet – a hozzáférés még terjed a Google szerverei\nközött –, és ellenőrizd, hogy a Play Store-ban ugyanazzal a fiókkal vagy\nbejelentkezve, mint az 1. lépésben.\n\n3. LÉPÉS. Próbáld ki élesben. Indítsd el a számítógépen a SplitCam\nalkalmazást, a telefonon pedig nyisd meg a Remote-ot, kapcsold mindkettőt\nugyanarra a Wi-Fi-hálózatra, és válts jelenetet a szoba másik végéből.\nVálaszolj erre a levélre, és írd meg, mi volt kényelmetlen vagy mi nem\nműködött – ez ér nekünk a legtöbbet, pontosan az ilyen visszajelzések\nalapján javítunk.\n\nEgy kérés: ne töröld le az alkalmazást a megjelenésig. A Google csak addig\nszámítja be a tesztben való részvételt, amíg az alkalmazás fent van\na telefonon.\n\nKöszönjük a segítséget!\n\n— A SplitCam csapata"
+  },
+  id: {
+    subject: "SplitCam Remote: tautan pengujian Anda",
+    body: "Halo!\n\nAnda mendaftar untuk menguji SplitCam Remote versi Android — alamat email\nAnda sudah ada di daftar penguji. Tinggal dua langkah, totalnya cuma\nbeberapa menit.\n\nLANGKAH 1. Bergabung ke pengujian (tautan dari situs):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nBuka tautan ini di browser, pastikan Anda masuk dengan akun Google yang SAMA\nseperti yang Anda tulis di formulir, lalu tekan \"Jadi penguji\". Halaman akan\nmemberi tahu bahwa Anda diterima, tapi itu belum pemasangan; aplikasinya\ntidak akan muncul sendiri di ponsel.\n\nLANGKAH 2. Instal di ponsel Anda:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nBuka tautan ini langsung di perangkat Android, lalu tekan \"Instal\". Kalau\nPlay bilang aplikasinya tidak tersedia, tunggu 10-15 menit, aksesnya masih\nmenyebar ke server Google. Pastikan juga Play Store memakai akun yang sama\nseperti di langkah 1.\n\nLANGKAH 3. Coba betulan. Jalankan SplitCam di komputer, buka Remote di\nponsel, sambungkan keduanya ke Wi-Fi yang sama, lalu ganti scene dari ujung\nruangan yang lain. Balas email ini dan ceritakan apa yang terasa merepotkan\natau apa yang rusak. Itu yang paling berharga buat kami; kami memperbaiki\naplikasi berdasarkan laporan Anda.\n\nSatu permintaan: jangan hapus aplikasinya sebelum rilis. Google hanya\nmenghitung partisipasi Anda dalam pengujian selama aplikasinya tetap\nterpasang di ponsel.\n\nTerima kasih atas bantuan Anda!\n\n— Tim SplitCam"
+  },
+  it: {
+    subject: "SplitCam Remote: il tuo link per il test",
+    body: "Ciao!\n\nHai chiesto di testare SplitCam Remote per Android: il tuo indirizzo è già\nnella lista dei tester. Mancano due passi, un paio di minuti in tutto.\n\nPASSO 1. Entra nel test (il link dal sito):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nAprilo nel browser con l'account Google che ci hai indicato, proprio quello\ne non un altro, e tocca «Diventa un tester». La pagina ti confermerà che sei\ndentro: non è ancora l'installazione, l'app non compare da sola.\n\nPASSO 2. Installa l'app sul telefono:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nApri questo link direttamente sul dispositivo Android e tocca «Installa».\nSe Play dice che l'app non è disponibile, aspetta 10-15 minuti: l'accesso\nsi sta ancora propagando sui server di Google. Controlla anche che nel\nPlay Store sia attivo lo stesso account del passo 1.\n\nPASSO 3. Provala sul serio. Avvia SplitCam sul computer, apri Remote sul\ntelefono, collegali alla stessa rete Wi-Fi e cambia scena dall'altra parte\ndella stanza. Rispondi a questa e-mail e raccontaci cosa ti è sembrato\nscomodo o cosa si è rotto: per noi è la cosa più preziosa, sistemiamo l'app\nin base alle segnalazioni che riceviamo.\n\nE una richiesta: non disinstallare l'app prima del rilascio. Google conta la\ntua partecipazione al test solo finché l'app resta installata sul telefono.\n\nGrazie dell'aiuto!\n\n— Il team SplitCam"
+  },
+  ja: {
+    subject: "SplitCam Remote：テスト参加用リンクのご案内",
+    body: "こんにちは。\n\nAndroid 版 SplitCam Remote のテストにお申し込みいただき、\nありがとうございます。ご登録のメールアドレスはすでに\nテスター一覧に入っています。あとは2ステップ、どちらも\n数分で終わります。\n\nステップ1. テストに参加する（サイトに載せたリンクです）:\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\n必ず、申し込みフォームにご記入いただいたものと同じ Google\nアカウントでログインした状態で、ブラウザからこのリンクを開き、\n「テスターになる」を押してください。参加を受け付けた旨が\n表示されますが、これはまだインストールではありません。\nアプリが自動で入ることはありません。\n\nステップ2. スマートフォンにインストールする:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nこのリンクは Android 端末そのもので開き、「インストール」を\n押してください。Google Play に「アプリを利用できません」と\n表示される場合は、10〜15分ほど待ってみてください。アクセス権が\nGoogle のサーバー全体に行き渡っている途中です。あわせて、\nPlay Store がステップ1と同じアカウントでログインしているか\nご確認ください。\n\nステップ3. 実際に使ってみてください。パソコンで SplitCam を\n起動し、スマートフォンで Remote を開き、同じ Wi-Fi につないで、\n部屋の反対側からシーンを切り替えてみてください。そのうえで、\n使いにくかったところ、動かなかったところを、このメールに\nそのまま返信して教えてください。私たちにとって、その一言が\nいちばんありがたいです。いただいた声をもとに直していきます。\n\nひとつお願いがあります。リリースまではアプリを削除しないで\nください。Google がテストへの参加として数えてくれるのは、\n端末にインストールされている間だけです。\n\nご協力ありがとうございます。\n\n— SplitCam チーム"
+  },
+  ko: {
+    subject: "SplitCam Remote: 테스트 참여 링크 안내",
+    body: "안녕하세요!\n\nAndroid용 SplitCam Remote 테스트에 신청해 주셔서 감사합니다.\n보내주신 주소는 이미 테스터 명단에 올라가 있습니다. 이제 두 단계만\n남았고, 둘 다 합쳐서 몇 분이면 끝납니다.\n\n1단계. 테스트에 참여하기 (사이트에 있던 그 링크입니다):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\n신청서에 적어 주신 바로 그 Google 계정으로 로그인한 상태에서\n브라우저로 이 링크를 열고 '테스터 신청'을 누르세요. 참여가\n완료됐다는 안내가 뜨는데, 이건 아직 설치가 아닙니다. 앱이 저절로\n깔리지는 않습니다.\n\n2단계. 휴대전화에 설치하기:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\n이 링크는 Android 기기에서 직접 열고 '설치'를 누르세요. Google Play가\n앱을 사용할 수 없다고 하면 10~15분만 기다려 주세요. 접근 권한이 아직\nGoogle 서버 전체로 퍼지는 중입니다. 그리고 Play Store가 1단계와 같은\n계정으로 로그인돼 있는지도 확인해 주세요.\n\n3단계. 실제로 한번 써 보세요. 컴퓨터에서 SplitCam을 실행하고\n휴대전화에서 Remote를 연 다음, 같은 Wi-Fi에 연결해 방 반대편에서\n장면을 전환해 보세요. 그리고 불편했던 점이나 망가진 부분을 이 메일에\n그대로 답장해 알려 주세요. 저희에게는 그게 가장 값진 정보이고,\n보내주신 이야기를 보고 하나씩 고쳐 나갑니다.\n\n한 가지 부탁이 있습니다. 출시 전까지는 앱을 삭제하지 말아 주세요.\nGoogle은 앱이 휴대전화에 설치돼 있는 동안에만 테스트 참여로\n인정합니다.\n\n도와주셔서 고맙습니다!\n\n— SplitCam 팀"
+  },
+  ms: {
+    subject: "SplitCam Remote: pautan ujian anda",
+    body: "Hai!\n\nAnda telah mendaftar untuk menguji SplitCam Remote untuk Android — alamat\ne-mel anda sudah ada dalam senarai penguji. Tinggal dua langkah sahaja,\nkedua-duanya mengambil masa beberapa minit.\n\nLANGKAH 1. Sertai ujian (pautan dari laman web):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nBuka pautan ini dalam pelayar, pastikan anda log masuk dengan akaun Google\nyang SAMA seperti yang anda berikan kepada kami, kemudian tekan\n\"Jadi penguji\". Halaman itu akan mengesahkan bahawa anda diterima, tetapi\nitu belum pemasangan; aplikasi tidak akan muncul dengan sendirinya.\n\nLANGKAH 2. Pasang pada telefon anda:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nBuka pautan ini terus pada peranti Android dan tekan \"Pasang\". Kalau Play\nmemberitahu aplikasi tidak tersedia, tunggu 10-15 minit, akses masih sedang\ndisebarkan ke pelayan Google. Pastikan juga Play Store menggunakan akaun yang\nsama seperti dalam langkah 1.\n\nLANGKAH 3. Cuba betul-betul. Jalankan SplitCam pada komputer, buka Remote\npada telefon, sambungkan kedua-duanya ke Wi-Fi yang sama dan tukar scene dari\nhujung bilik yang satu lagi. Balas e-mel ini dan beritahu kami apa yang\nmenyusahkan atau apa yang rosak. Itu yang paling berharga bagi kami; kami\nmembaiki aplikasi berdasarkan laporan anda.\n\nSatu permintaan: jangan nyahpasang aplikasi ini sebelum keluaran rasmi.\nGoogle hanya mengira penyertaan anda dalam ujian selagi aplikasi itu kekal\ndipasang pada telefon.\n\nTerima kasih kerana membantu!\n\n— Pasukan SplitCam"
+  },
+  nl: {
+    subject: "SplitCam Remote: je link voor de test",
+    body: "Hallo!\n\nJe hebt je aangemeld als tester van SplitCam Remote voor Android — je adres\nstaat al op de lijst. Nog twee stappen te gaan, samen een paar minuten werk.\n\nSTAP 1. Doe mee aan de test (de link van de website):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nOpen die link in een browser terwijl je bent ingelogd met HETZELFDE\nGoogle-account dat je bij je aanmelding hebt opgegeven, en klik op\n\"Word tester\". De pagina bevestigt daarna dat je meedoet, maar dat is nog\nniet de installatie: de app verschijnt niet vanzelf op je telefoon.\n\nSTAP 2. Installeer de app op je telefoon:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nOpen deze link op het Android-toestel zelf en tik op \"Installeren\". Zegt Play\ndat de app niet beschikbaar is? Wacht dan 10-15 minuten: de toegang wordt nog\nover de servers van Google verspreid. Controleer ook of je in de Play Store\nbent ingelogd met hetzelfde account als bij stap 1.\n\nSTAP 3. Probeer hem echt uit. Start SplitCam op je computer, open Remote op\nje telefoon, verbind ze via hetzelfde Wi-Fi-netwerk en wissel van scène vanaf\nde andere kant van de kamer. Antwoord op deze mail en vertel wat er onhandig\naanvoelde of wat er kapotging — daar hebben we het meest aan, we verbeteren\nde app op basis van jullie meldingen.\n\nNog één ding: verwijder de app niet vóór de release. Google telt je deelname\naan de test alleen mee zolang de app op je telefoon geïnstalleerd staat.\n\nBedankt voor je hulp!\n\n— Het SplitCam-team"
+  },
+  no: {
+    subject: "SplitCam Remote: lenken din til testen",
+    body: "Hei!\n\nDu har meldt deg som tester av SplitCam Remote for Android — adressen din\nstår allerede på listen. Det er bare to trinn igjen, og til sammen tar de et\npar minutter.\n\nTRINN 1. Bli med i testen (lenken fra nettsiden):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nÅpne den i en nettleser mens du er logget inn på DEN SAMME Google-kontoen som\ndu oppga i påmeldingen, og klikk på \"Bli tester\". Siden bekrefter at du er\nmed, men det er ikke installasjonen ennå — appen dukker ikke opp av seg selv.\n\nTRINN 2. Installer appen på mobilen:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nÅpne denne lenken på selve Android-enheten og trykk på \"Installer\". Hvis Play\nsier at appen ikke er tilgjengelig, må du vente 10-15 minutter: tilgangen er\nfortsatt i ferd med å spre seg mellom Googles servere. Sjekk også at du er\nlogget inn på den samme kontoen i Play Store som i trinn 1.\n\nTRINN 3. Prøv den ordentlig. Start SplitCam på datamaskinen, åpne Remote på\nmobilen, koble begge til det samme Wi-Fi-nettet og bytt scene fra andre siden\nav rommet. Svar på denne e-posten og fortell hva som var tungvint eller gikk i\nstykker — det er det vi har mest nytte av, vi fikser ting ut fra\ntilbakemeldingene deres.\n\nÉn ting til: ikke avinstaller appen før lanseringen. Google teller bare\ndeltakelsen din i testen så lenge appen er installert på mobilen.\n\nTakk for at du hjelper til!\n\n— SplitCam-teamet"
+  },
+  pl: {
+    subject: "SplitCam Remote: Twój link do testów",
+    body: "Cześć!\n\nZgłoszenie do testów aplikacji SplitCam Remote dla systemu Android już\ndo nas dotarło – Twój adres jest na liście testerów. Zostały jeszcze dwa\nkroki, w sumie parę minut.\n\nKROK 1. Dołącz do testów (link ze strony):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nOtwórz go w przeglądarce z zalogowanym DOKŁADNIE tym kontem Google, które\npodano w zgłoszeniu, i kliknij „Zostań testerem”. Strona potwierdzi, że\njesteś w testach – to jeszcze nie jest instalacja, aplikacja nie pojawi\nsię sama.\n\nKROK 2. Zainstaluj ją w telefonie:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nTen link otwórz już na samym urządzeniu z systemem Android i naciśnij\n„Zainstaluj”. Jeśli Play twierdzi, że aplikacja jest niedostępna, odczekaj\n10–15 minut, aż dostęp rozejdzie się po serwerach Google,\ni sprawdź, czy w Play Store masz zalogowane to samo konto co w kroku 1.\n\nKROK 3. Sprawdź ją w praktyce. Uruchom SplitCam na komputerze, otwórz\nRemote w telefonie, połącz oba urządzenia z tą samą siecią Wi-Fi\ni przełącz scenę z drugiego końca pokoju. Odpowiedz na tego maila\ni napisz, co było niewygodne albo co się zepsuło – to dla nas\nnajcenniejsze, poprawiamy dokładnie na podstawie tego, co nam napiszesz.\n\nI jeszcze prośba: nie usuwaj aplikacji przed premierą. Google zalicza\nudział w testach tylko wtedy, gdy aplikacja jest zainstalowana\nw telefonie.\n\nDzięki za pomoc!\n\n— Zespół SplitCam"
+  },
+  pt: {
+    subject: "SplitCam Remote: seu link para o teste",
+    body: "Olá!\n\nVocê se inscreveu para testar o SplitCam Remote para Android: seu endereço\njá está na lista de testadores. Faltam dois passos, uns dois minutos no\ntotal.\n\nPASSO 1. Entrar no teste (o link do site):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nAbra o link no navegador com a MESMA conta do Google que você informou no\ncadastro e toque em “Seja testador”. A página vai confirmar que você entrou:\nisso ainda não é a instalação, o app não aparece sozinho.\n\nPASSO 2. Instalar no celular:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nAbra este link no próprio aparelho Android e toque em “Instalar”. Se o Play\ndisser que o app não está disponível, espere de 10 a 15 minutos: o acesso\nainda está se propagando pelos servidores do Google. Confira também se a\nPlay Store está usando a mesma conta do passo 1.\n\nPASSO 3. Teste de verdade. Abra o SplitCam no computador, abra o Remote no\ncelular, conecte os dois à mesma rede Wi-Fi e troque de cena do outro lado\nda sala. Responda a este e-mail e conte o que te incomodou ou o que deu\nerrado: isso é o mais valioso para a gente, é assim que consertamos as\ncoisas.\n\nE um pedido: não desinstale o app antes do lançamento. O Google só conta sua\nparticipação no teste enquanto ele continuar instalado no celular.\n\nObrigado por ajudar!\n\n— Equipe SplitCam"
+  },
+  ro: {
+    subject: "SplitCam Remote: linkul tău pentru testare",
+    body: "Salut!\n\nTe-ai înscris la testarea aplicației SplitCam Remote pentru Android –\nadresa ta e deja pe listă. Au mai rămas doi pași, în total câteva minute.\n\nPASUL 1. Înscrie-te la test (linkul de pe site):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nDeschide-l în browser, folosind EXACT contul Google pe care l-ai trecut\nîn formular, și apasă „Devino tester”. Pagina îți confirmă că ai intrat –\nasta nu e încă instalarea, aplicația nu apare singură.\n\nPASUL 2. Instaleaz-o pe telefon:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nLinkul acesta deschide-l chiar pe dispozitivul Android și apasă\n„Instalează”. Dacă Play spune că aplicația nu este disponibilă, așteaptă\n10–15 minute – accesul încă se propagă pe serverele Google – și verifică\ndacă în Play Store ai același cont ca la pasul 1.\n\nPASUL 3. Încearc-o pe bune. Pornește SplitCam pe computer, deschide Remote\npe telefon, conectează-le la aceeași rețea Wi-Fi și schimbă scena din\ncelălalt capăt al camerei. Răspunde la acest e-mail și scrie-ne ce ți s-a\npărut incomod sau ce nu a mers – asta contează cel mai mult pentru noi,\nreparăm pornind exact de la ce ne scrii.\n\nȘi o rugăminte: nu dezinstala aplicația până la lansare. Google îți ia\nîn calcul participarea la test doar cât timp aplicația rămâne instalată\npe telefon.\n\nMulțumim că ne ajuți!\n\n— Echipa SplitCam"
+  },
+  sk: {
+    subject: "SplitCam Remote: váš odkaz na testovanie",
+    body: "Dobrý deň!\n\nPrihlásili ste sa ako tester aplikácie SplitCam Remote pre Android — vaša\nadresa už je v zozname testerov. Zostávajú dva kroky, obidva spolu zaberú\npár minút.\n\nKROK 1. Pripojte sa k testovaniu (odkaz zo stránky):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nOtvorte ho v prehliadači a prihláste sa PRESNE tým účtom Google, ktorý ste\nuviedli v prihláške. Potom stlačte „Stať sa testerom“. Stránka potvrdí, že\nste v teste — to ešte nie je inštalácia, aplikácia sa sama neobjaví.\n\nKROK 2. Nainštalujte ju do telefónu:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nTento odkaz otvorte priamo na Android zariadení a stlačte „Inštalovať“. Ak\nPlay píše, že aplikácia nie je dostupná, počkajte 10–15 minút: prístup sa\nešte šíri po serveroch Google. Skontrolujte aj to, či je v aplikácii Play\nStore prihlásený ten istý účet ako v kroku 1.\n\nKROK 3. Vyskúšajte to naostro. Spustite SplitCam na počítači, otvorte Remote\nv telefóne, pripojte ich do tej istej Wi-Fi siete a prepnite scénu z druhého\nkonca miestnosti. Odpovedzte na tento e-mail a napíšte nám, čo bolo\nnepohodlné alebo čo sa pokazilo — to je pre nás najcennejšie, opravujeme veci\npodľa vašich ohlasov.\n\nA jedna prosba: neodinštalujte aplikáciu pred oficiálnym vydaním. Google\nzapočítava vašu účasť v teste, len kým je aplikácia nainštalovaná v telefóne.\n\nĎakujeme, že pomáhate!\n\n— Tím SplitCam"
+  },
+  sr: {
+    subject: "SplitCam Remote: vaš link za testiranje",
+    body: "Zdravo!\n\nPrijavili ste se da testirate aplikaciju SplitCam Remote za Android — vaša\nadresa je već na spisku testera. Ostala su još dva koraka, oba zajedno traju\npar minuta.\n\nKORAK 1. Pridružite se testu (link sa sajta):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nOtvorite ga u pregledaču i prijavite se BAŠ na onaj Google nalog koji ste\nnaveli u prijavi, pa pritisnite „Postani tester“. Stranica će potvrditi da\nste u testu — to još nije instalacija, aplikacija se neće pojaviti sama.\n\nKORAK 2. Instalirajte je na telefon:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nOtvorite ovaj link na samom Android uređaju i pritisnite „Instaliraj“. Ako\nPlay kaže da aplikacija nije dostupna, sačekajte 10–15 minuta: pristup se\njoš širi po Google serverima. Proverite i da li je u aplikaciji Play Store\nprijavljen isti nalog kao u koraku 1.\n\nKORAK 3. Isprobajte je na delu. Pokrenite SplitCam na računaru, otvorite\nRemote na telefonu, povežite ih na istu Wi-Fi mrežu i promenite scenu s\ndrugog kraja sobe. Odgovorite na ovaj mejl i napišite nam šta vam je bilo\nnezgodno ili šta je puklo — to nam najviše znači, upravo po tome popravljamo\nstvari.\n\nI jedna molba: nemojte deinstalirati aplikaciju pre zvaničnog izlaska.\nGoogle vam računa učešće u testu samo dok je aplikacija instalirana na\ntelefonu.\n\nHvala što pomažete!\n\n— SplitCam tim"
+  },
+  sv: {
+    subject: "SplitCam Remote: din länk till testet",
+    body: "Hej!\n\nDu har anmält dig som testare av SplitCam Remote för Android — din adress\nfinns redan på listan. Två steg återstår, och tillsammans tar de ett par\nminuter.\n\nSTEG 1. Gå med i testet (länken från webbplatsen):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nÖppna den i en webbläsare medan du är inloggad på SAMMA Google-konto som du\nangav i anmälan, och klicka på \"Bli testare\". Sidan bekräftar att du är med,\nmen det är inte installationen än — appen dyker inte upp av sig själv.\n\nSTEG 2. Installera appen i mobilen:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nÖppna den här länken på själva Android-enheten och tryck på \"Installera\". Om\nPlay säger att appen inte är tillgänglig: vänta 10-15 minuter, åtkomsten\nhåller fortfarande på att spridas mellan Googles servrar. Kontrollera också\natt du är inloggad på samma konto i Play Store som i steg 1.\n\nSTEG 3. Testa den på riktigt. Starta SplitCam på datorn, öppna Remote i\nmobilen, koppla upp båda mot samma Wi-Fi och byt scen från andra sidan\nrummet. Svara på det här mejlet och berätta vad som kändes krångligt eller\ngick sönder — det har vi mest nytta av, vi rättar till saker utifrån det ni\nrapporterar.\n\nEn sak till: avinstallera inte appen före lanseringen. Google räknar ditt\ndeltagande i testet bara så länge appen är installerad i mobilen.\n\nTack för hjälpen!\n\n— SplitCam-teamet"
+  },
+  th: {
+    subject: "SplitCam Remote: ลิงก์เข้าร่วมทดสอบของคุณ",
+    body: "สวัสดี!\n\nคุณสมัครเข้าร่วมทดสอบ SplitCam Remote สำหรับ Android ไว้ และอีเมลของคุณ\nอยู่ในรายชื่อผู้ทดสอบเรียบร้อยแล้ว เหลืออีกแค่สองขั้นตอน รวมกันใช้เวลา\nไม่กี่นาที\n\nขั้นตอนที่ 1 เข้าร่วมการทดสอบ (ลิงก์เดียวกับที่อยู่บนเว็บไซต์):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nเปิดลิงก์นี้ในเบราว์เซอร์ โดยลงชื่อเข้าใช้ด้วยบัญชี Google บัญชีเดียวกับ\nที่กรอกไว้ในแบบฟอร์ม แล้วกด \"สมัครเป็นผู้ทดสอบ\" หน้าเว็บจะแจ้งว่าคุณ\nเข้าร่วมแล้ว ซึ่งยังไม่ใช่การติดตั้ง แอปจะไม่ขึ้นมาบนเครื่องเอง\n\nขั้นตอนที่ 2 ติดตั้งลงบนมือถือ:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nเปิดลิงก์นี้บนเครื่อง Android โดยตรง แล้วกด \"ติดตั้ง\" ถ้า Google Play\nขึ้นว่าแอปไม่พร้อมใช้งาน ให้รอสัก 10-15 นาที เพราะสิทธิ์การเข้าถึงยัง\nกระจายไปตามเซิร์ฟเวอร์ของ Google อยู่ และตรวจสอบด้วยว่า Play Store\nลงชื่อเข้าใช้ด้วยบัญชีเดียวกับในขั้นตอนที่ 1\n\nขั้นตอนที่ 3 ลองใช้งานจริง เปิด SplitCam บนคอมพิวเตอร์ เปิด Remote\nบนมือถือ ต่อ Wi-Fi วงเดียวกัน แล้วลองสลับฉากจากอีกฝั่งของห้อง\nจากนั้นตอบกลับอีเมลฉบับนี้ เล่าให้เราฟังว่าตรงไหนใช้ยากหรือตรงไหนพัง\nนั่นคือสิ่งที่มีค่าที่สุดสำหรับเรา เพราะเราแก้ตามที่ผู้ทดสอบบอกมาจริง ๆ\n\nอีกเรื่องหนึ่ง รบกวนอย่าเพิ่งถอนการติดตั้งแอปจนกว่าจะเปิดตัวจริง\nเพราะ Google จะนับว่าคุณร่วมทดสอบก็ต่อเมื่อแอปยังอยู่บนเครื่องเท่านั้น\n\nขอบคุณที่มาช่วยกันทดสอบ!\n\n— ทีมงาน SplitCam"
+  },
+  tr: {
+    subject: "SplitCam Remote: test bağlantınız",
+    body: "Merhaba!\n\nSplitCam Remote'un Android sürümünü test etmek için kaydoldunuz — e-posta\nadresiniz test kullanıcıları listesine eklendi bile. Geriye iki adım kaldı,\nikisi toplam birkaç dakika sürer.\n\nADIM 1. Teste katılın (sitedeki bağlantı):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nBu bağlantıyı tarayıcıda açın; başvuruda yazdığınız AYNI Google hesabıyla\ngiriş yapmış olmanız gerekiyor. Sonra \"Teste katılın\" düğmesine basın. Sayfa\nkabul edildiğinizi bildirecek, ama bu henüz kurulum değil; uygulama\nkendiliğinden yüklenmez.\n\nADIM 2. Telefonunuza yükleyin:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nBu bağlantıyı doğrudan Android cihazınızda açın ve \"Yükle\" düğmesine basın.\nPlay, uygulamanın kullanılamadığını yazıyorsa 10-15 dakika bekleyin; erişim\nhâlâ Google'ın sunucularına yayılıyor. Bir de Play Store'da 1. adımdaki\nhesabın seçili olduğundan emin olun.\n\nADIM 3. Gerçekten deneyin. Bilgisayarda SplitCam'i çalıştırın, telefonda\nRemote'u açın, ikisini aynı Wi-Fi ağına bağlayın ve odanın öbür ucundan sahne\ndeğiştirin. Bu e-postayı yanıtlayıp nerede zorlandığınızı ya da neyin bozuk\nolduğunu yazın; bizim için en değerlisi bu, gelen geri bildirimlere göre\ndüzeltiyoruz.\n\nBir ricamız var: sürüm çıkana kadar uygulamayı silmeyin. Google, teste\nkatılımınızı yalnızca uygulama telefonda kurulu kaldığı sürece sayıyor.\n\nYardımınız için teşekkürler!\n\n— SplitCam Ekibi"
+  },
+  uk: {
+    subject: "SplitCam Remote: ваше посилання на тестування",
+    body: "Добрий день!\n\nВи зголосилися тестувати SplitCam Remote для Android — ваша адреса вже\nв списку тестувальників. Залишилося два кроки — разом на них піде кілька\nхвилин.\n\nКРОК 1. Приєднатися до тестування (посилання з сайту):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nВідкрийте його в браузері, увійшовши САМЕ в той обліковий запис Google,\nякий ви вказали в заявці, і натисніть «Стати тестувальником». Сторінка\nпідтвердить, що вас додано до тестування — це ще не встановлення, сам\nдодаток не з’явиться.\n\nКРОК 2. Встановити на телефон:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nВідкрийте це посилання на самому пристрої Android і натисніть\n«Встановити». Якщо Play пише, що додаток недоступний, зачекайте\n10–15 хвилин: доступ ще розходиться по серверах Google. І перевірте, чи\nв Play Store вибрано той самий обліковий запис, що й у кроці 1.\n\nКРОК 3. Випробуйте на практиці. Запустіть SplitCam на комп’ютері,\nвідкрийте Remote на телефоні, підключіть їх до тієї самої мережі Wi-Fi\nі перемкніть сцену з іншого кінця кімнати. Напишіть нам у відповідь на\nцей лист, що було незручно або що зламалося — це для нас найцінніше, ми\nвиправляємо все за вашими відгуками.\n\nІ прохання: не видаляйте додаток до офіційного релізу. Google зараховує\nучасть у тестуванні, лише поки він лишається на телефоні.\n\nДякуємо, що допомагаєте!\n\n— Команда SplitCam"
+  },
+  vi: {
+    subject: "SplitCam Remote: liên kết thử nghiệm của bạn",
+    body: "Xin chào!\n\nBạn đã đăng ký thử nghiệm SplitCam Remote cho Android — email của bạn đã có\ntrong danh sách người thử nghiệm. Chỉ còn hai bước nữa, cả hai chỉ mất vài\nphút.\n\nBƯỚC 1. Tham gia thử nghiệm (liên kết từ trang web):\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\nMở liên kết này trên trình duyệt khi đang đăng nhập bằng ĐÚNG tài khoản\nGoogle mà bạn đã ghi trong biểu mẫu, rồi nhấn \"Đăng ký thử nghiệm\". Trang sẽ\nbáo là bạn đã được nhận, nhưng như vậy chưa phải là đã cài; ứng dụng sẽ không\ntự xuất hiện.\n\nBƯỚC 2. Cài lên điện thoại:\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\nMở liên kết này ngay trên thiết bị Android và nhấn \"Cài đặt\". Nếu Play báo\nứng dụng không khả dụng, hãy đợi 10-15 phút, quyền truy cập vẫn đang được\ncập nhật trên các máy chủ của Google. Bạn cũng nên kiểm tra xem Play Store\ncó đang dùng đúng tài khoản ở bước 1 hay không.\n\nBƯỚC 3. Dùng thử thật sự. Chạy SplitCam trên máy tính, mở Remote trên điện\nthoại, kết nối cả hai vào cùng một mạng Wi-Fi rồi chuyển cảnh từ đầu bên kia\ncăn phòng. Trả lời email này và cho chúng tôi biết chỗ nào bất tiện hoặc chỗ\nnào hỏng. Đó là điều quý giá nhất với chúng tôi, chúng tôi sửa dựa trên phản\nhồi của bạn.\n\nMột đề nghị nhỏ: xin đừng gỡ ứng dụng trước khi bản chính thức ra mắt. Google\nchỉ ghi nhận việc bạn tham gia thử nghiệm khi ứng dụng vẫn còn được cài trên\nđiện thoại.\n\nCảm ơn bạn đã giúp sức!\n\n— Nhóm SplitCam"
+  },
+  zh: {
+    subject: "SplitCam Remote：您的测试链接",
+    body: "您好！\n\n您报名参加了 SplitCam Remote 的 Android 测试，邮箱已经在测试员\n名单里了。接下来只剩两步，加起来也就几分钟。\n\n第一步：加入测试（就是网站上的那个链接）\nhttps://play.google.com/apps/testing/com.splitcam.remote\n\n请先用报名时填写的那个 Google 账号登录，然后在浏览器里打开这个\n链接，点击“申请成为测试员”。页面会提示您已经加入，但这还不是\n安装，应用不会自己出现在手机上。\n\n第二步：装到手机上\nhttps://play.google.com/store/apps/details?id=com.splitcam.remote\n\n请直接在 Android 手机上打开这个链接，点击“安装”。如果 Google Play\n提示应用不可用，请等 10 到 15 分钟，权限还在 Google 的服务器之间\n同步；顺便确认一下 Play Store 登录的是第一步用的同一个账号。\n\n第三步：真正上手用一用。在电脑上运行 SplitCam，在手机上打开\nRemote，让两边连到同一个 Wi-Fi，然后从房间另一头切换一次场景。\n之后请直接回复这封邮件，告诉我们哪里用着别扭、哪里坏了。这对我们\n最有价值，我们就是照着大家的反馈来改的。\n\n还有一件事想拜托您：正式发布前请不要卸载应用。只有应用一直装在\n手机上，Google 才会把您算作参与了这次测试。\n\n谢谢您帮忙！\n\n—— SplitCam 团队"
+  },
+};
+
+/**
+ * Fallback only. The primary locale lookup matches sheet.getFormUrl() against the
+ * 'FORM URLS' sheet; this map is what remains if that sheet is gone. The form's
+ * question label is localized, so it fingerprints the form.
+ * Ambiguous, deliberately omitted: "Váš e-mail" is used by cs, sk.
+ * Ambiguous, deliberately omitted: "Ваш e-mail" is used by ru, uk.
+ * An omitted label means that tab falls through to the English copy.
+ */
+var LABEL_TO_LOCALE = {
+  "Deine E-Mail-Adresse": "de",
+  "Din e-mail": "da",
+  "Din e-postadress": "sv",
+  "E-mail-címed": "hu",
+  "E-mailul tău": "ro",
+  "E-mel anda": "ms",
+  "E-posta adresiniz": "tr",
+  "E-posten din": "no",
+  "Email của bạn": "vi",
+  "Email kamu": "id",
+  "Email mo": "fil",
+  "Google-tilisi sähköpostiosoite": "fi",
+  "Je e-mailadres": "nl",
+  "La tua email": "it",
+  "Seu e-mail": "pt",
+  "Tu correo": "es",
+  "Twój e-mail": "pl",
+  "Vaš imejl": "sr",
+  "Vaša e-mail adresa": "hr",
+  "Votre e-mail": "fr",
+  "Το e-mail σας": "el",
+  "Вашият имейл": "bg",
+  "האימייל שלכם": "he",
+  "ایمیل شما": "fa",
+  "بريدك الإلكتروني": "ar",
+  "आपका ईमेल": "hi",
+  "อีเมลของคุณ": "th",
+  "メールアドレス": "ja",
+  "你的邮箱": "zh",
+  "이메일 주소": "ko",
+};
+//<!--/COPY-->
 
 function onOpen() {
   SpreadsheetApp.getUi()
@@ -39,83 +251,227 @@ function onOpen() {
     .addItem('Send opt-in link to ticked rows', 'sendOptInToTicked')
     .addSeparator()
     .addItem('Set up sheet (add columns)', 'setupSheet')
+    .addItem('Check sender address', 'checkSender')
+    .addItem('Preview one email', 'previewEmail')
+    .addSeparator()
     .addItem('Enable daily 13:00 report', 'installDailyTrigger')
     .addItem('Send report now (test)', 'dailyDigest')
     .addToUi();
 }
 
-/** The Form-responses sheet is always the first tab; use this everywhere so time-triggers work too. */
-function respSheet_() {
-  return SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-}
+/* ------------------------------------------------------------------ sender */
 
-/** Adds the "Added to Console" checkbox column and the "Link sent" column if missing. */
-function setupSheet() {
-  var sh = respSheet_();
-  var lastCol = Math.max(sh.getLastColumn(), 1);
-  var headers = sh.getRange(1, 1, 1, lastCol).getValues()[0];
-  function ensure(name) {
-    var i = headers.indexOf(name);
-    if (i === -1) {
-      lastCol += 1;
-      sh.getRange(1, lastCol).setValue(name);
-      headers.push(name);
-      i = headers.length - 1;
-    }
-    return i + 1; // 1-based column
+/**
+ * Which address will the mail come from, and can we force it?
+ * Returns {mode:'owner'|'alias'|'blocked', from:string, effective:string}
+ */
+function senderState_() {
+  var effective = Session.getEffectiveUser().getEmail();
+  if (effective && effective.toLowerCase() === SENDER.toLowerCase()) {
+    return { mode: 'owner', from: '', effective: effective };
   }
-  var addedCol = ensure(ADDED_HEADER);
-  ensure(SENT_HEADER);
-  var lastRow = Math.max(sh.getLastRow(), 2);
-  sh.getRange(2, addedCol, lastRow - 1, 1).insertCheckboxes();
-  SpreadsheetApp.getUi().alert(
-    'Ready. When you have added someone to the Play Console list, tick "' + ADDED_HEADER +
-    '" on their row, then run SplitCam -> "Send opt-in link to ticked rows".');
+  var aliases = [];
+  try { aliases = GmailApp.getAliases(); } catch (e) { aliases = []; }
+  for (var i = 0; i < aliases.length; i++) {
+    if (String(aliases[i]).toLowerCase() === SENDER.toLowerCase()) {
+      return { mode: 'alias', from: aliases[i], effective: effective };
+    }
+  }
+  return { mode: 'blocked', from: '', effective: effective };
 }
 
-/** First column whose header names the Google-account question. */
+function checkSender() {
+  var s = senderState_();
+  var ui = SpreadsheetApp.getUi();
+  if (s.mode === 'owner') {
+    ui.alert('OK. Mail goes out as ' + SENDER + ' (this script is owned by that account).');
+  } else if (s.mode === 'alias') {
+    ui.alert('OK. Mail goes out as ' + SENDER + ' via a verified Gmail alias on ' +
+             s.effective + '.');
+  } else {
+    ui.alert('BLOCKED — mail would go out as ' + s.effective + ', not ' + SENDER + '.\n\n' +
+             'Fix one of these, then re-check:\n' +
+             '  a) move this script to the ' + SENDER + ' account, or\n' +
+             '  b) in ' + s.effective + ' Gmail: Settings -> Accounts -> "Send mail as" ->\n' +
+             '     add ' + SENDER + ' and confirm the verification mail.\n\n' +
+             'Sending is disabled until then, so nothing goes out from the wrong address.');
+  }
+}
+
+/* ------------------------------------------------------- locale of a tab */
+
+/** Every tab that a Google Form writes into. */
+function responseSheets_() {
+  var out = [];
+  var sheets = SpreadsheetApp.getActiveSpreadsheet().getSheets();
+  for (var i = 0; i < sheets.length; i++) {
+    var name = sheets[i].getName();
+    if (name === FORM_URLS_SHEET) continue;
+    var url = null;
+    try { url = sheets[i].getFormUrl(); } catch (e) { url = null; }
+    if (url) out.push(sheets[i]);
+    else if (/^form responses/i.test(name)) out.push(sheets[i]);
+  }
+  return out;
+}
+
+/** Long id-ish tokens in a Forms URL. Published and edit URLs carry DIFFERENT ids. */
+function formIds_(url) {
+  var ids = String(url || '').match(/[A-Za-z0-9_-]{20,}/g);
+  return ids || [];
+}
+
+/**
+ * locale -> ids, from the FORM URLS sheet that make-tester-forms.gs wrote
+ * (col A locale, col B published URL, col C edit URL).
+ */
+function localeIndex_() {
+  var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(FORM_URLS_SHEET);
+  var map = {};   // id -> locale
+  if (!sh) return map;
+  var rows = sh.getDataRange().getValues();
+  for (var r = 1; r < rows.length; r++) {
+    var loc = String(rows[r][0] || '').trim();
+    if (!loc) continue;
+    var ids = formIds_(rows[r][1]).concat(formIds_(rows[r][2]));
+    for (var i = 0; i < ids.length; i++) map[ids[i]] = loc;
+  }
+  return map;
+}
+
+/** The locale of one response tab, or '' when it cannot be established. */
+function sheetLocale_(sh, index) {
+  var url = null;
+  try { url = sh.getFormUrl(); } catch (e) { url = null; }
+  var ids = formIds_(url);
+  for (var i = 0; i < ids.length; i++) {
+    if (index[ids[i]]) return index[ids[i]];
+  }
+  // Fallback: the question label is localized, so it fingerprints the form.
+  var header = String(sh.getRange(1, 2).getValue() || '').trim();
+  if (header && LABEL_TO_LOCALE[header]) return LABEL_TO_LOCALE[header];
+  return '';
+}
+
+/** Copy for a locale, falling back to English. */
+function copyFor_(locale) {
+  return COPY[locale] || COPY.EN;
+}
+
+/* --------------------------------------------------------------- the sheet */
+
+/** Appends `name` to the header row if missing. Returns its 1-based column. */
+function ensureColumn_(sh, headers, name) {
+  var i = headers.indexOf(name);
+  if (i === -1) {
+    headers.push(name);
+    sh.getRange(1, headers.length).setValue(name);
+    i = headers.length - 1;
+  }
+  return i + 1;
+}
+
+/** Adds "Added to Console" / "Link sent" / "Locale" to EVERY response tab. */
+function setupSheet() {
+  var sheets = responseSheets_();
+  var index = localeIndex_();
+  var touched = 0, unknown = [];
+  for (var s = 0; s < sheets.length; s++) {
+    var sh = sheets[s];
+    var lastCol = Math.max(sh.getLastColumn(), 1);
+    var headers = sh.getRange(1, 1, 1, lastCol).getValues()[0];
+    var addedCol = ensureColumn_(sh, headers, ADDED_HEADER);
+    ensureColumn_(sh, headers, SENT_HEADER);
+    var locCol = ensureColumn_(sh, headers, LOCALE_HEADER);
+    var lastRow = Math.max(sh.getLastRow(), 2);
+    sh.getRange(2, addedCol, lastRow - 1, 1).insertCheckboxes();
+    var loc = sheetLocale_(sh, index);
+    sh.getRange(1, locCol).setNote(loc ? 'detected locale: ' + loc : 'LOCALE NOT DETECTED');
+    if (!loc) unknown.push(sh.getName());
+    touched++;
+  }
+  var msg = 'Ready. Prepared ' + touched + ' response tab(s).\n\n' +
+            'When you have added someone to the Play Console list, tick "' + ADDED_HEADER +
+            '" on their row (any tab), then run SplitCam -> "Send opt-in link to ticked rows".';
+  if (unknown.length) {
+    msg += '\n\nLocale NOT detected on: ' + unknown.join(', ') +
+           '\nThose rows would get the English email. Check the "' + FORM_URLS_SHEET +
+           '" sheet still lists every form.';
+  }
+  SpreadsheetApp.getUi().alert(msg);
+}
+
+/** Column holding the typed Google account. These forms are one-question: column B. */
 function findEmailColumn_(headers) {
   for (var i = 0; i < headers.length; i++) {
     if (/Google account|Аккаунт Google/i.test(String(headers[i]))) return i;
   }
-  return 1; // fallback: column B (right after Timestamp)
+  return 1; // column B, the single question on every localized form
 }
+
+/* ----------------------------------------------------------------- sending */
 
 function sendOptInToTicked() {
   var ui = SpreadsheetApp.getUi();
-  var sh = respSheet_();
-  var data = sh.getDataRange().getValues();
-  var headers = data[0];
-  var emailC = findEmailColumn_(headers);
-  var addedC = headers.indexOf(ADDED_HEADER);
-  var sentC = headers.indexOf(SENT_HEADER);
-  if (addedC === -1 || sentC === -1) { ui.alert('Run "Set up sheet (add columns)" first.'); return; }
+  var sender = senderState_();
+  if (sender.mode === 'blocked') { checkSender(); return; }
 
+  var index = localeIndex_();
+  var sheets = responseSheets_();
   var quota = MailApp.getRemainingDailyQuota();
-  var sent = 0, skipped = 0, hitQuota = false;
-  for (var r = 1; r < data.length; r++) {
-    var row = data[r];
-    var ticked = row[addedC] === true;
-    var already = String(row[sentC] || '').length > 0;
-    var email = String(row[emailC] || '').trim();
-    if (!ticked || already) continue;
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { skipped++; continue; }
-    if (sent >= quota) { hitQuota = true; break; }
-    MailApp.sendEmail({
-      to: email, replyTo: REPORT_TO, name: FROM_NAME,
-      subject: 'SplitCam Remote: два нажатия с телефона — и приложение у вас',
-      body: buildBody_(email)
-    });
-    sh.getRange(r + 1, sentC + 1).setValue(new Date());
-    sent++;
+  var sent = 0, skipped = 0, hitQuota = false, byLocale = {};
+
+  for (var s = 0; s < sheets.length && !hitQuota; s++) {
+    var sh = sheets[s];
+    var data = sh.getDataRange().getValues();
+    if (data.length < 2) continue;
+    var headers = data[0];
+    var emailC = findEmailColumn_(headers);
+    var addedC = headers.indexOf(ADDED_HEADER);
+    var sentC = headers.indexOf(SENT_HEADER);
+    if (addedC === -1 || sentC === -1) { continue; }   // tab not set up yet
+    var locale = sheetLocale_(sh, index) || 'EN';
+    var c = copyFor_(locale);
+
+    for (var r = 1; r < data.length; r++) {
+      var row = data[r];
+      if (row[addedC] !== true) continue;
+      if (String(row[sentC] || '').length > 0) continue;
+      var email = String(row[emailC] || '').trim();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { skipped++; continue; }
+      if (sent >= quota) { hitQuota = true; break; }
+      var opts = { name: FROM_NAME, replyTo: REPLY_TO };
+      if (sender.mode === 'alias') opts.from = sender.from;
+      GmailApp.sendEmail(email, c.subject, c.body, opts);
+      sh.getRange(r + 1, sentC + 1).setValue(new Date());
+      byLocale[locale] = (byLocale[locale] || 0) + 1;
+      sent++;
+    }
   }
+
+  var breakdown = Object.keys(byLocale).sort().map(function (k) {
+    return '  ' + k + ': ' + byLocale[k];
+  }).join('\n');
   var msg = 'Отправлено ссылок: ' + sent + '. Пропущено (плохой email): ' + skipped +
             '. Остаток квоты на сегодня: ' + (quota - sent) + '.';
+  if (breakdown) msg += '\n\nПо языкам:\n' + breakdown;
   if (hitQuota) msg += '\n\nДневная квота исчерпана — остальные уйдут завтра.';
-  ui.alert(msg);
+  SpreadsheetApp.getUi().alert(msg);
 }
 
-/** Creates (or re-creates) the daily 13:00 digest trigger. */
+/** Shows the exact mail one locale would receive — read it before the first real send. */
+function previewEmail() {
+  var ui = SpreadsheetApp.getUi();
+  var res = ui.prompt('Preview', 'Locale code (EN, ru, de, ja, ...):', ui.ButtonSet.OK_CANCEL);
+  if (res.getSelectedButton() !== ui.Button.OK) return;
+  var loc = res.getResponseText().trim();
+  var c = COPY[loc];
+  if (!c) { ui.alert('No copy for "' + loc + '". Known: ' + Object.keys(COPY).join(' ')); return; }
+  ui.alert(loc + '\n\nSubject: ' + c.subject + '\n\n' + c.body);
+}
+
+/* ------------------------------------------------------------------ digest */
+
 function installDailyTrigger() {
   var existing = ScriptApp.getProjectTriggers();
   for (var i = 0; i < existing.length; i++) {
@@ -127,26 +483,32 @@ function installDailyTrigger() {
     Session.getScriptTimeZone() + '; поменять: File -> Project Settings).');
 }
 
-/** Daily digest: how many people submitted the form. Emailed to the owner. */
+/** Daily digest across ALL localized tabs. */
 function dailyDigest() {
-  var sh = respSheet_();
-  var data = sh.getDataRange().getValues();
-  if (data.length < 1) return;
-  var headers = data[0];
-  var addedC = headers.indexOf(ADDED_HEADER);
-  var sentC = headers.indexOf(SENT_HEADER);
-
+  var index = localeIndex_();
+  var sheets = responseSheets_();
   var now = new Date();
   var last24 = new Date(now.getTime() - 24 * 60 * 60 * 1000);
-  var total = 0, newLast24 = 0, awaitingAdd = 0, linkSent = 0;
-  for (var r = 1; r < data.length; r++) {
-    var row = data[r];
-    if (!String(row[0] || '').length && !String(row[1] || '').length) continue;
-    total++;
-    var ts = row[0];
-    if (ts instanceof Date && ts >= last24) newLast24++;
-    if (addedC !== -1 && row[addedC] !== true) awaitingAdd++;
-    if (sentC !== -1 && String(row[sentC] || '').length > 0) linkSent++;
+  var total = 0, newLast24 = 0, awaitingAdd = 0, linkSent = 0, perLocale = {};
+
+  for (var s = 0; s < sheets.length; s++) {
+    var sh = sheets[s];
+    var data = sh.getDataRange().getValues();
+    if (data.length < 2) continue;
+    var headers = data[0];
+    var addedC = headers.indexOf(ADDED_HEADER);
+    var sentC = headers.indexOf(SENT_HEADER);
+    var locale = sheetLocale_(sh, index) || '??';
+    for (var r = 1; r < data.length; r++) {
+      var row = data[r];
+      if (!String(row[0] || '').length && !String(row[1] || '').length) continue;
+      total++;
+      perLocale[locale] = (perLocale[locale] || 0) + 1;
+      var ts = row[0];
+      if (ts instanceof Date && ts >= last24) newLast24++;
+      if (addedC !== -1 && row[addedC] !== true) awaitingAdd++;
+      if (sentC !== -1 && String(row[sentC] || '').length > 0) linkSent++;
+    }
   }
 
   var tz = Session.getScriptTimeZone();
@@ -156,12 +518,17 @@ function dailyDigest() {
     'SplitCam Remote — заявки в тестеры, сводка на ' + stamp,
     '',
     'Новых заявок за 24 часа: ' + newLast24,
-    'Всего заявок с формы:    ' + total
+    'Всего заявок с форм:     ' + total,
+    'Ждут добавления в Console: ' + awaitingAdd,
+    'Ссылка уже отправлена:     ' + linkSent,
+    ''
   ];
-  if (addedC !== -1) lines.push('Ждут добавления в Console: ' + awaitingAdd);
-  if (sentC !== -1) lines.push('Ссылка уже отправлена:     ' + linkSent);
-  lines.push('');
-  lines.push('Это только данные ФОРМЫ (кто подал запрос). Сколько opted-in / установили —');
+  var locs = Object.keys(perLocale).sort(function (a, b) { return perLocale[b] - perLocale[a]; });
+  if (locs.length) {
+    lines.push('По языкам: ' + locs.map(function (k) { return k + ' ' + perLocale[k]; }).join(', '));
+    lines.push('');
+  }
+  lines.push('Это только данные ФОРМ (кто подал запрос). Сколько opted-in / установили —');
   lines.push('смотреть в Play Console вручную, туда API нет.');
   lines.push('');
   lines.push('Таблица: ' + url);
@@ -171,55 +538,4 @@ function dailyDigest() {
     subject: 'SplitCam Remote — заявок за сутки: ' + newLast24 + ' (всего ' + total + ')',
     body: lines.join('\n')
   });
-}
-
-/** Bilingual opt-in email (RU first, EN below). */
-function buildBody_(email) {
-  return [
-    'Здравствуйте!',
-    '',
-    'Ваш адрес (' + email + ') в списке тестировщиков SplitCam Remote для Android.',
-    'Два нажатия, оба — на телефоне. Займёт минуты три.',
-    '',
-    'ШАГ 1 — откройте страницу теста (на телефоне, где вошли именно в этот аккаунт):',
-    OPT_IN_URL,
-    'Нажмите «Стать тестировщиком». Страница ответит «Вы стали тестировщиком» — это ЕЩЁ НЕ установка.',
-    '',
-    'ШАГ 2 — установите (тот самый шаг, который все пропускают):',
-    'На той же странице нажмите ссылку на Google Play, затем «Установить». Прямая ссылка:',
-    PLAY_LISTING,
-    'Если Play пишет «приложение недоступно» — подождите 10–15 минут (доступ ещё расходится)',
-    'и проверьте, что в Play Маркете выбран ИМЕННО этот аккаунт.',
-    '',
-    'ШАГ 3 — попробуйте один раз по-настоящему: запустите SplitCam на компьютере, откройте',
-    'Remote, спаритесь по той же Wi-Fi, переключите сцену из другого конца комнаты. Ответьте',
-    'на это письмо — напишите, что сломалось. Это нам ценнее всего.',
-    '',
-    'Пожалуйста, не удаляйте приложение до релиза — Play засчитывает участие, только пока оно установлено.',
-    '',
-    '— — —',
-    '',
-    'Hi,',
-    '',
-    'Your address (' + email + ') is on the tester list for SplitCam Remote for Android.',
-    'Two taps, both on the phone. About three minutes.',
-    '',
-    'STEP 1 — open the test page (on the phone signed in to THIS account):',
-    OPT_IN_URL,
-    'Tap "Become a tester". The page says "You\'re a tester" — that is NOT the install.',
-    '',
-    'STEP 2 — install (the step everyone skips):',
-    'On that same page tap the Google Play link, then "Install". Direct link:',
-    PLAY_LISTING,
-    'If Play says "app not available", wait 10-15 min (access is still propagating) and make',
-    'sure the Play Store is on THIS account.',
-    '',
-    'STEP 3 — use it once for real: run SplitCam on your PC, open Remote, pair over the same',
-    'Wi-Fi, switch a scene from across the room. Reply with anything that broke.',
-    '',
-    'Please keep it installed until launch — Play only counts you while it is installed.',
-    '',
-    '— SplitCam',
-    ''
-  ].join('\n');
 }
