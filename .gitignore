@@ -5,3 +5,4 @@ seo/deploy_preview.py
 
 # Python venv for seo/gsc.py (Search Console API) — 143 MB, rebuild locally
 seo/.gscvenv/
+seo/data/
