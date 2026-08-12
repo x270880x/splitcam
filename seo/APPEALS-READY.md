@@ -306,27 +306,53 @@ VirusTotal — предпочтительный канал).
 
 ---
 
-## 6. Gridinsoft — подавать последним, скорее всего снимется само
+## 6. Gridinsoft — через портал владельца сайта, НЕ через отзывы
 
-Их оценка производна: в отчёте ровно два негативных сигнала — «предупреждения
-поставщиков безопасности» и «обнаружения в нескольких блоклистах (4)». Снимутся
-четыре — снимется и этот. Подавать только если через 2–3 недели после остальных
-вердикт держится.
+**Куда:** `https://portal.gridinsoft.com/` — «Website Owner Portal».
+Нужен аккаунт **и подтверждение владения доменом**, после чего открывается тикет на
+ручной пересмотр. Обращения по репутации сайта идут только туда: обычный
+support-тикет для этого не годится, это их прямое указание в базе знаний
+(`support.gridinsoft.com/portal/en/kb/articles/i-think-this-is-a-false-positive-what-should-i-do`).
+Если портал недоступен — есть резервный адрес почты, он указан в той же статье.
 
-**Куда:** форма обратной связи на странице проверки домена в
-`https://gridinsoft.com/online-virus-scanner/`
+⚠️ **Не использовать форму отзывов** на `gridinsoft.com/website-reputation-checker`.
+Это публичные пользовательские отзывы со звёздами, а не канал апелляции. Отзыв о
+собственном сайте с высокой оценкой — накрутка репутации; если вскроется, навредит
+сильнее нынешнего «Suspicious».
 
-> Trust Score for splitcam.com is currently 35/100 with the note "Listed by Gridinsoft".
+**Подтверждение владения доменом делается своими силами** — TXT-запись через
+Cloudflare API (токен в `~/.cloudflare_token`) или файл в докруте на
+`77.83.100.153`. Оба доступа рабочие, отдать токен из портала — и всё.
+
+**Когда подавать.** Их оценка производная: в отчёте ровно два негативных сигнала —
+предупреждения поставщиков безопасности и число обнаружений в блоклистах. За
+12.08 оно уже упало с 4 до 2. Когда снимутся Fortinet и MalwareURL, оснований не
+останется и «Suspicious» уйдёт сам. Подавать имеет смысл, только если через 2–3
+недели после остальных вердикт удержится — тогда он не производный, и разговор
+предметный.
+
+**Текст (если дойдёт до подачи):**
+
+> Trust Score for splitcam.com is currently 35/100, marked "Listed by Gridinsoft".
 > The report cites two negative signals: security-provider warnings and blacklist
-> detections. Those listings have since been withdrawn — please re-evaluate.
+> detections. I am the domain owner and have verified ownership through this portal.
 >
-> Background: an earlier WordPress installation was compromised and is gone; since
-> 2026-07-18 the site is static HTML/CSS/JS on a different server. As of <дата>,
-> VirusTotal shows <N>/91 detections.
+> An earlier WordPress installation of this site was compromised; detections from that
+> period were correct. That installation no longer exists. Since 2026-07-18 the site is
+> static HTML/CSS/JS with no CMS and no plugins, on a different server (origin
+> 77.83.100.153, served through Cloudflare).
 >
-> <ВАШЕ ИМЯ>, <you@splitcam.com>
-
----
+> The blacklist detections behind your score have been coming down: on 2026-08-12 the
+> VirusTotal count went from 4 to 2 within a day - AlphaSOC withdrew, and CRDF confirmed
+> in writing that the domain is not in their blacklist at all. <обновить цифры на дату подачи>
+>
+> Sucuri SiteCheck finds no malware and no blacklisting. The homepage returns a
+> byte-identical response with an identical SHA-256 across four user agents and with a
+> Google referer. All WordPress paths return 404.
+>
+> Please re-evaluate the classification.
+>
+> Anatoly Smelkov, SplitCam Labs, support@splitcam.com
 
 ## После подачи
 
