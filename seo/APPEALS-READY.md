@@ -7,6 +7,23 @@
 `<you@splitcam.com>`, `<ТЕЛЕФОН>`. Почта — **только на домене splitcam.com**, она же
 доказательство владения; gmail — причина молчаливого отказа у CRDF, AlphaSOC и Fortinet.
 
+## Статус подачи
+
+| Вендор | Статус | Когда | Как проверять результат | Когда напоминать |
+|---|---|---|---|---|
+| **Fortinet** | ✅ подана | 12.08.2026 | `https://www.fortiguard.com/webfilter` (POST со страницы, прямой GET отдаёт 403) | не напоминать — rate-limit; обещают сутки |
+| **MalwareURL** | ✅ отправлено письмом на `team@malwareurl.com` с `support@splitcam.com` | 12.08.2026 | `https://www.malwareurl.com/listing-urls.php` | письмом через неделю, если тишина |
+| **AlphaSOC** | ✅ отправлено письмом на `virustotal@alphasoc.com` с `support@splitcam.com` | 12.08.2026 | только VirusTotal, публичного lookup нет | вежливый follow-up через 10–14 дней |
+| **CRDF** | ⏳ форма заполнена, не отправлена | — | `https://threatcenter.crdf.fr/check.html` — отдельно apex, `www`, `http://77.83.100.153` | ответ ~24 ч, решение до 5 рабочих дней |
+| **ThreatFox** | ⏳ ждёт аккаунт abuse.ch | — | сама карточка `https://threatfox.abuse.ch/ioc/1861022/` | — |
+| **Malwarebytes** | ⏳ ждёт аккаунт + скриншот от Morgan | — | публичной проверки нет, только Browser Guard | staff отвечает за часы–48 ч |
+| Gridinsoft | подавать последним | — | `https://gridinsoft.com/online-virus-scanner/` | только если через 2–3 недели держится |
+
+Fortinet и AlphaSOC подтверждений не присылают вообще — тишина там норма, а не отказ.
+Общий индикатор успеха — счётчик на VirusTotal: сейчас 4 из 91, цель 0.
+
+---
+
 🔴 **Проверено на практике 12.08.2026: подать эти формы из автоматизированного
 браузера нельзя.** Форма Fortinet была заполнена корректно (URL, категория, имя,
 почта, компания, комментарий, `contact_me`, пройденные ALTCHA и картиночная капча) —
