@@ -403,6 +403,9 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
 .va-req-card p{margin:0;font-size:13px;line-height:1.6;color:var(--text-sub)}
 .va-note{margin-top:18px;padding:14px 16px;border-radius:12px;background:rgba(243,156,18,.08);border:1px solid rgba(243,156,18,.35);font-size:13.5px;line-height:1.65;color:var(--text-sub)}
 .va-note b{color:var(--text)}
+/* на мобильном hero раскрывается через display:contents — порядок задаётся явно,
+   как у .vc-orbit на /virtual-camera/: eyebrow(1) → H1(2) → визуал(3) → кнопки(4) */
+@media(max-width:900px){.va-vis{order:3;margin:8px auto 6px;width:100%}}
 
 code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:rgba(255,255,255,.06);border:1px solid var(--app-border);border-radius:5px;padding:1px 5px;color:var(--text)}
 </style>
