@@ -5890,6 +5890,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/virtual-camera"/>
   </url>
   <url>
+    <loc>https://splitcam.com/virtual-audio</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://splitcam.com/virtual-audio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/virtual-audio"/>
+  </url>
+  <url>
     <loc>https://splitcam.com/multistreaming</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>

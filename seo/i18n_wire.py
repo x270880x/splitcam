@@ -22,11 +22,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHECK = "--check" in sys.argv
 
 # Page paths that participate in the locale system (translatable set).
-PAGE_PATHS = ["", "products/", "features/", "download/", "virtual-camera/", "multistreaming/", "alternatives/",
+PAGE_PATHS = ["", "products/", "features/", "download/", "virtual-camera/", "virtual-audio/", "multistreaming/", "alternatives/",
               "alternatives/obs/", "for/", "for/youtubers/", "for/churches/", "help/",
               "changelog/", "donate-us/", "privacy-policy/", "license-agreement/"]
 # changelog/privacy/license sit at priority 0.6/0.3; rest from i18n weighting.
-PRIO = {"": "1.0", "multistreaming/": "0.9", "virtual-camera/": "0.9", "products/": "0.9", "features/": "0.9", "download/": "0.9",
+PRIO = {"": "1.0", "multistreaming/": "0.9", "virtual-camera/": "0.9", "virtual-audio/": "0.8", "products/": "0.9", "features/": "0.9", "download/": "0.9",
         "changelog/": "0.6", "help/": "0.6", "donate-us/": "0.3", "privacy-policy/": "0.3", "license-agreement/": "0.3"}
 FREQ = {"": "weekly", "download/": "weekly", "changelog/": "weekly", "donate-us/": "yearly", "privacy-policy/": "yearly", "license-agreement/": "yearly"}
 LASTMOD = "2026-07-18"
