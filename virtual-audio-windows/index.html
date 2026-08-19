@@ -30,7 +30,7 @@
 <meta property="og:url" content="https://splitcam.com/virtual-audio-windows">
 <meta property="og:title" content="Virtual Audio for Windows — Virtual Microphone | SplitCam">
 <meta property="og:description" content="SplitCam for Windows installs a virtual audio device with the app. Mix your mic, system sound and media, then pick SplitCam as the microphone in any program.">
-<meta property="og:image" content="https://splitcam.com/assets/og-cover.png">
+<meta property="og:image" content="https://splitcam.com/assets/og-virtual-audio-windows.png">
 <meta property="og:site_name" content="SplitCam">
 <meta property="article:section" content="Virtual Audio">
 <meta property="article:tag" content="virtual audio driver">
@@ -43,7 +43,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Virtual Audio for Windows — Virtual Microphone | SplitCam">
 <meta name="twitter:description" content="SplitCam for Windows installs a virtual audio device with the app. Mix your mic, system sound and media, then pick SplitCam as the microphone in any program.">
-<meta name="twitter:image" content="https://splitcam.com/assets/og-cover.png">
+<meta name="twitter:image" content="https://splitcam.com/assets/og-virtual-audio-windows.png">
 
 <meta name="theme-color" content="#141420">
 
@@ -92,6 +92,32 @@
         "name": "SplitCam",
         "url": "https://splitcam.com/"
       }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Send the SplitCam audio mix to another program on Windows",
+      "description": "SplitCam for Windows registers a virtual audio device with the system, so another program can select it as its microphone.",
+      "totalTime": "PT3M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Install SplitCam for Windows",
+          "text": "The setup registers the audio device along with the application. There is no separate driver package to fetch on Windows."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Assemble the sound you want carried",
+          "text": "Add audio sources from the Add new source layer menu, under its Audio Source submenu, then set each level in the mixer."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Choose SplitCam where the sound is wanted",
+          "text": "In the other program, open its input or microphone list and select the SplitCam audio device instead of your hardware."
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -664,6 +690,27 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
         <h3>Other broadcast software</h3>
         <p>If you also run OBS or a similar tool, it can add the SplitCam device as an audio input capture and treat the assembled sound as a single source instead of rebuilding the same routing twice.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <span class="eyebrow">What can listen to it</span>
+    <h2 class="sec-h">Anything that lists microphones can use it.</h2>
+    <p class="sec-p">The device is registered with Windows itself, not with one program at a time. Whatever a program calls its input — microphone, audio device, recording device — it is reading the list Windows keeps, and the SplitCam entry sits in that list next to your sound card. That is the whole requirement: an input selector.</p>
+    <div class="apps-grid">
+      <div class="app-card"><img src="https://splitcam.com/virtual-audio-windows/assets/logos/zoom.svg" alt="" loading="lazy" style="width:41px;height:41px"><span>Zoom</span></div>
+      <div class="app-card"><img src="https://splitcam.com/virtual-audio-windows/assets/logos/discord.svg" alt="" loading="lazy"><span>Discord</span></div>
+      <div class="app-card"><img src="https://splitcam.com/virtual-audio-windows/assets/logos/microsoftteams.svg" alt="" loading="lazy"><span>Microsoft Teams</span></div>
+      <div class="app-card"><img src="https://splitcam.com/virtual-audio-windows/assets/logos/obsstudio.svg" alt="" loading="lazy"><span>OBS Studio</span></div>
+      <div class="app-card"><img src="https://splitcam.com/virtual-audio-windows/assets/logos/googlemeet.svg" alt="" loading="lazy"><span>Google Meet</span></div>
+      <div class="app-card"><img src="https://splitcam.com/virtual-audio-windows/assets/logos/webex.svg" alt="" loading="lazy"><span>Webex</span></div>
+      <div class="app-card"><img src="https://splitcam.com/virtual-audio-windows/assets/logos/slack.svg" alt="" loading="lazy"><span>Slack</span></div>
+      <div class="app-card"><img src="https://splitcam.com/virtual-audio-windows/assets/logos/telegram.svg" alt="" loading="lazy"><span>Telegram</span></div>
+      <div class="app-card"><img src="https://splitcam.com/virtual-audio-windows/assets/logos/gotomeeting.svg" alt="" loading="lazy"><span>GoToMeeting</span></div>
+      <div class="app-card"><img src="https://splitcam.com/virtual-audio-windows/assets/logos/jitsi.svg" alt="" loading="lazy"><span>Jitsi</span></div>
+      <div class="app-card" style="background:linear-gradient(135deg,rgba(40,120,252,.12),rgba(40,120,252,.03));border:1px dashed rgba(40,120,252,.5);justify-content:center"><span style="color:var(--blue);font-weight:600">+ anything else<br>with an input selector</span></div>
     </div>
   </div>
 </section>
