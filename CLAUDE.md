@@ -302,6 +302,30 @@ changing any of them:
 `/download/`**. Do not add it to the homepage and do not apply the standing "link every
 feature page from `/features/`" rule here.
 
+⚠️ **Mac and Windows audio are two separate, unlinked pages (user, 2026-08-19).**
+`/virtual-audio/` is the **macOS** page and must stay macOS-only — it currently contains
+zero mentions of Windows, keep it that way. A **Windows** virtual-audio page is planned as
+a *separate* page that **does** belong in the `/features/` hub. The two must never link to
+each other or share a page. Because of that split, treat the bare `/virtual-audio` URL as
+ambiguous: if the Windows page ships, rename this one to `/virtual-audio-mac` (301 from the
+old URL) and give Windows `/virtual-audio-windows`, so neither competes for the generic
+query.
+
+⚠️ **Brand icons must be real logos, never emoji.** The hero "any app with a mic input" row
+uses the site's own SVG logos, copied into `virtual-audio/assets/logos/`
+(`microsoftteams · telegram · discord · obsstudio`, same files as
+`virtual-camera/assets/logos/`) via `<img class="va-logo" …>`. Generic *sources* (mic,
+system sound, music, video audio) use inline stroke SVGs in a `.va-ico` tile. Emoji stayed
+acceptable only in `.uc-ico` feature cards, which is the established site-wide pattern.
+Shipped with emoji standing in for brands once; the owner rejected it on sight.
+
+⚠️ **How the driver is linked from `/download/`:** the macOS card uses a dedicated
+`.product-addon` row placed **after** `.product-cta`, not a third chip inside it.
+`.product-cta` is a two-item flex row (store button + changelog); adding a third
+`.product-changelog` chip there made the driver look like a second changelog link and broke
+the card's rhythm — the owner flagged it. The add-on block carries a mic icon, an "Add-on"
+tag and one line of copy, and keeps both product cards the same height at desktop width.
+
 ⚠️ `mac-download/` is host-managed and outside the git deploy, so the `.pkg` was uploaded
 straight to the server over SSH — a site deploy will not remove it, and will not restore it
 either if it is ever deleted.
