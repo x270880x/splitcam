@@ -440,6 +440,13 @@ RewriteRule ^tour(/.*)?$                                            https://spli
 #      Anchored with $ so /win-download/SplitCamSetup_x64.msi is untouched.
 RewriteRule ^win-download/?$ https://splitcam.com/download [R=301,L]
 RewriteRule ^mac-download/?$ https://splitcam.com/download [R=301,L]
+
+# 0.8) /virtual-audio held the macOS driver page until the Windows sibling shipped
+#      (2026-08-19). Renamed to /virtual-audio-mac so neither platform squats the
+#      generic term and the two pages stop competing for "virtual audio".
+#      Anchored with $ — /virtual-audio-mac and /virtual-audio-windows are NOT matched.
+#      Placed before rule 1 so both /virtual-audio and /virtual-audio/ resolve in one hop.
+RewriteRule ^virtual-audio/?$ https://splitcam.com/virtual-audio-mac [R=301,L]
 # 1) 301 the trailing-slash form to slashless — but NOT the site root, a locale
 #    root (/ru/, /es/, /fil/ …), or /plugins/ — those legitimately keep their slash.
 #
