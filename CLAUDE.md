@@ -32,6 +32,7 @@ Pages (9 public + 1 archived):
 | `/features/` | Features hub (all 35 locales) — replaces live splitcam.com/features. Not in global nav yet. |
 | `/virtual-camera/` | Feature page |
 | `/multistreaming/` | Feature page |
+| `/virtual-audio/` | **EN-only.** macOS virtual audio driver + its standalone installer (`mac-download/SplitCamVirtualAudio.pkg`). Linked from ONE place by owner decision — the macOS card on `/download/`. Not from the homepage, not from the `/features/` hub. |
 | `/products/` | Products hub — Win / macOS / iOS / Android + SplitCam Remote |
 | `/donate-us/` | Donate page (all 35 locales) — donations go to **paypal.me/Katzovich**, amount chips are clickable links ($25-$1000). Keep-URL, matches live. |
 | `/for/youtubers/` | SEO Wave 1 — structural template for SEO pages |
@@ -280,6 +281,35 @@ computes (`getComputedStyle(el).maxWidth` etc.), not just that the file contains
     something. `seo/REMINDERS.md` remains the record of *what* is scheduled and
     why; the tasks are what actually fires. Note that a scheduled task only runs
     while the app is open (a missed run fires on next launch).
+
+## /virtual-audio/ — the macOS audio driver (added 2026-08-19)
+
+The page describes **SplitCamVirtualAudio**, a CoreAudio HAL plug-in that adds a virtual
+audio device macOS apps see as an ordinary microphone, so a mix of mic + system sound +
+music + video audio can be sent to Teams, Telegram, Discord, Zoom or anything with a mic
+input. Facts on the page were read out of the package, not assumed — re-verify before
+changing any of them:
+
+- installer `mac-download/SplitCamVirtualAudio.pkg`, **37 726 bytes**, md5
+  `bf87d328d79f8707c8ab9e56d01bbdf8`; driver bundle **1.1**, id `com.splitcam.caio.VirtualAudio`
+- installs into `/Library/Audio/Plug-Ins/HAL` — **user-space plug-in, NOT a kernel extension**
+- signed `Developer ID Installer: OMT-LIDER, TOV (QRBUBRN5RF)` and **notarised by Apple**
+- 🔴 the binary is **arm64 only** — Apple Silicon. The page must never promise Intel support.
+- the same driver also ships *inside* SplitCam.app for macOS; this package is the standalone
+  install/repair path
+
+⚠️ **Linking rule (user, 2026-08-19):** this page is reachable **only from the macOS card on
+`/download/`**. Do not add it to the homepage and do not apply the standing "link every
+feature page from `/features/`" rule here.
+
+⚠️ `mac-download/` is host-managed and outside the git deploy, so the `.pkg` was uploaded
+straight to the server over SSH — a site deploy will not remove it, and will not restore it
+either if it is ever deleted.
+
+⚠️ **Hero ordering trap:** on mobile `.vc-hero-content` becomes `display:contents` and the
+hero children are ordered explicitly (eyebrow 1, h1 2, visual 3, CTA 4). Any new hero visual
+needs its own `order:3` inside `@media(max-width:900px)`, otherwise it defaults to 0 and
+renders *above the headline*. Hit for real while building this page.
 
 ## Content check-list — run before committing any copy change
 
