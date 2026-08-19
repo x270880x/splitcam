@@ -32,8 +32,8 @@ Pages (9 public + 1 archived):
 | `/features/` | Features hub (all 35 locales) — replaces live splitcam.com/features. Not in global nav yet. |
 | `/virtual-camera/` | Feature page |
 | `/multistreaming/` | Feature page |
-| `/virtual-audio-mac/` | **EN-only.** macOS virtual audio driver + its standalone installer (`mac-download/SplitCamVirtualAudio.pkg`). Entry points: the macOS cards on `/download/` and `/products/`, plus the combined hub card. |
-| `/virtual-audio-windows/` | **EN-only.** The Windows virtual audio device, which ships inside SplitCam's own setup — no driver download exists for Windows. Entry point: the combined hub card. |
+| `/virtual-audio-mac/` | **35 locales** (localized 2026-08-20). macOS virtual audio driver + its standalone installer (`mac-download/SplitCamVirtualAudio.pkg`). Entry points: the macOS cards on `/download/` and `/products/`, plus the combined hub card. |
+| `/virtual-audio-windows/` | **35 locales** (localized 2026-08-20). The Windows virtual audio device, which ships inside SplitCam's own setup — no driver download exists for Windows. Entry point: the combined hub card. |
 | `/products/` | Products hub — Win / macOS / iOS / Android + SplitCam Remote |
 | `/donate-us/` | Donate page (all 35 locales) — donations go to **paypal.me/Katzovich**, amount chips are clickable links ($25-$1000). Keep-URL, matches live. |
 | `/for/youtubers/` | SEO Wave 1 — structural template for SEO pages |
@@ -355,6 +355,32 @@ adding any section.
 `virtual-audio-mac/index.html` says so itself ("SplitCam for macOS already contains this audio driver").
 The real difference is that macOS *additionally* ships a standalone `.pkg` for installing or repairing the
 device on its own; Windows has no such package. Never write "built into Windows, downloaded on Mac".
+
+## Both virtual-audio pages localized (2026-08-20)
+
+`/virtual-audio-mac/` and `/virtual-audio-windows/` now exist in **all 35 locales** (68 new pages).
+Entry points from `/products/` and `/features/` were relinked so a localized surface leads to the
+localized page; `/download/` still links the EN Mac page because `/download/` has no localized copies.
+
+**How they were built — reuse this, do not hand-translate a page again:**
+1. `scratchpad/va_extract.py` pulls the translatable strings out of a page into a keyed dict and can
+   inject them back. 🔴 Its guarantee is a **round-trip test**: re-injecting the English values must
+   reproduce the file byte for byte. That test is what caught a real bug — the FAQ *answer* pattern
+   also swallowed its `<summary>`, so FAQ **questions** were never extracted and would have shipped in
+   English. Never skip the round-trip check after editing the patterns.
+2. `scratchpad/va_build_locale.py` assembles a locale page: `<html>` tag, sprite, nav, mobile menu,
+   footer and scripts are **transplanted from that locale's own `virtual-camera/index.html`**, so the
+   chrome is genuinely localized rather than translated by hand. Head SEO, page CSS and content come
+   from the EN page.
+3. JSON-LD is **rebuilt from the same translated strings** — BreadcrumbList, SoftwareApplication,
+   HowTo steps and the whole FAQPage end up in the page's language.
+4. `python3 seo/i18n_wire.py` then wires hreflang, the language dropdown, the auto-redirect script,
+   RTL CSS and the sitemap. Expect **36** hreflang links per page (35 locales + `x-default`) — that is
+   the site-wide norm, not an extra entry.
+
+⚠️ Logos and the mixer screenshot stay on absolute EN paths
+(`/virtual-audio-windows/assets/logos/…`, `/assets/audio-mixer.png`) — they are shared assets and are
+deliberately NOT duplicated per locale.
 
 ## Localized surfaces for virtual audio (2026-08-19)
 
