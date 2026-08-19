@@ -298,18 +298,50 @@ changing any of them:
 - the same driver also ships *inside* SplitCam.app for macOS; this package is the standalone
   install/repair path
 
-⚠️ **Linking rule (user, 2026-08-19):** this page is reachable **only from the macOS card on
-`/download/`**. Do not add it to the homepage and do not apply the standing "link every
-feature page from `/features/`" rule here.
+⚠️ **Linking rules (user, 2026-08-19 — SUPERSEDED TWICE, this is the current state).**
+History matters here because two earlier rules are still quoted in review tooling:
+1. First the owner said the macOS page must be reachable **only** from the macOS card on `/download/`,
+   explicitly not from the homepage and not from `/features/`.
+2. Then they added `/products/` — its macOS card carries the same `.product-addon` block.
+3. Then they **reversed the `/features/` ban**: the hub must carry a Virtual Audio feature card that
+   covers **both platforms in one card** and links to **both** pages.
+**Current, binding:** entry points are the macOS cards on `/download/` and `/products/` (Mac page only),
+plus one combined card in `/features/` linking to both. Still **not** on the homepage and **not** in the nav.
 
-⚠️ **Mac and Windows audio are two separate, unlinked pages (user, 2026-08-19).**
-`/virtual-audio/` is the **macOS** page and must stay macOS-only — it currently contains
-zero mentions of Windows, keep it that way. A **Windows** virtual-audio page is planned as
-a *separate* page that **does** belong in the `/features/` hub. The two must never link to
-each other or share a page. Because of that split, treat the bare `/virtual-audio` URL as
-ambiguous: if the Windows page ships, rename this one to `/virtual-audio-mac` (301 from the
-old URL) and give Windows `/virtual-audio-windows`, so neither competes for the generic
-query.
+⚠️ **The two pages stay independent in content, not in navigation.** `/virtual-audio-mac/` and
+`/virtual-audio-windows/` must not cross-link body copy, must not share sections, and must not be
+near-duplicates of each other — an adversarial review caught the first Windows draft being a
+find-and-replace clone of the Mac page (identical H2s, identical 11-app list, verbatim sentences),
+which would defeat the whole point of splitting the URLs. The hub card is the ONE place both are
+mentioned together.
+
+⚠️ **URL split (user-approved, 2026-08-19):** the page formerly at `/virtual-audio` is now
+`/virtual-audio-mac`, with a 301 in `seo/redirects.htaccess` (rule 0.8, placed before the
+trailing-slash rule so both `/virtual-audio` and `/virtual-audio/` resolve in one hop). The Windows
+sibling is `/virtual-audio-windows`. Neither squats the platform-less query.
+
+⚠️ **Windows virtual audio is BUILT IN — do not offer a download for it.** Evidence, all in the
+Windows panel of `changelog/index.html`: v10.3.51 "Added SplitCam Virtual Audio device.";
+v10.3.66 "New virtual microphone device driver." plus an installed-driver check that warns and lets
+the program keep running; v10.3.77 "Audio driver updated.". 🔴 The v6.1 entry "Added virtual
+microphone plug-in" sits in the **macOS** panel (`id="panel-mac"`) — it is NOT Windows evidence.
+
+⚠️ **Mixer ≠ virtual microphone (owner's distinction, must stay unmistakable).** The **Audio Mixer**
+combines sources *inside* SplitCam and that mix goes to the stream and the recording. The **virtual
+microphone** is a *separate, additional* output that makes the mix available to Windows as an input
+*device*, so other programs can select it. Do not write "outside SplitCam" for the device — it reads
+as "not part of SplitCam", the exact misconception the page exists to kill; write "at the Windows
+level". Also avoid asserting the device carries bit-identically "that same mix": the repo cannot
+prove it, and the page itself notes horizontal and vertical canvases have independent audio.
+
+⚠️ **Imagery available (audited 2026-08-19).** `assets/audio-mixer.png` (531×997) is a **genuine
+Windows Audio Mixer screenshot** — four strips: Microphone (High Definition Audio Device), Audio
+Playlist, www.youtube.com, System Audio. `index.html` already animates level bars over it
+(`.mixer-img-wrap` + `.mixer-level`, keyframes `lvlMic/lvlMusic/lvlYT/lvlSys`) — reuse that, don't
+reinvent it. 🔴 There is **no** screenshot anywhere of the virtual-audio device selector — no Windows
+Sound panel, no app mic dropdown showing "SplitCam Virtual Audio". Build that as a CSS/SVG diagram
+and never relabel an existing file as one. `v2/assets/store-*.png` are **macOS** shots — never use
+them on a Windows page.
 
 ⚠️ **Brand icons must be real logos, never emoji.** The hero "any app with a mic input" row
 uses the site's own SVG logos, copied into `virtual-audio/assets/logos/`
