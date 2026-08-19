@@ -1,0 +1,951 @@
+{
+ "from": "2026-07-21",
+ "to": "2026-08-17",
+ "days": 28,
+ "total": {
+  "impressions": 4137,
+  "clicks": 172,
+  "queries": 147
+ },
+ "queries": {
+  "virtual camera": {
+   "impressions": 1492,
+   "clicks": 38,
+   "position": 6.9,
+   "ctr": 2.55
+  },
+  "free virtual camera": {
+   "impressions": 63,
+   "clicks": 13,
+   "position": 2.5,
+   "ctr": 20.63
+  },
+  "virtual camera software": {
+   "impressions": 174,
+   "clicks": 11,
+   "position": 4.1,
+   "ctr": 6.32
+  },
+  "virtual camera app": {
+   "impressions": 255,
+   "clicks": 10,
+   "position": 7.5,
+   "ctr": 3.92
+  },
+  "virtual camera apk": {
+   "impressions": 52,
+   "clicks": 7,
+   "position": 16.7,
+   "ctr": 13.46
+  },
+  "virtual camera pc": {
+   "impressions": 114,
+   "clicks": 5,
+   "position": 6.5,
+   "ctr": 4.39
+  },
+  "virtual camera for pc": {
+   "impressions": 172,
+   "clicks": 4,
+   "position": 5.7,
+   "ctr": 2.33
+  },
+  "virtual camera free": {
+   "impressions": 35,
+   "clicks": 4,
+   "position": 2.7,
+   "ctr": 11.43
+  },
+  "virtual camera software free": {
+   "impressions": 10,
+   "clicks": 4,
+   "position": 1.6,
+   "ctr": 40.0
+  },
+  "free virtual camera software": {
+   "impressions": 19,
+   "clicks": 3,
+   "position": 1.5,
+   "ctr": 15.79
+  },
+  "virtual camera pc free": {
+   "impressions": 19,
+   "clicks": 3,
+   "position": 2,
+   "ctr": 15.79
+  },
+  "best virtual camera": {
+   "impressions": 11,
+   "clicks": 2,
+   "position": 7.3,
+   "ctr": 18.18
+  },
+  "video virtual camera": {
+   "impressions": 11,
+   "clicks": 2,
+   "position": 8.5,
+   "ctr": 18.18
+  },
+  "virtual camera android": {
+   "impressions": 17,
+   "clicks": 2,
+   "position": 18.8,
+   "ctr": 11.76
+  },
+  "virtual camera for whatsapp": {
+   "impressions": 16,
+   "clicks": 2,
+   "position": 2.6,
+   "ctr": 12.5
+  },
+  "virtual camera for windows": {
+   "impressions": 24,
+   "clicks": 2,
+   "position": 6.0,
+   "ctr": 8.33
+  },
+  "virtual camera pro apk": {
+   "impressions": 38,
+   "clicks": 2,
+   "position": 12.7,
+   "ctr": 5.26
+  },
+  "android virtual camera": {
+   "impressions": 5,
+   "clicks": 1,
+   "position": 22.8,
+   "ctr": 20.0
+  },
+  "download virtual camera": {
+   "impressions": 7,
+   "clicks": 1,
+   "position": 5.3,
+   "ctr": 14.29
+  },
+  "obs virtual camera whatsapp": {
+   "impressions": 2,
+   "clicks": 1,
+   "position": 5,
+   "ctr": 50.0
+  },
+  "teams virtual camera": {
+   "impressions": 7,
+   "clicks": 1,
+   "position": 5.9,
+   "ctr": 14.29
+  },
+  "video virtual camera apk": {
+   "impressions": 1,
+   "clicks": 1,
+   "position": 5,
+   "ctr": 100
+  },
+  "virtual camera : live assist 3.5 6": {
+   "impressions": 1,
+   "clicks": 1,
+   "position": 9,
+   "ctr": 100
+  },
+  "virtual camera : live assist alternative": {
+   "impressions": 6,
+   "clicks": 1,
+   "position": 3.2,
+   "ctr": 16.67
+  },
+  "virtual camera download": {
+   "impressions": 77,
+   "clicks": 1,
+   "position": 7.0,
+   "ctr": 1.3
+  },
+  "virtual camera macos": {
+   "impressions": 1,
+   "clicks": 1,
+   "position": 16,
+   "ctr": 100
+  },
+  "virtual camera pro": {
+   "impressions": 8,
+   "clicks": 1,
+   "position": 10,
+   "ctr": 12.5
+  },
+  "virtual camera windows": {
+   "impressions": 83,
+   "clicks": 1,
+   "position": 7.7,
+   "ctr": 1.2
+  },
+  "virtual camera windows 11": {
+   "impressions": 4,
+   "clicks": 1,
+   "position": 7,
+   "ctr": 25.0
+  },
+  "virtual cameras": {
+   "impressions": 17,
+   "clicks": 1,
+   "position": 9.1,
+   "ctr": 5.88
+  },
+  "whatsapp virtual camera": {
+   "impressions": 5,
+   "clicks": 1,
+   "position": 2.6,
+   "ctr": 20.0
+  },
+  "windows virtual camera": {
+   "impressions": 90,
+   "clicks": 1,
+   "position": 7.3,
+   "ctr": 1.11
+  },
+  "ai virtual camera": {
+   "impressions": 3,
+   "clicks": 0,
+   "position": 6.3,
+   "ctr": 0
+  },
+  "android virtual camera github": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 69,
+   "ctr": 0
+  },
+  "best virtual camera for pc": {
+   "impressions": 8,
+   "clicks": 0,
+   "position": 4.4,
+   "ctr": 0
+  },
+  "best virtual camera software": {
+   "impressions": 6,
+   "clicks": 0,
+   "position": 7,
+   "ctr": 0
+  },
+  "desktop virtual camera": {
+   "impressions": 3,
+   "clicks": 0,
+   "position": 5.7,
+   "ctr": 0
+  },
+  "how to install virtual camera obs mac": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 50,
+   "ctr": 0
+  },
+  "how to make obs virtual camera work on discord": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 31,
+   "ctr": 0
+  },
+  "how to setup obs virtual camera for discord": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 29,
+   "ctr": 0
+  },
+  "intel virtual camera": {
+   "impressions": 5,
+   "clicks": 0,
+   "position": 11,
+   "ctr": 0
+  },
+  "ios virtual camera": {
+   "impressions": 4,
+   "clicks": 0,
+   "position": 19.5,
+   "ctr": 0
+  },
+  "iphone virtual camera": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 45,
+   "ctr": 0
+  },
+  "is there a tool where i can move a virtual camera and get the exact shot i set up?": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 35.5,
+   "ctr": 0
+  },
+  "obs virtual camera": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 28.5,
+   "ctr": 0
+  },
+  "obs virtual camera alternative": {
+   "impressions": 15,
+   "clicks": 0,
+   "position": 2.8,
+   "ctr": 0
+  },
+  "obs virtual camera android": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 30,
+   "ctr": 0
+  },
+  "obs virtual camera apk": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 25.5,
+   "ctr": 0
+  },
+  "obs virtual camera discord": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 27,
+   "ctr": 0
+  },
+  "obs virtual camera download": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 23,
+   "ctr": 0
+  },
+  "obs virtual camera indir": {
+   "impressions": 4,
+   "clicks": 0,
+   "position": 9,
+   "ctr": 0
+  },
+  "ometv virtual camera": {
+   "impressions": 5,
+   "clicks": 0,
+   "position": 14.2,
+   "ctr": 0
+  },
+  "online virtual camera": {
+   "impressions": 10,
+   "clicks": 0,
+   "position": 8.2,
+   "ctr": 0
+  },
+  "start virtual camera": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 9,
+   "ctr": 0
+  },
+  "streamfog virtual camera": {
+   "impressions": 5,
+   "clicks": 0,
+   "position": 6,
+   "ctr": 0
+  },
+  "streamfog virtual camera download": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 7,
+   "ctr": 0
+  },
+  "teams android virtual camera support": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 7,
+   "ctr": 0
+  },
+  "tiktok virtual camera": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 19,
+   "ctr": 0
+  },
+  "twitch virtual camera": {
+   "impressions": 10,
+   "clicks": 0,
+   "position": 10.2,
+   "ctr": 0
+  },
+  "unlock virtual camera by going live": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 11,
+   "ctr": 0
+  },
+  "unlock virtual camera by going live on live studio 1 more time for 25 minutes each": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 11,
+   "ctr": 0
+  },
+  "unlock virtual camera by going live on live studio 3 more time for 25 minutes each": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 9,
+   "ctr": 0
+  },
+  "virtual camera : live assist": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 17.5,
+   "ctr": 0
+  },
+  "virtual camera : live assist premium apk": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 21,
+   "ctr": 0
+  },
+  "virtual camera android apk": {
+   "impressions": 3,
+   "clicks": 0,
+   "position": 15.7,
+   "ctr": 0
+  },
+  "virtual camera android github": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 28,
+   "ctr": 0
+  },
+  "virtual camera apk download": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 18,
+   "ctr": 0
+  },
+  "virtual camera apk github": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 28,
+   "ctr": 0
+  },
+  "virtual camera apk mod": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 43,
+   "ctr": 0
+  },
+  "virtual camera apk old version": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 17.5,
+   "ctr": 0
+  },
+  "virtual camera app download": {
+   "impressions": 6,
+   "clicks": 0,
+   "position": 6.5,
+   "ctr": 0
+  },
+  "virtual camera app for android": {
+   "impressions": 7,
+   "clicks": 0,
+   "position": 9,
+   "ctr": 0
+  },
+  "virtual camera app for pc": {
+   "impressions": 12,
+   "clicks": 0,
+   "position": 4.7,
+   "ctr": 0
+  },
+  "virtual camera application": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 8,
+   "ctr": 0
+  },
+  "virtual camera apps": {
+   "impressions": 17,
+   "clicks": 0,
+   "position": 5.6,
+   "ctr": 0
+  },
+  "virtual camera desktop": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 5,
+   "ctr": 0
+  },
+  "virtual camera discord": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 9,
+   "ctr": 0
+  },
+  "virtual camera driver": {
+   "impressions": 5,
+   "clicks": 0,
+   "position": 10.6,
+   "ctr": 0
+  },
+  "virtual camera effects": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 9,
+   "ctr": 0
+  },
+  "virtual camera extension": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 18,
+   "ctr": 0
+  },
+  "virtual camera for android": {
+   "impressions": 12,
+   "clicks": 0,
+   "position": 22.4,
+   "ctr": 0
+  },
+  "virtual camera for discord": {
+   "impressions": 5,
+   "clicks": 0,
+   "position": 9.2,
+   "ctr": 0
+  },
+  "virtual camera for iphone": {
+   "impressions": 7,
+   "clicks": 0,
+   "position": 11.3,
+   "ctr": 0
+  },
+  "virtual camera for mac": {
+   "impressions": 3,
+   "clicks": 0,
+   "position": 9,
+   "ctr": 0
+  },
+  "virtual camera for obs": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 27,
+   "ctr": 0
+  },
+  "virtual camera for omegle": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 19,
+   "ctr": 0
+  },
+  "virtual camera for zoom": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 11,
+   "ctr": 0
+  },
+  "virtual camera github": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 30.5,
+   "ctr": 0
+  },
+  "virtual camera ios": {
+   "impressions": 5,
+   "clicks": 0,
+   "position": 12.4,
+   "ctr": 0
+  },
+  "virtual camera live": {
+   "impressions": 5,
+   "clicks": 0,
+   "position": 10,
+   "ctr": 0
+  },
+  "virtual camera live assist": {
+   "impressions": 3,
+   "clicks": 0,
+   "position": 14.7,
+   "ctr": 0
+  },
+  "virtual camera live assist premium apk": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 17,
+   "ctr": 0
+  },
+  "virtual camera mac": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 20,
+   "ctr": 0
+  },
+  "virtual camera mod apk": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 14.5,
+   "ctr": 0
+  },
+  "virtual camera old version": {
+   "impressions": 4,
+   "clicks": 0,
+   "position": 18.5,
+   "ctr": 0
+  },
+  "virtual camera old version apk": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 18,
+   "ctr": 0
+  },
+  "virtual camera ometv": {
+   "impressions": 9,
+   "clicks": 0,
+   "position": 8.6,
+   "ctr": 0
+  },
+  "virtual camera online": {
+   "impressions": 15,
+   "clicks": 0,
+   "position": 8.5,
+   "ctr": 0
+  },
+  "virtual camera plugin": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 7,
+   "ctr": 0
+  },
+  "virtual camera program": {
+   "impressions": 8,
+   "clicks": 0,
+   "position": 6.6,
+   "ctr": 0
+  },
+  "virtual camera system": {
+   "impressions": 5,
+   "clicks": 0,
+   "position": 6,
+   "ctr": 0
+  },
+  "virtual camera teams": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 7,
+   "ctr": 0
+  },
+  "virtual camera tiktok live studio": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 21,
+   "ctr": 0
+  },
+  "virtual camera tool": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 4.5,
+   "ctr": 0
+  },
+  "virtual camera website": {
+   "impressions": 13,
+   "clicks": 0,
+   "position": 7.7,
+   "ctr": 0
+  },
+  "virtual camera windows 10": {
+   "impressions": 4,
+   "clicks": 0,
+   "position": 4.8,
+   "ctr": 0
+  },
+  "virtual camera zoom": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 6,
+   "ctr": 0
+  },
+  "windows 11 virtual camera": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 9,
+   "ctr": 0
+  },
+  "virtual cam": {
+   "impressions": 312,
+   "clicks": 5,
+   "position": 8.1,
+   "ctr": 1.6
+  },
+  "virtual cam free": {
+   "impressions": 9,
+   "clicks": 2,
+   "position": 2.4,
+   "ctr": 22.22
+  },
+  "virtual cam software": {
+   "impressions": 12,
+   "clicks": 2,
+   "position": 3.3,
+   "ctr": 16.67
+  },
+  "virtual cam app": {
+   "impressions": 10,
+   "clicks": 1,
+   "position": 6.7,
+   "ctr": 10.0
+  },
+  "virtual cam pro": {
+   "impressions": 1,
+   "clicks": 1,
+   "position": 13,
+   "ctr": 100
+  },
+  "android virtual cam": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 14,
+   "ctr": 0
+  },
+  "twitch virtual cam": {
+   "impressions": 15,
+   "clicks": 0,
+   "position": 7.9,
+   "ctr": 0
+  },
+  "virtual cam apk": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 15,
+   "ctr": 0
+  },
+  "virtual cam download": {
+   "impressions": 8,
+   "clicks": 0,
+   "position": 7.5,
+   "ctr": 0
+  },
+  "virtual cam for android": {
+   "impressions": 6,
+   "clicks": 0,
+   "position": 12.5,
+   "ctr": 0
+  },
+  "virtual cam for mac": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 13.5,
+   "ctr": 0
+  },
+  "virtual cam mac": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 7,
+   "ctr": 0
+  },
+  "virtual camara": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 5.5,
+   "ctr": 0
+  },
+  "virtual camer": {
+   "impressions": 4,
+   "clicks": 0,
+   "position": 4.8,
+   "ctr": 0
+  },
+  "virtual camra": {
+   "impressions": 4,
+   "clicks": 0,
+   "position": 8,
+   "ctr": 0
+  },
+  "virtual cams": {
+   "impressions": 10,
+   "clicks": 0,
+   "position": 5.3,
+   "ctr": 0
+  },
+  "virtual webcam": {
+   "impressions": 276,
+   "clicks": 9,
+   "position": 7.3,
+   "ctr": 3.26
+  },
+  "free virtual webcam": {
+   "impressions": 20,
+   "clicks": 7,
+   "position": 4.7,
+   "ctr": 35.0
+  },
+  "virtual webcam software": {
+   "impressions": 81,
+   "clicks": 4,
+   "position": 4.9,
+   "ctr": 4.94
+  },
+  "free virtual webcam software": {
+   "impressions": 12,
+   "clicks": 2,
+   "position": 1.8,
+   "ctr": 16.67
+  },
+  "virtual webcam app": {
+   "impressions": 17,
+   "clicks": 2,
+   "position": 6.2,
+   "ctr": 11.76
+  },
+  "virtual webcam for pc": {
+   "impressions": 49,
+   "clicks": 2,
+   "position": 5.9,
+   "ctr": 4.08
+  },
+  "virtual webcam free": {
+   "impressions": 14,
+   "clicks": 2,
+   "position": 2.3,
+   "ctr": 14.29
+  },
+  "virtual webcam windows": {
+   "impressions": 52,
+   "clicks": 2,
+   "position": 6.1,
+   "ctr": 3.85
+  },
+  "virtual webcam android": {
+   "impressions": 1,
+   "clicks": 1,
+   "position": 10,
+   "ctr": 100
+  },
+  "virtual webcam extension": {
+   "impressions": 15,
+   "clicks": 1,
+   "position": 11.4,
+   "ctr": 6.67
+  },
+  "best free virtual webcam software 2026": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 9,
+   "ctr": 0
+  },
+  "manycam virtual webcam": {
+   "impressions": 5,
+   "clicks": 0,
+   "position": 15.6,
+   "ctr": 0
+  },
+  "virtual webcam driver": {
+   "impressions": 3,
+   "clicks": 0,
+   "position": 11,
+   "ctr": 0
+  },
+  "virtual webcam for android": {
+   "impressions": 4,
+   "clicks": 0,
+   "position": 10.8,
+   "ctr": 0
+  },
+  "virtual webcam linux": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 10,
+   "ctr": 0
+  },
+  "virtual webcam software free": {
+   "impressions": 15,
+   "clicks": 0,
+   "position": 2.6,
+   "ctr": 0
+  },
+  "virtual webcam windows 10": {
+   "impressions": 3,
+   "clicks": 0,
+   "position": 14,
+   "ctr": 0
+  },
+  "virtual webcams": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 10.5,
+   "ctr": 0
+  },
+  "windows virtual webcam": {
+   "impressions": 8,
+   "clicks": 0,
+   "position": 7,
+   "ctr": 0
+  },
+  "vitual camera": {
+   "impressions": 6,
+   "clicks": 0,
+   "position": 4.3,
+   "ctr": 0
+  },
+  "obs virtualcam": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 43,
+   "ctr": 0
+  },
+  "virtualcam": {
+   "impressions": 18,
+   "clicks": 0,
+   "position": 11.9,
+   "ctr": 0
+  },
+  "virtualcamera": {
+   "impressions": 14,
+   "clicks": 0,
+   "position": 7.8,
+   "ctr": 0
+  }
+ },
+ "pages_for_virtual_camera": {
+  "/": {
+   "impressions": 1403,
+   "clicks": 32,
+   "position": 6.7
+  },
+  "/fr/virtual-camera": {
+   "impressions": 59,
+   "clicks": 4,
+   "position": 7.2
+  },
+  "/it/virtual-camera": {
+   "impressions": 7,
+   "clicks": 1,
+   "position": 16.3
+  },
+  "/pl/virtual-camera": {
+   "impressions": 3,
+   "clicks": 1,
+   "position": 13
+  },
+  "/de/virtual-camera": {
+   "impressions": 7,
+   "clicks": 0,
+   "position": 14.9
+  },
+  "/download": {
+   "impressions": 8,
+   "clicks": 0,
+   "position": 55.4
+  },
+  "/es/": {
+   "impressions": 4,
+   "clicks": 0,
+   "position": 7.2
+  },
+  "/es/virtual-camera": {
+   "impressions": 4,
+   "clicks": 0,
+   "position": 22.5
+  },
+  "/nl/virtual-camera": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 8
+  },
+  "/ru/virtual-camera": {
+   "impressions": 2,
+   "clicks": 0,
+   "position": 3.5
+  },
+  "/virtual-camera": {
+   "impressions": 1,
+   "clicks": 0,
+   "position": 16
+  }
+ }
+}
