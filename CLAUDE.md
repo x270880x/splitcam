@@ -32,7 +32,8 @@ Pages (9 public + 1 archived):
 | `/features/` | Features hub (all 35 locales) — replaces live splitcam.com/features. Not in global nav yet. |
 | `/virtual-camera/` | Feature page |
 | `/multistreaming/` | Feature page |
-| `/virtual-audio/` | **EN-only.** macOS virtual audio driver + its standalone installer (`mac-download/SplitCamVirtualAudio.pkg`). Linked from ONE place by owner decision — the macOS card on `/download/`. Not from the homepage, not from the `/features/` hub. |
+| `/virtual-audio-mac/` | **EN-only.** macOS virtual audio driver + its standalone installer (`mac-download/SplitCamVirtualAudio.pkg`). Entry points: the macOS cards on `/download/` and `/products/`, plus the combined hub card. |
+| `/virtual-audio-windows/` | **EN-only.** The Windows virtual audio device, which ships inside SplitCam's own setup — no driver download exists for Windows. Entry point: the combined hub card. |
 | `/products/` | Products hub — Win / macOS / iOS / Android + SplitCam Remote |
 | `/donate-us/` | Donate page (all 35 locales) — donations go to **paypal.me/Katzovich**, amount chips are clickable links ($25-$1000). Keep-URL, matches live. |
 | `/for/youtubers/` | SEO Wave 1 — structural template for SEO pages |
@@ -333,6 +334,42 @@ microphone** is a *separate, additional* output that makes the mix available to 
 as "not part of SplitCam", the exact misconception the page exists to kill; write "at the Windows
 level". Also avoid asserting the device carries bit-identically "that same mix": the repo cannot
 prove it, and the page itself notes horizontal and vertical canvases have independent audio.
+
+## /virtual-audio-windows/ — the Windows device page (added 2026-08-19)
+
+Sells "it is already installed, here is the difference between the mixer and the device, and where the
+device turns up", NOT an install flow — Windows has no driver package. Deliberately shares no structure
+with the Mac page: different headings, no 11-app grid, no 3-step install ladder, no requirements card row.
+Two adversarial review rounds killed earlier drafts for cloning it; diff against `virtual-audio-mac/` before
+adding any section.
+
+- own CSS family `.vw-*` (two-lane hero diagram, device-list mock, mixer shot) — never reuse `.va-*` here
+- the mixer visual is the **real** screenshot `assets/audio-mixer.png` plus the homepage's animated level
+  technique, re-implemented as `.vw-shot` / `.vw-lvl` with keyframes `vwA…vwD`
+- the Windows input list is a **CSS mock** (`.vw-dd`), clearly a diagram — no screenshot of one exists
+- verified copy anchors: `Add new source layer` → `Audio Source` submenu (v10.5.38, so word it cautiously);
+  Accentuate Microphone reacts to any sound, headset recommended; a failed driver load warns and SplitCam
+  keeps running
+
+🔴 **Correction to an earlier assumption:** the driver is bundled inside the app on **both** platforms.
+`virtual-audio-mac/index.html` says so itself ("SplitCam for macOS already contains this audio driver").
+The real difference is that macOS *additionally* ships a standalone `.pkg` for installing or repairing the
+device on its own; Windows has no such package. Never write "built into Windows, downloaded on Mac".
+
+## Localized surfaces for virtual audio (2026-08-19)
+
+Both localized blocks exist in **all 35 locales**, inserted mechanically from one JSON of per-locale
+translations (34 locale agents, each grepping its own pages first):
+- `/products/` macOS card → `.product-addon` row linking to `/virtual-audio-mac`
+- `/features/` hub → 9th card "Virtual Audio Device", **7th in order, right after Audio Mixer**, with two
+  CTAs (Windows + Mac)
+
+⚠️ The hub grid is a fixed `repeat(2,1fr)`. A 9th card orphans the last row, so
+`.product-grid>.product:last-child:nth-child(odd){grid-column:1/-1}` was added to every hub file. If a card
+is ever added or removed there, re-check that rule still produces a full-looking grid.
+
+⚠️ `.product-cta` is a **two-item** flex row. A third chip broke the macOS card once — that is why the
+driver link is a separate `.product-addon` block below the CTA, not another chip inside it.
 
 ⚠️ **Imagery available (audited 2026-08-19).** `assets/audio-mixer.png` (531×997) is a **genuine
 Windows Audio Mixer screenshot** — four strips: Microphone (High Definition Audio Device), Audio
