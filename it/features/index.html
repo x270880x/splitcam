@@ -204,6 +204,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Product grid */
 .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .product-grid>.product:last-child:nth-child(odd){grid-column:1/-1}
 .product{position:relative;display:flex;flex-direction:column;padding:28px 28px 26px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:all .2s;overflow:hidden}
 .product::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gradient-1,rgba(40,120,252,.04)),transparent 60%);pointer-events:none;opacity:.7;transition:opacity .2s}
 .product:hover{border-color:var(--app-border2)}
@@ -507,6 +508,20 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <li>Livello e mute per ogni fonte</li>
         <li>Soppressione del rumore integrata</li>
       </ul>
+    </div>
+
+    <div class="product">
+      <div class="product-head">
+        <div class="product-icon"><svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 003-3V5a3 3 0 00-6 0v6a3 3 0 003 3zm5-3a5 5 0 01-10 0H5a7 7 0 006 6.92V21h2v-3.08A7 7 0 0019 11h-2z"/></svg></div>
+        <div class="product-meta"><h3>Dispositivo audio virtuale</h3><div class="product-platform">Windows · macOS</div></div>
+      </div>
+      <p class="product-desc">Dopo il mixer, SplitCam offre al sistema il suono che hai composto come <strong>dispositivo microfono</strong>, così qualsiasi altra app può usarlo come ingresso — una riunione, un registratore, una scheda del browser. Viene <strong>installato insieme all'app su entrambe le piattaforme</strong>; su macOS c'è in più un pacchetto driver autonomo, per installare o riparare il dispositivo separatamente.</p>
+      <ul class="product-features">
+        <li>Compare nel normale elenco dei microfoni</li>
+        <li>Separato dal tuo stream — gli spettatori non sentono differenze</li>
+        <li>Nessuna integrazione da configurare app per app</li>
+      </ul>
+      <div class="product-cta"><a href="https://splitcam.com/virtual-audio-windows" class="product-changelog">Audio virtuale su Windows <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a href="https://splitcam.com/virtual-audio-mac" class="product-changelog">Audio virtuale su Mac <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
     </div>
 
     <div class="product">

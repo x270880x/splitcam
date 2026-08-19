@@ -204,6 +204,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Product grid */
 .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .product-grid>.product:last-child:nth-child(odd){grid-column:1/-1}
 .product{position:relative;display:flex;flex-direction:column;padding:28px 28px 26px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:all .2s;overflow:hidden}
 .product::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gradient-1,rgba(40,120,252,.04)),transparent 60%);pointer-events:none;opacity:.7;transition:opacity .2s}
 .product:hover{border-color:var(--app-border2)}
@@ -507,6 +508,20 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <li>逐路调节音量与静音</li>
         <li>内置降噪</li>
       </ul>
+    </div>
+
+    <div class="product">
+      <div class="product-head">
+        <div class="product-icon"><svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 003-3V5a3 3 0 00-6 0v6a3 3 0 003 3zm5-3a5 5 0 01-10 0H5a7 7 0 006 6.92V21h2v-3.08A7 7 0 0019 11h-2z"/></svg></div>
+        <div class="product-meta"><h3>虚拟音频设备</h3><div class="product-platform">Windows · macOS</div></div>
+      </div>
+      <p class="product-desc">混音之后，SplitCam 会把你调好的声音以 <strong>麦克风设备</strong> 的形式交给系统，任何其他应用都能把它选作输入——会议软件、录音工具、浏览器标签页都可以。它在 <strong>两个平台上都随主程序一起安装</strong>；macOS 还额外提供一个独立的驱动安装包，可以单独安装或修复该设备。</p>
+      <ul class="product-features">
+        <li>出现在普通的麦克风列表里</li>
+        <li>与你的直播互不影响——观众听到的声音不变</li>
+        <li>无需为每个应用单独设置</li>
+      </ul>
+      <div class="product-cta"><a href="https://splitcam.com/virtual-audio-windows" class="product-changelog">Windows 虚拟音频 <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a href="https://splitcam.com/virtual-audio-mac" class="product-changelog">Mac 虚拟音频 <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
     </div>
 
     <div class="product">
