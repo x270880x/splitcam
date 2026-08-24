@@ -196,7 +196,7 @@ Two sites, two keys, both verified serving their key file:
 
 | Domain | Key | URLs |
 |---|---|---|
-| splitcam.com | `485c229ee85ee55f1967363aabec7e9a` | 527 |
+| splitcam.com | `485c229ee85ee55f1967363aabec7e9a` | 598 |
 | camstreamguide.com | `1dce1f527c611c22daebaf1b00b0649a` | 2 135 |
 
 Post the **entire sitemap** in chunks of 500 to all three endpoints —
@@ -210,6 +210,12 @@ it more; splitcam.com is already indexed, camstreamguide is not.
 
 Google's own `google.com/ping?sitemap=` is dead (404, retired 2023). IndexNow reaches only
 Bing and Yandex — never Google — but for a young domain those are the realistic first wins.
+
+**Last full run: 2026-08-25 — 598 URLs, 2 chunks (500 + 98), all three endpoints accepted**
+(api.indexnow.org 200/200, bing 200/200, yandex 202/200). The run before that was 526 URLs on
+2026-07-02; the 2026-08-20 submission was a targeted one for the homepage retitle only, so the
+70 Virtual Audio pages and `/for/educators` had never gone out as a full list until now.
+Reminder for next time: a targeted submission does NOT replace the full-sitemap run.
 
 
 ---
