@@ -134,18 +134,40 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
   tagged `in development` (AR filters, Picture-in-picture) — don't reword
   them as if they ship.
 
-## Done — SEO Wave 1 ✅
+## Done ✅ (updated 2026-09-03 — the old "Wave 2/3" plan below was stale, replaced)
 
-`/for/youtubers/`, `/for/churches/`, `/alternatives/obs/` — all built & live.
+- **SEO Wave 1**: `/for/youtubers/`, `/for/churches/`, `/alternatives/obs/`.
+- **`/alternatives/`**: hub (retargeted) + `restream`, `manycam`, `streamyard`, `stream-deck` —
+  built via `seo/i18n_tools/` (extractor/builder), one page per real-demand competitor, per the
+  binding real-query rule below. `streamlabs` (originally planned) was **dropped**: real query
+  data showed it wasn't worth building — `stream-deck` replaced it instead (1240/mo demand,
+  0 competition, and the site said nothing about Stream Deck support at all).
+- **`/for/educators/`**: built + localized to all 34 locales; later corrected ("hotkeys are not
+  Windows-only" — they work on macOS too).
+- macOS minimum requirement unified to **13+** everywhere (was inconsistently 11+/12/13+/Mojave
+  across pages).
+- Both virtual-audio pages, `/donate-us/`, `/features/`, `/products/` — see their own sections
+  above, all done and localized.
 
-## In progress / queued
+## Postponed — not our call to resume
 
-- **SEO Wave 2** (~2026-06-10): `/alternatives/` hub, `/for/` hub,
-  `/alternatives/{restream,streamyard,streamlabs}/`, `/for/vtubers/`.
-- **Wave 3** (later): remaining alternatives + `/for/{streamers,educators}/`.
+- **`/for/vtubers/`**: built, fact-checked, briefly published, put back to `noindex` by the
+  owner — the product needs avatar support first. Full detail in the
+  `## /for/vtubers/ — postponed by the owner` section further below. Do not localize it,
+  re-enable its hub card, or add it back to `PAGE_PATHS` without the owner's go-ahead.
+
+## Still open
+
+- **`/for/streamers/`**: not built yet (was "Wave 3").
 - **Migration to live splitcam.com**: only `/` is a true same-URL replacement;
   everything else is new URLs. See `seo/MIGRATION.md` + `seo/REDIRECTS.md`.
   Multi-locale — **all 35 languages DONE 2026-06-15** (see below).
+
+**New pages are no longer picked from a fixed "Wave" list.** See
+**"🔴 BINDING — every localized page is targeted from real query data"** further below for the
+actual current process: find real per-locale demand (Search Console impressions, or Ahrefs when
+a topic has zero existing content to show impressions for), then build or retarget from that —
+not from a checklist.
 
 ## Localization — all 35 languages (built 2026-06-13 → 06-15)
 
