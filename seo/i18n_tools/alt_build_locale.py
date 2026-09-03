@@ -130,6 +130,13 @@ def build(slug, loc, S):
         dm = re.search(r'<a[^>]*class="[^"]*' + cls + r'[^"]*"[^>]*>([^<]*)</a>', db)
         if em and dm and em.group(1) != dm.group(1):
             nb = nb.replace(">" + em.group(1) + "</a>", ">" + dm.group(1) + "</a>")
+    # заголовок блока «Related guides» — тоже у донора («Гайды по теме» и т.п.).
+    # В извлекаемые строки он не попадает: там только содержимое карточек.
+    er = re.search(r'(<h3[^>]*>)([^<]*)(</h3>\s*<div class="related-grid")', body)
+    dr = re.search(r'<h3[^>]*>([^<]*)</h3>\s*<div class="related-grid"', db)
+    if er and dr and er.group(2) != dr.group(1):
+        nb = nb.replace(er.group(1) + er.group(2) + "</h3>", er.group(1) + dr.group(1) + "</h3>", 1)
+
     # хлебные крошки: структура донора, последний элемент — имя нашего конкурента
     ec = re.search(r'<div class="breadcrumbs">(.*?)</div>', body, re.S)
     dc = re.search(r'<div class="breadcrumbs">(.*?)</div>', db, re.S)

@@ -443,15 +443,15 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <p class="sec-p">A cloud multistreaming service is a relay. You send it one stream, it holds a copy on its servers, and it forwards that copy to each platform you connected. The convenience is real, and so is the arrangement underneath: your broadcast passes through infrastructure you do not control, and the bill arrives whether you streamed four times that month or none.</p>
   <div class="reasons-grid">
       <div class="reason">
-        <h4>Your stream makes a detour</h4>
+        <h3>Your stream makes a detour</h3>
         <p>Every frame travels to the relay first and to your audience second. That is one more network hop and one more service that has to be up while you are live.</p>
       </div>
       <div class="reason">
-        <h4>The bill is monthly, the streaming is not</h4>
-        <p>Published on our own site: Restream is $19/mo. A subscription charges for the calendar, not for the hours you actually broadcast.</p>
+        <h3>The bill is monthly, the streaming is not</h3>
+        <p>A subscription charges for the calendar, not for the hours you actually broadcast. Stream twice in a month and you still pay for the twenty-six days you did not.</p>
       </div>
       <div class="reason">
-        <h4>Someone else decides the ceiling</h4>
+        <h3>Someone else decides the ceiling</h3>
         <p>Quality, destination count and features are whatever tier you are on. Changing any of them is a pricing decision rather than a settings change.</p>
       </div>
   </div>
@@ -463,19 +463,19 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <p class="sec-p">The expensive part of streaming is encoding video, and your machine is already doing it. Once the frame is encoded, sending it to four platforms instead of one is just four network connections. SplitCam opens them itself — hardware encoding through NVENC, QuickSync or AMF on Windows and VideoToolbox on Mac, then a direct connection to each platform's ingest server.</p>
   <div class="reasons-grid">
       <div class="reason">
-        <h4>Encode once, send many</h4>
+        <h3>Encode once, send many</h3>
         <p>One encode feeds every destination, so adding a platform costs bandwidth rather than CPU.</p>
       </div>
       <div class="reason">
-        <h4>Per-destination bitrate</h4>
+        <h3>Per-destination bitrate</h3>
         <p>Want 6 Mbps to Twitch and 2.5 Mbps to Facebook? Set them separately instead of accepting one relay setting for everything.</p>
       </div>
       <div class="reason">
-        <h4>Nothing between you and the platform</h4>
+        <h3>Nothing between you and the platform</h3>
         <p>If a platform is up and your connection is up, your stream is up. There is no third service that can have an outage on your behalf.</p>
       </div>
       <div class="reason">
-        <h4>84+ platforms pre-configured</h4>
+        <h3>84+ platforms pre-configured</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X and the rest are already in the list with sensible defaults.</p>
       </div>
   </div>
@@ -496,7 +496,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><th>Feature</th><th>SplitCam</th><th>Restream</th></tr>
     </thead>
     <tbody>
-      <tr><td>Price</td><td class="yes">Free, no watermark</td><td class="no">$19/mo (published on our site)</td></tr>
+      <tr><td>Price</td><td class="yes">Free, no watermark</td><td class="no">Free tier plus paid plans — check current pricing</td></tr>
       <tr><td>How the stream travels</td><td class="yes">Direct from your machine to each platform</td><td class="meh">Relayed from their cloud</td></tr>
       <tr><td>Destinations</td><td class="yes">84+ pre-configured</td><td class="yes">Multi-platform, plan-dependent</td></tr>
       <tr><td>Scene compositing on your machine</td><td class="yes">Layers, sources, AI background, effects</td><td class="meh">Studio is browser-based</td></tr>

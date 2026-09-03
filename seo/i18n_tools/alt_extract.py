@@ -58,6 +58,11 @@ def check(slug, d):
     for k, v in d.items(): walk(k, v)
     if not d["related"]: bad.append("related: пусто — якорь не сработал")
     if len(d["rows"]) < 3: bad.append(f"rows: всего {len(d['rows'])}")
+    # Пустой список — тихая потеря целого блока текста. Страница Restream писалась
+    # вручную и использовала <h4> в карточках вместо <h3>: извлеклось 0 карточек,
+    # и текст остался бы английским во всех 34 локалях, никак себя не выдав.
+    for key in ("cards", "faq", "badges", "qa", "sec_h", "sec_p", "table_head", "cta"):
+        if not d.get(key): bad.append(f"{key}: ПУСТО — блок не извлёкся")
     return bad
 
 if __name__ == "__main__":
@@ -72,8 +77,9 @@ if __name__ == "__main__":
         if bad:
             print(f"  🔴 {s}: {'; '.join(bad)}"); fail = True
         else:
-            print(f"  ✓ {s}: related={len(d['related'])}, rows={len(d['rows'])}, "
-                  f"faq={len(d['faq'])}, самая длинная строка {mx} симв.")
+            print(f"  ✓ {s}: cards={len(d['cards'])} rows={len(d['rows'])} faq={len(d['faq'])} "
+                  f"badges={len(d['badges'])} qa={len(d['qa'])} sec_h={len(d['sec_h'])} "
+                  f"related={len(d['related'])} · макс. строка {mx}")
         res[s] = d
     if fail: raise SystemExit("извлечение отклонено")
     json.dump(res, open(out, "w"), ensure_ascii=False, indent=1)

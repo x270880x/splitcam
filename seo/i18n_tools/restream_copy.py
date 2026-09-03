@@ -63,7 +63,7 @@ COPY = {
  "cmp_h": "SplitCam vs Restream — where each one sits",
  "cmp_p": "Honest table. The last two rows are the ones that should decide it for you.",
  "rows": [
-   ("Price", "yes", "Free, no watermark", "no", "$19/mo (published on our site)"),
+   ("Price", "yes", "Free, no watermark", "no", "Free tier plus paid plans — check current pricing"),
    ("How the stream travels", "yes", "Direct from your machine to each platform", "meh", "Relayed from their cloud"),
    ("Destinations", "yes", "84+ pre-configured", "yes", "Multi-platform, plan-dependent"),
    ("Scene compositing on your machine", "yes", "Layers, sources, AI background, effects", "meh", "Studio is browser-based"),
