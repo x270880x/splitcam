@@ -105,7 +105,7 @@ COPY = {
 
  "keywords": ("manycam alternative, free manycam alternative, manycam alternative without watermark, "
               "virtual camera software free, webcam effects software free"),
- "badges": ["✓ Free, no watermark", "✓ 60+ apps", "✓ Up to 64 outputs", "✓ Win · macOS"],
+ "badges": ["Free, no watermark", "60+ apps", "Up to 64 outputs", "Win · macOS"],
  "related": [
    ("https://splitcam.com/virtual-camera", "Virtual Camera",
     "How the camera output works", "The 60+ apps that accept it and what they see."),

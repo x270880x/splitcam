@@ -13,7 +13,7 @@ COPY = {
  "sub": ("StreamYard builds your show in the cloud, so every layout, overlay and camera feed is limited by "
          "one browser tab and one upload. SplitCam builds it on your own computer and sends the finished "
          "result straight out — free, at whatever quality your hardware can actually produce."),
- "badges": ["✓ Free, no watermark", "✓ 84+ platforms", "✓ Local production", "✓ Win · macOS"],
+ "badges": ["Free, no watermark", "84+ platforms", "Local production", "Win · macOS"],
  "qa_h": "Short answer: what you gain and what you give up",
  "qa": [
    "<strong>You gain quality.</strong> Your scenes are composed on your own CPU and GPU, not inside a browser tab, so resolution and frame rate are limited by your PC rather than by a web app.",
