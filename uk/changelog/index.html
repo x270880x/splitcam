@@ -386,7 +386,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <div class="tabs-wrap">
   <div class="tabs" role="tablist">
     <button class="tab active" role="tab" aria-selected="true" data-target="panel-win">Windows<span class="tab-count">65</span></button>
-    <button class="tab" role="tab" aria-selected="false" data-target="panel-mac">macOS<span class="tab-count">32</span></button>
+    <button class="tab" role="tab" aria-selected="false" data-target="panel-mac">macOS<span class="tab-count">33</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="panel-ios">iOS<span class="tab-count">незабаром</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="panel-and">Android<span class="tab-count">незабаром</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="panel-rem">Remote<span class="tab-count">незабаром</span></button>
@@ -3404,6 +3404,63 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </div>
   </div>
   <div class="releases">
+    <article class="release open" id="mac-v1.23-build-272">
+      <header class="rel-head">
+        <a class="rel-ver" href="https://splitcam.com/mac-download/SplitCam-1.23-272.dmg" title="Download SplitCam 1.23 for macOS (.dmg)" onclick="event.stopPropagation()">v1.23 (build 272)<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
+        <time class="rel-date">September 3, 2026</time>
+      </header>
+      <div class="rel-sec new">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>Нове</h4>
+        <ul class="rel-ul">
+        <li>Two-scene layout (Landscape + Portrait): create and run a portrait and a landscape scene at the same time, each with its own virtual camera output.</li>
+        <li>Record both scenes simultaneously (portrait and landscape) to file.</li>
+        <li>Take a screenshot of either scene independently.</li>
+        <li>Layer style editor: edit corner radius, background (solid/gradient color), opacity, and border width/color for media layers, with a unified editor available across all source types.</li>
+        <li>PDF viewer zoom: zoom in/out on PDF pages, with your zoom level remembered.</li>
+        <li>Zoom settings are now saved and restored for IP Camera, Image, and NDI sources.</li>
+        <li>Face recognition mode is remembered between sessions for each camera.</li>
+        <li>Default encoder settings added for the portrait scene.</li>
+        <li>Remote control app can now fetch your stream data.</li>
+        <li>Redesigned ReStream option for the two-scene layout.</li>
+        <li>New driver installer for the SplitCam virtual audio device.</li>
+        <li>Added Ukrainian and Russian translations across many previously English-only areas of the app.</li>
+        </ul>
+      </div>
+      <div class="rel-sec updated">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>Покращено</h4>
+        <ul class="rel-ul">
+        <li>Smoother, more reliable virtual camera and virtual audio performance, with lower CPU usage.</li>
+        <li>Reduced CPU and memory usage while the app is idle or when a scene layout isn't in use.</li>
+        <li>Faster, smoother scene rendering and camera effects.</li>
+        <li>Stream Settings and Recording Settings pages are now scrollable.</li>
+        <li>Redesigned Image and Slideshow sources for more reliable zoom, crop, and playback.</li>
+        <li>Slideshow: playback now rewinds automatically when replaying from the last image; Previous/Next are disabled during playback and toolbar buttons update correctly when playback finishes.</li>
+        <li>Only relevant channels are shown for the currently selected scene layout.</li>
+        <li>Toolbar moved to the top panel for easier access.</li>
+        <li>Stream audio is now on by default for new setups.</li>
+        <li>Improved audio quality when using Bluetooth output devices.</li>
+        <li>Smoother browsing of PDF pages and text-stroke animation.</li>
+        </ul>
+      </div>
+      <div class="rel-sec fixed">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>Виправлено</h4>
+        <ul class="rel-ul">
+        <li>Fixed several causes of app crashes and freezes during streaming, recording, and camera/audio use.</li>
+        <li>Fixed a rare flickering/old-frame glitch during preview.</li>
+        <li>Fixed an occasional echo in the virtual audio driver.</li>
+        <li>Fixed audio dropping out or sounding wrong for the System Audio layer.</li>
+        <li>Fixed video/audio sync and playback issues when using a browser (web page) layer.</li>
+        <li>Fixed incorrect scene thumbnail and preview aspect ratio in portrait mode.</li>
+        <li>Fixed the app not remembering the last used layout and preview display mode on startup.</li>
+        <li>Fixed encoder selection and custom encoder creation in Stream Settings.</li>
+        <li>Fixed the app losing track of which live layout was active.</li>
+        <li>Fixed zoom/crop issues across camera, RTSP, and NDI sources.</li>
+        <li>Removed virtual microphones from device lists where they shouldn't appear.</li>
+        <li>Fixed scene list not updating correctly on the remote control app.</li>
+        </ul>
+      </div>
+    </article>
+
     <article class="release open" id="mac-v1.22-build-259">
       <header class="rel-head">
         <a class="rel-ver" href="https://splitcam.com/mac-download/SplitCam-1.22-259.dmg" title="Download SplitCam 1.22 for macOS (.dmg)" onclick="event.stopPropagation()">v1.22 (build 259)<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
@@ -3452,11 +3509,12 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </div>
     </article>
 
-    <article class="release open" id="mac-v1.19-build-228">
-      <header class="rel-head">
+    <details class="release" id="mac-v1.19-build-228">
+      <summary class="rel-head">
         <span class="rel-ver">v1.19 (build 228)</span>
         <time class="rel-date">09/08/2025</time>
-      </header>
+        <svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
       <div class="rel-sec new">
         <h4 class="rel-h"><span class="rel-h-dot"></span>Нове</h4>
         <ul class="rel-ul">
@@ -3471,7 +3529,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <li>Fixed an issue that could cause unexpected audio loss in the video file capture layer.</li>
         </ul>
       </div>
-    </article>
+    </details>
 
     <details class="release" id="mac-v1.18-build-208">
       <summary class="rel-head">
