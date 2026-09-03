@@ -111,13 +111,34 @@ def build(slug, loc, S):
         def rl(m):
             try: e, t, p = next(it)
             except StopIteration: return m.group(0)
-            return f'<span class="eyebrow">{e}</span>\n      <h4>{t}</h4>\n      <p>{p}</p>'
-        nb = re.sub(r'<span class="eyebrow">(.*?)</span>\s*<h4>(.*?)</h4>\s*<p>(.*?)</p>', rl, nb, flags=re.S)
+            return m.group(1) + e + m.group(2) + t + m.group(3) + p + m.group(4)
+        # ЯКОРЬ на related-card обязателен: класс eyebrow есть и в шапке страницы,
+        # а '(.*?)' с re.S откатывается и съедает всё между ними. Так уже терялась страница.
+        nb = re.sub(r'(<a class="related-card"[^>]*>\s*<span class="eyebrow">)[^<]*(</span>\s*<h4>)[^<]*(</h4>\s*<p>)[^<]*(</p>)',
+                    rl, nb)
     if "cta" in S and len(S["cta"]) == 2:
         nb = re.sub(r'(<section class="cta-block">\s*<h2>)(.*?)(</h2>)',
                     lambda m: m.group(1) + S["cta"][0] + m.group(3), nb, count=1, flags=re.S)
         nb = re.sub(r'(<section class="cta-block">.*?<p>)(.*?)(</p>)',
                     lambda m: m.group(1) + S["cta"][1] + m.group(3), nb, count=1, flags=re.S)
+    # ── кнопки и хлебные крошки: берём готовый перевод у донора, а не у переводчика.
+    # Эти строки одинаковы на всех страницах рубрики, и в локали они уже выверены.
+    dh = open(donor, encoding="utf-8").read()
+    db = dh[dh.find('<div class="breadcrumbs">'):dh.find("<footer")]
+    for cls in ("btn-primary", "btn-ghost"):
+        em = re.search(r'<a[^>]*class="[^"]*' + cls + r'[^"]*"[^>]*>([^<]*)</a>', body)
+        dm = re.search(r'<a[^>]*class="[^"]*' + cls + r'[^"]*"[^>]*>([^<]*)</a>', db)
+        if em and dm and em.group(1) != dm.group(1):
+            nb = nb.replace(">" + em.group(1) + "</a>", ">" + dm.group(1) + "</a>")
+    # хлебные крошки: структура донора, последний элемент — имя нашего конкурента
+    ec = re.search(r'<div class="breadcrumbs">(.*?)</div>', body, re.S)
+    dc = re.search(r'<div class="breadcrumbs">(.*?)</div>', db, re.S)
+    if ec and dc:
+        rival = re.findall(r'<span>([^<]*)</span>', ec.group(1))
+        new_c = re.sub(r'(<span>)[^<]*(</span>\s*)$', r'\g<1>' + (rival[-1] if rival else slug) + r'\g<2>',
+                       dc.group(1))
+        nb = nb.replace(ec.group(0), '<div class="breadcrumbs">' + new_c + '</div>', 1)
+
     # внутренние ссылки страницы — на локальные версии
     nb = re.sub(r'href="https://splitcam\.com/(?!' + loc + r'/)([a-z0-9/-]*)"',
                 lambda m: f'href="https://splitcam.com/{loc}/{m.group(1)}"' if m.group(1) else m.group(0), nb)
@@ -140,6 +161,11 @@ def build(slug, loc, S):
         return '<script type="application/ld+json">\n' + json.dumps(g, ensure_ascii=False, indent=2) + '\n</script>'
     nh = re.sub(r'<script type="application/ld\+json">(.*?)</script>', fix_ld, nh, count=1, flags=re.S)
 
+    # Защита от «съеденного» тела: любая жадная регулярка выше могла поглотить кусок
+    # страницы. Сравниваем с исходником — потеря больше 15% означает поломку.
+    if len(nb) < len(body) * 0.85:
+        return None, (f"тело схлопнулось: {len(nb)} против {len(body)} символов — "
+                      f"регулярка поглотила часть страницы, страница НЕ записана")
     dst = os.path.join(ROOT, loc, "alternatives", slug)
     os.makedirs(dst, exist_ok=True)
     open(os.path.join(dst, "index.html"), "w", encoding="utf-8").write(nh + top + nb + tail)
