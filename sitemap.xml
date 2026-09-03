@@ -19120,6 +19120,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/for/educators"/>
   </url>
   <url>
+    <loc>https://splitcam.com/for/vtubers</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://splitcam.com/for/vtubers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://splitcam.com/for/vtubers"/>
+  </url>
+  <url>
     <loc>https://splitcam.com/help</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>

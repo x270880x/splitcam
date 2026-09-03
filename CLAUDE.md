@@ -430,6 +430,26 @@ hero children are ordered explicitly (eyebrow 1, h1 2, visual 3, CTA 4). Any new
 needs its own `order:3` inside `@media(max-width:900px)`, otherwise it defaults to 0 and
 renders *above the headline*. Hit for real while building this page.
 
+## 🔴 linkcheck had a blind spot — fixed 2026-09
+
+`linkcheck.py` used to drop **every** absolute internal link that failed to resolve on disk into
+the informational "LINKS TO LIVE splitcam.com" bucket, on the assumption that such links were
+host-managed paths outside git (`win-download/`, `ver.php`). They usually were — three of them.
+
+The cost showed up when `/for/vtubers/` hub cards were activated in 34 locales before the page
+existed there: **34 broken links, and linkcheck reported "0 broken".** Every green run before this
+was weaker than it looked.
+
+Now an unresolved absolute internal link is only excused when it starts with a path in
+`HOST_MANAGED` (`win-download/`, `mac-download/`, `ver.txt`, `ver.php`, `ofcf-turnstile.php`,
+`.well-known/`); anything else is reported as broken. Verified with a probe page carrying one
+broken, one host-managed and one working link — only the broken one is flagged.
+
+⚠️ **Activating a hub card is not free.** `seo/i18n_tools/hub_activate.py` writes the locale's own
+URL into every hub it touches, so running it before the page exists in those locales creates one
+broken link per locale. Activate EN first, localize, then activate the rest — or check
+`{loc}/{page}/index.html` exists before writing.
+
 ## Content check-list — run before committing any copy change
 
 Whenever you add or rewrite user-facing text (steps, blurbs, headings, FAQ,

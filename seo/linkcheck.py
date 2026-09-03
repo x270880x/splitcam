@@ -18,7 +18,11 @@ from concurrent.futures import ThreadPoolExecutor
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', '.claude', 'node_modules', 'seo', 'plugins'}  # plugins/ = mirrored Doxygen dev docs (self-contained, relative links by design)
-ARCHIVED_PREFIXES = ('v2/',)          # checked for broken links, excluded from graph
+ARCHIVED_PREFIXES = ('v2/',)
+# Paths served by the host but deliberately absent from git — a link to one of these
+# is NOT broken. Everything else that fails to resolve on disk IS.
+HOST_MANAGED = ('win-download/', 'mac-download/', 'ver.txt', 'ver.php',
+                'ofcf-turnstile.php', '.well-known/')          # checked for broken links, excluded from graph
 UA = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
       '(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36')
 
@@ -122,8 +126,16 @@ def resolve(page, href, kind, anchor_text='', ctx='body'):
             elif os.path.isfile(os.path.join(ROOT, idx2)):
                 res2 = idx2
             else:
-                # not in repo (win-download, ver.php, legacy live URLs) — info bucket
-                splitcam_links.setdefault(raw.split('#')[0], []).append((page, ctx))
+                # Not on disk. Two very different cases, and conflating them once hid
+                # 34 broken links behind a green "0 broken" (2026-09, /for/vtubers
+                # hub cards activated in 34 locales before the page existed there):
+                #   * host-managed paths that are deliberately outside git — info bucket;
+                #   * anything else — a real broken link, report it.
+                if full2.startswith(HOST_MANAGED):
+                    splitcam_links.setdefault(raw.split('#')[0], []).append((page, ctx))
+                else:
+                    (broken_internal if kind == 'link' else broken_res).append(
+                        (page, href, 'absolute internal link, no such page on disk'))
                 return
             if kind == 'link':
                 graph.append((canon_page(page), canon_page(res2), ctx, anchor_text))
