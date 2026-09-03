@@ -1,0 +1,4703 @@
+{
+ "start": "2026-06-02",
+ "end": "2026-08-31",
+ "queries": {
+  "splitcam alternative": [
+   319,
+   72,
+   3.1
+  ],
+  "manycam alternative": [
+   355,
+   23,
+   4.7
+  ],
+  "splitcam vs obs": [
+   112,
+   15,
+   1.9
+  ],
+  "manycam alternative free": [
+   54,
+   9,
+   4.1
+  ],
+  "manycam free alternative": [
+   52,
+   9,
+   4.5
+  ],
+  "obs virtual camera alternative": [
+   41,
+   6,
+   3.3
+  ],
+  "streamyard alternative": [
+   238,
+   5,
+   11.8
+  ],
+  "obs alternative": [
+   248,
+   4,
+   10.0
+  ],
+  "alternative zu obs": [
+   46,
+   2,
+   6.4
+  ],
+  "manycam alternative without watermark": [
+   22,
+   2,
+   5.3
+  ],
+  "manycam vs splitcam": [
+   21,
+   2,
+   13.2
+  ],
+  "obs alternative free": [
+   46,
+   2,
+   8.0
+  ],
+  "restream alternative free": [
+   51,
+   2,
+   15.5
+  ],
+  "stripchat alternative": [
+   9,
+   2,
+   6.3
+  ],
+  "alternativas a obs": [
+   64,
+   1,
+   4.9
+  ],
+  "alternativas a obs studio": [
+   19,
+   1,
+   5.7
+  ],
+  "alternativas a streamyard": [
+   3,
+   1,
+   9.7
+  ],
+  "alternative a obs": [
+   6,
+   1,
+   4.3
+  ],
+  "alternative camera app for windows 11": [
+   12,
+   1,
+   5.9
+  ],
+  "alternative to obs": [
+   37,
+   1,
+   9.6
+  ],
+  "any other alternative": [
+   3,
+   1,
+   2.3
+  ],
+  "camfrog alternative": [
+   4,
+   1,
+   23.5
+  ],
+  "chaturbate alternatives": [
+   9,
+   1,
+   5.9
+  ],
+  "chromebook obs 代わり": [
+   4,
+   1,
+   17
+  ],
+  "free alternative": [
+   3,
+   1,
+   1.3
+  ],
+  "free alternative?": [
+   1,
+   1,
+   2
+  ],
+  "free obs alternative": [
+   12,
+   1,
+   12.1
+  ],
+  "free streamyard alternative": [
+   17,
+   1,
+   6.4
+  ],
+  "manycam alternatives": [
+   19,
+   1,
+   4.3
+  ],
+  "nvidia broadcast amd alternative": [
+   3,
+   1,
+   12
+  ],
+  "obs alternative for android": [
+   1,
+   1,
+   24
+  ],
+  "obs alternative windows": [
+   7,
+   1,
+   5.3
+  ],
+  "ometv chat vidéo alternative": [
+   1,
+   1,
+   81
+  ],
+  "outra alternativa": [
+   1,
+   1,
+   2
+  ],
+  "restreamer alternative": [
+   5,
+   1,
+   7.8
+  ],
+  "splitcam vs manycam": [
+   38,
+   1,
+   5.8
+  ],
+  "streamfog alternative": [
+   29,
+   1,
+   4.9
+  ],
+  "streamyard alternative free": [
+   23,
+   1,
+   5.6
+  ],
+  "streamyard alternatives free": [
+   80,
+   1,
+   7.6
+  ],
+  "streamyard free alternative": [
+   26,
+   1,
+   7.8
+  ],
+  "streamyard open source alternative": [
+   10,
+   1,
+   8.3
+  ],
+  "tinychat alternative": [
+   14,
+   1,
+   46.9
+  ],
+  "tinychat alternative free": [
+   3,
+   1,
+   52
+  ],
+  "virtual camera : live assist alternative": [
+   12,
+   1,
+   2.7
+  ],
+  "webcamoid alternative": [
+   15,
+   1,
+   3.9
+  ],
+  "720pstream alternatives": [
+   1,
+   0,
+   10
+  ],
+  "alcams alternative": [
+   2,
+   0,
+   1.5
+  ],
+  "allmy cam alternative": [
+   1,
+   0,
+   1
+  ],
+  "allmy cam alternatives": [
+   1,
+   0,
+   1
+  ],
+  "allmy.cam alternatives": [
+   3,
+   0,
+   1
+  ],
+  "allmycam alternative": [
+   5,
+   0,
+   1.2
+  ],
+  "altercam alternative": [
+   6,
+   0,
+   2.7
+  ],
+  "altercam free alternative": [
+   20,
+   0,
+   2.1
+  ],
+  "alternativa a obs": [
+   24,
+   0,
+   6.0
+  ],
+  "alternativa a obs studio": [
+   10,
+   0,
+   6
+  ],
+  "alternativa a streamyard": [
+   5,
+   0,
+   6.4
+  ],
+  "alternativa a twitch": [
+   1,
+   0,
+   10
+  ],
+  "alternativa obs": [
+   13,
+   0,
+   5.5
+  ],
+  "alternativa streamyard": [
+   1,
+   0,
+   8
+  ],
+  "alternativas a obs para streaming": [
+   4,
+   0,
+   5.5
+  ],
+  "alternativas ao obs studio": [
+   6,
+   0,
+   20.3
+  ],
+  "alternativas obs": [
+   12,
+   0,
+   5.8
+  ],
+  "alternative": [
+   3,
+   0,
+   4
+  ],
+  "alternative a coomeet": [
+   1,
+   0,
+   1
+  ],
+  "alternative a obs studio": [
+   2,
+   0,
+   1
+  ],
+  "alternative a streamyard": [
+   3,
+   0,
+   10.3
+  ],
+  "alternative cam": [
+   4,
+   0,
+   7
+  ],
+  "alternative for obs": [
+   1,
+   0,
+   13
+  ],
+  "alternative manycam": [
+   4,
+   0,
+   1
+  ],
+  "alternative obs": [
+   19,
+   0,
+   7.5
+  ],
+  "alternative obs studio": [
+   4,
+   0,
+   8.2
+  ],
+  "alternative of obs": [
+   1,
+   0,
+   1
+  ],
+  "alternative to getintopc": [
+   1,
+   0,
+   15
+  ],
+  "alternative to gitbook": [
+   1,
+   0,
+   56
+  ],
+  "alternative to jitsi": [
+   1,
+   0,
+   67
+  ],
+  "alternative to manycam": [
+   3,
+   0,
+   5.7
+  ],
+  "alternative to nvidia broadcast": [
+   2,
+   0,
+   15.5
+  ],
+  "alternative to obs studio": [
+   8,
+   0,
+   15.4
+  ],
+  "alternative to restream": [
+   12,
+   0,
+   19.2
+  ],
+  "alternative to streamyard": [
+   2,
+   0,
+   6
+  ],
+  "alternative to stripchat": [
+   1,
+   0,
+   3
+  ],
+  "alternative to twitch": [
+   1,
+   0,
+   10
+  ],
+  "alternative twitch app android": [
+   1,
+   0,
+   32
+  ],
+  "alternative volkastream": [
+   1,
+   0,
+   2
+  ],
+  "alternative webcam": [
+   1,
+   0,
+   16
+  ],
+  "alternative zu chaturbate": [
+   1,
+   0,
+   9
+  ],
+  "alternativen": [
+   1,
+   0,
+   2
+  ],
+  "alternativen zu obs": [
+   12,
+   0,
+   5.2
+  ],
+  "alternatives": [
+   1,
+   0,
+   3
+  ],
+  "alternatives for obs": [
+   2,
+   0,
+   16
+  ],
+  "alternatives to chaturbate": [
+   3,
+   0,
+   5.3
+  ],
+  "alternatives to manycam": [
+   2,
+   0,
+   6
+  ],
+  "alternatives to obs": [
+   26,
+   0,
+   13.0
+  ],
+  "alternatives to obs studio": [
+   2,
+   0,
+   11
+  ],
+  "alternatives to restream": [
+   10,
+   0,
+   24
+  ],
+  "alternatives to streamyard": [
+   35,
+   0,
+   23.4
+  ],
+  "alternatives to zoom free": [
+   1,
+   0,
+   73
+  ],
+  "amcap alternative": [
+   2,
+   0,
+   1
+  ],
+  "any alternatives": [
+   2,
+   0,
+   1.5
+  ],
+  "any other free alternatives": [
+   2,
+   0,
+   10.5
+  ],
+  "any other free alternatives?": [
+   1,
+   0,
+   2
+  ],
+  "anywebcam 10 alternativen": [
+   4,
+   0,
+   1
+  ],
+  "bandicam vs obs": [
+   1,
+   0,
+   1
+  ],
+  "best free alternatives for sex cam sites adult streaming platforms": [
+   1,
+   0,
+   20
+  ],
+  "best obs alternative": [
+   1,
+   0,
+   33
+  ],
+  "best obs alternatives": [
+   1,
+   0,
+   17
+  ],
+  "best restream alternative": [
+   14,
+   0,
+   16.4
+  ],
+  "best restream alternatives": [
+   2,
+   0,
+   31.5
+  ],
+  "best streamyard alternative": [
+   1,
+   0,
+   10
+  ],
+  "best streamyard alternatives": [
+   15,
+   0,
+   13.7
+  ],
+  "better alternative to obs": [
+   1,
+   0,
+   22
+  ],
+  "cam alternative": [
+   10,
+   0,
+   10.2
+  ],
+  "cam alternatives": [
+   1,
+   0,
+   9
+  ],
+  "cam vs cam": [
+   1,
+   0,
+   40
+  ],
+  "cam vs cam gratis": [
+   10,
+   0,
+   4.7
+  ],
+  "cam4 alternative": [
+   5,
+   0,
+   13.4
+  ],
+  "cam4 alternatives": [
+   1,
+   0,
+   17
+  ],
+  "camo studio alternatives": [
+   1,
+   0,
+   11
+  ],
+  "cams alternative": [
+   3,
+   0,
+   11
+  ],
+  "camsoda vs chaturbate": [
+   1,
+   0,
+   2
+  ],
+  "camzap alternative": [
+   1,
+   0,
+   33
+  ],
+  "chaturbate alternative": [
+   2,
+   0,
+   3
+  ],
+  "chaturbate alternatives free": [
+   1,
+   0,
+   8
+  ],
+  "chaturbate vs camsoda": [
+   1,
+   0,
+   6
+  ],
+  "chromacam alternative": [
+   11,
+   0,
+   5.1
+  ],
+  "deskcamera alternative": [
+   1,
+   0,
+   1
+  ],
+  "droidcam alternative": [
+   2,
+   0,
+   33
+  ],
+  "droidcam free alternative": [
+   1,
+   0,
+   21
+  ],
+  "droidcam vs droidcamx": [
+   1,
+   0,
+   4
+  ],
+  "ecamm live vs obs": [
+   1,
+   0,
+   38
+  ],
+  "filteronme alternative": [
+   3,
+   0,
+   1
+  ],
+  "filteronme free alternative": [
+   2,
+   0,
+   1
+  ],
+  "free alternative to restream": [
+   1,
+   0,
+   7
+  ],
+  "free alternatives": [
+   2,
+   0,
+   4
+  ],
+  "free alternatives to obs": [
+   3,
+   0,
+   7.3
+  ],
+  "free alternatives to obs studio": [
+   2,
+   0,
+   7.5
+  ],
+  "free alternatives to restream": [
+   6,
+   0,
+   11.3
+  ],
+  "free alternatives to streamyard": [
+   8,
+   0,
+   10.5
+  ],
+  "free chaturbate alternative": [
+   1,
+   0,
+   6
+  ],
+  "free manycam alternative": [
+   13,
+   0,
+   4.8
+  ],
+  "free obs alternatives": [
+   2,
+   0,
+   22
+  ],
+  "free restream alternative": [
+   38,
+   0,
+   14.6
+  ],
+  "free streamyard alternatives": [
+   18,
+   0,
+   7.3
+  ],
+  "free zoom alternative no time limit": [
+   1,
+   0,
+   28
+  ],
+  "free zoom alternatives no time limit": [
+   1,
+   0,
+   34
+  ],
+  "getintopc alternative": [
+   1,
+   0,
+   23
+  ],
+  "getintopc alternative for mac": [
+   2,
+   0,
+   9
+  ],
+  "gitbook alternative": [
+   1,
+   0,
+   71
+  ],
+  "gitbook alternatives": [
+   1,
+   0,
+   74
+  ],
+  "google hangouts alternative": [
+   2,
+   0,
+   39.5
+  ],
+  "gstream app alternative": [
+   1,
+   0,
+   1
+  ],
+  "hay alguna alternativa?": [
+   1,
+   0,
+   7
+  ],
+  "i am a 18-24 year old. my main motivations: share gameplay via live streaming, building an audience, making money from live streaming, creating content that is engaging, creating community with like-minded people, building a personal brand, getting content they can share to show off their skills, to have fun, to inspire others, to be recognized or become famous, to teach others. my main pain points: streaming setup can be complicated, unclear how to get started, streaming to 0 viewers, inconsistency in schedule, burnout from streaming long hours, aren't technically savvy, customization is complex, inexpensive pc hardware, paid features are too expensive, moving between live streaming tools is complex, learning streaming software is hard, the customization they want isn't built into all tools or they don't know how to access it, going live can be intimidating. what are the best alternatives to manual multi-platform streaming?": [
+   1,
+   0,
+   10
+  ],
+  "i am a 18-24, 25-34, 35-44, or 45-54 year old. my main motivations: build a brand; earn a living live streaming through tipping, brand deals, and sponsorships; continue growing existing audience; improve interactions and engagement with audience; share passions and knowledge with their community my main pain points: customizing streams to specifications, managing technical issues while streaming, finding new ways to keep community engaged, keeping up with trends while staying true to personal style, choosing the best monetization options, finding tools that support desired setup, securing brand deals and sponsorships, burnout from streaming for long hours and pressure from self and community what’s the best alternative to obs for video capture?": [
+   1,
+   0,
+   7
+  ],
+  "ip webcam alternative": [
+   1,
+   0,
+   16
+  ],
+  "is there an alternative app": [
+   1,
+   0,
+   5
+  ],
+  "ivcam alternative": [
+   1,
+   0,
+   25
+  ],
+  "jitsi alternative": [
+   1,
+   0,
+   66
+  ],
+  "justin tv alternative": [
+   20,
+   0,
+   10.1
+  ],
+  "justintv alternative": [
+   1,
+   0,
+   9
+  ],
+  "lightweight obs alternative": [
+   1,
+   0,
+   30
+  ],
+  "list alternatives": [
+   1,
+   0,
+   9
+  ],
+  "live cam 1 vs 1": [
+   1,
+   0,
+   16
+  ],
+  "live cam alternative": [
+   1,
+   0,
+   21
+  ],
+  "livejasmin alternatives": [
+   1,
+   0,
+   84
+  ],
+  "lovense remote vs connect": [
+   1,
+   0,
+   1
+  ],
+  "lovense remote vs lovense connect": [
+   1,
+   0,
+   1
+  ],
+  "manycam alternative mac": [
+   2,
+   0,
+   11.5
+  ],
+  "manycam vs obs": [
+   1,
+   0,
+   31
+  ],
+  "manyrecs alternative": [
+   1,
+   0,
+   1
+  ],
+  "microsoft 4k wireless display adapter alternatives": [
+   1,
+   0,
+   45
+  ],
+  "microsoft twitch alternative": [
+   1,
+   0,
+   9
+  ],
+  "more alternatives": [
+   1,
+   0,
+   6
+  ],
+  "multistream alternative": [
+   2,
+   0,
+   4
+  ],
+  "mvs camera software": [
+   1,
+   0,
+   11
+  ],
+  "ndi alternative": [
+   2,
+   0,
+   17.5
+  ],
+  "nvidia broadcast alternative": [
+   3,
+   0,
+   25.3
+  ],
+  "nvidia broadcast alternative for amd": [
+   6,
+   0,
+   9.3
+  ],
+  "nvidia broadcast alternative for mac": [
+   1,
+   0,
+   1
+  ],
+  "nvidia broadcast alternatives": [
+   1,
+   0,
+   17
+  ],
+  "nvidia broadcast mac alternative": [
+   1,
+   0,
+   22
+  ],
+  "obs alternativas": [
+   13,
+   0,
+   6.9
+  ],
+  "obs alternative for capture card": [
+   1,
+   0,
+   21
+  ],
+  "obs alternative for chromebook": [
+   6,
+   0,
+   14
+  ],
+  "obs alternative for live streaming": [
+   1,
+   0,
+   10
+  ],
+  "obs alternative for low end pc": [
+   2,
+   0,
+   21.5
+  ],
+  "obs alternative for recording": [
+   1,
+   0,
+   28
+  ],
+  "obs alternative for windows": [
+   4,
+   0,
+   17.8
+  ],
+  "obs alternative linux": [
+   1,
+   0,
+   11
+  ],
+  "obs alternative open source": [
+   1,
+   0,
+   5
+  ],
+  "obs alternativen": [
+   2,
+   0,
+   7
+  ],
+  "obs alternatives": [
+   51,
+   0,
+   14.4
+  ],
+  "obs alternatives for mac": [
+   1,
+   0,
+   23
+  ],
+  "obs alternatives for windows": [
+   1,
+   0,
+   15
+  ],
+  "obs android alternative": [
+   2,
+   0,
+   8.5
+  ],
+  "obs chromebook alternative": [
+   1,
+   0,
+   15
+  ],
+  "obs free alternative": [
+   13,
+   0,
+   2.8
+  ],
+  "obs game capture vs window capture performance": [
+   1,
+   0,
+   32
+  ],
+  "obs ninja alternative": [
+   1,
+   0,
+   10
+  ],
+  "obs studio alternativas": [
+   10,
+   0,
+   6.2
+  ],
+  "obs studio alternative": [
+   40,
+   0,
+   9.8
+  ],
+  "obs studio alternative for android": [
+   5,
+   0,
+   10.6
+  ],
+  "obs studio alternative for low end pc": [
+   1,
+   0,
+   7
+  ],
+  "obs studio alternative for mac": [
+   1,
+   0,
+   28
+  ],
+  "obs studio alternative for pc": [
+   3,
+   0,
+   4
+  ],
+  "obs studio alternative free": [
+   3,
+   0,
+   9.7
+  ],
+  "obs studio alternatives": [
+   3,
+   0,
+   6
+  ],
+  "obs vs meld": [
+   1,
+   0,
+   6
+  ],
+  "obs vs vmix": [
+   1,
+   0,
+   3
+  ],
+  "ome tv alternative app": [
+   1,
+   0,
+   63
+  ],
+  "ometv alternative free": [
+   2,
+   0,
+   62
+  ],
+  "ometv alternatives": [
+   1,
+   0,
+   106
+  ],
+  "ometv video chat alternative": [
+   1,
+   0,
+   10
+  ],
+  "oovoo alternative": [
+   2,
+   0,
+   12
+  ],
+  "open broadcaster software alternative": [
+   3,
+   0,
+   27.3
+  ],
+  "otras alternativas?": [
+   1,
+   0,
+   2
+  ],
+  "ovs gratuit": [
+   1,
+   0,
+   3
+  ],
+  "paltalk alternative": [
+   1,
+   0,
+   39
+  ],
+  "periscope alternative": [
+   3,
+   0,
+   13
+  ],
+  "periscope live alternative": [
+   1,
+   0,
+   18
+  ],
+  "restream alternative": [
+   259,
+   0,
+   21.9
+  ],
+  "restream alternatives": [
+   117,
+   0,
+   26.4
+  ],
+  "restream alternatives free": [
+   5,
+   0,
+   7.8
+  ],
+  "restream free alternative": [
+   69,
+   0,
+   11.3
+  ],
+  "restream vs streamyard": [
+   18,
+   0,
+   32.1
+  ],
+  "rtmp vs rtmps": [
+   1,
+   0,
+   60
+  ],
+  "si alternativas": [
+   1,
+   0,
+   3
+  ],
+  "skype alternative": [
+   2,
+   0,
+   38.5
+  ],
+  "snap alternative": [
+   1,
+   0,
+   1
+  ],
+  "snap camera alternative": [
+   6,
+   0,
+   1
+  ],
+  "snap camera alternatives": [
+   3,
+   0,
+   1
+  ],
+  "snapcamz alternatives": [
+   1,
+   0,
+   4
+  ],
+  "snapchat alternatives for filters": [
+   1,
+   0,
+   1
+  ],
+  "sparkocam alternative": [
+   2,
+   0,
+   1
+  ],
+  "streamelements vs streamlabs": [
+   1,
+   0,
+   1
+  ],
+  "streamlabs alternative": [
+   1,
+   0,
+   26
+  ],
+  "streamlabs alternatives": [
+   1,
+   0,
+   9
+  ],
+  "streamyard alternativas": [
+   5,
+   0,
+   20.4
+  ],
+  "streamyard alternative with multi-streaming support": [
+   2,
+   0,
+   9.5
+  ],
+  "streamyard alternatives": [
+   33,
+   0,
+   13.3
+  ],
+  "streamyard vs restream": [
+   2,
+   0,
+   27.5
+  ],
+  "stripchat alternatives": [
+   1,
+   0,
+   7
+  ],
+  "switcher studio vs obs": [
+   1,
+   0,
+   66
+  ],
+  "tiktok live studio alternative": [
+   4,
+   0,
+   3.5
+  ],
+  "tiktok vs onlyfans split screen": [
+   1,
+   0,
+   2
+  ],
+  "tiny chat alternative": [
+   1,
+   0,
+   60
+  ],
+  "twitch alternative": [
+   4,
+   0,
+   8.5
+  ],
+  "twitch alternatives": [
+   6,
+   0,
+   24
+  ],
+  "vam alternative": [
+   1,
+   0,
+   10
+  ],
+  "vcam alternative": [
+   1,
+   0,
+   1
+  ],
+  "videostream alternative": [
+   1,
+   0,
+   16
+  ],
+  "vmix alternative free": [
+   1,
+   0,
+   3
+  ],
+  "vmix alternatives": [
+   1,
+   0,
+   3
+  ],
+  "vs cam": [
+   5,
+   0,
+   10
+  ],
+  "vs obs": [
+   2,
+   0,
+   7.5
+  ],
+  "vs webcam": [
+   1,
+   0,
+   6
+  ],
+  "vx tiktok alternative": [
+   1,
+   0,
+   10
+  ],
+  "was gibt es noch für alternative": [
+   1,
+   0,
+   3
+  ],
+  "webcam alternative": [
+   1,
+   0,
+   24
+  ],
+  "webcam alternatives": [
+   2,
+   0,
+   15.5
+  ],
+  "webcam toy alternative": [
+   4,
+   0,
+   4
+  ],
+  "webcammax alternative": [
+   1,
+   0,
+   1
+  ],
+  "webcamtoy alternative": [
+   1,
+   0,
+   4
+  ],
+  "what are the alternative": [
+   1,
+   0,
+   3
+  ],
+  "what's the best alternative to camo": [
+   2,
+   0,
+   8.5
+  ],
+  "what's the best free alternative to obs for streamers": [
+   1,
+   0,
+   1
+  ],
+  "windows 10 camera app alternative": [
+   3,
+   0,
+   1
+  ],
+  "windows camera alternative": [
+   5,
+   0,
+   1
+  ],
+  "windows camera app alternative": [
+   7,
+   0,
+   2.4
+  ],
+  "windows kamera app alternative": [
+   2,
+   0,
+   1
+  ],
+  "xsplit vcam alternative": [
+   9,
+   0,
+   31.1
+  ],
+  "xsplit vs obs": [
+   2,
+   0,
+   21.5
+  ],
+  "youcam alternative": [
+   1,
+   0,
+   1
+  ],
+  "youtube rtmp vs rtmps": [
+   1,
+   0,
+   48
+  ],
+  "zoom alternative free no time limit": [
+   1,
+   0,
+   46
+  ],
+  "zoom alternative with no time limit": [
+   1,
+   0,
+   26
+  ]
+ },
+ "hub": {
+  "/alternatives | streamyard alternative": [
+   226,
+   5,
+   12.0
+  ],
+  "/alternatives/obs | obs virtual camera alternative": [
+   28,
+   4,
+   2.7
+  ],
+  "/alternatives | restream alternative free": [
+   46,
+   2,
+   14.9
+  ],
+  "/alternatives/obs | splitcam": [
+   62,
+   2,
+   3.1
+  ],
+  "/de/alternatives/obs | alternative zu obs": [
+   46,
+   2,
+   6.4
+  ],
+  "/alternatives | streamyard alternative free": [
+   23,
+   1,
+   5.6
+  ],
+  "/alternatives | streamyard alternatives free": [
+   80,
+   1,
+   7.6
+  ],
+  "/alternatives | streamyard free alternative": [
+   26,
+   1,
+   7.8
+  ],
+  "/alternatives | streamyard open source alternative": [
+   10,
+   1,
+   8.3
+  ],
+  "/alternatives | which websites are free": [
+   1,
+   1,
+   2
+  ],
+  "/alternatives/obs | more": [
+   1,
+   1,
+   1
+  ],
+  "/alternatives/obs | obs alternative free": [
+   42,
+   1,
+   8.2
+  ],
+  "/alternatives/obs | outra alternativa": [
+   1,
+   1,
+   2
+  ],
+  "/alternatives/obs | splitcam linux": [
+   10,
+   1,
+   2.8
+  ],
+  "/alternatives/obs | splitcam virtual camera": [
+   3,
+   1,
+   10.7
+  ],
+  "/alternatives/obs | splitcam vs obs": [
+   31,
+   1,
+   1.4
+  ],
+  "/alternatives/obs/ | splitcam vs obs": [
+   18,
+   1,
+   1.6
+  ],
+  "/de/alternatives | ohne anmeldung": [
+   1,
+   1,
+   2
+  ],
+  "/de/alternatives | restreamer alternative": [
+   5,
+   1,
+   7.8
+  ],
+  "/de/alternatives | splitcam alternative": [
+   11,
+   1,
+   2.5
+  ],
+  "/de/alternatives/obs | obs alternative": [
+   37,
+   1,
+   9.2
+  ],
+  "/de/alternatives/obs | obs alternative windows": [
+   6,
+   1,
+   3
+  ],
+  "/es/alternatives | alternativas a streamyard": [
+   3,
+   1,
+   9.7
+  ],
+  "/es/alternatives/obs | alternativas a obs": [
+   63,
+   1,
+   5.1
+  ],
+  "/es/alternatives/obs | alternativas a obs studio": [
+   19,
+   1,
+   5.7
+  ],
+  "/fr/alternatives/obs | alternative a obs": [
+   5,
+   1,
+   4.2
+  ],
+  "/fr/alternatives/obs | free obs alternative": [
+   2,
+   1,
+   18.5
+  ],
+  "/ja/alternatives/obs | chromebook obs 代わり": [
+   4,
+   1,
+   17
+  ],
+  "/ja/alternatives/obs | obs以外の配信ソフト": [
+   40,
+   1,
+   7.9
+  ],
+  "/ko/alternatives/obs | 무료 툴": [
+   1,
+   1,
+   6
+  ],
+  "/ru/alternatives/obs | obs studio аналоги": [
+   15,
+   1,
+   4.4
+  ],
+  "/ru/alternatives/obs | аналог obs": [
+   16,
+   1,
+   4.2
+  ],
+  "/ru/alternatives/obs | обс студио скачать на пк": [
+   1,
+   1,
+   10
+  ],
+  "/tr/alternatives/obs | obs alternatifi": [
+   12,
+   1,
+   5.1
+  ],
+  "/alternatives | a streaming camera": [
+   2,
+   0,
+   14
+  ],
+  "/alternatives | alternative a streamyard": [
+   3,
+   0,
+   10.3
+  ],
+  "/alternatives | alternative to restream": [
+   12,
+   0,
+   19.2
+  ],
+  "/alternatives | alternative to streamyard": [
+   2,
+   0,
+   6
+  ],
+  "/alternatives | alternative volkastream": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives | alternatives to restream": [
+   9,
+   0,
+   22.9
+  ],
+  "/alternatives | alternatives to streamyard": [
+   35,
+   0,
+   23.4
+  ],
+  "/alternatives | any other ones": [
+   2,
+   0,
+   8
+  ],
+  "/alternatives | apps like manycam": [
+   2,
+   0,
+   10.5
+  ],
+  "/alternatives | apps like streamyard": [
+   1,
+   0,
+   28
+  ],
+  "/alternatives | apps similar to obs studio": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | best restream alternative": [
+   14,
+   0,
+   16.4
+  ],
+  "/alternatives | best restream alternatives": [
+   2,
+   0,
+   31.5
+  ],
+  "/alternatives | best streaming software for multi-camera livestreams": [
+   2,
+   0,
+   10.5
+  ],
+  "/alternatives | best streamyard alternative": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | best streamyard alternatives": [
+   15,
+   0,
+   13.7
+  ],
+  "/alternatives | best virtual camera": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | best virtual camera software": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | cam platform": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives | cam splitter": [
+   8,
+   0,
+   8.8
+  ],
+  "/alternatives | cam splitting on different sites": [
+   2,
+   0,
+   2.5
+  ],
+  "/alternatives | camera for pc streaming": [
+   2,
+   0,
+   13.5
+  ],
+  "/alternatives | camera split": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives | camera splitter": [
+   1,
+   0,
+   15
+  ],
+  "/alternatives | camera stream": [
+   4,
+   0,
+   12.2
+  ],
+  "/alternatives | camera streaming platform": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives | camera streaming software": [
+   11,
+   0,
+   7.7
+  ],
+  "/alternatives | camslip": [
+   9,
+   0,
+   3.2
+  ],
+  "/alternatives | download split cam": [
+   13,
+   0,
+   2.2
+  ],
+  "/alternatives | download splitcam": [
+   45,
+   0,
+   2.4
+  ],
+  "/alternatives | download splitcam for pc": [
+   1,
+   0,
+   3
+  ],
+  "/alternatives | facebook y youtube": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives | fake live stream pc": [
+   3,
+   0,
+   9.7
+  ],
+  "/alternatives | find me another one that is free, not streamyard": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | free alternative to restream": [
+   1,
+   0,
+   7
+  ],
+  "/alternatives | free alternatives": [
+   1,
+   0,
+   4
+  ],
+  "/alternatives | free alternatives to restream": [
+   3,
+   0,
+   17
+  ],
+  "/alternatives | free alternatives to streamyard": [
+   8,
+   0,
+   10.5
+  ],
+  "/alternatives | free live cam apps": [
+   5,
+   0,
+   11.6
+  ],
+  "/alternatives | free live streaming software": [
+   3,
+   0,
+   10.7
+  ],
+  "/alternatives | free livestream software": [
+   2,
+   0,
+   10
+  ],
+  "/alternatives | free multi camera live streaming software": [
+   33,
+   0,
+   9.2
+  ],
+  "/alternatives | free multistreaming software": [
+   3,
+   0,
+   8.3
+  ],
+  "/alternatives | free restream": [
+   2,
+   0,
+   4
+  ],
+  "/alternatives | free restream alternative": [
+   30,
+   0,
+   13.8
+  ],
+  "/alternatives | free restream service": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives | free software for streaming": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | free streaming software": [
+   11,
+   0,
+   9.9
+  ],
+  "/alternatives | free streaming software for facebook live": [
+   3,
+   0,
+   11
+  ],
+  "/alternatives | free streaming software for instagram live": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | free streaming software for pc": [
+   3,
+   0,
+   9
+  ],
+  "/alternatives | free streamyard alternative": [
+   16,
+   0,
+   6.8
+  ],
+  "/alternatives | free streamyard alternatives": [
+   18,
+   0,
+   7.3
+  ],
+  "/alternatives | freeware webcam software": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives | how to do split screen on ome tv": [
+   41,
+   0,
+   8.2
+  ],
+  "/alternatives | how to do split screen on ometv": [
+   4,
+   0,
+   8
+  ],
+  "/alternatives | how to split screen ome tv": [
+   5,
+   0,
+   7.8
+  ],
+  "/alternatives | how to split screen on ome tv": [
+   22,
+   0,
+   8.2
+  ],
+  "/alternatives | how to split screen on ometv": [
+   8,
+   0,
+   8.9
+  ],
+  "/alternatives | how to use splitcam on whatsapp": [
+   1,
+   0,
+   7
+  ],
+  "/alternatives | i am a 18-24 year old. my main motivations: share gameplay via live streaming, building an audience, making money from live streaming, creating content that is engaging, creating community with like-minded people, building a personal brand, getting content they can share to show off their skills, to have fun, to inspire others, to be recognized or become famous, to teach others. my main pain points: streaming setup can be complicated, unclear how to get started, streaming to 0 viewers, inconsistency in schedule, burnout from streaming long hours, aren't technically savvy, customization is complex, inexpensive pc hardware, paid features are too expensive, moving between live streaming tools is complex, learning streaming software is hard, the customization they want isn't built into all tools or they don't know how to access it, going live can be intimidating. how much does multistreaming software cost?": [
+   1,
+   0,
+   4
+  ],
+  "/alternatives | i am a 18-24 year old. my main motivations: share gameplay via live streaming, building an audience, making money from live streaming, creating content that is engaging, creating community with like-minded people, building a personal brand, getting content they can share to show off their skills, to have fun, to inspire others, to be recognized or become famous, to teach others. my main pain points: streaming setup can be complicated, unclear how to get started, streaming to 0 viewers, inconsistency in schedule, burnout from streaming long hours, aren't technically savvy, customization is complex, inexpensive pc hardware, paid features are too expensive, moving between live streaming tools is complex, learning streaming software is hard, the customization they want isn't built into all tools or they don't know how to access it, going live can be intimidating. what are the best alternatives to manual multi-platform streaming?": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | i am a 18-24 year old. my main motivations: share gameplay via live streaming, building an audience, making money from live streaming, creating content that is engaging, creating community with like-minded people, building a personal brand, getting content they can share to show off their skills, to have fun, to inspire others, to be recognized or become famous, to teach others. my main pain points: streaming setup can be complicated, unclear how to get started, streaming to 0 viewers, inconsistency in schedule, burnout from streaming long hours, aren't technically savvy, customization is complex, inexpensive pc hardware, paid features are too expensive, moving between live streaming tools is complex, learning streaming software is hard, the customization they want isn't built into all tools or they don't know how to access it, going live can be intimidating. what are the best multistreaming tools for low-end pcs or limited hardware?": [
+   1,
+   0,
+   7
+  ],
+  "/alternatives | i am a 18-24 year old. my main motivations: share gameplay via live streaming, building an audience, making money from live streaming, creating content that is engaging, creating community with like-minded people, building a personal brand, getting content they can share to show off their skills, to have fun, to inspire others, to be recognized or become famous, to teach others. my main pain points: streaming setup can be complicated, unclear how to get started, streaming to 0 viewers, inconsistency in schedule, burnout from streaming long hours, aren't technically savvy, customization is complex, inexpensive pc hardware, paid features are too expensive, moving between live streaming tools is complex, learning streaming software is hard, the customization they want isn't built into all tools or they don't know how to access it, going live can be intimidating. what are the top software solutions for multistreaming on a budget?": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | i am a 18-24 year old. my main motivations: share gameplay via live streaming, building an audience, making money from live streaming, creating content that is engaging, creating community with like-minded people, building a personal brand, getting content they can share to show off their skills, to have fun, to inspire others, to be recognized or become famous, to teach others. my main pain points: streaming setup can be complicated, unclear how to get started, streaming to 0 viewers, inconsistency in schedule, burnout from streaming long hours, aren't technically savvy, customization is complex, inexpensive pc hardware, paid features are too expensive, moving between live streaming tools is complex, learning streaming software is hard, the customization they want isn't built into all tools or they don't know how to access it, going live can be intimidating. where can i find free tools for multistreaming?": [
+   1,
+   0,
+   7
+  ],
+  "/alternatives | i am a 18-24, 25-34, 35-44, or 45-54 year old. my main motivations: build a brand; earn a living live streaming through tipping, brand deals, and sponsorships; continue growing existing audience; improve interactions and engagement with audience; share passions and knowledge with their community my main pain points: customizing streams to specifications, managing technical issues while streaming, finding new ways to keep community engaged, keeping up with trends while staying true to personal style, choosing the best monetization options, finding tools that support desired setup, securing brand deals and sponsorships, burnout from streaming for long hours and pressure from self and community how much does multistreaming software cost?": [
+   1,
+   0,
+   8
+  ],
+  "/alternatives | i am a 18-24, 25-34, 35-44, or 45-54 year old. my main motivations: build a brand; earn a living live streaming through tipping, brand deals, and sponsorships; continue growing existing audience; improve interactions and engagement with audience; share passions and knowledge with their community my main pain points: customizing streams to specifications, managing technical issues while streaming, finding new ways to keep community engaged, keeping up with trends while staying true to personal style, choosing the best monetization options, finding tools that support desired setup, securing brand deals and sponsorships, burnout from streaming for long hours and pressure from self and community what are the best free multistreaming tools for streamers?": [
+   4,
+   0,
+   6.2
+  ],
+  "/alternatives | i am a 18-24, 25-34, 35-44, or 45-54 year old. my main motivations: build a brand; earn a living live streaming through tipping, brand deals, and sponsorships; continue growing existing audience; improve interactions and engagement with audience; share passions and knowledge with their community my main pain points: customizing streams to specifications, managing technical issues while streaming, finding new ways to keep community engaged, keeping up with trends while staying true to personal style, choosing the best monetization options, finding tools that support desired setup, securing brand deals and sponsorships, burnout from streaming for long hours and pressure from self and community what are the top software solutions for multistreaming on a budget?": [
+   7,
+   0,
+   5.4
+  ],
+  "/alternatives | ip camera live streaming software": [
+   16,
+   0,
+   10.3
+  ],
+  "/alternatives | is splitcam free": [
+   1,
+   0,
+   4
+  ],
+  "/alternatives | is splitcam safe": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | live streaming camera software": [
+   25,
+   0,
+   8
+  ],
+  "/alternatives | live streaming software free": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | live streaming software multiple cameras": [
+   4,
+   0,
+   11
+  ],
+  "/alternatives | mais": [
+   1,
+   0,
+   5
+  ],
+  "/alternatives | manycam alternative": [
+   8,
+   0,
+   8.5
+  ],
+  "/alternatives | manycam alternative free": [
+   2,
+   0,
+   9
+  ],
+  "/alternatives | manycam alternative without watermark": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives | manycam alternatives": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives | manycam vs splitcam": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | multi camera broadcast software": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | multi camera live streaming": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | multi camera live streaming app": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | multi camera live streaming software": [
+   11,
+   0,
+   8.5
+  ],
+  "/alternatives | multi camera live streaming software free": [
+   20,
+   0,
+   8.2
+  ],
+  "/alternatives | multi camera production software": [
+   8,
+   0,
+   11.4
+  ],
+  "/alternatives | multi camera software": [
+   3,
+   0,
+   9.7
+  ],
+  "/alternatives | multi camera software for pc": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | multi camera streaming software": [
+   2,
+   0,
+   5
+  ],
+  "/alternatives | multi camera switcher software": [
+   3,
+   0,
+   12
+  ],
+  "/alternatives | multi stream app": [
+   2,
+   0,
+   10.5
+  ],
+  "/alternatives | multi stream software free": [
+   3,
+   0,
+   10.7
+  ],
+  "/alternatives | multi streaming app": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | multi streaming apps": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives | multi streaming software": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives | multi video streaming software": [
+   9,
+   0,
+   9.9
+  ],
+  "/alternatives | multi webcam": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | multi-cam archive aggregators (like camarchive)": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives | multicam streaming software": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | multiple camera live stream software": [
+   12,
+   0,
+   11.6
+  ],
+  "/alternatives | multiple camera software": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | multistreaming app": [
+   2,
+   0,
+   10.5
+  ],
+  "/alternatives | nvidia broadcast alternative for amd": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | ohne download": [
+   1,
+   0,
+   6
+  ],
+  "/alternatives | ome tv split screen": [
+   2,
+   0,
+   7.5
+  ],
+  "/alternatives | ometv split screen": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | otras opciones": [
+   1,
+   0,
+   3
+  ],
+  "/alternatives | professional streaming software": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives | programs like manycam": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | restream alternative": [
+   223,
+   0,
+   23.1
+  ],
+  "/alternatives | restream alternatives": [
+   112,
+   0,
+   26.5
+  ],
+  "/alternatives | restream alternatives free": [
+   5,
+   0,
+   7.8
+  ],
+  "/alternatives | restream competitors": [
+   61,
+   0,
+   23.7
+  ],
+  "/alternatives | restream free alternative": [
+   59,
+   0,
+   11.8
+  ],
+  "/alternatives | restream vs streamyard": [
+   17,
+   0,
+   32.4
+  ],
+  "/alternatives | services like restream": [
+   2,
+   0,
+   38.5
+  ],
+  "/alternatives | sin marca de agua": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives | site:splitcam.com": [
+   4,
+   0,
+   19.2
+  ],
+  "/alternatives | slip cam": [
+   3,
+   0,
+   1
+  ],
+  "/alternatives | slip camera": [
+   4,
+   0,
+   3.5
+  ],
+  "/alternatives | slipcam": [
+   3,
+   0,
+   5.7
+  ],
+  "/alternatives | software like manycam": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | spit camera": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives | spit cams": [
+   39,
+   0,
+   9.5
+  ],
+  "/alternatives | splint camera": [
+   19,
+   0,
+   1.7
+  ],
+  "/alternatives | split cam download": [
+   4,
+   0,
+   4.2
+  ],
+  "/alternatives | split cam indir": [
+   1,
+   0,
+   3
+  ],
+  "/alternatives | split cam live": [
+   2,
+   0,
+   1
+  ],
+  "/alternatives | split camera": [
+   27,
+   0,
+   1.1
+  ],
+  "/alternatives | split camera app": [
+   14,
+   0,
+   2.4
+  ],
+  "/alternatives | split camera download": [
+   2,
+   0,
+   2.5
+  ],
+  "/alternatives | split camera for pc": [
+   4,
+   0,
+   3.8
+  ],
+  "/alternatives | split camera video": [
+   3,
+   0,
+   1.3
+  ],
+  "/alternatives | split chat live free": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives | split live webcam": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | split screen camera app": [
+   2,
+   0,
+   8.5
+  ],
+  "/alternatives | split screen streaming": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | split video camera": [
+   2,
+   0,
+   11
+  ],
+  "/alternatives | split webcam": [
+   5,
+   0,
+   6.8
+  ],
+  "/alternatives | splitcam": [
+   4,
+   0,
+   3
+  ],
+  "/alternatives | splitcam alternative": [
+   95,
+   0,
+   4.7
+  ],
+  "/alternatives | splitcam android": [
+   8,
+   0,
+   3.8
+  ],
+  "/alternatives | splitcam download": [
+   36,
+   0,
+   4.2
+  ],
+  "/alternatives | splitcam download official": [
+   2,
+   0,
+   3
+  ],
+  "/alternatives | splitcam for android": [
+   1,
+   0,
+   4
+  ],
+  "/alternatives | splitcam official virtual webcam": [
+   4,
+   0,
+   1
+  ],
+  "/alternatives | splitcam official virtual webcam software": [
+   12,
+   0,
+   1
+  ],
+  "/alternatives | splitcam official virtual webcam website": [
+   2,
+   0,
+   1
+  ],
+  "/alternatives | splitcam pc": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives | splitcam virtual camera": [
+   1,
+   0,
+   4
+  ],
+  "/alternatives | splitcam virtual webcam official": [
+   3,
+   0,
+   1
+  ],
+  "/alternatives | splitcam virtual webcam official site": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives | splitcam virtual webcam official website": [
+   5,
+   0,
+   1
+  ],
+  "/alternatives | splitcam vs manycam": [
+   1,
+   0,
+   4
+  ],
+  "/alternatives | splitcam vs obs": [
+   14,
+   0,
+   8.2
+  ],
+  "/alternatives | splitcam windows": [
+   2,
+   0,
+   3
+  ],
+  "/alternatives | splitcam-labs": [
+   33,
+   0,
+   3.4
+  ],
+  "/alternatives | splitcamera download": [
+   1,
+   0,
+   7
+  ],
+  "/alternatives | splitcamera.com": [
+   2,
+   0,
+   1
+  ],
+  "/alternatives | splitcom": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | splitter cam": [
+   15,
+   0,
+   3.8
+  ],
+  "/alternatives | stream camera": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | stream camera for pc": [
+   5,
+   0,
+   12.6
+  ],
+  "/alternatives | streamfog alternative": [
+   2,
+   0,
+   16.5
+  ],
+  "/alternatives | streaming camera for pc": [
+   15,
+   0,
+   12.3
+  ],
+  "/alternatives | streaming camera pc": [
+   2,
+   0,
+   11
+  ],
+  "/alternatives | streaming camera software": [
+   4,
+   0,
+   10.5
+  ],
+  "/alternatives | streaming platforms like streamyard": [
+   1,
+   0,
+   43
+  ],
+  "/alternatives | streaming software free": [
+   3,
+   0,
+   10
+  ],
+  "/alternatives | streaming software with multi-cam support": [
+   11,
+   0,
+   10.2
+  ],
+  "/alternatives | streamyard alternative with multi-streaming support": [
+   2,
+   0,
+   9.5
+  ],
+  "/alternatives | streamyard alternatives": [
+   32,
+   0,
+   13.6
+  ],
+  "/alternatives | streamyard competitors": [
+   1,
+   0,
+   25
+  ],
+  "/alternatives | streamyard similar": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives | streamyard similar software": [
+   6,
+   0,
+   10.5
+  ],
+  "/alternatives | two cam": [
+   2,
+   0,
+   10.5
+  ],
+  "/alternatives | virtual cam": [
+   4,
+   0,
+   9.2
+  ],
+  "/alternatives | virtual cam app": [
+   4,
+   0,
+   10.8
+  ],
+  "/alternatives | virtual camera app": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives | virtual camera for pc": [
+   3,
+   0,
+   10.7
+  ],
+  "/alternatives | virtual camera for windows": [
+   3,
+   0,
+   10
+  ],
+  "/alternatives | virtual camera pc": [
+   8,
+   0,
+   10.1
+  ],
+  "/alternatives | virtual camera software": [
+   4,
+   0,
+   10.5
+  ],
+  "/alternatives | virtual camera website": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives | virtual webcam app": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | webcam broadcast software": [
+   2,
+   0,
+   10.5
+  ],
+  "/alternatives | webcam programs free": [
+   2,
+   0,
+   11
+  ],
+  "/alternatives | webcam software for streaming": [
+   4,
+   0,
+   9.5
+  ],
+  "/alternatives | webcam sp": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | webcam splitter": [
+   6,
+   0,
+   11
+  ],
+  "/alternatives | webcam streaming software": [
+   10,
+   0,
+   10.5
+  ],
+  "/alternatives | webcast software free download": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives | what are the best free multistreaming tools for streamers?": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives | what are the top software solutions for multistreaming on a budget?": [
+   4,
+   0,
+   4.2
+  ],
+  "/alternatives | what is splitcam": [
+   3,
+   0,
+   1.7
+  ],
+  "/alternatives | windows virtual camera": [
+   3,
+   0,
+   10.3
+  ],
+  "/alternatives | xsplit vcam alternative": [
+   4,
+   0,
+   37.5
+  ],
+  "/alternatives/ | camslip": [
+   1,
+   0,
+   5
+  ],
+  "/alternatives/ | free alternatives to restream": [
+   3,
+   0,
+   5.7
+  ],
+  "/alternatives/ | free livestream software": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives/ | free restream alternative": [
+   5,
+   0,
+   19.6
+  ],
+  "/alternatives/ | free streamyard alternative": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/ | is restream worth it": [
+   1,
+   0,
+   6
+  ],
+  "/alternatives/ | live streaming camera software": [
+   1,
+   0,
+   6
+  ],
+  "/alternatives/ | manycam free alternative": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives/ | restream alternative": [
+   5,
+   0,
+   25
+  ],
+  "/alternatives/ | restream alternative free": [
+   5,
+   0,
+   21.2
+  ],
+  "/alternatives/ | restream alternatives": [
+   3,
+   0,
+   27.3
+  ],
+  "/alternatives/ | restream free alternative": [
+   8,
+   0,
+   11.9
+  ],
+  "/alternatives/ | split cam": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/ | splitcam alternative": [
+   11,
+   0,
+   5.1
+  ],
+  "/alternatives/ | splitcam vs manycam": [
+   1,
+   0,
+   57
+  ],
+  "/alternatives/ | streamlabs alternatives": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives/ | xsplit vcam alternative": [
+   1,
+   0,
+   42
+  ],
+  "/alternatives/obs | alternative for obs": [
+   1,
+   0,
+   13
+  ],
+  "/alternatives/obs | alternative manycam": [
+   2,
+   0,
+   1
+  ],
+  "/alternatives/obs | alternative obs": [
+   5,
+   0,
+   16.2
+  ],
+  "/alternatives/obs | alternative of obs": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | alternative to obs": [
+   28,
+   0,
+   11.7
+  ],
+  "/alternatives/obs | alternative to obs studio": [
+   7,
+   0,
+   13.1
+  ],
+  "/alternatives/obs | alternatives for obs": [
+   2,
+   0,
+   16
+  ],
+  "/alternatives/obs | alternatives to obs": [
+   24,
+   0,
+   13.7
+  ],
+  "/alternatives/obs | alternatives to obs studio": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | any alternatives": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | any other alternative": [
+   1,
+   0,
+   3
+  ],
+  "/alternatives/obs | any other free alternatives?": [
+   1,
+   0,
+   12
+  ],
+  "/alternatives/obs | any other option": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives/obs | are they free": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives/obs | best obs alternative": [
+   1,
+   0,
+   33
+  ],
+  "/alternatives/obs | better alternative to obs": [
+   1,
+   0,
+   22
+  ],
+  "/alternatives/obs | better than obs": [
+   16,
+   0,
+   10.7
+  ],
+  "/alternatives/obs | better than obs studio": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives/obs | big sur": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives/obs | ecamm live vs obs": [
+   1,
+   0,
+   38
+  ],
+  "/alternatives/obs | free alternatives to obs": [
+   2,
+   0,
+   10.5
+  ],
+  "/alternatives/obs | free alternatives to obs studio": [
+   2,
+   0,
+   7.5
+  ],
+  "/alternatives/obs | free obs alternative": [
+   10,
+   0,
+   11.4
+  ],
+  "/alternatives/obs | free obs alternatives": [
+   2,
+   0,
+   22
+  ],
+  "/alternatives/obs | free streaming software like obs": [
+   2,
+   0,
+   1
+  ],
+  "/alternatives/obs | free versions": [
+   1,
+   0,
+   7
+  ],
+  "/alternatives/obs | i am a 18-24, 25-34, 35-44, or 45-54 year old. my main motivations: build a brand; earn a living live streaming through tipping, brand deals, and sponsorships; continue growing existing audience; improve interactions and engagement with audience; share passions and knowledge with their community my main pain points: customizing streams to specifications, managing technical issues while streaming, finding new ways to keep community engaged, keeping up with trends while staying true to personal style, choosing the best monetization options, finding tools that support desired setup, securing brand deals and sponsorships, burnout from streaming for long hours and pressure from self and community where can i find free tools for multistreaming?": [
+   1,
+   0,
+   8
+  ],
+  "/alternatives/obs | i meant": [
+   1,
+   0,
+   4
+  ],
+  "/alternatives/obs | is splitcam free": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | is splitcam safe": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | is there another one": [
+   1,
+   0,
+   4
+  ],
+  "/alternatives/obs | is there anything better than obs": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | is xsplit better than obs": [
+   1,
+   0,
+   36
+  ],
+  "/alternatives/obs | like obs": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives/obs | manycam alternative": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | manycam vs obs": [
+   1,
+   0,
+   31
+  ],
+  "/alternatives/obs | manycam vs splitcam": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | mobile": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives/obs | more programs": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives/obs | multiple rtmp outputs plugin 2026": [
+   1,
+   0,
+   3
+  ],
+  "/alternatives/obs | no me sale eso": [
+   1,
+   0,
+   6
+  ],
+  "/alternatives/obs | obs alternate": [
+   5,
+   0,
+   9.8
+  ],
+  "/alternatives/obs | obs alternative": [
+   140,
+   0,
+   10.3
+  ],
+  "/alternatives/obs | obs alternative for live streaming": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives/obs | obs alternative for windows": [
+   2,
+   0,
+   1
+  ],
+  "/alternatives/obs | obs alternative open source": [
+   1,
+   0,
+   5
+  ],
+  "/alternatives/obs | obs alternative windows": [
+   1,
+   0,
+   19
+  ],
+  "/alternatives/obs | obs alternatives": [
+   43,
+   0,
+   12.4
+  ],
+  "/alternatives/obs | obs competitor": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives/obs | obs competitors": [
+   8,
+   0,
+   17.9
+  ],
+  "/alternatives/obs | obs equivalent": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | obs forks": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | obs free alternative": [
+   11,
+   0,
+   4.3
+  ],
+  "/alternatives/obs | obs ios camera plugin": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives/obs | obs like": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives/obs | obs no watermark official": [
+   5,
+   0,
+   10
+  ],
+  "/alternatives/obs | obs settings onlyfans": [
+   1,
+   0,
+   8
+  ],
+  "/alternatives/obs | obs software": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives/obs | obs studio": [
+   2,
+   0,
+   2
+  ],
+  "/alternatives/obs | obs studio alternative": [
+   23,
+   0,
+   9
+  ],
+  "/alternatives/obs | obs studio alternative for android": [
+   3,
+   0,
+   7.3
+  ],
+  "/alternatives/obs | obs studio alternative for pc": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | obs studio alternative free": [
+   2,
+   0,
+   5
+  ],
+  "/alternatives/obs | obs studio alternatives": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | obs vs": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives/obs | obs vs meld": [
+   1,
+   0,
+   6
+  ],
+  "/alternatives/obs | obs x264": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives/obs | obs-studio-32.1.2-windows-x64-installer.exe": [
+   1,
+   0,
+   4
+  ],
+  "/alternatives/obs | only obs": [
+   1,
+   0,
+   3
+  ],
+  "/alternatives/obs | open broadcaster software alternative": [
+   1,
+   0,
+   17
+  ],
+  "/alternatives/obs | site:splitcam.com": [
+   1,
+   0,
+   40
+  ],
+  "/alternatives/obs | slitcam": [
+   1,
+   0,
+   6
+  ],
+  "/alternatives/obs | snapcams similar": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | spli cam": [
+   1,
+   0,
+   5
+  ],
+  "/alternatives/obs | splicam": [
+   3,
+   0,
+   3.3
+  ],
+  "/alternatives/obs | split cam": [
+   9,
+   0,
+   4.3
+  ],
+  "/alternatives/obs | split cam for pc": [
+   2,
+   0,
+   4
+  ],
+  "/alternatives/obs | split cams": [
+   1,
+   0,
+   3
+  ],
+  "/alternatives/obs | splitcam alternative": [
+   32,
+   0,
+   1.4
+  ],
+  "/alternatives/obs | splitcam for pc": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives/obs | splitcam github": [
+   2,
+   0,
+   8
+  ],
+  "/alternatives/obs | splitcam live multi-streaming": [
+   2,
+   0,
+   2
+  ],
+  "/alternatives/obs | splitcam old version": [
+   2,
+   0,
+   7
+  ],
+  "/alternatives/obs | splitcam reddit": [
+   5,
+   0,
+   9.6
+  ],
+  "/alternatives/obs | splitcam virtual webcam": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | splitcam virtual webcam windows official": [
+   3,
+   0,
+   5
+  ],
+  "/alternatives/obs | splitcam.": [
+   1,
+   0,
+   6
+  ],
+  "/alternatives/obs | splitcam.com download": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives/obs | splitcamera": [
+   1,
+   0,
+   4
+  ],
+  "/alternatives/obs | streamelements vs streamlabs": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | vmix alternative free": [
+   1,
+   0,
+   3
+  ],
+  "/alternatives/obs | vmix alternatives": [
+   1,
+   0,
+   3
+  ],
+  "/alternatives/obs | webcam app for pc": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | what do professionals use": [
+   1,
+   0,
+   6
+  ],
+  "/alternatives/obs | what is better than obs": [
+   2,
+   0,
+   8
+  ],
+  "/alternatives/obs | what is better than obs studio": [
+   1,
+   0,
+   34
+  ],
+  "/alternatives/obs | what is obs-settings.onlyfans.com": [
+   1,
+   0,
+   7
+  ],
+  "/alternatives/obs | what is splitcam": [
+   3,
+   0,
+   4.7
+  ],
+  "/alternatives/obs | what's the best free alternative to obs for streamers": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | what's the best tool to display two cameras in a single overlay?": [
+   1,
+   0,
+   13
+  ],
+  "/alternatives/obs | whats better than obs": [
+   4,
+   0,
+   3.2
+  ],
+  "/alternatives/obs | which is also free": [
+   1,
+   0,
+   3
+  ],
+  "/alternatives/obs | which multistreaming solutions work on mac and pc?": [
+   1,
+   0,
+   8
+  ],
+  "/alternatives/obs | which one is more reliable": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs | without obs": [
+   2,
+   0,
+   14.5
+  ],
+  "/alternatives/obs | yes": [
+   1,
+   0,
+   6
+  ],
+  "/alternatives/obs | сплит кам": [
+   2,
+   0,
+   2.5
+  ],
+  "/alternatives/obs/ | advanced scene switcher": [
+   1,
+   0,
+   9
+  ],
+  "/alternatives/obs/ | apa tu": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives/obs/ | camsplit": [
+   1,
+   0,
+   4
+  ],
+  "/alternatives/obs/ | manycam alternative free": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs/ | meld studio ndi": [
+   1,
+   0,
+   4
+  ],
+  "/alternatives/obs/ | obs alternative": [
+   1,
+   0,
+   1
+  ],
+  "/alternatives/obs/ | slitcam": [
+   1,
+   0,
+   3
+  ],
+  "/alternatives/obs/ | spiltcam": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives/obs/ | split cam": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives/obs/ | split cam download": [
+   1,
+   0,
+   7
+  ],
+  "/alternatives/obs/ | splitcam": [
+   21,
+   0,
+   2.9
+  ],
+  "/alternatives/obs/ | splitcam alternative": [
+   10,
+   0,
+   2.5
+  ],
+  "/alternatives/obs/ | splitcam app": [
+   1,
+   0,
+   7
+  ],
+  "/alternatives/obs/ | splitcam download": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives/obs/ | splitcam for pc": [
+   1,
+   0,
+   2
+  ],
+  "/alternatives/obs/ | splitcam free download": [
+   1,
+   0,
+   8
+  ],
+  "/alternatives/obs/ | splitcam linux": [
+   4,
+   0,
+   1
+  ],
+  "/alternatives/obs/ | splitcam old version": [
+   2,
+   0,
+   10.5
+  ],
+  "/alternatives/obs/ | splitcam reddit": [
+   2,
+   0,
+   9.5
+  ],
+  "/alternatives/obs/ | splitcam virtual webcam official": [
+   5,
+   0,
+   3.8
+  ],
+  "/alternatives/obs/ | splitcam virtual webcam official website": [
+   1,
+   0,
+   5
+  ],
+  "/alternatives/obs/ | splitcam virtual webcam windows official": [
+   1,
+   0,
+   7
+  ],
+  "/alternatives/obs/ | splitcam windows 10": [
+   1,
+   0,
+   10
+  ],
+  "/alternatives/obs/ | splitcam windows 7 ancienne version": [
+   1,
+   0,
+   11
+  ],
+  "/alternatives/obs/ | what is splitcam": [
+   1,
+   0,
+   2
+  ],
+  "/bg/alternatives | site:splitcam.com": [
+   1,
+   0,
+   88
+  ],
+  "/bg/alternatives/obs | аналог obs": [
+   1,
+   0,
+   4
+  ],
+  "/da/alternatives | site:splitcam.com": [
+   2,
+   0,
+   65.5
+  ],
+  "/da/alternatives/obs | site:splitcam.com": [
+   1,
+   0,
+   65
+  ],
+  "/de/alternatives | alternativen": [
+   1,
+   0,
+   2
+  ],
+  "/de/alternatives | gratis webcam": [
+   1,
+   0,
+   2
+  ],
+  "/de/alternatives | live streaming platforms": [
+   1,
+   0,
+   32
+  ],
+  "/de/alternatives | open broadcaster software alternative": [
+   1,
+   0,
+   40
+  ],
+  "/de/alternatives | restream alternative": [
+   12,
+   0,
+   8.1
+  ],
+  "/de/alternatives | site:splitcam.com": [
+   2,
+   0,
+   61
+  ],
+  "/de/alternatives | split can": [
+   1,
+   0,
+   2
+  ],
+  "/de/alternatives | streamlabs alternative": [
+   1,
+   0,
+   26
+  ],
+  "/de/alternatives | streamyard alternative": [
+   8,
+   0,
+   9.9
+  ],
+  "/de/alternatives | streamyard alternatives free": [
+   1,
+   0,
+   10
+  ],
+  "/de/alternatives | xsplit vcam alternative": [
+   1,
+   0,
+   40
+  ],
+  "/de/alternatives/obs | advanced scene switcher download": [
+   1,
+   0,
+   5
+  ],
+  "/de/alternatives/obs | alternative obs": [
+   3,
+   0,
+   12.7
+  ],
+  "/de/alternatives/obs | alternative obs studio": [
+   1,
+   0,
+   9
+  ],
+  "/de/alternatives/obs | alternativen zu obs": [
+   12,
+   0,
+   5.2
+  ],
+  "/de/alternatives/obs | better than obs": [
+   2,
+   0,
+   8
+  ],
+  "/de/alternatives/obs | camtasia kostenlos": [
+   1,
+   0,
+   1
+  ],
+  "/de/alternatives/obs | in obs studio": [
+   1,
+   0,
+   1
+  ],
+  "/de/alternatives/obs | kostenfrei": [
+   1,
+   0,
+   2
+  ],
+  "/de/alternatives/obs | lightweight obs alternative": [
+   1,
+   0,
+   30
+  ],
+  "/de/alternatives/obs | multistream platform": [
+   1,
+   0,
+   7
+  ],
+  "/de/alternatives/obs | obs alternative linux": [
+   1,
+   0,
+   11
+  ],
+  "/de/alternatives/obs | obs alternativen": [
+   2,
+   0,
+   7
+  ],
+  "/de/alternatives/obs | obs android alternative": [
+   1,
+   0,
+   16
+  ],
+  "/de/alternatives/obs | obs kostenlos": [
+   1,
+   0,
+   3
+  ],
+  "/de/alternatives/obs | obs like": [
+   1,
+   0,
+   1
+  ],
+  "/de/alternatives/obs | obs linux": [
+   4,
+   0,
+   1
+  ],
+  "/de/alternatives/obs | obs studio alternative": [
+   1,
+   0,
+   8
+  ],
+  "/de/alternatives/obs | obs studio alternative for low end pc": [
+   1,
+   0,
+   7
+  ],
+  "/de/alternatives/obs | obs studio alternative for pc": [
+   1,
+   0,
+   1
+  ],
+  "/de/alternatives/obs | obs studio kosten": [
+   1,
+   0,
+   3
+  ],
+  "/de/alternatives/obs | obs studio kostenlos": [
+   7,
+   0,
+   3
+  ],
+  "/de/alternatives/obs | obs vs": [
+   1,
+   0,
+   7
+  ],
+  "/de/alternatives/obs | open broadcaster software alternative": [
+   1,
+   0,
+   25
+  ],
+  "/de/alternatives/obs | site:splitcam.com": [
+   1,
+   0,
+   95
+  ],
+  "/de/alternatives/obs | splitcam virtual camera": [
+   1,
+   0,
+   4
+  ],
+  "/es/alternatives | obs studio similares": [
+   1,
+   0,
+   60
+  ],
+  "/es/alternatives | restream": [
+   1,
+   0,
+   2
+  ],
+  "/es/alternatives | restream gratis": [
+   1,
+   0,
+   8
+  ],
+  "/es/alternatives | site:splitcam.com": [
+   2,
+   0,
+   45
+  ],
+  "/es/alternatives | son de pago?": [
+   1,
+   0,
+   7
+  ],
+  "/es/alternatives | streamyard": [
+   2,
+   0,
+   2
+  ],
+  "/es/alternatives | streamyard vs": [
+   2,
+   0,
+   11
+  ],
+  "/es/alternatives/obs | alternativa a obs": [
+   20,
+   0,
+   6
+  ],
+  "/es/alternatives/obs | alternativa a obs studio": [
+   8,
+   0,
+   6
+  ],
+  "/es/alternatives/obs | alternativa obs": [
+   11,
+   0,
+   6.3
+  ],
+  "/es/alternatives/obs | alternativas a obs para streaming": [
+   4,
+   0,
+   5.5
+  ],
+  "/es/alternatives/obs | alternativas obs": [
+   12,
+   0,
+   5.8
+  ],
+  "/es/alternatives/obs | bandicam vs obs": [
+   1,
+   0,
+   1
+  ],
+  "/es/alternatives/obs | better than obs": [
+   1,
+   0,
+   7
+  ],
+  "/es/alternatives/obs | broadcaster software": [
+   1,
+   0,
+   1
+  ],
+  "/es/alternatives/obs | camara virtual para pc": [
+   1,
+   0,
+   5
+  ],
+  "/es/alternatives/obs | camara virtual pc": [
+   1,
+   0,
+   3
+  ],
+  "/es/alternatives/obs | camtasia studio gratis": [
+   1,
+   0,
+   1
+  ],
+  "/es/alternatives/obs | con plugin": [
+   1,
+   0,
+   3
+  ],
+  "/es/alternatives/obs | hay alguna alternativa?": [
+   1,
+   0,
+   7
+  ],
+  "/es/alternatives/obs | hay otro mod?": [
+   1,
+   0,
+   9
+  ],
+  "/es/alternatives/obs | multiple rtmp": [
+   1,
+   0,
+   1
+  ],
+  "/es/alternatives/obs | obs": [
+   1,
+   0,
+   1
+  ],
+  "/es/alternatives/obs | obs alternativas": [
+   13,
+   0,
+   6.9
+  ],
+  "/es/alternatives/obs | obs alternative": [
+   3,
+   0,
+   4.3
+  ],
+  "/es/alternatives/obs | obs es gratis": [
+   1,
+   0,
+   1
+  ],
+  "/es/alternatives/obs | obs es gratis?": [
+   1,
+   0,
+   1
+  ],
+  "/es/alternatives/obs | obs lite": [
+   1,
+   0,
+   1
+  ],
+  "/es/alternatives/obs | obs para tablet": [
+   1,
+   0,
+   3
+  ],
+  "/es/alternatives/obs | obs studio": [
+   5,
+   0,
+   2.4
+  ],
+  "/es/alternatives/obs | obs studio alternativas": [
+   9,
+   0,
+   6.4
+  ],
+  "/es/alternatives/obs | para streamear": [
+   1,
+   0,
+   1
+  ],
+  "/es/alternatives/obs | prism live": [
+   1,
+   0,
+   2
+  ],
+  "/es/alternatives/obs | programa para camara web": [
+   1,
+   0,
+   2
+  ],
+  "/es/alternatives/obs | programa similar a obs studio": [
+   5,
+   0,
+   2.4
+  ],
+  "/es/alternatives/obs | programas similares a obs studio": [
+   11,
+   0,
+   10
+  ],
+  "/es/alternatives/obs | que es prism live": [
+   1,
+   0,
+   2
+  ],
+  "/es/alternatives/obs | que programa puedo usar": [
+   1,
+   0,
+   4
+  ],
+  "/es/alternatives/obs | se me ha cerrado": [
+   1,
+   0,
+   1
+  ],
+  "/es/alternatives/obs | si alternativas": [
+   1,
+   0,
+   3
+  ],
+  "/es/alternatives/obs | sin aplicación": [
+   1,
+   0,
+   6
+  ],
+  "/es/alternatives/obs | sin obs": [
+   1,
+   0,
+   5
+  ],
+  "/es/alternatives/obs | site:splitcam.com": [
+   1,
+   0,
+   78
+  ],
+  "/es/alternatives/obs | splitcam linux": [
+   2,
+   0,
+   5
+  ],
+  "/es/alternatives/obs | splitcam vs obs": [
+   2,
+   0,
+   1
+  ],
+  "/es/alternatives/obs | stream": [
+   1,
+   0,
+   2
+  ],
+  "/es/alternatives/obs | tipos de obs": [
+   1,
+   0,
+   19
+  ],
+  "/es/alternatives/obs | xsplit vs obs": [
+   1,
+   0,
+   37
+  ],
+  "/fa/alternatives | restream ایرانی": [
+   1,
+   0,
+   10
+  ],
+  "/fa/alternatives | site:splitcam.com": [
+   1,
+   0,
+   82
+  ],
+  "/fa/alternatives | بهترین نرم افزارهای استریمینگ": [
+   31,
+   0,
+   67.6
+  ],
+  "/fa/alternatives | نرم‌افزارهای استریمینگ": [
+   36,
+   0,
+   52.6
+  ],
+  "/fa/alternatives/obs | download meld studio": [
+   1,
+   0,
+   5
+  ],
+  "/fa/alternatives/obs | obs موبایل": [
+   1,
+   0,
+   9
+  ],
+  "/fi/alternatives | onko ilmaisia": [
+   1,
+   0,
+   7
+  ],
+  "/fi/alternatives/obs | aobs": [
+   1,
+   0,
+   17
+  ],
+  "/fi/alternatives/obs | obs": [
+   7,
+   0,
+   20.1
+  ],
+  "/fi/alternatives/obs | site:splitcam.com": [
+   1,
+   0,
+   92
+  ],
+  "/fr/alternatives | chapcam": [
+   1,
+   0,
+   4
+  ],
+  "/fr/alternatives | obs": [
+   1,
+   0,
+   4
+  ],
+  "/fr/alternatives | quelles sont les différentes options de tarification et les coûts associés aux outils de répartition vidéo gratuits disponibles sur le marché ?": [
+   1,
+   0,
+   1
+  ],
+  "/fr/alternatives | restream alternative": [
+   7,
+   0,
+   7.1
+  ],
+  "/fr/alternatives | restream alternatives": [
+   1,
+   0,
+   8
+  ],
+  "/fr/alternatives | restream gratuit": [
+   20,
+   0,
+   7.2
+  ],
+  "/fr/alternatives | site:splitcam.com": [
+   1,
+   0,
+   46
+  ],
+  "/fr/alternatives | split cam": [
+   1,
+   0,
+   1
+  ],
+  "/fr/alternatives | splitcam alternative": [
+   2,
+   0,
+   4
+  ],
+  "/fr/alternatives | streamyard alternative": [
+   4,
+   0,
+   9.2
+  ],
+  "/fr/alternatives | streamyard c'est quoi": [
+   1,
+   0,
+   3
+  ],
+  "/fr/alternatives/obs | alternative a obs studio": [
+   2,
+   0,
+   1
+  ],
+  "/fr/alternatives/obs | alternative obs": [
+   10,
+   0,
+   3.2
+  ],
+  "/fr/alternatives/obs | alternative obs studio": [
+   2,
+   0,
+   5.5
+  ],
+  "/fr/alternatives/obs | better than obs": [
+   1,
+   0,
+   53
+  ],
+  "/fr/alternatives/obs | equivalent obs studio": [
+   3,
+   0,
+   1
+  ],
+  "/fr/alternatives/obs | fake camera for pc": [
+   1,
+   0,
+   2
+  ],
+  "/fr/alternatives/obs | hypercam 2": [
+   1,
+   0,
+   1
+  ],
+  "/fr/alternatives/obs | multistream obs": [
+   1,
+   0,
+   5
+  ],
+  "/fr/alternatives/obs | non obs": [
+   1,
+   0,
+   1
+  ],
+  "/fr/alternatives/obs | obs": [
+   3,
+   0,
+   3.3
+  ],
+  "/fr/alternatives/obs | obs alternative": [
+   13,
+   0,
+   8
+  ],
+  "/fr/alternatives/obs | obs alternative for windows": [
+   1,
+   0,
+   52
+  ],
+  "/fr/alternatives/obs | obs alternatives": [
+   1,
+   0,
+   1
+  ],
+  "/fr/alternatives/obs | obs android alternative": [
+   1,
+   0,
+   1
+  ],
+  "/fr/alternatives/obs | obs equivalent": [
+   3,
+   0,
+   4
+  ],
+  "/fr/alternatives/obs | obs like": [
+   1,
+   0,
+   5
+  ],
+  "/fr/alternatives/obs | obs ninja alternative": [
+   1,
+   0,
+   10
+  ],
+  "/fr/alternatives/obs | obs replacement": [
+   1,
+   0,
+   15
+  ],
+  "/fr/alternatives/obs | obs similar": [
+   1,
+   0,
+   7
+  ],
+  "/fr/alternatives/obs | obs studio": [
+   2,
+   0,
+   2
+  ],
+  "/fr/alternatives/obs | obs studio alternative": [
+   7,
+   0,
+   3.6
+  ],
+  "/fr/alternatives/obs | obs studio alternatives": [
+   1,
+   0,
+   1
+  ],
+  "/fr/alternatives/obs | obs studio gratuit": [
+   1,
+   0,
+   2
+  ],
+  "/fr/alternatives/obs | obs studio mac": [
+   1,
+   0,
+   6
+  ],
+  "/fr/alternatives/obs | obs studio pc": [
+   1,
+   0,
+   4
+  ],
+  "/fr/alternatives/obs | ovs gratuit": [
+   1,
+   0,
+   3
+  ],
+  "/fr/alternatives/obs | sans connexion": [
+   1,
+   0,
+   7
+  ],
+  "/fr/alternatives/obs | splitcam alternative": [
+   1,
+   0,
+   1
+  ],
+  "/fr/alternatives/obs | stream master pc": [
+   1,
+   0,
+   2
+  ],
+  "/fr/alternatives/obs | streaming setup": [
+   1,
+   0,
+   1
+  ],
+  "/fr/alternatives/obs | xsplit": [
+   3,
+   0,
+   2
+  ],
+  "/fr/alternatives/obs | xsplit vcam alternative": [
+   1,
+   0,
+   46
+  ],
+  "/hu/alternatives | site:splitcam.com": [
+   1,
+   0,
+   98
+  ],
+  "/it/alternatives | alternativa a obs": [
+   1,
+   0,
+   11
+  ],
+  "/it/alternatives | alternativa a streamyard": [
+   5,
+   0,
+   6.4
+  ],
+  "/it/alternatives | alternativa streamyard": [
+   1,
+   0,
+   8
+  ],
+  "/it/alternatives | cam alternative": [
+   2,
+   0,
+   10
+  ],
+  "/it/alternatives | gratis però": [
+   1,
+   0,
+   6
+  ],
+  "/it/alternatives | obs multistream": [
+   1,
+   0,
+   2
+  ],
+  "/it/alternatives | restream gratuito": [
+   1,
+   0,
+   6
+  ],
+  "/it/alternatives | site:splitcam.com": [
+   1,
+   0,
+   57
+  ],
+  "/it/alternatives/obs | alternativa a obs": [
+   1,
+   0,
+   6
+  ],
+  "/it/alternatives/obs | alternativa a obs studio": [
+   2,
+   0,
+   6
+  ],
+  "/it/alternatives/obs | alternative a obs": [
+   1,
+   0,
+   11
+  ],
+  "/it/alternatives/obs | alternative obs": [
+   1,
+   0,
+   11
+  ],
+  "/it/alternatives/obs | altre soluzioni": [
+   1,
+   0,
+   3
+  ],
+  "/it/alternatives/obs | obs": [
+   1,
+   0,
+   32
+  ],
+  "/it/alternatives/obs | obs alternative": [
+   5,
+   0,
+   7.4
+  ],
+  "/it/alternatives/obs | obs studio cos'è": [
+   1,
+   0,
+   100
+  ],
+  "/ja/alternatives | chromebook obs 代わり": [
+   1,
+   0,
+   37
+  ],
+  "/ja/alternatives | site:splitcam.com": [
+   1,
+   0,
+   52
+  ],
+  "/ja/alternatives | splitcam": [
+   2,
+   0,
+   4.5
+  ],
+  "/ja/alternatives | twitchのオーバーレイツール以外で、おすすめの代替サービスやアプリを知りたいです。それぞれの料金プランや費用が、他のプラットフォームと比較してどう違うのか教えてください。": [
+   1,
+   0,
+   5
+  ],
+  "/ja/alternatives/obs | macbook obs": [
+   1,
+   0,
+   3
+  ],
+  "/ja/alternatives/obs | obs": [
+   2,
+   0,
+   3.5
+  ],
+  "/ja/alternatives/obs | obs alternative": [
+   6,
+   0,
+   6.8
+  ],
+  "/ja/alternatives/obs | obs equivalent": [
+   1,
+   0,
+   8
+  ],
+  "/ja/alternatives/obs | obs studio": [
+   8,
+   0,
+   2.1
+  ],
+  "/ja/alternatives/obs | obs studio alternative for android": [
+   1,
+   0,
+   7
+  ],
+  "/ja/alternatives/obs | obs スマホ 版": [
+   2,
+   0,
+   3.5
+  ],
+  "/ja/alternatives/obs | obs スマホ版": [
+   8,
+   0,
+   3
+  ],
+  "/ja/alternatives/obs | obs 代替": [
+   27,
+   0,
+   6.8
+  ],
+  "/ja/alternatives/obs | obs 以外の配信ソフト": [
+   21,
+   0,
+   7.1
+  ],
+  "/ja/alternatives/obs | obs 入れ方": [
+   1,
+   0,
+   3
+  ],
+  "/ja/alternatives/obs | obs 無料 なぜ": [
+   1,
+   0,
+   12
+  ],
+  "/ja/alternatives/obs | obs 種類": [
+   2,
+   0,
+   3
+  ],
+  "/ja/alternatives/obs | obs 配信 やり方": [
+   1,
+   0,
+   4
+  ],
+  "/ja/alternatives/obs | splitcam": [
+   1,
+   0,
+   1
+  ],
+  "/ja/alternatives/obs | ほかは": [
+   1,
+   0,
+   2
+  ],
+  "/ja/alternatives/obs | 代用": [
+   1,
+   0,
+   2
+  ],
+  "/ja/alternatives/obs | 動画配信ソフト": [
+   1,
+   0,
+   3
+  ],
+  "/ja/alternatives/obs | 配信ソフト obs": [
+   1,
+   0,
+   4
+  ],
+  "/ja/alternatives/obs | 配信ソフト obs 以外": [
+   27,
+   0,
+   8.6
+  ],
+  "/ja/alternatives/obs | 配信ソフト obs以外": [
+   42,
+   0,
+   8
+  ],
+  "/ko/alternatives | site:splitcam.com": [
+   1,
+   0,
+   47
+  ],
+  "/ko/alternatives/obs | ihu obs": [
+   1,
+   0,
+   15
+  ],
+  "/ko/alternatives/obs | obs multiple rtmp outputs": [
+   1,
+   0,
+   10
+  ],
+  "/ko/alternatives/obs | obs vs": [
+   2,
+   0,
+   4.5
+  ],
+  "/ko/alternatives/obs | obs 대체 프로그램": [
+   11,
+   0,
+   7.9
+  ],
+  "/ko/alternatives/obs | obs 모바일 송출": [
+   1,
+   0,
+   7
+  ],
+  "/ko/alternatives/obs | obs 배경 제거 플러그인": [
+   1,
+   0,
+   16
+  ],
+  "/ko/alternatives/obs | vs obs": [
+   1,
+   0,
+   4
+  ],
+  "/ko/alternatives/obs | 라이브 스트리밍 프로그램": [
+   1,
+   0,
+   1
+  ],
+  "/ko/alternatives/obs | 무료": [
+   1,
+   0,
+   2
+  ],
+  "/ko/alternatives/obs | 영상 찍는 프로그램": [
+   1,
+   0,
+   1
+  ],
+  "/ms/alternatives | site:splitcam.com": [
+   1,
+   0,
+   91
+  ],
+  "/ms/alternatives/obs | selain obs": [
+   1,
+   0,
+   8
+  ],
+  "/ms/alternatives/obs | selain obs apa lagi": [
+   1,
+   0,
+   4
+  ],
+  "/ms/alternatives/obs | selain obs studio apa saja": [
+   1,
+   0,
+   9
+  ],
+  "/nl/alternatives | gratis alternatief": [
+   1,
+   0,
+   5
+  ],
+  "/nl/alternatives | restreamen": [
+   25,
+   0,
+   32.1
+  ],
+  "/nl/alternatives | site:splitcam.com": [
+   2,
+   0,
+   67.5
+  ],
+  "/nl/alternatives | streamyard": [
+   1,
+   0,
+   21
+  ],
+  "/no/alternatives | site:splitcam.com": [
+   1,
+   0,
+   58
+  ],
+  "/pl/alternatives | polskimi": [
+   1,
+   0,
+   4
+  ],
+  "/pl/alternatives | restream alternative": [
+   1,
+   0,
+   25
+  ],
+  "/pl/alternatives | restream pl": [
+   1,
+   0,
+   27
+  ],
+  "/pl/alternatives | site:splitcam.com": [
+   1,
+   0,
+   63
+  ],
+  "/pt/alternatives | alternativas ao obs studio": [
+   1,
+   0,
+   24
+  ],
+  "/pt/alternatives | aplicativos de live": [
+   1,
+   0,
+   4
+  ],
+  "/pt/alternatives | app de livr": [
+   1,
+   0,
+   2
+  ],
+  "/pt/alternatives | ob studio": [
+   1,
+   0,
+   3
+  ],
+  "/pt/alternatives | obs studio": [
+   12,
+   0,
+   2.8
+  ],
+  "/pt/alternatives | obs studio é gratuito": [
+   2,
+   0,
+   4.5
+  ],
+  "/pt/alternatives | obstudio": [
+   1,
+   0,
+   3
+  ],
+  "/pt/alternatives | outro app": [
+   1,
+   0,
+   1
+  ],
+  "/pt/alternatives | restream gratis": [
+   1,
+   0,
+   6
+  ],
+  "/pt/alternatives | restream vs streamyard": [
+   1,
+   0,
+   28
+  ],
+  "/pt/alternatives | restreame": [
+   1,
+   0,
+   11
+  ],
+  "/pt/alternatives | site:splitcam.com": [
+   2,
+   0,
+   51.5
+  ],
+  "/pt/alternatives | streamyard alternativas": [
+   5,
+   0,
+   20.4
+  ],
+  "/pt/alternatives | streamyard como funciona": [
+   1,
+   0,
+   3
+  ],
+  "/pt/alternatives | streamyard vs restream": [
+   2,
+   0,
+   27.5
+  ],
+  "/pt/alternatives/obs | alternativa a obs": [
+   1,
+   0,
+   9
+  ],
+  "/pt/alternatives/obs | alternativa obs": [
+   2,
+   0,
+   1
+  ],
+  "/pt/alternatives/obs | alternativas ao obs studio": [
+   5,
+   0,
+   19.6
+  ],
+  "/pt/alternatives/obs | camera virtual para pc": [
+   2,
+   0,
+   4
+  ],
+  "/pt/alternatives/obs | multistream": [
+   1,
+   0,
+   2
+  ],
+  "/pt/alternatives/obs | obs alternative": [
+   3,
+   0,
+   9
+  ],
+  "/pt/alternatives/obs | obs extra": [
+   1,
+   0,
+   10
+  ],
+  "/pt/alternatives/obs | obs lite download": [
+   1,
+   0,
+   5
+  ],
+  "/pt/alternatives/obs | obs vs vmix": [
+   1,
+   0,
+   3
+  ],
+  "/pt/alternatives/obs | site:splitcam.com": [
+   2,
+   0,
+   90.5
+  ],
+  "/pt/alternatives/obs | tem algum outro app?": [
+   1,
+   0,
+   1
+  ],
+  "/pt/alternatives/obs | vs obs": [
+   1,
+   0,
+   11
+  ],
+  "/pt/alternatives/obs | xsplit vs obs": [
+   1,
+   0,
+   6
+  ],
+  "/ru/alternatives | site:splitcam.com": [
+   1,
+   0,
+   50
+  ],
+  "/ru/alternatives | splitcam": [
+   1,
+   0,
+   2
+  ],
+  "/ru/alternatives/obs | obs": [
+   1,
+   0,
+   3
+  ],
+  "/ru/alternatives/obs | obs studio отзывы": [
+   1,
+   0,
+   4
+  ],
+  "/ru/alternatives/obs | obs studio скачать бесплатно": [
+   1,
+   0,
+   4
+  ],
+  "/ru/alternatives/obs | obs studio скачать на мак": [
+   1,
+   0,
+   11
+  ],
+  "/ru/alternatives/obs | obs studio скачать на телефон": [
+   1,
+   0,
+   1
+  ],
+  "/ru/alternatives/obs | obs аналоги": [
+   4,
+   0,
+   8.5
+  ],
+  "/ru/alternatives/obs | obs бесплатный или нет": [
+   3,
+   0,
+   11
+  ],
+  "/ru/alternatives/obs | obs скачать": [
+   1,
+   0,
+   4
+  ],
+  "/ru/alternatives/obs | splitcam linux": [
+   1,
+   0,
+   1
+  ],
+  "/ru/alternatives/obs | а ещё есть?": [
+   1,
+   0,
+   1
+  ],
+  "/ru/alternatives/obs | а не официальные?": [
+   1,
+   0,
+   3
+  ],
+  "/ru/alternatives/obs | альтернатива obs studio": [
+   14,
+   0,
+   10.1
+  ],
+  "/ru/alternatives/obs | альтернатива обс": [
+   8,
+   0,
+   7.8
+  ],
+  "/ru/alternatives/obs | аналог obs studio": [
+   8,
+   0,
+   6
+  ],
+  "/ru/alternatives/obs | аналог obs на андроид": [
+   8,
+   0,
+   4.9
+  ],
+  "/ru/alternatives/obs | аналог обс": [
+   9,
+   0,
+   5.6
+  ],
+  "/ru/alternatives/obs | аналоги obs": [
+   11,
+   0,
+   9
+  ],
+  "/ru/alternatives/obs | аналоги obs studio": [
+   8,
+   0,
+   7.1
+  ],
+  "/ru/alternatives/obs | аналоги обс": [
+   14,
+   0,
+   7.2
+  ],
+  "/ru/alternatives/obs | без обс": [
+   1,
+   0,
+   5
+  ],
+  "/ru/alternatives/obs | готовые сцены для obs": [
+   1,
+   0,
+   16
+  ],
+  "/ru/alternatives/obs | еще плагины": [
+   1,
+   0,
+   9
+  ],
+  "/ru/alternatives/obs | как использовать obs studio": [
+   1,
+   0,
+   1
+  ],
+  "/ru/alternatives/obs | какие ещё есть варианты": [
+   1,
+   0,
+   1
+  ],
+  "/ru/alternatives/obs | обс студио онлайн": [
+   1,
+   0,
+   4
+  ],
+  "/ru/alternatives/obs | овс студия": [
+   1,
+   0,
+   3
+  ],
+  "/sk/alternatives | program na streamovanie": [
+   2,
+   0,
+   25
+  ],
+  "/sk/alternatives | site:splitcam.com": [
+   1,
+   0,
+   69
+  ],
+  "/sv/alternatives | site:splitcam.com": [
+   1,
+   0,
+   64
+  ],
+  "/sv/alternatives/obs | obs källa": [
+   1,
+   0,
+   13
+  ],
+  "/sv/alternatives/obs | site:splitcam.com": [
+   1,
+   0,
+   68
+  ],
+  "/th/alternatives | site:splitcam.com": [
+   1,
+   0,
+   70
+  ],
+  "/tr/alternatives | manycam kullanımı": [
+   2,
+   0,
+   71
+  ],
+  "/tr/alternatives | obs benzeri programlar": [
+   1,
+   0,
+   21
+  ],
+  "/tr/alternatives | site:splitcam.com": [
+   1,
+   0,
+   56
+  ],
+  "/tr/alternatives | streamyard alternatives": [
+   1,
+   0,
+   2
+  ],
+  "/tr/alternatives | yok": [
+   1,
+   0,
+   6
+  ],
+  "/tr/alternatives/obs | alternatif obs": [
+   1,
+   0,
+   8
+  ],
+  "/tr/alternatives/obs | obs benzeri programlar": [
+   8,
+   0,
+   8.9
+  ],
+  "/tr/alternatives/obs | obs vs": [
+   1,
+   0,
+   4
+  ],
+  "/tr/alternatives/obs | obs ücretsiz mi": [
+   1,
+   0,
+   11
+  ],
+  "/tr/alternatives/obs | splitcam": [
+   1,
+   0,
+   5
+  ],
+  "/tr/alternatives/obs | splitcam eski sürüm": [
+   2,
+   0,
+   20
+  ],
+  "/tr/alternatives/obs | xsplit or obs": [
+   1,
+   0,
+   37
+  ],
+  "/zh/alternatives | site:splitcam.com": [
+   1,
+   0,
+   54
+  ],
+  "/zh/alternatives/obs | obs 代替": [
+   1,
+   0,
+   8
+  ]
+ }
+}

@@ -304,3 +304,51 @@ print('\n--- LINKS TO LIVE splitcam.com (will need rewrite at migration) ---')
 for u in sorted(splitcam_links):
     code = net_results.get(u, ('skip',))[0]
     print(f'  [{code}] {u}  <- {", ".join(sorted({p for p, _ in splitcam_links[u]}))}')
+
+# ---------------------------------------------------------------- hreflang ---
+# Вторая слепая зона этого инструмента. hreflang не проверялся вообще, а ошибка
+# в нём не выглядит как битая ссылка: страница, собранная из чужого шаблона,
+# объявляет своим переводом ЧУЖУЮ страницу. Ссылка рабочая — проверка молчит,
+# а Google получает ложный языковой кластер. Ловится только взаимностью:
+# настоящий перевод обязан ссылаться обратно.
+print('\n--- HREFLANG ---')
+_hl_missing, _hl_nonrecip = [], []
+_hl_pages = 0
+for _p in pages:
+    try:
+        _html = open(_p, encoding='utf-8').read()
+    except Exception:
+        continue
+    _links = re.findall(r'<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"', _html)
+    if not _links:
+        continue
+    _hl_pages += 1
+    _selfdir = os.path.dirname(rel(_p)).replace(os.sep, '/')
+    _selfurl = ('https://splitcam.com/' + _selfdir).rstrip('/')
+    for _lang, _url in _links:
+        _path = _url.replace('https://splitcam.com/', '').strip('/')
+        _tgt = os.path.join(ROOT, _path, 'index.html') if _path else os.path.join(ROOT, 'index.html')
+        if not os.path.exists(_tgt):
+            _hl_missing.append((rel(_p), _lang, _url))
+            continue
+        try:
+            _back = open(_tgt, encoding='utf-8').read()
+        except Exception:
+            continue
+        # корень пишется как https://splitcam.com/, остальные — без слеша:
+        # сравниваем нормализованные формы, иначе главная ложно «невзаимна»
+        _theirs = {u.rstrip('/') for _l, u in
+                   re.findall(r'<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"', _back)}
+        if _theirs and _selfurl.rstrip('/') not in _theirs:
+            _hl_nonrecip.append((rel(_p), _lang, _url))
+print(f'pages with hreflang: {_hl_pages}')
+print(f'target missing on disk: {len(_hl_missing)}')
+for _r in _hl_missing[:6]:
+    print(f'   {_r[0]}  [{_r[1]}] -> {_r[2]}')
+if len(_hl_missing) > 6:
+    print(f'   … и ещё {len(_hl_missing)-6}')
+print(f'NOT reciprocal (target does not point back — likely a copied template): {len(_hl_nonrecip)}')
+for _r in _hl_nonrecip[:6]:
+    print(f'   {_r[0]}  [{_r[1]}] -> {_r[2]}')
+if len(_hl_nonrecip) > 6:
+    print(f'   … и ещё {len(_hl_nonrecip)-6}')
