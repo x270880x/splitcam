@@ -1,0 +1,156 @@
+# -*- coding: utf-8 -*-
+"""Собирает /<loc>/alternatives/<slug>/ — обрамление от донора той же локали,
+содержимое от EN-страницы, тексты из перевода.
+
+   python3 seo/i18n_tools/alt_build_locale.py <slug> <переводы.json>
+
+переводы.json: [{"loc":"ru","strings":{...}}, …] — ключи как в alt_strings.json.
+
+Донор: <loc>/alternatives/obs/ — та же глубина вложенности, поэтому относительные
+пути, меню, подвал и <html lang/dir> гарантированно настоящие.
+"""
+import re, json, os, sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+def chrome_of(path):
+    """Возвращает (head_до_body, шапка, подвал_и_хвост) страницы-донора."""
+    h = open(path, encoding="utf-8").read()
+    b = h.find("<body>")
+    bc = h.find('<div class="breadcrumbs">')
+    ft = h.find("<footer")
+    if not (0 < b < bc < ft):
+        raise SystemExit(f"донор нестандартной структуры: {path}")
+    return h[:b], h[b:bc], h[ft:]
+
+def build(slug, loc, S):
+    donor = os.path.join(ROOT, loc, "alternatives", "obs", "index.html")
+    en    = os.path.join(ROOT, "alternatives", slug, "index.html")
+    if not os.path.exists(donor):
+        return None, f"нет донора {loc}/alternatives/obs/"
+    head, top, tail = chrome_of(donor)
+    ehead, _, _ = chrome_of(en)
+    eh = open(en, encoding="utf-8").read()
+    body = eh[eh.find('<div class="breadcrumbs">'):eh.find("<footer")]
+
+    URL = f"https://splitcam.com/{loc}/alternatives/{slug}"
+    esc = lambda s: s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+
+    # ── head: берём EN-head (там уже вся структура страницы) и локализуем
+    nh = ehead
+    def setm(pat, val, s):
+        s2, n = re.subn(pat, lambda m: m.group(1) + val + m.group(3), s, count=1, flags=re.S)
+        return s2 if n else s
+    for pat, key in ((r'(<title>)(.*?)(</title>)', "title"),
+                     (r'(<meta name="description" content=")(.*?)(")', "description"),
+                     (r'(<meta name="keywords" content=")(.*?)(")', "keywords"),
+                     (r'(<meta property="og:title" content=")(.*?)(")', "title"),
+                     (r'(<meta property="og:description" content=")(.*?)(")', "description"),
+                     (r'(<meta name="twitter:title" content=")(.*?)(")', "title"),
+                     (r'(<meta name="twitter:description" content=")(.*?)(")', "description")):
+        if key in S:
+            nh = setm(pat, esc(re.sub(r'\s+', ' ', S[key]).strip()), nh)
+    for pat in (r'(<link rel="canonical" href=")(.*?)(")',
+                r'(<meta property="og:url" content=")(.*?)(")'):
+        nh = setm(pat, URL, nh)
+    # <html lang/dir> — от донора
+    dm = re.search(r'<html[^>]*>', head)
+    if dm:
+        nh = re.sub(r'<html[^>]*>', dm.group(0), nh, count=1)
+    # hreflang: пока локалей у страницы нет — только self + x-default (см. CLAUDE.md)
+    nh = re.sub(r'[ \t]*<link rel="alternate" hreflang="(?!x-default")[^"]+" href="[^"]*"\s*/?>\n?', '', nh)
+    nh = re.sub(r'(<link rel="alternate" hreflang="x-default" href=")[^"]*(")',
+                r'\g<1>https://splitcam.com/alternatives/' + slug + r'\g<2>', nh)
+
+    # ── тело: подставляем переводы по позициям
+    nb = body
+    def rep_all(pattern, values, s):
+        it = iter(values)
+        def r(m):
+            try: v = next(it)
+            except StopIteration: return m.group(0)
+            return m.group(1) + v + m.group(3)
+        return re.sub(pattern, r, s, flags=re.S)
+
+    if "h1" in S:      nb = setm(r'(<h1[^>]*>)(.*?)(</h1>)', S["h1"], nb)
+    if "eyebrow" in S: nb = setm(r'(<span class="eyebrow">)(.*?)(</span>)', S["eyebrow"], nb)
+    if "sub" in S:     nb = setm(r'(<p class="sub">)(.*?)(</p>)', S["sub"], nb)
+    if "qa_h" in S:    nb = setm(r'(<div class="qa-h">)(.*?)(</div>)', S["qa_h"], nb)
+    for key, pat in (("badges", r'(<span class="h-badge">)(.*?)(</span>)'),
+                     ("qa",     r'(<li>)(.*?)(</li>)'),
+                     ("sec_h",  r'(<h2 class="sec-h">)(.*?)(</h2>)'),
+                     ("sec_p",  r'(<p class="sec-p">)(.*?)(</p>)'),
+                     ("table_head", r'(<th>)(.*?)(</th>)')):
+        if key in S: nb = rep_all(pat, S[key], nb)
+    if "cards" in S:
+        it = iter(S["cards"])
+        def rc(m):
+            try: t, p = next(it)
+            except StopIteration: return m.group(0)
+            return f'<div class="reason">\n        <h3>{t}</h3>\n        <p>{p}</p>'
+        nb = re.sub(r'<div class="reason">\s*<h3>(.*?)</h3>\s*<p>(.*?)</p>', rc, nb, flags=re.S)
+    if "rows" in S:
+        it = iter(S["rows"])
+        def rr(m):
+            try: cells = next(it)
+            except StopIteration: return m.group(0)
+            tds = re.findall(r'<td([^>]*)>(.*?)</td>', m.group(1), re.S)
+            if len(tds) != len(cells): return m.group(0)
+            inner = "".join(f'<td{a}>{c}</td>' for (a, _), c in zip(tds, cells))
+            return f'<tr>{inner}</tr>'
+        nb = re.sub(r'<tr>((?:(?!</tr>).)*?<td.*?)</tr>', rr, nb, flags=re.S)
+    if "faq" in S:
+        it = iter(S["faq"])
+        def rf(m):
+            try: q, a = next(it)
+            except StopIteration: return m.group(0)
+            return f'<summary>{q}</summary>\n        <p>{a}</p>'
+        nb = re.sub(r'<summary>(.*?)</summary>\s*<p>(.*?)</p>', rf, nb, flags=re.S)
+    if "related" in S:
+        it = iter(S["related"])
+        def rl(m):
+            try: e, t, p = next(it)
+            except StopIteration: return m.group(0)
+            return f'<span class="eyebrow">{e}</span>\n      <h4>{t}</h4>\n      <p>{p}</p>'
+        nb = re.sub(r'<span class="eyebrow">(.*?)</span>\s*<h4>(.*?)</h4>\s*<p>(.*?)</p>', rl, nb, flags=re.S)
+    if "cta" in S and len(S["cta"]) == 2:
+        nb = re.sub(r'(<section class="cta-block">\s*<h2>)(.*?)(</h2>)',
+                    lambda m: m.group(1) + S["cta"][0] + m.group(3), nb, count=1, flags=re.S)
+        nb = re.sub(r'(<section class="cta-block">.*?<p>)(.*?)(</p>)',
+                    lambda m: m.group(1) + S["cta"][1] + m.group(3), nb, count=1, flags=re.S)
+    # внутренние ссылки страницы — на локальные версии
+    nb = re.sub(r'href="https://splitcam\.com/(?!' + loc + r'/)([a-z0-9/-]*)"',
+                lambda m: f'href="https://splitcam.com/{loc}/{m.group(1)}"' if m.group(1) else m.group(0), nb)
+    # JSON-LD: переносим локализованные заголовки/описание/FAQ
+    def fix_ld(m):
+        try: g = json.loads(m.group(1))
+        except Exception: return m.group(0)
+        strip = lambda s: re.sub(r'\s+', ' ', re.sub('<[^>]*>', '', s)).strip()
+        for node in g.get("@graph", []):
+            if node.get("@type") == "SoftwareApplication":
+                node["url"] = URL
+                if "description" in S: node["description"] = strip(S["description"])
+            if node.get("@type") == "BreadcrumbList":
+                for li in node.get("itemListElement", []):
+                    if li.get("position") == 3: li["item"] = URL
+            if node.get("@type") == "FAQPage" and "faq" in S:
+                for q, (nq, na) in zip(node.get("mainEntity", []), S["faq"]):
+                    q["name"] = strip(nq)
+                    q.setdefault("acceptedAnswer", {})["text"] = strip(na)
+        return '<script type="application/ld+json">\n' + json.dumps(g, ensure_ascii=False, indent=2) + '\n</script>'
+    nh = re.sub(r'<script type="application/ld\+json">(.*?)</script>', fix_ld, nh, count=1, flags=re.S)
+
+    dst = os.path.join(ROOT, loc, "alternatives", slug)
+    os.makedirs(dst, exist_ok=True)
+    open(os.path.join(dst, "index.html"), "w", encoding="utf-8").write(nh + top + nb + tail)
+    return os.path.join(loc, "alternatives", slug, "index.html"), None
+
+if __name__ == "__main__":
+    slug, tf = sys.argv[1], sys.argv[2]
+    data = json.load(open(tf, encoding="utf-8"))
+    ok = err = 0
+    for item in data:
+        p, e = build(slug, item["loc"], item["strings"])
+        if e: print(f"  🔴 {item['loc']}: {e}"); err += 1
+        else: ok += 1
+    print(f"  собрано: {ok}, ошибок: {err}")
