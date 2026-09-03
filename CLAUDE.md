@@ -430,6 +430,42 @@ hero children are ordered explicitly (eyebrow 1, h1 2, visual 3, CTA 4). Any new
 needs its own `order:3` inside `@media(max-width:900px)`, otherwise it defaults to 0 and
 renders *above the headline*. Hit for real while building this page.
 
+## 🔴 BINDING — every localized page is targeted from real query data, never from a translation
+
+Owner's rule, 2026-09. `seo/I18N-KEYWORDS.md` covers only six pages (virtual-camera,
+multistreaming, products, alternatives/obs, for/churches, for/youtubers). Everything built later —
+features, download, both virtual-audio pages, for/educators, donate-us — got its localized title by
+**translating the English one**, which is not the same as targeting what people in that language
+actually type. Localized homepages rank at positions 3.0–5.2 while the EN homepage sits at 9.9, so
+this is where the non-brand demand is reachable. Close the gap, and never reopen it.
+
+**The four steps, in this order, for any page in any locale:**
+
+1. **Find the real queries.** Ahrefs per locale when quota allows; otherwise Search Console, which is
+   in some ways better — it reports where the site is *already shown*, not an estimate of demand.
+   The signal to hunt is **impressions with a low CTR**: we are in the results and not being chosen.
+2. **Fix the title** where the real query and the page's target disagree.
+3. **Fix the H1** to match — title and H1 must target the same phrase.
+4. **Record it in `seo/I18N-KEYWORDS.md`**, so the next page is built *from the map* rather than
+   translated and retro-fitted.
+
+Do not rewrite body copy for this — the prose is fine. This is about what the page is aimed at.
+Do not touch all 35 locales by reflex either: change only the locales where the data shows a real
+gap, and re-measure in the same Search Console view afterwards.
+
+⚠️ Two locales are exceptions already documented in `seo/I18N-PLAN.md`: **fil and hi search for
+tech in English** — English titles and keywords, local-language body. Do not "fix" them to local
+phrasing.
+
+## /for/vtubers/ — postponed by the owner, 2026-09
+
+Built, fact-checked and briefly published, then **put back to `noindex` on the owner's call**: the
+page sells VTubing honestly (the avatar app rigs, SplitCam broadcasts) but the owner wants avatar
+support inside SplitCam first — either built in, or a documented way for users to add avatars —
+before recruiting that audience. Do not localize it, do not re-enable its hub card, and do not add
+it back to `PAGE_PATHS` until that ships. The draft is complete and correct; it is a product
+decision, not a content problem.
+
 ## 🔴 linkcheck had a blind spot — fixed 2026-09
 
 `linkcheck.py` used to drop **every** absolute internal link that failed to resolve on disk into
