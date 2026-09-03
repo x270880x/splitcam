@@ -140,8 +140,17 @@ def build(slug, loc, S):
         nb = nb.replace(ec.group(0), '<div class="breadcrumbs">' + new_c + '</div>', 1)
 
     # внутренние ссылки страницы — на локальные версии
-    nb = re.sub(r'href="https://splitcam\.com/(?!' + loc + r'/)([a-z0-9/-]*)"',
-                lambda m: f'href="https://splitcam.com/{loc}/{m.group(1)}"' if m.group(1) else m.group(0), nb)
+    # Префикс локали ставим ТОЛЬКО там, где локализованная страница реально есть.
+    # /download локализованной версии не имеет — он один на весь сайт, и слепое
+    # добавление префикса давало 68 битых ссылок (по 2 на каждую из 34 локалей).
+    def localize_href(m):
+        path = m.group(1)
+        if not path:
+            return m.group(0)
+        if os.path.exists(os.path.join(ROOT, loc, path.rstrip("/"), "index.html")):
+            return f'href="https://splitcam.com/{loc}/{path}"'
+        return m.group(0)
+    nb = re.sub(r'href="https://splitcam\.com/(?!' + loc + r'/)([a-z0-9/-]*)"', localize_href, nb)
     # JSON-LD: переносим локализованные заголовки/описание/FAQ
     def fix_ld(m):
         try: g = json.loads(m.group(1))
@@ -161,11 +170,17 @@ def build(slug, loc, S):
         return '<script type="application/ld+json">\n' + json.dumps(g, ensure_ascii=False, indent=2) + '\n</script>'
     nh = re.sub(r'<script type="application/ld\+json">(.*?)</script>', fix_ld, nh, count=1, flags=re.S)
 
-    # Защита от «съеденного» тела: любая жадная регулярка выше могла поглотить кусок
-    # страницы. Сравниваем с исходником — потеря больше 15% означает поломку.
-    if len(nb) < len(body) * 0.85:
-        return None, (f"тело схлопнулось: {len(nb)} против {len(body)} символов — "
-                      f"регулярка поглотила часть страницы, страница НЕ записана")
+    # Защита от «съеденного» тела. Сравнивать ДЛИНУ нельзя: японский, корейский и
+    # китайский короче английского в разы, и порог по символам их ложно забракует
+    # (проверено — ja/ko/zh дали 6700–7700 против 10153 при полностью верной странице).
+    # Инвариант, не зависящий от языка, — СТРУКТУРА: число элементов каждого типа.
+    STRUCT = (r'<td[^>]*>', r'<summary>', r'<h-?badge|h-badge', r'<h2 class="sec-h">',
+              r'<div class="reason">', r'<h4>', r'<tr>', r'<span class="h-badge">')
+    for pat in STRUCT:
+        want, got = len(re.findall(pat, body)), len(re.findall(pat, nb))
+        if want != got:
+            return None, (f"структура нарушена: {pat} — {got} против {want} в оригинале; "
+                          f"страница НЕ записана")
     dst = os.path.join(ROOT, loc, "alternatives", slug)
     os.makedirs(dst, exist_ok=True)
     open(os.path.join(dst, "index.html"), "w", encoding="utf-8").write(nh + top + nb + tail)
