@@ -7,8 +7,8 @@ import re, json, os, sys, importlib
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SRC  = os.path.join(ROOT, "alternatives/obs/index.html")
 
-def build(slug, C):
-    URL = f"https://splitcam.com/alternatives/{slug}"
+def build(slug, C, base="alternatives"):
+    URL = (f"https://splitcam.com/{base}/{slug}" if base else f"https://splitcam.com/{slug}")
     h = open(SRC, encoding="utf-8").read()
     esc = lambda s: s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;").replace('"',"&quot;")
     b = h.find("<body>"); bc = h.find('<div class="breadcrumbs">'); ft = h.find("<footer")
@@ -39,8 +39,9 @@ def build(slug, C):
     graph = {"@context":"https://schema.org","@graph":[
       {"@type":"BreadcrumbList","itemListElement":[
         {"@type":"ListItem","position":1,"name":"SplitCam","item":"https://splitcam.com/"},
-        {"@type":"ListItem","position":2,"name":"Alternatives","item":"https://splitcam.com/alternatives"},
-        {"@type":"ListItem","position":3,"name":f'{C["rival"]} alternative',"item":URL}]},
+        {"@type":"ListItem","position":2,"name":C.get("crumb2","Alternatives"),
+         "item":C.get("crumb2_url","https://splitcam.com/alternatives")},
+        {"@type":"ListItem","position":3,"name":C.get("crumb3",f'{C["rival"]} alternative'),"item":URL}]},
       {"@type":"SoftwareApplication","name":"SplitCam",
        "operatingSystem":"Windows 10, Windows 11, macOS 13",
        "applicationCategory":"MultimediaApplication","description":strip(C["description"]),
@@ -67,7 +68,7 @@ def build(slug, C):
 
     BODY = f'''<!-- BREADCRUMBS -->
 <div class="breadcrumbs">
-  <a href="https://splitcam.com/">SplitCam</a><span class="sep">/</span><a href="https://splitcam.com/alternatives">Alternatives</a><span class="sep">/</span><span>{C["rival"]}</span>
+  <a href="https://splitcam.com/">SplitCam</a><span class="sep">/</span><a href="{C.get("crumb2_url","https://splitcam.com/alternatives")}">{C.get("crumb2","Alternatives")}</a><span class="sep">/</span><span>{C.get("crumb3_short", C["rival"])}</span>
 </div>
 
 <!-- HERO -->
@@ -133,7 +134,7 @@ def build(slug, C):
 
 <!-- FAQ -->
 <section class="section">
-  <h2 class="sec-h">{C["rival"]} alternative FAQ</h2>
+  <h2 class="sec-h">{C.get("faq_h", C["rival"] + " alternative FAQ")}</h2>
   <div class="faq-list">
 {faq}
   </div>
@@ -155,7 +156,7 @@ def build(slug, C):
 </section>
 
 '''
-    dst = os.path.join(ROOT, "alternatives", slug)
+    dst = os.path.join(ROOT, base, slug) if base else os.path.join(ROOT, slug)
     os.makedirs(dst, exist_ok=True)
     out = head + chrome1 + BODY + chrome2
     open(os.path.join(dst, "index.html"), "w", encoding="utf-8").write(out)
@@ -163,6 +164,8 @@ def build(slug, C):
 
 if __name__ == "__main__":
     slug, mod = sys.argv[1], sys.argv[2]
+    # третий аргумент — базовый путь; "" означает корень сайта
+    base = sys.argv[3] if len(sys.argv) > 3 else "alternatives"
     sys.path.insert(0, "/private/tmp/claude-501/-Users-splitcam/0a408cc5-b8ac-48fc-817d-fc231da57ac6/scratchpad")
     C = importlib.import_module(mod).COPY
-    print(f"  {slug}: собрано {build(slug, C)} байт")
+    print(f"  {slug}: собрано {build(slug, C, base)} байт")
