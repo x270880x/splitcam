@@ -32,6 +32,9 @@ def build(slug, C, base="alternatives"):
     # локалей у новой страницы ещё нет: оставляем только self + x-default.
     # Иначе страница объявляет своим переводом чужую (шаблонную) страницу.
     head = re.sub(r'[ \t]*<link rel="alternate" hreflang="(?!en"|x-default")[^"]+" href="[^"]*"\s*/?>\n?', '', head)
+    # og-картинка: шаблон OBS нёс og-obs.png — на чужой странице это чужое превью
+    head = re.sub(r'(og:image" content="https://splitcam\.com/assets/)[^"]+', r'\1' + C.get("og", "og-cover.png"), head)
+    head = re.sub(r'(twitter:image" content="https://splitcam\.com/assets/)[^"]+', r'\1' + C.get("og", "og-cover.png"), head)
     head = re.sub(r'(<link rel="alternate" hreflang="(?:en|x-default)" href=")[^"]*(")',
                   r'\g<1>'+URL+r'\g<2>', head)
 
