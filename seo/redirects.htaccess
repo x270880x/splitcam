@@ -401,6 +401,55 @@ ErrorDocument 404 /404.html
 # Those listings also exposed internal development reports. Never serve one again.
 Options -Indexes
 
+
+# ---- Legacy help URLs WITHOUT locale prefix — added 2026-09-05 ----
+# The note above ('already redirecting on the live host') was wrong for the prefix-less
+# forms: a Search Console sweep found 85 of them returning 404 with 137,530 impressions
+# in 90 days — /help-ru/start/kak-provodit-translyaciyu-na-bongacams alone 111,997.
+# Specific guides go to their camstreamguide.com page (each target verified 200);
+# dead platforms (twitch/youtube/mixer have no guide there) go to our localized page;
+# everything else under /help-ru/ and /ayuda/ falls through to the localized /help.
+RedirectMatch 301 ^/downloads/?$ https://splitcam.com/download
+RedirectMatch 301 ^/descargar\-el\-programa/?$ https://splitcam.com/download
+RedirectMatch 301 ^/ayuda/start/como\-transmitir\-en\-cam4/?$ https://camstreamguide.com/es/cam4/
+RedirectMatch 301 ^/ayuda/start/como\-transmitir\-en\-chaturbate/?$ https://camstreamguide.com/es/chaturbate/
+RedirectMatch 301 ^/ayuda/start/como\-transmitir\-en\-mixer/?$ https://splitcam.com/es/help
+RedirectMatch 301 ^/ayuda/start/como\-transmitir\-en\-twitch/?$ https://splitcam.com/es/multistreaming
+RedirectMatch 301 ^/ayuda/start/como\-transmitir\-en\-youtube/?$ https://splitcam.com/es/for/youtubers
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-bongacams/?$ https://camstreamguide.com/ru/bongacams/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-cam4/?$ https://camstreamguide.com/ru/cam4/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-camplace/?$ https://camstreamguide.com/ru/camplace/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-camsoda/?$ https://camstreamguide.com/ru/camsoda/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-chat\-hostess/?$ https://splitcam.com/ru/help
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-chaturbate/?$ https://camstreamguide.com/ru/chaturbate/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-imlive/?$ https://camstreamguide.com/ru/imlive/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-mixer/?$ https://splitcam.com/ru/help
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-onlyfans/?$ https://camstreamguide.com/ru/onlyfans/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-soulcams/?$ https://camstreamguide.com/ru/soulcams/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-streamate/?$ https://camstreamguide.com/ru/streamate/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-streamray/?$ https://camstreamguide.com/ru/streamray/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-stripchat/?$ https://camstreamguide.com/ru/stripchat/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-twitch/?$ https://splitcam.com/ru/multistreaming
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-virtwish/?$ https://camstreamguide.com/ru/virtwish/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-vxlive/?$ https://camstreamguide.com/ru/vxlive/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-xlovecam/?$ https://camstreamguide.com/ru/xlovecam/
+RedirectMatch 301 ^/help\-ru/start/kak\-provodit\-translyaciyu\-na\-youtube/?$ https://splitcam.com/ru/for/youtubers
+RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-dobavit\-translyaciyu\-na\-chaturbate/?$ https://camstreamguide.com/ru/chaturbate/
+RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-provodit\-translyaciyu\-na\-bongacams/?$ https://camstreamguide.com/ru/bongacams/
+RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-provodit\-translyaciyu\-na\-camplace/?$ https://camstreamguide.com/ru/camplace/
+RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-provodit\-translyaciyu\-na\-camsoda/?$ https://camstreamguide.com/ru/camsoda/
+RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-provodit\-translyaciyu\-na\-flirt4free/?$ https://camstreamguide.com/ru/flirt4free/
+RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-provodit\-translyaciyu\-na\-lyuboj\-sajt\-s\-podderzhkoj\-rtmp/?$ https://splitcam.com/ru/help
+RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-provodit\-translyaciyu\-na\-onlyfans/?$ https://camstreamguide.com/ru/onlyfans/
+RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-provodit\-translyaciyu\-na\-soulcams/?$ https://camstreamguide.com/ru/soulcams/
+RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-provodit\-translyaciyu\-na\-streamray/?$ https://camstreamguide.com/ru/streamray/
+RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-provodit\-translyaciyu\-na\-vxlive/?$ https://camstreamguide.com/ru/vxlive/
+RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-provodit\-translyaciyu\-na\-xlovecam/?$ https://camstreamguide.com/ru/xlovecam/
+RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-provodit\-translyaciyu\-na\-xmodels/?$ https://camstreamguide.com/ru/xmodels/
+RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-provodit\-translyaciyu\-na\-youtube/?$ https://splitcam.com/ru/for/youtubers
+RedirectMatch 301 ^/help\-ru(/.*)?$ https://splitcam.com/ru/help
+RedirectMatch 301 ^/ayuda(/.*)?$ https://splitcam.com/es/help
+
 RewriteEngine On
 # 0) Force https for plain-http visitors. Behind Cloudflare the origin always gets an
 #    https connection, so detect the VISITOR scheme via the CF-Visitor header (Cloudflare
