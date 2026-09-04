@@ -19,8 +19,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 strip = lambda s: re.sub(r'\s+', ' ', re.sub('<[^>]*>', '', s)).strip()
 
 def visible_faq(html):
-    return [(strip(m.group(1)), strip(m.group(2)))
-            for m in re.finditer(r'<summary>(.*?)</summary>\s*<p>(.*?)</p>', html, re.S)]
+    vis = [(strip(m.group(1)), strip(m.group(2)))
+           for m in re.finditer(r'<summary>(.*?)</summary>\s*<p>(.*?)</p>', html, re.S)]
+    if not vis:                                   # /features/: FAQ свёрстан карточками connect-step h4/p
+        sec = re.search(r'<section[^>]*id="faq"[^>]*>(.*?)</section>', html, re.S)
+        if sec:
+            vis = [(strip(q), strip(a)) for q, a in
+                   re.findall(r'<div class="connect-step"><h4>(.*?)</h4><p>(.*?)</p>', sec.group(1), re.S)]
+    return vis
 
 def audit(path):
     h = open(path, encoding="utf-8").read()

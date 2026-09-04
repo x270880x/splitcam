@@ -9,7 +9,7 @@
 Донор: <loc>/alternatives/obs/ — та же глубина вложенности, поэтому относительные
 пути, меню, подвал и <html lang/dir> гарантированно настоящие.
 """
-import re, json, os, sys
+import sys, re, json, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -201,6 +201,13 @@ def build(slug, loc, S, base="alternatives", donor_page="alternatives/obs"):
     dst = os.path.join(ROOT, loc, base, slug) if base else os.path.join(ROOT, loc, slug)
     os.makedirs(dst, exist_ok=True)
     open(os.path.join(dst, "index.html"), "w", encoding="utf-8").write(nh + top + nb + tail)
+    # BreadcrumbList := видимые (локализованные) крошки — аудит 2026-09-05 нашёл 309 страниц с EN-разметкой
+    try:
+        sys.path.insert(0, os.path.join(ROOT, "seo")); import crumb_sync
+        _page = os.path.relpath(dst, os.path.join(ROOT, loc)).strip("/") + "/"
+        crumb_sync.sync(os.path.join(dst, "index.html"), loc, _page, True)
+    except Exception as _e:
+        print("  crumb_sync:", _e)
     return os.path.join(loc, "alternatives", slug, "index.html"), None
 
 if __name__ == "__main__":

@@ -171,6 +171,21 @@ not from a checklist.
 
 > 🔴 **ПРАВИЛО №1 (владелец, 2026-09-05):** любое изменение английского текста или разметки — новая страница, блок, фраза, ссылка, подпись кнопки — **в тот же день уходит во все 34 локали по этому конвейеру, с обязательной вычиткой носителем-филологом, который сам стримит.** Нет варианта «пока только EN». Если проход не закончен — работа не закончена.
 
+## 🔴 Every page, every locale — built to the SEO rules and checked by code (owner's rule, 2026-09-05)
+
+Skill **`splitcam-new-page`** is the page pipeline: demand → EN page → interlinking → 34 locales with native
+review → automatic checks → deploy → reminders. The rules themselves live as code in **`seo/page_audit.py`**
+(T01–T24: title ≤60 / description 140–160 (CJK 32 / 70–100), one H1, canonical, 36 hreflang, lang/dir,
+og/twitter, keywords, JSON-LD without aggregateRating, breadcrumbs ↔ BreadcrumbList, FAQ ↔ FAQPage, GA once,
+sitemap + PAGE_PATHS, ≥3 inbound links + hub link, no broken/EN-leaking links, no «peer-to-peer», guarded
+language script, block structure = EN, img alt/src). **Nothing is committed with a 🔴** in any locale.
+Helpers: `seo/crumb_sync.py` (BreadcrumbList := visible crumbs), `seo/faq_sync.py`, `seo/tagseq.py`,
+`seo/linkcheck.py`. A new rule is added to `page_audit.py` in the same commit as it is written down here.
+
+Baseline on 2026-09-05 (first run over 26 pages × 35 locales): 309 locale pages carried the **English**
+BreadcrumbList (builder bug — fixed by `crumb_sync`), 89 titles and 138 descriptions were out of range,
+both virtual-audio pages are half-English in 32 locales, 9 pages have <3 inbound links per locale.
+
 ## Localization — all 35 languages (built 2026-06-13 → 06-15)
 
 Every page exists in **35 locales**: EN (root) + 34 under `/<lang>/...`:
@@ -525,6 +540,7 @@ meta), verify all four before committing:
 - **(c) On-topic for the page & audience** — language matches who the page is
   for (YouTube creator vs church AV volunteer vs OBS migrator). Don't leak
   generic copy that narrows or widens the audience by accident.
+- **(e) SEO rules by code** — `python3 seo/page_audit.py <page>/` must show 0 🔴 in all 35 locales.
 - **(d) Factual correctness & cross-page consistency** — versions (v10.9.2),
   feature names, platform lists (Win · macOS · iOS · Android), and numbers (e.g.
   "84+ platforms") must be correct AND identical across every page. One feature =

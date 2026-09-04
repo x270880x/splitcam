@@ -97,7 +97,13 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "For Churches",
+          "name": "Use Cases",
+          "item": "https://splitcam.com/for"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Churches",
           "item": "https://splitcam.com/for/churches"
         }
       ]
@@ -166,7 +172,7 @@
           "@type": "HowToStep",
           "position": 5,
           "name": "Multistream to Facebook + YouTube + church website",
-          "text": "In Stream Settings, paste your Facebook Live, YouTube Live and church website RTMP stream keys. Tick all three. Click Go Live — every platform receives the stream simultaneously, peer-to-peer."
+          "text": "In Stream Settings, paste your Facebook Live, YouTube Live and church website RTMP stream keys. Tick all three. Click Go Live — every platform receives the stream simultaneously, direct to each platform."
         }
       ]
     },
@@ -197,7 +203,7 @@
           "name": "Can I stream Sunday service to Facebook and YouTube at the same time?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — SplitCam has built-in multistreaming. Paste your Facebook Live and YouTube Live stream keys, click Go Live once, both platforms get the stream simultaneously. You can also push to your own church website via RTMP at the same time. Streams go peer-to-peer direct from the church PC — no cloud middleman, no monthly fee. See multistreaming details."
+            "text": "Yes — SplitCam has built-in multistreaming. Paste your Facebook Live and YouTube Live stream keys, click Go Live once, both platforms get the stream simultaneously. You can also push to your own church website via RTMP at the same time. Streams go direct from the church PC — no cloud middleman, no monthly fee. See multistreaming details."
           }
         },
         {
@@ -245,7 +251,7 @@
           "name": "Is SplitCam reliable enough for a live Sunday service?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — SplitCam has been in active development since 2003 and is used by churches and broadcasters globally. The encoder uses hardware acceleration for stability, the health monitor shows dropped frames in real time, and the multistream stack is peer-to-peer (one platform going down doesn't take the others with it). Run a Saturday dress rehearsal before your first live Sunday."
+            "text": "Yes — SplitCam has been in active development since 2003 and is used by churches and broadcasters globally. The encoder uses hardware acceleration for stability, the health monitor shows dropped frames in real time, and each platform gets its own direct stream (one platform going down doesn't take the others with it). Run a Saturday dress rehearsal before your first live Sunday."
           }
         }
       ]
@@ -675,7 +681,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         • <strong style="color:var(--text)">YouTube Live</strong> — paste stream key from studio.youtube.com → Go Live → Stream.<br>
         • <strong style="color:var(--text)">Church website</strong> — paste your custom RTMP URL + key (Wowza, Vimeo, AWS IVS or self-hosted Nginx-RTMP).<br>
         • <strong style="color:var(--text)">More platforms</strong> — Twitch, Kick, X/Twitter, plus 84+ pre-configured destinations.</p>
-        <p class="step-p">Click <strong style="color:var(--text)">Go Live</strong> once. Every platform receives the stream simultaneously. Streams travel <strong style="color:var(--text)">peer-to-peer direct</strong> from your PC to each platform's ingest server — no cloud middleman, no monthly fee, no per-viewer charges.</p>
+        <p class="step-p">Click <strong style="color:var(--text)">Go Live</strong> once. Every platform receives the stream simultaneously. Streams travel <strong style="color:var(--text)">direct</strong> from your PC to each platform's ingest server — no cloud middleman, no monthly fee, no per-viewer charges.</p>
         <div class="step-tip"><b>Saturday dress rehearsal:</b> Run a full 30-minute test stream on Saturday with the privacy set to "Unlisted" or "Only Me". Check audio levels, camera framing and the lyrics overlay. Your first live Sunday is not the time to discover the mic is hot or the cap is on the camera.</div>
       </div>
     </div>
@@ -687,7 +693,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="bonus">
     <div class="bonus-h">Why multistreaming matters for churches</div>
     <p class="bonus-p">Different members watch on different platforms. <strong>Older members</strong> click the link on your church website. <strong>Adult children</strong> visiting parents catch it on Facebook Live. <strong>Younger attendees</strong> watch on YouTube. <strong>Homebound members</strong> open whatever opens fastest on their tablet.</p>
-    <p class="bonus-p">Pick one platform and you lose the others. SplitCam streams to all of them <strong>at once, peer-to-peer</strong>, for free. Replaces $19/mo Restream and $25/mo StreamYard.</p>
+    <p class="bonus-p">Pick one platform and you lose the others. SplitCam streams to all of them <strong>at once, direct to each platform</strong>, for free. Replaces $19/mo Restream and $25/mo StreamYard.</p>
     <a href="https://splitcam.com/multistreaming" class="bonus-link">See how multistreaming works</a>
   </div>
 </section>
@@ -797,7 +803,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </details>
     <details class="faq-item">
       <summary>Can I stream Sunday service to Facebook and YouTube at the same time?</summary>
-      <p>Yes — SplitCam has built-in multistreaming. Paste your Facebook Live and YouTube Live stream keys, click Go Live once, both platforms get the stream simultaneously. You can also push to your own church website via RTMP at the same time. Streams go peer-to-peer direct from the church PC — no cloud middleman, no monthly fee. See <a href="https://splitcam.com/multistreaming" style="color:var(--blue)">multistreaming details</a>.</p>
+      <p>Yes — SplitCam has built-in multistreaming. Paste your Facebook Live and YouTube Live stream keys, click Go Live once, both platforms get the stream simultaneously. You can also push to your own church website via RTMP at the same time. Streams go direct from the church PC — no cloud middleman, no monthly fee. See <a href="https://splitcam.com/multistreaming" style="color:var(--blue)">multistreaming details</a>.</p>
     </details>
     <details class="faq-item">
       <summary>How much does church streaming software cost?</summary>
@@ -821,7 +827,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </details>
     <details class="faq-item">
       <summary>Is SplitCam reliable enough for a live Sunday service?</summary>
-      <p>Yes — SplitCam has been in active development since 2003 and is used by churches and broadcasters globally. The encoder uses hardware acceleration for stability, the health monitor shows dropped frames in real time, and the multistream stack is peer-to-peer (one platform going down doesn't take the others with it). Run a Saturday dress rehearsal before your first live Sunday.</p>
+      <p>Yes — SplitCam has been in active development since 2003 and is used by churches and broadcasters globally. The encoder uses hardware acceleration for stability, the health monitor shows dropped frames in real time, and each platform gets its own direct stream (one platform going down doesn't take the others with it). Run a Saturday dress rehearsal before your first live Sunday.</p>
     </details>
   </div>
 </section>
@@ -833,7 +839,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <a class="related-card" href="https://splitcam.com/multistreaming">
       <span class="eyebrow">Multistreaming</span>
       <h4>One stream → every platform</h4>
-      <p>Stream to Facebook + YouTube + church website simultaneously, peer-to-peer.</p>
+      <p>Stream to Facebook + YouTube + church website simultaneously, direct to each platform.</p>
     </a>
     <a class="related-card" href="https://splitcam.com/for/youtubers">
       <span class="eyebrow">YouTube Live</span>
