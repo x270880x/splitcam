@@ -153,7 +153,7 @@
           "name": "मेरे पास पहले से एक Stream Deck है. क्या SplitCam उसके साथ काम करता है?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "हाँ. Stream Deck support, Windows build 10.8.25 में जोड़ा गया था."
+            "text": "हाँ, Windows पर. Elgato Marketplace से free official SplitCam plugin install कीजिए (Stream Deck app 6.9 या नया) और SplitCam को 10.8.25 या उसके बाद के version पर update कीजिए. Keys पर stream शुरू/बंद, scene switch, recording शुरू/बंद, scene pause, mute और snapshot मिलते हैं, और वे SplitCam का live status दिखाती हैं. Plugin का macOS version नहीं है."
           }
         },
         {
@@ -464,7 +464,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <li><strong>कुछ भी ख़रीदना नहीं पड़ता — बात यही है.</strong> SplitCam Remote free है और आपके अपने network पर चलता है. इसके साथ न कोई hardware है, न कोई dongle, न कोई subscription.</li>
         <li><strong>यह SplitCam चलाता है, और सिर्फ़ SplitCam.</strong> असली Stream Deck किसी भी program में buttons दबाता है — OBS, कोई browser, आपकी lights, कोई macro. Phone app यह नहीं करता. ज़्यादातर लोगों के लिए फ़ैसला इसी फ़र्क़ पर होता है.</li>
         <li><strong>अभी यह एक iOS app है.</strong> Android version अभी बन रहा है और आया नहीं है. अगर आप आज Android पर हैं, तो यह फ़िलहाल आपके लिए विकल्प नहीं है.</li>
-        <li><strong>पहले से Stream Deck है? रखिए.</strong> SplitCam ने Windows build 10.8.25 में Stream Deck support जोड़ दिया है, इसलिए जिस hardware के आप पैसे दे चुके हैं वो SplitCam को भी चलाएगा.</li>
+        <li><strong>पहले से Stream Deck है? रखिए.</strong> <a href="https://marketplace.elgato.com/product/splitcam-5231d1ca-5a53-417b-b6b7-48a690fe3915" rel="noopener">Elgato Marketplace</a> में SplitCam का official, free plugin है — सिर्फ़ Windows के लिए, और इसे SplitCam 10.8.25 या नया चाहिए.</li>
     </ol></div>
   </div>
 </div>
@@ -523,6 +523,31 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <p class="sec-p">अपने आप से ईमानदार रहिए कि आप दबाना क्या चाहते हैं. अगर आपके buttons को SplitCam के बाहर कुछ भी करना है — कोई OBS scene चलानी है, किसी दूसरे app से sound effect बजाना है, कोई macro चलाना है, lights धीमी करनी हैं, Discord mute करना है, chat में link paste करना है — तो सही tool Stream Deck ही है और phone app उसकी जगह नहीं ले सकता, क्योंकि SplitCam Remote सिर्फ़ SplitCam को control करता है, और कुछ नहीं. यही बात तब भी लागू है जब आपको ऐसी tactile keys चाहिए जिन्हें देखे बिना दबाया जा सके, एक हमेशा जगा रहने वाला surface चाहिए जो stream के बीच न सोए और न कोई call ले ले, या हर key पर अपनी जलती हुई screen चाहिए. और अगर आप Android पर हैं, तो companion app अभी release नहीं हुआ है, इसलिए इन दोनों में से आज आपके लिए सिर्फ़ hardware ही काम करता है. यह कोई छोटी list नहीं है — Stream Deck एक अच्छा product है, और बहुत सारे लोगों के पास वो होना ही चाहिए.</p>
 </section>
 
+<!-- WIRE IT UP -->
+<section class="section">
+  <h2 class="sec-h">पहले से Stream Deck है? उसे जोड़ने का तरीक़ा यह है</h2>
+  <p class="sec-p">SplitCam का official plugin Elgato Marketplace पर है. यह free है, सिर्फ़ Windows के लिए है, और चल रहे app से सीधे बात करता है — न कोई port, न password, न pairing.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>1. SplitCam update कीजिए</h3>
+        <p>Stream Deck support Windows build 10.8.25 (जनवरी 2025) में आया था. उससे नया कुछ भी चलेगा; मौजूदा release ठीक है.</p>
+      </div>
+      <div class="reason">
+        <h3>2. Plugin install कीजिए</h3>
+        <p>Stream Deck app (6.9 या नया) में Marketplace खोलिए और <strong>SplitCam</strong> खोजिए, या सीधे <a href="https://marketplace.elgato.com/product/splitcam-5231d1ca-5a53-417b-b6b7-48a690fe3915" rel="noopener">listing</a> से install कीजिए. इसे SplitCam ने ही publish किया है, किसी third party ने नहीं.</p>
+      </div>
+      <div class="reason">
+        <h3>3. Keys पर actions रखिए</h3>
+        <p>Stream शुरू/बंद, scene switch, recording शुरू/बंद, scene pause, mute और snapshot. Scenes के नाम SplitCam से लिए जाते हैं, इसलिए key पर वही scene दिखती है जिस पर वो switch करती है; keys SplitCam का live status और आपका session time भी दिखाती हैं.</p>
+      </div>
+      <div class="reason">
+        <h3>4. चाहें तो chain कीजिए</h3>
+        <p>ये actions Multi Actions के अंदर भी चलते हैं, इसलिए एक बार दबाने से scene switch हो सकती है, stream शुरू हो सकता है और उस key पर जो कुछ और रखा है वो भी चल सकता है. SplitCam के channel पर एक <a href="https://www.youtube.com/watch?v=WCfaMpOlFDY" rel="noopener">setup walkthrough</a> है.</p>
+      </div>
+  </div>
+  <p class="sec-p">Plugin क्या नहीं करता: यह macOS पर नहीं चलता — Mac पर किसी control surface से scenes switch करने का रास्ता iPhone पर free SplitCam Remote app है. इसमें dial support नहीं है और इसके साथ कोई profiles नहीं आते. इन छह actions से आगे किसी भी चीज़ के लिए मौजूदा listing देखिए, जिसमें plugin की अपनी version history है.</p>
+</section>
+
 <!-- COMPARE -->
 <section class="section" id="compare">
   <h2 class="sec-h">SplitCam Remote vs Stream Deck</h2>
@@ -533,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </thead>
     <tbody>
       <tr><td>कीमत</td><td class="yes">SplitCam के साथ free</td><td class="no">Hardware ख़रीदना पड़ता है</td></tr>
-      <tr><td>SplitCam को control करता है</td><td class="yes">हाँ — scenes, live, recording</td><td class="yes">हाँ, Windows पर 10.8.25 से</td></tr>
+      <tr><td>SplitCam को control करता है</td><td class="yes">हाँ — scenes, live, recording</td><td class="yes">हाँ — official plugin, Windows (SplitCam 10.8.25+)</td></tr>
       <tr><td>दूसरे programs को control करता है</td><td class="no">नहीं — सिर्फ़ SplitCam</td><td class="yes">हाँ, यही उसकी असली ताक़त है</td></tr>
       <tr><td>देखे बिना दबाने लायक physical keys</td><td class="no">सिर्फ़ on-screen</td><td class="yes">Tactile buttons</td></tr>
       <tr><td>आज Android पर चलता है</td><td class="no">अभी बन रहा है, release नहीं हुआ</td><td class="yes">किसी भी PC के साथ चलता है</td></tr>
@@ -594,7 +619,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>मेरे पास पहले से एक Stream Deck है. क्या SplitCam उसके साथ काम करता है?</summary>
-        <p>हाँ. Stream Deck support, Windows build 10.8.25 में जोड़ा गया था.</p>
+        <p>हाँ, Windows पर. Elgato Marketplace से free official SplitCam plugin install कीजिए (Stream Deck app 6.9 या नया) और SplitCam को 10.8.25 या उसके बाद के version पर update कीजिए. Keys पर stream शुरू/बंद, scene switch, recording शुरू/बंद, scene pause, mute और snapshot मिलते हैं, और वे SplitCam का live status दिखाती हैं. Plugin का macOS version नहीं है.</p>
       </details>
       <details class="faq-item">
         <summary>Phone मेरा computer ढूँढता कैसे है?</summary>
