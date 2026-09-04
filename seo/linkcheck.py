@@ -435,3 +435,45 @@ for _r in _faq_bad[:8]:
     print(f'   {_r[0]}  ({_r[1]})')
 if len(_faq_bad) > 8:
     print(f'   … и ещё {len(_faq_bad)-8}')
+
+# ----------------------------------------------------- locale structure vs EN ---
+# hr/for/churches/ был повреждён: 8 строк разметки перезаписаны случайными строками
+# того же файла — пропал <table>, </tbody>, закрытия div. Все прежние проверки молчали:
+# ссылки целы, JSON-LD парсится, счётчики отдельных тегов почти сходятся. Видно только
+# по ПОРЯДКУ блочных тегов относительно EN. Инлайновые (strong/span/a) не считаем —
+# переводчики законно двигают их; changelog не считаем — заголовки релизов повторяются.
+print('\n--- LOCALE STRUCTURE vs EN (block-level tag order) ---')
+import difflib as _dl
+_BLOCK = {'div','section','table','thead','tbody','tr','td','th','ul','ol','li','h1','h2','h3','h4','details','summary','p','article','nav','footer','header','main'}
+_SKIPR = re.compile(r'<!--(LD|HL|AD|RTLCSS)-->.*?<!--/\1-->', re.S)
+def _bseq(path):
+    _h = open(path, encoding='utf-8').read(); _b = _h[_h.find('<body'):]
+    _b = _SKIPR.sub('', _b)
+    _b = re.sub(r'<script.*?</script>', '', _b, flags=re.S); _b = re.sub(r'<style.*?</style>', '', _b, flags=re.S)
+    _b = re.sub(r'<details class="lang[^"]*".*?</details>', '', _b, flags=re.S)
+    return [m.group(1).lower() for m in re.finditer(r'<(/?[a-zA-Z][a-zA-Z0-9]*)', _b) if m.group(1).lower().lstrip('/') in _BLOCK]
+_LOCS = 'ru es de fr pt tr fil uk it vi id nl ro hi ja ms bg ar ko th pl hu sv zh el cs he sr hr da fi no sk fa'.split()
+_struct_bad, _struct_n = [], 0
+for _p in pages:
+    _r = rel(_p)
+    if re.match(r'^[a-z]{2,3}/', _r) or 'changelog' in _r or _r.startswith('v2/'):
+        continue
+    _es = _bseq(_p)
+    for _l in _LOCS:
+        _lp = os.path.join(ROOT, _l, _r)
+        if not os.path.exists(_lp):
+            continue
+        _struct_n += 1
+        _ls = _bseq(_lp)
+        if _ls == _es:
+            continue
+        _ops = [o for o in _dl.SequenceMatcher(None, _es, _ls, autojunk=False).get_opcodes() if o[0] != 'equal']
+        if len(_ops) >= 3:
+            _o = _ops[0]
+            _struct_bad.append((f'{_l}/{_r}', len(_ops), f"{_o[0]} EN[{_o[1]}:{_o[2]}]={' '.join(_es[_o[1]:_o[2]][:4])}"))
+print(f'locale pages compared: {_struct_n}')
+print(f'structurally divergent (>=3 block-level edits vs EN): {len(_struct_bad)}')
+for _r in _struct_bad[:8]:
+    print(f'   {_r[0]}  ({_r[1]} edits; first: {_r[2]})')
+if len(_struct_bad) > 8:
+    print(f'   … и ещё {len(_struct_bad)-8}')
