@@ -281,8 +281,10 @@ computes (`getComputedStyle(el).maxWidth` etc.), not just that the file contains
    token as an env var; never commit it. Ahrefs Lite plan, 100k units/mo.
 2. Brand logos stored LOCALLY in `/virtual-camera/assets/logos/` — no external CDN.
 3. SplitCam logo at `/assets/splitcam.png` — used via `<img>`, not base64.
-4. No "Restream server" / "cloud middleman" wording — SplitCam is **peer-to-peer
-   direct**.
+4. No "Restream server" / "cloud middleman" wording for SplitCam itself — SplitCam sends
+   **direct to each platform — no cloud middleman**. 🔴 Never write "peer-to-peer": RTMP push
+   to a platform's ingest is not P2P (there is a server — the platform's), and a technical
+   reader objects. Replaced site-wide 2026-09-05 (EN + 34 locales) on the owner's decision.
 5. iOS belongs in the platforms list (Win · macOS · iOS · Android).
 6. **Skype is dead** (Microsoft retired it May 2025) — never mention it as live.
 7. Rating = **4.7 / 357 reviews**, shown ONLY as a visible trust signal

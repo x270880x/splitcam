@@ -153,7 +153,7 @@
           "name": "Ich habe bereits ein Stream Deck. Funktioniert SplitCam damit?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja. Die Stream-Deck-Unterstützung kam mit dem Windows-Build 10.8.25 dazu."
+            "text": "Ja, unter Windows. Installiere das kostenlose offizielle SplitCam-Plugin aus dem Elgato Marketplace (Stream-Deck-App 6.9 oder neuer) und aktualisiere SplitCam auf 10.8.25 oder neuer. Die Tasten bekommen Stream starten/stoppen, Szene wechseln, Aufnahme starten/stoppen, Szene pausieren, Stummschalten und Schnappschuss und zeigen den Live-Status von SplitCam an. Eine macOS-Version des Plugins gibt es nicht."
           }
         },
         {
@@ -464,7 +464,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <li><strong>Der Witz ist, dass du nichts kaufst.</strong> SplitCam Remote ist kostenlos und läuft über dein eigenes Netzwerk. Dazu gehört keine Hardware, kein Dongle und kein Abo.</li>
         <li><strong>Sie steuert SplitCam — und sonst nichts.</strong> Ein echtes Stream Deck drückt Tasten in jedem Programm: OBS, Browser, deine Beleuchtung, ein Makro. Die Handy-App nicht. An diesem Unterschied entscheidet es sich für die meisten.</li>
         <li><strong>Aktuell gibt es sie nur für iOS.</strong> Die Android-Version ist in Arbeit und noch nicht erschienen. Wenn du heute mit Android unterwegs bist, ist das für dich noch keine Option.</li>
-        <li><strong>Du hast schon ein Stream Deck? Behalte es.</strong> SplitCam unterstützt Stream Deck seit dem Windows-Build 10.8.25 — die Hardware, für die du bezahlt hast, steuert also auch SplitCam.</li>
+        <li><strong>Du hast schon ein Stream Deck? Behalte es.</strong> Es gibt ein offizielles, kostenloses SplitCam-Plugin im <a href="https://marketplace.elgato.com/product/splitcam-5231d1ca-5a53-417b-b6b7-48a690fe3915" rel="noopener">Elgato Marketplace</a> — nur für Windows, und es braucht SplitCam 10.8.25 oder neuer.</li>
     </ol></div>
   </div>
 </div>
@@ -523,6 +523,31 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <p class="sec-p">Sei ehrlich zu dir selbst, was du eigentlich drücken willst. Wenn deine Tasten irgendetwas außerhalb von SplitCam tun sollen — eine OBS-Szene auslösen, einen Soundeffekt aus einer anderen App abfeuern, ein Makro starten, das Licht dimmen, Discord stummschalten, einen Link in den Chat setzen — dann ist ein Stream Deck das richtige Werkzeug, und die Handy-App ist kein Ersatz dafür, denn SplitCam Remote steuert SplitCam und sonst nichts. Dasselbe gilt, wenn du fühlbare Tasten willst, die du blind triffst, ein Pult, das immer an ist und mitten im Stream weder in den Ruhezustand geht noch einen Anruf annimmt, oder Displays pro Taste, die dauerhaft leuchten. Und wenn du Android nutzt, ist die Begleit-App noch nicht erschienen — heute funktioniert von beiden also nur die Hardware für dich. Das ist keine kurze Liste: Ein Stream Deck ist ein gutes Produkt, und viele Leute sollten eines besitzen.</p>
 </section>
 
+<!-- WIRE IT UP -->
+<section class="section">
+  <h2 class="sec-h">Du hast schon ein Stream Deck? So bindest du es an</h2>
+  <p class="sec-p">SplitCam veröffentlicht ein offizielles Plugin im Elgato Marketplace. Es ist kostenlos, läuft nur unter Windows und spricht direkt mit der laufenden App — keine Ports, Passwörter oder Kopplung.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>1. SplitCam aktualisieren</h3>
+        <p>Die Stream-Deck-Unterstützung kam mit dem Windows-Build 10.8.25 (Januar 2025). Alles Neuere funktioniert; die aktuelle Version ist in Ordnung.</p>
+      </div>
+      <div class="reason">
+        <h3>2. Plugin installieren</h3>
+        <p>Öffne in der Stream-Deck-App (6.9 oder neuer) den Marketplace und suche nach <strong>SplitCam</strong>, oder installiere es direkt über den <a href="https://marketplace.elgato.com/product/splitcam-5231d1ca-5a53-417b-b6b7-48a690fe3915" rel="noopener">Eintrag</a>. Veröffentlicht von SplitCam, nicht von Dritten.</p>
+      </div>
+      <div class="reason">
+        <h3>3. Aktionen auf Tasten legen</h3>
+        <p>Stream starten/stoppen, Szene wechseln, Aufnahme starten/stoppen, Szene pausieren, Stummschalten und Schnappschuss. Die Szenennamen kommen aus SplitCam, eine Taste zeigt also die Szene, zu der sie wechselt; die Tasten spiegeln außerdem den Live-Status von SplitCam und deine Sitzungszeit wider.</p>
+      </div>
+      <div class="reason">
+        <h3>4. Bei Bedarf verketten</h3>
+        <p>Die Aktionen funktionieren in Multi Actions, ein Tastendruck kann also die Szene wechseln, den Stream starten und alles andere auslösen, was auf dieser Taste liegt. SplitCam hat auf seinem Kanal eine <a href="https://www.youtube.com/watch?v=WCfaMpOlFDY" rel="noopener">Einrichtungsanleitung</a>.</p>
+      </div>
+  </div>
+  <p class="sec-p">Was das Plugin nicht kann: Es läuft nicht unter macOS — auf einem Mac ist die kostenlose SplitCam-Remote-App auf einem iPhone der Weg, Szenen über ein Bedienpult zu wechseln. Es unterstützt keine Drehregler und bringt keine Profile mit. Für alles jenseits dieser sechs Aktionen sieh dir den aktuellen Eintrag an, der die Versionshistorie des Plugins enthält.</p>
+</section>
+
 <!-- COMPARE -->
 <section class="section" id="compare">
   <h2 class="sec-h">SplitCam Remote vs. Stream Deck</h2>
@@ -533,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </thead>
     <tbody>
       <tr><td>Preis</td><td class="yes">Kostenlos mit SplitCam</td><td class="no">Hardware-Kauf</td></tr>
-      <tr><td>Steuert SplitCam</td><td class="yes">Ja — Szenen, Live, Aufnahme</td><td class="yes">Ja, unter Windows seit 10.8.25</td></tr>
+      <tr><td>Steuert SplitCam</td><td class="yes">Ja — Szenen, Live, Aufnahme</td><td class="yes">Ja — offizielles Plugin, Windows (SplitCam 10.8.25+)</td></tr>
       <tr><td>Steuert andere Programme</td><td class="no">Nein — nur SplitCam</td><td class="yes">Ja, das ist seine größte Stärke</td></tr>
       <tr><td>Physische Tasten, blind zu treffen</td><td class="no">Nur auf dem Bildschirm</td><td class="yes">Fühlbare Tasten</td></tr>
       <tr><td>Funktioniert heute unter Android</td><td class="no">In Arbeit, noch nicht erschienen</td><td class="yes">Funktioniert mit jedem PC</td></tr>
@@ -594,7 +619,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Ich habe bereits ein Stream Deck. Funktioniert SplitCam damit?</summary>
-        <p>Ja. Die Stream-Deck-Unterstützung kam mit dem Windows-Build 10.8.25 dazu.</p>
+        <p>Ja, unter Windows. Installiere das kostenlose offizielle SplitCam-Plugin aus dem Elgato Marketplace (Stream-Deck-App 6.9 oder neuer) und aktualisiere SplitCam auf 10.8.25 oder neuer. Die Tasten bekommen Stream starten/stoppen, Szene wechseln, Aufnahme starten/stoppen, Szene pausieren, Stummschalten und Schnappschuss und zeigen den Live-Status von SplitCam an. Eine macOS-Version des Plugins gibt es nicht.</p>
       </details>
       <details class="faq-item">
         <summary>Wie findet das Handy meinen Rechner?</summary>

@@ -153,7 +153,7 @@
           "name": "すでに Stream Deck を持っています。SplitCam で使えますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "はい。Stream Deck 対応は Windows 版のビルド 10.8.25 で追加されました。"
+            "text": "はい、Windows で使えます。Elgato Marketplace から SplitCam 公式の無料プラグインをインストールし（Stream Deck アプリ 6.9 以降）、SplitCam を 10.8.25 以降に更新してください。キーには配信の開始・停止、シーンの切り替え、録画の開始・停止、シーンの一時停止、ミュート、スナップショットを割り当てられ、SplitCam の現在の状態も表示されます。プラグインの macOS 版はありません。"
           }
         },
         {
@@ -464,7 +464,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <li><strong>何も買わずに済むことが要点です。</strong>SplitCam Remote は無料で、お使いのネットワーク上で動きます。ハードウェアもドングルもサブスクも、一切ついていません。</li>
         <li><strong>操作できるのは SplitCam だけです。</strong>本物の Stream Deck は、どんなプログラムのボタンでも押せます — OBS、ブラウザ、照明、マクロ。このスマホアプリにそれはできません。多くの人にとって、この違いが決め手になります。</li>
         <li><strong>いまのところ iOS アプリです。</strong>Android 版は開発中で、まだ公開されていません。今日 Android をお使いなら、これはまだ選択肢になりません。</li>
-        <li><strong>すでに Stream Deck をお持ちなら、そのまま使ってください。</strong>SplitCam は Windows 版のビルド 10.8.25 で Stream Deck 対応を追加したので、買ったハードウェアからも SplitCam を操作できます。</li>
+        <li><strong>すでに Stream Deck をお持ちなら、そのまま使ってください。</strong><a href="https://marketplace.elgato.com/product/splitcam-5231d1ca-5a53-417b-b6b7-48a690fe3915" rel="noopener">Elgato Marketplace</a> に SplitCam 公式の無料プラグインがあります — Windows 専用で、SplitCam 10.8.25 以降が必要です。</li>
     </ol></div>
   </div>
 </div>
@@ -523,6 +523,31 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <p class="sec-p">自分が何を押したいのか、正直に考えてください。ボタンで SplitCam の外側を操作する必要があるなら — OBS のシーンを呼び出す、別のアプリから効果音を鳴らす、マクロを走らせる、照明を落とす、Discord をミュートする、チャットにリンクを貼る — その場合は Stream Deck が正しい道具で、スマホアプリは代わりになりません。SplitCam Remote が操作できるのは SplitCam だけだからです。見ずに叩ける物理キーが欲しい、スリープにも着信にも中断されない常時オンの操作面が欲しい、キーごとの画面が点いたままであってほしい — こうした場合も同じです。そして Android をお使いなら、コンパニオンアプリはまだ公開されていないので、今日この2つのうち使えるのはハードウェアだけです。どれも小さな話ではありません — Stream Deck は良い製品で、買うべき人はたくさんいます。</p>
 </section>
 
+<!-- WIRE IT UP -->
+<section class="section">
+  <h2 class="sec-h">すでに Stream Deck をお持ちなら：つなぎ方はこうです</h2>
+  <p class="sec-p">SplitCam は Elgato Marketplace に公式プラグインを公開しています。無料で、Windows 専用で、起動中のアプリと直接やり取りします — ポートもパスワードもペアリングも不要です。</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>1. SplitCam を更新する</h3>
+        <p>Stream Deck 対応は Windows 版のビルド 10.8.25（2025年1月）で追加されました。それより新しければどれでも動きます。現行リリースで問題ありません。</p>
+      </div>
+      <div class="reason">
+        <h3>2. プラグインをインストールする</h3>
+        <p>Stream Deck アプリ（6.9 以降）で Marketplace を開き、<strong>SplitCam</strong> で検索するか、<a href="https://marketplace.elgato.com/product/splitcam-5231d1ca-5a53-417b-b6b7-48a690fe3915" rel="noopener">掲載ページ</a>から直接インストールします。公開元はサードパーティではなく SplitCam です。</p>
+      </div>
+      <div class="reason">
+        <h3>3. キーに操作を割り当てる</h3>
+        <p>配信の開始・停止、シーンの切り替え、録画の開始・停止、シーンの一時停止、ミュート、スナップショット。シーン名は SplitCam から取得されるので、キーには切り替え先のシーンが表示されます。キーには SplitCam の現在の状態とセッションの経過時間も反映されます。</p>
+      </div>
+      <div class="reason">
+        <h3>4. 必要ならつなげて使う</h3>
+        <p>これらの操作は Multi Action の中でも使えるので、1回押すだけでシーンを切り替え、配信を開始し、そのキーに載せたほかの操作まで実行できます。SplitCam のチャンネルには<a href="https://www.youtube.com/watch?v=WCfaMpOlFDY" rel="noopener">設定手順の動画</a>があります。</p>
+      </div>
+  </div>
+  <p class="sec-p">このプラグインにできないこと：macOS では動きません — Mac では、iPhone に入れた無料の SplitCam Remote アプリが、操作面からシーンを切り替える手段になります。ダイヤルには対応しておらず、プロファイルも同梱されていません。この6つの操作以外については、プラグイン自身のバージョン履歴が載っている最新の掲載ページを確認してください。</p>
+</section>
+
 <!-- COMPARE -->
 <section class="section" id="compare">
   <h2 class="sec-h">SplitCam Remote と Stream Deck の比較</h2>
@@ -533,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </thead>
     <tbody>
       <tr><td>費用</td><td class="yes">SplitCam と一緒に無料</td><td class="no">ハードウェアの購入が必要</td></tr>
-      <tr><td>SplitCam の操作</td><td class="yes">対応 — シーン、配信、録画</td><td class="yes">対応。Windows は 10.8.25 以降</td></tr>
+      <tr><td>SplitCam の操作</td><td class="yes">対応 — シーン、配信、録画</td><td class="yes">対応 — 公式プラグイン、Windows（SplitCam 10.8.25 以降）</td></tr>
       <tr><td>ほかのプログラムの操作</td><td class="no">非対応 — SplitCam のみ</td><td class="yes">対応。これが最大の強み</td></tr>
       <tr><td>見ずに叩ける物理キー</td><td class="no">画面上のみ</td><td class="yes">触って分かる物理ボタン</td></tr>
       <tr><td>今日 Android で使えるか</td><td class="no">開発中、未公開</td><td class="yes">どのPCでも使える</td></tr>
@@ -594,7 +619,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>すでに Stream Deck を持っています。SplitCam で使えますか？</summary>
-        <p>はい。Stream Deck 対応は Windows 版のビルド 10.8.25 で追加されました。</p>
+        <p>はい、Windows で使えます。Elgato Marketplace から SplitCam 公式の無料プラグインをインストールし（Stream Deck アプリ 6.9 以降）、SplitCam を 10.8.25 以降に更新してください。キーには配信の開始・停止、シーンの切り替え、録画の開始・停止、シーンの一時停止、ミュート、スナップショットを割り当てられ、SplitCam の現在の状態も表示されます。プラグインの macOS 版はありません。</p>
       </details>
       <details class="faq-item">
         <summary>スマホはどうやってPCを見つけるのですか？</summary>
