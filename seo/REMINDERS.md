@@ -358,3 +358,11 @@ Compare DR / ranked keyword count / traffic estimate vs baseline in `seo/reports
 `… software free` 164 показа поз. 4.9 / 10 кликов, `streaming multicamara` 110 поз. 27.8 (es).
 Ожидание: запросы переезжают с главной на /multi-camera/, позиции растут; испанский —
 на /es/multi-camera/. Проверить по страницам, не по запросам.
+
+## 2026-09-12 — проверить ответ HostPro про порт 3306
+
+2026-09-05 отправлено письмо в support@hostpro.ua (Hostsila — бренд HostPro, MX mail.hostpro.ua)
+с x270880x@gmail.com, тред Gmail 1a06e592ddf82d72. Email аккаунта DA — bpgroup@gmail.com,
+ответ может прийти туда. Тикеты в DirectAdmin пользователю недоступны, hostsila.org был в 522.
+Проверить: `nc -z -G 5 77.83.100.153 3306` — должен перестать отвечать. Если ответа нет —
+позвонить: +38 (067) 823-83-81 / +38 (044) 585-77-96.
