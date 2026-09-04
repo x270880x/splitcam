@@ -12,7 +12,7 @@ COPY = {
  "crumb3": "Multi-camera streaming", "crumb3_short": "Multi-camera",
  "faq_h": "Multi-camera streaming — questions",
  "title": "Free Multi-Camera Live Streaming Software | SplitCam",
- "description": ("Free multi-camera live streaming software for Windows and Mac: switch between cameras live or show two at once. Webcams, IP cameras, NDI and your phone in one scene."),
+ "description": ("Free multi-camera live streaming software for Windows and Mac: switch cameras live or show two at once. Webcams, IP cameras, NDI and your phone in one scene."),
  "keywords": ("multi camera live streaming software, multi camera live streaming software free, "
               "free multi camera live streaming software, multicam streaming software, multi camera software, "
               "live stream multiple cameras, two cameras one stream"),
