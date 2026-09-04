@@ -450,6 +450,9 @@ RedirectMatch 301 ^/help\-ru/video\-rukovodstva/kak\-provodit\-translyaciyu\-na\
 RedirectMatch 301 ^/help\-ru(/.*)?$ https://splitcam.com/ru/help
 RedirectMatch 301 ^/ayuda(/.*)?$ https://splitcam.com/es/help
 
+# 2026-09-05: Stream Deck is a feature page, not a streaming-software alternative — moved to /stream-deck/
+RedirectMatch 301 ^/((?:[a-z]{2,3})/)?alternatives/stream\-deck/?$ https://splitcam.com/$1stream-deck
+
 RewriteEngine On
 # 0) Force https for plain-http visitors. Behind Cloudflare the origin always gets an
 #    https connection, so detect the VISITOR scheme via the CF-Visitor header (Cloudflare
