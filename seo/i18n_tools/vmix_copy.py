@@ -2,8 +2,7 @@
 COPY = {
  "rival": "vMix",
  "title": "Free vMix Alternative — Windows and Mac | SplitCam",
- "description": ("A free vMix alternative for streams that do not need a broadcast suite: scenes, 84+ platform "
-                 "multistreaming and a virtual camera, on Windows and macOS. Where vMix wins, it says so."),
+ "description": ("A free vMix alternative for streams that do not need a broadcast suite: scenes, multistreaming to 84+ platforms and a virtual camera, on Windows and macOS."),
  "keywords": "vmix alternative, free vmix alternative, vmix alternatives, vmix vs obs, vmix for mac, vmix free",
  "eyebrow": "vMix alternative",
  "h1_pre": "The vMix alternative for people who ",
