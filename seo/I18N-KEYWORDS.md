@@ -108,3 +108,29 @@ Per-page PRIMARY keyword → title/H1/meta. Brand "splitcam" everywhere.
 
 **hi = ENGLISH titles/keywords** (India searches tech in English — Devanagari terms had ~0 volume); body in natural Hindi (Devanagari) + English tech terms (Hinglish is how Indian tech content reads). Big volumes (920/546/512/420).
 **ja = Japanese** (Japan searches in JP): 配信ソフト 648, youtube 配信 やり方 436 — both big, KD1. ro/ms/bg thin & brand-led. All LTR (no RTL).
+
+## Реальные запросы по локалям — проход 2026-09-04 (шаг 1–4 правила)
+
+Источник: Search Console, page×query, 90 дней до 2026-09-02 → `seo/data/gsc_locale_queries.json`
+(25 812 строк; тянуть заново: `gsc_lite.query_all(["page","query"], …)`).
+
+Что показали данные (небрендовые показы страниц ядра): es 4 248 · fr 3 398 · ru 2 930 · ar 2 850 ·
+ko 1 552 · de 1 231 · it 949 · tr 868 · pt 721 · ja 285; остальные 24 локали — шум.
+На главных страницах локалей «небрендовые» лидеры — опечатки бренда (spritcam, стрипкам, splitçim)
+и чужое намерение (cam to cam, webcam gratis senza registrazione) — в них НЕ целить.
+
+| локаль | страница | head-запрос (показы / поз.) | что сделано |
+|---|---|---|---|
+| ar | / | برنامج بث مباشر مجاني (602 / 3.9, 111 кликов) | точная форма в title; в H1 уже была |
+| de | /multistreaming | gleichzeitig streamen (247 / 12.9) | title, H1, keywords, первый абзац |
+| es | /virtual-camera | camara virtual (205 / 8.8) | было; title ужат с 63 до 57 |
+| fr | /virtual-camera | virtual camera (136 / 6.4) — ищут АНГЛИЙСКИЙ термин | title «(Virtual Camera)», keywords, подзаголовок; H1 не тронут |
+| ko | /multistreaming | 동시송출 (97 / 3.8) — слитная форма, страница писала «동시 송출» | title, H1, keywords |
+| ja | /alternatives/obs | 配信ソフト obs以外 (45 / 8.0) | title, keywords, sub |
+| it | /virtual-camera | virtual camera (36 / 9.2) — как fr | title, keywords, подзаголовок |
+
+Уже стояли верно (проверено программно, не трогали): fr/multistreaming «multistream», ko/ «무료 스트리밍»,
+ru/multistreaming «мультистрим», tr/virtual-camera «sanal kamera», it/multistreaming, ru/virtual-camera,
+es и de /alternatives/obs, tr/for/youtubers.
+
+Замер: тот же вид консоли по этим 7 страницам после 2026-10-04.
