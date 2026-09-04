@@ -136,6 +136,14 @@ def build(slug, loc, S, base="alternatives", donor_page="alternatives/obs"):
     # В извлекаемые строки он не попадает: там только содержимое карточек.
     er = re.search(r'(<h3[^>]*>)([^<]*)(</h3>\s*<div class="related-grid")', body)
     dr = re.search(r'<h3[^>]*>([^<]*)</h3>\s*<div class="related-grid"', db)
+    if not dr:
+        # у донора нет блока related (корневые страницы) — берём заголовок
+        # у /alternatives/obs/ той же локали, там он переведён гарантированно
+        alt = os.path.join(ROOT, loc, "alternatives", "obs", "index.html")
+        if os.path.exists(alt):
+            ah = open(alt, encoding="utf-8").read()
+            dr = re.search(r'<h3[^>]*>([^<]*)</h3>\s*<div class="related-grid"',
+                           ah[ah.find('<div class="breadcrumbs">'):ah.find("<footer")])
     if er and dr and er.group(2) != dr.group(1):
         nb = nb.replace(er.group(1) + er.group(2) + "</h3>", er.group(1) + dr.group(1) + "</h3>", 1)
 
