@@ -24,7 +24,7 @@ CHECK = "--check" in sys.argv
 # Page paths that participate in the locale system (translatable set).
 PAGE_PATHS = ["", "products/", "features/", "download/", "virtual-camera/", "virtual-audio-mac/", "virtual-audio-windows/", "multistreaming/", "alternatives/",
               "alternatives/obs/", "alternatives/manycam/", "alternatives/restream/",
-              "alternatives/streamyard/", "alternatives/stream-deck/", "alternatives/vmix/", "phone-as-webcam/",
+              "alternatives/streamyard/", "alternatives/stream-deck/", "alternatives/vmix/", "phone-as-webcam/", "multi-camera/",
               "for/", "for/youtubers/", "for/churches/", "for/educators/", "help/",
               "changelog/", "donate-us/", "privacy-policy/", "license-agreement/"]
 # changelog/privacy/license sit at priority 0.6/0.3; rest from i18n weighting.
