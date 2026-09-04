@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84개+ 플랫폼 사전 설정</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X를 비롯한 나머지 플랫폼이 무난한 기본값과 함께 이미 목록에 들어 있습니다.</p>
       </div>
+        <div class="reason">
+        <h3>한 플랫폼이 끊겨도 나머지는 그대로</h3>
+        <p>송출 대상마다 내 컴퓨터에서 나가는 연결이 따로 있어서, 한 플랫폼에 장애가 나도 나머지는 계속 송출됩니다. 중계 서비스는 업로드 하나로 전부를 공급합니다 — 잘 돌아갈 때는 더 깔끔하지만, 그렇지 않을 때는 단일 장애점입니다.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Restream이 더 나은 선택인 경우</h2>
   <p class="sec-p">직접 전송의 솔직한 한계이고, 옮기기 전에 알아 둘 값어치가 있습니다. 중계 서비스는 내게서 업로드 <strong>하나</strong>만 받으면 됩니다. 직접 전송은 모든 송출 대상의 비트레이트를 <strong>합한</strong> 만큼이 한꺼번에 우리 집 회선을 빠져나가야 합니다 — 권장 설정으로 네 플랫폼이면 업로드 약 19~20Mbps입니다. Twitch에 6, YouTube에 4.5, Facebook에 3, 네 번째 대상에 2.5를 더한 16Mbps에 여유분 약 20%를 얹은 값입니다. 회선이 그만큼을 감당하지 못한다면 클라우드 중계는 편의 기능이 아니라 동시 송출을 애초에 가능하게 해 주는 수단입니다. SplitCam은 결정하기 전에 확인할 수 있도록 업로드 속도 테스트를 내장하고 있고, 대상을 줄이거나 비트레이트를 낮춰 운영하는 선택도 언제든 가능합니다 — 하지만 업로드가 병목이라면 Restream은 SplitCam이 풀 수 없는 문제를 풀어 줍니다. 호텔이나 모바일 인터넷에 물린 노트북으로 방송하는 경우도 마찬가지입니다. 그럴 때는 시청자가 불안정한 화면을 보는 대신 중계가 그 불안정을 흡수해 줍니다.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">결정하기 전에 내 회선의 숫자를 직접 계산해 보세요</h2>
+  <p class="sec-p">직접 전송은 모든 송출 대상의 비트레이트 합계가 한꺼번에 빠져나가야 합니다. 중계 서비스는 업로드 하나만 있으면 됩니다. 이것이 맞바꾸는 것의 전부이고, 의견이 아니라 산수입니다 — 각 플랫폼이 권장하는 비트레이트로 계산하면 이렇습니다.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>송출 대상</th><th>권장 1080p</th><th>누적 합계</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6Mbps</td><td>6Mbps</td></tr>
+      <tr><td>YouTube</td><td>4.5Mbps</td><td>10.5Mbps</td></tr>
+      <tr><td>Facebook</td><td>3Mbps</td><td>13.5Mbps</td></tr>
+      <tr><td>네 번째 플랫폼</td><td>2.5Mbps</td><td>16Mbps</td></tr>
+      <tr><td><strong>여유분 약 20% 추가</strong></td><td>—</td><td><strong>업로드 19~20Mbps</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">세 플랫폼이면 13.5Mbps, 여유분을 더하면 약 17Mbps입니다. 네 플랫폼이면 19~20Mbps입니다. 내 업로드가 마지막 줄의 숫자를 감당하지 못한다면 클라우드 중계는 편의 기능이 아닙니다 — 동시 송출을 애초에 가능하게 해 주는 수단이고, 그렇다면 돈을 낼 이유가 됩니다. SplitCam에는 업로드 속도 테스트가 내장되어 있어서, 요금 청구서에 적힌 숫자가 아니라 실제 회선을 기준으로 확인할 수 있습니다.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>불안정한 회선에서 방송할 때</td><td class="meh">내 회선 상태가 곧 스트림 품질</td><td class="yes">중계가 불안정을 흡수</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">SplitCam이 하지 않는 것</h2>
+  <p class="sec-p">여기 있는 모든 비교 페이지에 같은 목록을 넣었습니다. 다운로드한 뒤에야 알게 되기보다는, 저희를 빨리 후보에서 지울 수 있어야 하기 때문입니다.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>링크로 참여하는 게스트 없음</h3>
+        <p>누군가에게 보낼 브라우저 링크가 없습니다. 게스트의 Zoom, Meet, Discord 창을 창 캡처로 장면에 넣을 수는 있고 실제로 작동하지만, 기능이라기보다는 우회 방법입니다.</p>
+      </div>
+      <div class="reason">
+        <h3>Preview/Program 없음, 멀티뷰 없음</h3>
+        <p>장면으로 바로 전환할 뿐, 먼저 대기시켜 두었다가 컷하는 방식이 아닙니다. 소스 미리보기를 한눈에 늘어놓은 화면도 없습니다. 제대로 된 스위처 워크플로로 연출해 오셨다면 곧바로 어색하게 느껴질 것입니다.</p>
+      </div>
+      <div class="reason">
+        <h3>카메라별 개별 녹화 없음, PTZ 제어 없음</h3>
+        <p>녹화는 합성된 장면을 담습니다. 나중에 편집할 수 있도록 카메라마다 파일을 따로 만들지는 않습니다. SplitCam에는 카메라를 대신 팬, 틸트, 줌해 주는 기능이 없습니다.</p>
+      </div>
+      <div class="reason">
+        <h3>NDI는 들어오기만 하고 나가지는 않습니다</h3>
+        <p>NDI를 소스로 받을 수는 있습니다. SplitCam은 다른 컴퓨터가 받아 쓸 수 있는 NDI 송신기가 아닙니다.</p>
+      </div>
+      <div class="reason">
+        <h3>일부 소스는 Windows 전용</h3>
+        <p>Windows에서만 지원되는 것으로 문서화된 소스: Whiteboard, Application Audio, Replay 소스, 단색 Color 소스. 장면, 레이어, 가상 카메라, 동시 송출, 녹화는 양쪽 모두에서 작동합니다.</p>
+      </div>
+      <div class="reason">
+        <h3>휴대폰 리모컨은 현재 iOS 전용</h3>
+        <p>SplitCam Remote는 App Store에 있고, Android 버전은 개발 중이며 아직 출시되지 않았습니다. 휴대폰을 카메라로 쓰는 기능은 그와 별개이며 iOS 전용이 아닙니다.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ platform pra-konfigurasi</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X dan selebihnya sudah pun ada dalam senarai dengan nilai lalai yang munasabah.</p>
       </div>
+        <div class="reason">
+        <h3>Satu platform terputus tidak menjatuhkan yang lain</h3>
+        <p>Setiap destinasi mempunyai sambungannya sendiri keluar dari mesin anda, jadi platform yang tumbang membiarkan yang lain terus bersiaran. Dengan perantara, ada satu muat naik yang menyuap semuanya — lebih kemas apabila ia berfungsi, dan satu titik kegagalan apabila ia tidak.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Bila Restream pilihan yang lebih baik</h2>
   <p class="sec-p">Inilah had jujur penghantaran terus, dan ia patut diketahui sebelum anda berpindah. Perantara hanya perlukan <strong>satu</strong> muat naik daripada anda. Penghantaran terus perlukan <strong>jumlah</strong> bitrate setiap destinasi keluar dari rumah anda serentak — empat platform pada tetapan disyorkan lebih kurang 19–20 Mbps muat naik — 6 ke Twitch, 4.5 ke YouTube, 3 ke Facebook dan 2.5 ke platform keempat, iaitu 16 Mbps video, campur lebihan kira-kira 20%. Jika sambungan anda tidak mampu menampungnya, perantara awan bukan lagi sekadar kemudahan, ia adalah perkara yang membolehkan multistream berlaku langsung. SplitCam menyertakan Upload Speed Test supaya anda boleh menyemak sebelum membuat keputusan, dan anda sentiasa boleh menjalankan lebih sedikit destinasi pada bitrate lebih rendah — tetapi jika kelajuan muat naik anda yang menjadi kekangan, Restream menyelesaikan masalah yang SplitCam tidak mampu. Begitu juga bagi siaran dari komputer riba pada internet hotel atau mudah alih, di mana perantara menyerap ketidakstabilan itu, bukannya penonton anda yang melihatnya.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">Kira angka anda sendiri sebelum membuat keputusan</h2>
+  <p class="sec-p">Menghantar secara terus memerlukan jumlah bitrate setiap destinasi keluar serentak. Perantara hanya memerlukan satu muat naik. Itulah keseluruhan pertukarannya, dan ia soal aritmetik dan bukan pendapat — inilah kiraannya dengan bitrate yang disyorkan oleh setiap platform.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Destinasi</th><th>1080p disyorkan</th><th>Jumlah terkumpul</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbps</td><td>6 Mbps</td></tr>
+      <tr><td>YouTube</td><td>4.5 Mbps</td><td>10.5 Mbps</td></tr>
+      <tr><td>Facebook</td><td>3 Mbps</td><td>13.5 Mbps</td></tr>
+      <tr><td>Platform keempat</td><td>2.5 Mbps</td><td>16 Mbps</td></tr>
+      <tr><td><strong>Campur lebihan ~20%</strong></td><td>—</td><td><strong>19–20 Mbps muat naik</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">Tiga platform berjumlah 13.5 Mbps, atau kira-kira 17 dengan lebihan. Empat berjumlah 19–20. Jika muat naik anda tidak mampu menampung angka pada baris terakhir, perantara awan bukan lagi sekadar kemudahan — ia perkara yang membolehkan multistream berlaku sama sekali, dan itu alasan untuk membayarnya. SplitCam ada Upload Speed Test terbina dalam supaya anda boleh menyemak dengan sambungan sebenar anda dan bukan angka pada bil anda.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Bersiaran dari sambungan tidak stabil</td><td class="meh">Sambungan anda itulah siarannya</td><td class="yes">Perantara menyerap ketidakstabilan</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">Apa yang SplitCam tidak lakukan</h2>
+  <p class="sec-p">Senarai yang sama pada setiap perbandingan di sini, kerana anda sepatutnya boleh menolak kami dengan cepat dan bukan mendapati semua ini selepas muat turun.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>Tiada tetamu menyertai melalui pautan</h3>
+        <p>Tiada pautan pelayar untuk dihantar kepada sesiapa. Anda boleh meletakkan tetingkap Zoom, Meet atau Discord tetamu ke dalam scene dengan tangkapan tetingkap, dan ia berfungsi, tetapi itu penyelesaian sementara dan bukan satu ciri.</p>
+      </div>
+      <div class="reason">
+        <h3>Tiada Preview/Program, tiada multiview</h3>
+        <p>Anda beralih ke scene, bukan menyediakannya dahulu lalu memotong ke situ. Tiada juga dinding pratonton sumber. Jika anda mengarah dari aliran kerja switcher sebenar, ini akan terasa salah serta-merta.</p>
+      </div>
+      <div class="reason">
+        <h3>Tiada rakaman setiap kamera, tiada kawalan PTZ</h3>
+        <p>Rakaman menangkap scene yang telah disusun, bukan satu fail bagi setiap kamera untuk disunting kemudian. Tiada apa-apa dalam SplitCam yang menggerakkan, mencondongkan atau mengezum kamera untuk anda.</p>
+      </div>
+      <div class="reason">
+        <h3>NDI masuk, tetapi tidak keluar</h3>
+        <p>Anda boleh mengambil NDI sebagai sumber. SplitCam bukan penghantar NDI untuk diambil oleh mesin lain.</p>
+      </div>
+      <div class="reason">
+        <h3>Sesetengah sumber hanya ada di Windows</h3>
+        <p>Didokumenkan pada Windows: Whiteboard, Application Audio, sumber Replay dan sumber Color pepejal. Scene, lapisan, kamera maya, multistream dan rakaman berjalan pada kedua-duanya.</p>
+      </div>
+      <div class="reason">
+        <h3>Remote telefon buat masa ini untuk iOS</h3>
+        <p>SplitCam Remote ada di App Store; versi Android sedang dibangunkan dan belum dikeluarkan. Telefon sebagai kamera ialah perkara berasingan dan bukan untuk iOS sahaja.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

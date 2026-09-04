@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ nền tảng đã cấu hình sẵn</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X và những nền tảng còn lại đều đã có sẵn trong danh sách với các mức mặc định hợp lý.</p>
       </div>
+        <div class="reason">
+        <h3>Một nền tảng rớt không kéo theo những nền tảng còn lại</h3>
+        <p>Mỗi điểm nhận có kết nối riêng đi ra từ máy của bạn, nên một nền tảng sập thì những nền tảng khác vẫn tiếp tục stream. Với trạm chuyển tiếp, chỉ có một luồng tải lên nuôi tất cả — gọn hơn khi nó chạy tốt, và là điểm hỏng duy nhất khi nó không chạy.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Khi nào Restream là lựa chọn tốt hơn</h2>
   <p class="sec-p">Đây là giới hạn thật thà của cách gửi trực tiếp, và bạn nên biết nó trước khi chuyển. Trạm chuyển tiếp chỉ cần <strong>một</strong> luồng tải lên từ bạn. Gửi trực tiếp thì cần <strong>tổng</strong> bitrate của mọi điểm nhận cùng rời khỏi nhà bạn một lúc — bốn nền tảng ở mức khuyến nghị là khoảng 19–20 Mbps tải lên: 6 cho Twitch, 4.5 cho YouTube, 3 cho Facebook và 2.5 cho nền tảng thứ tư, cộng thêm khoảng 20% dự phòng. Nếu đường truyền của bạn không gánh nổi mức đó thì trung gian đám mây không còn là chuyện tiện lợi, nó chính là thứ khiến multistream trở nên khả thi. SplitCam có sẵn Upload Speed Test để bạn kiểm tra trước khi quyết, và bạn luôn có thể chạy ít điểm nhận hơn với bitrate thấp hơn — nhưng nếu nút thắt nằm ở tốc độ tải lên thì Restream giải được bài toán mà SplitCam không giải được. Điều tương tự cũng đúng khi bạn stream từ laptop qua Wi-Fi khách sạn hay mạng di động: trạm chuyển tiếp hấp thụ sự chập chờn, thay vì để khán giả của bạn nhìn thấy nó.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">Tự tính con số của bạn trước khi quyết định</h2>
+  <p class="sec-p">Gửi trực tiếp cần tổng bitrate của mọi điểm nhận cùng rời đi một lúc. Trạm chuyển tiếp chỉ cần một luồng tải lên. Đó là toàn bộ sự đánh đổi, và nó là phép cộng chứ không phải ý kiến — dưới đây là phép cộng ấy với mức bitrate mà từng nền tảng khuyến nghị.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Điểm nhận</th><th>Khuyến nghị cho 1080p</th><th>Tổng cộng dồn</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbps</td><td>6 Mbps</td></tr>
+      <tr><td>YouTube</td><td>4.5 Mbps</td><td>10.5 Mbps</td></tr>
+      <tr><td>Facebook</td><td>3 Mbps</td><td>13.5 Mbps</td></tr>
+      <tr><td>Nền tảng thứ tư</td><td>2.5 Mbps</td><td>16 Mbps</td></tr>
+      <tr><td><strong>Cộng ~20% dự phòng</strong></td><td>—</td><td><strong>19–20 Mbps tải lên</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">Ba nền tảng cộng lại là 13.5 Mbps, tức khoảng 17 kèm dự phòng. Bốn nền tảng là 19–20. Nếu đường tải lên của bạn không gánh nổi con số ở dòng cuối thì trung gian đám mây không còn là chuyện tiện lợi — nó chính là thứ khiến multistreaming trở nên khả thi, và đó là lý do đáng để trả tiền cho nó. SplitCam có sẵn Upload Speed Test để bạn kiểm tra với đường truyền thật của mình, thay vì tin vào con số ghi trên hoá đơn.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Stream từ đường truyền chập chờn</td><td class="meh">Đường truyền của bạn chính là buổi stream</td><td class="yes">Trạm chuyển tiếp hấp thụ sự chập chờn</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">Những gì SplitCam không làm được</h2>
+  <p class="sec-p">Cùng một danh sách trên mọi trang so sánh ở đây, vì bạn nên loại được chúng tôi ra thật nhanh thay vì phát hiện điều này sau khi đã tải về.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>Không có khách mời tham gia qua liên kết</h3>
+        <p>Không có liên kết trình duyệt nào để gửi cho ai đó. Bạn có thể đưa cửa sổ Zoom, Meet hoặc Discord của khách mời vào một cảnh bằng cách bắt cửa sổ, cách này chạy được, nhưng đó là một cách xoay xở chứ không phải một tính năng.</p>
+      </div>
+      <div class="reason">
+        <h3>Không có Preview/Program, không có multiview</h3>
+        <p>Bạn chuyển thẳng sang một cảnh, chứ không xếp nó chờ sẵn rồi mới cắt sang. Cũng không có bức tường xem trước các nguồn. Nếu bạn quen đạo diễn theo quy trình của một bàn trộn thực thụ, bạn sẽ thấy sai ngay lập tức.</p>
+      </div>
+      <div class="reason">
+        <h3>Không ghi riêng từng camera, không điều khiển PTZ</h3>
+        <p>Ghi hình bắt lấy cảnh đã dựng, chứ không phải mỗi camera một tệp để dựng sau. Không có gì trong SplitCam quay ngang, quay dọc hay zoom camera thay cho bạn.</p>
+      </div>
+      <div class="reason">
+        <h3>NDI đi vào, nhưng không đi ra</h3>
+        <p>Bạn có thể nhận NDI làm nguồn. SplitCam không phải là bộ phát NDI để một máy khác bắt lấy.</p>
+      </div>
+      <div class="reason">
+        <h3>Một số nguồn chỉ có trên Windows</h3>
+        <p>Được ghi nhận chỉ trên Windows: Whiteboard, Application Audio, nguồn Replay và nguồn màu đặc Color. Cảnh, lớp, camera ảo, multistreaming và ghi hình chạy trên cả hai hệ.</p>
+      </div>
+      <div class="reason">
+        <h3>Ứng dụng điều khiển trên điện thoại hiện chỉ có iOS</h3>
+        <p>SplitCam Remote có trên App Store; bản Android đang được làm và chưa phát hành. Dùng điện thoại làm camera là chuyện khác và không chỉ giới hạn ở iOS.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

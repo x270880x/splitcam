@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ platforms vooraf ingesteld</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X en de rest staan al in de lijst, met verstandige standaardwaarden.</p>
       </div>
+        <div class="reason">
+        <h3>Valt één platform weg, dan blijven de andere staan</h3>
+        <p>Elke bestemming heeft een eigen verbinding vanuit je machine, dus als een platform uitvalt, blijven de andere gewoon streamen. Bij een doorgeefluik is er één upload die alles voedt — netter zolang het werkt, en één enkel breekpunt zodra het niet werkt.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Wanneer Restream de betere keuze is</h2>
   <p class="sec-p">Dit is de eerlijke grens van rechtstreeks versturen, en het is goed om dat te weten voordat je overstapt. Een doorgeefluik heeft <strong>één</strong> upload van jou nodig. Rechtstreeks versturen vraagt dat de <strong>som</strong> van de bitrates van alle bestemmingen tegelijk je huis verlaat — vier platforms op de aanbevolen instellingen is ruwweg 19–20 Mbps upload — 6 naar Twitch, 4,5 naar YouTube, 3 naar Facebook en 2,5 naar een vierde, plus ongeveer 20% marge. Kan je verbinding dat niet aan, dan is een cloud-doorgeefluik geen gemak, maar juist het enige dat multistreamen überhaupt mogelijk maakt. SplitCam levert een Upload Speed Test mee, zodat je het kunt nagaan voordat je je vastlegt, en je kunt altijd minder bestemmingen op een lagere bitrate draaien — maar zit de beperking in je upload, dan lost Restream een probleem op dat SplitCam niet kan oplossen. Hetzelfde geldt voor streamen vanaf een laptop op hotel- of mobiel internet: daar vangt het doorgeefluik de instabiliteit op, in plaats van dat je publiek die te zien krijgt.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">Reken je eigen getal uit voordat je beslist</h2>
+  <p class="sec-p">Rechtstreeks versturen vraagt dat de som van de bitrates van alle bestemmingen tegelijk weggaat. Een doorgeefluik heeft één upload nodig. Dat is de hele afweging, en het is rekenwerk en geen mening — hier is het, met de bitrates die elk platform aanbeveelt.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Bestemming</th><th>Aanbevolen voor 1080p</th><th>Lopend totaal</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbps</td><td>6 Mbps</td></tr>
+      <tr><td>YouTube</td><td>4,5 Mbps</td><td>10,5 Mbps</td></tr>
+      <tr><td>Facebook</td><td>3 Mbps</td><td>13,5 Mbps</td></tr>
+      <tr><td>Een vierde platform</td><td>2,5 Mbps</td><td>16 Mbps</td></tr>
+      <tr><td><strong>Plus ~20% marge</strong></td><td>—</td><td><strong>19–20 Mbps upload</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">Drie platforms komen op 13,5 Mbps, of ongeveer 17 met marge. Vier komen op 19–20. Kan je upload het getal in de laatste rij niet aan, dan is een cloud-doorgeefluik geen gemak — het is het enige dat multistreamen überhaupt mogelijk maakt, en dat is een reden om ervoor te betalen. SplitCam heeft een ingebouwde Upload Speed Test, zodat je het kunt toetsen aan je echte verbinding in plaats van aan het getal op je factuur.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Streamen via een instabiele verbinding</td><td class="meh">Jouw verbinding ís de stream</td><td class="yes">Het doorgeefluik vangt de instabiliteit op</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">Wat SplitCam niet doet</h2>
+  <p class="sec-p">Dezelfde lijst bij elke vergelijking hier, omdat je ons snel moet kunnen afstrepen in plaats van dit pas na de download te ontdekken.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>Geen gasten die via een link meedoen</h3>
+        <p>Er is geen browserlink om iemand te sturen. Je kunt het Zoom-, Meet- of Discord-venster van een gast met vensteropname in een scène zetten, en dat werkt, maar het is een omweg en geen functie.</p>
+      </div>
+      <div class="reason">
+        <h3>Geen Preview/Program, geen multiview</h3>
+        <p>Je schakelt naar een scène; je zet die niet eerst klaar om er daarna naartoe te snijden. Een wand met voorbeelden van alle bronnen is er ook niet. Regisseer je vanuit een echte switcher-workflow, dan voelt dit meteen verkeerd.</p>
+      </div>
+      <div class="reason">
+        <h3>Geen opnames per camera, geen PTZ-besturing</h3>
+        <p>Opnemen legt de samengestelde scène vast, niet één bestand per camera om later te monteren. Niets in SplitCam pant, kantelt of zoomt een camera voor je.</p>
+      </div>
+      <div class="reason">
+        <h3>NDI komt binnen, maar gaat niet naar buiten</h3>
+        <p>Je kunt NDI als bron gebruiken. SplitCam is geen NDI-zender die een andere machine kan oppikken.</p>
+      </div>
+      <div class="reason">
+        <h3>Sommige bronnen zijn alleen voor Windows</h3>
+        <p>Gedocumenteerd op Windows: het Whiteboard, Application Audio, de Replay-bron en de effen Color-bron. Scènes, lagen, de virtuele camera, multistreaming en opnemen werken op beide.</p>
+      </div>
+      <div class="reason">
+        <h3>De telefoon-afstandsbediening is vandaag alleen iOS</h3>
+        <p>SplitCam Remote staat in de App Store; de Android-versie is in de maak en nog niet uitgebracht. Je telefoon als camera gebruiken staat daar los van en is niet beperkt tot iOS.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

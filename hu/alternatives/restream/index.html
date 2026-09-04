@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ platform előre beállítva</h3>
         <p>A Twitch, a YouTube, a Facebook, a Kick, a TikTok, az X és a többiek már ott vannak a listában, ésszerű alapértékekkel.</p>
       </div>
+        <div class="reason">
+        <h3>Ha egy platform kiesik, a többit nem viszi magával</h3>
+        <p>Minden célhelynek saját kapcsolata van a gépedből kifelé, így ha egy platform leáll, a többi tovább streamel. A továbbítónál egyetlen feltöltés táplál mindent — ami rendezettebb, amíg működik, és egyetlen hibapont, amikor nem.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Mikor jobb választás a Restream</h2>
   <p class="sec-p">Ez a közvetlen küldés őszinte korlátja, és érdemes tudni róla, mielőtt váltasz. Egy továbbítónak <strong>egyetlen</strong> feltöltés kell tőled. A közvetlen küldéshez viszont az összes célhely bitrátájának <strong>összege</strong> hagyja el egyszerre az otthonodat — négy platform az ajánlott beállításokkal nagyjából 19–20 Mbps feltöltés — 6 a Twitchre, 4,5 a YouTube-ra, 3 a Facebookra és 2,5 egy negyedikre, plusz nagyjából 20% tartalék. Ha a kapcsolatod ezt nem bírja, a felhős továbbító nem kényelmi kérdés: az teszi egyáltalán lehetővé a multistreaminget. A SplitCamben van feltöltési sebességteszt, hogy váltás előtt leellenőrizhesd, és bármikor futtathatsz kevesebb célhelyet alacsonyabb bitrátával — de ha a feltöltésed a szűk keresztmetszet, akkor a Restream olyan gondot old meg, amit a SplitCam nem tud. Ugyanez igaz arra is, ha laptopról, szállodai vagy mobilinternetről streamelsz: ott a továbbító nyeli el az ingadozást, nem a nézőid látják.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">Számold ki a saját számodat, mielőtt döntesz</h2>
+  <p class="sec-p">A közvetlen küldéshez az összes célhely bitrátájának összege megy el egyszerre. A továbbítónak egyetlen feltöltés kell. Ez az egész alku, és ez számtan, nem vélemény — íme, az egyes platformok által ajánlott bitrátákkal.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Célhely</th><th>Ajánlott 1080p</th><th>Göngyölített összeg</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbps</td><td>6 Mbps</td></tr>
+      <tr><td>YouTube</td><td>4,5 Mbps</td><td>10,5 Mbps</td></tr>
+      <tr><td>Facebook</td><td>3 Mbps</td><td>13,5 Mbps</td></tr>
+      <tr><td>Egy negyedik platform</td><td>2,5 Mbps</td><td>16 Mbps</td></tr>
+      <tr><td><strong>Plusz ~20% tartalék</strong></td><td>—</td><td><strong>19–20 Mbps feltöltés</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">Három platform 13,5 Mbps-t tesz ki, tartalékkal nagyjából 17-et. Négy 19–20-at. Ha a feltöltésed nem bírja az utolsó sorban álló számot, a felhős továbbító nem kényelmi kérdés — az teszi egyáltalán lehetővé a multistreaminget, és ez ok arra, hogy fizess érte. A SplitCamben beépített feltöltési sebességteszt van, így a valódi kapcsolatodon ellenőrizheted, nem a számládon szereplő számon.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Streamelés instabil kapcsolatról</td><td class="meh">A kapcsolatod maga a stream</td><td class="yes">A továbbító elnyeli az ingadozást</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">Mit nem tud a SplitCam</h2>
+  <p class="sec-p">Ugyanez a lista szerepel itt minden összehasonlításban, mert jobb, ha gyorsan ki tudsz zárni minket, mint hogy ez a letöltés után derüljön ki.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>Nincs linkkel csatlakozó vendég</h3>
+        <p>Nincs böngészőlink, amit elküldhetnél valakinek. A vendég Zoom-, Meet- vagy Discord-ablakát ablakrögzítéssel beteheted egy jelenetbe — ez működik, de kerülő megoldás, nem funkció.</p>
+      </div>
+      <div class="reason">
+        <h3>Nincs Preview/Program, nincs multiview</h3>
+        <p>Átváltasz egy jelenetre; nem készíted elő, hogy aztán rávágj. Forrás-előnézetekből álló fal sincs. Ha igazi keverős munkafolyamatból rendezel, ez azonnal rossz érzés lesz.</p>
+      </div>
+      <div class="reason">
+        <h3>Nincs kameránkénti felvétel, nincs PTZ-vezérlés</h3>
+        <p>A felvétel az összeállított jelenetet rögzíti, nem kameránként egy-egy fájlt későbbi vágáshoz. A SplitCamben semmi nem forgatja, dönti vagy zoomolja helyetted a kamerát.</p>
+      </div>
+      <div class="reason">
+        <h3>Az NDI bejön, de nem megy ki</h3>
+        <p>Az NDI-t forrásként fogadhatod. A SplitCam nem NDI-küldő, amit egy másik gép felvehetne.</p>
+      </div>
+      <div class="reason">
+        <h3>Néhány forrás csak Windowson érhető el</h3>
+        <p>Windowson dokumentált: a Whiteboard, az Application Audio, a Replay forrás és az egyszínű Color forrás. A jelenetek, a rétegek, a virtuális kamera, a multistreaming és a felvétel mindkét rendszeren fut.</p>
+      </div>
+      <div class="reason">
+        <h3>A telefonos távirányító ma iOS-re van</h3>
+        <p>A SplitCam Remote az App Store-ban van; az Android verzió készül, de még nem jelent meg. A telefon kameraként való használata ettől független, és nem csak iOS-en működik.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

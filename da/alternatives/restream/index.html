@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ platforme forudkonfigureret</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X og resten ligger allerede i listen med fornuftige standardværdier.</p>
       </div>
+        <div class="reason">
+        <h3>Én platform, der falder ud, tager ikke resten med</h3>
+        <p>Hver destination har sin egen forbindelse ud fra din maskine, så en platform, der går ned, lader de andre streame videre. Med et mellemled er der ét upload, der fodrer det hele — hvilket er mere ryddeligt, når det virker, og ét enkelt fejlpunkt, når det ikke gør.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Hvornår Restream er det bedre valg</h2>
   <p class="sec-p">Dette er den ærlige begrænsning ved at sende direkte, og den er værd at kende, før du skifter. Et mellemled har brug for <strong>ét</strong> upload fra dig. At sende direkte kræver, at <strong>summen</strong> af alle destinationers bitrate forlader dit hjem på én gang — fire platforme ved anbefalede indstillinger er cirka 19–20 Mbps upload — 6 til Twitch, 4,5 til YouTube, 3 til Facebook og 2,5 til en fjerde, plus omkring 20% ekstra plads. Kan din forbindelse ikke bære det, er et mellemled i skyen ikke en bekvemmelighed, men netop dét, der overhovedet gør multistream muligt. SplitCam har en Upload Speed Test med, så du kan tjekke det, før du binder dig, og du kan altid køre færre destinationer med lavere bitrate — men er din upload flaskehalsen, løser Restream et problem, SplitCam ikke kan. Det samme gælder, når du streamer fra en bærbar på hotellets eller mobilens internet, hvor mellemleddet optager ustabiliteten i stedet for, at dit publikum ser den.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">Regn dit eget tal ud, før du beslutter dig</h2>
+  <p class="sec-p">At sende direkte kræver, at summen af alle destinationers bitrate forlader dig på én gang. Et mellemled har brug for ét upload. Det er hele byttehandlen, og det er et regnestykke snarere end en holdning — her er det med de bitrates, hver platform anbefaler.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Destination</th><th>Anbefalet 1080p</th><th>Løbende sum</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbps</td><td>6 Mbps</td></tr>
+      <tr><td>YouTube</td><td>4,5 Mbps</td><td>10,5 Mbps</td></tr>
+      <tr><td>Facebook</td><td>3 Mbps</td><td>13,5 Mbps</td></tr>
+      <tr><td>En fjerde platform</td><td>2,5 Mbps</td><td>16 Mbps</td></tr>
+      <tr><td><strong>Plus ~20% ekstra plads</strong></td><td>—</td><td><strong>19–20 Mbps upload</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">Tre platforme giver 13,5 Mbps, eller cirka 17 med ekstra plads. Fire giver 19–20. Kan din upload ikke bære tallet i den sidste række, er et mellemled i skyen ikke en bekvemmelighed — det er netop dét, der overhovedet gør multistreaming muligt, og det er en grund til at betale for et. SplitCam har en indbygget Upload Speed Test, så du kan tjekke mod din rigtige forbindelse i stedet for tallet på din regning.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Streaming fra en ustabil forbindelse</td><td class="meh">Din forbindelse er selve streamen</td><td class="yes">Mellemleddet optager ustabiliteten</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">Hvad SplitCam ikke kan</h2>
+  <p class="sec-p">Den samme liste på hver sammenligning her, så du hurtigt kan udelukke os i stedet for at opdage det efter downloadet.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>Ingen gæster, der deltager via link</h3>
+        <p>Der er intet browserlink at sende til nogen. Du kan lægge en gæsts Zoom-, Meet- eller Discord-vindue ind i en scene med vinduesoptagelse, og det virker, men det er en omvej og ikke en funktion.</p>
+      </div>
+      <div class="reason">
+        <h3>Ingen Preview/Program, ingen multiview</h3>
+        <p>Du skifter til en scene, du stiller den ikke klar først for så at klippe til den. Der er heller ingen væg af forhåndsvisninger af kilderne. Er du vant til at instruere fra en rigtig switcher-arbejdsgang, føles det forkert med det samme.</p>
+      </div>
+      <div class="reason">
+        <h3>Ingen optagelse pr. kamera, ingen PTZ-styring</h3>
+        <p>Optagelsen fanger den samlede scene, ikke én fil pr. kamera til redigering senere. Intet i SplitCam panorerer, tilter eller zoomer et kamera for dig.</p>
+      </div>
+      <div class="reason">
+        <h3>NDI kommer ind, det går ikke ud</h3>
+        <p>Du kan bruge NDI som kilde. SplitCam er ikke en NDI-afsender, som en anden maskine kan opfange.</p>
+      </div>
+      <div class="reason">
+        <h3>Nogle kilder findes kun på Windows</h3>
+        <p>Dokumenteret på Windows: Whiteboard, Application Audio, Replay-kilden og den ensfarvede Color-kilde. Scener, lag, det virtuelle kamera, multistreaming og optagelse kører på begge.</p>
+      </div>
+      <div class="reason">
+        <h3>Telefon-fjernbetjeningen er til iOS i dag</h3>
+        <p>SplitCam Remote ligger i App Store; Android-versionen er undervejs og ikke udgivet. Telefon som kamera er noget andet og er ikke kun til iOS.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

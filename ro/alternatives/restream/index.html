@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ platforme preconfigurate</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X și restul sunt deja în listă, cu valori implicite rezonabile.</p>
       </div>
+        <div class="reason">
+        <h3>Căderea unei platforme nu le trage și pe celelalte</h3>
+        <p>Fiecare destinație are propria conexiune care iese din mașina ta, așa că o platformă care pică le lasă pe celelalte să transmită. Cu un releu există un singur upload care alimentează totul — mai ordonat când funcționează, și un punct unic de eșec când nu.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Când Restream este alegerea mai bună</h2>
   <p class="sec-p">Aceasta este limita onestă a trimiterii directe și merită s-o știi înainte să treci. Un releu are nevoie de <strong>un singur</strong> upload de la tine. Trimiterea directă are nevoie ca <strong>suma</strong> bitrate-urilor tuturor destinațiilor să iasă din casa ta deodată — patru platforme la setările recomandate înseamnă circa 19–20 Mbps de upload — 6 către Twitch, 4,5 către YouTube, 3 către Facebook și 2,5 către a patra, plus circa 20% marjă. Dacă viteza ta de upload nu susține atât, un releu în cloud nu mai este o comoditate, ci chiar lucrul care face multistreamul posibil. SplitCam vine cu un Upload Speed Test integrat, ca să verifici înainte de a te decide, și poți oricând să transmiți pe mai puține destinații, la bitrate-uri mai mici — dar dacă viteza de upload este constrângerea, Restream rezolvă o problemă pe care SplitCam nu o poate rezolva. La fel stau lucrurile când transmiți de pe un laptop, pe internetul unui hotel sau pe date mobile: acolo releul absoarbe instabilitatea, în loc s-o vadă publicul tău.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">Calculează-ți propriul număr înainte să decizi</h2>
+  <p class="sec-p">Trimiterea directă are nevoie ca suma bitrate-urilor tuturor destinațiilor să iasă deodată. Un releu are nevoie de un singur upload. Asta este tot schimbul, și este aritmetică, nu opinie — iat-o cu bitrate-urile pe care le recomandă fiecare platformă.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Destinație</th><th>1080p recomandat</th><th>Total cumulat</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbps</td><td>6 Mbps</td></tr>
+      <tr><td>YouTube</td><td>4,5 Mbps</td><td>10,5 Mbps</td></tr>
+      <tr><td>Facebook</td><td>3 Mbps</td><td>13,5 Mbps</td></tr>
+      <tr><td>A patra platformă</td><td>2,5 Mbps</td><td>16 Mbps</td></tr>
+      <tr><td><strong>Plus ~20% marjă</strong></td><td>—</td><td><strong>19–20 Mbps de upload</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">Trei platforme ajung la 13,5 Mbps, adică vreo 17 cu marjă. Patru ajung la 19–20. Dacă viteza ta de upload nu susține numărul din ultimul rând, un releu în cloud nu este o comoditate — este chiar lucrul care face multistreamul posibil, și acesta este un motiv să plătești pentru unul. SplitCam are un Upload Speed Test integrat, ca să verifici pe conexiunea ta reală, nu pe cifra de pe factură.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Transmisia de pe o conexiune instabilă</td><td class="meh">Conexiunea ta este streamul</td><td class="yes">Releul absoarbe instabilitatea</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">Ce nu face SplitCam</h2>
+  <p class="sec-p">Aceeași listă pe fiecare comparație de aici, pentru că ar trebui să ne poți exclude rapid, nu să descoperi asta după descărcare.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>Fără invitați care intră printr-un link</h3>
+        <p>Nu există un link de browser pe care să-l trimiți cuiva. Poți pune fereastra de Zoom, Meet sau Discord a unui invitat într-o scenă prin captura ferestrei, ceea ce funcționează, dar este o soluție de ocolire, nu o funcție.</p>
+      </div>
+      <div class="reason">
+        <h3>Fără Preview/Program, fără multiview</h3>
+        <p>Comuți pe o scenă, nu o pregătești mai întâi ca să tai apoi pe ea. Nu există nici un perete cu previzualizările surselor. Dacă regizezi dintr-un flux de lucru cu un switcher adevărat, asta o să ți se pară greșit din prima clipă.</p>
+      </div>
+      <div class="reason">
+        <h3>Fără înregistrări separate pe cameră, fără control PTZ</h3>
+        <p>Înregistrarea surprinde scena compusă, nu câte un fișier pentru fiecare cameră, de editat mai târziu. Nimic din SplitCam nu face pan, tilt sau zoom cu o cameră în locul tău.</p>
+      </div>
+      <div class="reason">
+        <h3>NDI intră, dar nu iese</h3>
+        <p>Poți folosi NDI ca sursă. SplitCam nu este un emițător NDI pe care să-l preia o altă mașină.</p>
+      </div>
+      <div class="reason">
+        <h3>Unele surse sunt doar pe Windows</h3>
+        <p>Documentate pe Windows: Whiteboard, Application Audio, sursa Replay și sursa de culoare uniformă Color. Scenele, straturile, camera virtuală, multistreamingul și înregistrarea rulează pe ambele.</p>
+      </div>
+      <div class="reason">
+        <h3>Telecomanda de pe telefon este azi pe iOS</h3>
+        <p>SplitCam Remote este în App Store; versiunea pentru Android este în lucru și nu a fost lansată. Telefonul folosit drept cameră este altceva și nu este limitat la iOS.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

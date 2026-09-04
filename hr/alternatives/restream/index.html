@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ platformi već unaprijed postavljeno</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X i ostale već su na popisu s razumnim zadanim postavkama.</p>
       </div>
+        <div class="reason">
+        <h3>Pad jedne platforme ne povlači ostale</h3>
+        <p>Svaka platforma ima vlastitu vezu iz vašeg računala, pa kad jedna padne, ostale i dalje streamaju. Kod posrednika jedan odlazni tok hrani sve — što je urednije dok radi, a jedna točka kvara kad ne radi.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Kada je Restream bolji izbor</h2>
   <p class="sec-p">Ovo je pošteno ograničenje izravnog slanja i vrijedi ga znati prije prelaska. Posredniku je od vas potreban <strong>jedan</strong> odlazni tok. Izravnom slanju potreban je <strong>zbroj</strong> bitratea svih platformi koji odjednom izlazi iz vaše kuće — četiri platforme s preporučenim postavkama znače otprilike 19–20 Mbps prijenosa — 6 prema Twitchu, 4,5 prema YouTubeu, 3 prema Facebooku i 2,5 prema četvrtoj, plus otprilike 20% rezerve. Ako vaša veza to ne može izdržati, oblačni posrednik nije udobnost, nego jedino što multistreaming uopće čini mogućim. SplitCam donosi Upload Speed Test kako biste provjerili prije nego se odlučite, a uvijek možete voditi manje platformi s nižim bitrateima — ali ako je vaša brzina prijenosa ograničenje, Restream rješava problem koji SplitCam ne može. Isto vrijedi i za streamanje s laptopa na hotelskom ili mobilnom internetu, gdje posrednik upija nestabilnost umjesto da je vidi vaša publika.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">Izračunajte vlastiti broj prije nego što odlučite</h2>
+  <p class="sec-p">Izravnom slanju potreban je zbroj bitratea svih platformi koji izlazi odjednom. Posredniku je potreban jedan odlazni tok. To je cijela nagodba, i to je aritmetika, a ne mišljenje — evo je s bitrateima koje preporučuje svaka platforma.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Platforma</th><th>Preporučeno za 1080p</th><th>Zbroj do sada</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbps</td><td>6 Mbps</td></tr>
+      <tr><td>YouTube</td><td>4,5 Mbps</td><td>10,5 Mbps</td></tr>
+      <tr><td>Facebook</td><td>3 Mbps</td><td>13,5 Mbps</td></tr>
+      <tr><td>Četvrta platforma</td><td>2,5 Mbps</td><td>16 Mbps</td></tr>
+      <tr><td><strong>Plus ~20% rezerve</strong></td><td>—</td><td><strong>19–20 Mbps prijenosa</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">Tri platforme daju 13,5 Mbps, odnosno oko 17 s rezervom. Četiri daju 19–20. Ako vaša brzina prijenosa ne može izdržati broj iz zadnjeg retka, oblačni posrednik nije udobnost — on je ono što multistreaming uopće čini mogućim, i to je razlog da ga platite. SplitCam ima ugrađeni Upload Speed Test kako biste provjerili na svojoj stvarnoj vezi, a ne prema broju na računu od operatera.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Streamanje s nestabilne veze</td><td class="meh">Vaša veza jest stream</td><td class="yes">Posrednik upija nestabilnost</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">Što SplitCam ne radi</h2>
+  <p class="sec-p">Isti popis u svakoj usporedbi ovdje, jer biste nas trebali moći brzo otpisati, a ne ovo otkriti tek nakon preuzimanja.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>Nema gostiju koji se pridružuju poveznicom</h3>
+        <p>Ne postoji poveznica za preglednik koju biste nekome poslali. Gostov Zoom, Meet ili Discord prozor možete staviti u scenu snimanjem prozora, i to radi, ali to je zaobilazno rješenje, a ne funkcija.</p>
+      </div>
+      <div class="reason">
+        <h3>Nema Preview/Program, nema multiviewa</h3>
+        <p>Prebacite se na scenu, ne pripremite je najprije pa je tek onda pustite u program. Nema ni zida s pregledima izvora. Ako režirate kao za pravim video mikserom, ovo će vam odmah zasmetati.</p>
+      </div>
+      <div class="reason">
+        <h3>Nema snimanja svake kamere zasebno, nema PTZ upravljanja</h3>
+        <p>Snimanje hvata složenu scenu, a ne po jednu datoteku za svaku kameru za kasniju montažu. Ništa u SplitCamu ne pomiče, ne naginje i ne zumira kameru umjesto vas.</p>
+      </div>
+      <div class="reason">
+        <h3>NDI ulazi, ali ne izlazi</h3>
+        <p>NDI možete uzeti kao izvor. SplitCam nije NDI pošiljatelj koji bi drugo računalo moglo preuzeti.</p>
+      </div>
+      <div class="reason">
+        <h3>Neki su izvori samo za Windows</h3>
+        <p>Dokumentirano na Windowsima: Whiteboard, Application Audio, izvor Replay i jednobojni izvor Color. Scene, slojevi, virtualna kamera, multistreaming i snimanje rade na oba sustava.</p>
+      </div>
+      <div class="reason">
+        <h3>Daljinski upravljač na telefonu danas je za iOS</h3>
+        <p>SplitCam Remote je na App Storeu; verzija za Android je u izradi i nije objavljena. Telefon kao kamera nešto je drugo i nije samo za iOS.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ plataformas preconfiguradas</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X y el resto ya están en la lista con valores por defecto razonables.</p>
       </div>
+      <div class="reason">
+        <h3>Que caiga una plataforma no se lleva a las demás</h3>
+        <p>Cada destino tiene su propia conexión saliendo de tu equipo, así que si una plataforma se cae, las otras siguen transmitiendo. Con un relé hay una única subida que alimenta todo — más ordenado cuando funciona, y un único punto de fallo cuando no.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Cuándo Restream es la mejor elección</h2>
   <p class="sec-p">Este es el límite honesto de enviar directo, y conviene conocerlo antes de cambiar. Un relé necesita <strong>una</strong> subida por tu parte. Enviar directo necesita la <strong>suma</strong> del bitrate de todos los destinos saliendo de tu casa a la vez — cuatro plataformas con los ajustes recomendados son unos 19–20 Mbps de subida — 6 a Twitch, 4,5 a YouTube, 3 a Facebook y 2,5 a una cuarta, más un 20% de margen aproximado. Si tu conexión no aguanta eso, un relé en la nube no es una comodidad: es justo lo que hace posible el multistream. SplitCam incluye un test de velocidad de subida para que lo compruebes antes de comprometerte, y siempre puedes usar menos destinos con menos bitrate — pero si tu subida es el cuello de botella, Restream resuelve un problema que SplitCam no puede. Lo mismo vale para transmitir desde un portátil con el wifi de un hotel o con datos móviles: ahí el relé absorbe la inestabilidad en lugar de que la vea tu público.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">Calcula tu propio número antes de decidir</h2>
+  <p class="sec-p">Enviar directo necesita la suma del bitrate de todos los destinos saliendo a la vez. Un relé necesita una sola subida. Ese es todo el intercambio, y es aritmética y no opinión — aquí lo tienes con los bitrates que recomienda cada plataforma.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Destino</th><th>1080p recomendado</th><th>Total acumulado</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbps</td><td>6 Mbps</td></tr>
+      <tr><td>YouTube</td><td>4,5 Mbps</td><td>10,5 Mbps</td></tr>
+      <tr><td>Facebook</td><td>3 Mbps</td><td>13,5 Mbps</td></tr>
+      <tr><td>Una cuarta plataforma</td><td>2,5 Mbps</td><td>16 Mbps</td></tr>
+      <tr><td><strong>Más ~20% de margen</strong></td><td>—</td><td><strong>19–20 Mbps de subida</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">Tres plataformas suman 13,5 Mbps, o unos 17 con margen. Cuatro suman 19–20. Si tu subida no aguanta el número de la última fila, un relé en la nube no es una comodidad: es justo lo que hace posible el multistream, y esa es una razón para pagar por uno. SplitCam tiene un test de velocidad de subida integrado para que lo compruebes con tu conexión real, y no con la cifra de tu factura.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Transmitir con una conexión inestable</td><td class="meh">Tu conexión es la transmisión</td><td class="yes">El relé absorbe la inestabilidad</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">Lo que SplitCam no hace</h2>
+  <p class="sec-p">La misma lista en todas las comparativas de aquí, porque deberías poder descartarnos rápido en lugar de descubrirlo después de la descarga.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>No hay invitados que se unan por enlace</h3>
+        <p>No existe un enlace de navegador que enviar a nadie. Puedes meter en una escena la ventana de Zoom, Meet o Discord de un invitado con la captura de ventana, y funciona, pero es un apaño y no una función.</p>
+      </div>
+      <div class="reason">
+        <h3>Sin Preview/Program, sin multiview</h3>
+        <p>Cambias a una escena; no la preparas primero para cortar a ella después. Tampoco hay un mosaico con la vista previa de todas las fuentes. Si diriges con el flujo de un mezclador de verdad, esto te chirriará de inmediato.</p>
+      </div>
+      <div class="reason">
+        <h3>Sin grabación por cámara, sin control PTZ</h3>
+        <p>La grabación captura la escena compuesta, no un archivo por cámara para editar después. Nada en SplitCam gira, inclina o hace zoom con una cámara por ti.</p>
+      </div>
+      <div class="reason">
+        <h3>NDI entra, pero no sale</h3>
+        <p>Puedes usar NDI como fuente. SplitCam no es un emisor NDI que otro equipo pueda captar.</p>
+      </div>
+      <div class="reason">
+        <h3>Algunas fuentes son solo para Windows</h3>
+        <p>Documentadas en Windows: Whiteboard, Application Audio, la fuente Replay y la fuente de color sólido Color. Las escenas, las capas, la cámara virtual, el multistream y la grabación funcionan en ambos sistemas.</p>
+      </div>
+      <div class="reason">
+        <h3>El mando desde el móvil hoy es solo para iOS</h3>
+        <p>SplitCam Remote está en el App Store; la versión para Android está en desarrollo y no se ha publicado. Usar el móvil como cámara es otra cosa y no es exclusivo de iOS.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

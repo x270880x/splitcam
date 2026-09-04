@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ platform na naka-pre-configure</h3>
         <p>Nasa listahan na ang Twitch, YouTube, Facebook, Kick, TikTok, X at ang iba pa, may makatuwirang mga default na.</p>
       </div>
+        <div class="reason">
+        <h3>Hindi hinihila ng isang bumabagsak na platform ang iba</h3>
+        <p>May sariling koneksyon palabas ng makina mo ang bawat destination, kaya kapag bumagsak ang isang platform, patuloy na nag-i-stream ang iba. Sa relay, iisang upload ang nagpapakain sa lahat — mas maayos kapag gumagana, at iisang punto ng pagkabigo kapag hindi.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Kailan mas tamang piliin ang Restream</h2>
   <p class="sec-p">Ito ang tapat na limitasyon ng diretsong pagpapadala, at mabuting malaman ito bago ka lumipat. Ang relay ay nangangailangan ng <strong>isang</strong> upload mula sa iyo. Ang diretsong pagpapadala ay nangangailangan ng <strong>kabuuan</strong> ng bitrate ng bawat destination na sabay-sabay lumalabas sa bahay mo — apat na platform sa recommended settings ay humigit-kumulang 19–20 Mbps ng upload — 6 papuntang Twitch, 4.5 papuntang YouTube, 3 papuntang Facebook at 2.5 sa pang-apat, kasama ang mga 20% na headroom. Kung hindi kaya ng koneksyon mo iyon, hindi kaginhawahan ang cloud relay — ito mismo ang dahilan kung bakit posible pa ang multistreaming. May kasamang Upload Speed Test ang SplitCam para masuri mo ito bago ka magpasya, at puwede ka namang magpatakbo ng mas kaunting destination sa mas mababang bitrate — pero kung ang upload mo ang limitasyon, may nilulutas ang Restream na hindi kaya ng SplitCam. Ganoon din kapag nag-i-stream ka mula sa laptop na nakakabit sa internet ng hotel o sa mobile data, kung saan ang relay ang sumasalo sa pagkabagsak-bagsak sa halip na ang audience mo ang makakita nito.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">Kuwentahin mo ang sarili mong numero bago ka magpasya</h2>
+  <p class="sec-p">Ang diretsong pagpapadala ay nangangailangan ng kabuuan ng bitrate ng bawat destination na sabay-sabay lumalabas. Ang relay ay nangangailangan ng isang upload. Iyon ang buong trade-off, at aritmetika ito at hindi opinyon — narito ito gamit ang mga bitrate na inirerekomenda ng bawat platform.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Destination</th><th>Inirerekomendang 1080p</th><th>Pinagsamang kabuuan</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbps</td><td>6 Mbps</td></tr>
+      <tr><td>YouTube</td><td>4.5 Mbps</td><td>10.5 Mbps</td></tr>
+      <tr><td>Facebook</td><td>3 Mbps</td><td>13.5 Mbps</td></tr>
+      <tr><td>Pang-apat na platform</td><td>2.5 Mbps</td><td>16 Mbps</td></tr>
+      <tr><td><strong>Dagdag na ~20% headroom</strong></td><td>—</td><td><strong>19–20 Mbps ng upload</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">Umaabot sa 13.5 Mbps ang tatlong platform, o mga 17 kasama ang headroom. Umaabot sa 19–20 ang apat. Kung hindi kaya ng upload mo ang numero sa huling row, hindi kaginhawahan ang cloud relay — ito mismo ang dahilan kung bakit posible pa ang multistreaming, at dahilan iyon para magbayad para dito. May built-in na Upload Speed Test ang SplitCam para masuri mo ito laban sa tunay mong koneksyon sa halip na sa numerong nakasulat sa bill mo.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Pag-stream mula sa hindi matatag na koneksyon</td><td class="meh">Ang koneksyon mo mismo ang stream</td><td class="yes">Sinasalo ng relay ang pagkabagsak-bagsak</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">Ano ang hindi ginagawa ng SplitCam</h2>
+  <p class="sec-p">Iisang listahan sa bawat paghahambing dito, dahil dapat mabilis mo kaming maalis sa pagpipilian sa halip na matuklasan ito pagkatapos ng download.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>Walang guest na sumasali sa pamamagitan ng link</h3>
+        <p>Walang browser link na maipapadala kaninuman. Puwede mong ilagay sa scene ang Zoom, Meet o Discord window ng guest gamit ang window capture, at gumagana iyon, pero workaround ito at hindi feature.</p>
+      </div>
+      <div class="reason">
+        <h3>Walang Preview/Program, walang multiview</h3>
+        <p>Lumilipat ka sa scene, hindi mo ito muna ini-cue saka ini-cut. Wala ring pader ng mga preview ng source. Kung nagdidirek ka mula sa tunay na switcher workflow, agad itong magiging mali sa pakiramdam.</p>
+      </div>
+      <div class="reason">
+        <h3>Walang recording kada camera, walang PTZ control</h3>
+        <p>Kinukuha ng recording ang buong composed na scene, hindi isang file kada camera para i-edit mamaya. Walang anuman sa SplitCam na nagpa-pan, nagti-tilt o nagzu-zoom ng camera para sa iyo.</p>
+      </div>
+      <div class="reason">
+        <h3>Pumapasok ang NDI, hindi ito lumalabas</h3>
+        <p>Puwede mong gamitin ang NDI bilang source. Hindi NDI sender ang SplitCam na puwedeng kunin ng ibang makina.</p>
+      </div>
+      <div class="reason">
+        <h3>Windows lang ang ilang source</h3>
+        <p>Dokumentado sa Windows: ang Whiteboard, Application Audio, ang Replay source at ang solid na Color source. Ang mga scene, layer, ang virtual camera, multistreaming at recording ay tumatakbo sa pareho.</p>
+      </div>
+      <div class="reason">
+        <h3>iOS pa lang ang phone remote sa ngayon</h3>
+        <p>Nasa App Store ang SplitCam Remote; ginagawa pa ang Android version at hindi pa inilalabas. Hiwalay dito ang phone-bilang-camera at hindi iyon iOS lang.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

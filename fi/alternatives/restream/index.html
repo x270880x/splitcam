@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ alustaa valmiiksi määritettynä</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X ja muut ovat jo listassa järkevillä oletusasetuksilla.</p>
       </div>
+        <div class="reason">
+        <h3>Yhden alustan putoaminen ei vie muita mukanaan</h3>
+        <p>Jokaisella kohteella on oma yhteytensä koneeltasi, joten alustan kaatuminen jättää muut lähettämään. Välittäjällä on yksi lähetys, joka syöttää kaiken — mikä on siistimpää, kun se toimii, ja yksi vikapiste, kun se ei toimi.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Milloin Restream on parempi valinta</h2>
   <p class="sec-p">Tämä on suoraan lähettämisen rehellinen rajoite, ja se kannattaa tietää ennen vaihtoa. Välittäjä tarvitsee sinulta <strong>yhden</strong> lähetyksen. Suoraan lähettäminen vaatii, että jokaisen kohteen bittinopeuksien <strong>summa</strong> lähtee kotoasi yhtä aikaa — neljä alustaa suositelluilla asetuksilla tarkoittaa noin 19–20 Mbit/s lähetysnopeutta — 6 Twitchiin, 4,5 YouTubeen, 3 Facebookiin ja 2,5 neljänteen, plus noin 20 % varaa. Jos yhteytesi ei kestä sitä, pilvivälittäjä ei ole pelkkä kätevyys vaan se, mikä ylipäätään tekee monilähetyksestä mahdollisen. SplitCamin mukana tulee Upload Speed Test, jotta voit tarkistaa asian ennen sitoutumista, ja voit aina ajaa vähemmän kohteita pienemmillä bittinopeuksilla — mutta jos lähetysnopeus on pullonkaulasi, Restream ratkaisee ongelman, jota SplitCam ei ratkaise. Sama pätee lähettämiseen kannettavalta hotellin tai mobiiliverkon yhteydellä: siellä välittäjä vaimentaa yhteyden epävakauden sen sijaan, että yleisösi näkisi sen.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">Laske oma lukusi ennen kuin päätät</h2>
+  <p class="sec-p">Suoraan lähettäminen vaatii, että jokaisen kohteen bittinopeuksien summa lähtee yhtä aikaa. Välittäjä tarvitsee yhden lähetyksen. Siinä on koko kauppa, ja se on laskutoimitus eikä mielipide — tässä se kunkin alustan suosittelemilla bittinopeuksilla.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Kohde</th><th>Suositeltu 1080p</th><th>Juokseva summa</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbit/s</td><td>6 Mbit/s</td></tr>
+      <tr><td>YouTube</td><td>4,5 Mbit/s</td><td>10,5 Mbit/s</td></tr>
+      <tr><td>Facebook</td><td>3 Mbit/s</td><td>13,5 Mbit/s</td></tr>
+      <tr><td>Neljäs alusta</td><td>2,5 Mbit/s</td><td>16 Mbit/s</td></tr>
+      <tr><td><strong>Plus ~20 % varaa</strong></td><td>—</td><td><strong>19–20 Mbit/s lähetysnopeutta</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">Kolme alustaa tekee 13,5 Mbit/s eli noin 17 varan kanssa. Neljä tekee 19–20. Jos lähetysnopeutesi ei kestä viimeisen rivin lukua, pilvivälittäjä ei ole pelkkä kätevyys — se on se, mikä ylipäätään tekee monilähetyksestä mahdollisen, ja se on syy maksaa sellaisesta. SplitCamissa on sisäänrakennettu Upload Speed Test, jotta voit tarkistaa asian oikeaa yhteyttäsi vasten etkä laskussasi lukevaa numeroa vasten.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Lähettäminen epävakaalla yhteydellä</td><td class="meh">Yhteytesi on itse lähetys</td><td class="yes">Välittäjä vaimentaa epävakauden</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">Mitä SplitCam ei tee</h2>
+  <p class="sec-p">Sama lista jokaisessa täällä olevassa vertailussa, koska sinun pitäisi pystyä sulkemaan meidät pois nopeasti sen sijaan, että huomaisit tämän vasta latauksen jälkeen.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>Ei vieraita linkin kautta</h3>
+        <p>Ei ole selainlinkkiä, jonka voisi lähettää jollekulle. Voit tuoda vieraan Zoom-, Meet- tai Discord-ikkunan näkymään ikkunakaappauksella, ja se toimii, mutta se on kiertotie eikä ominaisuus.</p>
+      </div>
+      <div class="reason">
+        <h3>Ei Preview/Program-jakoa, ei multiview&#x27;tä</h3>
+        <p>Vaihdat näkymään, et aseta sitä ensin valmiiksi ja leikkaa siihen. Ei ole myöskään lähde-esikatselujen seinää. Jos ohjaat lähetystäsi oikean kuvamikserin työnkululla, tämä tuntuu heti väärältä.</p>
+      </div>
+      <div class="reason">
+        <h3>Ei kamerakohtaisia tallenteita, ei PTZ-ohjausta</h3>
+        <p>Tallennus tallentaa koostetun näkymän, ei yhtä tiedostoa kameraa kohden myöhempää editointia varten. Mikään SplitCamissa ei panoroi, kallista tai zoomaa kameraa puolestasi.</p>
+      </div>
+      <div class="reason">
+        <h3>NDI tulee sisään, se ei lähde ulos</h3>
+        <p>Voit ottaa NDI:n lähteeksi. SplitCam ei ole NDI-lähetin, jonka toinen kone voisi poimia.</p>
+      </div>
+      <div class="reason">
+        <h3>Osa lähteistä on vain Windowsille</h3>
+        <p>Windowsilla dokumentoitu: Whiteboard, Application Audio, Replay-lähde ja yksivärinen Color-lähde. Näkymät, tasot, virtuaalikamera, monilähetys ja tallennus toimivat molemmilla.</p>
+      </div>
+      <div class="reason">
+        <h3>Puhelimen kaukosäädin on tänään iOS:lle</h3>
+        <p>SplitCam Remote on App Storessa; Android-versio on tekeillä eikä sitä ole julkaistu. Puhelin kamerana on siitä erillinen asia eikä se ole vain iOS:lle.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

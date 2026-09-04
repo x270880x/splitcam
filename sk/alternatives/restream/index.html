@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ platforiem pripravených vopred</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X a ostatné sú už v zozname s rozumnými predvolenými hodnotami.</p>
       </div>
+        <div class="reason">
+        <h3>Výpadok jednej platformy nestiahne ostatné</h3>
+        <p>Každý cieľ má z vášho počítača vlastné spojenie, takže keď jedna platforma spadne, ostatné streamujú ďalej. Pri sprostredkovateľovi všetko živí jedno odosielanie — čo je úhľadnejšie, kým to funguje, a jediný bod zlyhania, keď nie.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Kedy je Restream lepšou voľbou</h2>
   <p class="sec-p">Toto je úprimné obmedzenie priameho odosielania a oplatí sa ho poznať skôr, než prejdete. Sprostredkovateľ potrebuje od vás <strong>jedno</strong> odosielanie. Priame odosielanie potrebuje <strong>súčet</strong> bitrate všetkých cieľov naraz — štyri platformy pri odporúčaných nastaveniach sú zhruba 19 až 20 Mbit/s odosielania — 6 na Twitch, 4,5 na YouTube, 3 na Facebook a 2,5 na štvrtú, čo je 16 Mbit/s videa, plus asi 20 % rezerva. Ak to vaše pripojenie neutiahne, cloudový sprostredkovateľ nie je pohodlie, ale to jediné, vďaka čomu je multistream vôbec možný. SplitCam má vstavaný Upload Speed Test, takže si to overíte skôr, než sa rozhodnete, a vždy môžete pustiť menej cieľov s nižším bitrate — no ak je vaše odosielanie tým úzkym miestom, Restream rieši problém, ktorý SplitCam vyriešiť nedokáže. To isté platí pre streamovanie z notebooku na hotelovom alebo mobilnom internete, kde nestabilitu pohltí sprostredkovateľ namiesto toho, aby ju videlo vaše publikum.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">Spočítajte si vlastné číslo skôr, než sa rozhodnete</h2>
+  <p class="sec-p">Priame odosielanie potrebuje súčet bitrate všetkých cieľov, ktorý odchádza naraz. Sprostredkovateľ potrebuje jedno odosielanie. To je celá výmena a je to aritmetika, nie názor — tu je aj s bitrate, ktoré jednotlivé platformy odporúčajú.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Cieľ</th><th>Odporúčané pre 1080p</th><th>Priebežný súčet</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbit/s</td><td>6 Mbit/s</td></tr>
+      <tr><td>YouTube</td><td>4,5 Mbit/s</td><td>10,5 Mbit/s</td></tr>
+      <tr><td>Facebook</td><td>3 Mbit/s</td><td>13,5 Mbit/s</td></tr>
+      <tr><td>Štvrtá platforma</td><td>2,5 Mbit/s</td><td>16 Mbit/s</td></tr>
+      <tr><td><strong>Plus ~20 % rezerva</strong></td><td>—</td><td><strong>19–20 Mbit/s odosielania</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">Tri platformy dávajú 13,5 Mbit/s, s rezervou približne 17. Štyri dávajú 19–20. Ak vaše odosielanie neutiahne číslo v poslednom riadku, cloudový sprostredkovateľ nie je pohodlie — je to to jediné, vďaka čomu je multistreaming vôbec možný, a to je dôvod zaň zaplatiť. SplitCam má vstavaný Upload Speed Test, takže si to overíte na svojom skutočnom pripojení, a nie podľa čísla na faktúre od poskytovateľa.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Streamovanie z nestabilného pripojenia</td><td class="meh">Vaše pripojenie je stream</td><td class="yes">Nestabilitu pohltí sprostredkovateľ</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">Čo SplitCam nerobí</h2>
+  <p class="sec-p">Rovnaký zoznam pri každom porovnaní na tomto webe, pretože by ste nás mali vedieť rýchlo vylúčiť, a nie na to prísť až po stiahnutí.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>Žiadni hostia pripojení cez odkaz</h3>
+        <p>Neexistuje odkaz do prehliadača, ktorý by ste niekomu poslali. Okno hosťa zo Zoom, Meet alebo Discord môžete vložiť do scény pomocou snímania okna, čo funguje, ale je to obchádzka, a nie funkcia.</p>
+      </div>
+      <div class="reason">
+        <h3>Žiadne Preview/Program, žiadny multiview</h3>
+        <p>Na scénu prepnete, nepripravíte si ju najprv a až potom na ňu nestrihnete. Nie je tu ani stena s náhľadmi zdrojov. Ak režírujete tak, ako sa pracuje na skutočnom strihovom pulte, bude vám to od prvej chvíle pripadať nesprávne.</p>
+      </div>
+      <div class="reason">
+        <h3>Žiadne nahrávky pre každú kameru zvlášť, žiadne ovládanie PTZ</h3>
+        <p>Nahrávanie zachytáva zloženú scénu, nie samostatný súbor z každej kamery na neskorší strih. Nič v SplitCam za vás kameru neotočí, nenakloní ani nepriblíži.</p>
+      </div>
+      <div class="reason">
+        <h3>NDI dovnútra ide, von nie</h3>
+        <p>NDI môžete použiť ako zdroj. SplitCam nie je vysielač NDI, ktorý by si mohol prevziať iný počítač.</p>
+      </div>
+      <div class="reason">
+        <h3>Niektoré zdroje sú len pre Windows</h3>
+        <p>Zdokumentované na Windows: Whiteboard, Application Audio, zdroj Replay a jednofarebný zdroj Color. Scény, vrstvy, virtuálna kamera, multistreaming a nahrávanie bežia na oboch systémoch.</p>
+      </div>
+      <div class="reason">
+        <h3>Diaľkové ovládanie z telefónu je dnes len pre iOS</h3>
+        <p>SplitCam Remote je v App Store; verzia pre Android sa pripravuje a nie je vydaná. Telefón ako kamera je od toho oddelená funkcia a nie je len pre iOS.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

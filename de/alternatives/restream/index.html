@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ Plattformen vorkonfiguriert</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X und der Rest stehen schon mit sinnvollen Voreinstellungen in der Liste.</p>
       </div>
+        <div class="reason">
+        <h3>Fällt eine Plattform aus, reißt sie die anderen nicht mit</h3>
+        <p>Jedes Ziel hat seine eigene Verbindung aus deinem Rechner heraus, also streamen die anderen weiter, wenn eine Plattform ausfällt. Bei einem Vermittler speist ein einziger Upload alles — ordentlicher, solange es funktioniert, und ein einzelner Ausfallpunkt, wenn nicht.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Wann Restream die bessere Wahl ist</h2>
   <p class="sec-p">Das ist die ehrliche Grenze des direkten Sendens, und man sollte sie vor dem Wechsel kennen. Ein Vermittler braucht <strong>einen</strong> Upload von dir. Direkt zu senden braucht die <strong>Summe</strong> aller Ziel-Bitraten gleichzeitig aus deinem Haus heraus — vier Plattformen mit empfohlenen Einstellungen sind rund 19–20 Mbit/s Upload — 6 an Twitch, 4,5 an YouTube, 3 an Facebook und 2,5 an ein viertes Ziel, plus rund 20 % Reserve. Wenn deine Leitung das nicht hält, ist ein Cloud-Vermittler kein Komfort, sondern das, was Multistreaming überhaupt erst möglich macht. SplitCam bringt einen Upload Speed Test mit, damit du das vor der Entscheidung prüfen kannst, und du kannst jederzeit weniger Ziele mit niedrigeren Bitraten fahren — aber wenn dein Upload der Engpass ist, löst Restream ein Problem, das SplitCam nicht lösen kann. Dasselbe gilt fürs Streamen vom Laptop über Hotel- oder Mobilfunk-Internet: dort fängt der Vermittler die Schwankungen ab, statt dass dein Publikum sie zu sehen bekommt.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">Rechne deine eigene Zahl aus, bevor du dich entscheidest</h2>
+  <p class="sec-p">Direkt zu senden braucht die Summe aller Ziel-Bitraten, die gleichzeitig rausgehen. Ein Vermittler braucht einen Upload. Das ist der ganze Tausch, und es ist Arithmetik und keine Meinung — hier mit den Bitraten, die jede Plattform empfiehlt.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Ziel</th><th>Empfohlen für 1080p</th><th>Zwischensumme</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbit/s</td><td>6 Mbit/s</td></tr>
+      <tr><td>YouTube</td><td>4,5 Mbit/s</td><td>10,5 Mbit/s</td></tr>
+      <tr><td>Facebook</td><td>3 Mbit/s</td><td>13,5 Mbit/s</td></tr>
+      <tr><td>Eine vierte Plattform</td><td>2,5 Mbit/s</td><td>16 Mbit/s</td></tr>
+      <tr><td><strong>Plus ~20 % Reserve</strong></td><td>—</td><td><strong>19–20 Mbit/s Upload</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">Drei Plattformen ergeben 13,5 Mbit/s, mit Reserve rund 17. Vier ergeben 19–20. Wenn dein Upload die Zahl in der letzten Zeile nicht hält, ist ein Cloud-Vermittler kein Komfort — er ist das, was Multistreaming überhaupt erst möglich macht, und das ist ein Grund, dafür zu bezahlen. SplitCam hat einen eingebauten Upload Speed Test, damit du gegen deine echte Leitung prüfst und nicht gegen die Zahl auf deiner Rechnung.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Streamen über eine instabile Leitung</td><td class="meh">Deine Leitung ist der Stream</td><td class="yes">Vermittler fängt die Schwankungen ab</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">Was SplitCam nicht kann</h2>
+  <p class="sec-p">Dieselbe Liste bei jedem Vergleich hier, damit du uns schnell ausschließen kannst, statt das erst nach dem Download zu entdecken.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>Keine Gäste per Link</h3>
+        <p>Es gibt keinen Browser-Link, den du jemandem schicken könntest. Du kannst das Zoom-, Meet- oder Discord-Fenster eines Gasts per Fensteraufnahme in eine Szene legen — das funktioniert, ist aber eine Behelfslösung und keine Funktion.</p>
+      </div>
+      <div class="reason">
+        <h3>Kein Preview/Program, kein Multiview</h3>
+        <p>Du schaltest auf eine Szene um, du legst sie nicht erst auf Vorschau und schneidest dann hin. Eine Wand aus Quellen-Vorschauen gibt es auch nicht. Wer aus einem echten Switcher-Workflow kommt, wird das sofort als falsch empfinden.</p>
+      </div>
+      <div class="reason">
+        <h3>Keine Aufnahmen pro Kamera, keine PTZ-Steuerung</h3>
+        <p>Die Aufnahme erfasst die komponierte Szene, nicht eine Datei pro Kamera für den späteren Schnitt. Nichts in SplitCam schwenkt, neigt oder zoomt eine Kamera für dich.</p>
+      </div>
+      <div class="reason">
+        <h3>NDI kommt rein, geht aber nicht raus</h3>
+        <p>Du kannst NDI als Quelle nutzen. SplitCam ist kein NDI-Sender, den ein anderer Rechner abgreifen könnte.</p>
+      </div>
+      <div class="reason">
+        <h3>Manche Quellen gibt es nur unter Windows</h3>
+        <p>Dokumentiert für Windows: das Whiteboard, Application Audio, die Replay-Quelle und die einfarbige Color-Quelle. Szenen, Ebenen, die virtuelle Kamera, Multistreaming und Aufnahme laufen auf beiden Systemen.</p>
+      </div>
+      <div class="reason">
+        <h3>Die Handy-Fernbedienung gibt es heute nur für iOS</h3>
+        <p>SplitCam Remote ist im App Store; die Android-Version ist in Arbeit und noch nicht veröffentlicht. Das Handy als Kamera ist davon unabhängig und nicht auf iOS beschränkt.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

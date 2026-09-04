@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+のプラットフォームが設定済み</h3>
         <p>Twitch、YouTube、Facebook、Kick、TikTok、X ほかが、妥当な既定値とともにすでに一覧に入っています。</p>
       </div>
+        <div class="reason">
+        <h3>1つのプラットフォームが落ちても、ほかは道連れにならない</h3>
+        <p>配信先ごとにお使いのマシンから出ていく独自の接続があるので、あるプラットフォームがダウンしても、ほかは配信を続けます。中継では1本のアップロードがすべてを賄っています — 動いているうちはすっきりしていますが、動かなくなれば単一障害点です。</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Restream のほうが向いているとき</h2>
   <p class="sec-p">これは直接送ることの正直な限界で、乗り換える前に知っておく価値があります。中継なら、あなたからのアップロードは<strong>1本</strong>で済みます。直接送る場合は、すべての配信先のビットレートの<strong>合計</strong>が同時に自宅の回線から出ていきます — 推奨設定の4プラットフォームなら、おおよそ19〜20Mbpsのアップロードです。Twitch に6、YouTube に4.5、Facebook に3、4つめに2.5 で映像が16Mbps、そこに約20%の余裕を足した数字です。回線がそれを支えられないなら、クラウド中継は手軽さの問題ではなく、マルチ配信を成り立たせている当のものです。SplitCam には決める前に確かめられるアップロード速度テストが付いていますし、配信先を減らしたりビットレートを下げたりすることもいつでもできます — けれども、アップロードが制約になっているなら、Restream は SplitCam には解けない問題を解いています。ホテルやモバイル回線のノートPCから配信する場合も同じで、そこでは回線の不安定さを視聴者に見せる代わりに中継が吸収してくれます。</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">決める前に、自分の数字を出してみる</h2>
+  <p class="sec-p">直接送るには、すべての配信先のビットレートの合計が同時に出ていく必要があります。中継ならアップロードは1本です。取引の中身はそれだけで、意見ではなく算数です — 各プラットフォームが推奨するビットレートで並べるとこうなります。</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>配信先</th><th>推奨 1080p</th><th>累計</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6Mbps</td><td>6Mbps</td></tr>
+      <tr><td>YouTube</td><td>4.5Mbps</td><td>10.5Mbps</td></tr>
+      <tr><td>Facebook</td><td>3Mbps</td><td>13.5Mbps</td></tr>
+      <tr><td>4つめのプラットフォーム</td><td>2.5Mbps</td><td>16Mbps</td></tr>
+      <tr><td><strong>加えて約20%の余裕</strong></td><td>—</td><td><strong>19〜20Mbpsのアップロード</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">3プラットフォームなら13.5Mbps、余裕を含めて約17Mbpsです。4つなら19〜20Mbps。最後の行の数字をあなたのアップロード回線が支えられないなら、クラウド中継は手軽さの問題ではありません — マルチ配信を成り立たせている当のものであり、それはお金を払う理由になります。SplitCam にはアップロード速度テストが内蔵されているので、請求書に書かれた数字ではなく、実際の回線で確かめられます。</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>不安定な回線からの配信</td><td class="meh">あなたの回線がそのまま配信になる</td><td class="yes">中継が不安定さを吸収する</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">SplitCam にできないこと</h2>
+  <p class="sec-p">ここにある比較ページすべてに同じ一覧を載せています。ダウンロードしてから気づくのではなく、早い段階で私たちを候補から外せるようにするためです。</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>リンクで参加するゲストはいない</h3>
+        <p>誰かに送れるブラウザのリンクはありません。ゲストの Zoom、Meet、Discord のウィンドウをウィンドウキャプチャでシーンに置くことはでき、それは動きますが、機能ではなく回避策です。</p>
+      </div>
+      <div class="reason">
+        <h3>プレビュー／プログラムなし、マルチビューなし</h3>
+        <p>シーンは切り替えるものであって、先にキューしてからカットするものではありません。ソースのプレビューを並べた一覧もありません。本格的なスイッチャーの流儀で演出しているなら、すぐに違和感を覚えるはずです。</p>
+      </div>
+      <div class="reason">
+        <h3>カメラごとの録画なし、PTZ 制御なし</h3>
+        <p>録画に収まるのは合成済みのシーンで、あとで編集するためのカメラ1台につき1ファイルではありません。SplitCam の中に、カメラをパン・チルト・ズームしてくれるものは何もありません。</p>
+      </div>
+      <div class="reason">
+        <h3>NDI は受けるだけで、送り出さない</h3>
+        <p>NDI をソースとして取り込むことはできます。SplitCam は、別のマシンが拾えるような NDI の送信側にはなりません。</p>
+      </div>
+      <div class="reason">
+        <h3>一部のソースは Windows のみ</h3>
+        <p>Windows 限定と明記されているもの：Whiteboard、Application Audio、Replay ソース、単色の Color ソース。シーン、レイヤー、バーチャルカメラ、マルチ配信、録画は両方で動きます。</p>
+      </div>
+      <div class="reason">
+        <h3>スマホのリモートは現時点で iOS のみ</h3>
+        <p>SplitCam Remote は App Store にあります。Android 版は開発中で、まだリリースされていません。スマホをカメラとして使う機能はそれとは別で、iOS 限定ではありません。</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->

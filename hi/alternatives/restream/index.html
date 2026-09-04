@@ -511,6 +511,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ platforms पहले से configured</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X और बाकी सब समझदार defaults के साथ list में पहले से मौजूद हैं.</p>
       </div>
+        <div class="reason">
+        <h3>एक platform गिर जाए तो बाकी साथ नहीं गिरते</h3>
+        <p>हर destination का आपकी machine से अपना अलग connection है, इसलिए कोई platform down हो जाए तो बाकी streaming करते रहते हैं. Relay में एक ही upload सबको feed करता है — जब चलता है तो ज़्यादा साफ़-सुथरा, और जब नहीं चलता तो single point of failure.</p>
+      </div>
   </div>
 </section>
 
@@ -518,6 +522,25 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <section class="section">
   <h2 class="sec-h">Restream कब बेहतर चुनाव है</h2>
   <p class="sec-p">सीधे भेजने की ईमानदार सीमा यही है, और switch करने से पहले इसे जान लेना ज़रूरी है. एक relay को आपसे <strong>एक</strong> upload चाहिए. सीधे भेजने के लिए हर destination की bitrate का <strong>कुल जोड़</strong> एक ही समय पर आपके घर से बाहर जाना चाहिए — recommended settings पर चार platforms यानी लगभग 19–20 Mbps upload — Twitch को 6, YouTube को 4.5, Facebook को 3 और चौथे को 2.5, यानी 16 Mbps video, और ऊपर से लगभग 20% headroom. अगर आपका connection इतना नहीं संभाल पाता, तो cloud relay सुविधा नहीं, बल्कि वही चीज़ है जो multistreaming को मुमकिन बनाती है. SplitCam के साथ एक Upload Speed Test आता है, ताकि तय करने से पहले आप जाँच लें, और आप हमेशा कम destinations कम bitrate पर चला सकते हैं — लेकिन अगर आपकी असली अड़चन upload ही है, तो Restream वो समस्या हल करता है जो SplitCam नहीं कर सकता. यही बात hotel या mobile internet पर laptop से stream करने पर भी लागू होती है, जहाँ instability को relay सोख लेता है, बजाय इसके कि वो आपके audience को दिखे.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">फ़ैसला करने से पहले अपना आँकड़ा ख़ुद निकाल लें</h2>
+  <p class="sec-p">सीधे भेजने के लिए हर destination की bitrate का जोड़ एक ही समय पर बाहर जाना चाहिए. Relay को एक upload चाहिए. पूरा सौदा यही है, और यह राय नहीं, गणित है — नीचे वही हिसाब उन bitrates के साथ दिया है जो हर platform ख़ुद recommend करता है.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Destination</th><th>1080p के लिए recommended</th><th>कुल जोड़</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbps</td><td>6 Mbps</td></tr>
+      <tr><td>YouTube</td><td>4.5 Mbps</td><td>10.5 Mbps</td></tr>
+      <tr><td>Facebook</td><td>3 Mbps</td><td>13.5 Mbps</td></tr>
+      <tr><td>चौथा platform</td><td>2.5 Mbps</td><td>16 Mbps</td></tr>
+      <tr><td><strong>ऊपर से ~20% headroom</strong></td><td>—</td><td><strong>19–20 Mbps upload</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">तीन platforms का जोड़ 13.5 Mbps बनता है, headroom के साथ लगभग 17. चार का 19–20. अगर आपका upload आख़िरी row का आँकड़ा नहीं संभाल पाता, तो cloud relay सुविधा नहीं है — वही चीज़ है जो multistreaming को मुमकिन बनाती है, और उसके पैसे देने की यही वजह है. SplitCam में built-in Upload Speed Test है, ताकि आप बिल पर लिखे आँकड़े पर नहीं, अपने असली connection पर जाँच सकें.</p>
 </section>
 
 <!-- COMPARE -->
@@ -539,6 +562,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Unstable connection से streaming</td><td class="meh">आपका connection ही stream है</td><td class="yes">Relay instability सोख लेता है</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">SplitCam क्या नहीं करता</h2>
+  <p class="sec-p">यही list यहाँ हर comparison पर है, ताकि आप हमें जल्दी खारिज कर सकें — बजाय इसके कि यह सब download के बाद पता चले.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>Link से जुड़ने वाले guests नहीं</h3>
+        <p>किसी को भेजने के लिए कोई browser link नहीं है. आप window capture से guest की Zoom, Meet या Discord window को scene में डाल सकते हैं, और यह काम करता है — लेकिन यह एक workaround है, feature नहीं.</p>
+      </div>
+      <div class="reason">
+        <h3>न Preview/Program, न multiview</h3>
+        <p>आप सीधे scene पर switch करते हैं — उसे पहले cue करके फिर cut नहीं करते. Sources के previews की कोई wall भी नहीं है. अगर आप किसी proper switcher workflow से direct करते हैं, तो यह तुरंत ग़लत लगेगा.</p>
+      </div>
+      <div class="reason">
+        <h3>न per-camera recordings, न PTZ control</h3>
+        <p>Recording में composed scene capture होता है, बाद में edit करने के लिए हर camera की अलग file नहीं. SplitCam में ऐसा कुछ नहीं है जो आपके लिए camera को pan, tilt या zoom करे.</p>
+      </div>
+      <div class="reason">
+        <h3>NDI अंदर आता है, बाहर नहीं जाता</h3>
+        <p>आप NDI को source की तरह ले सकते हैं. SplitCam कोई NDI sender नहीं है जिसे दूसरी machine उठा सके.</p>
+      </div>
+      <div class="reason">
+        <h3>कुछ sources सिर्फ़ Windows पर हैं</h3>
+        <p>Windows पर documented: Whiteboard, Application Audio, Replay source और solid Color source. Scenes, layers, virtual camera, multistreaming और recording दोनों पर चलते हैं.</p>
+      </div>
+      <div class="reason">
+        <h3>Phone remote फ़िलहाल iOS पर है</h3>
+        <p>SplitCam Remote App Store पर है; Android version पर काम चल रहा है और वो अभी release नहीं हुआ. Phone-as-a-camera इससे अलग चीज़ है और वो सिर्फ़ iOS तक सीमित नहीं.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->
