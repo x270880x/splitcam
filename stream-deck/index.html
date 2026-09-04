@@ -537,10 +537,43 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </div>
       <div class="reason">
         <h3>4. Chain it if you like</h3>
-        <p>The actions work inside Multi Actions, so one press can switch a scene, start the stream and fire whatever else lives on that key. SplitCam has a <a href="https://www.youtube.com/watch?v=WCfaMpOlFDY" rel="noopener">setup walkthrough</a> on its channel.</p>
+        <p>The actions work inside Multi Actions, so one press can switch a scene, start the stream and fire whatever else lives on that key. SplitCam has a short <a href="https://www.youtube.com/watch?v=WCfaMpOlFDY" rel="noopener">walkthrough video</a> on its channel — it was recorded for plugin 1.0 in late 2024, so the listing is the current reference.</p>
       </div>
   </div>
   <p class="sec-p">What the plugin does not do: it does not run on macOS — on a Mac, the free SplitCam Remote app on an iPhone is the way to switch scenes from a control surface. It has no dial support and ships no profiles. For anything beyond these six actions, check the current listing, which carries the plugin&#x27;s own version history.</p>
+</section>
+
+<!-- ACTIONS -->
+<section class="section">
+  <h2 class="sec-h">What the keys do</h2>
+  <p class="sec-p">The six actions the official plugin puts on your keys, as they appear in SplitCam&#x27;s own listing. Keys show SplitCam&#x27;s live status, and the stream key shows how long you have been live.</p>
+  <div class="reasons-grid">
+      <div class="reason"><img src="https://splitcam.com/assets/stream-deck/scenes.png" alt="Stream Deck keys switching SplitCam scenes" loading="lazy" style="width:100%;border-radius:10px;margin-bottom:12px"><h3>Switch scene</h3><p>One key per scene. Scene names are pulled from SplitCam, so the key is labelled with the scene it switches to.</p></div>
+      <div class="reason"><img src="https://splitcam.com/assets/stream-deck/stream.png" alt="Stream Deck key starting and stopping the SplitCam stream, showing stream time" loading="lazy" style="width:100%;border-radius:10px;margin-bottom:12px"><h3>Start / stop streaming</h3><p>Go live and end the broadcast from the key. While you are live, the key shows your session time.</p></div>
+      <div class="reason"><img src="https://splitcam.com/assets/stream-deck/record.png" alt="Stream Deck keys for recording and snapshot in SplitCam" loading="lazy" style="width:100%;border-radius:10px;margin-bottom:12px"><h3>Start / stop recording, snapshot</h3><p>Record to a file, or grab a still of the current scene, without touching the keyboard.</p></div>
+      <div class="reason"><img src="https://splitcam.com/assets/stream-deck/mute.png" alt="Stream Deck keys to mute sound or pause the SplitCam scene" loading="lazy" style="width:100%;border-radius:10px;margin-bottom:12px"><h3>Mute, pause scene</h3><p>Mute the sound, or pause the whole scene — every source stops at once — and resume the same way.</p></div>
+  </div>
+  <p class="sec-p">All six work inside Multi Actions. No dial (Stream Deck +) actions and no bundled profiles. The plugin&#x27;s own <a href="https://marketplace.elgato.com/product/splitcam-5231d1ca-5a53-417b-b6b7-48a690fe3915" rel="noopener">Marketplace listing</a> carries its version history; the current release is 1.2.</p>
+</section>
+
+<!-- HOTKEYS -->
+<section class="section">
+  <h2 class="sec-h">No plugin? The hotkeys work with any Stream Deck</h2>
+  <p class="sec-p">On a machine where you cannot install the plugin, the standard Stream Deck &laquo;Hotkey&raquo; action still drives SplitCam. Use the global shortcuts — they work while SplitCam is minimised or another window is active; the Ctrl variants only fire while the SplitCam window is focused. Hotkeys can be switched off in SplitCam&#x27;s settings, so check they are on.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead><tr><th>Action</th><th>In the SplitCam window</th><th>Global (any window)</th></tr></thead>
+    <tbody>
+      <tr><td>Switch to scene 1&ndash;6</td><td>Ctrl + 1 &hellip; 6</td><td>Alt + Shift + 1 &hellip; 6</td></tr>
+      <tr><td>Start / stop stream</td><td>Ctrl + S</td><td>Alt + Shift + S</td></tr>
+      <tr><td>Start / stop recording</td><td>Ctrl + R</td><td>Alt + Shift + R</td></tr>
+      <tr><td>Take a snapshot</td><td>Ctrl + O</td><td>Alt + Shift + O</td></tr>
+      <tr><td>Mute scene sound</td><td>Ctrl + M</td><td>Alt + Shift + M</td></tr>
+      <tr><td>Pause / resume scene</td><td>Ctrl + Space</td><td>Alt + Shift + Space</td></tr>
+      <tr><td>Rewind all sources</td><td>Ctrl + Home</td><td>Alt + Shift + Home</td></tr>
+      <tr><td>Replay</td><td colspan="2">Assigned by you in Settings &mdash; none by default</td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">These are the Windows shortcuts as SplitCam&#x27;s settings panel lists them. The full assignment table is in the app under Settings &rarr; Hotkeys.</p>
 </section>
 
 <!-- COMPARE -->

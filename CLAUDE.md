@@ -169,6 +169,8 @@ actual current process: find real per-locale demand (Search Console impressions,
 a topic has zero existing content to show impressions for), then build or retarget from that —
 not from a checklist.
 
+> 🔴 **ПРАВИЛО №1 (владелец, 2026-09-05):** любое изменение английского текста или разметки — новая страница, блок, фраза, ссылка, подпись кнопки — **в тот же день уходит во все 34 локали по этому конвейеру, с обязательной вычиткой носителем-филологом, который сам стримит.** Нет варианта «пока только EN». Если проход не закончен — работа не закончена.
+
 ## Localization — all 35 languages (built 2026-06-13 → 06-15)
 
 Every page exists in **35 locales**: EN (root) + 34 under `/<lang>/...`:
