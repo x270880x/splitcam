@@ -124,7 +124,7 @@ def build(slug, C, base="alternatives"):
   <p class="sec-p">{C["cmp_p"]}</p>
   <div class="table-wrap"><table class="compare-table">
     <thead>
-      <tr><th>Feature</th><th>SplitCam</th><th>{C["rival"]}</th></tr>
+      <tr>{"".join(f"<th>{c}</th>" for c in C.get("cols", ["Feature", "SplitCam", C["rival"]]))}</tr>
     </thead>
     <tbody>
 {rows}
