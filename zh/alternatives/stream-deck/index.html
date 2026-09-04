@@ -153,7 +153,7 @@
           "name": "我已经有 Stream Deck 了，SplitCam 能配合它使用吗？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以。SplitCam 从 Windows 版 10.8.25 起加入了 Stream Deck 支持。"
+            "text": "可以，在 Windows 上。从 Elgato Marketplace 安装免费的 SplitCam 官方插件（Stream Deck 应用 6.9 或更新版本），并把 SplitCam 更新到 10.8.25 或更高版本。按键可分配开播/下播、切换场景、开始/停止录制、暂停场景、静音和抓拍快照，并会显示 SplitCam 的实时状态。该插件没有 macOS 版本。"
           }
         },
         {
@@ -464,7 +464,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <li><strong>不用再花钱买东西，这就是重点。</strong>SplitCam Remote 免费，走你自己的局域网。没有硬件，没有转接器，也没有捆绑的订阅。</li>
         <li><strong>它只能控制 SplitCam。</strong>真正的 Stream Deck 能在任何程序里按下按钮——OBS、浏览器、灯光、宏命令。手机 App 做不到。对大多数人来说，决定选哪个的正是这一点。</li>
         <li><strong>目前只有 iOS 版。</strong>Android 版正在开发中，尚未发布。如果你今天用的是 Android 手机，这个方案暂时还不适合你。</li>
-        <li><strong>已经买了 Stream Deck？留着用。</strong>SplitCam 从 Windows 版 10.8.25 起支持 Stream Deck，你花钱买的硬件同样能控制 SplitCam。</li>
+        <li><strong>已经买了 Stream Deck？留着用。</strong>SplitCam 在 <a href="https://marketplace.elgato.com/product/splitcam-5231d1ca-5a53-417b-b6b7-48a690fe3915" rel="noopener">Elgato Marketplace</a> 提供官方免费插件——仅限 Windows，且需要 SplitCam 10.8.25 或更新版本。</li>
     </ol></div>
   </div>
 </div>
@@ -523,6 +523,31 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <p class="sec-p">先老实想清楚你想按的是什么。如果这些按键需要做 SplitCam 之外的任何事——触发 OBS 的场景、从另一个 App 播放音效、运行宏、调暗灯光、静音 Discord、往聊天区粘贴链接——那么 Stream Deck 才是对的工具，手机 App 替代不了它，因为 SplitCam Remote 只控制 SplitCam，别的一概不管。同理，如果你想要不用看就能按到的实体按键、一块永远亮着、不会休眠也不会在直播中途来电话的常驻控制面板，或者每个按键上都有独立的常亮小屏幕，那也该选硬件。还有，如果你用的是 Android，配套 App 尚未发布，今天两者之中只有硬件对你可用。这些都不是小事——Stream Deck 是一款好产品，很多人确实应该买一台。</p>
 </section>
 
+<!-- WIRE IT UP -->
+<section class="section">
+  <h2 class="sec-h">已经有 Stream Deck？接上它只需这几步</h2>
+  <p class="sec-p">SplitCam 在 Elgato Marketplace 发布了官方插件。它免费，仅限 Windows，而且直接与正在运行的 SplitCam 通信——不用端口、密码，也不用配对。</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>1. 更新 SplitCam</h3>
+        <p>Stream Deck 支持从 Windows 版 10.8.25（2025 年 1 月）开始加入。之后的任何版本都可以，当前正式版就行。</p>
+      </div>
+      <div class="reason">
+        <h3>2. 安装插件</h3>
+        <p>在 Stream Deck 应用（6.9 或更新版本）里打开 Marketplace 搜索 <strong>SplitCam</strong>，或直接从<a href="https://marketplace.elgato.com/product/splitcam-5231d1ca-5a53-417b-b6b7-48a690fe3915" rel="noopener">插件页面</a>安装。由 SplitCam 官方发布，不是第三方作品。</p>
+      </div>
+      <div class="reason">
+        <h3>3. 把操作分配到按键</h3>
+        <p>开播/下播、切换场景、开始/停止录制、暂停场景、静音和抓拍快照。场景名称直接从 SplitCam 读取，所以每个按键都会显示它要切换到的场景；按键还会同步显示 SplitCam 的实时状态和本次会话时长。</p>
+      </div>
+      <div class="reason">
+        <h3>4. 想串联也可以</h3>
+        <p>这些操作可以放进 Multi Action，按一下就能切换场景、开始直播，再顺带触发该按键上的其他任何操作。SplitCam 的频道上有一段<a href="https://www.youtube.com/watch?v=WCfaMpOlFDY" rel="noopener">设置教程视频</a>。</p>
+      </div>
+  </div>
+  <p class="sec-p">这个插件做不到的事：它不能在 macOS 上运行——在 Mac 上，想用控制面板切换场景，要靠 iPhone 上免费的 SplitCam Remote 应用。它不支持旋钮，也不附带任何配置文件。除这六个操作之外的功能，请查看当前的插件页面，那里有插件自己的版本历史。</p>
+</section>
+
 <!-- COMPARE -->
 <section class="section" id="compare">
   <h2 class="sec-h">SplitCam Remote 对比 Stream Deck</h2>
@@ -533,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </thead>
     <tbody>
       <tr><td>价格</td><td class="yes">随 SplitCam 免费提供</td><td class="no">需购买硬件</td></tr>
-      <tr><td>控制 SplitCam</td><td class="yes">可以——场景、直播、录制</td><td class="yes">可以，Windows 版自 10.8.25 起支持</td></tr>
+      <tr><td>控制 SplitCam</td><td class="yes">可以——场景、直播、录制</td><td class="yes">可以——官方插件，Windows（SplitCam 10.8.25+）</td></tr>
       <tr><td>控制其他程序</td><td class="no">不能——仅限 SplitCam</td><td class="yes">可以，这正是它的主要强项</td></tr>
       <tr><td>不用看就能按的实体键</td><td class="no">仅屏幕触控</td><td class="yes">实体按键，有手感</td></tr>
       <tr><td>今天能在 Android 上用吗</td><td class="no">开发中，尚未发布</td><td class="yes">可配合任意电脑使用</td></tr>
@@ -594,7 +619,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>我已经有 Stream Deck 了，SplitCam 能配合它使用吗？</summary>
-        <p>可以。SplitCam 从 Windows 版 10.8.25 起加入了 Stream Deck 支持。</p>
+        <p>可以，在 Windows 上。从 Elgato Marketplace 安装免费的 SplitCam 官方插件（Stream Deck 应用 6.9 或更新版本），并把 SplitCam 更新到 10.8.25 或更高版本。按键可分配开播/下播、切换场景、开始/停止录制、暂停场景、静音和抓拍快照，并会显示 SplitCam 的实时状态。该插件没有 macOS 版本。</p>
       </details>
       <details class="faq-item">
         <summary>手机是怎么找到我的电脑的？</summary>
