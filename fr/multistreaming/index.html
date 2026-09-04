@@ -201,7 +201,7 @@
           "name": "SplitCam fait-il passer ma vidéo par un serveur ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Non. Le multistream est direct, en peer-to-peer depuis votre ordinateur vers le point d'ingestion de chaque plateforme. Aucune donnée ne transite par les serveurs de SplitCam, aucun intermédiaire cloud tiers, aucune implication pour la confidentialité. La même vidéo part droit de votre machine vers Twitch, vers YouTube, vers où que vous diffusiez — séparément et en même temps."
+            "text": "Non. Le multistream part directement de votre ordinateur vers le point d'ingestion de chaque plateforme. Aucune donnée ne transite par les serveurs de SplitCam, aucun intermédiaire cloud tiers, aucune implication pour la confidentialité. La même vidéo part droit de votre machine vers Twitch, vers YouTube, vers où que vous diffusiez — séparément et en même temps."
           }
         },
         {
@@ -265,7 +265,7 @@
           "name": "SplitCam est-il une alternative gratuite à Restream, Streamlabs Multistream ou StreamYard ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oui. La différence clé : SplitCam tourne entièrement sur votre machine et envoie les streams directement à chaque plateforme (peer-to-peer). Restream, Streamlabs Multistream et StreamYard envoient d'abord votre stream vers leur cloud puis le redistribuent, ce qui ajoute de la latence, coûte un abonnement mensuel sur les offres payantes, et partage vos données avec un tiers. SplitCam est gratuit à vie : sans intermédiaire cloud, sans abonnement, aucune donnée partagée avec des tiers."
+            "text": "Oui. La différence clé : SplitCam tourne entièrement sur votre machine et envoie les streams directement à chaque plateforme, sans intermédiaire cloud. Restream, Streamlabs Multistream et StreamYard envoient d'abord votre stream vers leur cloud puis le redistribuent, ce qui ajoute de la latence, coûte un abonnement mensuel sur les offres payantes, et partage vos données avec un tiers. SplitCam est gratuit à vie : sans intermédiaire cloud, sans abonnement, aucune donnée partagée avec des tiers."
           }
         },
         {
@@ -839,7 +839,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
         <span class="eyebrow">Qu'est-ce que le multistream ?</span>
         <h2 class="ms-diag-h">Un seul encodage, toutes les plateformes en même temps.</h2>
         <p>Le multistream vous permet de diffuser sur plusieurs plateformes en même temps — le même direct vers Twitch, YouTube et Facebook, d'un seul clic, avec votre public qui regarde simultanément.</p>
-        <p>Avant, cela exigeait soit des services cloud payants (10 à 50 $/mois), soit des plugins tiers qui sollicitaient votre processeur. SplitCam le fait nativement. <strong style="color:var(--text)">Un seul encodage part de votre machine directement vers chaque destination choisie — en peer-to-peer vers le point d'ingestion de chaque plateforme.</strong></p>
+        <p>Avant, cela exigeait soit des services cloud payants (10 à 50 $/mois), soit des plugins tiers qui sollicitaient votre processeur. SplitCam le fait nativement. <strong style="color:var(--text)">Un seul encodage part de votre machine directement vers chaque destination choisie — droit vers le point d'ingestion de chaque plateforme.</strong></p>
         <p>Sans intermédiaire cloud. Aucun serveur tiers dans la boucle. Votre vidéo part de votre machine droit vers Twitch / YouTube / Facebook / peu importe — même avec 20 destinations sélectionnées. La seule exigence : votre débit montant doit suffire au débit total de tous les streams cumulés.</p>
       </div>
       <div class="ms-flow-vis">
@@ -961,7 +961,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </details>
       <details class="faq-item">
         <summary>SplitCam fait-il passer ma vidéo par un serveur ?</summary>
-        <p>Non. Le multistream est direct, en peer-to-peer depuis votre ordinateur vers le point d'ingestion de chaque plateforme. Aucune donnée ne transite par les serveurs de SplitCam, aucun intermédiaire cloud tiers, aucune implication pour la confidentialité. La même vidéo part droit de votre machine vers Twitch, vers YouTube, vers où que vous diffusiez — séparément et en même temps.</p>
+        <p>Non. Le multistream part directement de votre ordinateur vers le point d'ingestion de chaque plateforme. Aucune donnée ne transite par les serveurs de SplitCam, aucun intermédiaire cloud tiers, aucune implication pour la confidentialité. La même vidéo part droit de votre machine vers Twitch, vers YouTube, vers où que vous diffusiez — séparément et en même temps.</p>
       </details>
       <details class="faq-item">
         <summary>Quel débit montant me faut-il ?</summary>
@@ -993,7 +993,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </details>
       <details class="faq-item">
         <summary>SplitCam est-il une alternative gratuite à Restream, Streamlabs Multistream ou StreamYard ?</summary>
-        <p>Oui. La différence clé : SplitCam tourne entièrement sur votre machine et envoie les streams <strong>directement</strong> à chaque plateforme (peer-to-peer). Restream, Streamlabs Multistream et StreamYard envoient d'abord votre stream vers leur cloud puis le redistribuent, ce qui ajoute de la latence, coûte un abonnement mensuel sur les offres payantes, et partage vos données avec un tiers. SplitCam est gratuit à vie : sans intermédiaire cloud, sans abonnement, aucune donnée partagée avec des tiers.</p>
+        <p>Oui. La différence clé : SplitCam tourne entièrement sur votre machine et envoie les streams <strong>directement</strong> à chaque plateforme, sans intermédiaire cloud. Restream, Streamlabs Multistream et StreamYard envoient d'abord votre stream vers leur cloud puis le redistribuent, ce qui ajoute de la latence, coûte un abonnement mensuel sur les offres payantes, et partage vos données avec un tiers. SplitCam est gratuit à vie : sans intermédiaire cloud, sans abonnement, aucune donnée partagée avec des tiers.</p>
       </details>
       <details class="faq-item">
         <summary>Ai-je besoin d'un plugin de multistream pour OBS (Aitum, SE.Live, Multiple RTMP Outputs) si j'utilise SplitCam ?</summary>

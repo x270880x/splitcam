@@ -167,7 +167,7 @@
           "@type": "HowToStep",
           "position": 5,
           "name": "同时推流到 Facebook + YouTube + 教会网站",
-          "text": "在推流设置中，粘贴 Facebook Live、YouTube Live 和教会网站的 RTMP 推流密钥。勾选这三项，点击「开始直播」——所有平台以点对点方式同时接收直播流。"
+          "text": "在推流设置中，粘贴 Facebook Live、YouTube Live 和教会网站的 RTMP 推流密钥。勾选这三项，点击「开始直播」——所有平台同时接收直播流，无需云端中转。"
         }
       ]
     },
@@ -199,7 +199,7 @@
           "name": "我能同时将主日礼拜直播到 Facebook 和 YouTube 吗？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以——SplitCam 内置多平台推流。填入 Facebook Live 和 YouTube Live 的推流密钥，点击一次「开始直播」，两个平台同时接收直播流。同时还可以通过 RTMP 推送到教会自己的网站。直播流从教会电脑点对点直传，无需云端中转，也没有月费。查看多平台推流详情。"
+            "text": "可以——SplitCam 内置多平台推流。填入 Facebook Live 和 YouTube Live 的推流密钥，点击一次「开始直播」，两个平台同时接收直播流。同时还可以通过 RTMP 推送到教会自己的网站。直播流从教会电脑直传各平台，无需云端中转，也没有月费。查看多平台推流详情。"
           }
         },
         {
@@ -247,7 +247,7 @@
           "name": "SplitCam 用于主日礼拜直播够稳定吗？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "够——SplitCam 自 2003 年持续开发，被全球各地的教会和电视台使用。编码器采用硬件加速保障稳定性，状态监视器实时显示丢帧情况，多平台推流系统点对点直传——某个平台中断不影响其他平台。建议在周日首次直播前的周六进行一次彩排。"
+            "text": "够——SplitCam 自 2003 年持续开发，被全球各地的教会和电视台使用。编码器采用硬件加速保障稳定性，状态监视器实时显示丢帧情况，多平台推流系统直连各平台——某个平台中断不影响其他平台。建议在周日首次直播前的周六进行一次彩排。"
           }
         }
       ]
@@ -677,7 +677,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         • <strong style="color:var(--text)">YouTube Live</strong>——填入 studio.youtube.com → 「开始直播」的推流密钥。<br>
         • <strong style="color:var(--text)">教会网站</strong>——填入你的 RTMP 地址和密钥（Wowza、Vimeo、AWS IVS 或自建 Nginx-RTMP）。<br>
         • <strong style="color:var(--text)">更多平台</strong>——Twitch、Kick、X/Twitter 及 84+ 个预设推流目标。</p>
-        <p class="step-p">点击一次<strong style="color:var(--text)">「开始直播」</strong>，每个平台同时收到直播流。直播流<strong style="color:var(--text)">从你的电脑直接点对点传输</strong>到各平台的接收服务器——无需云端中转，无月费，不按观众数量收费。</p>
+        <p class="step-p">点击一次<strong style="color:var(--text)">「开始直播」</strong>，每个平台同时收到直播流。直播流<strong style="color:var(--text)">从你的电脑直接传输</strong>到各平台的接收服务器——无需云端中转，无月费，不按观众数量收费。</p>
         <div class="step-tip"><b>周六彩排：</b>直播前一天做一次完整的 30 分钟测试直播，隐私设置为「仅自己可见」。检查音量、摄像机取景和歌词显示。第一次主日直播不是发现麦克风噪音或镜头盖没摘的时候。</div>
       </div>
     </div>
@@ -799,7 +799,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </details>
     <details class="faq-item">
       <summary>我能同时将主日礼拜直播到 Facebook 和 YouTube 吗？</summary>
-      <p>可以——SplitCam 内置多平台推流。填入 Facebook Live 和 YouTube Live 的推流密钥，点击一次「开始直播」，两个平台同时接收直播流。同时还可以通过 RTMP 推送到教会自己的网站。直播流从教会电脑点对点直传，无需云端中转，也没有月费。查看<a href="https://splitcam.com/zh/multistreaming" style="color:var(--blue)">多平台推流详情</a>。</p>
+      <p>可以——SplitCam 内置多平台推流。填入 Facebook Live 和 YouTube Live 的推流密钥，点击一次「开始直播」，两个平台同时接收直播流。同时还可以通过 RTMP 推送到教会自己的网站。直播流从教会电脑直传各平台，无需云端中转，也没有月费。查看<a href="https://splitcam.com/zh/multistreaming" style="color:var(--blue)">多平台推流详情</a>。</p>
     </details>
     <details class="faq-item">
       <summary>教会直播软件要多少钱？</summary>
@@ -823,7 +823,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </details>
     <details class="faq-item">
       <summary>SplitCam 用于主日礼拜直播够稳定吗？</summary>
-      <p>够——SplitCam 自 2003 年持续开发，被全球各地的教会和电视台使用。编码器采用硬件加速保障稳定性，状态监视器实时显示丢帧情况，多平台推流系统点对点直传——某个平台中断不影响其他平台。建议在周日首次直播前的周六进行一次彩排。</p>
+      <p>够——SplitCam 自 2003 年持续开发，被全球各地的教会和电视台使用。编码器采用硬件加速保障稳定性，状态监视器实时显示丢帧情况，多平台推流系统直连各平台——某个平台中断不影响其他平台。建议在周日首次直播前的周六进行一次彩排。</p>
     </details>
   </div>
 </section>
@@ -835,7 +835,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <a class="related-card" href="https://splitcam.com/zh/multistreaming">
       <span class="eyebrow">多平台直播</span>
       <h4>一路直播流 → 所有平台</h4>
-      <p>同时向 Facebook + YouTube + 教会网站直播，点对点直传。</p>
+      <p>同时向 Facebook + YouTube + 教会网站直播，直连各平台，无云端中转。</p>
     </a>
     <a class="related-card" href="https://splitcam.com/zh/for/youtubers">
       <span class="eyebrow">YouTube Live</span>

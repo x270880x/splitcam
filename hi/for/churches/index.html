@@ -167,7 +167,7 @@
           "@type": "HowToStep",
           "position": 5,
           "name": "Multistream to Facebook + YouTube + church website",
-          "text": "In Stream Settings, paste your Facebook Live, YouTube Live and church website RTMP stream keys. Tick all three. Click Go Live — every platform receives the stream simultaneously, peer-to-peer."
+          "text": "In Stream Settings, paste your Facebook Live, YouTube Live and church website RTMP stream keys. Tick all three. Click Go Live — every platform receives the stream simultaneously, direct to each platform."
         }
       ]
     },
@@ -198,7 +198,7 @@
           "name": "क्या मैं Sunday service को Facebook और YouTube पर एक साथ stream कर सकता हूँ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "हाँ — SplitCam में built-in multistreaming है. अपनी Facebook Live और YouTube Live stream keys paste कीजिए, एक बार Go Live दबाइए, दोनों platforms को stream एक साथ मिल जाती है. साथ ही RTMP के ज़रिए अपनी church website पर भी push कर सकते हैं. Streams church PC से peer-to-peer सीधे जाती हैं — कोई cloud बीच में नहीं, कोई monthly fee नहीं. देखिए multistreaming details."
+            "text": "हाँ — SplitCam में built-in multistreaming है. अपनी Facebook Live और YouTube Live stream keys paste कीजिए, एक बार Go Live दबाइए, दोनों platforms को stream एक साथ मिल जाती है. साथ ही RTMP के ज़रिए अपनी church website पर भी push कर सकते हैं. Streams church PC से सीधे हर platform पर जाती हैं — कोई cloud बीच में नहीं, कोई monthly fee नहीं. देखिए multistreaming details."
           }
         },
         {
@@ -246,7 +246,7 @@
           "name": "क्या SplitCam एक live Sunday service के लिए काफ़ी reliable है?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "हाँ — SplitCam 2003 से active development में है और दुनिया भर में churches तथा broadcasters इसे इस्तेमाल करते हैं. Encoder stability के लिए hardware acceleration use करता है, health monitor real time में dropped frames दिखाता है, और multistream stack peer-to-peer है (एक platform down होने से बाक़ी down नहीं होते). अपने पहले live Sunday से पहले एक Saturday dress rehearsal कीजिए."
+            "text": "हाँ — SplitCam 2003 से active development में है और दुनिया भर में churches तथा broadcasters इसे इस्तेमाल करते हैं. Encoder stability के लिए hardware acceleration use करता है, health monitor real time में dropped frames दिखाता है, और multistream stack हर platform को stream अलग-अलग सीधे भेजता है (एक platform down होने से बाक़ी down नहीं होते). अपने पहले live Sunday से पहले एक Saturday dress rehearsal कीजिए."
           }
         }
       ]
@@ -676,7 +676,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         • <strong style="color:var(--text)">YouTube Live</strong> — studio.youtube.com → Go Live → Stream से stream key paste कीजिए.<br>
         • <strong style="color:var(--text)">Church website</strong> — अपना custom RTMP URL + key paste कीजिए (Wowza, Vimeo, AWS IVS या self-hosted Nginx-RTMP).<br>
         • <strong style="color:var(--text)">और platforms</strong> — Twitch, Kick, X/Twitter, साथ में 84+ pre-configured destinations.</p>
-        <p class="step-p">एक बार <strong style="color:var(--text)">Go Live</strong> दबाइए. हर platform को stream एक साथ मिलती है. Streams आपके PC से हर platform के ingest server तक <strong style="color:var(--text)">peer-to-peer सीधे</strong> जाती हैं — कोई cloud बीच में नहीं, कोई monthly fee नहीं, कोई per-viewer charge नहीं.</p>
+        <p class="step-p">एक बार <strong style="color:var(--text)">Go Live</strong> दबाइए. हर platform को stream एक साथ मिलती है. Streams आपके PC से हर platform के ingest server तक <strong style="color:var(--text)">सीधे</strong> जाती हैं — कोई cloud बीच में नहीं, कोई monthly fee नहीं, कोई per-viewer charge नहीं.</p>
         <div class="step-tip"><b>Saturday dress rehearsal:</b> Saturday को privacy "Unlisted" या "Only Me" रखकर एक पूरा 30-minute test stream चलाइए. Audio levels, camera framing और lyrics overlay check कीजिए. आपका पहला live Sunday यह पता लगाने का वक़्त नहीं है कि mic hot है या camera पर cap लगी है.</div>
       </div>
     </div>
@@ -688,7 +688,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="bonus">
     <div class="bonus-h">Churches के लिए multistreaming क्यों मायने रखता है</div>
     <p class="bonus-p">अलग-अलग members अलग-अलग platforms पर देखते हैं. <strong>बुज़ुर्ग members</strong> आपकी church website पर link click करते हैं. माता-पिता से मिलने आए <strong>adult children</strong> इसे Facebook Live पर पकड़ते हैं. <strong>युवा attendees</strong> YouTube पर देखते हैं. <strong>घर से न निकल पाने वाले</strong> अपने tablet पर जो सबसे जल्दी खुले वही खोलते हैं.</p>
-    <p class="bonus-p">एक platform चुनिए और बाक़ी खो जाते हैं. SplitCam इन सब पर <strong>एक साथ, peer-to-peer</strong>, free में stream करता है. $19/mo Restream और $25/mo StreamYard की जगह ले लेता है.</p>
+    <p class="bonus-p">एक platform चुनिए और बाक़ी खो जाते हैं. SplitCam इन सब पर <strong>एक साथ, सीधे — बीच में कोई cloud नहीं</strong>, free में stream करता है. $19/mo Restream और $25/mo StreamYard की जगह ले लेता है.</p>
     <a href="https://splitcam.com/hi/multistreaming" class="bonus-link">देखिए multistreaming कैसे काम करता है</a>
   </div>
 </section>
@@ -798,7 +798,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </details>
     <details class="faq-item">
       <summary>क्या मैं Sunday service को Facebook और YouTube पर एक साथ stream कर सकता हूँ?</summary>
-      <p>हाँ — SplitCam में built-in multistreaming है. अपनी Facebook Live और YouTube Live stream keys paste कीजिए, एक बार Go Live दबाइए, दोनों platforms को stream एक साथ मिल जाती है. साथ ही RTMP के ज़रिए अपनी church website पर भी push कर सकते हैं. Streams church PC से peer-to-peer सीधे जाती हैं — कोई cloud बीच में नहीं, कोई monthly fee नहीं. देखिए <a href="https://splitcam.com/hi/multistreaming" style="color:var(--blue)">multistreaming details</a>.</p>
+      <p>हाँ — SplitCam में built-in multistreaming है. अपनी Facebook Live और YouTube Live stream keys paste कीजिए, एक बार Go Live दबाइए, दोनों platforms को stream एक साथ मिल जाती है. साथ ही RTMP के ज़रिए अपनी church website पर भी push कर सकते हैं. Streams church PC से सीधे हर platform पर जाती हैं — कोई cloud बीच में नहीं, कोई monthly fee नहीं. देखिए <a href="https://splitcam.com/hi/multistreaming" style="color:var(--blue)">multistreaming details</a>.</p>
     </details>
     <details class="faq-item">
       <summary>Church streaming software की क़ीमत कितनी है?</summary>
@@ -822,7 +822,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </details>
     <details class="faq-item">
       <summary>क्या SplitCam एक live Sunday service के लिए काफ़ी reliable है?</summary>
-      <p>हाँ — SplitCam 2003 से active development में है और दुनिया भर में churches तथा broadcasters इसे इस्तेमाल करते हैं. Encoder stability के लिए hardware acceleration use करता है, health monitor real time में dropped frames दिखाता है, और multistream stack peer-to-peer है (एक platform down होने से बाक़ी down नहीं होते). अपने पहले live Sunday से पहले एक Saturday dress rehearsal कीजिए.</p>
+      <p>हाँ — SplitCam 2003 से active development में है और दुनिया भर में churches तथा broadcasters इसे इस्तेमाल करते हैं. Encoder stability के लिए hardware acceleration use करता है, health monitor real time में dropped frames दिखाता है, और multistream stack हर platform को stream अलग-अलग सीधे भेजता है (एक platform down होने से बाक़ी down नहीं होते). अपने पहले live Sunday से पहले एक Saturday dress rehearsal कीजिए.</p>
     </details>
   </div>
 </section>
@@ -834,7 +834,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <a class="related-card" href="https://splitcam.com/hi/multistreaming">
       <span class="eyebrow">Multistreaming</span>
       <h4>एक stream → हर platform</h4>
-      <p>Facebook + YouTube + church website पर एक साथ, peer-to-peer stream कीजिए.</p>
+      <p>Facebook + YouTube + church website पर एक साथ, सीधे stream कीजिए — बीच में कोई cloud नहीं.</p>
     </a>
     <a class="related-card" href="https://splitcam.com/hi/for/youtubers">
       <span class="eyebrow">YouTube Live</span>

@@ -173,7 +173,7 @@
           "@type": "HowToStep",
           "position": 5,
           "name": "Facebook + YouTube + 教会ウェブサイトへマルチ配信",
-          "text": "配信設定で、Facebook Live・YouTube Live・教会ウェブサイトの RTMP ストリームキーを貼り付け。3つすべてにチェック。「ライブ開始」をクリックすれば、全プラットフォームが同時に、peer-to-peer で配信を受け取ります。"
+          "text": "配信設定で、Facebook Live・YouTube Live・教会ウェブサイトの RTMP ストリームキーを貼り付け。3つすべてにチェック。「ライブ開始」をクリックすれば、全プラットフォームが同時に、クラウドの中継なしで直接配信を受け取ります。"
         }
       ]
     },
@@ -204,7 +204,7 @@
           "name": "日曜礼拝を Facebook と YouTube へ同時に配信できますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "はい — SplitCam はマルチ配信を内蔵しています。Facebook Live と YouTube Live のストリームキーを貼り付け、「ライブ開始」を一度押すだけで、両方のプラットフォームが同時に配信を受け取ります。同時に RTMP で教会自身のウェブサイトへ配信することもできます。配信は教会のPCから peer-to-peer で直接届きます — クラウド中継なし、月額料金なし。マルチ配信の詳細はこちら。"
+            "text": "はい — SplitCam はマルチ配信を内蔵しています。Facebook Live と YouTube Live のストリームキーを貼り付け、「ライブ開始」を一度押すだけで、両方のプラットフォームが同時に配信を受け取ります。同時に RTMP で教会自身のウェブサイトへ配信することもできます。配信は教会のPCから各プラットフォームへ直接届きます — クラウド中継なし、月額料金なし。マルチ配信の詳細はこちら。"
           }
         },
         {
@@ -252,7 +252,7 @@
           "name": "SplitCam は日曜礼拝のライブに十分な信頼性がありますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "はい — SplitCam は2003年から継続的に開発されており、世界中の教会や放送局に使われています。エンコーダーは安定性のためにハードウェアアクセラレーションを使い、ヘルスモニターはフレーム落ちをリアルタイムに表示し、マルチ配信は peer-to-peer です（1つのプラットフォームが落ちても他は道連れになりません）。最初のライブ日曜の前に、土曜の通しリハーサルを行いましょう。"
+            "text": "はい — SplitCam は2003年から継続的に開発されており、世界中の教会や放送局に使われています。エンコーダーは安定性のためにハードウェアアクセラレーションを使い、ヘルスモニターはフレーム落ちをリアルタイムに表示し、マルチ配信は各プラットフォームへ直接送られます（1つのプラットフォームが落ちても他は道連れになりません）。最初のライブ日曜の前に、土曜の通しリハーサルを行いましょう。"
           }
         }
       ]
@@ -682,7 +682,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         • <strong style="color:var(--text)">YouTube Live</strong> — studio.youtube.com → ライブ配信 → ストリーム のストリームキーを貼り付け。<br>
         • <strong style="color:var(--text)">教会ウェブサイト</strong> — 独自の RTMP URL + キーを貼り付け（Wowza、Vimeo、AWS IVS、または自前の Nginx-RTMP）。<br>
         • <strong style="color:var(--text)">その他のプラットフォーム</strong> — Twitch、Kick、X/Twitter、加えて84+の事前設定済み配信先。</p>
-        <p class="step-p"><strong style="color:var(--text)">ライブ開始</strong>を一度クリック。全プラットフォームが同時に配信を受け取ります。配信はお使いのPCから各プラットフォームの受信サーバーへ <strong style="color:var(--text)">peer-to-peer で直接</strong>届きます — クラウド中継なし、月額料金なし、視聴者ごとの課金もありません。</p>
+        <p class="step-p"><strong style="color:var(--text)">ライブ開始</strong>を一度クリック。全プラットフォームが同時に配信を受け取ります。配信はお使いのPCから各プラットフォームの受信サーバーへ<strong style="color:var(--text)">直接</strong>届きます — クラウド中継なし、月額料金なし、視聴者ごとの課金もありません。</p>
         <div class="step-tip"><b>土曜の通しリハーサル：</b>土曜に、公開設定を「限定公開」または「自分のみ」にして、30分のテスト配信を一通り行いましょう。音量、カメラの構図、歌詞オーバーレイを確認します。マイクがオンのままだったとか、レンズキャップがついていたとか — それに気づくのは初めてのライブ日曜ではいけません。</div>
       </div>
     </div>
@@ -694,7 +694,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="bonus">
     <div class="bonus-h">教会にとってマルチ配信が大切な理由</div>
     <p class="bonus-p">メンバーによって、見るプラットフォームは違います。<strong>年配のメンバー</strong>は教会ウェブサイトのリンクをクリック。<strong>実家に帰省した成人した子ども</strong>は Facebook Live で見ます。<strong>若い参加者</strong>は YouTube。<strong>外出が難しい方</strong>は、タブレットで一番早く開くものを開きます。</p>
-    <p class="bonus-p">1つのプラットフォームを選べば、他のメンバーを取りこぼします。SplitCam はそのすべてへ<strong>同時に、peer-to-peer で</strong>、無料で配信します。月19ドルの Restream や月25ドルの StreamYard の代わりになります。</p>
+    <p class="bonus-p">1つのプラットフォームを選べば、他のメンバーを取りこぼします。SplitCam はそのすべてへ<strong>同時に、直接</strong>、無料で配信します。月19ドルの Restream や月25ドルの StreamYard の代わりになります。</p>
     <a href="https://splitcam.com/ja/multistreaming" class="bonus-link">マルチ配信のしくみを見る</a>
   </div>
 </section>
@@ -804,7 +804,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </details>
     <details class="faq-item">
       <summary>日曜礼拝を Facebook と YouTube へ同時に配信できますか？</summary>
-      <p>はい — SplitCam はマルチ配信を内蔵しています。Facebook Live と YouTube Live のストリームキーを貼り付け、「ライブ開始」を一度押すだけで、両方のプラットフォームが同時に配信を受け取ります。同時に RTMP で教会自身のウェブサイトへ配信することもできます。配信は教会のPCから peer-to-peer で直接届きます — クラウド中継なし、月額料金なし。<a href="https://splitcam.com/ja/multistreaming" style="color:var(--blue)">マルチ配信の詳細</a>はこちら。</p>
+      <p>はい — SplitCam はマルチ配信を内蔵しています。Facebook Live と YouTube Live のストリームキーを貼り付け、「ライブ開始」を一度押すだけで、両方のプラットフォームが同時に配信を受け取ります。同時に RTMP で教会自身のウェブサイトへ配信することもできます。配信は教会のPCから各プラットフォームへ直接届きます — クラウド中継なし、月額料金なし。<a href="https://splitcam.com/ja/multistreaming" style="color:var(--blue)">マルチ配信の詳細</a>はこちら。</p>
     </details>
     <details class="faq-item">
       <summary>教会向け配信ソフトの費用はどのくらいですか？</summary>
@@ -828,7 +828,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </details>
     <details class="faq-item">
       <summary>SplitCam は日曜礼拝のライブに十分な信頼性がありますか？</summary>
-      <p>はい — SplitCam は2003年から継続的に開発されており、世界中の教会や放送局に使われています。エンコーダーは安定性のためにハードウェアアクセラレーションを使い、ヘルスモニターはフレーム落ちをリアルタイムに表示し、マルチ配信は peer-to-peer です（1つのプラットフォームが落ちても他は道連れになりません）。最初のライブ日曜の前に、土曜の通しリハーサルを行いましょう。</p>
+      <p>はい — SplitCam は2003年から継続的に開発されており、世界中の教会や放送局に使われています。エンコーダーは安定性のためにハードウェアアクセラレーションを使い、ヘルスモニターはフレーム落ちをリアルタイムに表示し、マルチ配信は各プラットフォームへ直接送られます（1つのプラットフォームが落ちても他は道連れになりません）。最初のライブ日曜の前に、土曜の通しリハーサルを行いましょう。</p>
     </details>
   </div>
 </section>
@@ -840,7 +840,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <a class="related-card" href="https://splitcam.com/ja/multistreaming">
       <span class="eyebrow">マルチ配信</span>
       <h4>1つの配信 → すべてのプラットフォームへ</h4>
-      <p>Facebook + YouTube + 教会ウェブサイトへ同時に、peer-to-peer で配信。</p>
+      <p>Facebook + YouTube + 教会ウェブサイトへ同時に、直接配信 — クラウド中継なし。</p>
     </a>
     <a class="related-card" href="https://splitcam.com/ja/for/youtubers">
       <span class="eyebrow">YouTube Live</span>

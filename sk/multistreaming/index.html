@@ -173,7 +173,7 @@
           "@type": "HowToStep",
           "position": 3,
           "name": "Kliknite na Go Live",
-          "text": "Jedno tlačidlo spustí všetky vybrané streamy naraz. Počítač zakóduje video raz a pošle kópiu na ingest endpoint každého cieľa — čisto peer-to-peer, bez cloudového sprostredkovateľa."
+          "text": "Jedno tlačidlo spustí všetky vybrané streamy naraz. Počítač zakóduje video raz a pošle kópiu na ingest endpoint každého cieľa — priamo na každú platformu, bez cloudového sprostredkovateľa."
         }
       ]
     },
@@ -201,7 +201,7 @@
           "name": "Posiela SplitCam moje video cez nejaký server?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nie. Multistream ide priamo, peer-to-peer z vášho počítača na ingest endpoint každej platformy. Žiadne dáta neprechádzajú cez servery SplitCam, žiadny cloudový sprostredkovateľ, žiadne dôsledky pre súkromie. To isté video ide priamo z vášho počítača na Twitch, na YouTube, kamkoľvek streamujete — samostatne a naraz."
+            "text": "Nie. Multistream ide priamo z vášho počítača na ingest endpoint každej platformy. Žiadne dáta neprechádzajú cez servery SplitCam, žiadny cloudový sprostredkovateľ, žiadne dôsledky pre súkromie. To isté video ide priamo z vášho počítača na Twitch, na YouTube, kamkoľvek streamujete — samostatne a naraz."
           }
         },
         {
@@ -265,7 +265,7 @@
           "name": "Je SplitCam bezplatná alternatíva k Restream, Streamlabs Multistream alebo StreamYard?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Áno. Kľúčový rozdiel: SplitCam beží celý na vašom počítači a posiela streamy priamo na každú platformu (peer-to-peer). Restream, Streamlabs Multistream a StreamYard najprv pošlú váš stream do svojho cloudu a až odtiaľ ho rozvetvia, čo pridáva latenciu, stojí mesačný poplatok na platených tarifách a zdieľa vaše dáta s treťou stranou. SplitCam je zadarmo navždy, bez cloudového sprostredkovateľa, bez poplatku, žiadne dáta sa nezdieľajú s tretími stranami."
+            "text": "Áno. Kľúčový rozdiel: SplitCam beží celý na vašom počítači a posiela streamy priamo na každú platformu. Restream, Streamlabs Multistream a StreamYard najprv pošlú váš stream do svojho cloudu a až odtiaľ ho rozvetvia, čo pridáva latenciu, stojí mesačný poplatok na platených tarifách a zdieľa vaše dáta s treťou stranou. SplitCam je zadarmo navždy, bez cloudového sprostredkovateľa, bez poplatku, žiadne dáta sa nezdieľajú s tretími stranami."
           }
         },
         {
@@ -784,7 +784,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
         <div class="step-num">3</div>
         <div class="step-content">
           <h3>Kliknite na Go Live</h3>
-          <p>Jedno tlačidlo spustí všetky vybrané streamy naraz. Počítač zakóduje video raz a pošle kópiu na ingest endpoint každého cieľa — čisto peer-to-peer, bez cloudového sprostredkovateľa. Uistite sa, že rýchlosť odosielania pokrýva súčet bitrate všetkých streamov.</p>
+          <p>Jedno tlačidlo spustí všetky vybrané streamy naraz. Počítač zakóduje video raz a pošle kópiu na ingest endpoint každého cieľa — priamo na každú platformu, bez cloudového sprostredkovateľa. Uistite sa, že rýchlosť odosielania pokrýva súčet bitrate všetkých streamov.</p>
         </div>
       </div>
     </div>
@@ -839,7 +839,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
         <span class="eyebrow">Čo je multistream?</span>
         <h2 class="ms-diag-h">Jedno zakódovanie, všetky platformy, naraz.</h2>
         <p>Multistream vám umožní vysielať na viac platforiem naraz — ten istý živý stream na Twitch, YouTube aj Facebook, všetko jedným kliknutím, všetko s publikom, ktoré pozerá naraz.</p>
-        <p>Tradične si to vyžadovalo buď platené cloudové služby (10–50 $/mesiac), alebo pluginy tretích strán, ktoré zaťažovali procesor. SplitCam to robí natívne. <strong style="color:var(--text)">Jedno zakódovanie ide z vášho počítača priamo na každý vybraný cieľ — peer-to-peer na ingest každej platformy.</strong></p>
+        <p>Tradične si to vyžadovalo buď platené cloudové služby (10–50 $/mesiac), alebo pluginy tretích strán, ktoré zaťažovali procesor. SplitCam to robí natívne. <strong style="color:var(--text)">Jedno zakódovanie ide z vášho počítača priamo na každý vybraný cieľ — na ingest každej platformy, bez cloudového sprostredkovateľa.</strong></p>
         <p>Žiadny cloudový sprostredkovateľ. Žiadny server tretej strany v reťazci. Vaše video ide z vášho počítača priamo na Twitch / YouTube / Facebook / kamkoľvek — aj keď máte vybraných 20 cieľov. Jediná podmienka: vaša rýchlosť odosielania musí stačiť na celkový bitrate všetkých streamov spolu.</p>
       </div>
       <div class="ms-flow-vis">
@@ -961,7 +961,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </details>
       <details class="faq-item">
         <summary>Posiela SplitCam moje video cez nejaký server?</summary>
-        <p>Nie. Multistream ide priamo, peer-to-peer z vášho počítača na ingest endpoint každej platformy. Žiadne dáta neprechádzajú cez servery SplitCam, žiadny cloudový sprostredkovateľ, žiadne dôsledky pre súkromie. To isté video ide priamo z vášho počítača na Twitch, na YouTube, kamkoľvek streamujete — samostatne a naraz.</p>
+        <p>Nie. Multistream ide priamo z vášho počítača na ingest endpoint každej platformy. Žiadne dáta neprechádzajú cez servery SplitCam, žiadny cloudový sprostredkovateľ, žiadne dôsledky pre súkromie. To isté video ide priamo z vášho počítača na Twitch, na YouTube, kamkoľvek streamujete — samostatne a naraz.</p>
       </details>
       <details class="faq-item">
         <summary>Akú rýchlosť odosielania potrebujem?</summary>
@@ -993,7 +993,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </details>
       <details class="faq-item">
         <summary>Je SplitCam bezplatná alternatíva k Restream, Streamlabs Multistream alebo StreamYard?</summary>
-        <p>Áno. Kľúčový rozdiel: SplitCam beží celý na vašom počítači a posiela streamy <strong>priamo</strong> na každú platformu (peer-to-peer). Restream, Streamlabs Multistream a StreamYard najprv pošlú váš stream do svojho cloudu a až odtiaľ ho rozvetvia, čo pridáva latenciu, stojí mesačný poplatok na platených tarifách a zdieľa vaše dáta s treťou stranou. SplitCam je zadarmo navždy, bez cloudového sprostredkovateľa, bez poplatku, žiadne dáta sa nezdieľajú s tretími stranami.</p>
+        <p>Áno. Kľúčový rozdiel: SplitCam beží celý na vašom počítači a posiela streamy <strong>priamo</strong> na každú platformu. Restream, Streamlabs Multistream a StreamYard najprv pošlú váš stream do svojho cloudu a až odtiaľ ho rozvetvia, čo pridáva latenciu, stojí mesačný poplatok na platených tarifách a zdieľa vaše dáta s treťou stranou. SplitCam je zadarmo navždy, bez cloudového sprostredkovateľa, bez poplatku, žiadne dáta sa nezdieľajú s tretími stranami.</p>
       </details>
       <details class="faq-item">
         <summary>Potrebujem plugin na multistream pre OBS (Aitum, SE.Live, Multiple RTMP Outputs), ak používam SplitCam?</summary>
