@@ -512,13 +512,36 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <h3>84+ platforms pre-configured</h3>
         <p>Twitch, YouTube, Facebook, Kick, TikTok, X and the rest are already in the list with sensible defaults.</p>
       </div>
-  </div>
+        <div class="reason">
+        <h3>One platform dropping does not take the rest</h3>
+        <p>Each destination has its own connection out of your machine, so a platform going down leaves the others streaming. With a relay there is one upload feeding everything — which is tidier when it works, and a single point of failure when it does not.</p>
+      </div>
+</div>
 </section>
 
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">When Restream is the better pick</h2>
   <p class="sec-p">This is the honest limit of sending directly, and it is worth knowing before you switch. A relay needs <strong>one</strong> upload from you. Sending directly needs the <strong>sum</strong> of every destination's bitrate leaving your house at once — four platforms at recommended settings is roughly 19–20 Mbps of upload — 6 to Twitch, 4.5 to YouTube, 3 to Facebook and 2.5 to a fourth, plus about 20% headroom. If your connection cannot hold that, a cloud relay is not a convenience, it is the thing that makes multistreaming possible at all. SplitCam ships an Upload Speed Test so you can check before you commit, and you can always run fewer destinations at lower bitrates — but if your upload is the constraint, Restream solves a problem SplitCam cannot. The same goes for streaming from a laptop on hotel or mobile internet, where the relay absorbs the instability instead of your audience seeing it.</p>
+</section>
+
+<!-- UPLINK MATH -->
+<section class="section">
+  <h2 class="sec-h">Work out your own number before you decide</h2>
+  <p class="sec-p">Sending directly needs the sum of every destination&#x27;s bitrate leaving at once. A relay needs one upload. That is the whole trade, and it is arithmetic rather than opinion — here it is with the bitrates each platform recommends.</p>
+  <div class="table-wrap"><table class="compare-table">
+    <thead>
+      <tr><th>Destination</th><th>Recommended 1080p</th><th>Running total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Twitch</td><td>6 Mbps</td><td>6 Mbps</td></tr>
+      <tr><td>YouTube</td><td>4.5 Mbps</td><td>10.5 Mbps</td></tr>
+      <tr><td>Facebook</td><td>3 Mbps</td><td>13.5 Mbps</td></tr>
+      <tr><td>A fourth platform</td><td>2.5 Mbps</td><td>16 Mbps</td></tr>
+      <tr><td><strong>Plus ~20% headroom</strong></td><td>—</td><td><strong>19–20 Mbps of upload</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-p">Three platforms come to 13.5 Mbps, or about 17 with headroom. Four come to 19–20. If your upload cannot hold the number in the last row, a cloud relay is not a convenience — it is the thing that makes multistreaming possible at all, and that is a reason to pay for one. SplitCam has a built-in Upload Speed Test so you can check against your real connection rather than the number on your bill.</p>
 </section>
 
 <!-- COMPARE -->
@@ -540,6 +563,38 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Streaming from an unstable connection</td><td class="meh">Your connection is the stream</td><td class="yes">Relay absorbs the instability</td></tr>
     </tbody>
   </table></div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="section">
+  <h2 class="sec-h">What SplitCam does not do</h2>
+  <p class="sec-p">The same list on every comparison here, because you should be able to rule us out quickly rather than discover this after the download.</p>
+  <div class="reasons-grid">
+      <div class="reason">
+        <h3>No guests joining by link</h3>
+        <p>There is no browser link to send someone. You can put a guest&#x27;s Zoom, Meet or Discord window into a scene with window capture, which works, but it is a workaround rather than a feature.</p>
+      </div>
+      <div class="reason">
+        <h3>No Preview/Program, no multiview</h3>
+        <p>You switch to a scene, you do not cue it first and cut to it. There is no wall of source previews either. If you direct from a proper switcher workflow, this will feel wrong immediately.</p>
+      </div>
+      <div class="reason">
+        <h3>No per-camera recordings, no PTZ control</h3>
+        <p>Recording captures the composed scene, not one file per camera for editing later. Nothing in SplitCam pans, tilts or zooms a camera for you.</p>
+      </div>
+      <div class="reason">
+        <h3>NDI comes in, it does not go out</h3>
+        <p>You can take NDI as a source. SplitCam is not an NDI sender for another machine to pick up.</p>
+      </div>
+      <div class="reason">
+        <h3>Some sources are Windows only</h3>
+        <p>Documented on Windows: the Whiteboard, Application Audio, the Replay source and the solid Color source. Scenes, layers, the virtual camera, multistreaming and recording run on both.</p>
+      </div>
+      <div class="reason">
+        <h3>The phone remote is iOS today</h3>
+        <p>SplitCam Remote is on the App Store; the Android version is in the works and not released. Phone-as-a-camera is separate from that and is not iOS only.</p>
+      </div>
+  </div>
 </section>
 
 <!-- FAQ -->
