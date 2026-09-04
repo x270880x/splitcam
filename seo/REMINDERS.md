@@ -350,3 +350,11 @@ Compare DR / ranked keyword count / traffic estimate vs baseline in `seo/reports
 Проверить в Search Console по страницам /alternatives/vmix и /phone-as-webcam: появились ли
 показы, по каким запросам, позиции. Телефонная страница — долгая ставка (сложность 35–46,
 верхушку держат DroidCam/Iriun), быстрого результата не ждать.
+
+## 2026-10-04 — замер /multi-camera/ (добавить к проверке vMix и phone-as-webcam)
+
+База до страницы (Search Console, 90 дней до 2026-09-02): кластер 1901 показ / 24 клика;
+`multi camera live streaming software` 242 показа поз. 14.4 (отвечала главная),
+`… software free` 164 показа поз. 4.9 / 10 кликов, `streaming multicamara` 110 поз. 27.8 (es).
+Ожидание: запросы переезжают с главной на /multi-camera/, позиции растут; испанский —
+на /es/multi-camera/. Проверить по страницам, не по запросам.
