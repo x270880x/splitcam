@@ -582,7 +582,7 @@ makes the calls. Execute over endless planning.
 | функция | статус | опора |
 |---|---|---|
 | Хоткеи на macOS | **есть** | подтверждено владельцем; `/for/educators/` утверждал «Windows only» — исправлено |
-| Stream Deck | **есть** | changelog: «Added Stream Deck support» |
+| Stream Deck | **есть — официальный плагин** | Elgato Marketplace, автор @splitcam, Windows 10+, SD 6.9+, v1.2 (10.07.2026); действия: Start/Stop Stream, Switch Scene, Start/Stop Recording, Pause Scene, Mute, Snapshot; changelog Win 10.8.25 (18.01.2025). В инсталляторе плагина нет. Ролик youtube WCfaMpOlFDY. Открытые вопросы — scratchpad/stream-deck-вопросы-разработчику.md (копия в seo/) |
 | Пульт с телефона | **есть** | `/products/`: «SplitCam Remote, a phone companion that controls your desktop stream without touching the keyboard»; iOS id6760961594 |
 | Минимальная macOS | **13+** | подтверждено владельцем; по сайту было 11+/12/13+/Mojave — сведено к 13+ |
 
