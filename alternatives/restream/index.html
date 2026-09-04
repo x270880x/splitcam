@@ -137,7 +137,7 @@
           "name": "Do I need more upload bandwidth than with Restream?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, and this is the main thing to check. A relay takes one upload from you; sending directly needs the sum of all destination bitrates leaving at once — about 17 Mbps for four platforms at recommended settings. SplitCam has a built-in Upload Speed Test, so you can find out in a minute rather than discover it mid-stream."
+            "text": "Yes, and this is the main thing to check. A relay takes one upload from you; sending directly needs the sum of all destination bitrates leaving at once — about 19–20 Mbps for four platforms at recommended settings. SplitCam has a built-in Upload Speed Test, so you can find out in a minute rather than discover it mid-stream."
           }
         },
         {
@@ -498,11 +498,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Encode once, send many</h3>
-        <p>One encode feeds every destination, so adding a platform costs bandwidth rather than CPU.</p>
+        <p>Destinations that share the same resolution and bitrate share one encode. Give a destination its own settings and it gets its own encode — which is why the per-destination control below is a real feature and not a toggle.</p>
       </div>
       <div class="reason">
         <h3>Per-destination bitrate</h3>
-        <p>Want 6 Mbps to Twitch and 2.5 Mbps to Facebook? Set them separately instead of accepting one relay setting for everything.</p>
+        <p>Want 1080p60 at 6 Mbps to Twitch and 720p30 at 2.5 Mbps to Facebook? Set them separately, instead of accepting one relay setting for everything. Bitrate, resolution and framerate are independent per destination.</p>
       </div>
       <div class="reason">
         <h3>Nothing between you and the platform</h3>
@@ -518,7 +518,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">When Restream is the better pick</h2>
-  <p class="sec-p">This is the honest limit of sending directly, and it is worth knowing before you switch. A relay needs <strong>one</strong> upload from you. Sending directly needs the <strong>sum</strong> of every destination's bitrate leaving your house at once — four platforms at recommended settings is roughly 17 Mbps of upload. If your connection cannot hold that, a cloud relay is not a convenience, it is the thing that makes multistreaming possible at all. SplitCam ships an Upload Speed Test so you can check before you commit, and you can always run fewer destinations at lower bitrates — but if your upload is the constraint, Restream solves a problem SplitCam cannot. The same goes for streaming from a laptop on hotel or mobile internet, where the relay absorbs the instability instead of your audience seeing it.</p>
+  <p class="sec-p">This is the honest limit of sending directly, and it is worth knowing before you switch. A relay needs <strong>one</strong> upload from you. Sending directly needs the <strong>sum</strong> of every destination's bitrate leaving your house at once — four platforms at recommended settings is roughly 19–20 Mbps of upload — 6 to Twitch, 4.5 to YouTube, 3 to Facebook and 2.5 to a fourth, plus about 20% headroom. If your connection cannot hold that, a cloud relay is not a convenience, it is the thing that makes multistreaming possible at all. SplitCam ships an Upload Speed Test so you can check before you commit, and you can always run fewer destinations at lower bitrates — but if your upload is the constraint, Restream solves a problem SplitCam cannot. The same goes for streaming from a laptop on hotel or mobile internet, where the relay absorbs the instability instead of your audience seeing it.</p>
 </section>
 
 <!-- COMPARE -->
@@ -552,7 +552,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Do I need more upload bandwidth than with Restream?</summary>
-        <p>Yes, and this is the main thing to check. A relay takes one upload from you; sending directly needs the sum of all destination bitrates leaving at once — about 17 Mbps for four platforms at recommended settings. SplitCam has a built-in Upload Speed Test, so you can find out in a minute rather than discover it mid-stream.</p>
+        <p>Yes, and this is the main thing to check. A relay takes one upload from you; sending directly needs the sum of all destination bitrates leaving at once — about 19–20 Mbps for four platforms at recommended settings. SplitCam has a built-in Upload Speed Test, so you can find out in a minute rather than discover it mid-stream.</p>
       </details>
       <details class="faq-item">
         <summary>Can I keep using my existing stream keys?</summary>
