@@ -341,3 +341,12 @@ Compare DR / ranked keyword count / traffic estimate vs baseline in `seo/reports
 Всплыло при правке ложных утверждений о vMix: агент исправил FAQ и абзац, а таблицы не
 нашёл. Нужно перевести и вставить таблицу (взять структуру из EN, текст перевести).
 Проверить остальные страницы с таблицами — см. вывод аудита в журнале за 2026-09-04.
+
+## 2026-10-04 — замер новых страниц vMix и phone-as-webcam
+
+Выкачены 2026-09-04 на 35 языках. Целевые запросы (Ahrefs, US):
+  vmix alternative 150/мес слож. 0 · vmix alternatives 80 · vmix vs obs 80
+  use iphone as webcam 900 слож. 46 · use phone as webcam 700 слож. 35 · phone as webcam 150
+Проверить в Search Console по страницам /alternatives/vmix и /phone-as-webcam: появились ли
+показы, по каким запросам, позиции. Телефонная страница — долгая ставка (сложность 35–46,
+верхушку держат DroidCam/Iriun), быстрого результата не ждать.
