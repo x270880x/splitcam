@@ -145,7 +145,7 @@
           "name": "Kenapa aplikasi desktop bisa terlihat lebih baik daripada studio berbasis browser?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Karena ia meng-encode di GPU-mu sendiri alih-alih di dalam sandbox browser, dan karena ia meng-upload stream jadinya sekali saja alih-alih mengirim feed kamera mentah ke atas supaya cloud bisa menyusunnya. Di komputer dan koneksi yang sama, itu biasanya tampak sebagai gambar yang lebih bersih saat ada gerakan."
+            "text": "Karena studio cloud meng-encode kameramu supaya sampai ke sana, lalu meng-encode lagi acara jadinya saat keluar — proses kedua bekerja dari gambar yang sudah terkompresi, dan kerugian itu tidak bisa dikembalikan. SplitCam meng-encode sekali saja, secara lokal. Di komputer dan koneksi yang sama, itu biasanya tampak sebagai gambar yang lebih bersih saat ada gerakan."
           }
         },
         {
@@ -476,7 +476,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Perangkatmu yang menentukan batas atasnya</h3>
-        <p>Tab browser harus meng-encode video di dalam sandbox, berbagi apa pun yang diizinkan browser. Aplikasi desktop bicara langsung ke GPU-mu. Di komputer dan koneksi internet yang sama, itulah beda antara stream yang jadi kabur saat gambarnya bergerak dan stream yang tidak.</p>
+        <p>Kameramu di-encode sekali supaya sampai ke cloud, lalu cloud menyusun acaranya dan meng-encode-nya lagi supaya sampai ke platform. Dua kali encode, dan yang kedua berangkat dari gambar yang sudah terkompresi. SplitCam menyusun dan meng-encode sekali saja, di GPU-mu sendiri, dan apa yang keluar dari mesinmu itulah yang diterima platform.</p>
       </div>
       <div class="reason">
         <h3>Satu upload, bukan dua</h3>
@@ -558,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Kenapa aplikasi desktop bisa terlihat lebih baik daripada studio berbasis browser?</summary>
-        <p>Karena ia meng-encode di GPU-mu sendiri alih-alih di dalam sandbox browser, dan karena ia meng-upload stream jadinya sekali saja alih-alih mengirim feed kamera mentah ke atas supaya cloud bisa menyusunnya. Di komputer dan koneksi yang sama, itu biasanya tampak sebagai gambar yang lebih bersih saat ada gerakan.</p>
+        <p>Karena studio cloud meng-encode kameramu supaya sampai ke sana, lalu meng-encode lagi acara jadinya saat keluar — proses kedua bekerja dari gambar yang sudah terkompresi, dan kerugian itu tidak bisa dikembalikan. SplitCam meng-encode sekali saja, secara lokal. Di komputer dan koneksi yang sama, itu biasanya tampak sebagai gambar yang lebih bersih saat ada gerakan.</p>
       </details>
       <details class="faq-item">
         <summary>Apakah saya harus melepas overlay dan layout brand saya?</summary>

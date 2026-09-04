@@ -137,7 +137,7 @@
           "name": "Kailangan ko ba ng mas malaking upload bandwidth kaysa sa Restream?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oo, at ito ang pangunahing dapat suriin. Isang upload lang ang kinukuha ng relay mula sa iyo; ang diretsong pagpapadala ay nangangailangan ng kabuuan ng bitrate ng lahat ng destination na sabay-sabay lumalabas — mga 17 Mbps para sa apat na platform sa recommended settings. May built-in na Upload Speed Test ang SplitCam, kaya isang minuto mo lang itong malalaman sa halip na matuklasan mo ito sa gitna ng stream."
+            "text": "Oo, at ito ang pangunahing dapat suriin. Isang upload lang ang kinukuha ng relay mula sa iyo; ang diretsong pagpapadala ay nangangailangan ng kabuuan ng bitrate ng lahat ng destination na sabay-sabay lumalabas — mga 19–20 Mbps para sa apat na platform sa recommended settings. May built-in na Upload Speed Test ang SplitCam, kaya isang minuto mo lang itong malalaman sa halip na matuklasan mo ito sa gitna ng stream."
           }
         },
         {
@@ -145,7 +145,7 @@
           "name": "Puwede ko pa bang gamitin ang existing stream keys ko?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oo. Ang bawat destination ay tumatanggap ng parehong stream key na ibinibigay sa iyo ng platform. Walang nagbabago sa mga channel mo o sa settings ng mga ito — kung saan lang nagsisimula ang koneksyon."
+            "text": "Oo. Ang bawat destination ay tumatanggap ng parehong stream key na ibinibigay sa iyo ng platform. Walang nagbabago sa mga channel mo o sa mga setting ng mga ito — ang nagbabago lang ay kung saan nagsisimula ang koneksyon."
           }
         },
         {
@@ -448,7 +448,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="hero-glow"></div>
   <span class="eyebrow">Alternatibo sa Restream</span>
   <h1 class="h1">Ang libreng <span class="accent">Restream alternative</span> na hindi umaalis sa computer mo.</h1>
-  <p class="sub">Kinukuha ng Restream ang iisang stream mo, ipinapadala itong muli mula sa mga server nito, at sinisingil ka buwan-buwan para doon. Nag-e-encode ang SplitCam nang isang beses sa makina mo at ito mismo ang bumubukas ng koneksyon sa bawat platform — <strong>84+ destinations, walang dinadaanang iba, walang sa-subscribe-an</strong>.</p>
+  <p class="sub">Kinukuha ng Restream ang iisang stream mo, ipinapadala itong muli mula sa mga server nito, at sinisingil ka buwan-buwan para doon. Nag-e-encode ang SplitCam nang isang beses sa makina mo at ito mismo ang bumubukas ng koneksyon sa bawat platform — <strong>84+ destinations, walang dinadaanang iba, walang subscription</strong>.</p>
   <div class="hero-cta">
     <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Libreng Download</a>
     <a href="#compare" class="btn-ghost btn-lg">Lumukso sa paghahambing ↓</a>
@@ -485,7 +485,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </div>
       <div class="reason">
         <h3>Iba ang nagtatakda ng hangganan</h3>
-        <p>Ang quality, ang bilang ng destination at ang mga feature ay kung ano ang nasa tier na kinabibilangan mo. Ang pagbabago ng alinman sa mga ito ay desisyon tungkol sa presyo, hindi pagbabago ng setting.</p>
+        <p>Nakadepende sa tier mo ang kalidad, ang bilang ng destination at ang mga feature. Ang pagbabago ng alinman sa mga ito ay desisyon tungkol sa presyo, hindi pagbabago ng setting.</p>
       </div>
   </div>
 </section>
@@ -497,7 +497,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Isang encode, maraming padala</h3>
-        <p>Isang encode ang nagpapakain sa bawat destination, kaya ang pagdaragdag ng platform ay gumagastos ng bandwidth sa halip na CPU.</p>
+        <p>Ang mga destination na magkapareho ang resolution at bitrate ay nagsasalo sa iisang encode. Bigyan mo ng sarili nitong settings ang isang destination at magkakaroon ito ng sariling encode — kaya tunay na feature ang per-destination na kontrol sa ibaba, hindi lang isang toggle.</p>
       </div>
       <div class="reason">
         <h3>Bitrate kada destination</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">Kailan mas tamang piliin ang Restream</h2>
-  <p class="sec-p">Ito ang tapat na limitasyon ng diretsong pagpapadala, at mabuting malaman ito bago ka lumipat. Ang relay ay nangangailangan ng <strong>isang</strong> upload mula sa iyo. Ang diretsong pagpapadala ay nangangailangan ng <strong>kabuuan</strong> ng bitrate ng bawat destination na sabay-sabay lumalabas sa bahay mo — apat na platform sa recommended settings ay humigit-kumulang 17 Mbps ng upload. Kung hindi kaya ng koneksyon mo iyon, hindi kaginhawahan ang cloud relay — ito mismo ang dahilan kung bakit posible pa ang multistreaming. May kasamang Upload Speed Test ang SplitCam para masuri mo ito bago ka magpasya, at puwede ka namang magpatakbo ng mas kaunting destination sa mas mababang bitrate — pero kung ang upload mo ang limitasyon, may nilulutas ang Restream na hindi kaya ng SplitCam. Ganoon din kapag nag-i-stream ka mula sa laptop na nakakabit sa internet ng hotel o sa mobile data, kung saan ang relay ang sumasalo sa pagkabagsak-bagsak sa halip na ang audience mo ang makakita nito.</p>
+  <p class="sec-p">Ito ang tapat na limitasyon ng diretsong pagpapadala, at mabuting malaman ito bago ka lumipat. Ang relay ay nangangailangan ng <strong>isang</strong> upload mula sa iyo. Ang diretsong pagpapadala ay nangangailangan ng <strong>kabuuan</strong> ng bitrate ng bawat destination na sabay-sabay lumalabas sa bahay mo — apat na platform sa recommended settings ay humigit-kumulang 19–20 Mbps ng upload — 6 papuntang Twitch, 4.5 papuntang YouTube, 3 papuntang Facebook at 2.5 sa pang-apat, kasama ang mga 20% na headroom. Kung hindi kaya ng koneksyon mo iyon, hindi kaginhawahan ang cloud relay — ito mismo ang dahilan kung bakit posible pa ang multistreaming. May kasamang Upload Speed Test ang SplitCam para masuri mo ito bago ka magpasya, at puwede ka namang magpatakbo ng mas kaunting destination sa mas mababang bitrate — pero kung ang upload mo ang limitasyon, may nilulutas ang Restream na hindi kaya ng SplitCam. Ganoon din kapag nag-i-stream ka mula sa laptop na nakakabit sa internet ng hotel o sa mobile data, kung saan ang relay ang sumasalo sa pagkabagsak-bagsak sa halip na ang audience mo ang makakita nito.</p>
 </section>
 
 <!-- COMPARE -->
@@ -551,11 +551,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Kailangan ko ba ng mas malaking upload bandwidth kaysa sa Restream?</summary>
-        <p>Oo, at ito ang pangunahing dapat suriin. Isang upload lang ang kinukuha ng relay mula sa iyo; ang diretsong pagpapadala ay nangangailangan ng kabuuan ng bitrate ng lahat ng destination na sabay-sabay lumalabas — mga 17 Mbps para sa apat na platform sa recommended settings. May built-in na Upload Speed Test ang SplitCam, kaya isang minuto mo lang itong malalaman sa halip na matuklasan mo ito sa gitna ng stream.</p>
+        <p>Oo, at ito ang pangunahing dapat suriin. Isang upload lang ang kinukuha ng relay mula sa iyo; ang diretsong pagpapadala ay nangangailangan ng kabuuan ng bitrate ng lahat ng destination na sabay-sabay lumalabas — mga 19–20 Mbps para sa apat na platform sa recommended settings. May built-in na Upload Speed Test ang SplitCam, kaya isang minuto mo lang itong malalaman sa halip na matuklasan mo ito sa gitna ng stream.</p>
       </details>
       <details class="faq-item">
         <summary>Puwede ko pa bang gamitin ang existing stream keys ko?</summary>
-        <p>Oo. Ang bawat destination ay tumatanggap ng parehong stream key na ibinibigay sa iyo ng platform. Walang nagbabago sa mga channel mo o sa settings ng mga ito — kung saan lang nagsisimula ang koneksyon.</p>
+        <p>Oo. Ang bawat destination ay tumatanggap ng parehong stream key na ibinibigay sa iyo ng platform. Walang nagbabago sa mga channel mo o sa mga setting ng mga ito — ang nagbabago lang ay kung saan nagsisimula ang koneksyon.</p>
       </details>
       <details class="faq-item">
         <summary>Ano ang mangyayari sa scenes at overlays ko?</summary>

@@ -193,20 +193,20 @@
           "name": "同時に何プラットフォームへマルチ配信できますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "8配信先までなら快適に。技術的には、CPU/GPUとアップロード帯域が合計負荷に耐えられる限り無制限です。アップロード10Mbpsの中位スペックPCなら、3〜5プラットフォームが一般的。50Mbpsの光回線とNvidiaのカードがあれば、8以上も実現できます。"
+            "text": "8配信先までなら快適に。技術的には、CPU/GPUとアップロード帯域が合計負荷に耐えられる限り無制限です。各プラットフォームが帯域を消費する — それが実用上の上限です。アップロード10Mbpsの中位スペックPCなら、3〜5プラットフォームが一般的。50Mbpsの光回線とNvidiaのカードがあれば、8以上も実現できます。"
           }
         },
         {
           "@type": "Question",
-          "name": "SplitCam は私の映像をクラウドサーバー経由で送りますか？",
+          "name": "SplitCam は私の映像を何かのサーバー経由で送りますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "いいえ。マルチ配信は、お使いのPCから各プラットフォームの取り込みエンドポイントへ直接送る、ピアツーピア方式です。データが SplitCam のサーバーを通ることはなく、第三者のクラウド中継もありません。同じ映像が、あなたのPCから Twitch・YouTube・その他の選んだ配信先へ、それぞれ同時に直接届きます。"
+            "text": "いいえ。マルチ配信は、お使いのPCから各プラットフォームの取り込み先へ直接送る、ピアツーピア方式です。データが SplitCam のサーバーを通ることはなく、クラウド中継もプライバシーの不安もありません。同じ映像が、あなたのPCから Twitch へ、YouTube へ — どこへ配信しようと — それぞれ同時に直接届きます。"
           }
         },
         {
           "@type": "Question",
-          "name": "マルチ配信にはどれくらいのアップロード帯域が必要ですか？",
+          "name": "どれくらいのアップロード速度が必要ですか？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "選んだ配信先すべてのビットレートを合計し、約20%の余裕を足してください。Twitch に6Mbps + YouTube に4.5Mbps + Facebook に3Mbps = 13.5Mbps、余裕を含めて約17Mbpsのアップロードが必要です。内蔵のアップロード速度テストが、配信開始前に回線を確認します。"
@@ -217,31 +217,7 @@
           "name": "Twitch と YouTube へ同時に配信できますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "はい — Twitch + YouTube は最も一般的なマルチ配信の組み合わせです。SplitCam には両方が設定済みです。Twitch の利用規約は2023年10月から任意のプラットフォームへの同時配信を認めているので、完全に準拠しています。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Twitch でマルチ配信（同時配信）は許可されていますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "はい。2023年10月から、Twitch のアフィリエイトもパートナーも、Kick・YouTube・TikTok・Facebook など他のあらゆるプラットフォームへ同時配信できます。唯一の条件は、Twitch の配信品質が他のプラットフォーム版と同等以上であること（例：Twitch に720pを送りながら YouTube に4Kを送るのは不可）です。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "SplitCam は Restream や Streamlabs の代替になりますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "はい — SplitCam は無料の Restream / Streamlabs Multistream の代替です。大きな違いは、SplitCam はすべてお使いのPC上で動き、各プラットフォームへ直接（ピアツーピア）配信を送る点です。Restream や Streamlabs Multistream は、まず配信を自社クラウドへ送ってから各所へ振り分けるため、遅延が増え、（有料プランでは）月額料金がかかり、あなたのデータを共有することになります。SplitCam はずっと無料で、クラウド中継がありません。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "SplitCam を使えば OBS のマルチ配信プラグインは要りませんか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "はい、不要です。SplitCam はマルチ配信を内蔵しています — Aitum Multistream・SE.Live・Multiple RTMP Outputs のようなプラグインは要りません。配信先を選び、「配信開始」を押すだけ。SplitCam は配信スタジオ機能（シーン・ソース・バーチャルカメラ）も丸ごと備えているので、望めば OBS を完全に置き換えられます。"
+            "text": "はい — Twitch + YouTube は最も一般的なマルチ配信の組み合わせです。SplitCam には両方が設定済み：ストリームキーを一度貼り付ければ、「配信開始」を押すたびに両方が始まります。Twitch のルールは2023年10月から同時配信を認めているので、完全に合法です。"
           }
         },
         {
@@ -270,7 +246,7 @@
         },
         {
           "@type": "Question",
-          "name": "SplitCam はカスタム RTMP・RTMPS サーバーに対応していますか？",
+          "name": "カスタム RTMP サーバーに対応していますか？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "はい — RTMP または RTMPS を受け付けるプラットフォームならどれでも使えます。カスタム RTMP 設定にサーバーURLとストリームキーを貼り付けるだけ。非公開ウェビナー、ホワイトラベル配信、SplitCam に未登録のプラットフォームに便利です。"
@@ -278,10 +254,34 @@
         },
         {
           "@type": "Question",
-          "name": "「同時配信（simulcast）」とはどういう意味ですか？",
+          "name": "Twitch でマルチ配信（同時配信）は許可されていますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "同時配信（simulcast）とマルチ配信（multistream）は同じことです：1つのライブ配信を複数のプラットフォームへ同時に送ること。どちらの言葉も SplitCam がやることを指します — Twitch・YouTube・Facebook・Kick・TikTok などへ、ワンクリックで同時に配信します。"
+            "text": "はい。2023年10月から、Twitch のアフィリエイトもパートナーも、Kick・YouTube・TikTok・Facebook など他のあらゆるプラットフォームへ同時配信できます。唯一のルールは、Twitch の配信品質が他のプラットフォームと同等以上であること。Twitch に720pを送りながら YouTube に4Kを流すのはダメですが、それ以外は自由に同時配信できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "SplitCam は Restream・Streamlabs Multistream・StreamYard の無料の代替ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。大きな違いは、SplitCam はすべてお使いのPC上で動き、各プラットフォームへ直接配信を送る点です。Restream・Streamlabs Multistream・StreamYard は、まずあなたの配信を自社クラウドへ送ってから各所へ振り分けるため、遅延が増え、有料プランでは月額料金がかかり、あなたのデータを第三者へ共有することになります。SplitCam はずっと無料：クラウド中継なし、月額料金なし、あなたのデータは第三者へ共有されない。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "SplitCam を使えば OBS のマルチ配信プラグイン（Aitum・SE.Live・Multiple RTMP Outputs）は要りませんか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、不要です。SplitCam はマルチ配信を内蔵しています — プラグインは要りません。配信先を選び、「配信開始」を押すだけ。SplitCam は配信スタジオ機能（シーン・ソース・バーチャルカメラ・ブラウザソース）も丸ごと備えているので、望めば OBS を完全に置き換えられます — 複数のアプリの代わりに1つで。詳しい比較は SplitCam と OBS をご覧ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "「同時配信（simulcast）」とは、マルチ配信と同じことですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい — 同時配信（simulcast）、マルチ配信（multistream）、デュアル配信は、すべて同じことを指します：1つのライブ配信を複数のプラットフォームへ同時に送ること。SplitCam では、これらはすべて1つの内蔵機能です。"
           }
         }
       ]
@@ -746,7 +746,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-twitch"/></svg><svg><use href="#i-yt"/></svg><svg><use href="#i-fb"/></svg><svg><use href="#i-kick"/></svg> 4つ同時：Twitch + YT + FB + Kick</h3>
-        <p>定番のクリエイタースタック。約17Mbpsのアップロードがあれば、推奨ビットレートで4つすべてを余裕でカバーできます。</p>
+        <p>定番のクリエイタースタック。推奨ビットレートなら、約19〜20Mbpsのアップロードで4つすべてをカバーできます — 6 + 4.5 + 3 + 2.5 で映像が16Mbps、そこに約20%の余裕を足した数字です。</p>
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-x"/></svg><svg><use href="#i-linkedin"/></svg> X (Twitter) + LinkedIn Live</h3>
@@ -921,7 +921,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <h3>アップロード速度テスト内蔵</h3>
-        <p>配信前に、SplitCam がビットレートを合計し、実際のアップロード速度を計測します。4つの配信先へ6 + 4.5 + 3 + 2.5Mbps を流す？ あなたの17Mbpsの回線が耐えられるかをテストが教え、フレーム落ちが始まる前に警告します。</p>
+        <p>配信前に、SplitCam がビットレートを合計し、実際のアップロード速度を計測します。4つの配信先へ6 + 4.5 + 3 + 2.5Mbps を流す？ 映像だけで16Mbps、余裕を含めると約19〜20Mbpsです。回線が本当にそれを支えられるかをテストが教え、フレーム落ちが始まる前に警告します。</p>
       </div>
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>

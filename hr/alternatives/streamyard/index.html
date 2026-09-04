@@ -145,7 +145,7 @@
           "name": "Zašto bi desktop aplikacija izgledala bolje od studija u pregledniku?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Zato što kodira na vašem GPU-u umjesto unutar sandboxa preglednika i zato što gotov stream šalje gore samo jednom, umjesto da sirovu sliku kamere šalje u oblak da je on složi. Na istom računalu i istoj vezi to se obično vidi kao čišća slika tijekom pokreta."
+            "text": "Zato što studio u oblaku prvo kodira vašu kameru da bi je dobio k sebi, a onda gotovu emisiju kodira još jednom na izlazu — drugi prolaz radi od već komprimirane slike, i taj se gubitak ne vraća. SplitCam kodira jednom, lokalno. Na istom računalu i istoj vezi to se obično vidi kao čišća slika tijekom pokreta."
           }
         },
         {
@@ -463,7 +463,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <div class="qa-text"><ol>
         <li><strong>Dobivate kvalitetu.</strong> Vaše se scene slažu na vašem procesoru i GPU-u, a ne unutar kartice preglednika, pa rezoluciju i broj sličica ograničava vaše računalo, a ne web aplikacija.</li>
         <li><strong>Dobivate cijenu.</strong> SplitCam je besplatan, bez vodenog žiga i bez razine koja otključava rezoluciju za koju ste računalo već platili.</li>
-        <li><strong>Odričete se gostiju u pregledniku.</strong> StreamYard omogućuje udaljenom gostu da se pridruži klikom na poveznicu, bez ijedne instalacije. SplitCam za to nema ekvivalent — to je njegova stvarna prednost, a ne sitnica.</li>
+        <li><strong>Odričete se gostiju u pregledniku.</strong> StreamYard omogućuje udaljenom gostu da se pridruži klikom na poveznicu, bez ijedne instalacije. SplitCam za to nema ekvivalent — to je stvarna prednost StreamYarda, a ne sitnica.</li>
         <li><strong>Odričete se rada s bilo kojeg računala.</strong> Studio u pregledniku radi na Chromebooku ili posuđenom laptopu. SplitCam se mora instalirati na Windows ili macOS.</li>
     </ol></div>
   </div>
@@ -476,7 +476,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Vaš hardver postavlja granicu</h3>
-        <p>Kartica preglednika mora kodirati video unutar sandboxa, dijeleći ono što joj preglednik dopusti. Desktop aplikacija razgovara izravno s vašim GPU-om. Na istom računalu i istoj internetskoj vezi to je razlika između streama koji omekša čim se scena pomakne i onoga koji ne omekša.</p>
+        <p>Vaša se kamera kodira jednom da bi stigla u oblak, a ondje oblak slaže emisiju i kodira je još jednom da bi stigla na platformu. Dva kodiranja, a drugo kreće od već komprimirane slike. SplitCam slaže i kodira jednom, na vašem GPU-u, i ono što napusti vaše računalo upravo je ono što platforma prima.</p>
       </div>
       <div class="reason">
         <h3>Jedan upload, ne dva</h3>
@@ -558,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Zašto bi desktop aplikacija izgledala bolje od studija u pregledniku?</summary>
-        <p>Zato što kodira na vašem GPU-u umjesto unutar sandboxa preglednika i zato što gotov stream šalje gore samo jednom, umjesto da sirovu sliku kamere šalje u oblak da je on složi. Na istom računalu i istoj vezi to se obično vidi kao čišća slika tijekom pokreta.</p>
+        <p>Zato što studio u oblaku prvo kodira vašu kameru da bi je dobio k sebi, a onda gotovu emisiju kodira još jednom na izlazu — drugi prolaz radi od već komprimirane slike, i taj se gubitak ne vraća. SplitCam kodira jednom, lokalno. Na istom računalu i istoj vezi to se obično vidi kao čišća slika tijekom pokreta.</p>
       </details>
       <details class="faq-item">
         <summary>Moram li se odreći brendiranih overlaya i rasporeda?</summary>

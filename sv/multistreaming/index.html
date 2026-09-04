@@ -193,23 +193,23 @@
           "name": "Till hur många plattformar kan jag multistreama samtidigt?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Upp till 8 destinationer utan problem; tekniskt obegränsat så länge din processor/grafikkort och din uppladdningsbandbredd klarar den samlade belastningen. På en mellanklass-PC med 10 Mbps uppladdning är 3–5 plattformar typiskt. Med 50 Mbps fiber och ett Nvidia-kort är 8+ möjligt."
+            "text": "Upp till 8 destinationer utan problem; tekniskt obegränsat så länge din processor/grafikkort och din uppladdningsbandbredd klarar den samlade belastningen. Varje plattform tar sin andel av bandbredden — det är den praktiska gränsen. På en mellanklass-PC med 10 Mbps uppladdning är 3–5 plattformar typiskt. Med 50 Mbps fiber och ett Nvidia-kort är 8+ möjligt."
           }
         },
         {
           "@type": "Question",
-          "name": "Skickar SplitCam min video genom någon molnserver?",
+          "name": "Skickar SplitCam min video genom någon server?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nej. Multistreaming sker direkt, peer-to-peer från din dator till varje plattforms ingest-slutpunkt. Ingen data passerar SplitCams servrar, ingen tredjeparts mellanhand i molnet. Samma video går rakt från din dator till Twitch, YouTube och varje annan vald destination — separat och samtidigt."
+            "text": "Nej. Multistreaming sker direkt, peer-to-peer från din dator till varje plattforms ingest-slutpunkt. Ingen data passerar SplitCams servrar, ingen molnrelästation i kedjan. Samma video går rakt från din dator till Twitch, till YouTube — vart du än sänder — separat och samtidigt."
           }
         },
         {
           "@type": "Question",
-          "name": "Hur mycket uppladdningsbandbredd behöver jag för att multistreama?",
+          "name": "Hur mycket uppladdningshastighet behöver jag?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Lägg ihop bithastigheterna för alla valda destinationer och lägg till ~20 % säkerhetsmarginal. Streaming i 6 Mbps till Twitch + 4,5 Mbps till YouTube + 3 Mbps till Facebook = 13,5 Mbps + marginal = ~17 Mbps uppladdning krävs. Det inbyggda Upload Speed Test bekräftar din anslutning innan du går live."
+            "text": "Lägg ihop bithastigheterna för alla valda plattformar och lägg till ~20 % marginal. Streaming i 6 Mbps till Twitch + 4,5 Mbps till YouTube + 3 Mbps till Facebook = 13,5 Mbps, med marginal — cirka 17 Mbps uppladdning. Det inbyggda Upload Speed Test kontrollerar din anslutning innan du går live."
           }
         },
         {
@@ -217,31 +217,7 @@
           "name": "Kan jag sända till Twitch och YouTube samtidigt?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja — Twitch + YouTube samtidigt är den vanligaste multistream-kombinationen. SplitCam levereras med båda förkonfigurerade. Twitchs användarvillkor tillåter simulcasting till valfri plattform sedan oktober 2023, så det är helt tillåtet."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Är multistreaming (simulcasting) tillåtet på Twitch?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja. Sedan oktober 2023 kan både Twitch Affiliates och Partners simulcasta till valfri annan plattform — Kick, YouTube, TikTok, Facebook. Det enda kravet är att Twitch-strömmens kvalitet måste vara minst lika bra som versionen på andra plattformar (skicka t.ex. inte 720p till Twitch medan du skickar 4K till YouTube)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Är SplitCam ett alternativ till Restream och Streamlabs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja — SplitCam är ett gratis alternativ till Restream / Streamlabs Multistream. Den viktigaste skillnaden: SplitCam körs helt på din dator och skickar strömmarna direkt till varje plattform (peer-to-peer). Restream och Streamlabs Multistream skickar din ström till sitt moln först och fördelar den sedan, vilket lägger till latens, kräver en månadsavgift (på betalnivåer) och delar dina data. SplitCam är gratis för alltid utan mellanhand i molnet."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Behöver jag ett OBS multistream-plugin om jag använder SplitCam?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nej. SplitCam har multistreaming inbyggt — inga plugins som Aitum Multistream, SE.Live eller Multiple RTMP Outputs behövs. Välj destinationer, klicka på Gå live, klart. SplitCam fungerar också som din fullständiga sändningsstudio (scener, källor, virtuell kamera) så att du kan ersätta OBS helt om du vill."
+            "text": "Ja — Twitch + YouTube är den vanligaste multistream-kombinationen. Båda plattformarna är förkonfigurerade i SplitCam: klistra in streamnycklarna en gång och varje tryck på Gå live startar båda. Twitchs regler tillåter simulcasting sedan oktober 2023, så allt är helt tillåtet."
           }
         },
         {
@@ -249,7 +225,7 @@
           "name": "Kan jag ha olika bithastigheter per plattform?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja — bithastighet, upplösning och bildfrekvens är helt oberoende per destination. Skicka 1080p60 i 6 Mbps till Twitch, 720p30 i 2,5 Mbps till Facebook, 480p30 i 800 kbps till en reservdestination. Ställ in varje i ströminställningarna."
+            "text": "Ja — bithastighet, upplösning och bildfrekvens är helt oberoende per plattform. Skicka 1080p60 i 6 Mbps till Twitch, 720p30 i 2,5 Mbps till Facebook och 480p30 i 800 kbps till en reservplattform. Allt detta finns i ströminställningarna."
           }
         },
         {
@@ -257,7 +233,7 @@
           "name": "Vad händer om en plattform går ner mitt i sändningen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Om en destination tappar (t.ex. en hicka i Twitchs ingest) fortsätter de andra att strömma utan avbrott. SplitCam försöker återansluta till den tappade plattformen automatiskt. Dina tittare på andra plattformar märker aldrig något."
+            "text": "Om en plattform tappar (t.ex. en hicka i Twitchs ingest) fortsätter de andra att sända utan avbrott. SplitCam försöker återansluta till den tappade plattformen automatiskt. Tittarna på de andra plattformarna märker ingenting."
           }
         },
         {
@@ -265,23 +241,47 @@
           "name": "Kan jag multistreama från min telefon?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja — SplitCam mobil (iOS och Android) stöder multistreaming till samma 84+ plattformar. Samma ströminställningar, samma Gå live med ett klick. Stående 9:16-duk är standard på mobilen för TikTok, Reels och Shorts."
+            "text": "Ja — SplitCam mobil (iOS och Android) stöder multistreaming till samma 84+ plattformar. Samma ströminställningar, samma Gå live med ett klick. Stående duk (9:16) är standard på mobilen — för TikTok / Reels / Shorts."
           }
         },
         {
           "@type": "Question",
-          "name": "Stöder SplitCam egna RTMP- och RTMPS-servrar?",
+          "name": "Stöds egna RTMP-servrar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja — varje plattform som tar emot RTMP eller RTMPS fungerar. Klistra in serveradressen och streamnyckeln i inställningarna för Custom RTMP. Perfekt för privata webbinarier, white-label-streaming eller plattformar som inte är förkonfigurerade i SplitCam."
+            "text": "Ja — varje plattform som tar emot RTMP eller RTMPS fungerar. Klistra in serveradressen och streamnyckeln i inställningarna för Custom RTMP. Perfekt för privata webbinarier, white-label-streaming och plattformar som inte finns i SplitCams förkonfigurerade lista."
           }
         },
         {
           "@type": "Question",
-          "name": "Vad betyder simulcast / simulcasting?",
+          "name": "Är multistreaming (simulcasting) tillåtet på Twitch?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Simulcast (samtidig sändning) och multistream är samma sak: att skicka en livesändning till flera plattformar samtidigt. Båda termerna beskriver vad SplitCam gör — sända till Twitch, YouTube, Facebook, Kick, TikTok och andra plattformar samtidigt med ett klick."
+            "text": "Ja. Sedan oktober 2023 kan både Twitch Affiliates och Partners simulcasta till valfri plattform — Kick, YouTube, TikTok, Facebook, vart som helst. Den enda regeln: Twitch-strömmens kvalitet får inte vara sämre än den på andra plattformar. Skicka inte 720p till Twitch medan du matar 4K till YouTube. I övrigt — simulcasta fritt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Är SplitCam ett gratis alternativ till Restream, Streamlabs Multistream och StreamYard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Den viktigaste skillnaden: SplitCam körs helt på din dator och skickar strömmarna direkt till varje plattform. Restream, Streamlabs Multistream och StreamYard skickar din ström till sitt moln först och fördelar den sedan — det lägger till latens, kostar pengar på betalnivåer och innebär att dina data delas med tredje part. SplitCam är gratis för alltid: ingen mellanhand i molnet, ingen månadsavgift, inget delas med tredje part."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Behöver jag ett OBS multistream-plugin (Aitum, SE.Live, Multiple RTMP Outputs) om jag använder SplitCam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nej. SplitCam har multistreaming inbyggt — inga plugins behövs. Välj destinationer, klicka på Gå live, klart. SplitCam är dessutom en fullständig sändningsstudio (scener, källor, virtuell kamera, webbläsarkällor) så att du kan ersätta OBS helt om du vill — en app i stället för flera. Se den detaljerade jämförelsen SplitCam vs OBS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vad är ”simulcast” — är det samma sak som multistreaming?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja — simulcast (samtidig sändning), multistream och dubbelsändning betyder samma sak: en livesändning går till flera plattformar samtidigt. I SplitCam är allt detta en enda inbyggd funktion."
           }
         }
       ]
@@ -746,7 +746,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-twitch"/></svg><svg><use href="#i-yt"/></svg><svg><use href="#i-fb"/></svg><svg><use href="#i-kick"/></svg> 4 samtidigt: Twitch + YT + FB + Kick</h3>
-        <p>Kreatörens standarduppsättning. ~17 Mbps uppladdning räcker gott och väl för fyra plattformar med rekommenderade bithastigheter.</p>
+        <p>Kreatörens standarduppsättning. Ungefär 19–20 Mbps uppladdning räcker för alla fyra med rekommenderade bithastigheter — 6 + 4,5 + 3 + 2,5 är 16 Mbps video, plus omkring 20 % marginal.</p>
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-x"/></svg><svg><use href="#i-linkedin"/></svg> X (Twitter) + LinkedIn Live</h3>
@@ -921,7 +921,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <h3>Inbyggt Upload Speed Test</h3>
-        <p>Före sändningen lägger SplitCam ihop bithastigheterna och mäter din verkliga uppladdningshastighet. Sänder du 6 + 4,5 + 3 + 2,5 Mbps till fyra plattformar? Testet säger om din anslutning klarar 17 Mbps — och varnar innan tappade bildrutor börjar.</p>
+        <p>Före sändningen lägger SplitCam ihop bithastigheterna och mäter din verkliga uppladdningshastighet. Sänder du 6 + 4,5 + 3 + 2,5 Mbps till fyra plattformar? Det är 16 Mbps video och omkring 19–20 med marginal. Testet säger om din anslutning verkligen klarar det — och varnar innan tappade bildrutor börjar.</p>
       </div>
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>

@@ -190,23 +190,23 @@
         },
         {
           "@type": "Question",
-          "name": "Kuinka moneen palveluun voin lähettää multistreamilla yhtä aikaa?",
+          "name": "Kuinka moneen palveluun voin lähettää yhtä aikaa?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mukavasti jopa 8 kohteeseen; teknisesti ilman rajaa niin kauan kuin suorittimesi/näytönohjaimesi ja lähetysnopeutesi kestävät yhteiskuorman. Keskitason koneella ja 10 Mbit/s lähetyksellä tyypillinen määrä on 3–5 palvelua. 50 Mbit/s valokuidulla ja Nvidia-kortilla 8 tai enemmän on mahdollista."
+            "text": "Mukavasti jopa 8 kohteeseen; teknisesti ilman rajaa niin kauan kuin suorittimesi/näytönohjaimesi ja lähetysnopeutesi kestävät yhteiskuorman. Jokainen kohde käyttää omaa kaistaansa — siinä on käytännön raja. Keskitason koneella ja 10 Mbit/s lähetyksellä tyypillinen määrä on 3–5 palvelua. 50 Mbit/s valokuidulla ja Nvidia-kortilla 8 tai enemmän on mahdollista."
           }
         },
         {
           "@type": "Question",
-          "name": "Kulkeeko videoni minkään SplitCamin pilvipalvelimen kautta?",
+          "name": "Kulkeeko videoni minkään palvelimen kautta?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ei. Multistream menee suoraan koneeltasi jokaisen palvelun ingest-osoitteeseen. Mikään data ei kulje SplitCamin palvelinten läpi, eikä mukana ole pilvivälikättä. Sama video lähtee suoraan koneeltasi Twitchiin, YouTubeen ja jokaiseen muuhun valittuun kohteeseen — erikseen ja yhtä aikaa."
+            "text": "Ei. Monilähetys menee suoraan koneeltasi jokaisen palvelun ingest-osoitteeseen. Mikään data ei kulje SplitCamin palvelinten läpi — ei pilvivälikättä, ei kolmansille osapuolille jaettua dataa. Sama video lähtee suoraan koneeltasi Twitchiin, YouTubeen — minne ikinä lähetätkin — erikseen ja yhtä aikaa."
           }
         },
         {
           "@type": "Question",
-          "name": "Kuinka paljon lähetysnopeutta multistream vaatii?",
+          "name": "Kuinka paljon lähetysnopeutta tarvitsen?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Laske yhteen kaikkien valittujen kohteiden bittinopeudet ja lisää noin 20 % varmuusvaraa. Lähetys 6 Mbit/s Twitchiin + 4,5 Mbit/s YouTubeen + 3 Mbit/s Facebookiin = 13,5 Mbit/s + vara = noin 17 Mbit/s lähetysnopeutta. Sisäänrakennettu Upload Speed Test varmistaa yhteytesi ennen suoraa lähetystä."
@@ -217,31 +217,7 @@
           "name": "Voinko lähettää Twitchiin ja YouTubeen samaan aikaan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Kyllä — Twitch + YouTube samanaikaisesti on yleisin multistream-yhdistelmä. SplitCamissa molemmat ovat valmiiksi määritettyinä. Twitchin käyttöehdot sallivat simulcast-lähetyksen mihin tahansa palveluun lokakuusta 2023 alkaen, joten se on täysin sääntöjen mukaista."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Onko multistream (simulcast) sallittu Twitchissä?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kyllä. Lokakuusta 2023 alkaen sekä Twitch Affiliate- että Partner-tason striimaajat saavat lähettää simulcastia mihin tahansa muuhun palveluun — Kickiin, YouTubeen, TikTokiin, Facebookiin. Ainoa vaatimus on, että Twitch-lähetyksen laadun on oltava vähintään yhtä hyvä kuin muissa palveluissa (esimerkiksi älä lähetä Twitchiin 720p:tä ja YouTubeen 4K:ta)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Onko SplitCam vaihtoehto Restreamille ja Streamlabsille?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kyllä — SplitCam on ilmainen vaihtoehto Restreamille ja Streamlabs Multistreamille. Keskeinen ero: SplitCam toimii kokonaan omalla koneellasi ja lähettää striimit suoraan jokaiseen palveluun. Restream ja Streamlabs Multistream lähettävät striimisi ensin pilveensä ja jakavat sen sieltä eteenpäin, mikä lisää viivettä, vaatii kuukausimaksun (maksullisilla tasoilla) ja luovuttaa datasi. SplitCam on ilmainen ikuisesti ilman pilvivälikättä."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Tarvitsenko OBS:n multistream-lisäosaa, jos käytän SplitCamia?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Et. SplitCamissa multistream on sisäänrakennettu — et tarvitse lisäosia kuten Aitum Multistream, SE.Live tai Multiple RTMP Outputs. Valitse kohteet, paina Go Live, valmista. SplitCam toimii myös täysverisenä lähetysstudiona (kohtaukset, lähteet, virtuaalikamera), joten voit korvata OBS:n kokonaan halutessasi."
+            "text": "Kyllä — Twitch + YouTube samanaikaisesti on yleisin multistream-yhdistelmä. SplitCamissa molemmat ovat valmiiksi määritettyinä. Liitä lähetysavaimet kerran, ja sen jälkeen jokainen Go Live -napsautus lähettää molempiin. Twitchin käyttöehdot sallivat simulcastin lokakuusta 2023 alkaen, joten tämä on täysin sääntöjen mukaista."
           }
         },
         {
@@ -262,26 +238,50 @@
         },
         {
           "@type": "Question",
-          "name": "Voinko tehdä multistreamia puhelimesta?",
+          "name": "Voinko tehdä monilähetystä puhelimesta?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Kyllä — SplitCam mobiili (iOS ja Android) tukee multistreamia samoihin 84+ palveluun. Samat lähetysasetukset, sama yhden napsautuksen Go Live. Pystysuora 9:16-kanvas on puhelimessa oletuksena TikTokia, Reelsejä ja Shortseja varten."
+            "text": "Kyllä — SplitCam mobiili (iOS ja Android) tukee monilähetystä samoihin 84+ palveluun. Samat lähetysasetukset, sama yhden napsautuksen Go Live. Pystysuora kanvas (9:16) on puhelimessa oletuksena TikTokia / Reelsejä / Shortseja varten."
           }
         },
         {
           "@type": "Question",
-          "name": "Tukeeko SplitCam omia RTMP- ja RTMPS-palvelimia?",
+          "name": "Tukeeko SplitCam omia RTMP-palvelimia?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Kyllä — mikä tahansa palvelu, joka hyväksyy RTMP:n tai RTMPS:n, toimii. Liitä palvelimen osoite ja lähetysavain Custom RTMP -asetuksiin. Loistava suljettuihin webinaareihin, white label -lähetyksiin tai palveluihin, joita ei ole valmiiksi määritetty SplitCamiin."
+            "text": "Kyllä — mikä tahansa palvelu, joka hyväksyy RTMP:n tai RTMPS:n, toimii. Liitä palvelimen osoite ja lähetysavain Custom RTMP -asetuksiin. Loistava suljettuihin webinaareihin, white label -lähetyksiin tai palveluihin, joita ei ole valmiiksi määritetty SplitCamin listaan."
           }
         },
         {
           "@type": "Question",
-          "name": "Mitä simulcast tarkoittaa?",
+          "name": "Onko monilähetys (simulcast) sallittu Twitchissä?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Simulcast (samanaikainen lähetys) ja multistream tarkoittavat samaa: yhden suoran lähetyksen lähettämistä useaan palveluun samaan aikaan. Molemmat termit kuvaavat sitä, mitä SplitCam tekee — lähettää Twitchiin, YouTubeen, Facebookiin, Kickiin, TikTokiin ja muihin palveluihin yhtä aikaa yhdellä napsautuksella."
+            "text": "Kyllä. Lokakuusta 2023 alkaen sekä Twitch Affiliate- että Partner-tason striimaajat saavat lähettää simulcastia mihin tahansa muuhun palveluun — Kickiin, YouTubeen, TikTokiin, Facebookiin, minne tahansa. Ainoa sääntö: Twitch-lähetyksesi laadun on oltava vähintään yhtä hyvä kuin muissa palveluissa. Älä lähetä Twitchiin 720p:tä samalla kun työnnät YouTubeen 4K:ta. Muuten — tee monilähetystä vapaasti."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onko SplitCam ilmainen vaihtoehto Restreamille, Streamlabs Multistreamille tai StreamYardille?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kyllä. Keskeinen ero: SplitCam toimii kokonaan omalla koneellasi ja lähettää striimit suoraan jokaiseen palveluun. Restream, Streamlabs Multistream ja StreamYard lähettävät striimisi ensin pilveensä ja jakavat sen sieltä eteenpäin, mikä lisää viivettä, maksaa kuukausimaksun maksullisilla tasoilla ja luovuttaa datasi kolmannelle osapuolelle. SplitCam on ilmainen ikuisesti ilman pilvivälikättä, ilman maksua, mitään ei jaeta kolmansille osapuolille."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tarvitsenko OBS:n multistream-lisäosan (Aitum, SE.Live, Multiple RTMP Outputs), jos käytän SplitCamia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Et. SplitCamissa monilähetys on sisäänrakennettu — lisäosia ei tarvita. Valitse kohteet, paina Go Live, valmista. SplitCam toimii myös täysverisenä lähetysstudiona (näkymät, lähteet, virtuaalikamera, selainlähteet), joten voit korvata OBS:n kokonaan, jos haluat yhden sovelluksen, joka tekee kaiken. Katso täysi SplitCam vs OBS -vertailu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mitä \"simulcast\" tarkoittaa ja onko se sama asia kuin monilähetys?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kyllä — simulcast (samanaikainen lähetys), multistream, multistreaming ja kaksoislähetys tarkoittavat kaikki samaa: yhden suoran lähetyksen lähettämistä useaan palveluun samaan aikaan. SplitCam tekee kaiken tämän yhden ominaisuuden alla."
           }
         }
       ]
@@ -746,7 +746,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-twitch"/></svg><svg><use href="#i-yt"/></svg><svg><use href="#i-fb"/></svg><svg><use href="#i-kick"/></svg> 4 kerralla: Twitch + YT + FB + Kick</h3>
-        <p>Valtavirran tekijäkokoonpano. Noin 17 Mbit/s lähetys kattaa mukavasti kaikki neljä suositelluilla bittinopeuksilla.</p>
+        <p>Valtavirran tekijäkokoonpano. Noin 19–20 Mbit/s lähetysnopeus kattaa kaikki neljä suositelluilla bittinopeuksilla — 6 + 4,5 + 3 + 2,5 on 16 Mbit/s videota, plus noin 20 % varaa.</p>
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-x"/></svg><svg><use href="#i-linkedin"/></svg> X (Twitter) + LinkedIn Live</h3>
@@ -848,11 +848,11 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
              platform thumbs via lightweight canvases — a single decoder, perfectly in sync.
              Never put six parallel <video> loops here again: that flickered (2026-06-07 log). -->
         <div class="ms-scene-preview">
-          <img src="https://splitcam.com/multistreaming/assets/stream-preview-poster.jpg" alt="SplitCam-kohtauksen esikatselu" loading="lazy">
+          <img src="https://splitcam.com/multistreaming/assets/stream-preview-poster.jpg" alt="SplitCam-näkymän esikatselu" loading="lazy">
           <span class="ms-live-badge ms-live-overlay"><span class="ms-live-dot"></span>LIVE</span>
           <div class="ms-scene-overlay">
             <img src="https://splitcam.com/assets/splitcam.png" alt="">
-            <span class="sc-brand">SplitCam</span><span class="sc-sub">Kohtaus</span>
+            <span class="sc-brand">SplitCam</span><span class="sc-sub">Näkymä</span>
           </div>
         </div>
 
@@ -921,7 +921,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <h3>Sisäänrakennettu Upload Speed Test</h3>
-        <p>Ennen suoraa lähetystä SplitCamin Upload Speed Test laskee bittinopeutesi yhteen ja mittaa todellisen lähetysnopeutesi. Lähetätkö 6 + 4,5 + 3 + 2,5 Mbit/s neljään palveluun? Se kertoo, kestääkö 17 Mbit/s lähetyksesi sen — ja varoittaa ennen kuin katkoksia tulee.</p>
+        <p>Ennen suoraa lähetystä SplitCamin Upload Speed Test laskee bittinopeutesi yhteen ja mittaa todellisen lähetysnopeutesi. Lähetätkö 6 + 4,5 + 3 + 2,5 Mbit/s neljään palveluun? Se on 16 Mbit/s videota ja varan kanssa noin 19–20. Se kertoo, kestääkö yhteytesi sen oikeasti — ja varoittaa ennen kuin katkoksia tulee.</p>
       </div>
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>
@@ -997,7 +997,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </details>
       <details class="faq-item">
         <summary>Tarvitsenko OBS:n multistream-lisäosan (Aitum, SE.Live, Multiple RTMP Outputs), jos käytän SplitCamia?</summary>
-        <p>Et. SplitCamissa monilähetys on sisäänrakennettu — lisäosia ei tarvita. Valitse kohteet, paina Go Live, valmista. SplitCam toimii myös täysverisenä lähetysstudiona (kohtaukset, lähteet, <a href="https://splitcam.com/fi/virtual-camera" style="color:var(--blue)">virtuaalikamera</a>, selainlähteet), joten voit korvata OBS:n kokonaan, jos haluat yhden sovelluksen, joka tekee kaiken. Katso täysi <a href="https://splitcam.com/fi/alternatives/obs" style="color:var(--blue)">SplitCam vs OBS</a> -vertailu.</p>
+        <p>Et. SplitCamissa monilähetys on sisäänrakennettu — lisäosia ei tarvita. Valitse kohteet, paina Go Live, valmista. SplitCam toimii myös täysverisenä lähetysstudiona (näkymät, lähteet, <a href="https://splitcam.com/fi/virtual-camera" style="color:var(--blue)">virtuaalikamera</a>, selainlähteet), joten voit korvata OBS:n kokonaan, jos haluat yhden sovelluksen, joka tekee kaiken. Katso täysi <a href="https://splitcam.com/fi/alternatives/obs" style="color:var(--blue)">SplitCam vs OBS</a> -vertailu.</p>
       </details>
       <details class="faq-item">
         <summary>Mitä "simulcast" tarkoittaa ja onko se sama asia kuin monilähetys?</summary>

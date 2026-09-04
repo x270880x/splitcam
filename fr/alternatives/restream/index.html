@@ -137,7 +137,7 @@
           "name": "Me faut-il plus de débit montant qu'avec Restream ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oui, et c'est le point principal à vérifier. Un relais ne prend qu'un seul envoi de votre part ; l'envoi direct exige que la somme des débits de toutes les destinations sorte en même temps — environ 17 Mbps pour quatre plateformes aux réglages recommandés. SplitCam intègre un test de débit montant : vous le saurez en une minute, au lieu de le découvrir en plein direct."
+            "text": "Oui, et c'est le point principal à vérifier. Un relais ne prend qu'un seul envoi de votre part ; l'envoi direct exige que la somme des débits de toutes les destinations sorte en même temps — environ 19–20 Mbps pour quatre plateformes aux réglages recommandés. SplitCam intègre un test de débit montant : vous le saurez en une minute, au lieu de le découvrir en plein direct."
           }
         },
         {
@@ -497,7 +497,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Encoder une fois, envoyer à tous</h3>
-        <p>Un seul encodage alimente toutes les destinations : ajouter une plateforme coûte de la bande passante, pas du processeur.</p>
+        <p>Les destinations qui partagent la même résolution et le même débit partagent un seul encodage. Donnez ses propres réglages à une destination et elle obtient son propre encodage — c'est pour cela que le réglage par destination ci-dessous est une vraie fonction, et pas un simple interrupteur.</p>
       </div>
       <div class="reason">
         <h3>Un débit par destination</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">Quand Restream est le meilleur choix</h2>
-  <p class="sec-p">C'est la limite honnête de l'envoi direct, et il vaut mieux la connaître avant de changer. Un relais n'a besoin que d'<strong>un seul</strong> envoi de votre part. L'envoi direct exige que la <strong>somme</strong> des débits de toutes les destinations sorte de chez vous en même temps — quatre plateformes aux réglages recommandés, cela fait environ 17 Mbps en montant. Si votre connexion ne tient pas ce débit, un relais cloud n'est plus un confort : c'est ce qui rend le multistream possible tout court. SplitCam est livré avec un test de débit montant pour vérifier avant de vous engager, et vous pouvez toujours garder moins de destinations à des débits plus bas — mais si c'est votre débit montant qui vous limite, Restream résout un problème que SplitCam ne peut pas résoudre. Il en va de même pour un direct lancé depuis un portable sur l'internet d'un hôtel ou une connexion mobile : là, c'est le relais qui absorbe l'instabilité, au lieu que votre public la voie.</p>
+  <p class="sec-p">C'est la limite honnête de l'envoi direct, et il vaut mieux la connaître avant de changer. Un relais n'a besoin que d'<strong>un seul</strong> envoi de votre part. L'envoi direct exige que la <strong>somme</strong> des débits de toutes les destinations sorte de chez vous en même temps — quatre plateformes aux réglages recommandés, cela fait environ 19–20 Mbps en montant : 6 vers Twitch, 4,5 vers YouTube, 3 vers Facebook et 2,5 vers une quatrième, plus environ 20 % de marge. Si votre connexion ne tient pas ce débit, un relais cloud n'est plus un confort : c'est ce qui rend le multistream possible tout court. SplitCam est livré avec un test de débit montant pour vérifier avant de vous engager, et vous pouvez toujours garder moins de destinations à des débits plus bas — mais si c'est votre débit montant qui vous limite, Restream résout un problème que SplitCam ne peut pas résoudre. Il en va de même pour un direct lancé depuis un portable sur l'internet d'un hôtel ou une connexion mobile : là, c'est le relais qui absorbe l'instabilité, au lieu que votre public la voie.</p>
 </section>
 
 <!-- COMPARE -->
@@ -551,7 +551,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Me faut-il plus de débit montant qu'avec Restream ?</summary>
-        <p>Oui, et c'est le point principal à vérifier. Un relais ne prend qu'un seul envoi de votre part ; l'envoi direct exige que la somme des débits de toutes les destinations sorte en même temps — environ 17 Mbps pour quatre plateformes aux réglages recommandés. SplitCam intègre un test de débit montant : vous le saurez en une minute, au lieu de le découvrir en plein direct.</p>
+        <p>Oui, et c'est le point principal à vérifier. Un relais ne prend qu'un seul envoi de votre part ; l'envoi direct exige que la somme des débits de toutes les destinations sorte en même temps — environ 19–20 Mbps pour quatre plateformes aux réglages recommandés. SplitCam intègre un test de débit montant : vous le saurez en une minute, au lieu de le découvrir en plein direct.</p>
       </details>
       <details class="faq-item">
         <summary>Puis-je garder mes clés de stream actuelles ?</summary>

@@ -190,23 +190,23 @@
         },
         {
           "@type": "Question",
-          "name": "我可以同时多平台直播到多少个平台？",
+          "name": "我可以同时直播到多少个平台？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "轻松支持最多 8 个目标平台；理论上不限数量，只要你的 CPU/GPU 和上传带宽能承受总负载即可。在上传 10 Mbps 的中端电脑上，通常能跑 3–5 个平台。配上 50 Mbps 光纤和 Nvidia 显卡，8 个以上也能实现。"
+            "text": "轻松支持最多 8 个平台；理论上不限数量，只要你的 CPU/GPU 和上传带宽能承受总负载即可。每个平台都会占用一份带宽——这是实际的上限。在上传 10 Mbps 的中端电脑上，通常能跑 3–5 个平台。配上 50 Mbps 光纤和 Nvidia 显卡，8 个以上也能实现。"
           }
         },
         {
           "@type": "Question",
-          "name": "SplitCam 会把我的视频经过云端服务器中转吗？",
+          "name": "SplitCam 会把我的视频经过某个服务器中转吗？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "不会。转推是点对点直连的，从你的电脑直接到每个平台的接入端点。数据不经过 SplitCam 的服务器，没有任何云端中转。同一路视频从你的电脑直接发往 Twitch、YouTube 以及你选中的任何其他平台——各自独立、同时进行。"
+            "text": "不会。转推是点对点直连的，从你的电脑直接到每个平台的接入端点。数据不经过 SplitCam 的服务器，没有任何云端中转。同一路视频从你的电脑直接发往 Twitch、YouTube——无论你推到哪里——各自独立、同时进行。"
           }
         },
         {
           "@type": "Question",
-          "name": "多平台直播需要多大的上传带宽？",
+          "name": "需要多大的上传带宽？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "把所有选中平台的码率相加，再加上约 20% 的余量。以 6 Mbps 推 Twitch + 4.5 Mbps 推 YouTube + 3 Mbps 推 Facebook = 13.5 Mbps，加上余量约需 17 Mbps 上传带宽。内置的上传测速会在你开播前检查网络。"
@@ -217,31 +217,7 @@
           "name": "我能同时直播到 Twitch 和 YouTube 吗？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以——Twitch + YouTube 同时直播是最常见的多平台组合。SplitCam 已为这两个平台预设好。自 2023 年 10 月起，Twitch 的服务条款允许向任意平台同步直播，因此这完全合规。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Twitch 允许多平台同步直播（simulcast）吗？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "允许。自 2023 年 10 月起，Twitch 的 Affiliate 和 Partner 都可以向任意其他平台同步直播——Kick、YouTube、TikTok、Facebook。唯一的要求是 Twitch 上的直播画质不能差于其他平台上的版本（例如不能给 Twitch 推 720p，同时给 YouTube 推 4K）。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "SplitCam 是 Restream 和 Streamlabs 的替代方案吗？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "是的——SplitCam 是 Restream 和 Streamlabs Multistream 的免费替代方案。关键区别在于：SplitCam 完全在你的电脑上运行，把直播流直接发送到每个平台（点对点）。Restream 和 Streamlabs Multistream 会先把你的直播流送到它们的云端，再分发出去——这会增加延迟、在付费档位收费，还意味着把你的数据交给第三方。SplitCam 永久免费，且没有云端中转。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "如果用 SplitCam，还需要 OBS 的多平台直播插件吗？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "不需要。多平台直播是 SplitCam 内置的——无需 Aitum Multistream、SE.Live 或 Multiple RTMP Outputs 之类的插件。选好平台，点「开始直播」，搞定。SplitCam 同时也是一个完整的直播工作室（场景、素材源、虚拟摄像头），所以你愿意的话可以完全取代 OBS。"
+            "text": "可以——Twitch + YouTube 是最常见的多平台组合。SplitCam 已为这两个平台预设好：推流密钥粘贴一次，之后每次点「开始直播」都会同时启动两个。自 2023 年 10 月起，Twitch 的规则允许同步直播，所以这完全合规。"
           }
         },
         {
@@ -265,12 +241,12 @@
           "name": "我可以用手机做多平台直播吗？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以——SplitCam 移动版（iOS 和 Android）支持向同样的 84+ 个平台多平台直播。同样的推流设置，同样的一键开播。手机端默认采用竖屏 9:16 画布——适合 TikTok、Reels 和 Shorts。"
+            "text": "可以——SplitCam 移动版（iOS 和 Android）支持向同样的 84+ 个平台多平台直播。同样的推流设置，同样的一键开播。手机端默认采用竖屏（9:16）画布——适合 TikTok / Reels / Shorts。"
           }
         },
         {
           "@type": "Question",
-          "name": "SplitCam 支持自定义 RTMP 和 RTMPS 服务器吗？",
+          "name": "支持自定义 RTMP 服务器吗？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "支持——任何接受 RTMP 或 RTMPS 的平台都可以。在 Custom RTMP 设置中粘贴服务器地址和推流密钥即可。非常适合内部网络研讨会、白标直播，以及 SplitCam 预设列表里没有的平台。"
@@ -278,10 +254,34 @@
         },
         {
           "@type": "Question",
-          "name": "「同步直播（simulcast）」是什么意思？",
+          "name": "Twitch 允许多平台同步直播（simulcast）吗？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "同步直播（simulcast，即同时广播）、多平台直播和转推是同一件事：把一路直播同时推送到多个平台。这些术语都在描述 SplitCam 所做的事——一键同时直播到 Twitch、YouTube、Facebook、Kick、TikTok 等多个平台。"
+            "text": "允许。自 2023 年 10 月起，Twitch 的 Affiliate 和 Partner 都可以向任意平台同步直播——Kick、YouTube、TikTok、Facebook，随你推到哪里。唯一的规则是：Twitch 上的直播画质不能差于其他平台。不要给 Twitch 推 720p，同时给 YouTube 推 4K。除此之外，尽管自由转推。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "SplitCam 是 Restream、Streamlabs Multistream 和 StreamYard 的免费替代方案吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "是的。关键区别在于：SplitCam 完全在你的电脑上运行，把直播流直接发送到每个平台。Restream、Streamlabs Multistream 和 StreamYard 会先把你的直播流送到它们的云端，再分发出去——这会增加延迟、在付费档位收费，还意味着把你的数据交给第三方。SplitCam 永久免费：没有云端中转，没有月费，数据不经过任何第三方服务器。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如果用 SplitCam，还需要 OBS 的多平台直播插件（Aitum、SE.Live、Multiple RTMP Outputs）吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不需要。多平台直播是 SplitCam 内置的——不需要任何插件。选好平台，点「开始直播」，搞定。SplitCam 同时也是一个完整的直播工作室（场景、素材源、虚拟摄像头、浏览器素材源），所以你愿意的话可以完全取代 OBS——用一个应用代替好几个。详细对比请看 SplitCam 对比 OBS。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "「同步直播（simulcast）」是什么——和多平台直播一样吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "是的——同步直播（simulcast，即同时广播）、多平台直播、转推和双平台直播都是同一件事：把一路直播同时推送到多个平台。在 SplitCam 里，这些全都是同一个内置功能。"
           }
         }
       ]
@@ -746,7 +746,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-twitch"/></svg><svg><use href="#i-yt"/></svg><svg><use href="#i-fb"/></svg><svg><use href="#i-kick"/></svg> 四平台同播：Twitch + YT + FB + Kick</h3>
-        <p>主流创作者的标准搭配。约 17 Mbps 的上传带宽就能轻松以推荐码率覆盖这四个平台。</p>
+        <p>主流创作者的标准搭配。约 19–20 Mbps 的上传带宽就能以推荐码率覆盖这四个平台——6 + 4.5 + 3 + 2.5 是 16 Mbps 的视频，再加上大约 20% 的余量。</p>
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-x"/></svg><svg><use href="#i-linkedin"/></svg> X (Twitter) + LinkedIn Live</h3>
@@ -921,7 +921,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <h3>内置上传测速</h3>
-        <p>开播前，SplitCam 的上传测速会把你的各路码率相加，并探测你真实的上传速度。向四个平台推 6 + 4.5 + 3 + 2.5 Mbps？它会告诉你 17 Mbps 的上传带宽能否撑住——并在丢帧发生前发出预警。</p>
+        <p>开播前，SplitCam 的上传测速会把你的各路码率相加，并探测你真实的上传速度。向四个平台推 6 + 4.5 + 3 + 2.5 Mbps？那是 16 Mbps 的视频，加上余量约为 19–20 Mbps。它会告诉你你的网络能否真的撑住——并在丢帧发生前发出预警。</p>
       </div>
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>

@@ -137,7 +137,7 @@
           "name": "Trenger jeg mer opplastingsbåndbredde enn med Restream?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja, og dette er det viktigste å sjekke. Et mellomledd tar imot én opplasting fra deg; å sende direkte krever summen av bitraten til alle destinasjoner ut samtidig — omtrent 17 Mbps for fire plattformer med anbefalte innstillinger. SplitCam har en innebygd hastighetstest, så du finner det ut på ett minutt i stedet for å oppdage det midt i sendingen."
+            "text": "Ja, og dette er det viktigste å sjekke. Et mellomledd tar imot én opplasting fra deg; å sende direkte krever summen av bitraten til alle destinasjoner ut samtidig — omtrent 19–20 Mbps for fire plattformer med anbefalte innstillinger. SplitCam har en innebygd hastighetstest, så du finner det ut på ett minutt i stedet for å oppdage det midt i sendingen."
           }
         },
         {
@@ -169,7 +169,7 @@
           "name": "Er det en hake ved gratisversjonen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ingen konto å opprette, ingen tidsbegrensning og ingen vannmerke. SplitCam har vært gratis siden 2003, og gjeldende versjon er v10.9.2."
+            "text": "Ingen konto å opprette, ingen tidsbegrensning og ikke noe vannmerke. SplitCam har vært gratis siden 2003, og gjeldende versjon er v10.9.2."
           }
         }
       ]
@@ -473,7 +473,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- WHAT THE FEE BUYS -->
 <section class="section">
   <h2 class="sec-h">Hva månedsavgiften faktisk betaler for</h2>
-  <p class="sec-p">En multistreamingtjeneste i skyen er et mellomledd. Du sender den én strøm, den beholder en kopi på serverne sine og videresender kopien til hver plattform du har koblet til. Bekvemmeligheten er reell, og det samme er ordningen under: sendingen din går gjennom infrastruktur du ikke kontrollerer, og regningen kommer enten du strømmet fire ganger den måneden eller ingen.</p>
+  <p class="sec-p">En multistreamingtjeneste i skyen er et mellomledd. Du sender den én strøm, den beholder en kopi på serverne sine og videresender kopien til hver plattform du har koblet til. Bekvemmeligheten er reell, og det samme er ordningen under: sendingen din går gjennom infrastruktur du ikke kontrollerer, og regningen kommer enten du strømmet fire ganger den måneden eller ikke en eneste gang.</p>
   <div class="reasons-grid">
       <div class="reason">
         <h3>Strømmen din tar en omvei</h3>
@@ -497,11 +497,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Kod én gang, send til mange</h3>
-        <p>Én koding mater hver destinasjon, så å legge til en plattform koster båndbredde og ikke CPU.</p>
+        <p>Destinasjoner som deler samme oppløsning og bitrate, deler én koding. Gir du en destinasjon sine egne innstillinger, får den sin egen koding — det er derfor kontrollen per destinasjon lenger nede er en reell funksjon og ikke en av/på-bryter.</p>
       </div>
       <div class="reason">
         <h3>Bitrate per destinasjon</h3>
-        <p>Vil du ha 6 Mbps til Twitch og 2,5 Mbps til Facebook? Sett dem hver for seg i stedet for å godta én innstilling i mellomleddet for alt.</p>
+        <p>Vil du ha 1080p60 på 6 Mbps til Twitch og 720p30 på 2,5 Mbps til Facebook? Sett dem hver for seg i stedet for å godta én innstilling i mellomleddet for alt. Bitrate, oppløsning og bildefrekvens er uavhengige per destinasjon.</p>
       </div>
       <div class="reason">
         <h3>Ingenting mellom deg og plattformen</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">Når Restream er det beste valget</h2>
-  <p class="sec-p">Dette er den ærlige begrensningen ved å sende direkte, og den er verdt å kjenne til før du bytter. Et mellomledd trenger <strong>én</strong> opplasting fra deg. Å sende direkte krever <strong>summen</strong> av bitraten til hver destinasjon ut av huset ditt samtidig — fire plattformer med anbefalte innstillinger er omtrent 17 Mbps opplasting. Klarer ikke forbindelsen din det, er et mellomledd i skyen ikke en bekvemmelighet, men selve det som gjør multistreaming mulig i det hele tatt. SplitCam har en innebygd hastighetstest, så du kan sjekke før du bestemmer deg, og du kan alltid kjøre færre destinasjoner med lavere bitrate — men er opplastingen din begrensningen, løser Restream et problem SplitCam ikke kan løse. Det samme gjelder strømming fra en bærbar på hotell- eller mobilnett, der mellomleddet absorberer ustabiliteten i stedet for at publikum ser den.</p>
+  <p class="sec-p">Dette er den ærlige begrensningen ved å sende direkte, og den er verdt å kjenne til før du bytter. Et mellomledd trenger <strong>én</strong> opplasting fra deg. Å sende direkte krever <strong>summen</strong> av bitraten til hver destinasjon ut av huset ditt samtidig — fire plattformer med anbefalte innstillinger er omtrent 19–20 Mbps opplasting — 6 til Twitch, 4,5 til YouTube, 3 til Facebook og 2,5 til en fjerde, pluss rundt 20 % margin. Klarer ikke forbindelsen din det, er et mellomledd i skyen ikke en bekvemmelighet, men selve det som gjør multistreaming mulig i det hele tatt. SplitCam har en innebygd hastighetstest, så du kan sjekke før du bestemmer deg, og du kan alltid kjøre færre destinasjoner med lavere bitrate — men er opplastingen din begrensningen, løser Restream et problem SplitCam ikke kan løse. Det samme gjelder strømming fra en bærbar på hotell- eller mobilnett, der mellomleddet absorberer ustabiliteten i stedet for at publikum ser den.</p>
 </section>
 
 <!-- COMPARE -->
@@ -551,7 +551,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Trenger jeg mer opplastingsbåndbredde enn med Restream?</summary>
-        <p>Ja, og dette er det viktigste å sjekke. Et mellomledd tar imot én opplasting fra deg; å sende direkte krever summen av bitraten til alle destinasjoner ut samtidig — omtrent 17 Mbps for fire plattformer med anbefalte innstillinger. SplitCam har en innebygd hastighetstest, så du finner det ut på ett minutt i stedet for å oppdage det midt i sendingen.</p>
+        <p>Ja, og dette er det viktigste å sjekke. Et mellomledd tar imot én opplasting fra deg; å sende direkte krever summen av bitraten til alle destinasjoner ut samtidig — omtrent 19–20 Mbps for fire plattformer med anbefalte innstillinger. SplitCam har en innebygd hastighetstest, så du finner det ut på ett minutt i stedet for å oppdage det midt i sendingen.</p>
       </details>
       <details class="faq-item">
         <summary>Kan jeg fortsette å bruke strømnøklene jeg allerede har?</summary>
@@ -567,7 +567,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Er det en hake ved gratisversjonen?</summary>
-        <p>Ingen konto å opprette, ingen tidsbegrensning og ingen vannmerke. SplitCam har vært gratis siden 2003, og gjeldende versjon er v10.9.2.</p>
+        <p>Ingen konto å opprette, ingen tidsbegrensning og ikke noe vannmerke. SplitCam har vært gratis siden 2003, og gjeldende versjon er v10.9.2.</p>
       </details>
   </div>
 </section>

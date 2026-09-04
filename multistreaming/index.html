@@ -183,31 +183,31 @@
           "name": "Can I stream gameplay to Twitch, YouTube and Kick at the same time?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes \u2014 add all three as destinations and go live once. SplitCam captures DirectX and OpenGL games and encodes on your GPU (NVENC, QuickSync or AMF), then sends that single encode to every platform, so the extra destinations cost upload bandwidth rather than in-game framerate. Hardware encoding keeps the FPS hit small on a mid-range gaming PC; your upload speed is the practical limit, since each destination uses its own bandwidth."
+            "text": "Yes — add all three as destinations and go live once. SplitCam captures DirectX and OpenGL games and encodes on your GPU (NVENC, QuickSync or AMF), then sends that single encode to every platform, so the extra destinations cost upload bandwidth rather than in-game framerate. Hardware encoding keeps the FPS hit small on a mid-range gaming PC; your upload speed is the practical limit, since each destination uses its own bandwidth."
           }
         },
         {
           "@type": "Question",
-          "name": "How many platforms can I multistream to simultaneously?",
+          "name": "How many platforms can I stream to simultaneously?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Up to 8 destinations comfortably; technically unlimited as long as your CPU/GPU and upload bandwidth can handle the combined load. On a mid-range PC with 10 Mbps upload, 3–5 platforms is typical. With 50 Mbps fiber and an Nvidia card, 8+ is achievable."
+            "text": "Up to 8 destinations comfortably; technically unlimited as long as your CPU/GPU and upload bandwidth can handle the combined load. Each destination uses its own bandwidth — that's the practical limit. On a mid-range PC with 10 Mbps upload, 3–5 platforms is typical. With 50 Mbps fiber and an Nvidia card, 8+ is achievable."
           }
         },
         {
           "@type": "Question",
-          "name": "Does SplitCam send my video through any cloud server?",
+          "name": "Does SplitCam send my video through any server?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Multistreaming is direct, peer-to-peer from your computer to each platform's ingest endpoint. No data passes through SplitCam servers, no third-party cloud middleman. The same video goes straight from your machine to Twitch, YouTube and any other selected destination — separately and simultaneously."
+            "text": "No. Multistreaming is direct, peer-to-peer from your computer to each platform's ingest endpoint. No data passes through SplitCam servers, no third-party cloud middleman, no privacy implications. The same video goes straight from your machine to Twitch, to YouTube, to wherever you stream — separately and simultaneously."
           }
         },
         {
           "@type": "Question",
-          "name": "How much upload bandwidth do I need to multistream?",
+          "name": "How much upload bandwidth do I need?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Add up the bitrates of all selected destinations and add ~20% safety margin. Streaming at 6 Mbps to Twitch + 4.5 Mbps to YouTube + 3 Mbps to Facebook = 13.5 Mbps + margin = ~17 Mbps upload required. Built-in Upload Speed Test confirms your connection before going live."
+            "text": "Add up the bitrates of all your selected destinations and add ~20% safety margin. Streaming at 6 Mbps to Twitch + 4.5 Mbps to YouTube + 3 Mbps to Facebook = 13.5 Mbps required + margin = ~17 Mbps upload. Built-in Upload Speed Test confirms your connection before going live."
           }
         },
         {
@@ -215,31 +215,7 @@
           "name": "Can I stream to Twitch and YouTube at the same time?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — Twitch + YouTube simultaneously is the most common multistream combo. SplitCam ships with both pre-configured. Twitch's terms of service allow simulcasting to any platform since October 2023, so it is fully compliant."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is multistreaming (simulcasting) allowed on Twitch?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Since October 2023, both Twitch Affiliates and Partners can simulcast to any other platform — Kick, YouTube, TikTok, Facebook. The only requirement is that the Twitch stream quality must be at least as good as the version on other platforms (e.g., do not send 720p to Twitch while sending 4K to YouTube)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is SplitCam an alternative to Restream and Streamlabs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes — SplitCam is a free Restream / Streamlabs Multistream alternative. The key difference: SplitCam runs entirely on your machine and sends streams directly to each platform (peer-to-peer). Restream and Streamlabs Multistream send your stream to their cloud first and then fan it out, which adds latency, requires a monthly fee (on paid tiers) and shares your data. SplitCam is free forever with no cloud middleman."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do I need an OBS multistream plugin if I use SplitCam?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. SplitCam has multistreaming built in — no plugins like Aitum Multistream, SE.Live or Multiple RTMP Outputs required. Pick destinations, click Go Live, done. SplitCam also acts as your full broadcasting studio (scenes, sources, virtual camera) so you can replace OBS entirely if you want."
+            "text": "Yes — Twitch + YouTube simultaneously is the most common multistream combo. SplitCam ships with both pre-configured. Paste your stream keys once, then every Go Live click sends to both. Twitch's ToS allows simulcasting since October 2023, so this is fully compliant."
           }
         },
         {
@@ -263,23 +239,47 @@
           "name": "Can I multistream from my phone?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — SplitCam mobile (iOS and Android) supports multistreaming to the same 84+ platforms. Same Stream Settings, same one-click Go Live. Vertical 9:16 canvas is the default on mobile for TikTok, Reels and Shorts."
+            "text": "Yes — SplitCam mobile (iOS and Android) supports multistreaming to the same 84+ platforms. Same Stream Settings, same one-click Go Live. Vertical canvas (9:16) is the default on mobile for TikTok / Reels / Shorts."
           }
         },
         {
           "@type": "Question",
-          "name": "Does SplitCam support custom RTMP and RTMPS servers?",
+          "name": "Does SplitCam support custom RTMP servers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — any platform that accepts RTMP or RTMPS works. Paste the server URL and stream key in Custom RTMP settings. Great for private webinars, white-label streaming, or platforms not pre-configured in SplitCam."
+            "text": "Yes — any platform that accepts RTMP or RTMPS works. Paste the server URL and stream key in Custom RTMP settings. Great for private webinars, white-label streaming, or platforms not pre-configured in the SplitCam list."
           }
         },
         {
           "@type": "Question",
-          "name": "What does simulcast / simulcasting mean?",
+          "name": "Is multistreaming (simulcasting) allowed on Twitch?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Simulcast (simultaneous broadcast) and multistream are the same thing: sending one live stream to multiple platforms at the same time. Both terms describe what SplitCam does — broadcast to Twitch, YouTube, Facebook, Kick, TikTok and other platforms simultaneously from a single click."
+            "text": "Yes. Since October 2023, both Twitch Affiliates and Partners can simulcast to any other platform — Kick, YouTube, TikTok, Facebook, anywhere. The only rule: your Twitch stream quality must be at least as good as the version on other platforms. Don't send 720p to Twitch while pushing 4K to YouTube. Otherwise — multistream freely."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SplitCam a free alternative to Restream, Streamlabs Multistream or StreamYard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The key difference: SplitCam runs entirely on your machine and sends streams directly to each platform (peer-to-peer). Restream, Streamlabs Multistream and StreamYard send your stream to their cloud first and then fan it out, which adds latency, costs a monthly fee on paid tiers, and shares your data with a third party. SplitCam is free forever with no cloud middleman, no fee, and nothing shared with anyone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need an OBS multistream plugin (Aitum, SE.Live, Multiple RTMP Outputs) if I use SplitCam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. SplitCam has multistreaming built in — no plugins required. Pick destinations, click Go Live, done. SplitCam also functions as your full broadcasting studio (scenes, sources, virtual camera, browser sources) so you can replace OBS entirely if you want one app that does everything. See the full SplitCam vs OBS comparison."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does \"simulcasting\" mean and is it the same as multistreaming?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — simulcast (simultaneous broadcast), simulcasting, multistream, multistreaming and dual streaming all mean the same thing: sending one live stream to multiple platforms at the same time. SplitCam does all of the above under one feature."
           }
         }
       ]

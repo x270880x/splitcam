@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Apa itu driver audio virtual?",
+          "name": "What is a virtual audio driver?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Software yang menambahkan perangkat audio ke macOS tanpa perangkat keras di baliknya. Aplikasi tidak bisa membedakannya dari mikrofon sungguhan — ia muncul di daftar mikrofon seperti input lainnya, jadi apa pun yang dialirkan ke dalamnya bisa dikirim ke panggilan, stream, atau rekaman."
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Mac mana saja yang didukung?",
+          "name": "Which Macs does it support?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Mac dengan Apple Silicon — M1, M2, M3, M4, dan yang lebih baru — yang menjalankan macOS 12 Monterey ke atas. Biner driver-nya dibangun khusus untuk arm64, jadi Mac Intel tidak didukung."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Apakah saya perlu ini kalau sudah punya SplitCam untuk Mac?",
+          "name": "Do I need it if I already have SplitCam for Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Biasanya tidak. Aplikasi macOS sudah memuat driver ini dan memasangnya untuk kamu. Paket mandiri ini ada untuk kasus ketika perangkat audionya harus dipasang atau diperbaiki secara terpisah."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Apakah ini kernel extension?",
+          "name": "Is it a kernel extension?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Bukan. Ini plug-in HAL CoreAudio yang tinggal di /Library/Audio/Plug-Ins/HAL dan berjalan di user space. Tidak ada yang perlu diizinkan di Recovery mode dan tidak ada pengaturan keamanan yang perlu diturunkan."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Kenapa macOS meminta kata sandi saya?",
+          "name": "Why does macOS ask for my password?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Folder plug-in audio sistem adalah milik macOS, jadi menulis ke dalamnya butuh hak administrator. Paketnya ditandatangani dengan sertifikat Apple Developer ID dan dinotarisasi Apple, karena itu Gatekeeper meloloskannya tanpa peringatan."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "Bagaimana cara menghapusnya?",
+          "name": "How do I uninstall it?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Hapus SplitCamVirtualAudio.driver dari /Library/Audio/Plug-Ins/HAL, lalu restart Mac atau layanan audionya. Perangkat virtual itu akan hilang dari daftar mikrofon."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Apakah ada kamera virtualnya juga?",
+          "name": "Is there a virtual camera too?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ya — SplitCam menyediakan kamera virtual dengan prinsip yang sama, sehingga scene yang kamu susun bisa menggantikan webcam di Zoom, Teams, Meet, dan puluhan aplikasi lainnya."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Apakah ada biayanya?",
+          "name": "Apa itu driver audio virtual?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Tidak. Driver-nya gratis, sama seperti SplitCam sendiri. Tidak ada akun yang perlu dibuat, tidak ada langganan, dan tidak ada watermark pada audionya."

@@ -145,7 +145,7 @@
           "name": "Warum sollte eine Desktop-App besser aussehen als ein Browser-Studio?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Weil sie auf deiner eigenen GPU encodiert statt in einer Browser-Sandbox, und weil sie den fertigen Stream einmal hochlädt, statt rohe Kamerabilder hochzuschicken, damit die Cloud sie zusammensetzt. Auf demselben Rechner und derselben Leitung zeigt sich das meist als saubereres Bild bei Bewegung."
+            "text": "Weil ein Cloud-Studio dein Kamerabild encodiert, um es überhaupt dorthin zu bekommen, und die fertige Sendung auf dem Weg hinaus noch einmal encodiert — der zweite Durchgang arbeitet mit einem bereits komprimierten Bild, und dieser Verlust kommt nicht zurück. SplitCam encodiert einmal, lokal. Auf demselben Rechner und derselben Leitung zeigt sich das meist als saubereres Bild bei Bewegung."
           }
         },
         {
@@ -476,7 +476,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Deine Hardware setzt die Obergrenze</h3>
-        <p>Ein Browser-Tab muss Video innerhalb einer Sandbox encodieren und teilt sich dabei das, was der Browser gerade erlaubt. Eine Desktop-App spricht direkt mit deiner GPU. Auf demselben Rechner und derselben Leitung ist das der Unterschied zwischen einem Stream, der bei Bewegung weich wird, und einem, der es nicht tut.</p>
+        <p>Dein Kamerabild wird einmal encodiert, um in die Cloud zu kommen; dort wird die Sendung zusammengesetzt und ein zweites Mal encodiert, um zur Plattform zu kommen. Zwei Encodings, und das zweite beginnt mit einem bereits komprimierten Bild. SplitCam setzt zusammen und encodiert einmal, auf deiner eigenen GPU — und was deinen Rechner verlässt, ist genau das, was die Plattform bekommt.</p>
       </div>
       <div class="reason">
         <h3>Ein Upload statt zwei</h3>
@@ -558,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Warum sollte eine Desktop-App besser aussehen als ein Browser-Studio?</summary>
-        <p>Weil sie auf deiner eigenen GPU encodiert statt in einer Browser-Sandbox, und weil sie den fertigen Stream einmal hochlädt, statt rohe Kamerabilder hochzuschicken, damit die Cloud sie zusammensetzt. Auf demselben Rechner und derselben Leitung zeigt sich das meist als saubereres Bild bei Bewegung.</p>
+        <p>Weil ein Cloud-Studio dein Kamerabild encodiert, um es überhaupt dorthin zu bekommen, und die fertige Sendung auf dem Weg hinaus noch einmal encodiert — der zweite Durchgang arbeitet mit einem bereits komprimierten Bild, und dieser Verlust kommt nicht zurück. SplitCam encodiert einmal, lokal. Auf demselben Rechner und derselben Leitung zeigt sich das meist als saubereres Bild bei Bewegung.</p>
       </details>
       <details class="faq-item">
         <summary>Muss ich auf Marken-Overlays und Layouts verzichten?</summary>

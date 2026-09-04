@@ -197,15 +197,15 @@
           "name": "Vilket är ett bra gratis alternativ till OBS Studio?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SplitCam är ett gratis OBS-alternativ som är enklare att ställa in. Det levereras med multistreaming, AI-bakgrundsborttagning, beauty-filter, virtuell kamera och mobilappar inbyggt — funktioner som OBS kräver plugins för. SplitCam importerar dessutom dina befintliga OBS-scensamlingar med ett klick, så bytet är förlustfritt. Andra gratis alternativ: Streamlabs Desktop (en fork av OBS, med overlays/widgets), XSplit Broadcaster (gratisnivå med vattenstämpel), Meld Studio (nyare, Mac-fokuserad)."
+            "text": "SplitCam är ett gratis OBS-alternativ som är enklare att ställa in. Multistreaming, AI-bakgrundsborttagning, beauty-filter, virtuell kamera och mobilappar är inbyggda — i OBS kräver vart och ett av dessa ett separat plugin. Dessutom importerar SplitCam dina OBS-scensamlingar med ett klick, så bytet är förlustfritt. Andra gratis alternativ: Streamlabs Desktop (fork av OBS med overlays och widgets), XSplit Broadcaster (gratisplan med vattenstämpel), Meld Studio (nytt, Mac-fokuserat)."
           }
         },
         {
           "@type": "Question",
-          "name": "Varför letar folk efter ett OBS-alternativ?",
+          "name": "Varför letar folk efter en ersättning för OBS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vanliga skäl: (1) OBS har en inlärningskurva — för många menyer för tillfälliga streamare. (2) OBS har inte inbyggd multistreaming, AI-bakgrund eller beauty-filter — du installerar separata plugins för varje. (3) Plugins behöver underhåll efter varje OBS-uppdatering. (4) OBS har inga mobilappar — du kan inte streama från telefonen eller använda telefonen som en andra kamera. (5) Hög processoranvändning vid programvarukodaren (x264) på äldre maskiner."
+            "text": "Vanliga skäl: (1) OBS har en hög inlärningströskel — för många menyer för den vanlige streamern. (2) OBS saknar inbyggd multistreaming, AI-bakgrund och beauty-filter — ett separat plugin krävs för varje funktion. (3) Plugins måste underhållas efter varje OBS-uppdatering. (4) OBS har inga mobilappar — det går inte att streama från telefonen eller göra den till en andra kamera. (5) Hög CPU-belastning med mjukvarukodaren x264 på äldre maskiner."
           }
         },
         {
@@ -213,7 +213,7 @@
           "name": "Är SplitCam bättre än OBS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Bättre på vissa sätt — och sämre på andra. SplitCam vinner på: enklare gränssnitt, inbyggd multistreaming/virtuell kamera/AI-bakgrund/mobilappar, snabbare konfiguration för nya streamare. OBS vinner på: öppen källkod/granskbar kodbas, enormt plugin-ekosystem (4000+ plugins), bredare community-guider. För de flesta streamare — gamers, YouTubers, kyrkor — är SplitCam snabbare att ställa in och använda. För avancerade användare som vill ha varje tänkbar integration och inte har något emot konfigurationstiden styr OBS fortfarande."
+            "text": "Bättre på vissa sätt — sämre på andra. SplitCams styrkor: enklare gränssnitt, inbyggd multistreaming, virtuell kamera, AI-bakgrund och mobilappar, snabb start för nybörjare. OBS styrkor: öppen och granskbar kod, enormt plugin-ekosystem (4000+), fler community-guider. För de flesta streamers — gamers, YouTubers, kyrkor — levererar SplitCam resultat snabbare. För den som vill ha varje tänkbar integration och inte har något emot konfigurationstiden är OBS fortfarande starkare."
           }
         },
         {
@@ -221,7 +221,7 @@
           "name": "Kan jag importera mina OBS-scener till SplitCam?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja — SplitCam har OBS Project Import med ett klick. Peka på din OBS-scensamlings JSON-fil, klicka på Import, och alla dina scener, källor och övergångar dyker upp i SplitCam. Du behöver inte bygga om från grunden. Om du bestämmer dig för att OBS passar dig bättre är dina ursprungliga OBS-filer orörda — bytet är reversibelt."
+            "text": "Ja — SplitCam har OBS Project Import med ett klick. Peka på JSON-filen med din OBS-scensamling, klicka på Import, så dyker alla scener, källor och övergångar upp i SplitCam. Du behöver inte bygga om från grunden. Bestämmer du dig för att OBS passar bättre är dina ursprungliga OBS-filer orörda — bytet är reversibelt."
           }
         },
         {
@@ -234,10 +234,10 @@
         },
         {
           "@type": "Question",
-          "name": "Använder SplitCam mindre processorkraft än OBS?",
+          "name": "Använder SplitCam mindre CPU än OBS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Generellt ja när båda använder hårdvarukodning (NVENC på Nvidia, QuickSync på Intel, AMF på AMD, VideoToolbox på macOS). SplitCam känner automatiskt av den bästa hårdvarukodaren; OBS kräver manuell konfiguration. Om du har kört OBS med programvarukodaren x264 sänker ett byte till SplitCam (eller aktivering av hårdvarukodning i OBS) vanligtvis processoranvändningen från 30–60 % till under 10 %."
+            "text": "Generellt ja när båda använder hårdvarukodning (NVENC på Nvidia, QuickSync på Intel, AMF på AMD, VideoToolbox på macOS). SplitCam väljer automatiskt den bästa hårdvarukodaren; i OBS konfigureras det manuellt. Har du kört OBS med mjukvarukodaren x264 sänker ett byte till SplitCam (eller aktivering av hårdvarukodning i OBS) vanligtvis CPU-belastningen från 30–60 % till under 10 %."
           }
         },
         {
@@ -245,7 +245,7 @@
           "name": "Är SplitCam öppen källkod som OBS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nej — SplitCam är proprietär freeware med stängd källkod. OBS Studio är öppen källkod under GPLv2. Om öppen/granskbar kod är ett absolut krav (företagspolicy, säkerhetsgranskning, bidragsmodell), håll dig till OBS eller titta på Meld Studio. SplitCam är gratis som i gratis öl, inte gratis som i yttrandefrihet."
+            "text": "Nej — SplitCam är proprietär freeware med stängd källkod. OBS Studio är öppen källkod under GPLv2. Om öppen och granskbar kod är ett absolut krav (företagspolicy, säkerhetsgranskning, bidragsvilja) håll dig till OBS eller titta på Meld Studio. SplitCam är gratis som produkt, men det är inte fri och öppen programvara."
           }
         },
         {

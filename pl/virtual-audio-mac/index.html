@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Czym jest wirtualny sterownik audio?",
+          "name": "What is a virtual audio driver?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Program, który dodaje do macOS urządzenie audio bez żadnego sprzętu za nim. Aplikacje nie odróżniają go od prawdziwego mikrofonu — pojawia się na liście mikrofonów jak każde inne wejście, więc wszystko, co do niego skierujesz, można wysłać na rozmowę, transmisję albo nagranie."
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Które Maki są obsługiwane?",
+          "name": "Which Macs does it support?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Maki z Apple Silicon — M1, M2, M3, M4 i nowsze — z systemem macOS 12 Monterey lub nowszym. Sterownik jest zbudowany wyłącznie dla arm64, więc Maki z procesorami Intel nie są obsługiwane."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Czy potrzebuję go, skoro mam już SplitCam na Maca?",
+          "name": "Do I need it if I already have SplitCam for Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Zwykle nie. Aplikacja na macOS już zawiera ten sterownik i instaluje go za Ciebie. Osobny pakiet istnieje na te przypadki, w których urządzenie audio trzeba zainstalować lub naprawić samodzielnie."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Czy to rozszerzenie jądra systemu?",
+          "name": "Is it a kernel extension?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nie. To wtyczka CoreAudio HAL, która leży w /Library/Audio/Plug-Ins/HAL i działa w przestrzeni użytkownika. Nie ma czego zezwalać w trybie odzyskiwania ani żadnego obniżonego poziomu zabezpieczeń do włączania."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Dlaczego macOS pyta o hasło?",
+          "name": "Why does macOS ask for my password?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Systemowy folder wtyczek audio należy do macOS, więc zapis w nim wymaga uprawnień administratora. Pakiet jest podpisany certyfikatem Apple Developer ID i notaryzowany przez Apple — dlatego Gatekeeper przepuszcza go bez ostrzeżenia."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "Jak go odinstalować?",
+          "name": "How do I uninstall it?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Usuń SplitCamVirtualAudio.driver z folderu /Library/Audio/Plug-Ins/HAL, a potem uruchom Maca ponownie albo zrestartuj usługę audio. Wirtualne urządzenie zniknie z listy mikrofonów."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Czy jest też kamera wirtualna?",
+          "name": "Is there a virtual camera too?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Tak — SplitCam udostępnia na tej samej zasadzie kamerę wirtualną, dzięki czemu skomponowana scena zastępuje kamerę internetową w Zoom, Teams, Meet i dziesiątkach innych aplikacji."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Czy to coś kosztuje?",
+          "name": "Does it cost anything?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nie. Sterownik jest darmowy, tak jak sam SplitCam. Nie ma konta do zakładania, nie ma czego subskrybować i żaden znak wodny nie jest nakładany na dźwięk."

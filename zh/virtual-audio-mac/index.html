@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "它支持哪些 Mac？",
+          "name": "Which Macs does it support?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "搭载 Apple Silicon 的 Mac——M1、M2、M3、M4 及更新机型——并运行 macOS 12 Monterey 或更高版本。驱动只编译了 arm64 版本，因此不支持 Intel 芯片的 Mac。"
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "已经装了 Mac 版 SplitCam，还需要它吗？",
+          "name": "Do I need it if I already have SplitCam for Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "通常不需要。macOS 版应用已经包含这个驱动，并会替你安装好。独立安装包只是为了应对需要单独安装或修复该音频设备的情况。"
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "它是内核扩展吗？",
+          "name": "它支持哪些 Mac？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "不是。它是一个 CoreAudio HAL 插件，位于 /Library/Audio/Plug-Ins/HAL，运行在用户空间。不需要在恢复模式里放行，也不用打开任何降低安全性的选项。"
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "macOS 为什么要我输入密码？",
+          "name": "Why does macOS ask for my password?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "系统音频插件目录属于 macOS，往里写入需要管理员权限。安装包使用 Apple Developer ID 证书签名，并通过了 Apple 公证，所以 Gatekeeper 会直接放行，不会发出警告。"
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "如何卸载它？",
+          "name": "How do I uninstall it?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "从 /Library/Audio/Plug-Ins/HAL 中删除 SplitCamVirtualAudio.driver，然后重启 Mac 或重启音频服务。虚拟设备就会从麦克风列表中消失。"
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "有虚拟摄像头吗？",
+          "name": "已经装了 Mac 版 SplitCam，还需要它吗？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "有——SplitCam 按同样的原理提供了虚拟摄像头，让你合成好的场景在 Zoom、Teams、Meet 以及数十款其他应用中代替网络摄像头出镜。"
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "要收费吗？",
+          "name": "它是内核扩展吗？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "不收费。驱动是免费的，SplitCam 本身也是。无需注册账号，无需订阅，也不会在音频上加任何水印。"

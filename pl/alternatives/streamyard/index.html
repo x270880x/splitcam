@@ -145,7 +145,7 @@
           "name": "Dlaczego aplikacja desktopowa miałaby dawać lepszy obraz niż studio w przeglądarce?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Bo koduje obraz na Twoim własnym GPU, a nie w piaskownicy przeglądarki, i bo wysyła gotowy stream raz, zamiast wypychać w górę surowy obraz z kamer, żeby chmura mogła go złożyć. Na tym samym komputerze i tym samym łączu widać to zwykle jako czystszy obraz przy ruchu."
+            "text": "Bo studio w chmurze koduje obraz z Twojej kamery, żeby go do siebie ściągnąć, a potem koduje gotowy program jeszcze raz w drodze na zewnątrz — drugie kodowanie pracuje na już skompresowanym obrazie, a tej straty nic nie odzyska. SplitCam koduje raz, lokalnie. Na tym samym komputerze i tym samym łączu widać to zwykle jako czystszy obraz przy ruchu."
           }
         },
         {
@@ -462,7 +462,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <div class="qa-h">Krótka odpowiedź: co zyskujesz, a z czego rezygnujesz</div>
     <div class="qa-text"><ol>
         <li><strong>Zyskujesz jakość.</strong> Twoje sceny powstają na Twoim własnym procesorze i GPU, a nie w karcie przeglądarki, więc rozdzielczość i liczbę klatek ogranicza Twój komputer, a nie aplikacja webowa.</li>
-        <li><strong>Zyskujesz cenę.</strong> SplitCam jest za darmo, bez znaku wodnego i bez planu, który odblokowuje rozdzielczość, za którą już raz zapłaciłeś, kupując komputer.</li>
+        <li><strong>Zyskujesz na cenie.</strong> SplitCam jest za darmo, bez znaku wodnego i bez planu, który odblokowuje rozdzielczość, za którą już raz zapłaciłeś, kupując komputer.</li>
         <li><strong>Rezygnujesz z gości w przeglądarce.</strong> W StreamYard zdalny gość dołącza kliknięciem w link, bez instalowania czegokolwiek. SplitCam nie ma odpowiednika — to prawdziwa przewaga StreamYard, a nie drobiazg.</li>
         <li><strong>Rezygnujesz z pracy na dowolnej maszynie.</strong> Studio w przeglądarce działa na Chromebooku albo pożyczonym laptopie. SplitCam trzeba zainstalować na Windows lub macOS.</li>
     </ol></div>
@@ -476,7 +476,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Sufit wyznacza Twój sprzęt</h3>
-        <p>Karta przeglądarki musi kodować obraz w piaskownicy i dzielić się tym, na co pozwoli przeglądarka. Aplikacja desktopowa rozmawia z Twoim GPU bezpośrednio. Na tym samym komputerze i tym samym łączu to różnica między streamem, który mięknie przy ruchu w kadrze, a takim, który nie mięknie.</p>
+        <p>Twoja kamera jest kodowana raz, żeby trafić do chmury, a chmura składa program i koduje go jeszcze raz, żeby wysłać go na platformę. Dwa kodowania, przy czym drugie zaczyna od już skompresowanego obrazu. SplitCam składa i koduje raz, na Twoim własnym GPU, i to, co wychodzi z Twojego komputera, jest tym, co dostaje platforma.</p>
       </div>
       <div class="reason">
         <h3>Jedno wysyłanie, nie dwa</h3>
@@ -526,7 +526,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- COMPARE -->
 <section class="section" id="compare">
   <h2 class="sec-h">SplitCam kontra StreamYard</h2>
-  <p class="sec-p">Tam, gdzie wiersz zależy od zmieniającego się planu abonamentowego, jest to napisane wprost, zamiast liczby, za którą nie możemy ręczyć. Zanim zdecydujesz, sprawdź samodzielnie aktualne plany StreamYard.</p>
+  <p class="sec-p">Tam, gdzie wiersz zależy od zmieniającego się planu abonamentowego, piszemy to wprost, zamiast podawać liczbę, za którą nie moglibyśmy ręczyć. Zanim zdecydujesz, sprawdź samodzielnie aktualne plany StreamYard.</p>
   <div class="table-wrap"><table class="compare-table">
     <thead>
       <tr><th>Funkcja</th><th>SplitCam</th><th>StreamYard</th></tr>
@@ -558,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Dlaczego aplikacja desktopowa miałaby dawać lepszy obraz niż studio w przeglądarce?</summary>
-        <p>Bo koduje obraz na Twoim własnym GPU, a nie w piaskownicy przeglądarki, i bo wysyła gotowy stream raz, zamiast wypychać w górę surowy obraz z kamer, żeby chmura mogła go złożyć. Na tym samym komputerze i tym samym łączu widać to zwykle jako czystszy obraz przy ruchu.</p>
+        <p>Bo studio w chmurze koduje obraz z Twojej kamery, żeby go do siebie ściągnąć, a potem koduje gotowy program jeszcze raz w drodze na zewnątrz — drugie kodowanie pracuje na już skompresowanym obrazie, a tej straty nic nie odzyska. SplitCam koduje raz, lokalnie. Na tym samym komputerze i tym samym łączu widać to zwykle jako czystszy obraz przy ruchu.</p>
       </details>
       <details class="faq-item">
         <summary>Czy muszę zrezygnować z firmowych nakładek i układów?</summary>

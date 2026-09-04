@@ -190,26 +190,26 @@
         },
         {
           "@type": "Question",
-          "name": "Sur combien de plateformes puis-je faire du multistream en même temps ?",
+          "name": "Sur combien de plateformes puis-je diffuser en même temps ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Jusqu'à 8 destinations confortablement ; techniquement sans limite tant que votre CPU/GPU et votre débit montant encaissent la charge cumulée. Sur un PC milieu de gamme avec 10 Mbps en montant, 3 à 5 plateformes sont habituelles. Avec de la fibre à 50 Mbps et une carte Nvidia, 8 et plus sont atteignables."
+            "text": "Jusqu'à 8 destinations confortablement ; techniquement sans limite tant que votre CPU/GPU et votre débit montant encaissent la charge cumulée. Chaque destination consomme sa propre bande passante — c'est là la limite pratique. Sur un PC milieu de gamme avec 10 Mbps en montant, 3 à 5 plateformes sont habituelles. Avec de la fibre à 50 Mbps et une carte Nvidia, 8 et plus sont atteignables."
           }
         },
         {
           "@type": "Question",
-          "name": "SplitCam fait-il passer ma vidéo par un serveur cloud ?",
+          "name": "SplitCam fait-il passer ma vidéo par un serveur ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Non. Le multistream est direct, en peer-to-peer depuis votre ordinateur vers le point d'ingestion de chaque plateforme. Aucune donnée ne transite par les serveurs de SplitCam, aucun intermédiaire cloud tiers. La même vidéo part directement de votre machine vers Twitch, YouTube et toute autre destination choisie — séparément et en même temps."
+            "text": "Non. Le multistream est direct, en peer-to-peer depuis votre ordinateur vers le point d'ingestion de chaque plateforme. Aucune donnée ne transite par les serveurs de SplitCam, aucun intermédiaire cloud tiers, aucune implication pour la confidentialité. La même vidéo part droit de votre machine vers Twitch, vers YouTube, vers où que vous diffusiez — séparément et en même temps."
           }
         },
         {
           "@type": "Question",
-          "name": "Quel débit montant faut-il pour faire du multistream ?",
+          "name": "Quel débit montant me faut-il ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Additionnez les débits de toutes les destinations choisies et ajoutez ~20 % de marge. Un stream à 6 Mbps vers Twitch + 4,5 Mbps vers YouTube + 3 Mbps vers Facebook = 13,5 Mbps + marge = ~17 Mbps en montant. Le test de débit montant intégré confirme votre connexion avant de passer en direct."
+            "text": "Additionnez les débits de toutes les destinations choisies et ajoutez ~20 % de marge. Un stream à 6 Mbps vers Twitch + 4,5 Mbps vers YouTube + 3 Mbps vers Facebook = 13,5 Mbps requis + marge = ~17 Mbps en montant. Le test de débit montant intégré confirme votre connexion avant de passer en direct."
           }
         },
         {
@@ -217,31 +217,7 @@
           "name": "Puis-je diffuser sur Twitch et YouTube en même temps ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oui — Twitch + YouTube en simultané est la combinaison de multistream la plus courante. Les deux sont pré-configurées dans SplitCam. Les conditions de Twitch autorisent le simulcast vers n'importe quelle plateforme depuis octobre 2023, c'est donc parfaitement conforme."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Le multistream (simulcast) est-il autorisé sur Twitch ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui. Depuis octobre 2023, les Affiliés comme les Partenaires Twitch peuvent diffuser en simulcast vers toute autre plateforme — Kick, YouTube, TikTok, Facebook. La seule exigence : la qualité du stream Twitch doit être au moins aussi bonne que sur les autres plateformes (par exemple, n'envoyez pas du 720p vers Twitch et du 4K vers YouTube en même temps)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "SplitCam est-il une alternative à Restream et Streamlabs ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui — SplitCam est une alternative gratuite à Restream et Streamlabs Multistream. La différence clé : SplitCam tourne entièrement sur votre machine et envoie les streams directement à chaque plateforme (peer-to-peer). Restream et Streamlabs Multistream envoient d'abord votre stream vers leur cloud puis le redistribuent, ce qui ajoute de la latence, exige un abonnement mensuel (sur les offres payantes) et partage vos données. SplitCam est gratuit à vie, sans intermédiaire cloud."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Ai-je besoin d'un plugin de multistream pour OBS si j'utilise SplitCam ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non. Le multistream est intégré à SplitCam — aucun plugin comme Aitum Multistream, SE.Live ou Multiple RTMP Outputs n'est requis. Choisissez vos destinations, cliquez sur Go Live, c'est fait. SplitCam fait aussi office de studio de diffusion complet (scènes, sources, caméra virtuelle), vous pouvez donc remplacer entièrement OBS si vous le souhaitez."
+            "text": "Oui — Twitch + YouTube en simultané est la combinaison de multistream la plus courante. Les deux sont pré-configurées dans SplitCam. Collez vos clés de stream une fois, et chaque clic sur Go Live envoie vers les deux. Les conditions de Twitch autorisent le simulcast depuis octobre 2023, c'est donc parfaitement conforme."
           }
         },
         {
@@ -265,12 +241,12 @@
           "name": "Puis-je faire du multistream depuis mon téléphone ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oui — SplitCam mobile (iOS et Android) prend en charge le multistream vers les mêmes 84+ plateformes. Mêmes réglages de stream, même Go Live en un clic. Le canevas vertical 9:16 est l'orientation par défaut sur mobile pour TikTok, Reels et Shorts."
+            "text": "Oui — SplitCam mobile (iOS et Android) prend en charge le multistream vers les mêmes 84+ plateformes. Mêmes réglages de stream, même Go Live en un clic. Le canevas vertical (9:16) est l'orientation par défaut sur mobile pour TikTok / Reels / Shorts."
           }
         },
         {
           "@type": "Question",
-          "name": "SplitCam prend-il en charge les serveurs RTMP et RTMPS personnalisés ?",
+          "name": "SplitCam prend-il en charge les serveurs RTMP personnalisés ?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Oui — toute plateforme qui accepte le RTMP ou le RTMPS fonctionne. Collez l'URL du serveur et la clé de stream dans les réglages Custom RTMP. Idéal pour les webinaires privés, le streaming en marque blanche ou les plateformes absentes de la liste pré-configurée de SplitCam."
@@ -278,10 +254,34 @@
         },
         {
           "@type": "Question",
-          "name": "Que veut dire simulcast ?",
+          "name": "Le multistream (simulcast) est-il autorisé sur Twitch ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Le simulcast (diffusion simultanée) et le multistream sont la même chose : envoyer un seul direct vers plusieurs plateformes en même temps. Les deux termes décrivent ce que fait SplitCam — diffuser sur Twitch, YouTube, Facebook, Kick, TikTok et d'autres plateformes en même temps, d'un seul clic."
+            "text": "Oui. Depuis octobre 2023, les Affiliés comme les Partenaires Twitch peuvent diffuser en simulcast vers toute autre plateforme — Kick, YouTube, TikTok, Facebook, partout. La seule règle : la qualité de votre stream Twitch doit être au moins aussi bonne que sur les autres plateformes. N'envoyez pas du 720p vers Twitch en poussant du 4K vers YouTube. Sinon — faites du multistream librement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "SplitCam est-il une alternative gratuite à Restream, Streamlabs Multistream ou StreamYard ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. La différence clé : SplitCam tourne entièrement sur votre machine et envoie les streams directement à chaque plateforme (peer-to-peer). Restream, Streamlabs Multistream et StreamYard envoient d'abord votre stream vers leur cloud puis le redistribuent, ce qui ajoute de la latence, coûte un abonnement mensuel sur les offres payantes, et partage vos données avec un tiers. SplitCam est gratuit à vie : sans intermédiaire cloud, sans abonnement, aucune donnée partagée avec des tiers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ai-je besoin d'un plugin de multistream pour OBS (Aitum, SE.Live, Multiple RTMP Outputs) si j'utilise SplitCam ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Le multistream est intégré à SplitCam — aucun plugin requis. Choisissez vos destinations, cliquez sur Go Live, c'est fait. SplitCam fait aussi office de studio de diffusion complet (scènes, sources, caméra virtuelle, sources navigateur), vous pouvez donc remplacer entièrement OBS si vous voulez une seule appli qui fait tout. Voyez le comparatif complet SplitCam contre OBS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que veut dire « simulcast » et est-ce la même chose que le multistream ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui — simulcast (diffusion simultanée), multistream, multistreaming et dual streaming veulent tous dire la même chose : envoyer un seul direct vers plusieurs plateformes en même temps. SplitCam fait tout cela dans une seule fonction."
           }
         }
       ]
@@ -746,7 +746,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-twitch"/></svg><svg><use href="#i-yt"/></svg><svg><use href="#i-fb"/></svg><svg><use href="#i-kick"/></svg> 4 à la fois : Twitch + YT + FB + Kick</h3>
-        <p>Le stack créateur grand public. ~17 Mbps en montant couvrent confortablement les quatre aux débits recommandés.</p>
+        <p>Le stack créateur grand public. Environ 19–20 Mbps en montant couvrent les quatre aux débits recommandés : 6 + 4,5 + 3 + 2,5, cela fait 16 Mbps de vidéo, plus environ 20 % de marge.</p>
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-x"/></svg><svg><use href="#i-linkedin"/></svg> X (Twitter) + LinkedIn Live</h3>
@@ -921,7 +921,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <h3>Test de débit montant intégré</h3>
-        <p>Avant de passer en direct, le test de débit montant de SplitCam additionne vos débits et sonde votre montant réel. Vous streamez à 6 + 4,5 + 3 + 2,5 Mbps vers 4 plateformes ? Il vous dit si vos 17 Mbps en montant suivent — et vous prévient avant les coupures.</p>
+        <p>Avant de passer en direct, le test de débit montant de SplitCam additionne vos débits et sonde votre montant réel. Vous streamez à 6 + 4,5 + 3 + 2,5 Mbps vers 4 plateformes ? Cela fait 16 Mbps de vidéo, et environ 19–20 avec la marge. Il vous dit si votre connexion tient réellement ce débit — et vous prévient avant les coupures.</p>
       </div>
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>

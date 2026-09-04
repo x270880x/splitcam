@@ -193,20 +193,20 @@
           "name": "Ke berapa banyak platform boleh siaran serentak?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sehingga 8 platform berjalan selesa; secara teknikal tiada had selagi CPU/GPU dan kelajuan muat naik anda mampu menampung jumlah beban. Pada PC sederhana dengan muat naik 10 Mbps, biasanya 3–5 platform. Dengan fiber 50 Mbps dan kad Nvidia, 8 atau lebih memang realistik."
+            "text": "Sehingga 8 platform berjalan selesa; secara teknikal tiada had selagi CPU/GPU dan kelajuan muat naik anda mampu menampung jumlah beban. Setiap platform memakan jalur lebarnya sendiri — itulah had praktikalnya. Pada PC sederhana dengan muat naik 10 Mbps, biasanya 3–5 platform. Dengan fiber 50 Mbps dan kad Nvidia, 8 atau lebih memang realistik."
           }
         },
         {
           "@type": "Question",
-          "name": "Adakah SplitCam menyalurkan video saya melalui pelayan awan?",
+          "name": "Adakah SplitCam menyalurkan video saya melalui sebarang pelayan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tidak. Multistream berjalan terus, dari komputer anda ke ingest setiap platform. Data tidak melalui pelayan SplitCam, tiada perantara awan. Video yang sama dihantar terus dari mesin anda ke Twitch, YouTube dan mana-mana platform terpilih — secara berasingan dan serentak."
+            "text": "Tidak. Multistream berjalan terus, dari komputer anda ke ingest setiap platform. Data tidak melalui pelayan SplitCam, tiada perantara awan, tiada yang melalui pelayan kami. Video yang sama dihantar terus dari mesin anda ke Twitch, ke YouTube — ke mana sahaja anda siaran — secara berasingan dan serentak."
           }
         },
         {
           "@type": "Question",
-          "name": "Berapa kelajuan muat naik yang diperlukan untuk multistream?",
+          "name": "Berapa kelajuan muat naik yang diperlukan?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Jumlahkan bitrate semua platform terpilih dan tambah lebihan ~20%. Siaran 6 Mbps ke Twitch + 4.5 Mbps ke YouTube + 3 Mbps ke Facebook = 13.5 Mbps, dengan lebihan — kira-kira 17 Mbps muat naik. Upload Speed Test terbina dalam menyemak talian anda sebelum go live."
@@ -217,31 +217,7 @@
           "name": "Bolehkah siaran ke Twitch dan YouTube serentak?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ya — Twitch + YouTube ialah gabungan multistream paling popular. Kedua-dua platform telah sedia dikonfigurasi dalam SplitCam. Peraturan Twitch membenarkan simulcast ke mana-mana platform sejak Oktober 2023, jadi ia sah sepenuhnya."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Adakah multistream (simulcast) dibenarkan di Twitch?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ya. Sejak Oktober 2023, kedua-dua affiliate dan partner Twitch boleh simulcast ke mana-mana platform — Kick, YouTube, TikTok, Facebook. Satu-satunya syarat: kualiti siaran di Twitch mesti tidak lebih rendah daripada platform lain (contohnya, anda tak boleh hantar 720p ke Twitch sambil 4K ke YouTube)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Adakah SplitCam alternatif kepada Restream dan Streamlabs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ya — SplitCam ialah alternatif percuma kepada Restream dan Streamlabs Multistream. Perbezaan utama: SplitCam berjalan sepenuhnya pada komputer anda dan menghantar siaran terus ke setiap platform. Restream dan Streamlabs Multistream mula-mula menghantar siaran ke awan mereka dahulu, kemudian baru mengagihkannya — ini menambah lengah, memerlukan bayaran pada pelan berbayar, dan bermakna data anda diserahkan kepada pihak ketiga. SplitCam percuma selamanya dan berjalan tanpa perantara awan."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Perlukah plugin multistream untuk OBS jika saya guna SplitCam?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tidak. Multistream terbina dalam SplitCam — plugin seperti Aitum Multistream, SE.Live atau Multiple RTMP Outputs tidak diperlukan. Pilih platform, tekan 'Go Live' — selesai. SplitCam juga sebuah studio siaran penuh (scene, sumber, kamera maya), jadi ia boleh menggantikan OBS sepenuhnya jika anda mahu."
+            "text": "Ya — Twitch + YouTube ialah gabungan multistream paling popular. Kedua-dua platform telah sedia dikonfigurasi dalam SplitCam: tampal kunci siaran sekali, dan setiap tekan \"Go Live\" akan melancarkan kedua-duanya. Peraturan Twitch membenarkan simulcast sejak Oktober 2023, jadi semuanya sah sepenuhnya."
           }
         },
         {
@@ -265,12 +241,12 @@
           "name": "Bolehkah multistream daripada telefon?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ya — SplitCam mudah alih (iOS dan Android) menyokong multistream ke 84+ platform yang sama. Tetapan siaran yang sama, pelancaran satu klik yang sama. Kanvas menegak 9:16 dihidupkan secara lalai pada telefon — untuk TikTok, Reels dan Shorts."
+            "text": "Ya — SplitCam mudah alih (iOS dan Android) menyokong multistream ke 84+ platform yang sama. Tetapan siaran yang sama, pelancaran satu klik yang sama. Kanvas menegak (9:16) dihidupkan secara lalai pada telefon — untuk TikTok / Reels / Shorts."
           }
         },
         {
           "@type": "Question",
-          "name": "Adakah SplitCam menyokong pelayan RTMP dan RTMPS sendiri?",
+          "name": "Adakah pelayan RTMP sendiri disokong?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ya — mana-mana platform yang menerima RTMP atau RTMPS boleh digunakan. Tampal alamat pelayan dan kunci siaran dalam tetapan Custom RTMP. Sesuai untuk webinar tertutup, streaming white-label dan platform yang tiada dalam senarai siap sedia SplitCam."
@@ -278,10 +254,34 @@
         },
         {
           "@type": "Question",
-          "name": "Apa maksud 'simulcast'?",
+          "name": "Adakah multistream (simulcast) dibenarkan di Twitch?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Simulcast (siaran serentak), multistream dan restream ialah perkara yang sama: satu live terus ke beberapa platform serentak. Semua istilah ini menggambarkan apa yang dilakukan SplitCam — siaran ke Twitch, YouTube, Facebook, Kick, TikTok dan platform lain sekali gus, dengan satu klik."
+            "text": "Ya. Sejak Oktober 2023, kedua-dua affiliate dan partner Twitch boleh simulcast ke mana-mana platform — Kick, YouTube, TikTok, Facebook, ke mana sahaja. Satu-satunya peraturan: kualiti siaran di Twitch mesti tidak lebih rendah daripada platform lain. Jangan hantar 720p ke Twitch sambil menghantar 4K ke YouTube. Selain itu — multistream dengan bebas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Adakah SplitCam alternatif percuma kepada Restream, Streamlabs Multistream dan StreamYard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya. Perbezaan utama: SplitCam berjalan sepenuhnya pada komputer anda dan menghantar siaran terus ke setiap platform. Restream, Streamlabs Multistream dan StreamYard mula-mula menghantar siaran anda ke awan mereka dahulu, kemudian baru mengagihkannya — ini menambah lengah, memerlukan bayaran pada pelan berbayar, dan bermakna data anda diserahkan kepada pihak ketiga. SplitCam percuma selamanya: tanpa perantara awan, tanpa langganan, tiada data melalui pelayan kami."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Perlukah plugin multistream untuk OBS (Aitum, SE.Live, Multiple RTMP Outputs) jika saya guna SplitCam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak. Multistream terbina dalam SplitCam — tiada plugin diperlukan. Pilih platform, tekan \"Go Live\" — selesai. SplitCam juga sebuah studio siaran penuh (scene, sumber, kamera maya, sumber pelayar), jadi ia boleh menggantikan OBS sepenuhnya jika anda mahu — satu aplikasi menggantikan beberapa. Lihat perbandingan terperinci SplitCam vs OBS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa itu \"simulcast\" — adakah ia sama dengan multistream?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya — simulcast (siaran serentak), multistream, restream dan dual streaming semuanya bermaksud perkara yang sama: satu live terus ke beberapa platform serentak. Dalam SplitCam, semua ini ialah satu ciri terbina dalam."
           }
         }
       ]
@@ -746,7 +746,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-twitch"/></svg><svg><use href="#i-yt"/></svg><svg><use href="#i-fb"/></svg><svg><use href="#i-kick"/></svg> 4 sekali gus: Twitch + YT + FB + Kick</h3>
-        <p>Set standard seorang kreator. Muat naik ~17 Mbps cukup selesa untuk keempat-empat platform dengan bitrate yang disarankan.</p>
+        <p>Set standard seorang kreator. Muat naik kira-kira 19–20 Mbps cukup untuk keempat-empat platform pada bitrate yang disarankan — 6 + 4.5 + 3 + 2.5 ialah 16 Mbps video, campur lebihan kira-kira 20%.</p>
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-x"/></svg><svg><use href="#i-linkedin"/></svg> X (Twitter) + LinkedIn Live</h3>
@@ -921,7 +921,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <h3>Upload Speed Test terbina dalam</h3>
-        <p>Sebelum go live, SplitCam menjumlahkan bitrate dan mengukur kelajuan muat naik sebenar anda. Siaran 6 + 4.5 + 3 + 2.5 Mbps ke empat platform? Ujian akan beritahu sama ada talian 17 Mbps anda mampu — dan memberi amaran sebelum bingkai mula tergugur.</p>
+        <p>Sebelum go live, SplitCam menjumlahkan bitrate dan mengukur kelajuan muat naik sebenar anda. Siaran 6 + 4.5 + 3 + 2.5 Mbps ke empat platform? Itu 16 Mbps video dan kira-kira 19–20 Mbps dengan lebihan. Ujian akan beritahu sama ada talian anda benar-benar mampu menampungnya — dan memberi amaran sebelum bingkai mula tergugur.</p>
       </div>
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>

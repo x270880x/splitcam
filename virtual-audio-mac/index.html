@@ -95,14 +95,27 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "SplitCam", "item": "https://splitcam.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Virtual Audio for Mac", "item": "https://splitcam.com/virtual-audio-mac" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SplitCam",
+          "item": "https://splitcam.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Virtual Audio for Mac",
+          "item": "https://splitcam.com/virtual-audio-mac"
+        }
       ]
     },
     {
       "@type": "SoftwareApplication",
       "name": "SplitCam Virtual Audio",
-      "alternateName": ["SplitCam Virtual Audio Driver", "SplitCam Virtual Microphone"],
+      "alternateName": [
+        "SplitCam Virtual Audio Driver",
+        "SplitCam Virtual Microphone"
+      ],
       "applicationCategory": "MultimediaApplication",
       "applicationSubCategory": "Virtual Audio Device",
       "operatingSystem": "macOS 12 Monterey or newer, Apple Silicon",
@@ -110,7 +123,11 @@
       "downloadUrl": "https://splitcam.com/mac-download/SplitCamVirtualAudio.pkg",
       "softwareVersion": "1.1",
       "fileSize": "37KB",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
       "description": "Free virtual audio driver for macOS. It adds a virtual audio device that other apps see as an ordinary microphone, so a mix of your microphone, system sound, music and video audio can be sent to Microsoft Teams, Telegram, Discord, Zoom or any app with a mic input.",
       "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
       "featureList": [
@@ -127,28 +144,100 @@
       "name": "How to install the SplitCam virtual audio driver on Mac",
       "description": "Install the virtual audio device on macOS and select it as a microphone in any app.",
       "totalTime": "PT2M",
-      "tool": [{ "@type": "HowToTool", "name": "Mac with Apple Silicon, macOS 12 or newer" }],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Mac with Apple Silicon, macOS 12 or newer"
+        }
+      ],
       "step": [
-        { "@type": "HowToStep", "position": 1, "name": "Download the installer", "text": "Download SplitCamVirtualAudio.pkg — a 37 KB package signed and notarized by Apple." },
-        { "@type": "HowToStep", "position": 2, "name": "Run the installer", "text": "Open the .pkg and follow the steps. macOS asks for your administrator password because the driver is installed system-wide into /Library/Audio/Plug-Ins/HAL." },
-        { "@type": "HowToStep", "position": 3, "name": "Pick it as your microphone", "text": "In Teams, Telegram, Discord, Zoom or any other app, open the audio settings and choose SplitCam Virtual Audio as the microphone." }
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Download the installer",
+          "text": "Download SplitCamVirtualAudio.pkg — a 37 KB package signed and notarized by Apple."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Run the installer",
+          "text": "Open the .pkg and follow the steps. macOS asks for your administrator password because the driver is installed system-wide into /Library/Audio/Plug-Ins/HAL."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Pick it as your microphone",
+          "text": "In Teams, Telegram, Discord, Zoom or any other app, open the audio settings and choose SplitCam Virtual Audio as the microphone."
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "What is a virtual audio driver?",
-          "acceptedAnswer": { "@type": "Answer", "text": "It is software that adds an audio device to macOS which does not exist as hardware. Apps cannot tell the difference: the virtual device shows up in the microphone list next to your real microphone, so anything routed into it can be sent to a call, a stream or a recording." } },
-        { "@type": "Question", "name": "Which Macs does it support?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Macs with Apple Silicon (M1, M2, M3, M4 and newer) running macOS 12 Monterey or later. The driver binary is built for arm64 only, so Intel Macs are not supported." } },
-        { "@type": "Question", "name": "Do I need to install it separately if I already have SplitCam for Mac?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. SplitCam for macOS already contains this audio driver and sets it up for you. The standalone installer is here for the cases where the driver has to be installed or repaired on its own." } },
-        { "@type": "Question", "name": "Is it a kernel extension?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. It is a CoreAudio HAL plug-in installed into /Library/Audio/Plug-Ins/HAL. It runs in user space, so it needs no reduced security settings and no reboot into recovery mode." } },
-        { "@type": "Question", "name": "Why does it ask for an administrator password?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The audio plug-in folder belongs to the system, so writing into it needs administrator rights. The package is signed with a Developer ID certificate and notarized by Apple, so macOS Gatekeeper accepts it without a security warning." } },
-        { "@type": "Question", "name": "How do I remove it?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Delete SplitCamVirtualAudio.driver from /Library/Audio/Plug-Ins/HAL and either restart the Mac or restart the audio service. The virtual device then disappears from the microphone list." } }
+        {
+          "@type": "Question",
+          "name": "What is a virtual audio driver?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Software that adds an audio device to macOS with no hardware behind it. Applications cannot tell it apart from a real microphone — it appears in the microphone list like any other input, so whatever is routed into it can be sent to a call, a stream or a recording."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Macs does it support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Macs with Apple Silicon — M1, M2, M3, M4 and newer — running macOS 12 Monterey or later. The driver binary is built for arm64 only, so Intel Macs are not supported."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need it if I already have SplitCam for Mac?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually not. The macOS application already contains this driver and installs it for you. The standalone package exists for the cases where the audio device has to be installed or repaired on its own."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it a kernel extension?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is a CoreAudio HAL plug-in that lives in /Library/Audio/Plug-Ins/HAL and runs in user space. There is nothing to allow in Recovery mode and no reduced security setting to turn on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does macOS ask for my password?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The system audio plug-in folder belongs to macOS, so writing into it requires administrator rights. The package is signed with an Apple Developer ID certificate and notarised by Apple, which is why Gatekeeper lets it through without a warning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I uninstall it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Delete SplitCamVirtualAudio.driver from /Library/Audio/Plug-Ins/HAL, then restart the Mac or the audio service. The virtual device disappears from the microphone list."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a virtual camera too?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — SplitCam provides a virtual camera on the same principle, letting a composed scene stand in for your webcam in Zoom, Teams, Meet and dozens of other applications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it cost anything?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The driver is free, as is SplitCam itself. There is no account to create, nothing to subscribe to and no watermark placed on the audio."
+          }
+        }
       ]
     }
   ]

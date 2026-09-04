@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Какво е драйвер за виртуално аудио?",
+          "name": "What is a virtual audio driver?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Програма, която добавя в macOS аудио устройство без хардуер зад него. Приложенията не могат да го различат от истински микрофон — то се показва в списъка с микрофони като всеки друг вход, така че каквото подадете в него, може да отиде в разговор, стрийм или запис."
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Кои модели Mac поддържа?",
+          "name": "Which Macs does it support?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Компютри Mac с Apple Silicon — M1, M2, M3, M4 и по-нови — с macOS 12 Monterey или по-нов. Драйверът е компилиран само за arm64, така че Mac с Intel не се поддържат."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Нужен ли ми е, ако вече имам SplitCam за Mac?",
+          "name": "Do I need it if I already have SplitCam for Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Обикновено не. Приложението за macOS вече съдържа този драйвер и го инсталира вместо вас. Отделният пакет съществува за случаите, в които аудио устройството трябва да се инсталира или поправи самостоятелно."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Разширение на ядрото ли е?",
+          "name": "Is it a kernel extension?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Не. Това е CoreAudio HAL плъгин, който стои в /Library/Audio/Plug-Ins/HAL и работи в потребителското пространство. Няма какво да разрешавате в режим за възстановяване и няма намалена настройка за сигурност, която да включвате."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Защо macOS иска паролата ми?",
+          "name": "Why does macOS ask for my password?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Системната папка за аудио плъгини принадлежи на macOS, затова записът в нея изисква администраторски права. Пакетът е подписан със сертификат Apple Developer ID и е нотаризиран от Apple — затова Gatekeeper го пропуска без предупреждение."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "Как да го деинсталирам?",
+          "name": "How do I uninstall it?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Изтрийте SplitCamVirtualAudio.driver от /Library/Audio/Plug-Ins/HAL, после рестартирайте Mac или аудио услугата. Виртуалното устройство изчезва от списъка с микрофони."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Има ли и виртуална камера?",
+          "name": "Is there a virtual camera too?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Да — SplitCam предлага и виртуална камера на същия принцип: готовата сцена застава на мястото на уеб камерата ви в Zoom, Teams, Meet и десетки други приложения."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Струва ли нещо?",
+          "name": "Does it cost anything?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Не. Драйверът е безплатен, както и самият SplitCam. Няма регистрация, няма абонамент и няма воден знак върху звука."

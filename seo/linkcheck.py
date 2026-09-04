@@ -391,3 +391,47 @@ for _r in _hub_bad[:10]:
     print(f'   {_r[0]}  «{_r[1]}» -> /{_r[2]}  ({_r[3]})')
 if len(_hub_bad) > 10:
     print(f'   … и ещё {len(_hub_bad)-10}')
+
+# ------------------------------------------------------------- FAQ vs JSON-LD ---
+# Google требует, чтобы размеченный FAQPage был виден на странице. Расхождение
+# может стоить расширенного сниппета, но выглядит оно как полностью валидная
+# разметка: JSON парсится, типы верные, число вопросов сходится. Найдено
+# 2026-09-04 на 245 страницах, включая главную и /multistreaming/; на
+# /virtual-audio-mac/ в разметке было 6 вопросов против 8 на странице.
+print('\n--- FAQ (visible text vs JSON-LD) ---')
+_faq_bad, _faq_pages = [], 0
+_strip = lambda s: re.sub(r'\s+', ' ', re.sub('<[^>]*>', '', s)).strip()
+for _p in pages:
+    _h = open(_p, encoding='utf-8').read()
+    _vis = [(_strip(m.group(1)), _strip(m.group(2)))
+            for m in re.finditer(r'<summary>(.*?)</summary>\s*<p>(.*?)</p>', _h, re.S)]
+    if not _vis:
+        continue
+    for _m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', _h, re.S):
+        try:
+            _g = json.loads(_m.group(1))
+        except Exception:
+            continue
+        for _n in (_g.get('@graph') or [_g]):
+            if _n.get('@type') != 'FAQPage':
+                continue
+            _faq_pages += 1
+            _ent = _n.get('mainEntity', [])
+            _why = []
+            if len(_ent) != len(_vis):
+                _why.append(f'{len(_vis)} on page, {len(_ent)} in markup')
+            _dq = sum(1 for (_q, _), _j in zip(_vis, _ent) if _strip(_j.get('name', '')) != _q)
+            _da = sum(1 for (_, _a), _j in zip(_vis, _ent)
+                      if _strip(_j.get('acceptedAnswer', {}).get('text', '')) != _a)
+            if _dq:
+                _why.append(f'{_dq} questions differ')
+            if _da:
+                _why.append(f'{_da} answers differ')
+            if _why:
+                _faq_bad.append((rel(_p), '; '.join(_why)))
+print(f'FAQPage blocks: {_faq_pages}')
+print(f'mismatched: {len(_faq_bad)}')
+for _r in _faq_bad[:8]:
+    print(f'   {_r[0]}  ({_r[1]})')
+if len(_faq_bad) > 8:
+    print(f'   … и ещё {len(_faq_bad)-8}')

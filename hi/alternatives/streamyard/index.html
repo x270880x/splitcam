@@ -145,7 +145,7 @@
           "name": "एक desktop app किसी browser studio से बेहतर क्यों दिखेगा?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "क्योंकि वो browser sandbox के अंदर नहीं, आपके अपने GPU पर encode करता है, और क्योंकि वो कच्ची camera feeds ऊपर भेजकर cloud से compose कराने के बजाय तैयार stream एक ही बार upload करता है. उसी computer और उसी connection पर यह आम तौर पर movement के दौरान साफ़ picture की तरह दिखता है."
+            "text": "क्योंकि एक cloud studio पहले आपके camera को वहाँ तक पहुँचाने के लिए encode करता है, फिर तैयार show को बाहर भेजने के लिए दोबारा encode करता है — दूसरी बार का काम पहले से compress हो चुकी picture पर होता है, और वो नुक़सान वापस नहीं आता. SplitCam एक ही बार, locally encode करता है. उसी computer और उसी connection पर यह आम तौर पर movement के दौरान साफ़ picture की तरह दिखता है."
           }
         },
         {
@@ -476,7 +476,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>ऊपरी सीमा आपका hardware तय करता है</h3>
-        <p>एक browser tab को video एक sandbox के अंदर encode करनी पड़ती है, उतने ही resources में जितने browser देता है. एक desktop app सीधे आपके GPU से बात करता है. उसी computer और उसी internet connection पर फ़र्क़ यह होता है कि scene में हरकत आते ही एक stream नरम पड़ जाती है और दूसरी नहीं.</p>
+        <p>Cloud तक पहुँचने के लिए आपका camera एक बार encode होता है, फिर cloud show compose करके platform तक पहुँचाने के लिए उसे दोबारा encode करता है. दो encode, और दूसरा पहले से compress हो चुकी picture से शुरू होता है. SplitCam आपके अपने GPU पर एक ही बार compose और encode करता है, और जो आपकी machine से निकलता है वही platform तक पहुँचता है.</p>
       </div>
       <div class="reason">
         <h3>एक upload, दो नहीं</h3>
@@ -558,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>एक desktop app किसी browser studio से बेहतर क्यों दिखेगा?</summary>
-        <p>क्योंकि वो browser sandbox के अंदर नहीं, आपके अपने GPU पर encode करता है, और क्योंकि वो कच्ची camera feeds ऊपर भेजकर cloud से compose कराने के बजाय तैयार stream एक ही बार upload करता है. उसी computer और उसी connection पर यह आम तौर पर movement के दौरान साफ़ picture की तरह दिखता है.</p>
+        <p>क्योंकि एक cloud studio पहले आपके camera को वहाँ तक पहुँचाने के लिए encode करता है, फिर तैयार show को बाहर भेजने के लिए दोबारा encode करता है — दूसरी बार का काम पहले से compress हो चुकी picture पर होता है, और वो नुक़सान वापस नहीं आता. SplitCam एक ही बार, locally encode करता है. उसी computer और उसी connection पर यह आम तौर पर movement के दौरान साफ़ picture की तरह दिखता है.</p>
       </details>
       <details class="faq-item">
         <summary>क्या मुझे brand overlays और layouts छोड़ने पड़ेंगे?</summary>

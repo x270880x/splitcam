@@ -129,7 +129,7 @@
           "name": "Apakah SplitCam benar-benar alternatif Restream yang gratis?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ya, untuk bagian multistream-nya. SplitCam gratis, tanpa watermark dan tanpa langganan, dan ia memultistream ke 84+ platform. Bedanya ada di arsitekturnya, bukan di tingkatan paket: SplitCam mengirim tiap stream dari komputermu alih-alih meneruskannya dari layanan cloud."
+            "text": "Ya, untuk bagian multistream-nya. SplitCam gratis, tanpa watermark dan tanpa langganan, dan ia me-multistream ke 84+ platform. Bedanya ada di arsitekturnya, bukan di tingkatan paket: SplitCam mengirim tiap stream dari komputermu alih-alih meneruskannya dari layanan cloud."
           }
         },
         {
@@ -137,7 +137,7 @@
           "name": "Apakah saya butuh kecepatan upload lebih besar daripada dengan Restream?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ya, dan inilah hal utama yang perlu diperiksa. Perantara hanya mengambil satu upload darimu; pengiriman langsung butuh jumlah bitrate semua tujuan keluar sekaligus — sekitar 17 Mbps untuk empat platform pada setelan yang disarankan. SplitCam punya Upload Speed Test bawaan, jadi kamu bisa mengetahuinya dalam semenit, bukan menemukannya di tengah siaran."
+            "text": "Ya, dan inilah hal utama yang perlu diperiksa. Perantara hanya mengambil satu upload darimu; pengiriman langsung butuh jumlah bitrate semua tujuan keluar sekaligus — sekitar 19–20 Mbps untuk empat platform pada setelan yang disarankan. SplitCam punya Upload Speed Test bawaan, jadi kamu bisa mengetahuinya dalam semenit, bukan menemukannya di tengah siaran."
           }
         },
         {
@@ -463,7 +463,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <div class="qa-text"><ol>
         <li>Pasang SplitCam di komputer yang sudah kamu pakai untuk siaran. Windows 10/11 atau macOS 13+.</li>
         <li>Tambahkan tujuan-tujuanmu dan tempel stream key tiap platform — 84+ sudah disetel sebelumnya.</li>
-        <li>Atur bitrate untuk tiap tujuan, atau biarkan nilai bawaan yang dipilih SplitCam untuk masing-masing platform.</li>
+        <li>Atur bitrate untuk tiap tujuan, atau biarkan SplitCam memilih nilai bawaan untuk masing-masing platform.</li>
         <li>Jalankan Upload Speed Test bawaan supaya kamu tahu koneksimu sanggup menanggung totalnya.</li>
         <li>Tekan Go Live. Tiap platform menerima stream-nya langsung dari mesinmu.</li>
     </ol></div>
@@ -497,15 +497,15 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Encode sekali, kirim ke banyak tujuan</h3>
-        <p>Satu hasil encode memasok tiap tujuan, jadi menambah platform memakan bandwidth, bukan CPU.</p>
+        <p>Tujuan yang memakai resolusi dan bitrate yang sama berbagi satu hasil encode. Beri satu tujuan setelannya sendiri, maka ia mendapat hasil encode-nya sendiri — itulah sebabnya kendali per tujuan di bawah ini fitur sungguhan, bukan sekadar sakelar.</p>
       </div>
       <div class="reason">
         <h3>Bitrate per tujuan</h3>
-        <p>Ingin 6 Mbps ke Twitch dan 2.5 Mbps ke Facebook? Atur masing-masing, alih-alih menerima satu setelan perantara untuk semuanya.</p>
+        <p>Ingin 1080p60 pada 6 Mbps ke Twitch dan 720p30 pada 2,5 Mbps ke Facebook? Atur masing-masing, alih-alih menerima satu setelan perantara untuk semuanya. Bitrate, resolusi dan framerate berdiri sendiri di tiap tujuan.</p>
       </div>
       <div class="reason">
         <h3>Tidak ada apa pun di antara kamu dan platform</h3>
-        <p>Kalau platform-nya hidup dan koneksimu hidup, stream-mu hidup. Tidak ada layanan ketiga yang bisa mengalami gangguan atas namamu.</p>
+        <p>Kalau platform-nya hidup dan koneksimu hidup, stream-mu hidup. Tidak ada layanan pihak ketiga yang bisa mengalami gangguan atas namamu.</p>
       </div>
       <div class="reason">
         <h3>84+ platform sudah disetel sebelumnya</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">Kapan Restream justru pilihan yang lebih tepat</h2>
-  <p class="sec-p">Inilah batas jujur dari pengiriman langsung, dan ini layak diketahui sebelum kamu pindah. Perantara hanya butuh <strong>satu</strong> upload darimu. Pengiriman langsung butuh <strong>jumlah</strong> bitrate semua tujuan keluar dari rumahmu sekaligus — empat platform pada setelan yang disarankan kira-kira 17 Mbps upload. Kalau koneksimu tidak sanggup menanggungnya, perantara cloud bukan sekadar kemudahan, melainkan justru hal yang membuat multistream mungkin sama sekali. SplitCam menyertakan Upload Speed Test supaya kamu bisa memeriksanya sebelum memutuskan, dan kamu selalu bisa memakai lebih sedikit tujuan dengan bitrate lebih rendah — tapi kalau kecepatan upload-mu yang jadi kendala, Restream menyelesaikan masalah yang tak bisa diselesaikan SplitCam. Hal yang sama berlaku untuk siaran dari laptop lewat internet hotel atau seluler, di mana perantara menyerap ketidakstabilannya alih-alih penontonmu yang melihatnya.</p>
+  <p class="sec-p">Inilah batas jujur dari pengiriman langsung, dan ini layak diketahui sebelum kamu pindah. Perantara hanya butuh <strong>satu</strong> upload darimu. Pengiriman langsung butuh <strong>jumlah</strong> bitrate semua tujuan keluar dari rumahmu sekaligus — empat platform pada setelan yang disarankan kira-kira 19–20 Mbps upload — 6 ke Twitch, 4,5 ke YouTube, 3 ke Facebook dan 2,5 ke tujuan keempat, plus cadangan sekitar 20%. Kalau koneksimu tidak sanggup menanggungnya, perantara cloud bukan sekadar kemudahan, melainkan justru satu-satunya hal yang membuat multistream bisa dilakukan. SplitCam menyertakan Upload Speed Test supaya kamu bisa memeriksanya sebelum memutuskan, dan kamu selalu bisa memakai lebih sedikit tujuan dengan bitrate lebih rendah — tapi kalau kecepatan upload-mu yang jadi kendala, Restream menyelesaikan masalah yang tak bisa diselesaikan SplitCam. Hal yang sama berlaku untuk siaran dari laptop lewat internet hotel atau seluler, di mana perantara menyerap ketidakstabilannya alih-alih penontonmu yang melihatnya.</p>
 </section>
 
 <!-- COMPARE -->
@@ -547,11 +547,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="faq-list">
       <details class="faq-item">
         <summary>Apakah SplitCam benar-benar alternatif Restream yang gratis?</summary>
-        <p>Ya, untuk bagian multistream-nya. SplitCam gratis, tanpa watermark dan tanpa langganan, dan ia memultistream ke 84+ platform. Bedanya ada di arsitekturnya, bukan di tingkatan paket: SplitCam mengirim tiap stream dari komputermu alih-alih meneruskannya dari layanan cloud.</p>
+        <p>Ya, untuk bagian multistream-nya. SplitCam gratis, tanpa watermark dan tanpa langganan, dan ia me-multistream ke 84+ platform. Bedanya ada di arsitekturnya, bukan di tingkatan paket: SplitCam mengirim tiap stream dari komputermu alih-alih meneruskannya dari layanan cloud.</p>
       </details>
       <details class="faq-item">
         <summary>Apakah saya butuh kecepatan upload lebih besar daripada dengan Restream?</summary>
-        <p>Ya, dan inilah hal utama yang perlu diperiksa. Perantara hanya mengambil satu upload darimu; pengiriman langsung butuh jumlah bitrate semua tujuan keluar sekaligus — sekitar 17 Mbps untuk empat platform pada setelan yang disarankan. SplitCam punya Upload Speed Test bawaan, jadi kamu bisa mengetahuinya dalam semenit, bukan menemukannya di tengah siaran.</p>
+        <p>Ya, dan inilah hal utama yang perlu diperiksa. Perantara hanya mengambil satu upload darimu; pengiriman langsung butuh jumlah bitrate semua tujuan keluar sekaligus — sekitar 19–20 Mbps untuk empat platform pada setelan yang disarankan. SplitCam punya Upload Speed Test bawaan, jadi kamu bisa mengetahuinya dalam semenit, bukan menemukannya di tengah siaran.</p>
       </details>
       <details class="faq-item">
         <summary>Bisakah saya tetap memakai stream key yang sudah ada?</summary>

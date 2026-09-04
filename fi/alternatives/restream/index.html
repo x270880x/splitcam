@@ -137,7 +137,7 @@
           "name": "Tarvitsenko enemmän lähetysnopeutta kuin Restreamin kanssa?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Kyllä, ja tämä on tärkein asia tarkistaa. Välittäjä ottaa sinulta yhden lähetyksen; suoraan lähettäminen vaatii, että kaikkien kohteiden bittinopeuksien summa lähtee yhtä aikaa — noin 17 Mbit/s neljälle alustalle suositelluilla asetuksilla. SplitCamissa on sisäänrakennettu Upload Speed Test, joten saat asian selville minuutissa etkä vasta kesken lähetyksen."
+            "text": "Kyllä, ja tämä on tärkein asia tarkistaa. Välittäjä ottaa sinulta yhden lähetyksen; suoraan lähettäminen vaatii, että kaikkien kohteiden bittinopeuksien summa lähtee yhtä aikaa — noin 19–20 Mbit/s neljälle alustalle suositelluilla asetuksilla. SplitCamissa on sisäänrakennettu Upload Speed Test, joten saat asian selville minuutissa etkä vasta kesken lähetyksen."
           }
         },
         {
@@ -150,10 +150,10 @@
         },
         {
           "@type": "Question",
-          "name": "Mitä käy kohtauksilleni ja overlayeilleni?",
+          "name": "Mitä käy näkymilleni ja overlayeilleni?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Rakennat ne SplitCamissa itsessään: lähteet tasoina yhdellä kankaalla, tekoälypohjainen taustanpoisto, tehosteet ja selainlähteet overlayta varten. Jos tulet samalla OBS:stä, SplitCam tuo OBS-kohtauskokoelmat yhdellä klikkauksella."
+            "text": "Rakennat ne SplitCamissa itsessään: lähteet tasoina yhdellä kanvaasilla, tekoälypohjainen taustanpoisto, tehosteet ja selainlähteet overlayta varten. Jos tulet samalla OBS:stä, SplitCam tuo OBS-näkymäkokoelmat yhdellä klikkauksella."
           }
         },
         {
@@ -497,7 +497,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Koodaa kerran, lähetä monelle</h3>
-        <p>Yksi koodaus syöttää jokaista kohdetta, joten alustan lisääminen maksaa kaistaa eikä suoritintehoa.</p>
+        <p>Kohteet, joilla on sama tarkkuus ja bittinopeus, jakavat yhden koodauksen. Jos annat kohteelle omat asetukset, se saa oman koodauksensa — juuri siksi alla oleva kohdekohtainen säätö on aito ominaisuus eikä pelkkä kytkin.</p>
       </div>
       <div class="reason">
         <h3>Kohdekohtainen bittinopeus</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">Milloin Restream on parempi valinta</h2>
-  <p class="sec-p">Tämä on suoraan lähettämisen rehellinen rajoite, ja se kannattaa tietää ennen vaihtoa. Välittäjä tarvitsee sinulta <strong>yhden</strong> lähetyksen. Suoraan lähettäminen vaatii, että jokaisen kohteen bittinopeuksien <strong>summa</strong> lähtee kotoasi yhtä aikaa — neljä alustaa suositelluilla asetuksilla tarkoittaa noin 17 Mbit/s lähetysnopeutta. Jos yhteytesi ei kestä sitä, pilvivälittäjä ei ole pelkkä kätevyys vaan se, mikä ylipäätään tekee monilähetyksestä mahdollisen. SplitCamin mukana tulee Upload Speed Test, jotta voit tarkistaa asian ennen sitoutumista, ja voit aina ajaa vähemmän kohteita pienemmillä bittinopeuksilla — mutta jos lähetysnopeus on pullonkaulasi, Restream ratkaisee ongelman, jota SplitCam ei ratkaise. Sama pätee lähettämiseen kannettavalta hotellin tai mobiiliverkon yhteydellä: siellä välittäjä vaimentaa yhteyden epävakauden sen sijaan, että yleisösi näkisi sen.</p>
+  <p class="sec-p">Tämä on suoraan lähettämisen rehellinen rajoite, ja se kannattaa tietää ennen vaihtoa. Välittäjä tarvitsee sinulta <strong>yhden</strong> lähetyksen. Suoraan lähettäminen vaatii, että jokaisen kohteen bittinopeuksien <strong>summa</strong> lähtee kotoasi yhtä aikaa — neljä alustaa suositelluilla asetuksilla tarkoittaa noin 19–20 Mbit/s lähetysnopeutta — 6 Twitchiin, 4,5 YouTubeen, 3 Facebookiin ja 2,5 neljänteen, plus noin 20 % varaa. Jos yhteytesi ei kestä sitä, pilvivälittäjä ei ole pelkkä kätevyys vaan se, mikä ylipäätään tekee monilähetyksestä mahdollisen. SplitCamin mukana tulee Upload Speed Test, jotta voit tarkistaa asian ennen sitoutumista, ja voit aina ajaa vähemmän kohteita pienemmillä bittinopeuksilla — mutta jos lähetysnopeus on pullonkaulasi, Restream ratkaisee ongelman, jota SplitCam ei ratkaise. Sama pätee lähettämiseen kannettavalta hotellin tai mobiiliverkon yhteydellä: siellä välittäjä vaimentaa yhteyden epävakauden sen sijaan, että yleisösi näkisi sen.</p>
 </section>
 
 <!-- COMPARE -->
@@ -532,7 +532,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Hinta</td><td class="yes">Ilmainen, ei vesileimaa</td><td class="no">Ilmainen taso ja maksullisia paketteja — tarkista nykyinen hinnasto</td></tr>
       <tr><td>Miten lähetys kulkee</td><td class="yes">Suoraan koneeltasi kullekin alustalle</td><td class="meh">Välitetään heidän pilvestään</td></tr>
       <tr><td>Kohteet</td><td class="yes">84+ valmiiksi määritettyä</td><td class="yes">Useita alustoja, riippuu paketista</td></tr>
-      <tr><td>Kohtausten koostaminen omalla koneella</td><td class="yes">Tasot, lähteet, tekoälytausta, tehosteet</td><td class="meh">Studio on selainpohjainen</td></tr>
+      <tr><td>Näkymien koostaminen omalla koneella</td><td class="yes">Tasot, lähteet, tekoälytausta, tehosteet</td><td class="meh">Studio on selainpohjainen</td></tr>
       <tr><td>Virtuaalikamera Zoomiin / Teamsiin / Meetiin</td><td class="yes">Sisäänrakennettu, 60+ sovellusta</td><td class="no">Ei sen tarkoitus</td></tr>
       <tr><td>Toimii ilman yhteyttä välittäjään</td><td class="yes">Paikallinen tallennus jatkuu</td><td class="no">Palvelu on itse tuote</td></tr>
       <tr><td>Tarvittava lähetysnopeus</td><td class="meh">Kaikkien kohteiden bittinopeuksien summa</td><td class="yes">Yksi lähetys, jaetaan puolestasi</td></tr>
@@ -551,15 +551,15 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Tarvitsenko enemmän lähetysnopeutta kuin Restreamin kanssa?</summary>
-        <p>Kyllä, ja tämä on tärkein asia tarkistaa. Välittäjä ottaa sinulta yhden lähetyksen; suoraan lähettäminen vaatii, että kaikkien kohteiden bittinopeuksien summa lähtee yhtä aikaa — noin 17 Mbit/s neljälle alustalle suositelluilla asetuksilla. SplitCamissa on sisäänrakennettu Upload Speed Test, joten saat asian selville minuutissa etkä vasta kesken lähetyksen.</p>
+        <p>Kyllä, ja tämä on tärkein asia tarkistaa. Välittäjä ottaa sinulta yhden lähetyksen; suoraan lähettäminen vaatii, että kaikkien kohteiden bittinopeuksien summa lähtee yhtä aikaa — noin 19–20 Mbit/s neljälle alustalle suositelluilla asetuksilla. SplitCamissa on sisäänrakennettu Upload Speed Test, joten saat asian selville minuutissa etkä vasta kesken lähetyksen.</p>
       </details>
       <details class="faq-item">
         <summary>Voinko käyttää edelleen nykyisiä lähetysavaimiani?</summary>
         <p>Kyllä. Jokainen kohde ottaa vastaan saman lähetysavaimen, jonka alusta sinulle antaa. Kanavissasi tai niiden asetuksissa ei muutu mikään — vain se, mistä yhteys lähtee.</p>
       </details>
       <details class="faq-item">
-        <summary>Mitä käy kohtauksilleni ja overlayeilleni?</summary>
-        <p>Rakennat ne SplitCamissa itsessään: lähteet tasoina yhdellä kankaalla, tekoälypohjainen taustanpoisto, tehosteet ja selainlähteet overlayta varten. Jos tulet samalla OBS:stä, SplitCam tuo OBS-kohtauskokoelmat yhdellä klikkauksella.</p>
+        <summary>Mitä käy näkymilleni ja overlayeilleni?</summary>
+        <p>Rakennat ne SplitCamissa itsessään: lähteet tasoina yhdellä kanvaasilla, tekoälypohjainen taustanpoisto, tehosteet ja selainlähteet overlayta varten. Jos tulet samalla OBS:stä, SplitCam tuo OBS-näkymäkokoelmat yhdellä klikkauksella.</p>
       </details>
       <details class="faq-item">
         <summary>Tallentaako se lähetyksen aikana?</summary>
@@ -584,11 +584,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <a class="related-card" href="https://splitcam.com/fi/alternatives/obs">
       <span class="eyebrow">OBS</span>
       <h4>Tuletko sittenkin OBS:stä?</h4>
-      <p>SplitCam tuo OBS-kohtauskokoelmat yhdellä klikkauksella.</p>
+      <p>SplitCam tuo OBS-näkymäkokoelmat yhdellä klikkauksella.</p>
     </a>
     <a class="related-card" href="https://splitcam.com/fi/alternatives">
       <span class="eyebrow">Vaihtoehdot</span>
-      <h4>Vertaa muut</h4>
+      <h4>Vertaa muita</h4>
       <p>Mihin kukin suoratoistotyökalu oikeasti asettuu, myös silloin kun se voittaa SplitCamin.</p>
     </a>
   </div>

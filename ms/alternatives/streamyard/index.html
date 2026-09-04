@@ -145,7 +145,7 @@
           "name": "Kenapa aplikasi desktop kelihatan lebih baik daripada studio pelayar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Kerana ia mengekod pada GPU anda sendiri dan bukan di dalam sandbox pelayar, dan kerana ia memuat naik siaran siap sekali sahaja dan bukan menghantar suapan kamera mentah ke atas supaya awan boleh menyusunnya. Pada komputer dan sambungan yang sama, itu biasanya kelihatan sebagai gambar yang lebih bersih semasa pergerakan."
+            "text": "Kerana studio awan mengekod kamera anda untuk membawanya ke sana, kemudian mengekod rancangan siap sekali lagi semasa keluar — pusingan kedua bekerja daripada gambar yang sudah dimampatkan, dan kehilangan itu tidak kembali. SplitCam mengekod sekali sahaja, secara setempat. Pada komputer dan sambungan yang sama, itu biasanya kelihatan sebagai gambar yang lebih bersih semasa pergerakan."
           }
         },
         {
@@ -476,7 +476,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Perkakasan anda yang menentukan hadnya</h3>
-        <p>Tab pelayar terpaksa mengekod video di dalam sandbox, berkongsi apa sahaja yang dibenarkan pelayar. Aplikasi desktop bercakap terus dengan GPU anda. Pada komputer yang sama dan sambungan internet yang sama, itulah beza antara siaran yang menjadi lembut apabila scene bergerak dan siaran yang tidak.</p>
+        <p>Kamera anda dikodkan sekali untuk sampai ke awan, kemudian awan menyusun rancangan itu dan mengekodnya sekali lagi untuk sampai ke platform. Dua pengekodan, dan yang kedua bermula daripada gambar yang sudah dimampatkan. SplitCam menyusun dan mengekod sekali sahaja, pada GPU anda sendiri, dan apa yang keluar dari mesin anda itulah yang diterima platform.</p>
       </div>
       <div class="reason">
         <h3>Satu muat naik, bukan dua</h3>
@@ -512,7 +512,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </div>
       <div class="reason">
         <h3>Audio mixer dan mikrofon maya</h3>
-        <p>Adun mikrofon, bunyi sistem dan media dalam aplikasi, hantar ia ke siaran, dan dedahkan adunan yang sama kepada program lain sebagai mikrofon maya.</p>
+        <p>Adun mikrofon, bunyi sistem dan media dalam aplikasi, hantarkannya ke siaran, dan dedahkan adunan yang sama kepada program lain sebagai mikrofon maya.</p>
       </div>
   </div>
 </section>
@@ -535,7 +535,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <tr><td>Harga untuk set ciri penuh</td><td class="yes">Percuma, selamanya</td><td class="meh">Peringkat percuma serta pelan berbayar — semak harga semasa</td></tr>
       <tr><td>Watermark pada siaran anda</td><td class="yes">Tidak sekali</td><td class="meh">Bergantung pada pelan — semak harga semasa</td></tr>
       <tr><td>Di mana video disusun</td><td class="yes">Pada komputer anda</td><td class="no">Dalam awan</td></tr>
-      <tr><td>Had kualiti output</td><td class="yes">Setakat yang perkakasan anda mampu kod</td><td class="meh">Ditetapkan oleh pelan anda — semak harga semasa</td></tr>
+      <tr><td>Had kualiti output</td><td class="yes">Setakat yang mampu dikodkan oleh perkakasan anda</td><td class="meh">Ditetapkan oleh pelan anda — semak harga semasa</td></tr>
       <tr><td>Tetamu jarak jauh menyertai melalui pautan</td><td class="no">Tidak disokong</td><td class="yes">Ya — inilah kekuatan teras StreamYard</td></tr>
       <tr><td>Berjalan tanpa pasang apa-apa</td><td class="no">Perlu dipasang (Windows, macOS)</td><td class="yes">Mana-mana mesin yang ada pelayar</td></tr>
       <tr><td>Berfungsi tanpa internet (rakaman)</td><td class="yes">Merakam secara setempat</td><td class="no">Perlukan sambungan</td></tr>
@@ -558,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Kenapa aplikasi desktop kelihatan lebih baik daripada studio pelayar?</summary>
-        <p>Kerana ia mengekod pada GPU anda sendiri dan bukan di dalam sandbox pelayar, dan kerana ia memuat naik siaran siap sekali sahaja dan bukan menghantar suapan kamera mentah ke atas supaya awan boleh menyusunnya. Pada komputer dan sambungan yang sama, itu biasanya kelihatan sebagai gambar yang lebih bersih semasa pergerakan.</p>
+        <p>Kerana studio awan mengekod kamera anda untuk membawanya ke sana, kemudian mengekod rancangan siap sekali lagi semasa keluar — pusingan kedua bekerja daripada gambar yang sudah dimampatkan, dan kehilangan itu tidak kembali. SplitCam mengekod sekali sahaja, secara setempat. Pada komputer dan sambungan yang sama, itu biasanya kelihatan sebagai gambar yang lebih bersih semasa pergerakan.</p>
       </details>
       <details class="faq-item">
         <summary>Adakah saya perlu lepaskan overlay jenama dan susun atur?</summary>

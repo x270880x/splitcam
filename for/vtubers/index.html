@@ -52,9 +52,24 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "SplitCam", "item": "https://splitcam.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Use Cases", "item": "https://splitcam.com/for"},
-        {"@type": "ListItem", "position": 3, "name": "For VTubers", "item": "https://splitcam.com/for/vtubers"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SplitCam",
+          "item": "https://splitcam.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Use Cases",
+          "item": "https://splitcam.com/for"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "For VTubers",
+          "item": "https://splitcam.com/for/vtubers"
+        }
       ]
     },
     {
@@ -64,17 +79,57 @@
       "totalTime": "PT10M",
       "image": "https://splitcam.com/assets/og-vtuber.png",
       "tool": [
-        {"@type": "HowToTool", "name": "SplitCam (free download)"},
-        {"@type": "HowToTool", "name": "An avatar app — VTube Studio (2D) or VSeeFace / Warudo (3D)"},
-        {"@type": "HowToTool", "name": "A webcam for face tracking"}
+        {
+          "@type": "HowToTool",
+          "name": "SplitCam (free download)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "An avatar app — VTube Studio (2D) or VSeeFace / Warudo (3D)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "A webcam for face tracking"
+        }
       ],
-      "supply": [{"@type": "HowToSupply", "name": "A Live2D or 3D avatar model (free starter models exist)"}],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "A Live2D or 3D avatar model (free starter models exist)"
+        }
+      ],
       "step": [
-        {"@type": "HowToStep", "position": 1, "name": "Pick and rig your avatar", "text": "Choose a Live2D model in VTube Studio (2D) or a 3D model in VSeeFace or Warudo. Your webcam drives the face tracking — mouth, eyes and head follow you. Free starter avatars exist if you don't have your own yet.", "url": "https://splitcam.com/"},
-        {"@type": "HowToStep", "position": 2, "name": "Bring the avatar into SplitCam", "text": "Add your avatar app as a window or game-capture source in SplitCam. Apply chromakey or one-click AI background removal so only the avatar shows — no green screen needed."},
-        {"@type": "HowToStep", "position": 3, "name": "Build your scene", "text": "Layer game capture, overlays, lower-thirds and alert widgets behind or around the avatar. Save named scenes — Intro, Main, BRB — and switch between them mid-stream with hotkeys or cinematic transitions."},
-        {"@type": "HowToStep", "position": 4, "name": "Add beauty effects and 3D masks", "text": "Optionally stack face masking, 3D masks and Streamfog lenses on top of the avatar for extra flair, and run your mic through the VST audio chain for a cleaner voice."},
-        {"@type": "HowToStep", "position": 5, "name": "Go live or join a call", "text": "Multistream to Twitch and YouTube at once, or pick 'SplitCam Camera' in Zoom, Discord or Meet to appear as your avatar in any video app. No watermark, no subscription."}
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Pick and rig your avatar",
+          "text": "Choose a Live2D model in VTube Studio (2D) or a 3D model in VSeeFace or Warudo. Your webcam drives the face tracking — mouth, eyes and head follow you. Free starter avatars exist if you don't have your own yet.",
+          "url": "https://splitcam.com/"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Bring the avatar into SplitCam",
+          "text": "Add your avatar app as a window or game-capture source in SplitCam. Apply chromakey or one-click AI background removal so only the avatar shows — no green screen needed."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Build your scene",
+          "text": "Layer game capture, overlays, lower-thirds and alert widgets behind or around the avatar. Save named scenes — Intro, Main, BRB — and switch between them mid-stream with hotkeys or cinematic transitions."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Add beauty effects and 3D masks",
+          "text": "Optionally stack face masking, 3D masks and Streamfog lenses on top of the avatar for extra flair, and run your mic through the VST audio chain for a cleaner voice."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Go live or join a call",
+          "text": "Multistream to Twitch and YouTube at once, or pick 'SplitCam Camera' in Zoom, Discord or Meet to appear as your avatar in any video app. No watermark, no subscription."
+        }
       ]
     },
     {
@@ -82,19 +137,79 @@
       "name": "SplitCam",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Windows, macOS, iOS, Android",
-      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "How do I become a VTuber for free?", "acceptedAnswer": {"@type": "Answer", "text": "You need an avatar, face tracking and software to composite and broadcast it. A free avatar app (VTube Studio for 2D, VSeeFace for 3D) handles the rig and tracking; free SplitCam composites the avatar, removes the background with AI and sends it to Twitch, YouTube or any meeting app. No green screen, no subscription."}},
-        {"@type": "Question", "name": "What software do VTubers use?", "acceptedAnswer": {"@type": "Answer", "text": "Two layers: an avatar app that rigs and tracks the model (VTube Studio, VSeeFace, Warudo, Animaze), and a broadcast app that composites the scene and streams it. SplitCam is the free broadcast layer — it adds AI background removal, scene switching, multistreaming and a virtual camera on top of whatever avatar app you use."}},
-        {"@type": "Question", "name": "Do I need a green screen to be a VTuber?", "acceptedAnswer": {"@type": "Answer", "text": "No. SplitCam's AI background removal detects your avatar app's output (or your real silhouette) in real time and cuts the background without chromakey. A green screen still gives the cleanest edge, but it's optional — AI handles uneven lighting that would break a chromakey."}},
-        {"@type": "Question", "name": "Can I use my VTube Studio avatar in SplitCam?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Run VTube Studio as usual, then add its window as a source in SplitCam (window capture, game capture or Spout). Apply chromakey or AI background so only the avatar shows, then layer your scene and stream. The same works for VSeeFace, Warudo and Animaze."}},
-        {"@type": "Question", "name": "Can I be a VTuber in Zoom or Discord?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — SplitCam exposes your composed avatar scene as a virtual webcam. In Zoom, Discord, Google Meet or Teams, pick 'SplitCam Camera' and your character replaces your real camera feed — no plugin needed, including browser-based video apps."}},
-        {"@type": "Question", "name": "Do I need an expensive PC to VTube?", "acceptedAnswer": {"@type": "Answer", "text": "For a 2D Live2D avatar, a modest machine (Intel i5 / Ryzen 5, 8 GB RAM, integrated graphics) is fine. 3D models and game capture at 1080p60 want a dedicated GPU. SplitCam uses your GPU's hardware encoder (NVENC / QuickSync / AMF), so streaming itself adds little CPU load."}},
-        {"@type": "Question", "name": "Can I multistream as a VTuber to Twitch and YouTube?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — SplitCam has built-in multistreaming. Add your Twitch and YouTube stream keys, click Go Live once, and both platforms receive the avatar stream simultaneously, peer-to-peer, with no monthly fee."}},
-        {"@type": "Question", "name": "Is SplitCam really free for VTubing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — free for personal and commercial use, no watermark, no time limit, no paid tier. AI background, beauty effects, 3D masks, scene switching, multistreaming and the virtual camera are all included from the first launch."}}
+        {
+          "@type": "Question",
+          "name": "How do I become a VTuber for free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You need an avatar, face tracking and software to composite and broadcast it. A free avatar app (VTube Studio for 2D, VSeeFace for 3D) handles the rig and tracking; free SplitCam composites the avatar, removes the background with AI and sends it to Twitch, YouTube or any meeting app. No green screen, no subscription."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What software do VTubers use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Two layers: an avatar app that rigs and tracks the model (VTube Studio, VSeeFace, Warudo, Animaze), and a broadcast app that composites the scene and streams it. SplitCam is the free broadcast layer — it adds AI background removal, scene switching, multistreaming and a virtual camera on top of whatever avatar app you use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a green screen to be a VTuber?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. SplitCam's AI background removal detects your avatar app's output in real time and cuts the background without chromakey. A green screen still gives the cleanest edge for fast 3D models, but it's optional — AI copes with uneven lighting that would break a chromakey."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use my VTube Studio avatar in SplitCam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Run VTube Studio as usual, then add its window as a source in SplitCam (window capture, game capture or Spout). Apply chromakey or AI background so only the avatar shows, then layer your scene and stream. The same works for VSeeFace, Warudo and Animaze."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I be a VTuber in Zoom or Discord?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — SplitCam exposes your composed avatar scene as a virtual webcam. In Zoom, Discord, Google Meet or Teams, pick \"SplitCam Camera\" and your character replaces your real camera feed — no plugin needed, including browser-based video apps. See virtual camera details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need an expensive PC to VTube?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a 2D Live2D avatar, a modest machine (Intel i5 / Ryzen 5, 8 GB RAM, integrated graphics) is fine. 3D models and game capture at 1080p60 want a dedicated GPU. SplitCam uses your GPU's hardware encoder (NVENC / QuickSync / AMF), so streaming itself adds little CPU load."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I multistream as a VTuber to Twitch and YouTube?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — SplitCam has built-in multistreaming. Add your Twitch and YouTube stream keys, click Go Live once, and both platforms receive the avatar stream simultaneously, peer-to-peer, with no monthly fee. See multistreaming details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SplitCam really free for VTubing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — free for personal and commercial use, no watermark, no time limit, no paid tier. AI background, beauty effects, 3D masks, scene switching, multistreaming and the virtual camera are all included from the first launch."
+          }
+        }
       ]
     }
   ]

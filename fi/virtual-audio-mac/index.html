@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Mikä on virtuaalinen ääniajuri?",
+          "name": "What is a virtual audio driver?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ohjelmisto, joka lisää macOS:ään äänilaitteen ilman fyysistä laitetta sen takana. Sovellukset eivät erota sitä oikeasta mikrofonista — se näkyy mikrofonilistassa kuten mikä tahansa muu äänitulo, joten kaikki siihen reititetty voidaan lähettää puheluun, striimiin tai tallennukseen."
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Mitä Maceja se tukee?",
+          "name": "Which Macs does it support?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Apple Silicon -Macit — M1, M2, M3, M4 ja uudemmat — joissa on macOS 12 Monterey tai uudempi. Ajuri on käännetty vain arm64:lle, joten Intel-Maceja ei tueta."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Tarvitsenko sitä, jos minulla on jo SplitCam Macille?",
+          "name": "Do I need it if I already have SplitCam for Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yleensä et. macOS-sovellus sisältää tämän ajurin jo valmiiksi ja asentaa sen puolestasi. Erillinen paketti on olemassa niitä tilanteita varten, joissa äänilaite on asennettava tai korjattava erikseen."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Onko se kernel-laajennus?",
+          "name": "Is it a kernel extension?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ei. Kyseessä on CoreAudio HAL -laajennus, joka sijaitsee kansiossa /Library/Audio/Plug-Ins/HAL ja toimii käyttäjätilassa. Palautustilassa ei tarvitse sallia mitään eikä tietoturva-asetuksia tarvitse laskea."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Miksi macOS kysyy salasanaani?",
+          "name": "Why does macOS ask for my password?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Järjestelmän äänilaajennusten kansio kuuluu macOS:lle, joten siihen kirjoittaminen vaatii järjestelmänvalvojan oikeudet. Paketti on allekirjoitettu Apple Developer ID -varmenteella ja Applen notarisoima, ja siksi Gatekeeper päästää sen läpi ilman varoitusta."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "Miten poistan sen?",
+          "name": "How do I uninstall it?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Poista SplitCamVirtualAudio.driver kansiosta /Library/Audio/Plug-Ins/HAL ja käynnistä Mac tai äänipalvelu uudelleen. Virtuaalilaite katoaa mikrofonilistasta."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Onko myös virtuaalikameraa?",
+          "name": "Is there a virtual camera too?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Kyllä — SplitCamissa on samalla periaatteella toimiva virtuaalikamera, jolla koottu kohtaus korvaa webkamerasi Zoomissa, Teamsissa, Meetissä ja kymmenissä muissa sovelluksissa."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Maksaako se mitään?",
+          "name": "Does it cost anything?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ei. Ajuri on ilmainen, kuten SplitCam itsekin. Tiliä ei tarvitse luoda, mitään ei tarvitse tilata eikä ääneen lisätä vesileimaa."

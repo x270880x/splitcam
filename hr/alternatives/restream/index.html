@@ -137,7 +137,7 @@
           "name": "Trebam li veću brzinu prijenosa nego s Restreamom?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Da, i to je glavno što treba provjeriti. Posredniku je od vas potreban jedan odlazni tok; izravnom slanju potreban je zbroj bitratea svih platformi odjednom — oko 17 Mbps za četiri platforme s preporučenim postavkama. SplitCam ima ugrađen Upload Speed Test, pa to doznate u minuti umjesto da otkrijete usred prijenosa."
+            "text": "Da, i to je glavno što treba provjeriti. Posredniku je od vas potreban jedan odlazni tok; izravnom slanju potreban je zbroj bitratea svih platformi odjednom — oko 19–20 Mbps za četiri platforme s preporučenim postavkama. SplitCam ima ugrađen Upload Speed Test, pa to doznate u minuti umjesto da otkrijete usred prijenosa."
           }
         },
         {
@@ -496,12 +496,12 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <p class="sec-p">Skupi dio streaminga je kodiranje videa, a vaše ga računalo ionako već radi. Kad je sličica jednom kodirana, slanje na četiri platforme umjesto na jednu samo je četiri mrežne veze. SplitCam ih otvara sam — hardversko kodiranje putem NVENC-a, QuickSynca ili AMF-a na Windowsima i VideoToolboxa na Macu, a zatim izravna veza s ulaznim poslužiteljem svake platforme.</p>
   <div class="reasons-grid">
       <div class="reason">
-        <h3>Jedno kodiranje, sve platforme</h3>
-        <p>Jedno kodiranje ide na svaku platformu, pa dodavanje platforme troši propusnost, a ne procesor.</p>
+        <h3>Kodirajte jednom, šaljite na više strana</h3>
+        <p>Platforme s istom rezolucijom i bitrateom dijele jedno kodiranje. Zadate li platformi vlastite postavke, ona dobiva svoje kodiranje — zato je upravljanje po platformi ispod prava funkcija, a ne puki prekidač.</p>
       </div>
       <div class="reason">
         <h3>Bitrate za svaku platformu zasebno</h3>
-        <p>Želite 6 Mbps prema Twitchu i 2,5 Mbps prema Facebooku? Zadajte ih odvojeno umjesto da za sve prihvatite jednu postavku posrednika.</p>
+        <p>Želite 1080p60 pri 6 Mbps prema Twitchu i 720p30 pri 2,5 Mbps prema Facebooku? Zadajte ih odvojeno umjesto da za sve prihvatite jednu postavku posrednika. Bitrate, rezolucija i broj sličica neovisni su za svaku platformu.</p>
       </div>
       <div class="reason">
         <h3>Ništa između vas i platforme</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">Kada je Restream bolji izbor</h2>
-  <p class="sec-p">Ovo je pošteno ograničenje izravnog slanja i vrijedi ga znati prije prelaska. Posredniku je od vas potreban <strong>jedan</strong> odlazni tok. Izravnom slanju potreban je <strong>zbroj</strong> bitratea svih platformi koji odjednom izlazi iz vaše kuće — četiri platforme s preporučenim postavkama znače otprilike 17 Mbps prijenosa. Ako vaša veza to ne može izdržati, oblačni posrednik nije udobnost, nego jedino što multistreaming uopće čini mogućim. SplitCam donosi Upload Speed Test kako biste provjerili prije nego se odlučite, a uvijek možete voditi manje platformi s nižim bitrateima — ali ako je vaša brzina prijenosa ograničenje, Restream rješava problem koji SplitCam ne može. Isto vrijedi i za streamanje s laptopa na hotelskom ili mobilnom internetu, gdje posrednik upija nestabilnost umjesto da je vidi vaša publika.</p>
+  <p class="sec-p">Ovo je pošteno ograničenje izravnog slanja i vrijedi ga znati prije prelaska. Posredniku je od vas potreban <strong>jedan</strong> odlazni tok. Izravnom slanju potreban je <strong>zbroj</strong> bitratea svih platformi koji odjednom izlazi iz vaše kuće — četiri platforme s preporučenim postavkama znače otprilike 19–20 Mbps prijenosa — 6 prema Twitchu, 4,5 prema YouTubeu, 3 prema Facebooku i 2,5 prema četvrtoj, plus otprilike 20% rezerve. Ako vaša veza to ne može izdržati, oblačni posrednik nije udobnost, nego jedino što multistreaming uopće čini mogućim. SplitCam donosi Upload Speed Test kako biste provjerili prije nego se odlučite, a uvijek možete voditi manje platformi s nižim bitrateima — ali ako je vaša brzina prijenosa ograničenje, Restream rješava problem koji SplitCam ne može. Isto vrijedi i za streamanje s laptopa na hotelskom ili mobilnom internetu, gdje posrednik upija nestabilnost umjesto da je vidi vaša publika.</p>
 </section>
 
 <!-- COMPARE -->
@@ -551,7 +551,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Trebam li veću brzinu prijenosa nego s Restreamom?</summary>
-        <p>Da, i to je glavno što treba provjeriti. Posredniku je od vas potreban jedan odlazni tok; izravnom slanju potreban je zbroj bitratea svih platformi odjednom — oko 17 Mbps za četiri platforme s preporučenim postavkama. SplitCam ima ugrađen Upload Speed Test, pa to doznate u minuti umjesto da otkrijete usred prijenosa.</p>
+        <p>Da, i to je glavno što treba provjeriti. Posredniku je od vas potreban jedan odlazni tok; izravnom slanju potreban je zbroj bitratea svih platformi odjednom — oko 19–20 Mbps za četiri platforme s preporučenim postavkama. SplitCam ima ugrađen Upload Speed Test, pa to doznate u minuti umjesto da otkrijete usred prijenosa.</p>
       </details>
       <details class="faq-item">
         <summary>Mogu li nastaviti koristiti svoje postojeće stream ključeve?</summary>

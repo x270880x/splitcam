@@ -137,7 +137,7 @@
           "name": "¿Necesito más ancho de banda de subida que con Restream?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí, y es lo principal que hay que comprobar. Un relé recibe una sola subida por tu parte; enviar directo necesita la suma del bitrate de todos los destinos saliendo a la vez — unos 17 Mbps para cuatro plataformas con los ajustes recomendados. SplitCam trae un test de velocidad de subida integrado, así lo sabes en un minuto en vez de descubrirlo en mitad del directo."
+            "text": "Sí, y es lo principal que hay que comprobar. Un relé recibe una sola subida por tu parte; enviar directo necesita la suma del bitrate de todos los destinos saliendo a la vez — unos 19–20 Mbps para cuatro plataformas con los ajustes recomendados. SplitCam trae un test de velocidad de subida integrado, así lo sabes en un minuto en vez de descubrirlo en mitad del directo."
           }
         },
         {
@@ -153,7 +153,7 @@
           "name": "¿Qué pasa con mis escenas y overlays?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Los montas en la propia SplitCam: fuentes en capas sobre un mismo lienzo, eliminación de fondo con IA, efectos y fuentes de navegador para los overlays. Y si además vienes de OBS, SplitCam importa las colecciones de escenas de OBS en un clic."
+            "text": "Los montas en el propio SplitCam: fuentes en capas sobre un mismo lienzo, eliminación de fondo con IA, efectos y fuentes de navegador para los overlays. Y si además vienes de OBS, SplitCam importa las colecciones de escenas de OBS en un clic."
           }
         },
         {
@@ -448,7 +448,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="hero-glow"></div>
   <span class="eyebrow">Alternativa a Restream</span>
   <h1 class="h1">Una <span class="accent">alternativa a Restream</span> gratis que nunca sale de tu equipo.</h1>
-  <p class="sub">Restream toma una transmisión tuya, la reenvía desde sus servidores y te cobra cada mes por el privilegio. SplitCam codifica una sola vez en tu equipo y abre él mismo una conexión a cada plataforma — <strong>84+ destinos, nada pasa por terceros, nada que suscribir</strong>.</p>
+  <p class="sub">Restream toma una transmisión tuya, la reenvía desde sus servidores y te cobra cada mes por el privilegio. SplitCam codifica una sola vez en tu equipo y es SplitCam quien abre directamente una conexión a cada plataforma — <strong>84+ destinos, nada pasa por terceros, nada que suscribir</strong>.</p>
   <div class="hero-cta">
     <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Descarga gratis</a>
     <a href="#compare" class="btn-ghost btn-lg">Ir a la comparativa ↓</a>
@@ -493,11 +493,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- ENCODING IS LOCAL -->
 <section class="section">
   <h2 class="sec-h">Tu equipo ya hace la codificación</h2>
-  <p class="sec-p">Lo caro del streaming es codificar el vídeo, y tu equipo ya lo está haciendo. Una vez codificado el fotograma, mandarlo a cuatro plataformas en lugar de a una son solo cuatro conexiones de red. SplitCam las abre él mismo — codificación por hardware con NVENC, QuickSync o AMF en Windows y VideoToolbox en Mac, y después una conexión directa al servidor de ingesta de cada plataforma.</p>
+  <p class="sec-p">Lo caro del streaming es codificar el vídeo, y tu equipo ya lo está haciendo. Una vez codificado el fotograma, mandarlo a cuatro plataformas en lugar de a una son solo cuatro conexiones de red. SplitCam las abre por sí mismo — codificación por hardware con NVENC, QuickSync o AMF en Windows y VideoToolbox en Mac, y después una conexión directa al servidor de ingesta de cada plataforma.</p>
   <div class="reasons-grid">
       <div class="reason">
         <h3>Codifica una vez, envía a muchos</h3>
-        <p>Una sola codificación alimenta todos los destinos, así que añadir una plataforma cuesta ancho de banda, no CPU.</p>
+        <p>Los destinos que comparten resolución y bitrate comparten una misma codificación. Si le das ajustes propios a un destino, ese destino recibe su propia codificación — por eso el control por destino de aquí abajo es una función de verdad y no un interruptor.</p>
       </div>
       <div class="reason">
         <h3>Bitrate por destino</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">Cuándo Restream es la mejor elección</h2>
-  <p class="sec-p">Este es el límite honesto de enviar directo, y conviene conocerlo antes de cambiar. Un relé necesita <strong>una</strong> subida por tu parte. Enviar directo necesita la <strong>suma</strong> del bitrate de todos los destinos saliendo de tu casa a la vez — cuatro plataformas con los ajustes recomendados son unos 17 Mbps de subida. Si tu conexión no aguanta eso, un relé en la nube no es una comodidad: es justo lo que hace posible el multistream. SplitCam incluye un test de velocidad de subida para que lo compruebes antes de comprometerte, y siempre puedes usar menos destinos con menos bitrate — pero si tu subida es el cuello de botella, Restream resuelve un problema que SplitCam no puede. Lo mismo vale para transmitir desde un portátil con el wifi de un hotel o con datos móviles: ahí el relé absorbe la inestabilidad en lugar de que la vea tu público.</p>
+  <p class="sec-p">Este es el límite honesto de enviar directo, y conviene conocerlo antes de cambiar. Un relé necesita <strong>una</strong> subida por tu parte. Enviar directo necesita la <strong>suma</strong> del bitrate de todos los destinos saliendo de tu casa a la vez — cuatro plataformas con los ajustes recomendados son unos 19–20 Mbps de subida — 6 a Twitch, 4,5 a YouTube, 3 a Facebook y 2,5 a una cuarta, más un 20% de margen aproximado. Si tu conexión no aguanta eso, un relé en la nube no es una comodidad: es justo lo que hace posible el multistream. SplitCam incluye un test de velocidad de subida para que lo compruebes antes de comprometerte, y siempre puedes usar menos destinos con menos bitrate — pero si tu subida es el cuello de botella, Restream resuelve un problema que SplitCam no puede. Lo mismo vale para transmitir desde un portátil con el wifi de un hotel o con datos móviles: ahí el relé absorbe la inestabilidad en lugar de que la vea tu público.</p>
 </section>
 
 <!-- COMPARE -->
@@ -551,7 +551,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>¿Necesito más ancho de banda de subida que con Restream?</summary>
-        <p>Sí, y es lo principal que hay que comprobar. Un relé recibe una sola subida por tu parte; enviar directo necesita la suma del bitrate de todos los destinos saliendo a la vez — unos 17 Mbps para cuatro plataformas con los ajustes recomendados. SplitCam trae un test de velocidad de subida integrado, así lo sabes en un minuto en vez de descubrirlo en mitad del directo.</p>
+        <p>Sí, y es lo principal que hay que comprobar. Un relé recibe una sola subida por tu parte; enviar directo necesita la suma del bitrate de todos los destinos saliendo a la vez — unos 19–20 Mbps para cuatro plataformas con los ajustes recomendados. SplitCam trae un test de velocidad de subida integrado, así lo sabes en un minuto en vez de descubrirlo en mitad del directo.</p>
       </details>
       <details class="faq-item">
         <summary>¿Puedo seguir usando mis claves de transmisión actuales?</summary>
@@ -559,7 +559,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>¿Qué pasa con mis escenas y overlays?</summary>
-        <p>Los montas en la propia SplitCam: fuentes en capas sobre un mismo lienzo, eliminación de fondo con IA, efectos y fuentes de navegador para los overlays. Y si además vienes de OBS, SplitCam importa las colecciones de escenas de OBS en un clic.</p>
+        <p>Los montas en el propio SplitCam: fuentes en capas sobre un mismo lienzo, eliminación de fondo con IA, efectos y fuentes de navegador para los overlays. Y si además vienes de OBS, SplitCam importa las colecciones de escenas de OBS en un clic.</p>
       </details>
       <details class="faq-item">
         <summary>¿Graba mientras transmite?</summary>

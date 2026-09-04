@@ -137,7 +137,7 @@
           "name": "Môžem pozvať hosťa do streamu tak, ako to robí StreamYard?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nie. To je tá jediná vec, ktorú StreamYard robí a SplitCam na ňu nemá odpoveď. Hosť, ktorý sa pripojí cez odkaz v prehliadači a nič si neinštaluje, nie je funkcia SplitCam — a ak na tom vaša relácia stojí, StreamYard je lepší nástroj."
+            "text": "Nie. To je tá jediná vec, ktorú StreamYard robí a SplitCam na ňu nemá odpoveď. Hosť, ktorý sa pripojí cez odkaz v prehliadači a nič si neinštaluje, nie je funkcia SplitCamu — a ak na tom vaša relácia stojí, StreamYard je lepší nástroj."
           }
         },
         {
@@ -145,7 +145,7 @@
           "name": "Prečo by mala desktopová aplikácia vyzerať lepšie než štúdio v prehliadači?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pretože kóduje na vašom vlastnom GPU namiesto v sandboxe prehliadača a pretože hotový stream odošle raz, namiesto toho, aby posielala surový obraz kamier hore a nechala cloud, nech ho poskladá. Na tom istom počítači a pripojení sa to zvyčajne prejaví ako čistejší obraz počas pohybu."
+            "text": "Pretože cloudové štúdio najprv zakóduje obraz z vašej kamery, aby sa tam vôbec dostal, a potom hotovú reláciu na ceste von zakóduje znova — druhý priechod pracuje už so skomprimovaným obrazom a táto strata sa nevráti. SplitCam kóduje raz, lokálne. Na tom istom počítači a pripojení sa to zvyčajne prejaví ako čistejší obraz počas pohybu."
           }
         },
         {
@@ -153,7 +153,7 @@
           "name": "Musím sa vzdať prekrytí a rozložení s vlastnou grafikou?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nie. Scény, prekrytia, obrázky, text aj dolné titulky sú súčasťou SplitCam a prepínate medzi nimi naživo počas streamovania."
+            "text": "Nie. Scény, prekrytia, obrázky, text aj dolné titulky sú súčasťou SplitCamu a prepínate medzi nimi naživo počas streamovania."
           }
         },
         {
@@ -462,8 +462,8 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <div class="qa-h">Stručná odpoveď — čo získate a čoho sa vzdáte</div>
     <div class="qa-text"><ol>
         <li><strong>Získate kvalitu.</strong> Vaše scény sa skladajú vo vašom vlastnom procesore a GPU, nie vnútri karty prehliadača, takže rozlíšenie a počet snímok limituje váš počítač, a nie webová aplikácia.</li>
-        <li><strong>Získate cenu.</strong> SplitCam je zadarmo, bez vodoznaku a bez tarify, ktorá by odomykala rozlíšenie, za ktoré ste už raz zaplatili pri kúpe počítača.</li>
-        <li><strong>Vzdáte sa hostí v prehliadači.</strong> V StreamYard sa vzdialený hosť pripojí kliknutím na odkaz a nemusí si nič inštalovať. SplitCam nemá nič rovnocenné — a toto je jeho skutočná prednosť, nie detail.</li>
+        <li><strong>Ušetríte.</strong> SplitCam je zadarmo, bez vodoznaku a bez tarify, ktorá by odomykala rozlíšenie, za ktoré ste už raz zaplatili pri kúpe počítača.</li>
+        <li><strong>Vzdáte sa hostí v prehliadači.</strong> V StreamYard sa vzdialený hosť pripojí kliknutím na odkaz a nemusí si nič inštalovať. SplitCam nemá nič rovnocenné — a je to skutočná prednosť StreamYardu, nie detail.</li>
         <li><strong>Vzdáte sa práce z hocijakého počítača.</strong> Štúdio v prehliadači beží aj na Chromebooku či požičanom notebooku. SplitCam treba nainštalovať na Windows alebo macOS.</li>
     </ol></div>
   </div>
@@ -476,7 +476,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Strop určuje váš hardvér</h3>
-        <p>Karta prehliadača musí kódovať video v sandboxe a delí sa o to, čo jej prehliadač dovolí. Desktopová aplikácia hovorí s vaším GPU priamo. Na tom istom počítači a tom istom pripojení je to rozdiel medzi streamom, ktorý pri pohybe v scéne zmäkne, a streamom, ktorý nie.</p>
+        <p>Vaša kamera sa raz zakóduje, aby sa vôbec dostala do cloudu, cloud potom reláciu poskladá a zakóduje ju znova, aby ju dostal na platformu. Dve kódovania, pričom to druhé vychádza už zo skomprimovaného obrazu. SplitCam skladá aj kóduje len raz, na vašom vlastnom GPU, a to, čo odíde z vášho počítača, je presne to, čo platforma dostane.</p>
       </div>
       <div class="reason">
         <h3>Jedno odosielanie namiesto dvoch</h3>
@@ -520,7 +520,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE THE RIVAL WINS -->
 <section class="section">
   <h2 class="sec-h">Kedy je StreamYard tou správnou voľbou</h2>
-  <p class="sec-p">Dva prípady, a nie sú to malé prípady. Po prvé, vzdialení hostia: StreamYard pošle odkaz, hosť ho otvorí v prehliadači a je v relácii. SplitCam to nedokáže — ak sú vaším formátom rozhovory alebo panelové diskusie s ľuďmi, ktorí si softvér inštalovať nebudú, StreamYard je stavaný presne na to a SplitCam nie. Po druhé, počítač, pri ktorom sedíte: štúdio v prehliadači beží všade, kde beží Chrome, vrátane Chromebooku, zamknutého pracovného notebooku či počítača, ktorý ste si na jeden deň požičali. SplitCam treba nainštalovať a je len pre Windows a macOS. Neexistuje ani zmluva o podpore SplitCam či dodávateľský vzťah, na ktorý by ste mohli ukázať nákupnému oddeleniu. Ak niečo z toho vystihuje vašu situáciu, zaplaťte za nástroj, ktorý to rieši.</p>
+  <p class="sec-p">Dva prípady, a nie sú to malé prípady. Po prvé, vzdialení hostia: StreamYard pošle odkaz, hosť ho otvorí v prehliadači a je v relácii. SplitCam to nedokáže — ak sú vaším formátom rozhovory alebo panelové diskusie s ľuďmi, ktorí si softvér inštalovať nebudú, StreamYard je stavaný presne na to a SplitCam nie. Po druhé, počítač, pri ktorom sedíte: štúdio v prehliadači beží všade, kde beží Chrome, vrátane Chromebooku, zamknutého pracovného notebooku či počítača, ktorý ste si na jeden deň požičali. SplitCam treba nainštalovať a je len pre Windows a macOS. Neexistuje ani zmluva o podpore SplitCamu či dodávateľský vzťah, na ktorý by ste mohli ukázať nákupnému oddeleniu. Ak niečo z toho vystihuje vašu situáciu, zaplaťte za nástroj, ktorý to rieši.</p>
 </section>
 
 <!-- COMPARE -->
@@ -554,15 +554,15 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Môžem pozvať hosťa do streamu tak, ako to robí StreamYard?</summary>
-        <p>Nie. To je tá jediná vec, ktorú StreamYard robí a SplitCam na ňu nemá odpoveď. Hosť, ktorý sa pripojí cez odkaz v prehliadači a nič si neinštaluje, nie je funkcia SplitCam — a ak na tom vaša relácia stojí, StreamYard je lepší nástroj.</p>
+        <p>Nie. To je tá jediná vec, ktorú StreamYard robí a SplitCam na ňu nemá odpoveď. Hosť, ktorý sa pripojí cez odkaz v prehliadači a nič si neinštaluje, nie je funkcia SplitCamu — a ak na tom vaša relácia stojí, StreamYard je lepší nástroj.</p>
       </details>
       <details class="faq-item">
         <summary>Prečo by mala desktopová aplikácia vyzerať lepšie než štúdio v prehliadači?</summary>
-        <p>Pretože kóduje na vašom vlastnom GPU namiesto v sandboxe prehliadača a pretože hotový stream odošle raz, namiesto toho, aby posielala surový obraz kamier hore a nechala cloud, nech ho poskladá. Na tom istom počítači a pripojení sa to zvyčajne prejaví ako čistejší obraz počas pohybu.</p>
+        <p>Pretože cloudové štúdio najprv zakóduje obraz z vašej kamery, aby sa tam vôbec dostal, a potom hotovú reláciu na ceste von zakóduje znova — druhý priechod pracuje už so skomprimovaným obrazom a táto strata sa nevráti. SplitCam kóduje raz, lokálne. Na tom istom počítači a pripojení sa to zvyčajne prejaví ako čistejší obraz počas pohybu.</p>
       </details>
       <details class="faq-item">
         <summary>Musím sa vzdať prekrytí a rozložení s vlastnou grafikou?</summary>
-        <p>Nie. Scény, prekrytia, obrázky, text aj dolné titulky sú súčasťou SplitCam a prepínate medzi nimi naživo počas streamovania.</p>
+        <p>Nie. Scény, prekrytia, obrázky, text aj dolné titulky sú súčasťou SplitCamu a prepínate medzi nimi naživo počas streamovania.</p>
       </details>
       <details class="faq-item">
         <summary>Posiela SplitCam multistream cez vlastné servery?</summary>

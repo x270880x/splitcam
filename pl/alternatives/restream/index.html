@@ -137,7 +137,7 @@
           "name": "Czy potrzebuję większej prędkości wysyłania niż przy Restream?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tak i to jest główna rzecz do sprawdzenia. Pośrednik bierze od Ciebie jedno wysyłanie; wysyłanie bezpośrednie wymaga, żeby naraz wychodziła suma bitrate'ów wszystkich platform docelowych — około 17 Mb/s przy czterech platformach i zalecanych ustawieniach. SplitCam ma wbudowany Upload Speed Test, więc dowiesz się w minutę, zamiast odkryć to w trakcie transmisji."
+            "text": "Tak i to jest główna rzecz do sprawdzenia. Pośrednik bierze od Ciebie jedno wysyłanie; wysyłanie bezpośrednie wymaga, żeby naraz wychodziła suma bitrate'ów wszystkich platform docelowych — około 19–20 Mb/s przy czterech platformach i zalecanych ustawieniach. SplitCam ma wbudowany Upload Speed Test, więc dowiesz się w minutę, zamiast odkryć to w trakcie transmisji."
           }
         },
         {
@@ -481,11 +481,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </div>
       <div class="reason">
         <h3>Rachunek jest co miesiąc, transmisje już niekoniecznie</h3>
-        <p>Abonament liczy kalendarz, a nie godziny, przez które naprawdę nadajesz. Zrobisz w miesiącu dwie transmisje i i tak płacisz za dwadzieścia sześć dni, w których nie streamowałeś.</p>
+        <p>Abonament liczy kalendarz, a nie godziny, przez które naprawdę nadajesz. Zrobisz w miesiącu dwie transmisje — i tak zapłacisz za dwadzieścia sześć dni, w których nic nie nadawałeś.</p>
       </div>
       <div class="reason">
         <h3>Górny limit ustala ktoś inny</h3>
-        <p>Jakość, liczba platform docelowych i funkcje są takie, jaki masz plan. Zmiana którejkolwiek z tych rzeczy to decyzja o cenniku, a nie zmiana ustawienia.</p>
+        <p>Jakość, liczba platform docelowych i funkcje zależą od tego, jaki masz plan. Zmiana którejkolwiek z tych rzeczy to decyzja o cenniku, a nie zmiana ustawienia.</p>
       </div>
   </div>
 </section>
@@ -497,7 +497,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Kodujesz raz, wysyłasz wielokrotnie</h3>
-        <p>Jedno kodowanie zasila każdą platformę docelową, więc dodanie platformy kosztuje pasmo, a nie procesor.</p>
+        <p>Platformy docelowe z tą samą rozdzielczością i tym samym bitrate'em dzielą jedno kodowanie. Daj platformie własne ustawienia, a dostanie własne kodowanie — dlatego opisane niżej sterowanie osobno dla każdej platformy to prawdziwa funkcja, a nie przełącznik.</p>
       </div>
       <div class="reason">
         <h3>Bitrate osobno dla każdej platformy</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">Kiedy lepszym wyborem jest Restream</h2>
-  <p class="sec-p">To jest uczciwa granica wysyłania bezpośredniego i warto ją znać, zanim się przesiądziesz. Pośrednik potrzebuje od Ciebie <strong>jednego</strong> wysyłania. Wysyłanie bezpośrednie wymaga, żeby z Twojego domu wychodziła naraz <strong>suma</strong> bitrate'ów wszystkich platform docelowych — cztery platformy przy zalecanych ustawieniach to około 17 Mb/s wysyłania. Jeśli Twoje łącze tego nie udźwignie, pośrednik w chmurze nie jest wygodą, tylko jedyną rzeczą, dzięki której multistreaming w ogóle jest możliwy. SplitCam ma wbudowany Upload Speed Test, więc możesz to sprawdzić, zanim się zdecydujesz, a liczbę platform i bitrate'y zawsze możesz zmniejszyć — ale jeśli ograniczeniem jest Twoje wysyłanie, Restream rozwiązuje problem, którego SplitCam rozwiązać nie potrafi. To samo dotyczy streamowania z laptopa przez internet hotelowy albo komórkowy: tam niestabilność łącza pochłania pośrednik, zamiast żeby zobaczyli ją Twoi widzowie.</p>
+  <p class="sec-p">To jest uczciwa granica wysyłania bezpośredniego i warto ją znać, zanim się przesiądziesz. Pośrednik potrzebuje od Ciebie <strong>jednego</strong> wysyłania. Wysyłanie bezpośrednie wymaga, żeby z Twojego domu wychodziła naraz <strong>suma</strong> bitrate'ów wszystkich platform docelowych — cztery platformy przy zalecanych ustawieniach to około 19–20 Mb/s wysyłania: 6 na Twitch, 4,5 na YouTube, 3 na Facebook i 2,5 na czwartą, plus jakieś 20% zapasu. Jeśli Twoje łącze tego nie udźwignie, pośrednik w chmurze nie jest wygodą, tylko jedyną rzeczą, dzięki której multistreaming w ogóle jest możliwy. SplitCam ma wbudowany Upload Speed Test, więc możesz to sprawdzić, zanim się zdecydujesz, a liczbę platform i bitrate'y zawsze możesz zmniejszyć — ale jeśli ograniczeniem jest Twoje wysyłanie, Restream rozwiązuje problem, którego SplitCam rozwiązać nie potrafi. To samo dotyczy streamowania z laptopa przez internet hotelowy albo komórkowy: tam niestabilność łącza pochłania pośrednik, zamiast żeby zobaczyli ją Twoi widzowie.</p>
 </section>
 
 <!-- COMPARE -->
@@ -551,7 +551,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Czy potrzebuję większej prędkości wysyłania niż przy Restream?</summary>
-        <p>Tak i to jest główna rzecz do sprawdzenia. Pośrednik bierze od Ciebie jedno wysyłanie; wysyłanie bezpośrednie wymaga, żeby naraz wychodziła suma bitrate'ów wszystkich platform docelowych — około 17 Mb/s przy czterech platformach i zalecanych ustawieniach. SplitCam ma wbudowany Upload Speed Test, więc dowiesz się w minutę, zamiast odkryć to w trakcie transmisji.</p>
+        <p>Tak i to jest główna rzecz do sprawdzenia. Pośrednik bierze od Ciebie jedno wysyłanie; wysyłanie bezpośrednie wymaga, żeby naraz wychodziła suma bitrate'ów wszystkich platform docelowych — około 19–20 Mb/s przy czterech platformach i zalecanych ustawieniach. SplitCam ma wbudowany Upload Speed Test, więc dowiesz się w minutę, zamiast odkryć to w trakcie transmisji.</p>
       </details>
       <details class="faq-item">
         <summary>Czy mogę dalej używać swoich kluczy streamu?</summary>

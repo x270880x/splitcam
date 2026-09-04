@@ -158,7 +158,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "我需要为 Windows 单独下载虚拟音频驱动吗？",
+          "name": "Do I have to download a virtual audio driver for Windows?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "不用。音频设备由 SplitCam 自己的安装程序注册，所以装好 Windows 版 SplitCam 就等于全部搞定，没有另外要下载的安装包。"
@@ -166,7 +166,7 @@
         },
         {
           "@type": "Question",
-          "name": "它和音频混音器有什么区别？",
+          "name": "我需要为 Windows 单独下载虚拟音频驱动吗？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "音频混音器是你在 SplitCam 内部把各路声音合到一起的地方，而这份合成结果正是你的直播和录制所承载的声音。虚拟麦克风则是同一路会话的额外输出：它把这份声音以输入设备的形式交给 Windows，于是一个完全不了解 SplitCam 的程序也能选中它并收听。"
@@ -174,7 +174,7 @@
         },
         {
           "@type": "Question",
-          "name": "哪些程序可以使用它？",
+          "name": "Which programs can use it?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "任何允许你选择麦克风或音频输入的程序。它会出现在 Windows 的输入设备列表里，紧挨着你的声卡，所以会议软件、录音工具、浏览器和 OBS 都用同样的方式接上它。"
@@ -182,7 +182,7 @@
         },
         {
           "@type": "Question",
-          "name": "用了它，观众听到的声音会变吗？",
+          "name": "它和音频混音器有什么区别？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "不会。你的直播和录制仍然像以前一样从混音器取声音。虚拟麦克风只是多了一个收听者，而不是替代品。"
@@ -190,7 +190,7 @@
         },
         {
           "@type": "Question",
-          "name": "列表里找不到这个设备，怎么办？",
+          "name": "The device is missing from the list. What now?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "SplitCam 启动时会检查驱动有没有加载成功，没成功会给出警告；那种情况下程序照常运行，但设备不可用。如果并没有出现警告，那可能是接收端的程序在 SplitCam 安装之前就建好了自己的输入列表——重新打开它的音频设置即可。"
@@ -198,7 +198,7 @@
         },
         {
           "@type": "Question",
-          "name": "它免费吗？",
+          "name": "Is it free?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "免费。它是 Windows 版本身的一部分，而不是附加组件，所以它的任何功能都不需要许可证密钥或账号。"

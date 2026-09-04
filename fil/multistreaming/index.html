@@ -189,98 +189,98 @@
         },
         {
           "@type": "Question",
-          "name": "How many platforms can I multistream to simultaneously?",
+          "name": "Ilang platform ang puwede kong i-stream nang sabay-sabay?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Up to 8 destinations comfortably; technically unlimited as long as your CPU/GPU and upload bandwidth can handle the combined load. On a mid-range PC with 10 Mbps upload, 3–5 platforms is typical. With 50 Mbps fiber and an Nvidia card, 8+ is achievable."
+            "text": "Hanggang 8 destinasyon nang komportable; technically unlimited basta kaya ng CPU/GPU mo at upload bandwidth ang combined load. Bawat destinasyon ay gumagamit ng sariling bandwidth — iyon ang practical na limitasyon. Sa mid-range PC na may 10 Mbps upload, 3–5 platform ang karaniwan. Sa 50 Mbps fiber at Nvidia card, kaya ang 8+."
           }
         },
         {
           "@type": "Question",
-          "name": "Does SplitCam send my video through any cloud server?",
+          "name": "Dumadaan ba ang video ko sa anumang server ng SplitCam?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Multistreaming is direct, peer-to-peer from your computer to each platform's ingest endpoint. No data passes through SplitCam servers, no third-party cloud middleman. The same video goes straight from your machine to Twitch, YouTube and any other selected destination — separately and simultaneously."
+            "text": "Hindi. Diretso ang multistreaming, peer-to-peer mula sa computer mo papunta sa ingest endpoint ng bawat platform. Walang data na dumadaan sa mga SplitCam server, walang third-party cloud middleman, walang implikasyon sa privacy. Ang iisang video ay tumutuloy diretso mula sa makina mo papuntang Twitch, YouTube, saan ka man mag-stream — hiwalay at sabay-sabay."
           }
         },
         {
           "@type": "Question",
-          "name": "How much upload bandwidth do I need to multistream?",
+          "name": "Gaano karaming upload bandwidth ang kailangan ko?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Add up the bitrates of all selected destinations and add ~20% safety margin. Streaming at 6 Mbps to Twitch + 4.5 Mbps to YouTube + 3 Mbps to Facebook = 13.5 Mbps + margin = ~17 Mbps upload required. Built-in Upload Speed Test confirms your connection before going live."
+            "text": "Idagdag-dagdag ang bitrates ng lahat ng napiling destinasyon at lagyan ng ~20% safety margin. Nag-stream ng 6 Mbps sa Twitch + 4.5 Mbps sa YouTube + 3 Mbps sa Facebook = 13.5 Mbps na kailangan + margin = ~17 Mbps upload. Tinitiyak ng naka-built in na Upload Speed Test ang koneksyon mo bago mag-live."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I stream to Twitch and YouTube at the same time?",
+          "name": "Puwede ba akong mag-stream sa Twitch at YouTube nang sabay?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — Twitch + YouTube simultaneously is the most common multistream combo. SplitCam ships with both pre-configured. Twitch's terms of service allow simulcasting to any platform since October 2023, so it is fully compliant."
+            "text": "Oo — ang Twitch + YouTube nang sabay ang pinakakaraniwang multistream combo. Naka-pre-configure na pareho sa SplitCam. I-paste ang stream keys mo nang isang beses, tapos bawat Go Live click ay napupunta sa pareho. Pinapayagan ng ToS ng Twitch ang simulcasting mula pa noong October 2023, kaya sang-ayon ito sa patakaran."
           }
         },
         {
           "@type": "Question",
-          "name": "Is multistreaming (simulcasting) allowed on Twitch?",
+          "name": "Puwede ba akong magkaroon ng magkaibang bitrate bawat platform?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Since October 2023, both Twitch Affiliates and Partners can simulcast to any other platform — Kick, YouTube, TikTok, Facebook. The only requirement is that the Twitch stream quality must be at least as good as the version on other platforms (e.g., do not send 720p to Twitch while sending 4K to YouTube)."
+            "text": "Oo — independent lahat ang per-destination bitrate, resolution at framerate. Magpadala ng 1080p60 sa 6 Mbps sa Twitch, 720p30 sa 2.5 Mbps sa Facebook, 480p30 sa 800 kbps sa backup destination. I-configure ang bawat isa sa Stream Settings."
           }
         },
         {
           "@type": "Question",
-          "name": "Is SplitCam an alternative to Restream and Streamlabs?",
+          "name": "Paano kung bumagsak ang isang platform habang nasa stream?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — SplitCam is a free Restream / Streamlabs Multistream alternative. The key difference: SplitCam runs entirely on your machine and sends streams directly to each platform (peer-to-peer). Restream and Streamlabs Multistream send your stream to their cloud first and then fan it out, which adds latency, requires a monthly fee (on paid tiers) and shares your data. SplitCam is free forever with no cloud middleman."
+            "text": "Kapag bumagsak ang isang destinasyon (hal. Twitch ingest hiccup), ang iba ay tuloy lang nang walang putol. Sinusubukan ng SplitCam na awtomatikong kumonekta ulit sa bumagsak na platform. Hindi napapansin ng viewers mo sa ibang platform."
           }
         },
         {
           "@type": "Question",
-          "name": "Do I need an OBS multistream plugin if I use SplitCam?",
+          "name": "Puwede ba akong mag-multistream mula sa phone ko?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. SplitCam has multistreaming built in — no plugins like Aitum Multistream, SE.Live or Multiple RTMP Outputs required. Pick destinations, click Go Live, done. SplitCam also acts as your full broadcasting studio (scenes, sources, virtual camera) so you can replace OBS entirely if you want."
+            "text": "Oo — sinusuportahan ng SplitCam mobile (iOS at Android) ang multistreaming sa parehong 84+ platforms. Parehong Stream Settings, parehong one-click Go Live. Vertical canvas (9:16) ang default sa mobile para sa TikTok / Reels / Shorts."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I have different bitrates per platform?",
+          "name": "Sinusuportahan ba ng SplitCam ang custom RTMP servers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — per-destination bitrate, resolution and framerate are all independent. Send 1080p60 at 6 Mbps to Twitch, 720p30 at 2.5 Mbps to Facebook, 480p30 at 800 kbps to a backup destination. Configure each in Stream Settings."
+            "text": "Oo — gumagana ang kahit anong platform na tumatanggap ng RTMP o RTMPS. I-paste ang server URL at stream key sa Custom RTMP settings. Mainam para sa private webinars, white-label streaming, o mga platform na wala sa pre-configured na listahan ng SplitCam."
           }
         },
         {
           "@type": "Question",
-          "name": "What if a platform goes down mid-stream?",
+          "name": "Pinapayagan ba ang multistreaming (simulcasting) sa Twitch?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "If one destination drops (e.g., Twitch ingest hiccup), the others keep streaming uninterrupted. SplitCam tries to reconnect to the dropped platform automatically. Your viewers on other platforms never notice."
+            "text": "Oo. Mula noong October 2023, parehong puwedeng mag-simulcast ang Twitch Affiliates at Partners sa kahit anong ibang platform — Kick, YouTube, TikTok, Facebook, kahit saan. Iisang patakaran lang: dapat hindi bababa ang kalidad ng Twitch stream mo kaysa sa version sa ibang platform. Huwag magpadala ng 720p sa Twitch habang nagpapadala ng 4K sa YouTube. Kung hindi — mag-multistream nang malaya."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I multistream from my phone?",
+          "name": "Libreng alternative ba ang SplitCam sa Restream, Streamlabs Multistream o StreamYard?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — SplitCam mobile (iOS and Android) supports multistreaming to the same 84+ platforms. Same Stream Settings, same one-click Go Live. Vertical 9:16 canvas is the default on mobile for TikTok, Reels and Shorts."
+            "text": "Oo. Ang pangunahing pagkakaiba: tumatakbo ang SplitCam nang buo sa makina mo at nagpapadala ng stream nang diretso sa bawat platform (peer-to-peer). Ang Restream, Streamlabs Multistream at StreamYard ay ipinapadala muna ang stream mo sa cloud nila bago ipamahagi, na nagdaragdag ng latency, may monthly fee sa paid tiers, at nagbabahagi ng data mo sa third party. Libre habambuhay ang SplitCam — walang cloud middleman, walang fee, walang dumadaan sa third-party na server."
           }
         },
         {
           "@type": "Question",
-          "name": "Does SplitCam support custom RTMP and RTMPS servers?",
+          "name": "Kailangan ko pa ba ng OBS multistream plugin (Aitum, SE.Live, Multiple RTMP Outputs) kung gumagamit ako ng SplitCam?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — any platform that accepts RTMP or RTMPS works. Paste the server URL and stream key in Custom RTMP settings. Great for private webinars, white-label streaming, or platforms not pre-configured in SplitCam."
+            "text": "Hindi. Naka-built in na ang multistreaming sa SplitCam — walang kailangang plugins. Piliin ang destinations, i-click ang Go Live, tapos na. Gumagana rin ang SplitCam bilang buo mong broadcasting studio (scenes, sources, virtual camera, browser sources) kaya puwede mong palitan nang buo ang OBS kung gusto mo ng isang app na kaya lahat. Tingnan ang buong SplitCam vs OBS comparison."
           }
         },
         {
           "@type": "Question",
-          "name": "What does simulcast / simulcasting mean?",
+          "name": "Ano ang ibig sabihin ng \"simulcasting\" at pareho ba ito sa multistreaming?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Simulcast (simultaneous broadcast) and multistream are the same thing: sending one live stream to multiple platforms at the same time. Both terms describe what SplitCam does — broadcast to Twitch, YouTube, Facebook, Kick, TikTok and other platforms simultaneously from a single click."
+            "text": "Oo — ang simulcast (simultaneous broadcast), simulcasting, multistream, multistreaming at dual streaming ay iisa lang ang ibig sabihin: pagpapadala ng iisang live stream sa maraming platform nang sabay. Lahat ng ito, ginagawa ng SplitCam sa ilalim ng iisang feature."
           }
         }
       ]
@@ -745,7 +745,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-twitch"/></svg><svg><use href="#i-yt"/></svg><svg><use href="#i-fb"/></svg><svg><use href="#i-kick"/></svg> 4-way: Twitch + YT + FB + Kick</h3>
-        <p>Ang mainstream creator stack. ~17 Mbps na upload ay sapat na para sa apat sa recommended bitrates.</p>
+        <p>Ang mainstream creator stack. Mga 19–20 Mbps na upload ang sapat para sa lahat ng apat sa recommended bitrates — ang 6 + 4.5 + 3 + 2.5 ay 16 Mbps ng video, kasama ang mga 20% na headroom.</p>
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-x"/></svg><svg><use href="#i-linkedin"/></svg> X (Twitter) + LinkedIn Live</h3>
@@ -920,7 +920,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <h3>Naka-built in na Upload Speed Test</h3>
-        <p>Bago mag-live, isinusuma ng Upload Speed Test ng SplitCam ang bitrates mo at sinusubok ang totoong upload mo. Nag-stream ng 6 + 4.5 + 3 + 2.5 Mbps sa 4 na platform? Sasabihin nito kung kaya ito ng 17 Mbps mong upload — at magbababala bago mangyari ang drops.</p>
+        <p>Bago mag-live, isinusuma ng Upload Speed Test ng SplitCam ang bitrates mo at sinusubok ang totoong upload mo. Nag-stream ng 6 + 4.5 + 3 + 2.5 Mbps sa 4 na platform? 16 Mbps iyon ng video at mga 19–20 kasama ang headroom. Sasabihin nito kung talagang kaya iyon ng koneksyon mo — at magbababala bago mangyari ang drops.</p>
       </div>
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>

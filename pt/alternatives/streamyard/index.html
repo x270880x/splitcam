@@ -145,7 +145,7 @@
           "name": "Por que um app de desktop ficaria melhor que um estúdio no navegador?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Porque ele codifica na sua própria GPU, em vez de dentro de um sandbox de navegador, e porque faz upload da transmissão pronta uma vez só, em vez de mandar os sinais brutos das câmeras para a nuvem montar. No mesmo computador e na mesma conexão, isso costuma aparecer como uma imagem mais limpa durante o movimento."
+            "text": "Porque um estúdio na nuvem codifica a sua câmera para levá-la até lá e depois codifica o programa pronto mais uma vez na saída — a segunda passagem parte de uma imagem que já vem comprimida, e essa perda não volta. O SplitCam codifica uma vez só, localmente. No mesmo computador e na mesma conexão, isso costuma aparecer como uma imagem mais limpa durante o movimento."
           }
         },
         {
@@ -476,7 +476,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>O seu hardware define o teto</h3>
-        <p>Uma aba do navegador precisa codificar vídeo dentro de um sandbox, dividindo o que o navegador permitir. Um app de desktop fala direto com a sua GPU. No mesmo computador e na mesma conexão, essa é a diferença entre uma transmissão que borra quando a cena se mexe e outra que não borra.</p>
+        <p>A sua câmera é codificada uma vez para chegar à nuvem, a nuvem monta o programa e o codifica de novo para chegar à plataforma. São duas codificações, e a segunda parte de uma imagem que já vem comprimida. O SplitCam monta e codifica uma vez só, na sua própria GPU, e o que sai da sua máquina é o que a plataforma recebe.</p>
       </div>
       <div class="reason">
         <h3>Um upload, não dois</h3>
@@ -558,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Por que um app de desktop ficaria melhor que um estúdio no navegador?</summary>
-        <p>Porque ele codifica na sua própria GPU, em vez de dentro de um sandbox de navegador, e porque faz upload da transmissão pronta uma vez só, em vez de mandar os sinais brutos das câmeras para a nuvem montar. No mesmo computador e na mesma conexão, isso costuma aparecer como uma imagem mais limpa durante o movimento.</p>
+        <p>Porque um estúdio na nuvem codifica a sua câmera para levá-la até lá e depois codifica o programa pronto mais uma vez na saída — a segunda passagem parte de uma imagem que já vem comprimida, e essa perda não volta. O SplitCam codifica uma vez só, localmente. No mesmo computador e na mesma conexão, isso costuma aparecer como uma imagem mais limpa durante o movimento.</p>
       </details>
       <details class="faq-item">
         <summary>Vou ter que abrir mão dos overlays e layouts da minha marca?</summary>

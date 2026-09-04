@@ -137,7 +137,7 @@
           "name": "क्या Restream के मुक़ाबले मुझे ज़्यादा upload bandwidth चाहिए?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "हाँ, और सबसे पहले यही जाँचना चाहिए. Relay आपसे एक upload लेता है; सीधे भेजने पर सभी destinations की bitrates का जोड़ एक साथ बाहर जाता है — recommended settings पर चार platforms के लिए लगभग 17 Mbps. SplitCam में built-in Upload Speed Test है, तो यह आप एक मिनट में पता कर लेंगे, न कि stream के बीच में."
+            "text": "हाँ, और सबसे पहले यही जाँचना चाहिए. Relay आपसे एक upload लेता है; सीधे भेजने पर सभी destinations की bitrates का जोड़ एक साथ बाहर जाता है — recommended settings पर चार platforms के लिए लगभग 19–20 Mbps. SplitCam में built-in Upload Speed Test है, तो यह आप एक मिनट में पता कर लेंगे, न कि stream के बीच में."
           }
         },
         {
@@ -497,7 +497,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Encode एक बार, भेजिए कई जगह</h3>
-        <p>एक ही encode हर destination को feed करता है, इसलिए एक और platform जोड़ने पर CPU नहीं, bandwidth ख़र्च होती है.</p>
+        <p>जिन destinations की resolution और bitrate एक जैसी है, वे एक ही encode साझा करते हैं. किसी destination को उसकी अपनी settings दीजिए, तो उसे अपना अलग encode मिलता है — इसीलिए नीचे दिया per-destination control एक असली feature है, कोई toggle भर नहीं.</p>
       </div>
       <div class="reason">
         <h3>हर destination के लिए अलग bitrate</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">Restream कब बेहतर चुनाव है</h2>
-  <p class="sec-p">सीधे भेजने की ईमानदार सीमा यही है, और switch करने से पहले इसे जान लेना ज़रूरी है. एक relay को आपसे <strong>एक</strong> upload चाहिए. सीधे भेजने के लिए हर destination की bitrate का <strong>कुल जोड़</strong> एक ही समय पर आपके घर से बाहर जाना चाहिए — recommended settings पर चार platforms यानी लगभग 17 Mbps upload. अगर आपका connection इतना नहीं संभाल पाता, तो cloud relay सुविधा नहीं, बल्कि वही चीज़ है जो multistreaming को मुमकिन बनाती है. SplitCam के साथ एक Upload Speed Test आता है, ताकि तय करने से पहले आप जाँच लें, और आप हमेशा कम destinations कम bitrate पर चला सकते हैं — लेकिन अगर आपकी असली अड़चन upload ही है, तो Restream वो समस्या हल करता है जो SplitCam नहीं कर सकता. यही बात hotel या mobile internet पर laptop से stream करने पर भी लागू होती है, जहाँ instability को relay सोख लेता है, बजाय इसके कि वो आपके audience को दिखे.</p>
+  <p class="sec-p">सीधे भेजने की ईमानदार सीमा यही है, और switch करने से पहले इसे जान लेना ज़रूरी है. एक relay को आपसे <strong>एक</strong> upload चाहिए. सीधे भेजने के लिए हर destination की bitrate का <strong>कुल जोड़</strong> एक ही समय पर आपके घर से बाहर जाना चाहिए — recommended settings पर चार platforms यानी लगभग 19–20 Mbps upload — Twitch को 6, YouTube को 4.5, Facebook को 3 और चौथे को 2.5, यानी 16 Mbps video, और ऊपर से लगभग 20% headroom. अगर आपका connection इतना नहीं संभाल पाता, तो cloud relay सुविधा नहीं, बल्कि वही चीज़ है जो multistreaming को मुमकिन बनाती है. SplitCam के साथ एक Upload Speed Test आता है, ताकि तय करने से पहले आप जाँच लें, और आप हमेशा कम destinations कम bitrate पर चला सकते हैं — लेकिन अगर आपकी असली अड़चन upload ही है, तो Restream वो समस्या हल करता है जो SplitCam नहीं कर सकता. यही बात hotel या mobile internet पर laptop से stream करने पर भी लागू होती है, जहाँ instability को relay सोख लेता है, बजाय इसके कि वो आपके audience को दिखे.</p>
 </section>
 
 <!-- COMPARE -->
@@ -551,7 +551,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>क्या Restream के मुक़ाबले मुझे ज़्यादा upload bandwidth चाहिए?</summary>
-        <p>हाँ, और सबसे पहले यही जाँचना चाहिए. Relay आपसे एक upload लेता है; सीधे भेजने पर सभी destinations की bitrates का जोड़ एक साथ बाहर जाता है — recommended settings पर चार platforms के लिए लगभग 17 Mbps. SplitCam में built-in Upload Speed Test है, तो यह आप एक मिनट में पता कर लेंगे, न कि stream के बीच में.</p>
+        <p>हाँ, और सबसे पहले यही जाँचना चाहिए. Relay आपसे एक upload लेता है; सीधे भेजने पर सभी destinations की bitrates का जोड़ एक साथ बाहर जाता है — recommended settings पर चार platforms के लिए लगभग 19–20 Mbps. SplitCam में built-in Upload Speed Test है, तो यह आप एक मिनट में पता कर लेंगे, न कि stream के बीच में.</p>
       </details>
       <details class="faq-item">
         <summary>क्या मैं अपनी मौजूदा stream keys use करता रह सकता हूँ?</summary>

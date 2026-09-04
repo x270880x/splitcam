@@ -137,7 +137,7 @@
           "name": "Adakah saya perlukan jalur lebar muat naik lebih besar berbanding Restream?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ya, dan inilah perkara utama yang perlu disemak. Perantara mengambil satu muat naik daripada anda; penghantaran terus perlukan jumlah bitrate semua destinasi keluar serentak — kira-kira 17 Mbps untuk empat platform pada tetapan disyorkan. SplitCam ada Upload Speed Test terbina dalam, jadi anda boleh tahu dalam seminit dan bukan menemuinya di tengah siaran."
+            "text": "Ya, dan inilah perkara utama yang perlu disemak. Perantara mengambil satu muat naik daripada anda; penghantaran terus perlukan jumlah bitrate semua destinasi keluar serentak — kira-kira 19–20 Mbps untuk empat platform pada tetapan disyorkan. SplitCam ada Upload Speed Test terbina dalam, jadi anda boleh tahu dalam seminit dan bukan menemuinya di tengah siaran."
           }
         },
         {
@@ -473,7 +473,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- WHAT THE FEE BUYS -->
 <section class="section">
   <h2 class="sec-h">Apa yang sebenarnya dibeli oleh yuran bulanan itu</h2>
-  <p class="sec-p">Perkhidmatan multistream awan ialah sebuah perantara. Anda menghantar satu siaran kepadanya, ia menyimpan salinan pada pelayannya, dan menyalurkan salinan itu ke setiap platform yang anda sambungkan. Kemudahannya memang nyata, begitu juga susunan di sebaliknya: siaran anda melalui infrastruktur yang anda tidak kawal, dan bil tetap sampai sama ada anda bersiaran empat kali bulan itu atau tidak langsung.</p>
+  <p class="sec-p">Perkhidmatan multistream awan ialah sebuah perantara. Anda menghantar satu siaran kepadanya, ia menyimpan salinan pada pelayannya, dan menyalurkan salinan itu ke setiap platform yang anda sambungkan. Kemudahannya memang nyata, begitu juga susunan di sebaliknya: siaran anda melalui infrastruktur yang anda tidak kawal, dan bil tetap sampai sama ada anda bersiaran empat kali pada bulan itu atau langsung tidak bersiaran.</p>
   <div class="reasons-grid">
       <div class="reason">
         <h3>Siaran anda mengambil jalan memutar</h3>
@@ -493,15 +493,15 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- ENCODING IS LOCAL -->
 <section class="section">
   <h2 class="sec-h">Komputer anda sudah pun melakukan pengekodan</h2>
-  <p class="sec-p">Bahagian mahal dalam streaming ialah pengekodan video, dan mesin anda sudah pun melakukannya. Sebaik bingkai dikodkan, menghantarnya ke empat platform dan bukan satu hanyalah empat sambungan rangkaian. SplitCam membukanya sendiri — pengekodan perkakasan melalui NVENC, QuickSync atau AMF pada Windows dan VideoToolbox pada Mac, kemudian sambungan terus ke pelayan ingest setiap platform.</p>
+  <p class="sec-p">Bahagian mahal dalam streaming ialah pengekodan video, dan mesin anda sudah pun melakukannya. Sebaik sahaja bingkai dikodkan, menghantarnya ke empat platform dan bukan satu hanyalah empat sambungan rangkaian. SplitCam membukanya sendiri — pengekodan perkakasan melalui NVENC, QuickSync atau AMF pada Windows dan VideoToolbox pada Mac, kemudian sambungan terus ke pelayan ingest setiap platform.</p>
   <div class="reasons-grid">
       <div class="reason">
         <h3>Kodkan sekali, hantar ke banyak destinasi</h3>
-        <p>Satu pengekodan digunakan untuk semua destinasi, jadi menambah platform memakan jalur lebar dan bukan CPU.</p>
+        <p>Destinasi yang berkongsi resolusi dan bitrate yang sama berkongsi satu pengekodan. Beri satu destinasi tetapannya sendiri dan ia mendapat pengekodannya sendiri — sebab itulah kawalan bagi setiap destinasi di bawah ialah ciri sebenar dan bukan sekadar satu suis.</p>
       </div>
       <div class="reason">
         <h3>Bitrate bagi setiap destinasi</h3>
-        <p>Mahu 6 Mbps ke Twitch dan 2.5 Mbps ke Facebook? Tetapkan secara berasingan, bukan menerima satu tetapan perantara untuk semuanya.</p>
+        <p>Mahu 1080p60 pada 6 Mbps ke Twitch dan 720p30 pada 2.5 Mbps ke Facebook? Tetapkan secara berasingan, bukan menerima satu tetapan perantara untuk semuanya. Bitrate, resolusi dan kadar bingkai adalah bebas bagi setiap destinasi.</p>
       </div>
       <div class="reason">
         <h3>Tiada apa-apa antara anda dan platform</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">Bila Restream pilihan yang lebih baik</h2>
-  <p class="sec-p">Inilah had jujur penghantaran terus, dan ia patut diketahui sebelum anda berpindah. Perantara hanya perlukan <strong>satu</strong> muat naik daripada anda. Penghantaran terus perlukan <strong>jumlah</strong> bitrate setiap destinasi keluar dari rumah anda serentak — empat platform pada tetapan disyorkan lebih kurang 17 Mbps muat naik. Jika sambungan anda tidak mampu menampungnya, perantara awan bukan lagi sekadar kemudahan, ia adalah perkara yang membolehkan multistream berlaku langsung. SplitCam menyertakan Upload Speed Test supaya anda boleh menyemak sebelum membuat keputusan, dan anda sentiasa boleh menjalankan lebih sedikit destinasi pada bitrate lebih rendah — tetapi jika kelajuan muat naik anda yang menjadi kekangan, Restream menyelesaikan masalah yang SplitCam tidak mampu. Begitu juga bagi siaran dari komputer riba pada internet hotel atau mudah alih, di mana perantara menyerap ketidakstabilan itu, bukannya penonton anda yang melihatnya.</p>
+  <p class="sec-p">Inilah had jujur penghantaran terus, dan ia patut diketahui sebelum anda berpindah. Perantara hanya perlukan <strong>satu</strong> muat naik daripada anda. Penghantaran terus perlukan <strong>jumlah</strong> bitrate setiap destinasi keluar dari rumah anda serentak — empat platform pada tetapan disyorkan lebih kurang 19–20 Mbps muat naik — 6 ke Twitch, 4.5 ke YouTube, 3 ke Facebook dan 2.5 ke platform keempat, iaitu 16 Mbps video, campur lebihan kira-kira 20%. Jika sambungan anda tidak mampu menampungnya, perantara awan bukan lagi sekadar kemudahan, ia adalah perkara yang membolehkan multistream berlaku langsung. SplitCam menyertakan Upload Speed Test supaya anda boleh menyemak sebelum membuat keputusan, dan anda sentiasa boleh menjalankan lebih sedikit destinasi pada bitrate lebih rendah — tetapi jika kelajuan muat naik anda yang menjadi kekangan, Restream menyelesaikan masalah yang SplitCam tidak mampu. Begitu juga bagi siaran dari komputer riba pada internet hotel atau mudah alih, di mana perantara menyerap ketidakstabilan itu, bukannya penonton anda yang melihatnya.</p>
 </section>
 
 <!-- COMPARE -->
@@ -551,7 +551,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Adakah saya perlukan jalur lebar muat naik lebih besar berbanding Restream?</summary>
-        <p>Ya, dan inilah perkara utama yang perlu disemak. Perantara mengambil satu muat naik daripada anda; penghantaran terus perlukan jumlah bitrate semua destinasi keluar serentak — kira-kira 17 Mbps untuk empat platform pada tetapan disyorkan. SplitCam ada Upload Speed Test terbina dalam, jadi anda boleh tahu dalam seminit dan bukan menemuinya di tengah siaran.</p>
+        <p>Ya, dan inilah perkara utama yang perlu disemak. Perantara mengambil satu muat naik daripada anda; penghantaran terus perlukan jumlah bitrate semua destinasi keluar serentak — kira-kira 19–20 Mbps untuk empat platform pada tetapan disyorkan. SplitCam ada Upload Speed Test terbina dalam, jadi anda boleh tahu dalam seminit dan bukan menemuinya di tengah siaran.</p>
       </details>
       <details class="faq-item">
         <summary>Bolehkah saya terus menggunakan kunci siaran sedia ada?</summary>

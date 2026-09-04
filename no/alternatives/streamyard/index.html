@@ -145,7 +145,7 @@
           "name": "Hvorfor skulle en skrivebordsapp gi bedre bilde enn et studio i nettleseren?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Fordi den koder på din egen GPU i stedet for inne i en nettlesersandkasse, og fordi den laster opp den ferdige strømmen én gang i stedet for å sende råe kamerakilder opp så skyen kan sette dem sammen. På samme maskin og samme forbindelse gir det som regel et renere bilde når det er bevegelse i bildet."
+            "text": "Fordi et studio i skyen koder kameraet ditt for å få det dit, og deretter koder den ferdige sendingen på nytt på vei ut — den andre runden jobber ut fra et allerede komprimert bilde, og det tapet kommer ikke tilbake. SplitCam koder én gang, lokalt. På samme maskin og samme forbindelse gir det som regel et renere bilde når det er bevegelse i bildet."
           }
         },
         {
@@ -476,7 +476,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Maskinvaren din setter taket</h3>
-        <p>En nettleserfane må kode video inne i en sandkasse, med bare det nettleseren gir den. En skrivebordsapp snakker direkte med GPU-en din. På samme maskin og samme internettforbindelse er det forskjellen mellom en strøm som blir uskarp når det er bevegelse i bildet, og en som ikke gjør det.</p>
+        <p>Kameraet ditt kodes én gang for å komme opp i skyen, skyen setter sammen sendingen og koder den på nytt for å nå plattformen. To kodinger, og den andre starter fra et allerede komprimert bilde. SplitCam setter sammen og koder én gang, på din egen GPU, og det som forlater maskinen din, er det plattformen mottar.</p>
       </div>
       <div class="reason">
         <h3>Én opplasting, ikke to</h3>
@@ -558,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Hvorfor skulle en skrivebordsapp gi bedre bilde enn et studio i nettleseren?</summary>
-        <p>Fordi den koder på din egen GPU i stedet for inne i en nettlesersandkasse, og fordi den laster opp den ferdige strømmen én gang i stedet for å sende råe kamerakilder opp så skyen kan sette dem sammen. På samme maskin og samme forbindelse gir det som regel et renere bilde når det er bevegelse i bildet.</p>
+        <p>Fordi et studio i skyen koder kameraet ditt for å få det dit, og deretter koder den ferdige sendingen på nytt på vei ut — den andre runden jobber ut fra et allerede komprimert bilde, og det tapet kommer ikke tilbake. SplitCam koder én gang, lokalt. På samme maskin og samme forbindelse gir det som regel et renere bilde når det er bevegelse i bildet.</p>
       </details>
       <details class="faq-item">
         <summary>Må jeg gi slipp på overlegg og oppsett med min egen profil?</summary>
@@ -600,7 +600,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- CTA -->
 <section class="cta-block">
   <h2>Bygg sendingen på din egen maskin.</h2>
-  <p>Gratis nedlasting for Windows og macOS. Ingen konto, ingen vannmerke, ingen plan å oppgradere til.</p>
+  <p>Gratis nedlasting for Windows og macOS. Ingen konto, ikke noe vannmerke, ingen plan å oppgradere til.</p>
   <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Last ned gratis</a>
 </section>
 

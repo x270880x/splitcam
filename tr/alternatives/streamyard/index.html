@@ -145,7 +145,7 @@
           "name": "Masaüstü uygulaması neden tarayıcı stüdyosundan daha iyi görünsün?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Çünkü kodlamayı bir tarayıcı korumalı alanında değil kendi GPU'nuzda yapar ve ham kamera görüntülerini bulutun birleştirmesi için yukarı göndermek yerine bitmiş yayını tek sefer yükler. Aynı bilgisayarda ve aynı bağlantıda bu genellikle hareket sırasında daha temiz bir görüntü olarak ortaya çıkar."
+            "text": "Çünkü bulut stüdyosu, kameranızı oraya ulaştırmak için bir kez kodlar, sonra bitmiş yayını çıkışta bir kez daha kodlar — ikinci geçiş zaten sıkıştırılmış bir görüntüyle çalışır ve o kayıp geri gelmez. SplitCam ise yerelde tek sefer kodlar. Aynı bilgisayarda ve aynı bağlantıda bu genellikle hareket sırasında daha temiz bir görüntü olarak ortaya çıkar."
           }
         },
         {
@@ -459,10 +459,10 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- QUICK ANSWER -->
 <div class="quick-answer">
   <div class="qa-box">
-    <div class="qa-h">Kısa cevap: ne kazanıyorsunuz, neden vazgeçiyorsunuz</div>
+    <div class="qa-h">Kısa cevap: ne kazanırsınız, neyden vazgeçersiniz</div>
     <div class="qa-text"><ol>
         <li><strong>Kaliteyi kazanırsınız.</strong> Sahneleriniz bir tarayıcı sekmesinin içinde değil, kendi işlemcinizde ve GPU'nuzda kurulur; yani çözünürlüğü ve kare hızını bir web uygulaması değil, bilgisayarınız belirler.</li>
-        <li><strong>Fiyatı kazanırsınız.</strong> SplitCam ücretsizdir: filigran yok ve zaten bir bilgisayara para verdiğiniz çözünürlüğü açan ücretli bir katman yok.</li>
+        <li><strong>Fiyatı kazanırsınız.</strong> SplitCam ücretsizdir: filigran yok; parasını zaten ödediğiniz bilgisayarın verebileceği çözünürlüğün kilidini açmak için ücretli bir katman da yok.</li>
         <li><strong>Tarayıcıdan katılan konuklardan vazgeçersiniz.</strong> StreamYard'da uzaktaki bir konuk bir bağlantıya tıklayarak yayına katılır, hiçbir şey kurmadan. SplitCam'de bunun karşılığı yok — bu, StreamYard'ın gerçek üstünlüğü, küçük bir ayrıntı değil.</li>
         <li><strong>Her makineden çalışabilmekten vazgeçersiniz.</strong> Tarayıcı stüdyosu bir Chromebook'ta ya da ödünç alınmış bir dizüstü bilgisayarda da açılır. SplitCam'in Windows veya macOS'a kurulması gerekir.</li>
     </ol></div>
@@ -476,7 +476,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Tavanı donanımınız belirler</h3>
-        <p>Bir tarayıcı sekmesi videoyu bir korumalı alanın içinde, tarayıcının izin verdiği kadarını paylaşarak kodlamak zorundadır. Masaüstü uygulaması ise doğrudan GPU'nuzla konuşur. Aynı bilgisayarda ve aynı internet bağlantısında bu, sahne hareket ettiğinde yumuşayan bir yayınla yumuşamayan bir yayın arasındaki farktır.</p>
+        <p>Kameranız buluta ulaşmak için bir kez kodlanır, sonra bulut yayını birleştirip platforma ulaştırmak için bir kez daha kodlar. İki kodlama var ve ikincisi zaten sıkıştırılmış bir görüntüden başlıyor. SplitCam sahneyi kendi GPU'nuzda tek seferde birleştirip kodlar; makinenizden çıkan görüntü, platformun aldığı görüntüdür.</p>
       </div>
       <div class="reason">
         <h3>Tek yükleme, iki değil</h3>
@@ -558,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Masaüstü uygulaması neden tarayıcı stüdyosundan daha iyi görünsün?</summary>
-        <p>Çünkü kodlamayı bir tarayıcı korumalı alanında değil kendi GPU'nuzda yapar ve ham kamera görüntülerini bulutun birleştirmesi için yukarı göndermek yerine bitmiş yayını tek sefer yükler. Aynı bilgisayarda ve aynı bağlantıda bu genellikle hareket sırasında daha temiz bir görüntü olarak ortaya çıkar.</p>
+        <p>Çünkü bulut stüdyosu, kameranızı oraya ulaştırmak için bir kez kodlar, sonra bitmiş yayını çıkışta bir kez daha kodlar — ikinci geçiş zaten sıkıştırılmış bir görüntüyle çalışır ve o kayıp geri gelmez. SplitCam ise yerelde tek sefer kodlar. Aynı bilgisayarda ve aynı bağlantıda bu genellikle hareket sırasında daha temiz bir görüntü olarak ortaya çıkar.</p>
       </details>
       <details class="faq-item">
         <summary>Marka kaplamalarından ve düzenlerden vazgeçmem gerekir mi?</summary>

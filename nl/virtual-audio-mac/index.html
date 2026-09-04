@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Wat is een virtuele audio-driver?",
+          "name": "What is a virtual audio driver?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Software die een audioapparaat aan macOS toevoegt zonder dat er hardware achter zit. Applicaties kunnen het niet van een echte microfoon onderscheiden — het staat gewoon in de microfoonlijst, als elke andere ingang, dus alles wat je erheen stuurt kan mee naar een gesprek, een stream of een opname."
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Welke Macs worden ondersteund?",
+          "name": "Which Macs does it support?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Macs met Apple Silicon — M1, M2, M3, M4 en nieuwer — met macOS 12 Monterey of nieuwer. De driver is alleen voor arm64 gebouwd, dus Intel-Macs worden niet ondersteund."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Heb ik het nodig als ik SplitCam voor Mac al heb?",
+          "name": "Do I need it if I already have SplitCam for Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Meestal niet. De macOS-applicatie bevat deze driver al en installeert hem voor je. Het losse pakket bestaat voor de gevallen waarin het audioapparaat apart geïnstalleerd of hersteld moet worden."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is het een kernelextensie?",
+          "name": "Is it a kernel extension?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nee. Het is een CoreAudio HAL-plug-in die in /Library/Audio/Plug-Ins/HAL staat en in user space draait. Er valt niets vrij te geven in de herstelmodus en er is geen verlaagde beveiligingsinstelling om aan te zetten."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Waarom vraagt macOS om mijn wachtwoord?",
+          "name": "Why does macOS ask for my password?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "De systeemmap voor audioplug-ins is van macOS zelf, dus erin schrijven vraagt om beheerdersrechten. Het pakket is ondertekend met een Apple Developer ID-certificaat en door Apple genotariseerd, en daarom laat Gatekeeper het zonder waarschuwing door."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "Hoe verwijder ik het?",
+          "name": "How do I uninstall it?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Verwijder SplitCamVirtualAudio.driver uit /Library/Audio/Plug-Ins/HAL en herstart daarna de Mac of de audioservice. Het virtuele apparaat verdwijnt uit de microfoonlijst."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is er ook een virtuele camera?",
+          "name": "Is there a virtual camera too?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ja — SplitCam levert volgens hetzelfde principe een virtuele camera, waarmee een samengestelde scène de plaats van je webcam inneemt in Zoom, Teams, Meet en tientallen andere applicaties."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Kost het iets?",
+          "name": "Wat is een virtuele audio-driver?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nee. De driver is gratis, net als SplitCam zelf. Je hoeft geen account aan te maken, er is niets om je op te abonneren en er komt geen watermerk over de audio."

@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "أي أجهزة Mac يدعمها؟",
+          "name": "Which Macs does it support?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "أجهزة Mac بمعالجات Apple Silicon — M1 وM2 وM3 وM4 وما بعدها — التي تعمل بنظام macOS 12 Monterey أو أحدث. وبرنامج التشغيل مبني لمعمارية arm64 وحدها، لذا أجهزة Mac بمعالج Intel غير مدعومة."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "هل أحتاج إليه إن كان لديّ SplitCam لـ Mac؟",
+          "name": "أي أجهزة Mac يدعمها؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "غالبًا لا. فتطبيق macOS يحتوي برنامج التشغيل هذا ويثبّته نيابةً عنك. أما الحزمة المستقلّة فموجودة للحالات التي يلزم فيها تثبيت جهاز الصوت أو إصلاحه وحده."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "هل هو امتداد نواة؟",
+          "name": "هل أحتاج إليه إن كان لديّ SplitCam لـ Mac؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "لا. إنه إضافة CoreAudio HAL توجد في /Library/Audio/Plug-Ins/HAL وتعمل في فضاء المستخدم. فلا شيء تسمح به في وضع الاسترداد، ولا إعداد أمان مخفَّض تفعّله."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "لماذا يطلب macOS كلمة المرور؟",
+          "name": "هل هو امتداد نواة؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "مجلّد إضافات الصوت في النظام ملكٌ لـ macOS، لذا تتطلّب الكتابة فيه صلاحيات المسؤول. والحزمة موقَّعة بشهادة Apple Developer ID وموثَّقة لدى Apple، ولهذا يمرّرها Gatekeeper دون تحذير."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "كيف أزيل تثبيته؟",
+          "name": "لماذا يطلب macOS كلمة المرور؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "احذف SplitCamVirtualAudio.driver من /Library/Audio/Plug-Ins/HAL، ثم أعِد تشغيل الـ Mac أو خدمة الصوت. عندها يختفي الجهاز الافتراضي من قائمة الميكروفونات."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "هل هناك كاميرا افتراضية أيضًا؟",
+          "name": "Is there a virtual camera too?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "نعم — يقدّم SplitCam كاميرا افتراضية بالمبدأ نفسه، تجعل مشهدًا مركَّبًا يحلّ محلّ كاميرا الويب لديك في Zoom وTeams وMeet وعشرات التطبيقات الأخرى."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "هل له تكلفة؟",
+          "name": "Does it cost anything?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "لا. برنامج التشغيل مجاني، وكذلك SplitCam نفسه. لا حساب تنشئه، ولا اشتراك، ولا علامة مائية توضع على الصوت."

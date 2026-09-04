@@ -145,7 +145,7 @@
           "name": "Pourquoi une appli de bureau donnerait-elle une meilleure image qu'un studio dans le navigateur ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Parce qu'elle encode sur votre propre GPU au lieu du bac à sable d'un navigateur, et parce qu'elle n'envoie qu'une fois le stream fini au lieu de faire monter les images brutes de la caméra pour que le cloud les compose. Sur le même ordinateur et la même connexion, cela se voit généralement à une image plus nette dans les mouvements."
+            "text": "Parce qu'un studio cloud encode votre caméra pour la faire monter, puis encode encore l'émission finie au moment de la ressortir — la seconde passe travaille sur une image déjà compressée, et cette perte ne revient jamais. SplitCam encode une seule fois, en local. Sur le même ordinateur et la même connexion, cela se voit généralement à une image plus nette dans les mouvements."
           }
         },
         {
@@ -476,7 +476,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Votre matériel fixe le plafond</h3>
-        <p>Un onglet de navigateur doit encoder la vidéo dans un bac à sable, avec ce que le navigateur veut bien lui laisser. Une appli de bureau, elle, parle directement à votre GPU. Sur le même ordinateur et la même connexion, c'est la différence entre un stream qui devient flou dès que la scène bouge et un stream qui tient.</p>
+        <p>Votre caméra est encodée une première fois pour atteindre le cloud, puis le cloud compose l'émission et l'encode encore une fois pour l'envoyer à la plateforme. Deux encodages, et le second part d'une image déjà compressée. SplitCam compose et encode une seule fois, sur votre propre GPU, et ce qui sort de votre machine est exactement ce que reçoit la plateforme.</p>
       </div>
       <div class="reason">
         <h3>Un seul envoi, pas deux</h3>
@@ -558,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Pourquoi une appli de bureau donnerait-elle une meilleure image qu'un studio dans le navigateur ?</summary>
-        <p>Parce qu'elle encode sur votre propre GPU au lieu du bac à sable d'un navigateur, et parce qu'elle n'envoie qu'une fois le stream fini au lieu de faire monter les images brutes de la caméra pour que le cloud les compose. Sur le même ordinateur et la même connexion, cela se voit généralement à une image plus nette dans les mouvements.</p>
+        <p>Parce qu'un studio cloud encode votre caméra pour la faire monter, puis encode encore l'émission finie au moment de la ressortir — la seconde passe travaille sur une image déjà compressée, et cette perte ne revient jamais. SplitCam encode une seule fois, en local. Sur le même ordinateur et la même connexion, cela se voit généralement à une image plus nette dans les mouvements.</p>
       </details>
       <details class="faq-item">
         <summary>Dois-je renoncer aux overlays et aux dispositions à ma marque ?</summary>

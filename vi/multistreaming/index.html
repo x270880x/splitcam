@@ -193,20 +193,20 @@
           "name": "Có thể stream lên bao nhiêu nền tảng cùng lúc?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tới 8 nền tảng là thoải mái; về mặt kỹ thuật thì không giới hạn, miễn CPU/GPU và đường tải lên kham được tổng tải. Trên một PC tầm trung với 10 Mbps tải lên, thường được 3–5 nền tảng. Với cáp quang 50 Mbps và card Nvidia, 8 nền tảng trở lên là hoàn toàn khả thi."
+            "text": "Tới 8 nền tảng là thoải mái; về mặt kỹ thuật thì không giới hạn, miễn CPU/GPU và đường tải lên kham được tổng tải. Mỗi nền tảng ngốn một phần băng thông — đó là giới hạn thực tế. Trên một PC tầm trung với 10 Mbps tải lên, thường được 3–5 nền tảng. Với cáp quang 50 Mbps và card Nvidia, 8 nền tảng trở lên là hoàn toàn khả thi."
           }
         },
         {
           "@type": "Question",
-          "name": "SplitCam có đẩy video của tôi qua một máy chủ đám mây không?",
+          "name": "SplitCam có đẩy video của tôi qua máy chủ nào không?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Không. Multistream chạy trực tiếp, từ máy tính của bạn tới điểm nhận của từng nền tảng. Dữ liệu không đi qua máy chủ của SplitCam, không có trung gian đám mây. Cùng một video được gửi thẳng từ máy của bạn tới Twitch, YouTube và mọi nền tảng khác bạn chọn — riêng rẽ và cùng lúc."
+            "text": "Không. Multistream chạy trực tiếp, từ máy tính của bạn tới điểm nhận của từng nền tảng. Dữ liệu không đi qua máy chủ của SplitCam, không có trung gian đám mây và không chia sẻ với bên thứ ba. Cùng một video được gửi thẳng từ máy của bạn tới Twitch, tới YouTube — dù bạn stream tới đâu — riêng rẽ và cùng lúc."
           }
         },
         {
           "@type": "Question",
-          "name": "Cần tốc độ tải lên bao nhiêu để multistream?",
+          "name": "Cần tốc độ tải lên bao nhiêu?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Cộng bitrate của tất cả nền tảng đã chọn rồi thêm ~20% dự phòng. Stream 6 Mbps lên Twitch + 4,5 Mbps lên YouTube + 3 Mbps lên Facebook = 13,5 Mbps, cộng dự phòng là khoảng 17 Mbps tải lên. Upload Speed Test tích hợp sẽ kiểm tra đường truyền trước khi bạn lên sóng."
@@ -217,31 +217,7 @@
           "name": "Có stream lên Twitch và YouTube cùng lúc được không?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Được — Twitch + YouTube là cặp multistream phổ biến nhất. Cả hai nền tảng đã được cấu hình sẵn trong SplitCam. Quy định của Twitch cho phép simulcast lên mọi nền tảng kể từ tháng 10/2023, nên việc này hoàn toàn hợp lệ."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Multistream (simulcast) có được phép trên Twitch không?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Có. Từ tháng 10/2023, cả Affiliate lẫn Partner của Twitch đều có thể simulcast lên mọi nền tảng — Kick, YouTube, TikTok, Facebook. Yêu cầu duy nhất: chất lượng stream trên Twitch không được kém hơn các nền tảng khác (ví dụ không gửi 720p lên Twitch trong khi đẩy 4K lên YouTube)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "SplitCam có phải là lựa chọn thay thế Restream và Streamlabs không?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Có — SplitCam là lựa chọn thay thế miễn phí cho Restream và Streamlabs Multistream. Khác biệt then chốt: SplitCam chạy hoàn toàn trên máy tính của bạn và gửi stream trực tiếp tới từng nền tảng. Restream và Streamlabs Multistream đẩy stream lên đám mây của họ trước rồi mới phân phối — điều đó thêm độ trễ, tốn tiền ở gói trả phí và đồng nghĩa với việc dữ liệu của bạn đi qua bên thứ ba. SplitCam miễn phí trọn đời và chạy không qua trung gian đám mây."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Tôi có cần plugin multistream cho OBS khi dùng SplitCam không?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Không. Multistream được tích hợp sẵn trong SplitCam — không cần các plugin như Aitum Multistream, SE.Live hay Multiple RTMP Outputs. Chọn nền tảng, nhấn “Lên sóng” — xong. SplitCam còn là một studio phát đầy đủ (cảnh, nguồn, camera ảo), nên nếu muốn nó có thể thay thế hoàn toàn OBS."
+            "text": "Được — Twitch + YouTube là cặp multistream phổ biến nhất. Cả hai nền tảng đã được cấu hình sẵn trong SplitCam: dán stream key một lần, và mỗi lần nhấn “Lên sóng” sẽ khởi động cả hai. Quy định của Twitch cho phép simulcast từ tháng 10/2023, nên mọi thứ hoàn toàn hợp lệ."
           }
         },
         {
@@ -265,12 +241,12 @@
           "name": "Có thể multistream từ điện thoại không?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Được — SplitCam di động (iOS và Android) hỗ trợ multistream tới cùng 84+ nền tảng. Vẫn là cài đặt phát đó, vẫn khởi động bằng một cú nhấp. Khung dọc 9:16 trên điện thoại được bật sẵn — cho TikTok, Reels và Shorts."
+            "text": "Được — SplitCam di động (iOS và Android) hỗ trợ multistream tới cùng 84+ nền tảng. Vẫn là cài đặt phát đó, vẫn khởi động bằng một cú nhấp. Khung dọc (9:16) trên điện thoại được bật sẵn — cho TikTok / Reels / Shorts."
           }
         },
         {
           "@type": "Question",
-          "name": "SplitCam có hỗ trợ máy chủ RTMP và RTMPS riêng không?",
+          "name": "Có hỗ trợ máy chủ RTMP riêng không?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Có — mọi nền tảng nhận RTMP hoặc RTMPS đều dùng được. Dán địa chỉ máy chủ và stream key vào phần cài đặt Custom RTMP. Tiện cho webinar nội bộ, stream white-label và những nền tảng chưa có trong danh sách sẵn của SplitCam."
@@ -278,10 +254,34 @@
         },
         {
           "@type": "Question",
-          "name": "“Simulcast” nghĩa là gì?",
+          "name": "Multistream (simulcast) có được phép trên Twitch không?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Simulcast (phát đồng thời), multistream và restream đều là một: một buổi live lên nhiều nền tảng cùng lúc. Tất cả các thuật ngữ này đều mô tả điều SplitCam làm — phát lên Twitch, YouTube, Facebook, Kick, TikTok và các nền tảng khác cùng một lúc, chỉ với một cú nhấp."
+            "text": "Có. Từ tháng 10/2023, cả Affiliate lẫn Partner của Twitch đều có thể simulcast lên mọi nền tảng — Kick, YouTube, TikTok, Facebook, bất cứ đâu. Quy tắc duy nhất: chất lượng stream trên Twitch không được kém hơn các nền tảng khác. Đừng gửi 720p lên Twitch trong khi đẩy 4K lên YouTube. Ngoài ra, cứ restream thoải mái."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "SplitCam có phải lựa chọn thay thế miễn phí cho Restream, Streamlabs Multistream và StreamYard không?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Có. Khác biệt then chốt: SplitCam chạy hoàn toàn trên máy tính của bạn và gửi stream trực tiếp tới từng nền tảng. Restream, Streamlabs Multistream và StreamYard đẩy stream của bạn lên đám mây của họ trước rồi mới phân phối — điều đó thêm độ trễ, tốn tiền ở gói trả phí và đồng nghĩa với việc dữ liệu của bạn đi qua bên thứ ba. SplitCam miễn phí trọn đời: không qua trung gian đám mây, không đăng ký, không có gì đi qua máy chủ của chúng tôi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tôi có cần plugin multistream cho OBS (Aitum, SE.Live, Multiple RTMP Outputs) khi dùng SplitCam không?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Không. Multistream được tích hợp sẵn trong SplitCam — không cần plugin. Chọn nền tảng, nhấn “Lên sóng” — xong. SplitCam còn là một studio phát đầy đủ (cảnh, nguồn, camera ảo, nguồn trình duyệt), nên nếu muốn nó có thể thay thế hoàn toàn OBS — một ứng dụng thay cho nhiều ứng dụng. Xem so sánh chi tiết SplitCam vs OBS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "“Simulcast” là gì — có giống multistream không?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Có — simulcast (phát đồng thời), multistream, restream và dual streaming đều là một: một buổi live lên nhiều nền tảng cùng lúc. Trong SplitCam, tất cả những thứ đó là một tính năng tích hợp duy nhất."
           }
         }
       ]
@@ -746,7 +746,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-twitch"/></svg><svg><use href="#i-yt"/></svg><svg><use href="#i-fb"/></svg><svg><use href="#i-kick"/></svg> 4 nền tảng: Twitch + YT + FB + Kick</h3>
-        <p>Bộ chuẩn của nhà sáng tạo. ~17 Mbps tải lên dư sức cho cả bốn nền tảng ở bitrate khuyến nghị.</p>
+        <p>Bộ chuẩn của nhà sáng tạo. Khoảng 19–20 Mbps tải lên là đủ cho cả bốn nền tảng ở bitrate khuyến nghị — 6 + 4,5 + 3 + 2,5 là 16 Mbps video, cộng thêm khoảng 20% dự phòng.</p>
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-x"/></svg><svg><use href="#i-linkedin"/></svg> X (Twitter) + LinkedIn Live</h3>
@@ -921,7 +921,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <h3>Upload Speed Test tích hợp</h3>
-        <p>Trước khi lên sóng, SplitCam cộng tổng bitrate và đo tốc độ tải lên thực tế. Stream 6 + 4,5 + 3 + 2,5 Mbps lên bốn nền tảng? Bài test sẽ cho biết đường truyền 17 Mbps của bạn có kham nổi không — và cảnh báo trước khi bắt đầu rớt khung hình.</p>
+        <p>Trước khi lên sóng, SplitCam cộng tổng bitrate và đo tốc độ tải lên thực tế. Stream 6 + 4,5 + 3 + 2,5 Mbps lên bốn nền tảng? Đó là 16 Mbps video, cộng dự phòng là khoảng 19–20. Bài test sẽ cho biết đường truyền của bạn có thực sự kham nổi mức đó không — và cảnh báo trước khi bắt đầu rớt khung hình.</p>
       </div>
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>

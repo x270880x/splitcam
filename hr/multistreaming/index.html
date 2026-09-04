@@ -193,20 +193,20 @@
           "name": "Na koliko platformi se može streamati istovremeno?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Do 8 platformi je ugodno; tehnički — bez ograničenja, dok CPU/GPU i kanal za prijenos mogu podnijeti ukupno opterećenje. Na prosječnom računalu s prijenosom 10 Mbps obično se dobivaju 3–5 platformi. S optikom 50 Mbps i Nvidia karticom realno je 8 i više."
+            "text": "Do 8 platformi je ugodno; tehnički — bez ograničenja, dok CPU/GPU i kanal prijenosa mogu podnijeti ukupno opterećenje. Svaka platforma troši svoj dio propusnosti — to je praktično ograničenje. Na prosječnom računalu s prijenosom 10 Mbps obično se dobivaju 3–5 platformi. S optikom 50 Mbps i Nvidia karticom realno je 8 i više."
           }
         },
         {
           "@type": "Question",
-          "name": "Prolazi li SplitCam moj video kroz oblačni poslužitelj?",
+          "name": "Prolazi li SplitCam moj video kroz neki poslužitelj?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ne. Restreaming ide direktno, s vašeg računala na ulaz svake platforme. Podaci ne prolaze kroz poslužitelje SplitCama, bez ikakvog oblačnog posrednika. Isti video ide direktno s vašeg računala na Twitch, YouTube i svaku drugu odabranu platformu — zasebno i istovremeno."
+            "text": "Ne. Restreaming ide direktno, s vašeg računala na ulaz svake platforme. Podaci ne prolaze kroz poslužitelje SplitCama, bez ikakvog oblačnog posrednika, ništa ne prolazi kroz naše poslužitelje. Isti video ide direktno s vašeg računala na Twitch, na YouTube — kamo god streamate — zasebno i istovremeno."
           }
         },
         {
           "@type": "Question",
-          "name": "Koja brzina prijenosa je potrebna za multistreaming?",
+          "name": "Koja brzina prijenosa je potrebna?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Zbrojite bitrate svih odabranih platformi i dodajte ~20% rezerve. Stream 6 Mbps na Twitch + 4,5 Mbps na YouTube + 3 Mbps na Facebook = 13,5 Mbps, s rezervom — oko 17 Mbps prijenosa. Ugrađeni Upload Speed Test provjerit će kanal prije nego izađete uživo."
@@ -217,31 +217,7 @@
           "name": "Može li se streamati na Twitch i YouTube istovremeno?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Da — Twitch + YouTube je najpopularnija kombinacija za multistreaming. Obje platforme već su postavljene u SplitCamu. Pravila Twitcha dopuštaju simulcast na sve platforme od listopada 2023., dakle to je potpuno legalno."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Je li multistreaming (simulcast) dopušten na Twitchu?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Da. Od listopada 2023. i pratitelji i partneri Twitcha mogu raditi simulcast na sve platforme — Kick, YouTube, TikTok, Facebook. Jedini zahtjev: kvaliteta streama na Twitchu ne smije biti lošija od one na drugim platformama (npr. ne možete slati 720p na Twitch dok šaljete 4K na YouTube)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Je li SplitCam alternativa za Restream i Streamlabs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Da — SplitCam je besplatna alternativa za Restream i Streamlabs Multistream. Ključna razlika: SplitCam radi potpuno na vašem računalu i šalje streamove direktno na svaku platformu. Restream i Streamlabs Multistream prvo uvlače stream u vlastiti oblak i tek odande ga distribuiraju — to dodaje kašnjenje, košta novca u plaćenim planovima i znači predaju vaših podataka trećoj strani. SplitCam je besplatan zauvijek i radi bez oblačnog posrednika."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Je li potreban dodatak za multistreaming u OBS-u ako koristim SplitCam?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ne. Multistreaming je ugrađen u SplitCam — dodaci poput Aitum Multistream, SE.Live ili Multiple RTMP Outputs nisu potrebni. Odabrali ste platforme, pritisnuli Uživo — gotovo. SplitCam je uz to i punopravni studio za emitiranje (scene, izvori, virtualna kamera), tako da po želji u potpunosti zamjenjuje OBS."
+            "text": "Da — Twitch + YouTube je najpopularnija kombinacija za multistreaming. Obje platforme već su postavljene u SplitCamu: unesite stream ključeve jedanput i svaki pritisak na Uživo pokrenut će obje. Pravila Twitcha dopuštaju simulcast od listopada 2023., dakle sve je potpuno legalno."
           }
         },
         {
@@ -249,7 +225,7 @@
           "name": "Može li se zadati različiti bitrate za različite platforme?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Da — bitrate, rezolucija i brzina sličica postavljaju se neovisno za svaku platformu. Šaljite 1080p60 pri 6 Mbps na Twitch, 720p30 pri 2,5 Mbps na Facebook i 480p30 pri 800 kbps na rezervnu platformu. Sve je to u postavkama streaminga."
+            "text": "Da — bitrate, rezolucija i brzina sličica postavljaju se neovisno za svaku platformu. Šaljite 1080p60 pri 6 Mbps na Twitch, 720p30 pri 2,5 Mbps na Facebook i 480p30 pri 800 kbps na rezervnu platformu. Sve je u postavkama streaminga."
           }
         },
         {
@@ -265,12 +241,12 @@
           "name": "Može li se raditi multistreaming s telefona?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Da — mobilni SplitCam (iOS i Android) podržava multistreaming na iste 84+ platformi. Iste postavke streaminga, isto pokretanje jednim klikom. Vertikalno platno 9:16 na telefonu uključeno je prema zadanim postavkama — za TikTok, Reels i Shorts."
+            "text": "Da — mobilni SplitCam (iOS i Android) podržava multistreaming na iste 84+ platformi. Iste postavke streaminga, isto pokretanje jednim klikom. Vertikalno platno (9:16) na telefonu uključeno je prema zadanim postavkama — za TikTok / Reels / Shorts."
           }
         },
         {
           "@type": "Question",
-          "name": "Podržava li SplitCam vlastite RTMP i RTMPS poslužitelje?",
+          "name": "Podržavaju li se vlastiti RTMP poslužitelji?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Da — radi svaka platforma koja prihvaća RTMP ili RTMPS. Unesite adresu poslužitelja i stream ključ u postavke Custom RTMP. Prikladno za zatvorene webinare, white-label streaming i platforme koje nisu na gotovom popisu SplitCama."
@@ -278,10 +254,34 @@
         },
         {
           "@type": "Question",
-          "name": "Što znači simulcast?",
+          "name": "Je li multistreaming (simulcast) dopušten na Twitchu?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Simulcast (istovremeno emitiranje), multistreaming i restreaming su isto: jedan prijenos uživo ide na više platformi istovremeno. Svi ti termini opisuju ono što radi SplitCam — emitiranje na Twitch, YouTube, Facebook, Kick, TikTok i druge platforme odjednom, jednim klikom."
+            "text": "Da. Od listopada 2023. i pratitelji i partneri Twitcha mogu raditi simulcast na sve platforme — Kick, YouTube, TikTok, Facebook, kamo god. Jedino pravilo: kvaliteta streama na Twitchu ne smije biti lošija od one na drugim platformama. Ne šaljite 720p na Twitch dok šaljete 4K na YouTube. Inače — restreamajte slobodno."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je li SplitCam besplatna alternativa za Restream, Streamlabs Multistream i StreamYard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Ključna razlika: SplitCam radi potpuno na vašem računalu i šalje streamove direktno na svaku platformu. Restream, Streamlabs Multistream i StreamYard prvo uvlače vaš stream u vlastiti oblak i tek odande ga distribuiraju — to dodaje kašnjenje, košta novca u plaćenim planovima i znači predaju vaših podataka trećoj strani. SplitCam je besplatan zauvijek: bez oblačnog posrednika, bez pretplate, bez preusmjeravanja kroz naše poslužitelje."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je li potreban dodatak za multistreaming u OBS-u (Aitum, SE.Live, Multiple RTMP Outputs) ako koristim SplitCam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ne. Multistreaming je ugrađen u SplitCam — dodaci nisu potrebni. Odabrali ste platforme, pritisnuli Uživo — gotovo. SplitCam je uz to i punopravni studio za emitiranje (scene, izvori, virtualna kamera, izvori preglednika), tako da po želji u potpunosti zamjenjuje OBS — jedna aplikacija umjesto nekoliko. Pogledajte detaljnu usporedbu SplitCam vs OBS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Što je simulcast — isto što i multistreaming?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da — simulcast (istovremeno emitiranje), multistreaming, restreaming i dual streaming znače isto: jedan prijenos uživo ide na više platformi istovremeno. U SplitCamu sve je to jedna ugrađena funkcija."
           }
         }
       ]
@@ -746,7 +746,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-twitch"/></svg><svg><use href="#i-yt"/></svg><svg><use href="#i-fb"/></svg><svg><use href="#i-kick"/></svg> 4 odjednom: Twitch + YT + FB + Kick</h3>
-        <p>Standardni kreatorski stack. ~17 Mbps prijenosa ugodno je dovoljno za četiri platforme s preporučenim bitrateima.</p>
+        <p>Standardni kreatorski stack. Oko 19–20 Mbps prijenosa pokriva sve četiri platforme s preporučenim bitrateima — 6 + 4,5 + 3 + 2,5 čini 16 Mbps videa, plus otprilike 20% rezerve.</p>
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-x"/></svg><svg><use href="#i-linkedin"/></svg> X (Twitter) + LinkedIn Live</h3>
@@ -921,7 +921,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <h3>Ugrađen Upload Speed Test</h3>
-        <p>Prije emitiranja SplitCam zbraja bitrate i mjeri stvarnu brzinu prijenosa. Streamate 6 + 4,5 + 3 + 2,5 Mbps na četiri platforme? Test će reći hoće li vaš kanal izdržati 17 Mbps — i upozorit će vas prije nego počnu gubici sličica.</p>
+        <p>Prije emitiranja SplitCam zbraja bitrate i mjeri stvarnu brzinu prijenosa. Streamate 6 + 4,5 + 3 + 2,5 Mbps na četiri platforme? To je 16 Mbps videa i oko 19–20 s rezervom. Test će reći hoće li vaš kanal to stvarno izdržati — i upozorit će vas prije nego počnu gubici sličica.</p>
       </div>
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>

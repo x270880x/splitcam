@@ -137,7 +137,7 @@
           "name": "Tôi có cần băng thông tải lên nhiều hơn so với Restream không?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Có, và đây là điều chính cần kiểm tra. Trạm chuyển tiếp chỉ lấy của bạn một luồng tải lên; gửi trực tiếp thì cần tổng bitrate của mọi điểm nhận cùng đi ra một lúc — khoảng 17 Mbps cho bốn nền tảng ở mức khuyến nghị. SplitCam có Upload Speed Test tích hợp, nên bạn biết được trong một phút thay vì phát hiện ra giữa buổi stream."
+            "text": "Có, và đây là điều chính cần kiểm tra. Trạm chuyển tiếp chỉ lấy của bạn một luồng tải lên; gửi trực tiếp thì cần tổng bitrate của mọi điểm nhận cùng đi ra một lúc — khoảng 19–20 Mbps cho bốn nền tảng ở mức khuyến nghị. SplitCam có Upload Speed Test tích hợp, nên bạn biết được trong một phút thay vì phát hiện ra giữa buổi stream."
           }
         },
         {
@@ -497,7 +497,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Mã hoá một lần, gửi tới nhiều nơi</h3>
-        <p>Một lần mã hoá nuôi mọi điểm nhận, nên thêm một nền tảng là tốn thêm băng thông chứ không tốn thêm CPU.</p>
+        <p>Những điểm nhận dùng chung độ phân giải và bitrate thì chia nhau một lần mã hoá. Đặt cho một điểm nhận thiết lập riêng thì nó được một lần mã hoá riêng — chính vì vậy phần điều khiển từng điểm nhận bên dưới mới là một tính năng thật, chứ không phải một cái nút bật tắt.</p>
       </div>
       <div class="reason">
         <h3>Bitrate riêng cho từng điểm nhận</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">Khi nào Restream là lựa chọn tốt hơn</h2>
-  <p class="sec-p">Đây là giới hạn thật thà của cách gửi trực tiếp, và bạn nên biết nó trước khi chuyển. Trạm chuyển tiếp chỉ cần <strong>một</strong> luồng tải lên từ bạn. Gửi trực tiếp thì cần <strong>tổng</strong> bitrate của mọi điểm nhận cùng rời khỏi nhà bạn một lúc — bốn nền tảng ở mức khuyến nghị là khoảng 17 Mbps tải lên. Nếu đường truyền của bạn không gánh nổi mức đó thì trung gian đám mây không còn là chuyện tiện lợi, nó chính là thứ khiến multistream trở nên khả thi. SplitCam có sẵn Upload Speed Test để bạn kiểm tra trước khi quyết, và bạn luôn có thể chạy ít điểm nhận hơn với bitrate thấp hơn — nhưng nếu nút thắt nằm ở tốc độ tải lên thì Restream giải được bài toán mà SplitCam không giải được. Điều tương tự cũng đúng khi bạn stream từ laptop qua Wi-Fi khách sạn hay mạng di động: trạm chuyển tiếp hấp thụ sự chập chờn, thay vì để khán giả của bạn nhìn thấy nó.</p>
+  <p class="sec-p">Đây là giới hạn thật thà của cách gửi trực tiếp, và bạn nên biết nó trước khi chuyển. Trạm chuyển tiếp chỉ cần <strong>một</strong> luồng tải lên từ bạn. Gửi trực tiếp thì cần <strong>tổng</strong> bitrate của mọi điểm nhận cùng rời khỏi nhà bạn một lúc — bốn nền tảng ở mức khuyến nghị là khoảng 19–20 Mbps tải lên: 6 cho Twitch, 4.5 cho YouTube, 3 cho Facebook và 2.5 cho nền tảng thứ tư, cộng thêm khoảng 20% dự phòng. Nếu đường truyền của bạn không gánh nổi mức đó thì trung gian đám mây không còn là chuyện tiện lợi, nó chính là thứ khiến multistream trở nên khả thi. SplitCam có sẵn Upload Speed Test để bạn kiểm tra trước khi quyết, và bạn luôn có thể chạy ít điểm nhận hơn với bitrate thấp hơn — nhưng nếu nút thắt nằm ở tốc độ tải lên thì Restream giải được bài toán mà SplitCam không giải được. Điều tương tự cũng đúng khi bạn stream từ laptop qua Wi-Fi khách sạn hay mạng di động: trạm chuyển tiếp hấp thụ sự chập chờn, thay vì để khán giả của bạn nhìn thấy nó.</p>
 </section>
 
 <!-- COMPARE -->
@@ -551,7 +551,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Tôi có cần băng thông tải lên nhiều hơn so với Restream không?</summary>
-        <p>Có, và đây là điều chính cần kiểm tra. Trạm chuyển tiếp chỉ lấy của bạn một luồng tải lên; gửi trực tiếp thì cần tổng bitrate của mọi điểm nhận cùng đi ra một lúc — khoảng 17 Mbps cho bốn nền tảng ở mức khuyến nghị. SplitCam có Upload Speed Test tích hợp, nên bạn biết được trong một phút thay vì phát hiện ra giữa buổi stream.</p>
+        <p>Có, và đây là điều chính cần kiểm tra. Trạm chuyển tiếp chỉ lấy của bạn một luồng tải lên; gửi trực tiếp thì cần tổng bitrate của mọi điểm nhận cùng đi ra một lúc — khoảng 19–20 Mbps cho bốn nền tảng ở mức khuyến nghị. SplitCam có Upload Speed Test tích hợp, nên bạn biết được trong một phút thay vì phát hiện ra giữa buổi stream.</p>
       </details>
       <details class="faq-item">
         <summary>Tôi có giữ được stream key đang dùng không?</summary>

@@ -134,7 +134,7 @@
         },
         {
           "@type": "Question",
-          "name": "Kan jeg invitere en gæst med i mit stream, sådan som StreamYard gør?",
+          "name": "Kan jeg invitere en gæst med i min stream, sådan som StreamYard gør?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nej. Det er den ene ting, StreamYard kan, som SplitCam ikke har noget svar på. En gæst, der kommer med via et browserlink uden at installere noget, er ikke en SplitCam-funktion, og afhænger din udsendelse af det, er StreamYard det bedre værktøj."
@@ -145,7 +145,7 @@
           "name": "Hvorfor skulle en desktop-app se bedre ud end et studie i browseren?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Fordi den enkoder på din egen GPU i stedet for inde i en browsersandkasse, og fordi den uploader det færdige stream én gang i stedet for at sende rå kamerabilleder op, så skyen kan sætte dem sammen. På den samme computer og den samme forbindelse viser det sig typisk som et renere billede, når der er bevægelse."
+            "text": "Fordi et studie i skyen enkoder dit kamera for at få det derop og derefter enkoder den færdige udsendelse en gang til på vej ud — anden runde arbejder ud fra et allerede komprimeret billede, og det tab kommer ikke igen. SplitCam enkoder én gang, lokalt. På den samme computer og den samme forbindelse viser det sig typisk som et renere billede, når der er bevægelse."
           }
         },
         {
@@ -476,11 +476,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Din hardware sætter loftet</h3>
-        <p>En browserfane skal enkode video inde i en sandkasse og deles om dét, browseren tillader. En desktop-app taler direkte med din GPU. På den samme computer og den samme internetforbindelse er det forskellen på et stream, der bliver blødt, når der er bevægelse i billedet, og et, der ikke gør.</p>
+        <p>Dit kamera bliver enkodet én gang for at nå skyen, skyen sætter udsendelsen sammen og enkoder den igen for at nå platformen. To enkodninger, og den anden starter fra et allerede komprimeret billede. SplitCam sætter sammen og enkoder én gang, på din egen GPU, og det, der forlader din maskine, er det, platformen modtager.</p>
       </div>
       <div class="reason">
         <h3>Ét upload, ikke to</h3>
-        <p>Et studie i skyen skal modtage dit billede, før det kan sende noget som helst videre. Dit kamera går op, den færdige udsendelse kommer ned igen og videre ud. SplitCam sætter billedet sammen lokalt og uploader én gang, så din forbindelse bærer selve streamet frem for råmaterialet til det.</p>
+        <p>Et studie i skyen skal modtage dit billede, før det kan sende noget som helst videre. Dit kamera går op, den færdige udsendelse kommer ned igen og videre ud. SplitCam sætter billedet sammen lokalt og uploader én gang, så din forbindelse bærer selve streamen frem for råmaterialet til den.</p>
       </div>
       <div class="reason">
         <h3>Intet går i stykker, når fanen gør</h3>
@@ -508,11 +508,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </div>
       <div class="reason">
         <h3>Virtuelt kamera i 60+ apps</h3>
-        <p>Din færdige scene bliver til et webcam, som Zoom, Teams, Meet, Discord og OBS kan vælge — så et videomøde kan bruge den samme produktion som dit stream.</p>
+        <p>Din færdige scene bliver til et webcam, som Zoom, Teams, Meet, Discord og OBS kan vælge — så et videomøde kan bruge den samme produktion som din stream.</p>
       </div>
       <div class="reason">
         <h3>Lydmixer og virtuel mikrofon</h3>
-        <p>Miks mikrofon, systemlyd og medier i appen, send det til streamet, og gør det samme miks tilgængeligt for andre programmer som en virtuel mikrofon.</p>
+        <p>Miks mikrofon, systemlyd og medier i appen, send det til streamen, og gør det samme miks tilgængeligt for andre programmer som en virtuel mikrofon.</p>
       </div>
   </div>
 </section>
@@ -533,7 +533,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </thead>
     <tbody>
       <tr><td>Pris for hele funktionssættet</td><td class="yes">Gratis, permanent</td><td class="meh">Gratis niveau plus betalte planer — tjek aktuelle priser</td></tr>
-      <tr><td>Vandmærke på dit stream</td><td class="yes">Aldrig</td><td class="meh">Afhænger af planen — tjek aktuelle priser</td></tr>
+      <tr><td>Vandmærke på din stream</td><td class="yes">Aldrig</td><td class="meh">Afhænger af planen — tjek aktuelle priser</td></tr>
       <tr><td>Hvor videoen sættes sammen</td><td class="yes">På din computer</td><td class="no">I skyen</td></tr>
       <tr><td>Loft over udgangskvaliteten</td><td class="yes">Så meget din hardware kan enkode</td><td class="meh">Bestemt af din plan — tjek aktuelle priser</td></tr>
       <tr><td>Gæster på afstand deltager via link</td><td class="no">Ikke understøttet</td><td class="yes">Ja — det er StreamYards kernestyrke</td></tr>
@@ -553,12 +553,12 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <p>Det er gratis, og der er ikke noget niveau over det. Multistreaming, scener, effekter, lydmixer og optagelse ligger alt sammen i den gratis download, uden vandmærke på det, der kommer ud.</p>
       </details>
       <details class="faq-item">
-        <summary>Kan jeg invitere en gæst med i mit stream, sådan som StreamYard gør?</summary>
+        <summary>Kan jeg invitere en gæst med i min stream, sådan som StreamYard gør?</summary>
         <p>Nej. Det er den ene ting, StreamYard kan, som SplitCam ikke har noget svar på. En gæst, der kommer med via et browserlink uden at installere noget, er ikke en SplitCam-funktion, og afhænger din udsendelse af det, er StreamYard det bedre værktøj.</p>
       </details>
       <details class="faq-item">
         <summary>Hvorfor skulle en desktop-app se bedre ud end et studie i browseren?</summary>
-        <p>Fordi den enkoder på din egen GPU i stedet for inde i en browsersandkasse, og fordi den uploader det færdige stream én gang i stedet for at sende rå kamerabilleder op, så skyen kan sætte dem sammen. På den samme computer og den samme forbindelse viser det sig typisk som et renere billede, når der er bevægelse.</p>
+        <p>Fordi et studie i skyen enkoder dit kamera for at få det derop og derefter enkoder den færdige udsendelse en gang til på vej ud — anden runde arbejder ud fra et allerede komprimeret billede, og det tab kommer ikke igen. SplitCam enkoder én gang, lokalt. På den samme computer og den samme forbindelse viser det sig typisk som et renere billede, når der er bevægelse.</p>
       </details>
       <details class="faq-item">
         <summary>Skal jeg give afkald på overlays og layouts med mit brand?</summary>

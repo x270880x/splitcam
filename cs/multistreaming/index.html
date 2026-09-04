@@ -193,20 +193,20 @@
           "name": "Na kolik platforem lze streamovat současně?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pohodlně až na 8 platforem; technicky bez omezení, dokud procesor/grafická karta a kanál pro odesílání zvládají celkovou zátěž. Na běžném počítači s odesíláním 10 Mb/s obvykle vychází 3–5 platforem. S optikou 50 Mb/s a kartou Nvidia je reálných 8 a víc."
+            "text": "Pohodlně až na 8 platforem; technicky bez omezení, dokud procesor/grafická karta a kanál pro odesílání zvládají celkovou zátěž. Každá platforma ukrojí svůj díl pásma — to je praktický limit. Na běžném počítači s odesíláním 10 Mb/s obvykle vychází 3–5 platforem. S optikou 50 Mb/s a kartou Nvidia je reálných 8 a víc."
           }
         },
         {
           "@type": "Question",
-          "name": "Posílá SplitCam moje video přes cloudový server?",
+          "name": "Posílá SplitCam moje video přes nějaký server?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ne. Restream jde přímo, z vašeho počítače na vstup každé platformy. Data neprocházejí přes servery SplitCamu, bez jakéhokoli cloudového prostředníka. Stejné video jde přímo z vašeho stroje na Twitch, YouTube i každou další vybranou platformu — odděleně a současně."
+            "text": "Ne. Restream jde přímo, z vašeho počítače na vstup každé platformy. Data neprocházejí přes servery SplitCamu, bez jakéhokoli cloudového prostředníka a rizik pro soukromí. Stejné video jde přímo z vašeho stroje na Twitch, na YouTube — kamkoli streamujete — odděleně a současně."
           }
         },
         {
           "@type": "Question",
-          "name": "Jakou rychlost odesílání potřebuji pro vysílání na více platforem?",
+          "name": "Jakou rychlost odesílání potřebuji?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Sečtěte datové toky všech vybraných platforem a přidejte ~20% rezervu. Stream 6 Mb/s na Twitch + 4,5 Mb/s na YouTube + 3 Mb/s na Facebook = 13,5 Mb/s, s rezervou — asi 17 Mb/s odesílání. Vestavěný Upload Speed Test prověří připojení, než vyjdete naživo."
@@ -217,31 +217,7 @@
           "name": "Lze streamovat na Twitch a YouTube současně?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ano — Twitch + YouTube je nejoblíbenější kombinace pro vysílání na více platforem. Obě platformy jsou už v SplitCamu přednastavené. Pravidla Twitche povolují simulcast na libovolné platformy od října 2023, takže je to zcela v souladu s pravidly."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Je vysílání na více platforem (simulcast) na Twitchi povolené?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ano. Od října 2023 mohou jak Twitch Affiliates, tak Partneři vysílat simulcast na libovolné platformy — Kick, YouTube, TikTok, Facebook. Jediný požadavek: kvalita streamu na Twitchi nesmí být horší než na ostatních platformách (například nemůžete posílat 720p na Twitch a současně 4K na YouTube)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Je SplitCam alternativa k Restream a Streamlabs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ano — SplitCam je bezplatná alternativa k Restream a Streamlabs Multistream. Klíčový rozdíl: SplitCam běží celý na vašem počítači a posílá streamy přímo na každou platformu. Restream a Streamlabs Multistream nejprve nahrají stream do svého cloudu a teprve odtud ho rozesílají — to přidává zpoždění, v placených plánech stojí peníze a znamená předání vašich dat třetí straně. SplitCam je zdarma navždy a funguje bez cloudového prostředníka."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Potřebuji plugin na vysílání na více platforem v OBS, když používám SplitCam?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ne. Vysílání na více platforem je v SplitCamu vestavěné — pluginy jako Aitum Multistream, SE.Live nebo Multiple RTMP Outputs nejsou potřeba. Vybrali jste platformy, klikli na „Naživo“ — hotovo. SplitCam je navíc i plnohodnotné vysílací studio (scény, zdroje, virtuální kamera), takže v případě potřeby zcela nahradí OBS."
+            "text": "Ano — Twitch + YouTube současně je nejoblíbenější kombinace pro vysílání na více platforem. SplitCam má obě přednastavené: vložte streamovací klíče jednou a každé kliknutí na „Naživo“ spustí obě. Pravidla Twitche povolují simulcast od října 2023, takže je to zcela v souladu s pravidly."
           }
         },
         {
@@ -265,12 +241,12 @@
           "name": "Lze vysílat na více platforem z telefonu?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ano — mobilní SplitCam (iOS a Android) podporuje vysílání na stejných 84+ platforem. Stejné nastavení streamování, stejné spuštění jedním kliknutím. Svislé plátno 9:16 je na telefonu zapnuté ve výchozím nastavení — pro TikTok, Reels a Shorts."
+            "text": "Ano — mobilní SplitCam (iOS a Android) podporuje vysílání na stejných 84+ platforem. Stejné nastavení streamování, stejné spuštění jedním kliknutím. Svislé plátno (9:16) je na telefonu zapnuté ve výchozím nastavení — pro TikTok / Reels / Shorts."
           }
         },
         {
           "@type": "Question",
-          "name": "Podporuje SplitCam vlastní RTMP a RTMPS servery?",
+          "name": "Podporují se vlastní RTMP servery?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ano — funguje každá platforma, která přijímá RTMP nebo RTMPS. Vložte adresu serveru a streamovací klíč v nastavení Custom RTMP. Hodí se pro uzavřené webináře, white-label streamování a platformy, které nejsou v přednastaveném seznamu SplitCamu."
@@ -278,10 +254,34 @@
         },
         {
           "@type": "Question",
-          "name": "Co znamená „simulcast“?",
+          "name": "Je vysílání na více platforem (simulcast) na Twitchi povolené?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Simulcast (souběžné vysílání), vysílání na více platforem a restream jsou jedno a totéž: jedno živé vysílání jde na několik platforem najednou. Všechny tyto pojmy popisují to, co dělá SplitCam — vysílání na Twitch, YouTube, Facebook, Kick, TikTok a další platformy najednou, jedním kliknutím."
+            "text": "Ano. Od října 2023 mohou jak Twitch Affiliates, tak Partneři vysílat simulcast na libovolné platformy — Kick, YouTube, TikTok, Facebook, kamkoli. Jediné pravidlo: kvalita streamu na Twitchi nesmí být horší než na ostatních platformách. Neposílejte 720p na Twitch, zatímco posíláte 4K na YouTube. Jinak — restreamujte svobodně."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je SplitCam bezplatná alternativa k Restream, Streamlabs Multistream a StreamYard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ano. Klíčový rozdíl: SplitCam běží celý na vašem počítači a posílá streamy přímo na každou platformu. Restream, Streamlabs Multistream a StreamYard nejprve nahrají váš stream do svého cloudu a teprve odtud ho rozesílají — to přidává zpoždění, v placených plánech stojí peníze a znamená předání vašich dat třetí straně. SplitCam je zdarma navždy: bez cloudového prostředníka, bez předplatného — video nesdílíme se žádnou třetí stranou."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Potřebuji plugin na vysílání na více platforem v OBS (Aitum, SE.Live, Multiple RTMP Outputs), když používám SplitCam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ne. Vysílání na více platforem je v SplitCamu vestavěné — pluginy nejsou potřeba. Vybrali jste platformy, klikli na „Naživo“ — hotovo. SplitCam je navíc i plnohodnotné vysílací studio (scény, zdroje, virtuální kamera, zdroje prohlížeče), takže v případě potřeby zcela nahradí OBS — jedna aplikace místo několika. Podívejte se na podrobné srovnání SplitCam vs. OBS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co je „simulcast“ — je to totéž co vysílání na více platforem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ano — simulcast (souběžné vysílání), vysílání na více platforem, restream a dual streaming znamenají jedno a totéž: jedno živé vysílání jde na několik platforem najednou. V SplitCamu je to vše jedna vestavěná funkce."
           }
         }
       ]
@@ -746,7 +746,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-twitch"/></svg><svg><use href="#i-yt"/></svg><svg><use href="#i-fb"/></svg><svg><use href="#i-kick"/></svg> 4 najednou: Twitch + YT + FB + Kick</h3>
-        <p>Standardní sestava tvůrce. ~17 Mb/s odesílání v pohodě stačí na všechny čtyři platformy s doporučenými datovými toky.</p>
+        <p>Standardní sestava tvůrce. Zhruba 19–20 Mb/s odesílání pokryje všechny čtyři platformy s doporučenými datovými toky — 6 + 4,5 + 3 + 2,5 je 16 Mb/s videa plus zhruba 20 % rezervy.</p>
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-x"/></svg><svg><use href="#i-linkedin"/></svg> X (Twitter) + LinkedIn Live</h3>
@@ -921,7 +921,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <h3>Vestavěný Upload Speed Test</h3>
-        <p>Před vysíláním SplitCam sečte datové toky a změří skutečnou rychlost odesílání. Streamujete 6 + 4,5 + 3 + 2,5 Mb/s na čtyři platformy? Test řekne, jestli vaše připojení utáhne 17 Mb/s — a varuje dřív, než začne výpadek snímků.</p>
+        <p>Před vysíláním SplitCam sečte datové toky a změří skutečnou rychlost odesílání. Streamujete 6 + 4,5 + 3 + 2,5 Mb/s na čtyři platformy? To je 16 Mb/s videa a s rezervou asi 19–20. Test řekne, jestli to vaše připojení opravdu utáhne — a varuje dřív, než začne výpadek snímků.</p>
       </div>
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>

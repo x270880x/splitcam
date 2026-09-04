@@ -145,7 +145,7 @@
           "name": "¿Por qué se vería mejor una app de escritorio que un estudio en el navegador?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Porque codifica en tu propia GPU en lugar de dentro del sandbox de un navegador, y porque sube una sola vez la transmisión ya terminada en vez de mandar arriba las señales de cámara en bruto para que la nube las componga. Con el mismo equipo y la misma conexión, eso se suele notar en una imagen más limpia cuando hay movimiento."
+            "text": "Porque un estudio en la nube codifica tu cámara para llevarla hasta allí y después vuelve a codificar el programa ya montado para sacarlo — esa segunda pasada trabaja sobre una imagen ya comprimida, y esa pérdida no se recupera. SplitCam codifica una sola vez, en tu equipo. Con el mismo equipo y la misma conexión, eso se suele notar en una imagen más limpia cuando hay movimiento."
           }
         },
         {
@@ -476,7 +476,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Tu hardware marca el techo</h3>
-        <p>Una pestaña del navegador tiene que codificar el vídeo dentro de un sandbox, compartiendo lo que el navegador le permita. Una app de escritorio habla directamente con tu GPU. Con el mismo equipo y la misma conexión, esa es la diferencia entre una transmisión que se emborrona en cuanto hay movimiento y otra que no.</p>
+        <p>Tu cámara se codifica una vez para llegar a la nube, la nube monta el programa y lo codifica otra vez para llegar a la plataforma. Dos codificaciones, y la segunda parte de una imagen ya comprimida. SplitCam monta y codifica una sola vez, en tu propia GPU, y lo que sale de tu equipo es lo que recibe la plataforma.</p>
       </div>
       <div class="reason">
         <h3>Una subida, no dos</h3>
@@ -558,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>¿Por qué se vería mejor una app de escritorio que un estudio en el navegador?</summary>
-        <p>Porque codifica en tu propia GPU en lugar de dentro del sandbox de un navegador, y porque sube una sola vez la transmisión ya terminada en vez de mandar arriba las señales de cámara en bruto para que la nube las componga. Con el mismo equipo y la misma conexión, eso se suele notar en una imagen más limpia cuando hay movimiento.</p>
+        <p>Porque un estudio en la nube codifica tu cámara para llevarla hasta allí y después vuelve a codificar el programa ya montado para sacarlo — esa segunda pasada trabaja sobre una imagen ya comprimida, y esa pérdida no se recupera. SplitCam codifica una sola vez, en tu equipo. Con el mismo equipo y la misma conexión, eso se suele notar en una imagen más limpia cuando hay movimiento.</p>
       </details>
       <details class="faq-item">
         <summary>¿Tengo que renunciar a los overlays de marca y a las composiciones?</summary>

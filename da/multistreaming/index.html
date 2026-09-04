@@ -189,26 +189,26 @@
         },
         {
           "@type": "Question",
-          "name": "Hvor mange platforme kan jeg multistreame til samtidig?",
+          "name": "Hvor mange platforme kan jeg streame til samtidig?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Op til 8 destinationer uden problemer; teknisk set ubegrænset, så længe din CPU/GPU og upload-båndbredde kan klare den samlede belastning. På en mellemklasse-pc med 10 Mbps upload er 3–5 platforme typisk. Med 50 Mbps fiber og et Nvidia-kort er 8+ opnåeligt."
+            "text": "Op til 8 destinationer uden problemer; teknisk set ubegrænset, så længe din CPU/GPU og upload-båndbredde kan klare den samlede belastning. Hver destination bruger sin egen båndbredde — det er den praktiske grænse. På en mellemklasse-pc med 10 Mbps upload er 3–5 platforme typisk. Med 50 Mbps fiber og et Nvidia-kort er 8+ opnåeligt."
           }
         },
         {
           "@type": "Question",
-          "name": "Sender SplitCam min video gennem en server i skyen?",
+          "name": "Sender SplitCam min video gennem en server?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nej. Multistream går direkte, peer-to-peer fra din computer til hver platforms ingest-endepunkt. Ingen data passerer gennem SplitCams servere, intet mellemled i skyen fra tredjepart. Den samme video går lige fra din maskine til Twitch, YouTube og enhver anden valgt destination — separat og samtidig."
+            "text": "Nej. Multistream går direkte, peer-to-peer fra din computer til hver platforms ingest-endepunkt. Ingen data passerer gennem SplitCams servere, intet mellemled i skyen fra tredjepart, intet deles med tredjepart. Den samme video går lige fra din maskine til Twitch, til YouTube, til hvor du end streamer — separat og samtidig."
           }
         },
         {
           "@type": "Question",
-          "name": "Hvor meget upload-båndbredde skal jeg bruge til multistream?",
+          "name": "Hvor meget upload-båndbredde skal jeg bruge?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Læg bitrates for alle valgte destinationer sammen og tilføj ~20% sikkerhedsmargin. Stream på 6 Mbps til Twitch + 4,5 Mbps til YouTube + 3 Mbps til Facebook = 13,5 Mbps + margin = ~17 Mbps upload påkrævet. Den indbyggede Upload Speed Test bekræfter din forbindelse, før du går live."
+            "text": "Læg bitrates for alle dine valgte destinationer sammen og tilføj ~20% sikkerhedsmargin. Stream på 6 Mbps til Twitch + 4,5 Mbps til YouTube + 3 Mbps til Facebook = 13,5 Mbps påkrævet + margin = ~17 Mbps upload. Den indbyggede Upload Speed Test bekræfter din forbindelse, før du går live."
           }
         },
         {
@@ -216,31 +216,7 @@
           "name": "Kan jeg streame til Twitch og YouTube på samme tid?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja — Twitch + YouTube samtidig er den mest almindelige multistream-kombination. SplitCam leveres med begge færdigkonfigureret. Twitchs vilkår tillader simulcasting til enhver platform siden oktober 2023, så det er fuldt ud lovligt."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Er multistream (simulcasting) tilladt på Twitch?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja. Siden oktober 2023 kan både Twitch Affiliates og Partners simulcaste til enhver anden platform — Kick, YouTube, TikTok, Facebook. Det eneste krav er, at kvaliteten på Twitch-streamet skal være mindst lige så god som versionen på de andre platforme (send fx ikke 720p til Twitch, mens du sender 4K til YouTube)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Er SplitCam et alternativ til Restream og Streamlabs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja — SplitCam er et gratis alternativ til Restream / Streamlabs Multistream. Den vigtigste forskel: SplitCam kører helt på din maskine og sender streams direkte til hver platform (peer-to-peer). Restream og Streamlabs Multistream sender først dit stream til deres sky og fordeler det derfra, hvilket øger forsinkelsen, kræver et månedligt gebyr (på betalte niveauer) og deler dine data. SplitCam er gratis for altid uden mellemled i skyen."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Har jeg brug for et OBS-multistream-plugin, hvis jeg bruger SplitCam?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nej. SplitCam har multistream indbygget — ingen plugins som Aitum Multistream, SE.Live eller Multiple RTMP Outputs nødvendige. Vælg destinationer, klik på Go Live, færdig. SplitCam fungerer også som dit fulde broadcast-studie (scener, kilder, virtuelt kamera), så du kan erstatte OBS helt, hvis du vil."
+            "text": "Ja — Twitch + YouTube samtidig er den mest almindelige multistream-kombination. SplitCam leveres med begge færdigkonfigureret. Indsæt dine stream-nøgler én gang, og derefter sender hvert Go Live-klik til begge. Twitchs vilkår tillader simulcasting siden oktober 2023, så det er fuldt ud lovligt."
           }
         },
         {
@@ -256,7 +232,7 @@
           "name": "Hvad sker der, hvis en platform går ned midt i streamet?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Hvis én destination falder ud (fx et hik i Twitchs ingest), fortsætter de andre med at streame uafbrudt. SplitCam forsøger automatisk at koble op til den udfaldne platform igen. Dine seere på de andre platforme opdager det aldrig."
+            "text": "Hvis én destination falder ud (fx et hik i Twitchs ingest), fortsætter de andre uafbrudt. SplitCam forsøger automatisk at koble op til den udfaldne platform igen. Dine seere på de andre platforme opdager det aldrig."
           }
         },
         {
@@ -264,23 +240,47 @@
           "name": "Kan jeg multistreame fra min telefon?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja — SplitCam mobil (iOS og Android) understøtter multistream til de samme 84+ platforme. Samme Stream-indstillinger, samme Go Live med ét klik. Lodret 9:16-lærred er standard på mobil til TikTok, Reels og Shorts."
+            "text": "Ja — SplitCam mobil (iOS og Android) understøtter multistream til de samme 84+ platforme. Samme Stream-indstillinger, samme Go Live med ét klik. Lodret lærred (9:16) er standard på mobil til TikTok / Reels / Shorts."
           }
         },
         {
           "@type": "Question",
-          "name": "Understøtter SplitCam egne RTMP- og RTMPS-servere?",
+          "name": "Understøtter SplitCam egne RTMP-servere?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja — enhver platform, der accepterer RTMP eller RTMPS, virker. Indsæt server-URL og stream-nøgle i indstillingerne for Custom RTMP. Perfekt til private webinarer, white-label-streaming eller platforme, der ikke er færdigkonfigureret i SplitCam."
+            "text": "Ja — enhver platform, der accepterer RTMP eller RTMPS, virker. Indsæt server-URL og stream-nøgle i indstillingerne for Custom RTMP. Perfekt til private webinarer, white-label-streaming eller platforme, der ikke er færdigkonfigureret i SplitCams liste."
           }
         },
         {
           "@type": "Question",
-          "name": "Hvad betyder simulcast / simulcasting?",
+          "name": "Er multistream (simulcasting) tilladt på Twitch?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Simulcast (samtidig udsendelse) og multistream er det samme: at sende én livestream til flere platforme på samme tid. Begge udtryk beskriver det, SplitCam gør — udsende til Twitch, YouTube, Facebook, Kick, TikTok og andre platforme samtidig med ét klik."
+            "text": "Ja. Siden oktober 2023 kan både Twitch Affiliates og Partners simulcaste til enhver anden platform — Kick, YouTube, TikTok, Facebook, hvor som helst. Den eneste regel: kvaliteten på dit Twitch-stream skal være mindst lige så god som versionen på de andre platforme. Send ikke 720p til Twitch, mens du skubber 4K til YouTube. Ellers — multistream frit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Er SplitCam et gratis alternativ til Restream, Streamlabs Multistream eller StreamYard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Den vigtigste forskel: SplitCam kører helt på din maskine og sender streams direkte til hver platform (peer-to-peer). Restream, Streamlabs Multistream og StreamYard sender først dit stream til deres sky og fordeler det derfra, hvilket øger forsinkelsen, koster et månedligt gebyr på betalte niveauer og deler dine data med en tredjepart. SplitCam er gratis for altid uden mellemled i skyen, uden gebyr, intet rutes gennem vores servere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Har jeg brug for et OBS-multistream-plugin (Aitum, SE.Live, Multiple RTMP Outputs), hvis jeg bruger SplitCam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nej. SplitCam har multistream indbygget — ingen plugins nødvendige. Vælg destinationer, klik på Go Live, færdig. SplitCam fungerer også som dit fulde broadcast-studie (scener, kilder, virtuelt kamera, browser-kilder), så du kan erstatte OBS helt, hvis du vil have én app, der gør det hele. Se den fulde SplitCam vs OBS-sammenligning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvad betyder \"simulcasting\", og er det det samme som multistream?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja — simulcast (samtidig udsendelse), simulcasting, multistream og dobbelt stream betyder alle det samme: at sende én livestream til flere platforme på samme tid. SplitCam gør alt ovenstående under én funktion."
           }
         }
       ]
@@ -745,7 +745,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-twitch"/></svg><svg><use href="#i-yt"/></svg><svg><use href="#i-fb"/></svg><svg><use href="#i-kick"/></svg> 4 på én gang: Twitch + YT + FB + Kick</h3>
-        <p>Den klassiske creator-stak. ~17 Mbps upload dækker komfortabelt alle fire ved anbefalede bitrates.</p>
+        <p>Den klassiske creator-stak. Cirka 19–20 Mbps upload dækker alle fire ved anbefalede bitrates — 6 + 4,5 + 3 + 2,5 er 16 Mbps video, plus omkring 20% ekstra plads.</p>
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-x"/></svg><svg><use href="#i-linkedin"/></svg> X (Twitter) + LinkedIn Live</h3>
@@ -920,7 +920,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <h3>Indbygget Upload Speed Test</h3>
-        <p>Før du går live, lægger SplitCams Upload Speed Test dine bitrates sammen og tester din reelle upload. Streamer du 6 + 4,5 + 3 + 2,5 Mbps til 4 platforme? Den fortæller dig, om din 17 Mbps upload kan klare det — og advarer, før udfald sker.</p>
+        <p>Før du går live, lægger SplitCams Upload Speed Test dine bitrates sammen og tester din reelle upload. Streamer du 6 + 4,5 + 3 + 2,5 Mbps til 4 platforme? Det er 16 Mbps video og cirka 19–20 med ekstra plads. Den fortæller dig, om din forbindelse reelt kan klare det — og advarer, før udfald sker.</p>
       </div>
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>

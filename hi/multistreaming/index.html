@@ -189,63 +189,39 @@
         },
         {
           "@type": "Question",
-          "name": "How many platforms can I multistream to simultaneously?",
+          "name": "एक साथ कितने platforms पर stream कर सकता हूँ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "आराम से 8 destinations तक; technically unlimited — जब तक आपका CPU/GPU और upload bandwidth combined load संभाल ले. 10 Mbps upload वाले एक mid-range PC पर 3–5 platforms आम बात है. 50 Mbps fiber और एक Nvidia card के साथ 8+ भी मुमकिन है."
+            "text": "आराम से 8 destinations तक; technically unlimited — जब तक आपका CPU/GPU और upload bandwidth combined load संभाल ले. हर destination अपना bandwidth use करता है — practical limit यही है. 10 Mbps upload वाले एक mid-range PC पर 3–5 platforms आम बात है. 50 Mbps fiber और एक Nvidia card के साथ 8+ भी मुमकिन है."
           }
         },
         {
           "@type": "Question",
-          "name": "Does SplitCam send my video through any cloud server?",
+          "name": "क्या SplitCam मेरा video किसी server से भेजता है?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "नहीं. Multistreaming सीधी, peer-to-peer है — आपके computer से हर platform के ingest endpoint तक. कोई data SplitCam servers से नहीं गुज़रता, कोई third-party cloud बीच में नहीं. वही video सीधे आपके PC से Twitch, YouTube और हर चुने हुए destination तक जाता है — अलग-अलग और एक साथ."
+            "text": "नहीं. Multistreaming सीधी, peer-to-peer है — आपके computer से हर platform के ingest endpoint तक. कोई data SplitCam servers से नहीं गुज़रता, कोई third-party cloud बीच में नहीं, कोई third party के साथ कुछ भी share नहीं होता. वही video सीधे आपके PC से Twitch, YouTube और जहाँ भी आप stream करें वहाँ जाता है — अलग-अलग और एक साथ."
           }
         },
         {
           "@type": "Question",
-          "name": "How much upload bandwidth do I need to multistream?",
+          "name": "कितना upload bandwidth चाहिए?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "सारे चुने हुए destinations के bitrates जोड़ें और ~20% safety margin add करें. Twitch को 6 Mbps + YouTube को 4.5 Mbps + Facebook को 3 Mbps = 13.5 Mbps + margin = ~17 Mbps upload चाहिए. Built-in Upload Speed Test live जाने से पहले आपका connection check कर लेता है."
+            "text": "अपने सारे चुने हुए destinations के bitrates जोड़ें और ~20% safety margin add करें. Twitch को 6 Mbps + YouTube को 4.5 Mbps + Facebook को 3 Mbps = 13.5 Mbps + margin = ~17 Mbps upload. Built-in Upload Speed Test live जाने से पहले आपका connection check कर लेता है."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I stream to Twitch and YouTube at the same time?",
+          "name": "क्या Twitch और YouTube पर एक साथ stream कर सकता हूँ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "हाँ — Twitch + YouTube एक साथ सबसे आम multistream combo है. SplitCam में दोनों pre-configured आते हैं. October 2023 से Twitch की terms of service किसी भी platform पर simulcasting की इजाज़त देती हैं, तो यह पूरी तरह compliant है."
+            "text": "हाँ — Twitch + YouTube एक साथ सबसे आम multistream combo है. SplitCam में दोनों pre-configured आते हैं. अपनी stream keys एक बार paste करें, फिर हर Go Live click दोनों को भेजता है. October 2023 से Twitch की ToS simulcasting की इजाज़त देती है, तो यह पूरी तरह compliant है."
           }
         },
         {
           "@type": "Question",
-          "name": "Is multistreaming (simulcasting) allowed on Twitch?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "हाँ. October 2023 से Twitch Affiliates और Partners, दोनों किसी भी दूसरे platform पर simulcast कर सकते हैं — Kick, YouTube, TikTok, Facebook. एकमात्र शर्त: Twitch stream की quality कम से कम बाकी platforms जितनी अच्छी होनी चाहिए (जैसे, Twitch को 720p और YouTube को 4K न भेजें)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is SplitCam an alternative to Restream and Streamlabs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "हाँ — SplitCam एक free Restream / Streamlabs Multistream alternative है. मुख्य फ़र्क: SplitCam पूरी तरह आपके PC पर चलता है और streams सीधे हर platform को भेजता है (peer-to-peer). Restream और Streamlabs Multistream पहले आपकी stream अपने cloud को भेजते हैं फिर fan-out करते हैं, जिससे latency बढ़ती है, paid tiers पर monthly fee लगती है और आपका data share होता है. SplitCam हमेशा free है, बिना किसी cloud बीच में."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do I need an OBS multistream plugin if I use SplitCam?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "नहीं. SplitCam में multistreaming built-in है — Aitum Multistream, SE.Live या Multiple RTMP Outputs जैसे किसी plugin की ज़रूरत नहीं. Destinations चुनें, Go Live दबाएँ, हो गया. SplitCam आपका पूरा broadcasting studio भी है (scenes, sources, virtual camera), तो चाहें तो OBS को पूरी तरह replace कर सकते हैं."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I have different bitrates per platform?",
+          "name": "क्या हर platform का अलग bitrate रख सकता हूँ?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "हाँ — हर destination का bitrate, resolution और framerate पूरी तरह independent है. Twitch को 1080p60 पर 6 Mbps, Facebook को 720p30 पर 2.5 Mbps, एक backup destination को 480p30 पर 800 kbps भेजें. हर एक को Stream Settings में configure करें."
@@ -253,7 +229,7 @@
         },
         {
           "@type": "Question",
-          "name": "What if a platform goes down mid-stream?",
+          "name": "अगर stream के बीच में कोई platform down हो जाए तो?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "अगर एक destination drop हो जाए (जैसे Twitch ingest में hiccup), बाकी बिना रुके stream करते रहते हैं. SplitCam drop हुए platform से अपने आप दोबारा connect करने की कोशिश करता है. बाकी platforms पर आपके viewers को कभी पता नहीं चलता."
@@ -261,26 +237,50 @@
         },
         {
           "@type": "Question",
-          "name": "Can I multistream from my phone?",
+          "name": "क्या अपने phone से multistream कर सकता हूँ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "हाँ — SplitCam mobile (iOS और Android) उन्हीं 84+ platforms पर multistreaming support करता है. वही Stream Settings, वही one-click Go Live. Mobile पर TikTok, Reels और Shorts के लिए vertical 9:16 canvas default है."
+            "text": "हाँ — SplitCam mobile (iOS और Android) उन्हीं 84+ platforms पर multistreaming support करता है. वही Stream Settings, वही one-click Go Live. Mobile पर TikTok / Reels / Shorts के लिए vertical canvas (9:16) default है."
           }
         },
         {
           "@type": "Question",
-          "name": "Does SplitCam support custom RTMP and RTMPS servers?",
+          "name": "क्या SplitCam custom RTMP servers support करता है?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "हाँ — RTMP या RTMPS accept करने वाला कोई भी platform चलता है. Server URL और stream key को Custom RTMP settings में paste करें. Private webinars, white-label streaming, या SplitCam में pre-configured न होने वाले platforms के लिए बढ़िया."
+            "text": "हाँ — RTMP या RTMPS accept करने वाला कोई भी platform चलता है. Server URL और stream key को Custom RTMP settings में paste करें. Private webinars, white-label streaming, या SplitCam list में pre-configured न होने वाले platforms के लिए बढ़िया."
           }
         },
         {
           "@type": "Question",
-          "name": "What does simulcast / simulcasting mean?",
+          "name": "क्या Twitch पर multistreaming (simulcasting) allowed है?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Simulcast (simultaneous broadcast) और multistream एक ही चीज़ हैं: एक live stream को एक साथ कई platforms पर भेजना. दोनों शब्द वही बताते हैं जो SplitCam करता है — एक click से Twitch, YouTube, Facebook, Kick, TikTok और बाकी platforms पर एक साथ broadcast."
+            "text": "हाँ. October 2023 से Twitch Affiliates और Partners, दोनों किसी भी दूसरे platform पर simulcast कर सकते हैं — Kick, YouTube, TikTok, Facebook, कहीं भी. एकमात्र नियम: आपकी Twitch stream की quality कम से कम बाकी platforms जितनी अच्छी होनी चाहिए. Twitch को 720p और YouTube को 4K एक साथ न भेजें. बाकी — आज़ादी से multistream करें."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "क्या SplitCam, Restream, Streamlabs Multistream या StreamYard का free alternative है?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "हाँ. मुख्य फ़र्क: SplitCam पूरी तरह आपके PC पर चलता है और streams सीधे हर platform को भेजता है (peer-to-peer). Restream, Streamlabs Multistream और StreamYard पहले आपकी stream अपने cloud को भेजते हैं फिर fan-out करते हैं, जिससे latency बढ़ती है, paid tiers पर monthly fee लगती है और आपका data किसी third party के साथ share होता है. SplitCam हमेशा free है — कोई cloud बीच में नहीं, कोई fee नहीं, आपका data किसी server से नहीं गुज़रता."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "अगर SplitCam use करूँ तो क्या OBS multistream plugin (Aitum, SE.Live, Multiple RTMP Outputs) चाहिए?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "नहीं. SplitCam में multistreaming built-in है — किसी plugin की ज़रूरत नहीं. Destinations चुनें, Go Live दबाएँ, हो गया. SplitCam आपका पूरा broadcasting studio भी है (scenes, sources, virtual camera, browser sources), तो चाहें तो ऐसे एक app के लिए OBS को पूरी तरह replace कर सकते हैं जो सब कुछ करता हो. पूरी SplitCam vs OBS तुलना देखें."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "\"Simulcasting\" का मतलब क्या है और क्या यह multistreaming जैसा ही है?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "हाँ — simulcast (simultaneous broadcast), simulcasting, multistream, multistreaming और dual streaming, सब एक ही चीज़ हैं: एक live stream को एक साथ कई platforms पर भेजना. SplitCam ये सब एक ही feature के तहत करता है."
           }
         }
       ]
@@ -745,7 +745,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-twitch"/></svg><svg><use href="#i-yt"/></svg><svg><use href="#i-fb"/></svg><svg><use href="#i-kick"/></svg> 4-way: Twitch + YT + FB + Kick</h3>
-        <p>Mainstream creator stack. ~17 Mbps upload, recommended bitrates पर चारों को आराम से संभाल लेता है.</p>
+        <p>Mainstream creator stack. लगभग 19–20 Mbps upload recommended bitrates पर चारों को संभाल लेता है — 6 + 4.5 + 3 + 2.5 यानी 16 Mbps video, और ऊपर से लगभग 20% headroom.</p>
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-x"/></svg><svg><use href="#i-linkedin"/></svg> X (Twitter) + LinkedIn Live</h3>
@@ -920,7 +920,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <h3>Built-in Upload Speed Test</h3>
-        <p>Live जाने से पहले SplitCam का Upload Speed Test आपके bitrates जोड़ता है और आपका असली upload probe करता है. 4 platforms को 6 + 4.5 + 3 + 2.5 Mbps पर stream कर रहे हैं? यह बता देता है कि आपका 17 Mbps upload इसे संभाल सकता है या नहीं — और drops होने से पहले warn करता है.</p>
+        <p>Live जाने से पहले SplitCam का Upload Speed Test आपके bitrates जोड़ता है और आपका असली upload probe करता है. 4 platforms को 6 + 4.5 + 3 + 2.5 Mbps पर stream कर रहे हैं? यह 16 Mbps video है, और headroom के साथ लगभग 19–20. यह बता देता है कि आपका connection सचमुच इतना संभाल पाता है या नहीं — और drops होने से पहले warn करता है.</p>
       </div>
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>

@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "バーチャルオーディオ・ドライバーとは？",
+          "name": "What is a virtual audio driver?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "ハードウェアを持たないオーディオデバイスを macOS に追加するソフトです。アプリからは本物のマイクと見分けがつかず、ほかの入力と同じようにマイクの一覧に表示されるので、そこへ流し込んだ音はそのまま通話・配信・録画へ送れます。"
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "対応している Mac は？",
+          "name": "バーチャルオーディオ・ドライバーとは？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Apple Silicon（M1・M2・M3・M4 以降）を搭載し、macOS 12 Monterey 以降が動く Mac です。ドライバーのバイナリは arm64 専用ビルドのため、Intel Mac には対応していません。"
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Mac 版 SplitCam を使っていても必要ですか？",
+          "name": "対応している Mac は？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "たいていは不要です。macOS 版アプリにはこのドライバーが同梱されていて、自動でインストールされます。単体パッケージは、オーディオデバイスだけをインストールしたり修復したりする必要がある場合のために用意しています。"
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "カーネル拡張ですか？",
+          "name": "Mac 版 SplitCam を使っていても必要ですか？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "いいえ。/Library/Audio/Plug-Ins/HAL に置かれ、ユーザー空間で動作する CoreAudio HAL プラグインです。復旧モードで許可する項目も、セキュリティを下げる設定もありません。"
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "macOS がパスワードを求めるのはなぜ？",
+          "name": "Why does macOS ask for my password?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "システムのオーディオプラグインフォルダは macOS のものなので、そこへ書き込むには管理者権限が必要です。パッケージは Apple Developer ID 証明書で署名され、Apple の公証も受けているため、Gatekeeper は警告なしで通します。"
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "アンインストールするには？",
+          "name": "カーネル拡張ですか？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "/Library/Audio/Plug-Ins/HAL から SplitCamVirtualAudio.driver を削除し、Mac かオーディオサービスを再起動してください。仮想デバイスはマイクの一覧から消えます。"
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "バーチャルカメラもありますか？",
+          "name": "macOS がパスワードを求めるのはなぜ？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "はい — SplitCam は同じ仕組みのバーチャルカメラも用意しています。組み上げたシーンをそのまま Webカメラの代わりに、Zoom・Teams・Meet ほか数十種類のアプリで使えます。"
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "料金はかかりますか？",
+          "name": "アンインストールするには？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "いいえ。ドライバーも SplitCam 本体も無料です。アカウント登録も、サブスクも、音声に入る透かしもありません。"

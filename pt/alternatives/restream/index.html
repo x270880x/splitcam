@@ -137,7 +137,7 @@
           "name": "Preciso de mais banda de upload do que com o Restream?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Precisa, e é o principal ponto a conferir. Um retransmissor recebe um upload só da sua parte; enviar direto precisa que a soma do bitrate de todos os destinos saia de uma vez — cerca de 17 Mbps para quatro plataformas nas configurações recomendadas. O SplitCam tem um teste de velocidade de upload embutido, então você descobre isso em um minuto em vez de no meio da transmissão."
+            "text": "Precisa, e é o principal ponto a conferir. Um retransmissor recebe um upload só da sua parte; enviar direto precisa que a soma do bitrate de todos os destinos saia de uma vez — cerca de 19–20 Mbps para quatro plataformas nas configurações recomendadas. O SplitCam tem um teste de velocidade de upload embutido, então você descobre isso em um minuto em vez de no meio da transmissão."
           }
         },
         {
@@ -497,7 +497,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Codifique uma vez, envie para vários</h3>
-        <p>Uma única codificação alimenta todos os destinos, então acrescentar uma plataforma custa banda, e não CPU.</p>
+        <p>Destinos com a mesma resolução e o mesmo bitrate dividem uma única codificação. Dê a um destino configurações próprias e ele ganha a própria codificação — é por isso que o controle por destino logo abaixo é um recurso de verdade, e não um simples botão.</p>
       </div>
       <div class="reason">
         <h3>Bitrate por destino</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">Quando o Restream é a escolha melhor</h2>
-  <p class="sec-p">Este é o limite honesto de enviar direto, e vale saber disso antes de trocar. Um retransmissor precisa de <strong>um</strong> upload da sua parte. Enviar direto precisa que a <strong>soma</strong> do bitrate de todos os destinos saia da sua casa de uma vez — quatro plataformas nas configurações recomendadas dão cerca de 17 Mbps de upload. Se a sua conexão não aguenta isso, um retransmissor na nuvem não é comodidade: é o que torna o multistream possível. O SplitCam traz um teste de velocidade de upload para você conferir antes de se comprometer, e dá sempre para usar menos destinos com bitrate mais baixo — mas, se o gargalo é o seu upload, o Restream resolve um problema que o SplitCam não resolve. O mesmo vale para transmitir de um notebook na internet do hotel ou do celular, onde o retransmissor absorve a instabilidade em vez de o seu público ver.</p>
+  <p class="sec-p">Este é o limite honesto de enviar direto, e vale saber disso antes de trocar. Um retransmissor precisa de <strong>um</strong> upload da sua parte. Enviar direto precisa que a <strong>soma</strong> do bitrate de todos os destinos saia da sua casa de uma vez — quatro plataformas nas configurações recomendadas dão cerca de 19–20 Mbps de upload — 6 para o Twitch, 4,5 para o YouTube, 3 para o Facebook e 2,5 para uma quarta, mais uns 20% de folga. Se a sua conexão não aguenta isso, um retransmissor na nuvem não é comodidade: é o que torna o multistream possível. O SplitCam traz um teste de velocidade de upload para você conferir antes de se comprometer, e dá sempre para usar menos destinos com bitrate mais baixo — mas, se o gargalo é o seu upload, o Restream resolve um problema que o SplitCam não resolve. O mesmo vale para transmitir de um notebook na internet do hotel ou do celular, onde o retransmissor absorve a instabilidade em vez de o seu público ver.</p>
 </section>
 
 <!-- COMPARE -->
@@ -551,7 +551,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Preciso de mais banda de upload do que com o Restream?</summary>
-        <p>Precisa, e é o principal ponto a conferir. Um retransmissor recebe um upload só da sua parte; enviar direto precisa que a soma do bitrate de todos os destinos saia de uma vez — cerca de 17 Mbps para quatro plataformas nas configurações recomendadas. O SplitCam tem um teste de velocidade de upload embutido, então você descobre isso em um minuto em vez de no meio da transmissão.</p>
+        <p>Precisa, e é o principal ponto a conferir. Um retransmissor recebe um upload só da sua parte; enviar direto precisa que a soma do bitrate de todos os destinos saia de uma vez — cerca de 19–20 Mbps para quatro plataformas nas configurações recomendadas. O SplitCam tem um teste de velocidade de upload embutido, então você descobre isso em um minuto em vez de no meio da transmissão.</p>
       </details>
       <details class="faq-item">
         <summary>Dá para continuar usando as minhas chaves de transmissão atuais?</summary>

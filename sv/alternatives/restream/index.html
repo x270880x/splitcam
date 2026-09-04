@@ -137,7 +137,7 @@
           "name": "Behöver jag mer uppladdningsbandbredd än med Restream?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja, och det är det viktigaste att kontrollera. En relästation tar emot en uppladdning från dig; att skicka direkt kräver att summan av alla destinationers bithastigheter går ut samtidigt — omkring 17 Mbps för fyra plattformar med rekommenderade inställningar. SplitCam har ett inbyggt Upload Speed Test, så du får svaret på en minut i stället för mitt i sändningen."
+            "text": "Ja, och det är det viktigaste att kontrollera. En relästation tar emot en uppladdning från dig; att skicka direkt kräver att summan av alla destinationers bithastigheter går ut samtidigt — omkring 19–20 Mbps för fyra plattformar med rekommenderade inställningar. SplitCam har ett inbyggt Upload Speed Test, så du får svaret på en minut i stället för mitt i sändningen."
           }
         },
         {
@@ -497,11 +497,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Koda en gång, skicka till många</h3>
-        <p>En enda kodning matar varje destination, så att lägga till en plattform kostar bandbredd i stället för processorkraft.</p>
+        <p>Destinationer som delar upplösning och bithastighet delar en och samma kodning. Ger du en destination egna inställningar får den en egen kodning — och därför är kontrollen per destination nedan en riktig funktion och inte bara en kryssruta.</p>
       </div>
       <div class="reason">
         <h3>Bithastighet per destination</h3>
-        <p>Vill du ha 6 Mbps till Twitch och 2,5 Mbps till Facebook? Ställ in dem var för sig i stället för att godta en enda reläinställning för allt.</p>
+        <p>Vill du ha 1080p60 med 6 Mbps till Twitch och 720p30 med 2,5 Mbps till Facebook? Ställ in dem var för sig i stället för att godta en enda reläinställning för allt. Bithastighet, upplösning och bildfrekvens är oberoende per destination.</p>
       </div>
       <div class="reason">
         <h3>Ingenting mellan dig och plattformen</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">När Restream är det bättre valet</h2>
-  <p class="sec-p">Det här är den ärliga begränsningen med att skicka direkt, och den är värd att känna till innan du byter. En relästation behöver <strong>en</strong> uppladdning från dig. Att skicka direkt kräver att <strong>summan</strong> av alla destinationers bithastigheter lämnar ditt hem samtidigt — fyra plattformar med rekommenderade inställningar blir ungefär 17 Mbps uppladdning. Klarar inte din anslutning det är en molnrelästation ingen bekvämlighet, utan just det som gör multistreaming möjlig över huvud taget. SplitCam har ett inbyggt Upload Speed Test så att du kan kontrollera saken innan du bestämmer dig, och du kan alltid köra färre destinationer med lägre bithastigheter — men om uppladdningen är begränsningen löser Restream ett problem som SplitCam inte kan lösa. Detsamma gäller när du sänder från en laptop på hotellets wifi eller mobilt internet, där relästationen tar upp instabiliteten i stället för att din publik ser den.</p>
+  <p class="sec-p">Det här är den ärliga begränsningen med att skicka direkt, och den är värd att känna till innan du byter. En relästation behöver <strong>en</strong> uppladdning från dig. Att skicka direkt kräver att <strong>summan</strong> av alla destinationers bithastigheter lämnar ditt hem samtidigt — fyra plattformar med rekommenderade inställningar blir ungefär 19–20 Mbps uppladdning — 6 till Twitch, 4,5 till YouTube, 3 till Facebook och 2,5 till en fjärde, plus omkring 20 % marginal. Klarar inte din anslutning det är en molnrelästation ingen bekvämlighet, utan just det som gör multistreaming möjlig över huvud taget. SplitCam har ett inbyggt Upload Speed Test så att du kan kontrollera saken innan du bestämmer dig, och du kan alltid köra färre destinationer med lägre bithastigheter — men om uppladdningen är begränsningen löser Restream ett problem som SplitCam inte kan lösa. Detsamma gäller när du sänder från en laptop på hotellets wifi eller mobilt internet, där relästationen tar upp instabiliteten i stället för att din publik ser den.</p>
 </section>
 
 <!-- COMPARE -->
@@ -551,7 +551,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Behöver jag mer uppladdningsbandbredd än med Restream?</summary>
-        <p>Ja, och det är det viktigaste att kontrollera. En relästation tar emot en uppladdning från dig; att skicka direkt kräver att summan av alla destinationers bithastigheter går ut samtidigt — omkring 17 Mbps för fyra plattformar med rekommenderade inställningar. SplitCam har ett inbyggt Upload Speed Test, så du får svaret på en minut i stället för mitt i sändningen.</p>
+        <p>Ja, och det är det viktigaste att kontrollera. En relästation tar emot en uppladdning från dig; att skicka direkt kräver att summan av alla destinationers bithastigheter går ut samtidigt — omkring 19–20 Mbps för fyra plattformar med rekommenderade inställningar. SplitCam har ett inbyggt Upload Speed Test, så du får svaret på en minut i stället för mitt i sändningen.</p>
       </details>
       <details class="faq-item">
         <summary>Kan jag fortsätta använda mina befintliga streamnycklar?</summary>

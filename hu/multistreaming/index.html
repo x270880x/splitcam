@@ -193,23 +193,23 @@
           "name": "Hány platformra streamelhetek egyszerre?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Akár 8 célhelyre kényelmesen; technikailag korlátlanul, amíg a processzorod/videokártyád és a feltöltési sávszélességed bírja az összesített terhelést. Egy középkategóriás gépen 10 Mbps feltöltéssel jellemzően 3–5 platform megy. 50 Mbps optikával és egy Nvidia-kártyával 8 vagy több is elérhető."
+            "text": "Akár 8 platformra kényelmesen; technikailag korlátlanul, amíg a processzorod/videokártyád és a feltöltési sávszélességed bírja az összesített terhelést. Minden platform megeszi a maga sávszélességét — ez a gyakorlati korlát. Egy középkategóriás gépen 10 Mbps feltöltéssel jellemzően 3–5 platform megy. 50 Mbps optikával és egy Nvidia-kártyával 8 vagy több is reális."
           }
         },
         {
           "@type": "Question",
-          "name": "Átküldi a SplitCam a videómat valamilyen felhőszerveren?",
+          "name": "Átküldi a SplitCam a videómat valamilyen szerveren?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nem. A multistreaming közvetlen, peer-to-peer a számítógépedről minden platform bejövő végpontjára. Az adatok nem haladnak át a SplitCam szerverein, semmilyen felhős közvetítő nincs. Ugyanaz a videó egyenesen a gépedről megy a Twitchre, YouTube-ra és minden más kiválasztott platformra — külön-külön és egyszerre."
+            "text": "Nem. A multistreaming közvetlen, a számítógépedről minden platform bejövő végpontjára. Az adatok nem haladnak át a SplitCam szerverein, semmilyen felhős közvetítő és adatvédelmi kockázat nincs. Ugyanaz a videó egyenesen a gépedről megy a Twitchre, a YouTube-ra — bárhová streamelsz — külön-külön és egyszerre."
           }
         },
         {
           "@type": "Question",
-          "name": "Mekkora feltöltési sávszélesség kell a multistreaminghez?",
+          "name": "Mekkora feltöltési sebesség kell?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Add össze az összes kiválasztott platform bitrátáját, és számolj ~20% ráhagyással. 6 Mbps a Twitchre + 4,5 Mbps a YouTube-ra + 3 Mbps a Facebookra = 13,5 Mbps, ráhagyással kb. 17 Mbps feltöltés szükséges. A beépített feltöltési sebességteszt élő adás előtt leellenőrzi a kapcsolatodat."
+            "text": "Add össze az összes kiválasztott platform bitrátáját, és számolj ~20% ráhagyással. 6 Mbps a Twitchre + 4,5 Mbps a YouTube-ra + 3 Mbps a Facebookra = 13,5 Mbps, ráhagyással kb. 17 Mbps feltöltés. A beépített feltöltési sebességteszt élő adás előtt leellenőrzi a kapcsolatodat."
           }
         },
         {
@@ -217,31 +217,7 @@
           "name": "Streamelhetek a Twitchre és a YouTube-ra egyszerre?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Igen — a Twitch + YouTube a legnépszerűbb multistream-kombináció. Mindkét platform előre be van állítva a SplitCamben. A Twitch szabályzata 2023 októbere óta engedi a szimulkasztot bármely platformra, így ez teljesen szabályos."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Engedélyezett a multistreaming (szimulkaszt) a Twitchen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Igen. 2023 októbere óta a Twitch Affiliate- és Partner-tagjai is szimulkasztolhatnak bármely más platformra — Kick, YouTube, TikTok, Facebook. Az egyetlen feltétel, hogy a Twitch-stream minősége legalább olyan jó legyen, mint a többi platformon (például nem küldhetsz 720p-t a Twitchre, miközben 4K-t küldesz a YouTube-ra)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "A SplitCam alternatívája a Restreamnek és a Streamlabsnek?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Igen — a SplitCam ingyenes alternatívája a Restreamnek és a Streamlabs Multistreamnek. A lényegi különbség: a SplitCam teljesen a saját gépeden fut, és közvetlenül, peer-to-peer küldi a streameket minden platformra. A Restream és a Streamlabs Multistream először a saját felhőjébe küldi a streamet, és csak onnan osztja szét — ez késleltetést ad, a fizetős csomagokban pénzbe kerül, és megosztja az adataidat. A SplitCam örökké ingyenes, felhős közvetítő nélkül."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kell OBS multistream-plugin, ha a SplitCamet használom?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nem. A multistreaming be van építve a SplitCambe — nincs szükség olyan pluginekre, mint az Aitum Multistream, az SE.Live vagy a Multiple RTMP Outputs. Kiválasztod a platformokat, megnyomod az „Élő adás” gombot — kész. A SplitCam ráadásul teljes értékű közvetítőstúdió is (jelenetek, források, virtuális kamera), így ha akarod, teljesen kiváltja az OBS-t."
+            "text": "Igen — a Twitch + YouTube a legnépszerűbb multistream-kombináció. Mindkét platform előre be van állítva a SplitCamben: illeszd be egyszer a stream kulcsokat, és minden „Élő adás” gombnyomás egyszerre indítja mindkettőt. A Twitch szabályai 2023 októbere óta engedik a szimulkasztot, így minden teljesen szabályos."
           }
         },
         {
@@ -257,7 +233,7 @@
           "name": "Mi történik, ha egy platform leszakad adás közben?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ha egy célhely leszakad (például a Twitch bejövő végpontja megakad), a többi megszakítás nélkül streamel tovább. A SplitCam automatikusan megpróbál újracsatlakozni a leszakadt platformhoz. A többi platform nézői semmit sem vesznek észre."
+            "text": "Ha egy platform leszakad (például a Twitch bejövő végpontja megakad), a többi megszakítás nélkül streamel tovább. A SplitCam automatikusan megpróbál újracsatlakozni a leszakadt platformhoz. A többi platform nézői semmit sem vesznek észre."
           }
         },
         {
@@ -265,12 +241,12 @@
           "name": "Streamelhetek több platformra telefonról?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Igen — a mobil SplitCam (iOS és Android) támogatja a multistreaminget ugyanarra a 84+ platformra. Ugyanazok a stream-beállítások, ugyanaz az egykattintásos élő adás. A telefonon az álló 9:16-os vászon az alapértelmezett — TikTokhoz, Reelshez és Shortshoz."
+            "text": "Igen — a mobil SplitCam (iOS és Android) támogatja a multistreaminget ugyanarra a 84+ platformra. Ugyanazok a stream-beállítások, ugyanaz az egykattintásos élő adás. A telefonon az álló (9:16) vászon az alapértelmezett — TikTokhoz / Reelshez / Shortshoz."
           }
         },
         {
           "@type": "Question",
-          "name": "Támogat a SplitCam egyéni RTMP- és RTMPS-szervereket?",
+          "name": "Támogatottak az egyéni RTMP-szerverek?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Igen — bármelyik platform működik, amely RTMP-t vagy RTMPS-t fogad. Illeszd be a szerver címét és a stream kulcsot a Custom RTMP beállításokba. Remek a zárt webináriumokhoz, a white-label streameléshez és az olyan platformokhoz, amelyek nincsenek előre beállítva a SplitCamben."
@@ -278,10 +254,34 @@
         },
         {
           "@type": "Question",
-          "name": "Mit jelent a „szimulkaszt”?",
+          "name": "Engedélyezett a multistreaming (szimulkaszt) a Twitchen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A szimulkaszt (egyidejű közvetítés) és a multistream ugyanaz: egy élő adás egyszerre megy több platformra. Mindkét kifejezés azt írja le, amit a SplitCam csinál — közvetítés a Twitchre, YouTube-ra, Facebookra, Kickre, TikTokra és más platformokra egyszerre, egyetlen kattintással."
+            "text": "Igen. 2023 októbere óta a Twitch Affiliate- és Partner-tagjai is szimulkasztolhatnak bármely platformra — Kick, YouTube, TikTok, Facebook, bárhová. Az egyetlen szabály: a Twitch-stream minősége ne legyen rosszabb, mint a többi platformon. Ne küldj 720p-t a Twitchre, miközben 4K-t adsz a YouTube-ra. Egyébként streamelj szabadon több platformra."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A SplitCam ingyenes alternatívája a Restreamnek, a Streamlabs Multistreamnek és a StreamYardnak?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Igen. A lényegi különbség: a SplitCam teljesen a saját gépeden fut, és közvetlenül küldi a streameket minden platformra. A Restream, a Streamlabs Multistream és a StreamYard először a saját felhőjébe küldi a streamedet, és csak onnan osztja szét — ez késleltetést ad, a fizetős csomagokban pénzbe kerül, és megosztja az adataidat egy harmadik féllel. A SplitCam örökké ingyenes: felhős közvetítő és előfizetés nélkül, és semmi sem kerül harmadik fél szerverére."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kell OBS multistream-plugin (Aitum, SE.Live, Multiple RTMP Outputs), ha a SplitCamet használom?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nem. A multistreaming be van építve a SplitCambe — nincs szükség pluginekre. Kiválasztod a platformokat, megnyomod az „Élő adás” gombot — kész. A SplitCam ráadásul teljes értékű közvetítőstúdió is (jelenetek, források, virtuális kamera, böngészőforrások), így ha akarod, teljesen kiváltja az OBS-t — egyetlen app több helyett. Nézd meg a részletes SplitCam kontra OBS összehasonlítást."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mi az a „szimulkaszt” — ugyanaz, mint a multistreaming?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Igen — a szimulkaszt (egyidejű közvetítés), a multistream és a dual streaming ugyanazt jelenti: egy élő adás egyszerre megy több platformra. A SplitCamben mindez egyetlen beépített funkció."
           }
         }
       ]
@@ -746,7 +746,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-twitch"/></svg><svg><use href="#i-yt"/></svg><svg><use href="#i-fb"/></svg><svg><use href="#i-kick"/></svg> 4 egyszerre: Twitch + YT + FB + Kick</h3>
-        <p>A bevett alkotói stack. ~17 Mbps feltöltés kényelmesen elég mind a négy platformhoz az ajánlott bitrátákkal.</p>
+        <p>A bevett alkotói stack. Nagyjából 19–20 Mbps feltöltés fedezi mind a négy platformot az ajánlott bitrátákkal — a 6 + 4,5 + 3 + 2,5 összesen 16 Mbps videó, plusz nagyjából 20% ráhagyás.</p>
       </a>
       <a class="combo-card" href="#how">
         <h3><svg><use href="#i-x"/></svg><svg><use href="#i-linkedin"/></svg> X (Twitter) + LinkedIn Live</h3>
@@ -921,7 +921,7 @@ footer{padding:48px 40px;border-top:1px solid var(--app-border);background:var(-
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
         <h3>Beépített feltöltési sebességteszt</h3>
-        <p>Adás előtt a SplitCam összeadja a bitrátákat, és megméri a valós feltöltési sebességedet. 6 + 4,5 + 3 + 2,5 Mbps-szel streamelsz négy platformra? A teszt megmondja, elbírja-e a 17 Mbps-t a kapcsolatod — és figyelmeztet, mielőtt képkockakiesés kezdődne.</p>
+        <p>Adás előtt a SplitCam összeadja a bitrátákat, és megméri a valós feltöltési sebességedet. 6 + 4,5 + 3 + 2,5 Mbps-szel streamelsz négy platformra? Ez 16 Mbps videó, ráhagyással nagyjából 19–20 Mbps. A teszt megmondja, elbírja-e ezt valóban a kapcsolatod — és figyelmeztet, mielőtt képkockakiesés kezdődne.</p>
       </div>
       <div class="feat-card">
         <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>

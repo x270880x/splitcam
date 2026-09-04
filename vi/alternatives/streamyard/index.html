@@ -145,7 +145,7 @@
           "name": "Vì sao ứng dụng máy tính lại cho hình đẹp hơn studio trên trình duyệt?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vì nó mã hoá bằng chính GPU của bạn thay vì bên trong hộp cát của trình duyệt, và vì nó chỉ tải buổi phát hoàn chỉnh lên một lần thay vì đẩy tín hiệu camera thô lên để đám mây dựng hình giúp. Trên cùng một máy và cùng một đường mạng, điều đó thường thể hiện thành hình ảnh sạch hơn khi có chuyển động."
+            "text": "Vì studio đám mây phải mã hoá tín hiệu camera của bạn để đưa được nó lên, rồi mã hoá buổi phát hoàn chỉnh thêm một lần nữa trên đường đi ra — lần mã hoá thứ hai làm việc trên một hình ảnh vốn đã bị nén, và phần chất lượng mất đi đó không lấy lại được. SplitCam chỉ mã hoá một lần, ngay trên máy. Trên cùng một máy và cùng một đường mạng, điều đó thường thể hiện thành hình ảnh sạch hơn khi có chuyển động."
           }
         },
         {
@@ -462,7 +462,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <div class="qa-h">Trả lời ngắn gọn: bạn được gì và mất gì</div>
     <div class="qa-text"><ol>
         <li><strong>Bạn được chất lượng.</strong> Cảnh của bạn được dựng bằng chính CPU và GPU của bạn, không phải bên trong một tab trình duyệt, nên độ phân giải và tốc độ khung hình do máy tính của bạn quyết định chứ không phải do một ứng dụng web.</li>
-        <li><strong>Bạn được cái giá.</strong> SplitCam miễn phí, không hình mờ và không có gói nào mở khoá cái độ phân giải mà bạn đã bỏ tiền mua máy tính để có.</li>
+        <li><strong>Bạn được lợi về giá.</strong> SplitCam miễn phí, không hình mờ và không có gói nào mở khoá cái độ phân giải mà bạn đã bỏ tiền mua máy tính để có.</li>
         <li><strong>Bạn mất khách mời qua trình duyệt.</strong> StreamYard cho phép khách từ xa vào buổi phát chỉ bằng một cú nhấp vào đường link, không phải cài gì. SplitCam không có gì tương đương — đó là lợi thế thật sự của họ, không phải chi tiết nhỏ.</li>
         <li><strong>Bạn mất khả năng làm việc từ máy bất kỳ.</strong> Studio trên trình duyệt chạy được cả trên Chromebook hay một chiếc laptop mượn tạm. SplitCam thì phải cài trên Windows hoặc macOS.</li>
     </ol></div>
@@ -476,7 +476,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Phần cứng của bạn quyết định giới hạn trên</h3>
-        <p>Một tab trình duyệt phải mã hoá video bên trong hộp cát, chia nhau phần tài nguyên mà trình duyệt cho phép. Ứng dụng máy tính thì nói chuyện trực tiếp với GPU của bạn. Trên cùng một máy và cùng một đường mạng, đó là khác biệt giữa một buổi phát nhoè đi khi cảnh chuyển động và một buổi phát thì không.</p>
+        <p>Camera của bạn được mã hoá một lần để lên tới đám mây, rồi đám mây dựng buổi phát và mã hoá thêm một lần nữa để gửi tới nền tảng. Hai lần mã hoá, và lần thứ hai bắt đầu từ một hình ảnh vốn đã bị nén. SplitCam dựng và mã hoá một lần duy nhất, ngay trên GPU của bạn, và thứ rời khỏi máy bạn chính là thứ nền tảng nhận được.</p>
       </div>
       <div class="reason">
         <h3>Một lần tải lên, không phải hai</h3>
@@ -558,7 +558,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Vì sao ứng dụng máy tính lại cho hình đẹp hơn studio trên trình duyệt?</summary>
-        <p>Vì nó mã hoá bằng chính GPU của bạn thay vì bên trong hộp cát của trình duyệt, và vì nó chỉ tải buổi phát hoàn chỉnh lên một lần thay vì đẩy tín hiệu camera thô lên để đám mây dựng hình giúp. Trên cùng một máy và cùng một đường mạng, điều đó thường thể hiện thành hình ảnh sạch hơn khi có chuyển động.</p>
+        <p>Vì studio đám mây phải mã hoá tín hiệu camera của bạn để đưa được nó lên, rồi mã hoá buổi phát hoàn chỉnh thêm một lần nữa trên đường đi ra — lần mã hoá thứ hai làm việc trên một hình ảnh vốn đã bị nén, và phần chất lượng mất đi đó không lấy lại được. SplitCam chỉ mã hoá một lần, ngay trên máy. Trên cùng một máy và cùng một đường mạng, điều đó thường thể hiện thành hình ảnh sạch hơn khi có chuyển động.</p>
       </details>
       <details class="faq-item">
         <summary>Tôi có phải từ bỏ lớp phủ thương hiệu và bố cục không?</summary>

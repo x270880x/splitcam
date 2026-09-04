@@ -137,7 +137,7 @@
           "name": "Potrebujem väčšiu rýchlosť odosielania než pri Restream?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Áno, a práve toto si treba overiť ako prvé. Sprostredkovateľ si od vás vezme jedno odosielanie; priame odosielanie potrebuje súčet bitrate všetkých cieľov naraz — pri štyroch platformách s odporúčaným nastavením asi 17 Mbit/s. SplitCam má vstavaný Upload Speed Test, takže to zistíte za minútu a nie až uprostred streamu."
+            "text": "Áno, a práve toto si treba overiť ako prvé. Sprostredkovateľ si od vás vezme jedno odosielanie; priame odosielanie potrebuje súčet bitrate všetkých cieľov naraz — pri štyroch platformách s odporúčaným nastavením asi 19 až 20 Mbit/s. SplitCam má vstavaný Upload Speed Test, takže to zistíte za minútu a nie až uprostred streamu."
           }
         },
         {
@@ -153,7 +153,7 @@
           "name": "Čo bude s mojimi scénami a prekrytiami?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Postavíte si ich priamo v SplitCam: zdroje vo vrstvách na jednom plátne, AI odstránenie pozadia, efekty, zdroj prehliadača pre prekrytia. Ak prichádzate aj z OBS, SplitCam importuje zbierky scén OBS na jeden klik."
+            "text": "Postavíte si ich priamo v SplitCame: zdroje vo vrstvách na jednom plátne, AI odstránenie pozadia, efekty, zdroj prehliadača pre prekrytia. Ak prichádzate aj z OBS, SplitCam importuje zbierky scén OBS na jeden klik."
           }
         },
         {
@@ -481,11 +481,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </div>
       <div class="reason">
         <h3>Faktúra chodí každý mesiac, streamovanie nie</h3>
-        <p>Predplatné si účtuje kalendár, nie hodiny, ktoré naozaj vysielate. Ak za mesiac streamujete dvakrát, aj tak zaplatíte za tých dvadsaťšesť dní, keď ste nestreamovali.</p>
+        <p>Predplatné sa účtuje podľa kalendára, nie podľa hodín, ktoré naozaj vysielate. Ak za mesiac streamujete dvakrát, aj tak zaplatíte za tých dvadsaťšesť dní, keď ste nestreamovali.</p>
       </div>
       <div class="reason">
         <h3>Strop určuje niekto iný</h3>
-        <p>Kvalita, počet cieľov aj funkcie sú také, aký máte tarif. Zmeniť ktorúkoľvek z nich znamená rozhodovať sa o cene, nie prepnúť nastavenie.</p>
+        <p>Kvalita, počet cieľov aj funkcie závisia od toho, aký máte tarif. Zmeniť ktorúkoľvek z nich znamená rozhodovať sa o cene, nie prepnúť nastavenie.</p>
       </div>
   </div>
 </section>
@@ -497,7 +497,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="reasons-grid">
       <div class="reason">
         <h3>Zakódovať raz, poslať mnohým</h3>
-        <p>Jedno kódovanie zásobuje všetky ciele, takže pridanie platformy stojí prenosové pásmo, nie výkon procesora.</p>
+        <p>Ciele s rovnakým rozlíšením a bitrate zdieľajú jedno kódovanie. Ak cieľu nastavíte vlastné hodnoty, dostane vlastné kódovanie — a práve preto je nastavenie pre každý cieľ nižšie skutočná funkcia, a nie len prepínač.</p>
       </div>
       <div class="reason">
         <h3>Bitrate zvlášť pre každý cieľ</h3>
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE RESTREAM WINS -->
 <section class="section">
   <h2 class="sec-h">Kedy je Restream lepšou voľbou</h2>
-  <p class="sec-p">Toto je úprimné obmedzenie priameho odosielania a oplatí sa ho poznať skôr, než prejdete. Sprostredkovateľ potrebuje od vás <strong>jedno</strong> odosielanie. Priame odosielanie potrebuje <strong>súčet</strong> bitrate všetkých cieľov naraz — štyri platformy pri odporúčaných nastaveniach sú zhruba 17 Mbit/s odosielania. Ak to vaše pripojenie neutiahne, cloudový sprostredkovateľ nie je pohodlie, ale to jediné, vďaka čomu je multistream vôbec možný. SplitCam má vstavaný Upload Speed Test, takže si to overíte skôr, než sa rozhodnete, a vždy môžete pustiť menej cieľov s nižším bitrate — no ak je vaše odosielanie tým úzkym miestom, Restream rieši problém, ktorý SplitCam vyriešiť nedokáže. To isté platí pre streamovanie z notebooku na hotelovom alebo mobilnom internete, kde nestabilitu pohltí sprostredkovateľ namiesto toho, aby ju videlo vaše publikum.</p>
+  <p class="sec-p">Toto je úprimné obmedzenie priameho odosielania a oplatí sa ho poznať skôr, než prejdete. Sprostredkovateľ potrebuje od vás <strong>jedno</strong> odosielanie. Priame odosielanie potrebuje <strong>súčet</strong> bitrate všetkých cieľov naraz — štyri platformy pri odporúčaných nastaveniach sú zhruba 19 až 20 Mbit/s odosielania — 6 na Twitch, 4,5 na YouTube, 3 na Facebook a 2,5 na štvrtú, čo je 16 Mbit/s videa, plus asi 20 % rezerva. Ak to vaše pripojenie neutiahne, cloudový sprostredkovateľ nie je pohodlie, ale to jediné, vďaka čomu je multistream vôbec možný. SplitCam má vstavaný Upload Speed Test, takže si to overíte skôr, než sa rozhodnete, a vždy môžete pustiť menej cieľov s nižším bitrate — no ak je vaše odosielanie tým úzkym miestom, Restream rieši problém, ktorý SplitCam vyriešiť nedokáže. To isté platí pre streamovanie z notebooku na hotelovom alebo mobilnom internete, kde nestabilitu pohltí sprostredkovateľ namiesto toho, aby ju videlo vaše publikum.</p>
 </section>
 
 <!-- COMPARE -->
@@ -551,7 +551,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Potrebujem väčšiu rýchlosť odosielania než pri Restream?</summary>
-        <p>Áno, a práve toto si treba overiť ako prvé. Sprostredkovateľ si od vás vezme jedno odosielanie; priame odosielanie potrebuje súčet bitrate všetkých cieľov naraz — pri štyroch platformách s odporúčaným nastavením asi 17 Mbit/s. SplitCam má vstavaný Upload Speed Test, takže to zistíte za minútu a nie až uprostred streamu.</p>
+        <p>Áno, a práve toto si treba overiť ako prvé. Sprostredkovateľ si od vás vezme jedno odosielanie; priame odosielanie potrebuje súčet bitrate všetkých cieľov naraz — pri štyroch platformách s odporúčaným nastavením asi 19 až 20 Mbit/s. SplitCam má vstavaný Upload Speed Test, takže to zistíte za minútu a nie až uprostred streamu.</p>
       </details>
       <details class="faq-item">
         <summary>Môžem používať svoje doterajšie stream kľúče?</summary>
@@ -559,7 +559,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>Čo bude s mojimi scénami a prekrytiami?</summary>
-        <p>Postavíte si ich priamo v SplitCam: zdroje vo vrstvách na jednom plátne, AI odstránenie pozadia, efekty, zdroj prehliadača pre prekrytia. Ak prichádzate aj z OBS, SplitCam importuje zbierky scén OBS na jeden klik.</p>
+        <p>Postavíte si ich priamo v SplitCame: zdroje vo vrstvách na jednom plátne, AI odstránenie pozadia, efekty, zdroj prehliadača pre prekrytia. Ak prichádzate aj z OBS, SplitCam importuje zbierky scén OBS na jeden klik.</p>
       </details>
       <details class="faq-item">
         <summary>Nahráva aj počas streamovania?</summary>
