@@ -352,3 +352,42 @@ for _r in _hl_nonrecip[:6]:
     print(f'   {_r[0]}  [{_r[1]}] -> {_r[2]}')
 if len(_hl_nonrecip) > 6:
     print(f'   … и ещё {len(_hl_nonrecip)-6}')
+
+# ------------------------------------------------------- hub card integrity ---
+# Третья за день ошибка одного семейства: жадная регулярка с re.S при активации
+# карточек хаба захватила соседнюю карточку, и заголовок разъехался со ссылкой —
+# «Streamlabs» вёл на /restream, «Restream» на /streamyard. Ссылки при этом
+# рабочие, счётчики сходились (5 живых, 2 Soon), поэтому все прежние проверки
+# молчали. Ловится только сверкой заголовка карточки с её собственной ссылкой.
+print('\n--- HUB CARDS (title vs link) ---')
+_hub_bad = []
+_hub_n = 0
+for _p in pages:
+    if not rel(_p).endswith('alternatives/index.html'):
+        continue
+    _h = open(_p, encoding='utf-8').read()
+    _i = _h.find('<div class="hub-grid"')
+    if _i < 0:
+        continue
+    _b = _h[_i:_h.find('</section>', _i)]
+    _starts = [m.start() for m in re.finditer(r'<(?:a|div) class="hub-card', _b)] + [len(_b)]
+    for _s, _e in zip(_starts, _starts[1:]):
+        _c = _b[_s:_e]
+        _hub_n += 1
+        _href = re.search(r'href="[^"]*/([^"/]+)"', _c)
+        _h3 = re.search(r'<h3>(.*?)</h3>', _c, re.S)
+        _title = re.sub('<[^>]*>', '', _h3.group(1)).strip() if _h3 else '?'
+        _soon = 'tag-soon' in _c
+        if _soon:
+            if _href:
+                _hub_bad.append((rel(_p), _title, _href.group(1), 'карточка Soon, но со ссылкой'))
+        elif not _href:
+            _hub_bad.append((rel(_p), _title, '—', 'живая карточка без ссылки'))
+        elif _href.group(1).replace('-', '') not in _title.lower().replace(' ', '').replace('-', ''):
+            _hub_bad.append((rel(_p), _title, _href.group(1), 'заголовок не соответствует ссылке'))
+print(f'cards checked: {_hub_n}')
+print(f'mismatched: {len(_hub_bad)}')
+for _r in _hub_bad[:10]:
+    print(f'   {_r[0]}  «{_r[1]}» -> /{_r[2]}  ({_r[3]})')
+if len(_hub_bad) > 10:
+    print(f'   … и ещё {len(_hub_bad)-10}')
