@@ -23,17 +23,19 @@ def chrome_of(path):
         raise SystemExit(f"донор нестандартной структуры: {path}")
     return h[:b], h[b:bc], h[ft:]
 
-def build(slug, loc, S):
-    donor = os.path.join(ROOT, loc, "alternatives", "obs", "index.html")
-    en    = os.path.join(ROOT, "alternatives", slug, "index.html")
+def build(slug, loc, S, base="alternatives", donor_page="alternatives/obs"):
+    # донор ОБЯЗАН быть той же глубины вложенности, что и собираемая страница:
+    # относительные пути, меню и подвал зависят от глубины.
+    donor = os.path.join(ROOT, loc, donor_page, "index.html")
+    en    = os.path.join(ROOT, base, slug, "index.html") if base else os.path.join(ROOT, slug, "index.html")
     if not os.path.exists(donor):
-        return None, f"нет донора {loc}/alternatives/obs/"
+        return None, f"нет донора {loc}/{donor_page}/"
     head, top, tail = chrome_of(donor)
     ehead, _, _ = chrome_of(en)
     eh = open(en, encoding="utf-8").read()
     body = eh[eh.find('<div class="breadcrumbs">'):eh.find("<footer")]
 
-    URL = f"https://splitcam.com/{loc}/alternatives/{slug}"
+    URL = f"https://splitcam.com/{loc}/{base}/{slug}" if base else f"https://splitcam.com/{loc}/{slug}"
     esc = lambda s: s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
     # ── head: берём EN-head (там уже вся структура страницы) и локализуем
@@ -60,7 +62,7 @@ def build(slug, loc, S):
     # hreflang: пока локалей у страницы нет — только self + x-default (см. CLAUDE.md)
     nh = re.sub(r'[ \t]*<link rel="alternate" hreflang="(?!x-default")[^"]+" href="[^"]*"\s*/?>\n?', '', nh)
     nh = re.sub(r'(<link rel="alternate" hreflang="x-default" href=")[^"]*(")',
-                r'\g<1>https://splitcam.com/alternatives/' + slug + r'\g<2>', nh)
+                r'\g<1>https://splitcam.com/' + (base + '/' if base else '') + slug + r'\g<2>', nh)
 
     # ── тело: подставляем переводы по позициям
     nb = body
@@ -188,17 +190,19 @@ def build(slug, loc, S):
         if want != got:
             return None, (f"структура нарушена: {pat} — {got} против {want} в оригинале; "
                           f"страница НЕ записана")
-    dst = os.path.join(ROOT, loc, "alternatives", slug)
+    dst = os.path.join(ROOT, loc, base, slug) if base else os.path.join(ROOT, loc, slug)
     os.makedirs(dst, exist_ok=True)
     open(os.path.join(dst, "index.html"), "w", encoding="utf-8").write(nh + top + nb + tail)
     return os.path.join(loc, "alternatives", slug, "index.html"), None
 
 if __name__ == "__main__":
     slug, tf = sys.argv[1], sys.argv[2]
+    base = sys.argv[3] if len(sys.argv) > 3 else "alternatives"
+    donor_page = sys.argv[4] if len(sys.argv) > 4 else "alternatives/obs"
     data = json.load(open(tf, encoding="utf-8"))
     ok = err = 0
     for item in data:
-        p, e = build(slug, item["loc"], item["strings"])
+        p, e = build(slug, item["loc"], item["strings"], base, donor_page)
         if e: print(f"  🔴 {item['loc']}: {e}"); err += 1
         else: ok += 1
     print(f"  собрано: {ok}, ошибок: {err}")

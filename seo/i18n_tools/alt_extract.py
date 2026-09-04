@@ -16,8 +16,9 @@ import re, json, sys, os
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MAXLEN = 1200          # ни одна осмысленная строка страницы не длиннее
 
-def extract(slug):
-    h = open(os.path.join(ROOT, "alternatives", slug, "index.html"), encoding="utf-8").read()
+def extract(slug, base="alternatives"):
+    path = os.path.join(ROOT, base, slug, "index.html") if base else os.path.join(ROOT, slug, "index.html")
+    h = open(path, encoding="utf-8").read()
     b = h[h.find('<div class="breadcrumbs">'):h.find("<footer")]
     d = {}
     d["title"]       = re.search(r'<title>(.*?)</title>', h, re.S).group(1)
@@ -67,10 +68,13 @@ def check(slug, d):
 
 if __name__ == "__main__":
     out, slugs = sys.argv[1], sys.argv[2:]
+    # slug вида "root:phone-as-webcam" означает страницу в корне сайта
+    def split(sl): return (sl[5:], "") if sl.startswith("root:") else (sl, "alternatives")
     res = {}
     fail = False
     for s in slugs:
-        d = extract(s)
+        s, base = split(s)
+        d = extract(s, base)
         bad = check(s, d)
         n = sum(1 for _ in json.dumps(d))
         mx = max(len(x) for x in re.findall(r'"([^"]*)"', json.dumps(d, ensure_ascii=False)))
