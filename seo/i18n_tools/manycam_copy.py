@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 COPY = {
+ "og": "og-manycam.png",
  "rival": "ManyCam",
  "eyebrow": "ManyCam alternative",
  "title": "Free ManyCam Alternative — No Watermark | SplitCam",

@@ -7,6 +7,7 @@
 # ЗАПРЕЩЕНО: любое число камер, «unlimited scenes», 64, PTZ, ISO, Preview/Program, multiview,
 # NDI out, автопереключение, гости по ссылке.
 COPY = {
+ "og": "og-multi-camera.png",
  "rival": "macOS",
  "cols": ["Source", "Windows", "macOS"],
  "crumb3": "Multi-camera streaming", "crumb3_short": "Multi-camera",

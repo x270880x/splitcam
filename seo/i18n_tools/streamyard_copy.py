@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 COPY = {
+ "og": "og-streamyard.png",
  "rival": "StreamYard",
  "title": "Free StreamYard Alternative — Desktop Studio | SplitCam",
  "description": ("A free StreamYard alternative that runs as a desktop app, not a browser tab: "

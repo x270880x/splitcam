@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 COPY = {
+ "og": "og-stream-deck.png",
  "rival": "Stream Deck",
  "title": "Free Stream Deck Alternative — Use Your Phone | SplitCam",
  "description": ("A free Stream Deck alternative: switch scenes, start the stream and record from your "

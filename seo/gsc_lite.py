@@ -31,8 +31,8 @@ def _token():
     _tok["v"], _tok["exp"] = d["access_token"], now + d.get("expires_in", 3600)
     return _tok["v"]
 
-def query(dimensions, start, end, filters=None, limit=25000):
-    body = {"startDate": start, "endDate": end, "dimensions": dimensions, "rowLimit": limit}
+def query(dimensions, start, end, filters=None, limit=25000, start_row=0):
+    body = {"startDate": start, "endDate": end, "dimensions": dimensions, "rowLimit": limit, "startRow": start_row}
     if filters:
         body["dimensionFilterGroups"] = [{"filters": filters}]
     r = urllib.request.Request(
@@ -41,3 +41,13 @@ def query(dimensions, start, end, filters=None, limit=25000):
         data=json.dumps(body).encode(),
         headers={"Authorization": "Bearer " + _token(), "Content-Type": "application/json"})
     return json.load(urllib.request.urlopen(r)).get("rows", [])
+
+def query_all(dimensions, start, end, filters=None):
+    """Все строки, постранично по 25 000 — API больше за раз не отдаёт."""
+    out, row = [], 0
+    while True:
+        part = query(dimensions, start, end, filters, 25000, row)
+        out += part
+        if len(part) < 25000:
+            return out
+        row += 25000

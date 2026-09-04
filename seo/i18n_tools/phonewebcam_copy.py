@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 COPY = {
+ "og": "og-phone-as-webcam.png",
  "rival": "a webcam app",
  "crumb2": "Features", "crumb2_url": "https://splitcam.com/features",
  "crumb3": "Phone as webcam", "faq_h": "Phone as a webcam — questions", "crumb3_short": "Phone as webcam",

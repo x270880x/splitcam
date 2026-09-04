@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 COPY = {
+ "og": "og-vmix.png",
  "rival": "vMix",
  "title": "Free vMix Alternative — Windows and Mac | SplitCam",
  "description": ("A free vMix alternative for streams that do not need a broadcast suite: scenes, multistreaming to 84+ platforms and a virtual camera, on Windows and macOS."),
