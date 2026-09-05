@@ -262,45 +262,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 /* Reasons grid (why OBS alternative) */
 .reasons-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .reason{padding:22px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:14px}
-.reason-num{font-family:'Geist Mono',monospace;font-size:12px;color:var(--blue);font-weight:700;letter-spacing:1px;margin-bottom:6px;text-transform:uppercase}
 .reason h3{font-size:17px;font-weight:700;margin-bottom:8px;letter-spacing:-.2px}
 .reason p{font-size:14px;color:var(--text-sub);line-height:1.6}
 .reason p strong{color:var(--text)}
-
-/* Advantages list (what SplitCam does differently) */
-.adv-list{display:flex;flex-direction:column;gap:14px}
-.adv{display:flex;gap:18px;padding:20px 22px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:14px}
-.adv-ico{flex:0 0 44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px}
-.adv-body{flex:1}
-.adv h3{font-size:17px;font-weight:700;margin-bottom:5px;letter-spacing:-.2px}
-.adv p{font-size:14px;color:var(--text-sub);line-height:1.6}
-.adv p strong{color:var(--text)}
-.adv .vs{display:inline-block;margin-top:8px;padding:3px 10px;font-size:11.5px;font-weight:700;color:var(--red);background:rgba(255,84,84,.08);border:1px solid rgba(255,84,84,.25);border-radius:99px;letter-spacing:.3px}
-.adv .vs::before{content:'OBS: ';color:var(--red)}
-
-/* Bonus / honest */
-.bonus{padding:32px;background:linear-gradient(135deg,rgba(255,164,64,.08),rgba(255,84,84,.05));border:1px solid rgba(255,164,64,.25);border-radius:16px;margin:32px 0}
-.bonus-h{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;margin-bottom:10px;letter-spacing:-.4px}
-.bonus-h::before{content:'⚖️';font-size:24px}
-.bonus-p{font-size:15px;color:var(--text-sub);line-height:1.7;margin-bottom:14px}
-.bonus-p strong{color:var(--text)}
-.bonus-p:last-of-type{margin-bottom:18px}
-.bonus ul{list-style:none;padding-left:0;font-size:14.5px;color:var(--text-sub);line-height:1.8}
-.bonus ul li{padding-left:24px;position:relative;margin-bottom:4px}
-.bonus ul li::before{content:'→';position:absolute;left:6px;color:#ffa372;font-weight:700}
-.bonus ul li strong{color:var(--text)}
-
-/* Migration steps */
-.steps{display:flex;flex-direction:column;gap:18px}
-.step{display:flex;gap:24px;padding:24px 26px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:14px}
-.step-num{flex:0 0 48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px}
-.step-body{flex:1}
-.step-h{font-size:19px;font-weight:700;margin-bottom:8px;letter-spacing:-.3px}
-.step-p{font-size:14.5px;color:var(--text-sub);line-height:1.65;margin-bottom:10px}
-.step-p strong{color:var(--text)}
-.step-tip{padding:10px 14px;background:rgba(40,120,252,.08);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;font-size:13.5px;color:var(--text);margin-top:8px;line-height:1.6}
-.step-tip b{color:var(--blue);font-weight:700}
-.step-code{display:inline-block;padding:2px 7px;background:rgba(255,255,255,.07);border:1px solid var(--app-border);border-radius:4px;font-family:'Geist Mono',monospace;font-size:13px;color:var(--blue)}
 
 /* Compare table */
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -312,17 +276,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .compare-table .yes{color:#5ee572;font-weight:700}
 .compare-table .no{color:var(--red);font-weight:700}
 .compare-table .meh{color:#ffa372;font-weight:700}
-
-/* Other alternatives list */
-.alt-list{display:flex;flex-direction:column;gap:12px;margin-top:8px}
-.alt-row{display:flex;gap:16px;align-items:flex-start;padding:18px 22px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:12px}
-.alt-rank{flex:0 0 36px;height:36px;border-radius:10px;background:var(--app-surface);color:var(--text-sub);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;font-family:'Geist Mono',monospace}
-.alt-row.featured .alt-rank{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff}
-.alt-body{flex:1}
-.alt-body h4{font-size:16px;font-weight:700;margin-bottom:4px;letter-spacing:-.2px}
-.alt-body h4 .tag{display:inline-block;margin-left:8px;padding:2px 8px;font-size:10.5px;font-weight:700;background:var(--blue-dim);color:var(--blue);border-radius:99px;letter-spacing:.4px;text-transform:uppercase;vertical-align:middle}
-.alt-body p{font-size:13.5px;color:var(--text-sub);line-height:1.55}
-.alt-body p strong{color:var(--text)}
 
 /* FAQ */
 .faq-list{display:flex;flex-direction:column;gap:10px}
@@ -364,7 +317,6 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   .hero-cta{justify-content:center}
   .cta-block{padding:48px 20px}
   .reasons-grid,.related-grid{grid-template-columns:1fr}
-  .step,.adv{flex-direction:column;gap:12px}
   footer{padding:32px 20px}
   .footer-inner{flex-direction:column;text-align:center}
 }
