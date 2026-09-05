@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "Безплатен драйвер за виртуално аудио за macOS. Добавя виртуално аудио устройство, което другите приложения виждат като обикновен микрофон, така че смес от вашия микрофон, системния звук, музиката и звука от видео може да се изпрати към Microsoft Teams, Telegram, Discord, Zoom или всяко приложение с вход за микрофон.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "виртуално аудио mac, драйвер за виртуално аудио mac, виртуален микрофон mac, виртуално аудио устройство mac, аудио миксер mac, системен звук в микрофона mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is a virtual audio driver?",
+          "name": "Какво е драйвер за виртуално аудио?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Програма, която добавя в macOS аудио устройство без хардуер зад него. Приложенията не могат да го различат от истински микрофон — то се показва в списъка с микрофони като всеки друг вход, така че каквото подадете в него, може да отиде в разговор, стрийм или запис."
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which Macs does it support?",
+          "name": "Кои компютри Mac се поддържат?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Компютри Mac с Apple Silicon — M1, M2, M3, M4 и по-нови — с macOS 12 Monterey или по-нов. Драйверът е компилиран само за arm64, така че Mac с Intel не се поддържат."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Do I need it if I already have SplitCam for Mac?",
+          "name": "Нужен ли ми е, ако вече имам SplitCam за Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Обикновено не. Приложението за macOS вече съдържа този драйвер и го инсталира вместо вас. Отделният пакет съществува за случаите, в които аудио устройството трябва да се инсталира или поправи самостоятелно."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it a kernel extension?",
+          "name": "Разширение на ядрото ли е?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Не. Това е CoreAudio HAL плъгин, който стои в /Library/Audio/Plug-Ins/HAL и работи в потребителското пространство. Няма какво да разрешавате в режим за възстановяване и няма намалена настройка за сигурност, която да включвате."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Why does macOS ask for my password?",
+          "name": "Защо macOS иска паролата ми?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Системната папка за аудио плъгини принадлежи на macOS, затова записът в нея изисква администраторски права. Пакетът е подписан със сертификат Apple Developer ID и е нотаризиран от Apple — затова Gatekeeper го пропуска без предупреждение."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "How do I uninstall it?",
+          "name": "Как да го деинсталирам?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Изтрийте SplitCamVirtualAudio.driver от /Library/Audio/Plug-Ins/HAL, после рестартирайте Mac или аудио услугата. Виртуалното устройство изчезва от списъка с микрофони."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is there a virtual camera too?",
+          "name": "Има ли и виртуална камера?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Да — SplitCam предлага и виртуална камера на същия принцип: готовата сцена застава на мястото на уеб камерата ви в Zoom, Teams, Meet и десетки други приложения."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does it cost anything?",
+          "name": "Струва ли пари?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Не. Драйверът е безплатен, както и самият SplitCam. Няма регистрация, няма абонамент и няма воден знак върху звука."
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Пуснете музика в разговора</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>Гласът и музиката вървят заедно, с нивата, които сте задали, без отсрещната страна да чува високоговорителя на лаптопа през микрофона ви.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Споделете какво свири вашият Mac</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>Системният звук влиза в същия сигнал, така че демонстрация, видео или известие се чува точно както го чувате вие — а не през стаята.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Пуснете видео, без да губите звука</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>Споделянето на екрана често подава само картина. Насочете звука на клипа към виртуалното устройство и той тръгва заедно с гласа ви.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>Два микрофона, един канал</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Интервюирате някого в същата стая или комбинирате слушалки с микрофон и настолен микрофон — и двата могат да захранват един изход.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Запишете целия разговор</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>Записващо приложение, насочено към виртуалното устройство, записва една пътека, в която вече са събрани всички източници, които сте смесили.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Приложения без пренасочване на звука</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>Повечето месинджъри предлагат падащо меню за избор на микрофон и нищо повече. Точно това меню е всичко, което трябва на този драйвер.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Какво е виртуално аудио устройство?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">Микрофон, който съществува само в софтуера.</h2>
+        <p>Виртуалното аудио устройство е драйвер, който добавя в macOS аудио вход, зад който няма хардуер. Приложенията не усещат разликата — CoreAudio им подава същото описание на устройството, каквото би подал и за USB микрофон, така че виртуалното устройство се появява в падащия списък с микрофони до истинския ви хардуер.</p>
+        <p>Полезното е, че входната му страна е отворена. Миксер — например SplitCam — може да подава в него няколко сигнала наведнъж: гласа ви, звука, който самият Mac възпроизвежда, музикален плейър, звука на клипа, който показвате. Приложението от другата страна продължава да смята, че слуша един обикновен микрофон.</p>
+        <p><strong style="color:var(--text)">Това е CoreAudio HAL плъгин, а не разширение на ядрото.</strong> Работи в потребителското пространство, не изисква стартиране с намалена сигурност и се премахва с изтриването на една-единствена папка.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -793,35 +793,35 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Всичко, което си струва да знаете, преди да го инсталирате.</p>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>What is a virtual audio driver?</summary>
+        <summary>Какво е драйвер за виртуално аудио?</summary>
         <p>Програма, която добавя в macOS аудио устройство без хардуер зад него. Приложенията не могат да го различат от истински микрофон — то се показва в списъка с микрофони като всеки друг вход, така че каквото подадете в него, може да отиде в разговор, стрийм или запис.</p>
       </details>
       <details class="faq-item">
-        <summary>Which Macs does it support?</summary>
+        <summary>Кои компютри Mac се поддържат?</summary>
         <p>Компютри Mac с Apple Silicon — M1, M2, M3, M4 и по-нови — с macOS 12 Monterey или по-нов. Драйверът е компилиран само за arm64, така че Mac с Intel не се поддържат.</p>
       </details>
       <details class="faq-item">
-        <summary>Do I need it if I already have SplitCam for Mac?</summary>
+        <summary>Нужен ли ми е, ако вече имам SplitCam за Mac?</summary>
         <p>Обикновено не. Приложението за macOS вече съдържа този драйвер и го инсталира вместо вас. Отделният пакет съществува за случаите, в които аудио устройството трябва да се инсталира или поправи самостоятелно.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it a kernel extension?</summary>
+        <summary>Разширение на ядрото ли е?</summary>
         <p>Не. Това е CoreAudio HAL плъгин, който стои в <code>/Library/Audio/Plug-Ins/HAL</code> и работи в потребителското пространство. Няма какво да разрешавате в режим за възстановяване и няма намалена настройка за сигурност, която да включвате.</p>
       </details>
       <details class="faq-item">
-        <summary>Why does macOS ask for my password?</summary>
+        <summary>Защо macOS иска паролата ми?</summary>
         <p>Системната папка за аудио плъгини принадлежи на macOS, затова записът в нея изисква администраторски права. Пакетът е подписан със сертификат Apple Developer ID и е нотаризиран от Apple — затова Gatekeeper го пропуска без предупреждение.</p>
       </details>
       <details class="faq-item">
-        <summary>How do I uninstall it?</summary>
+        <summary>Как да го деинсталирам?</summary>
         <p>Изтрийте <code>SplitCamVirtualAudio.driver</code> от <code>/Library/Audio/Plug-Ins/HAL</code>, после рестартирайте Mac или аудио услугата. Виртуалното устройство изчезва от списъка с микрофони.</p>
       </details>
       <details class="faq-item">
-        <summary>Is there a virtual camera too?</summary>
+        <summary>Има ли и виртуална камера?</summary>
         <p>Да — SplitCam предлага и <a href="https://splitcam.com/bg/virtual-camera" style="color:var(--blue)">виртуална камера</a> на същия принцип: готовата сцена застава на мястото на уеб камерата ви в Zoom, Teams, Meet и десетки други приложения.</p>
       </details>
       <details class="faq-item">
-        <summary>Does it cost anything?</summary>
+        <summary>Струва ли пари?</summary>
         <p>Не. Драйверът е безплатен, както и самият SplitCam. Няма регистрация, няма абонамент и няма воден знак върху звука.</p>
       </details>
     </div>

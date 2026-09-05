@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "macOS 向けの無料バーチャルオーディオ・ドライバーです。他のアプリがふつうのマイクとして認識する仮想オーディオデバイスを追加するので、マイク・システム音・音楽・動画の音声をミックスして、Microsoft Teams・Telegram・Discord・Zoom など、マイク入力のあるあらゆるアプリへ送れます。",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "仮想オーディオデバイス mac, バーチャルオーディオ mac, 仮想マイク mac, mac 内部音声 マイク, mac 音声 ループバック, mac オーディオミキサー, システム音 マイクに送る mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is a virtual audio driver?",
+          "name": "バーチャルオーディオ・ドライバーとは？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "ハードウェアを持たないオーディオデバイスを macOS に追加するソフトです。アプリからは本物のマイクと見分けがつかず、ほかの入力と同じようにマイクの一覧に表示されるので、そこへ流し込んだ音はそのまま通話・配信・録画へ送れます。"
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "バーチャルオーディオ・ドライバーとは？",
+          "name": "対応している Mac は？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Apple Silicon（M1・M2・M3・M4 以降）を搭載し、macOS 12 Monterey 以降が動く Mac です。ドライバーのバイナリは arm64 専用ビルドのため、Intel Mac には対応していません。"
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "対応している Mac は？",
+          "name": "Mac 版 SplitCam を使っていても必要ですか？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "たいていは不要です。macOS 版アプリにはこのドライバーが同梱されていて、自動でインストールされます。単体パッケージは、オーディオデバイスだけをインストールしたり修復したりする必要がある場合のために用意しています。"
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Mac 版 SplitCam を使っていても必要ですか？",
+          "name": "カーネル拡張ですか？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "いいえ。/Library/Audio/Plug-Ins/HAL に置かれ、ユーザー空間で動作する CoreAudio HAL プラグインです。復旧モードで許可する項目も、セキュリティを下げる設定もありません。"
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Why does macOS ask for my password?",
+          "name": "macOS がパスワードを求めるのはなぜ？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "システムのオーディオプラグインフォルダは macOS のものなので、そこへ書き込むには管理者権限が必要です。パッケージは Apple Developer ID 証明書で署名され、Apple の公証も受けているため、Gatekeeper は警告なしで通します。"
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "カーネル拡張ですか？",
+          "name": "アンインストールするには？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "/Library/Audio/Plug-Ins/HAL から SplitCamVirtualAudio.driver を削除し、Mac かオーディオサービスを再起動してください。仮想デバイスはマイクの一覧から消えます。"
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "macOS がパスワードを求めるのはなぜ？",
+          "name": "バーチャルカメラもありますか？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "はい — SplitCam は同じ仕組みのバーチャルカメラも用意しています。組み上げたシーンをそのまま Webカメラの代わりに、Zoom・Teams・Meet ほか数十種類のアプリで使えます。"
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "アンインストールするには？",
+          "name": "料金はかかりますか？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "いいえ。ドライバーも SplitCam 本体も無料です。アカウント登録も、サブスクも、音声に入る透かしもありません。"
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>通話に音楽を流す</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>声と曲が、設定したレベルのまま一緒に届きます。ノートPCのスピーカーから出た音を、相手がマイク越しに聞かされることもありません。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Mac で鳴っている音を共有する</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>システム音も同じ経路に入るので、デモも動画も通知音も、部屋の空気越しではなく、あなたに聞こえているとおりの音で相手に届きます。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>動画を音つきのまま見せる</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>画面共有では映像しか送られないことがよくあります。動画の音声を仮想デバイスへ流し込めば、声と一緒にそのまま相手へ届きます。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>マイク2本を1つの経路に</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>同じ部屋にいる相手にインタビューするときも、ヘッドセットと卓上マイクを併用するときも、2本を1つの出力にまとめて送れます。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>会話をまるごと録音する</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>録音アプリの入力に仮想デバイスを選んでおけば、ミックスしたソースがすべて入った1本のトラックとして録れます。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>音声の振り分けができないアプリで</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>たいていのメッセージアプリが用意しているのは、マイクの一覧だけです。このドライバーに必要なのも、その一覧だけです。</p>
       </div>
     </div>
   </div>
@@ -743,11 +743,11 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
   <div class="section-inner">
     <div class="def-block">
       <div>
-        <span class="eyebrow">What is a virtual audio device?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <span class="eyebrow">バーチャルオーディオ・デバイスとは？</span>
+        <h2 class="def-diag-h">ソフトウェアの中にだけ存在するマイク。</h2>
+        <p>バーチャルオーディオ・デバイスとは、ハードウェアの裏付けを持たないオーディオ入力を macOS に追加するドライバーです。アプリからは見分けがつきません — CoreAudio が USB マイクのときとまったく同じ種類のデバイス情報を渡すので、仮想デバイスも本物のハードウェアと並んでマイクの一覧に出てきます。</p>
+        <p>便利なのは、その入力側が開いていることです。ミキサー — たとえば SplitCam — なら、あなたの声、Mac 自身が鳴らしている音、音楽プレーヤー、いま見せている動画の音声を、まとめてそこへ流し込めます。受け取る側のアプリは、それでもふつうのマイク1本の音を聞いているつもりのままです。</p>
+        <p><strong style="color:var(--text)">これはカーネル拡張ではなく、CoreAudio HAL プラグインです。</strong> ユーザー空間で動作し、セキュリティを下げた状態での起動も要らず、フォルダを1つ削除すれば取り除けます。</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -790,38 +790,38 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
   <div class="section-inner">
     <span class="eyebrow center-h" style="text-align:center;display:block">Frequently asked</span>
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">バーチャルオーディオについての質問。</h2>
-    <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Everything worth knowing before you install it.</p>
+    <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">インストールする前に知っておきたいことを、ひととおり。</p>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>What is a virtual audio driver?</summary>
+        <summary>バーチャルオーディオ・ドライバーとは？</summary>
         <p>ハードウェアを持たないオーディオデバイスを macOS に追加するソフトです。アプリからは本物のマイクと見分けがつかず、ほかの入力と同じようにマイクの一覧に表示されるので、そこへ流し込んだ音はそのまま通話・配信・録画へ送れます。</p>
       </details>
       <details class="faq-item">
-        <summary>バーチャルオーディオ・ドライバーとは？</summary>
+        <summary>対応している Mac は？</summary>
         <p>Apple Silicon（M1・M2・M3・M4 以降）を搭載し、macOS 12 Monterey 以降が動く Mac です。ドライバーのバイナリは arm64 専用ビルドのため、Intel Mac には対応していません。</p>
       </details>
       <details class="faq-item">
-        <summary>対応している Mac は？</summary>
+        <summary>Mac 版 SplitCam を使っていても必要ですか？</summary>
         <p>たいていは不要です。macOS 版アプリにはこのドライバーが同梱されていて、自動でインストールされます。単体パッケージは、オーディオデバイスだけをインストールしたり修復したりする必要がある場合のために用意しています。</p>
       </details>
       <details class="faq-item">
-        <summary>Mac 版 SplitCam を使っていても必要ですか？</summary>
+        <summary>カーネル拡張ですか？</summary>
         <p>いいえ。<code>/Library/Audio/Plug-Ins/HAL</code> に置かれ、ユーザー空間で動作する CoreAudio HAL プラグインです。復旧モードで許可する項目も、セキュリティを下げる設定もありません。</p>
       </details>
       <details class="faq-item">
-        <summary>Why does macOS ask for my password?</summary>
+        <summary>macOS がパスワードを求めるのはなぜ？</summary>
         <p>システムのオーディオプラグインフォルダは macOS のものなので、そこへ書き込むには管理者権限が必要です。パッケージは Apple Developer ID 証明書で署名され、Apple の公証も受けているため、Gatekeeper は警告なしで通します。</p>
       </details>
       <details class="faq-item">
-        <summary>カーネル拡張ですか？</summary>
+        <summary>アンインストールするには？</summary>
         <p><code>/Library/Audio/Plug-Ins/HAL</code> から <code>SplitCamVirtualAudio.driver</code> を削除し、Mac かオーディオサービスを再起動してください。仮想デバイスはマイクの一覧から消えます。</p>
       </details>
       <details class="faq-item">
-        <summary>macOS がパスワードを求めるのはなぜ？</summary>
+        <summary>バーチャルカメラもありますか？</summary>
         <p>はい — SplitCam は同じ仕組みの<a href="https://splitcam.com/ja/virtual-camera" style="color:var(--blue)">バーチャルカメラ</a>も用意しています。組み上げたシーンをそのまま Webカメラの代わりに、Zoom・Teams・Meet ほか数十種類のアプリで使えます。</p>
       </details>
       <details class="faq-item">
-        <summary>アンインストールするには？</summary>
+        <summary>料金はかかりますか？</summary>
         <p>いいえ。ドライバーも SplitCam 本体も無料です。アカウント登録も、サブスクも、音声に入る透かしもありません。</p>
       </details>
     </div>

@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "Ovladač virtuálního zvuku pro macOS zdarma. Přidá virtuální zvukové zařízení, které ostatní aplikace vidí jako běžný mikrofon, takže do Microsoft Teams, Telegramu, Discordu, Zoomu nebo jakékoli aplikace se vstupem pro mikrofon můžete poslat směs mikrofonu, zvuku systému, hudby a zvuku videa.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "virtuální zvukové zařízení mac, ovladač virtuálního zvuku mac, virtuální mikrofon mac, audio mixér mac, zvuk systému do mikrofonu mac, sloučení zvuku mac, loopback zvuk mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Pusťte hudbu do hovoru</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>Hlas i skladba dorazí společně a v úrovních, které si nastavíte, aniž by protistrana slyšela reproduktor notebooku přes váš mikrofon.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Sdílejte, co Mac přehrává</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>Zvuk systému jde do téhož signálu, takže ukázku, video i upozornění je slyšet přesně tak, jak je slyšíte vy — ne oklikou přes místnost.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Video, které nepřijde o zvuk</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>Sdílení obrazovky často přenese jen obraz. Přiveďte zvuk videa do virtuálního zařízení a poputuje spolu s vaším hlasem.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>Dva mikrofony, jeden kanál</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Děláte rozhovor s někým ve stejné místnosti nebo používáte sluchátka s mikrofonem a k tomu stolní mikrofon — oba mohou jít do jediného výstupu.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Nahrajte celý rozhovor</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>Nahrávací program nastavený na virtuální zařízení nahraje jedinou stopu, ve které jsou už všechny zdroje, které jste smíchali.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Aplikace bez směrování zvuku</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>Většina komunikátorů nabízí rozbalovací seznam mikrofonů a nic víc. Tenhle ovladač si přesně s takovým seznamem vystačí.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Co je virtuální zvukové zařízení?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">Mikrofon, který existuje jen v softwaru.</h2>
+        <p>Virtuální zvukové zařízení je ovladač, který do macOS přidá zvukový vstup bez jakéhokoli hardwaru za ním. Aplikace v tom nepoznají rozdíl — CoreAudio jim předá stejný popis zařízení, jaký by dostaly u USB mikrofonu, takže se virtuální zařízení objeví v seznamu mikrofonů hned vedle vašeho skutečného hardwaru.</p>
+        <p>Užitečné je tím, že má otevřenou vstupní stranu. Mixér — třeba SplitCam — do něj může přivést několik signálů najednou: váš hlas, zvuk, který vydává samotný Mac, hudební přehrávač i zvuk videa, které předvádíte. Aplikace na druhém konci si dál myslí, že poslouchá jeden obyčejný mikrofon.</p>
+        <p><strong style="color:var(--text)">Je to plug-in CoreAudio HAL, ne rozšíření jádra.</strong> Běží v uživatelském prostoru, nevyžaduje spuštění se sníženým zabezpečením a odstraníte ho smazáním jediné složky.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">

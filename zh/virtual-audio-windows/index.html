@@ -158,7 +158,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Do I have to download a virtual audio driver for Windows?",
+          "name": "我需要为 Windows 单独下载虚拟音频驱动吗？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "不用。音频设备由 SplitCam 自己的安装程序注册，所以装好 Windows 版 SplitCam 就等于全部搞定，没有另外要下载的安装包。"
@@ -166,7 +166,7 @@
         },
         {
           "@type": "Question",
-          "name": "我需要为 Windows 单独下载虚拟音频驱动吗？",
+          "name": "它和音频混音器有什么区别？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "音频混音器是你在 SplitCam 内部把各路声音合到一起的地方，而这份合成结果正是你的直播和录制所承载的声音。虚拟麦克风则是同一路会话的额外输出：它把这份声音以输入设备的形式交给 Windows，于是一个完全不了解 SplitCam 的程序也能选中它并收听。"
@@ -174,7 +174,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which programs can use it?",
+          "name": "哪些程序可以使用它？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "任何允许你选择麦克风或音频输入的程序。它会出现在 Windows 的输入设备列表里，紧挨着你的声卡，所以会议软件、录音工具、浏览器和 OBS 都用同样的方式接上它。"
@@ -182,7 +182,7 @@
         },
         {
           "@type": "Question",
-          "name": "它和音频混音器有什么区别？",
+          "name": "用了它会改变观众听到的声音吗？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "不会。你的直播和录制仍然像以前一样从混音器取声音。虚拟麦克风只是多了一个收听者，而不是替代品。"
@@ -190,7 +190,7 @@
         },
         {
           "@type": "Question",
-          "name": "The device is missing from the list. What now?",
+          "name": "设备没出现在列表里，该怎么办？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "SplitCam 启动时会检查驱动有没有加载成功，没成功会给出警告；那种情况下程序照常运行，但设备不可用。如果并没有出现警告，那可能是接收端的程序在 SplitCam 安装之前就建好了自己的输入列表——重新打开它的音频设置即可。"
@@ -198,7 +198,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it free?",
+          "name": "它免费吗？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "免费。它是 Windows 版本身的一部分，而不是附加组件，所以它的任何功能都不需要许可证密钥或账号。"
@@ -659,17 +659,17 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
   <div class="section-inner">
     <span class="eyebrow">最容易混淆的一点</span>
     <h2 class="sec-h">两路输出，不是一路。</h2>
-    <p class="sec-p">SplitCam has always been able to combine audio: the <strong>Audio Mixer</strong> is where a microphone, a music playlist, a browser page and the sound Windows itself is making get balanced against each other, and that balance is what your broadcast and your recording carry. The <strong>virtual microphone</strong> replaces none of it. It is a second, parallel destination for the same session — SplitCam offers it to Windows as an input device, and any program that lists microphones can point at it. The mixer decides what SplitCam sounds like. The virtual microphone decides who else gets to hear it. 在 Mac 上，这是一个需要单独安装的驱动——参见 <a href="https://splitcam.com/zh/virtual-audio-mac">macOS 虚拟音频驱动</a>。</p>
+    <p class="sec-p">SplitCam 一直都能把多路声音合到一起：<strong>音频混音器</strong>就是麦克风、音乐播放列表、浏览器页面和 Windows 自身发出的声音彼此调平衡的地方，而直播和录制传出去的，正是这份调好的声音。<strong>虚拟麦克风</strong>并不取代其中任何一环。它是同一路会话的第二个去处，与前者并行——SplitCam 把它以输入设备的形式交给 Windows，任何能列出麦克风的程序都可以指向它。混音器决定 SplitCam 听起来是什么样，虚拟麦克风决定还有谁能听到。在 Mac 上，这是一个需要单独安装的驱动——参见 <a href="https://splitcam.com/zh/virtual-audio-mac">macOS 虚拟音频驱动</a>。</p>
     <div class="vw-two">
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎚</div>
         <h3>音频混音器——在 SplitCam 内部</h3>
-        <p>A strip per source, each with its own volume, mute and monitoring. Noise suppression on the microphone, and filters that belong to the individual source: VST plug-ins, Delay, Sound Offset and the Audio Compressor.</p>
+        <p>每一路音源占一条通道条，各有自己的音量、静音和监听。麦克风上带降噪，还有属于单路音源的滤镜：VST 插件、Delay、Sound Offset 和 Audio Compressor。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎙</div>
         <h3>虚拟麦克风——在 Windows 层面</h3>
-        <p>An audio input registered with Windows, sitting in the same list as your sound card and your headset. Programs do not integrate with it one by one; they enumerate the inputs Windows reports, and this is one of them.</p>
+        <p>一个向 Windows 注册的音频输入，和你的声卡、耳麦排在同一份列表里。不需要逐个应用做集成：程序读取的是 Windows 报告的那份输入设备列表，而它就是其中之一。</p>
       </div>
     </div>
   </div>
@@ -707,22 +707,22 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">💬</div>
         <h3>Meetings and calls</h3>
-        <p>A conference program gives you one input and no way to add a second track to it. Selecting SplitCam turns that single input into everything you have balanced — the voice, the clip you are reacting to, the page you are demonstrating.</p>
+        <p>会议软件只给你一个输入，也没法再往里加第二条音轨。选中 SplitCam，这个唯一的输入就变成了你调好的全部内容——人声、你正在点评的那段视频、你正在演示的页面。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">⏺</div>
         <h3>会议与通话</h3>
-        <p>Anything that records from a microphone can capture the assembled session instead of just the room, which keeps a walkthrough and its sound in one file rather than two that have to be lined up afterwards.</p>
+        <p>任何从麦克风录音的工具，都可以录下整合好的这一路会话，而不只是房间里的动静；于是演示过程和它的声音留在同一个文件里，不必事后再去对齐两个文件。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🌐</div>
         <h3>录音工具与会议记录工具</h3>
-        <p>Web apps ask the browser for a microphone and get the same Windows list. A recording page, a web meeting or a voice widget can take the SplitCam device without installing anything.</p>
+        <p>网页应用向浏览器请求麦克风，拿到的是 Windows 的同一份列表。录音网页、网页会议或语音组件都能直接选用 SplitCam 设备，不用另外安装任何东西。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎛</div>
         <h3>浏览器标签页</h3>
-        <p>If you also run OBS or a similar tool, it can add the SplitCam device as an audio input capture and treat the assembled sound as a single source instead of rebuilding the same routing twice.</p>
+        <p>如果你同时还在用 OBS 或类似工具，它可以把 SplitCam 设备添加为音频输入采集，把整合好的声音当成单独一路音源，不必把同一套路由再搭一遍。</p>
       </div>
     </div>
   </div>
@@ -789,30 +789,30 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
   <div class="section-inner">
     <span class="eyebrow center-h" style="text-align:center;display:block">Questions</span>
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:640px">没有装驱动这一步。</h2>
-    <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">What the device is, and what it is not.</p>
+    <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">这个设备是什么，又不是什么。</p>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>Do I have to download a virtual audio driver for Windows?</summary>
+        <summary>我需要为 Windows 单独下载虚拟音频驱动吗？</summary>
         <p>不用。音频设备由 SplitCam 自己的安装程序注册，所以装好 Windows 版 SplitCam 就等于全部搞定，没有另外要下载的安装包。</p>
       </details>
       <details class="faq-item">
-        <summary>我需要为 Windows 单独下载虚拟音频驱动吗？</summary>
+        <summary>它和音频混音器有什么区别？</summary>
         <p>音频混音器是你在 SplitCam 内部把各路声音合到一起的地方，而这份合成结果正是你的直播和录制所承载的声音。虚拟麦克风则是同一路会话的额外输出：它把这份声音以输入设备的形式交给 Windows，于是一个完全不了解 SplitCam 的程序也能选中它并收听。</p>
       </details>
       <details class="faq-item">
-        <summary>Which programs can use it?</summary>
+        <summary>哪些程序可以使用它？</summary>
         <p>任何允许你选择麦克风或音频输入的程序。它会出现在 Windows 的输入设备列表里，紧挨着你的声卡，所以会议软件、录音工具、浏览器和 OBS 都用同样的方式接上它。</p>
       </details>
       <details class="faq-item">
-        <summary>它和音频混音器有什么区别？</summary>
+        <summary>用了它会改变观众听到的声音吗？</summary>
         <p>不会。你的直播和录制仍然像以前一样从混音器取声音。虚拟麦克风只是多了一个收听者，而不是替代品。</p>
       </details>
       <details class="faq-item">
-        <summary>The device is missing from the list. What now?</summary>
+        <summary>设备没出现在列表里，该怎么办？</summary>
         <p>SplitCam 启动时会检查驱动有没有加载成功，没成功会给出警告；那种情况下程序照常运行，但设备不可用。如果并没有出现警告，那可能是接收端的程序在 SplitCam 安装之前就建好了自己的输入列表——重新打开它的音频设置即可。</p>
       </details>
       <details class="faq-item">
-        <summary>Is it free?</summary>
+        <summary>它免费吗？</summary>
         <p>免费。它是 Windows 版本身的一部分，而不是附加组件，所以它的任何功能都不需要许可证密钥或账号。</p>
       </details>
     </div>

@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "Ilmainen virtuaalinen ääniajuri macOS:lle. Se lisää virtuaalisen äänilaitteen, jonka muut sovellukset näkevät tavallisena mikrofonina, joten mikrofonin, järjestelmän äänen, musiikin ja videon äänen miksaus voidaan lähettää Microsoft Teamsiin, Telegramiin, Discordiin, Zoomiin tai mihin tahansa sovellukseen, jossa on mikrofonitulo.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "virtuaalinen ääniajuri mac, virtuaalinen äänilaite mac, virtuaalimikrofoni mac, äänimikseri mac, järjestelmän ääni mikrofoniksi mac, äänen reititys mac, loopback ääni mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is a virtual audio driver?",
+          "name": "Mikä on virtuaalinen ääniajuri?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ohjelmisto, joka lisää macOS:ään äänilaitteen ilman fyysistä laitetta sen takana. Sovellukset eivät erota sitä oikeasta mikrofonista — se näkyy mikrofonilistassa kuten mikä tahansa muu äänitulo, joten kaikki siihen reititetty voidaan lähettää puheluun, striimiin tai tallennukseen."
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which Macs does it support?",
+          "name": "Mitä Maceja se tukee?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Apple Silicon -Macit — M1, M2, M3, M4 ja uudemmat — joissa on macOS 12 Monterey tai uudempi. Ajuri on käännetty vain arm64:lle, joten Intel-Maceja ei tueta."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Do I need it if I already have SplitCam for Mac?",
+          "name": "Tarvitsenko sitä, jos minulla on jo SplitCam Macille?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yleensä et. macOS-sovellus sisältää tämän ajurin jo valmiiksi ja asentaa sen puolestasi. Erillinen paketti on olemassa niitä tilanteita varten, joissa äänilaite on asennettava tai korjattava erikseen."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it a kernel extension?",
+          "name": "Onko se ydinlaajennus?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ei. Kyseessä on CoreAudio HAL -laajennus, joka sijaitsee kansiossa /Library/Audio/Plug-Ins/HAL ja toimii käyttäjätilassa. Palautustilassa ei tarvitse sallia mitään eikä tietoturva-asetuksia tarvitse laskea."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Why does macOS ask for my password?",
+          "name": "Miksi macOS kysyy salasanaani?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Järjestelmän äänilaajennusten kansio kuuluu macOS:lle, joten siihen kirjoittaminen vaatii järjestelmänvalvojan oikeudet. Paketti on allekirjoitettu Apple Developer ID -varmenteella ja Applen notarisoima, ja siksi Gatekeeper päästää sen läpi ilman varoitusta."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "How do I uninstall it?",
+          "name": "Miten poistan sen?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Poista SplitCamVirtualAudio.driver kansiosta /Library/Audio/Plug-Ins/HAL ja käynnistä Mac tai äänipalvelu uudelleen. Virtuaalilaite katoaa mikrofonilistasta."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is there a virtual camera too?",
+          "name": "Onko SplitCamissa myös virtuaalikamera?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Kyllä — SplitCamissa on samalla periaatteella toimiva virtuaalikamera, jolla koottu kohtaus korvaa webkamerasi Zoomissa, Teamsissa, Meetissä ja kymmenissä muissa sovelluksissa."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does it cost anything?",
+          "name": "Maksaako se mitään?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ei. Ajuri on ilmainen, kuten SplitCam itsekin. Tiliä ei tarvitse luoda, mitään ei tarvitse tilata eikä ääneen lisätä vesileimaa."
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Soita musiikkia puheluun</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>Äänesi ja kappale kulkevat perille yhdessä, asettamillasi tasoilla, eikä vastapuoli kuule kannettavan kaiuttimia mikrofonisi kautta.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Jaa se, mitä Mac toistaa</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>Järjestelmän ääni menee samaan syötteeseen, joten esittely, video tai ilmoitusääni kuuluu täsmälleen sellaisena kuin sinä sen kuulet — ei huoneen kautta.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Näytä video ääntä menettämättä</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>Näytönjako lähettää usein vain kuvan. Reititä klipin ääni virtuaalilaitteeseen, niin se kulkee puheesi mukana.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>Kaksi mikrofonia, yksi kanava</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Haastattelet jotakuta samassa huoneessa tai käytät kuulokemikrofonia ja pöytämikrofonia yhtä aikaa — molemmat voivat syöttää yhtä ja samaa lähtöä.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Tallenna koko keskustelu</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>Virtuaalilaitteeseen osoitettu tallennin nauhoittaa yhden raidan, jossa on jo valmiina kaikki miksaamasi lähteet.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Sovellukset ilman äänen reititystä</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>Useimmissa pikaviestimissä on vain mikrofonilista, ei muuta. Juuri se riittää tälle ajurille.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Mikä on virtuaalinen äänilaite?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">Mikrofoni, joka on olemassa vain ohjelmistona.</h2>
+        <p>Virtuaalinen äänilaite on ajuri, joka lisää macOS:ään äänitulon, jonka takana ei ole fyysistä laitetta. Sovellukset eivät huomaa eroa — CoreAudio antaa niille samanlaisen laitekuvauksen kuin USB-mikrofonista, joten virtuaalilaite ilmestyy mikrofonilistaan oikean laitteistosi viereen.</p>
+        <p>Hyödylliseksi sen tekee avoin tulopuoli. Mikseri — esimerkiksi SplitCam — voi syöttää siihen useita signaaleja yhtä aikaa: äänesi, Macin itsensä toistaman äänen, musiikkisoittimen ja näyttämäsi klipin äänen. Toisessa päässä oleva sovellus luulee edelleen kuuntelevansa yhtä tavallista mikrofonia.</p>
+        <p><strong style="color:var(--text)">Kyseessä on CoreAudio HAL -laajennus, ei ydinlaajennus.</strong> Se toimii käyttäjätilassa, ei vaadi käynnistystä alennetuilla tietoturva-asetuksilla, ja sen saa pois poistamalla yhden kansion.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -793,35 +793,35 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Kaikki olennainen ennen asennusta.</p>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>What is a virtual audio driver?</summary>
+        <summary>Mikä on virtuaalinen ääniajuri?</summary>
         <p>Ohjelmisto, joka lisää macOS:ään äänilaitteen ilman fyysistä laitetta sen takana. Sovellukset eivät erota sitä oikeasta mikrofonista — se näkyy mikrofonilistassa kuten mikä tahansa muu äänitulo, joten kaikki siihen reititetty voidaan lähettää puheluun, striimiin tai tallennukseen.</p>
       </details>
       <details class="faq-item">
-        <summary>Which Macs does it support?</summary>
+        <summary>Mitä Maceja se tukee?</summary>
         <p>Apple Silicon -Macit — M1, M2, M3, M4 ja uudemmat — joissa on macOS 12 Monterey tai uudempi. Ajuri on käännetty vain arm64:lle, joten Intel-Maceja ei tueta.</p>
       </details>
       <details class="faq-item">
-        <summary>Do I need it if I already have SplitCam for Mac?</summary>
+        <summary>Tarvitsenko sitä, jos minulla on jo SplitCam Macille?</summary>
         <p>Yleensä et. macOS-sovellus sisältää tämän ajurin jo valmiiksi ja asentaa sen puolestasi. Erillinen paketti on olemassa niitä tilanteita varten, joissa äänilaite on asennettava tai korjattava erikseen.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it a kernel extension?</summary>
+        <summary>Onko se ydinlaajennus?</summary>
         <p>Ei. Kyseessä on CoreAudio HAL -laajennus, joka sijaitsee kansiossa <code>/Library/Audio/Plug-Ins/HAL</code> ja toimii käyttäjätilassa. Palautustilassa ei tarvitse sallia mitään eikä tietoturva-asetuksia tarvitse laskea.</p>
       </details>
       <details class="faq-item">
-        <summary>Why does macOS ask for my password?</summary>
+        <summary>Miksi macOS kysyy salasanaani?</summary>
         <p>Järjestelmän äänilaajennusten kansio kuuluu macOS:lle, joten siihen kirjoittaminen vaatii järjestelmänvalvojan oikeudet. Paketti on allekirjoitettu Apple Developer ID -varmenteella ja Applen notarisoima, ja siksi Gatekeeper päästää sen läpi ilman varoitusta.</p>
       </details>
       <details class="faq-item">
-        <summary>How do I uninstall it?</summary>
+        <summary>Miten poistan sen?</summary>
         <p>Poista <code>SplitCamVirtualAudio.driver</code> kansiosta <code>/Library/Audio/Plug-Ins/HAL</code> ja käynnistä Mac tai äänipalvelu uudelleen. Virtuaalilaite katoaa mikrofonilistasta.</p>
       </details>
       <details class="faq-item">
-        <summary>Is there a virtual camera too?</summary>
+        <summary>Onko SplitCamissa myös virtuaalikamera?</summary>
         <p>Kyllä — SplitCamissa on samalla periaatteella toimiva <a href="https://splitcam.com/fi/virtual-camera" style="color:var(--blue)">virtuaalikamera</a>, jolla koottu kohtaus korvaa webkamerasi Zoomissa, Teamsissa, Meetissä ja kymmenissä muissa sovelluksissa.</p>
       </details>
       <details class="faq-item">
-        <summary>Does it cost anything?</summary>
+        <summary>Maksaako se mitään?</summary>
         <p>Ei. Ajuri on ilmainen, kuten SplitCam itsekin. Tiliä ei tarvitse luoda, mitään ei tarvitse tilata eikä ääneen lisätä vesileimaa.</p>
       </details>
     </div>

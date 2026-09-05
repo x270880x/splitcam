@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "Δωρεάν εικονικός οδηγός ήχου για macOS. Προσθέτει μια εικονική συσκευή ήχου που οι άλλες εφαρμογές βλέπουν ως κανονικό μικρόφωνο, ώστε ένα μείγμα από το μικρόφωνό σας, τον ήχο του συστήματος, μουσική και ήχο βίντεο να μπορεί να σταλεί σε Microsoft Teams, Telegram, Discord, Zoom ή σε κάθε εφαρμογή με είσοδο μικροφώνου.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "εικονικός οδηγός ήχου mac, εικονική συσκευή ήχου mac, εικονικό μικρόφωνο mac, μίκτης ήχου mac, ήχος συστήματος στο μικρόφωνο mac, loopback ήχου mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is a virtual audio driver?",
+          "name": "Τι είναι ο εικονικός οδηγός ήχου;",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Λογισμικό που προσθέτει στο macOS μια συσκευή ήχου χωρίς κανένα υλικό από πίσω. Οι εφαρμογές δεν μπορούν να τη διακρίνουν από ένα πραγματικό μικρόφωνο — εμφανίζεται στη λίστα μικροφώνων όπως κάθε άλλη είσοδος, οπότε ό,τι δρομολογείτε σε αυτήν μπορεί να σταλεί σε μια κλήση, ένα stream ή μια εγγραφή."
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which Macs does it support?",
+          "name": "Ποια Mac υποστηρίζει;",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Mac με Apple Silicon — M1, M2, M3, M4 και νεότερα — με macOS 12 Monterey ή νεότερο. Το εκτελέσιμο του οδηγού είναι φτιαγμένο μόνο για arm64, οπότε τα Mac με Intel δεν υποστηρίζονται."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Do I need it if I already have SplitCam for Mac?",
+          "name": "Το χρειάζομαι αν έχω ήδη το SplitCam για Mac;",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Συνήθως όχι. Η εφαρμογή για macOS περιέχει ήδη αυτόν τον οδηγό και τον εγκαθιστά για εσάς. Το αυτόνομο πακέτο υπάρχει για τις περιπτώσεις όπου η συσκευή ήχου πρέπει να εγκατασταθεί ή να επιδιορθωθεί ξεχωριστά."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it a kernel extension?",
+          "name": "Είναι επέκταση πυρήνα;",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Όχι. Είναι ένα πρόσθετο CoreAudio HAL που βρίσκεται στον /Library/Audio/Plug-Ins/HAL και τρέχει σε user space. Δεν υπάρχει τίποτα να επιτρέψετε σε Recovery mode και καμία ρύθμιση μειωμένης ασφάλειας να ενεργοποιήσετε."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Why does macOS ask for my password?",
+          "name": "Γιατί μου ζητάει κωδικό το macOS;",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ο φάκελος πρόσθετων ήχου του συστήματος ανήκει στο macOS, οπότε η εγγραφή μέσα σε αυτόν απαιτεί δικαιώματα διαχειριστή. Το πακέτο είναι υπογεγραμμένο με πιστοποιητικό Apple Developer ID και έχει περάσει notarization από την Apple, γι' αυτό ο Gatekeeper το αφήνει να περάσει χωρίς προειδοποίηση."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "Τι είναι ο εικονικός οδηγός ήχου;",
+          "name": "Πώς απεγκαθιστώ τον οδηγό;",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Διαγράψτε το SplitCamVirtualAudio.driver από τον /Library/Audio/Plug-Ins/HAL και μετά επανεκκινήστε το Mac ή την υπηρεσία ήχου. Η εικονική συσκευή εξαφανίζεται από τη λίστα μικροφώνων."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Ποια Mac υποστηρίζει;",
+          "name": "Υπάρχει και εικονική κάμερα;",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ναι — το SplitCam προσφέρει και εικονική κάμερα με την ίδια λογική: μια σύνθετη σκηνή παίρνει τη θέση της κάμεράς σας web σε Zoom, Teams, Meet και δεκάδες άλλες εφαρμογές."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Το χρειάζομαι αν έχω ήδη το SplitCam για Mac;",
+          "name": "Κοστίζει κάτι;",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Όχι. Ο οδηγός είναι δωρεάν, όπως και το ίδιο το SplitCam. Δεν χρειάζεται λογαριασμός, δεν υπάρχει συνδρομή και κανένα υδατογράφημα στον ήχο."
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Βάλτε μουσική μέσα σε μια κλήση</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>Η φωνή και το κομμάτι φτάνουν μαζί, στις στάθμες που ορίζετε εσείς, χωρίς η άλλη πλευρά να ακούει το ηχείο του laptop μέσα από το μικρόφωνό σας.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Μοιραστείτε ό,τι παίζει το Mac σας</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>Ο ήχος του συστήματος μπαίνει στην ίδια ροή, οπότε μια επίδειξη, ένα βίντεο ή μια ειδοποίηση ακούγεται ακριβώς όπως την ακούτε κι εσείς — όχι μέσα από το δωμάτιο.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Δείξτε βίντεο χωρίς να χαθεί ο ήχος</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>Ο διαμοιρασμός οθόνης συχνά στέλνει μόνο εικόνα. Δρομολογήστε τον ήχο του κλιπ στην εικονική συσκευή και θα ταξιδέψει μαζί με τη φωνή σας.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>Δύο μικρόφωνα, ένα κανάλι</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Παίρνετε συνέντευξη από κάποιον στον ίδιο χώρο ή χρησιμοποιείτε headset μαζί με ένα μικρόφωνο γραφείου — και τα δύο μπορούν να τροφοδοτούν μία μόνο έξοδο.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Ηχογραφήστε ολόκληρη τη συζήτηση</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>Ένα πρόγραμμα εγγραφής στραμμένο στην εικονική συσκευή καταγράφει ένα ενιαίο κομμάτι που περιέχει ήδη κάθε πηγή που μείξατε.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Εφαρμογές χωρίς δρομολόγηση ήχου</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>Οι περισσότερες εφαρμογές μηνυμάτων δείχνουν μια λίστα μικροφώνων και τίποτα άλλο. Αυτή η λίστα είναι το μόνο που χρειάζεται αυτός ο οδηγός.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Τι είναι η εικονική συσκευή ήχου;</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">Ένα μικρόφωνο που υπάρχει μόνο στο λογισμικό.</h2>
+        <p>Η εικονική συσκευή ήχου είναι ένας οδηγός που προσθέτει στο macOS μια είσοδο ήχου χωρίς κανένα υλικό από πίσω. Οι εφαρμογές δεν καταλαβαίνουν τη διαφορά — το CoreAudio τους δίνει το ίδιο είδος περιγραφής συσκευής που θα έδινε για ένα μικρόφωνο USB, οπότε η εικονική συσκευή εμφανίζεται στη λίστα μικροφώνων δίπλα στο πραγματικό σας υλικό.</p>
+        <p>Αυτό που την κάνει χρήσιμη είναι ότι η πλευρά της εισόδου παραμένει ανοιχτή. Ένας μίκτης — το SplitCam, για παράδειγμα — μπορεί να ρίξει μέσα της πολλά σήματα ταυτόχρονα: τη φωνή σας, τον ήχο που παίζει το ίδιο το Mac, μια εφαρμογή μουσικής, τον ήχο ενός κλιπ που δείχνετε. Η εφαρμογή στην άλλη άκρη εξακολουθεί να πιστεύει ότι ακούει ένα απλό μικρόφωνο.</p>
+        <p><strong style="color:var(--text)">Πρόκειται για πρόσθετο CoreAudio HAL, όχι για επέκταση πυρήνα.</strong> Τρέχει σε user space, δεν απαιτεί εκκίνηση με μειωμένη ασφάλεια και αφαιρείται διαγράφοντας έναν μόνο φάκελο.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -793,35 +793,35 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Όλα όσα αξίζει να ξέρετε πριν την εγκαταστήσετε.</p>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>What is a virtual audio driver?</summary>
+        <summary>Τι είναι ο εικονικός οδηγός ήχου;</summary>
         <p>Λογισμικό που προσθέτει στο macOS μια συσκευή ήχου χωρίς κανένα υλικό από πίσω. Οι εφαρμογές δεν μπορούν να τη διακρίνουν από ένα πραγματικό μικρόφωνο — εμφανίζεται στη λίστα μικροφώνων όπως κάθε άλλη είσοδος, οπότε ό,τι δρομολογείτε σε αυτήν μπορεί να σταλεί σε μια κλήση, ένα stream ή μια εγγραφή.</p>
       </details>
       <details class="faq-item">
-        <summary>Which Macs does it support?</summary>
+        <summary>Ποια Mac υποστηρίζει;</summary>
         <p>Mac με Apple Silicon — M1, M2, M3, M4 και νεότερα — με macOS 12 Monterey ή νεότερο. Το εκτελέσιμο του οδηγού είναι φτιαγμένο μόνο για arm64, οπότε τα Mac με Intel δεν υποστηρίζονται.</p>
       </details>
       <details class="faq-item">
-        <summary>Do I need it if I already have SplitCam for Mac?</summary>
+        <summary>Το χρειάζομαι αν έχω ήδη το SplitCam για Mac;</summary>
         <p>Συνήθως όχι. Η εφαρμογή για macOS περιέχει ήδη αυτόν τον οδηγό και τον εγκαθιστά για εσάς. Το αυτόνομο πακέτο υπάρχει για τις περιπτώσεις όπου η συσκευή ήχου πρέπει να εγκατασταθεί ή να επιδιορθωθεί ξεχωριστά.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it a kernel extension?</summary>
+        <summary>Είναι επέκταση πυρήνα;</summary>
         <p>Όχι. Είναι ένα πρόσθετο CoreAudio HAL που βρίσκεται στον <code>/Library/Audio/Plug-Ins/HAL</code> και τρέχει σε user space. Δεν υπάρχει τίποτα να επιτρέψετε σε Recovery mode και καμία ρύθμιση μειωμένης ασφάλειας να ενεργοποιήσετε.</p>
       </details>
       <details class="faq-item">
-        <summary>Why does macOS ask for my password?</summary>
+        <summary>Γιατί μου ζητάει κωδικό το macOS;</summary>
         <p>Ο φάκελος πρόσθετων ήχου του συστήματος ανήκει στο macOS, οπότε η εγγραφή μέσα σε αυτόν απαιτεί δικαιώματα διαχειριστή. Το πακέτο είναι υπογεγραμμένο με πιστοποιητικό Apple Developer ID και έχει περάσει notarization από την Apple, γι' αυτό ο Gatekeeper το αφήνει να περάσει χωρίς προειδοποίηση.</p>
       </details>
       <details class="faq-item">
-        <summary>Τι είναι ο εικονικός οδηγός ήχου;</summary>
+        <summary>Πώς απεγκαθιστώ τον οδηγό;</summary>
         <p>Διαγράψτε το <code>SplitCamVirtualAudio.driver</code> από τον <code>/Library/Audio/Plug-Ins/HAL</code> και μετά επανεκκινήστε το Mac ή την υπηρεσία ήχου. Η εικονική συσκευή εξαφανίζεται από τη λίστα μικροφώνων.</p>
       </details>
       <details class="faq-item">
-        <summary>Ποια Mac υποστηρίζει;</summary>
+        <summary>Υπάρχει και εικονική κάμερα;</summary>
         <p>Ναι — το SplitCam προσφέρει και <a href="https://splitcam.com/el/virtual-camera" style="color:var(--blue)">εικονική κάμερα</a> με την ίδια λογική: μια σύνθετη σκηνή παίρνει τη θέση της κάμεράς σας web σε Zoom, Teams, Meet και δεκάδες άλλες εφαρμογές.</p>
       </details>
       <details class="faq-item">
-        <summary>Το χρειάζομαι αν έχω ήδη το SplitCam για Mac;</summary>
+        <summary>Κοστίζει κάτι;</summary>
         <p>Όχι. Ο οδηγός είναι δωρεάν, όπως και το ίδιο το SplitCam. Δεν χρειάζεται λογαριασμός, δεν υπάρχει συνδρομή και κανένα υδατογράφημα στον ήχο.</p>
       </details>
     </div>

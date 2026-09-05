@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "דרייבר אודיו וירטואלי חינמי ל-macOS. הוא מוסיף התקן אודיו וירטואלי שאפליקציות אחרות רואות כמיקרופון רגיל, כך שאפשר לשלוח מיזוג של המיקרופון, אודיו המערכת, המוזיקה והאודיו מהווידאו אל Microsoft Teams, Telegram, Discord, Zoom או כל אפליקציה עם כניסת מיקרופון.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "דרייבר אודיו וירטואלי Mac, התקן אודיו וירטואלי Mac, מיקרופון וירטואלי Mac, מיקסר אודיו ל-Mac, מיזוג מקורות אודיו Mac, אודיו מערכת למיקרופון Mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which Macs does it support?",
+          "name": "באילו מחשבי Mac זה נתמך?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "מחשבי Mac עם Apple Silicon — M1, M2, M3, M4 ומעלה — שמריצים macOS 12 Monterey ומעלה. קובץ הדרייבר נבנה ל-arm64 בלבד, ולכן מחשבי Mac עם Intel אינם נתמכים."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "באילו מחשבי Mac זה נתמך?",
+          "name": "צריך את זה אם כבר יש לי SplitCam ל-Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "בדרך כלל לא. אפליקציית macOS כבר מכילה את הדרייבר הזה ומתקינה אותו בשבילכם. החבילה העצמאית קיימת למקרים שבהם צריך להתקין או לתקן את התקן האודיו בנפרד."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "צריך את זה אם כבר יש לי SplitCam ל-Mac?",
+          "name": "האם זו הרחבת ליבה של מערכת ההפעלה?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "לא. זהו תוסף CoreAudio HAL שיושב ב-/Library/Audio/Plug-Ins/HAL ורץ במרחב המשתמש. אין מה לאשר במצב שחזור ואין הגדרת אבטחה מופחתת להפעיל."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "האם זו הרחבת ליבה של מערכת ההפעלה?",
+          "name": "למה macOS מבקש את הסיסמה שלי?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "תיקיית תוספי האודיו של המערכת שייכת ל-macOS, ולכן כתיבה אליה דורשת הרשאות מנהל. החבילה חתומה בתעודת Apple Developer ID ואושרה נוטריונית על ידי Apple, ולכן Gatekeeper מעביר אותה בלי אזהרה."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "למה macOS מבקש את הסיסמה שלי?",
+          "name": "איך מסירים את הדרייבר?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "מחקו את SplitCamVirtualAudio.driver מתוך /Library/Audio/Plug-Ins/HAL, ואז הפעילו מחדש את ה-Mac או את שירות האודיו. ההתקן הווירטואלי נעלם מרשימת המיקרופונים."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is there a virtual camera too?",
+          "name": "יש גם מצלמה וירטואלית?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "כן — ל-SplitCam יש מצלמה וירטואלית על אותו עיקרון, שמאפשרת לסצנה שבניתם להחליף את מצלמת הרשת שלכם ב-Zoom, ב-Teams, ב-Meet ובעשרות אפליקציות נוספות."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does it cost anything?",
+          "name": "זה עולה משהו?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "לא. הדרייבר חינמי, כמו SplitCam עצמה. אין חשבון ליצור, אין למה להירשם ואין סימן מים על האודיו."
@@ -661,32 +661,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>השמיעו מוזיקה בתוך שיחה</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>הקול והרצועה מגיעים יחד, בעוצמות שאתם קובעים, בלי שהצד השני ישמע את רמקול המחשב הנייד דרך המיקרופון שלכם.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>שתפו את מה שה-Mac שלכם מנגן</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>אודיו המערכת נכנס לאותו ערוץ, כך שהדגמה, וידאו או צליל התראה נשמעים בדיוק כפי שאתם שומעים אותם — ולא דרך החדר.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>הראו וידאו בלי לאבד את הקול</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>שיתוף מסך מעביר לא פעם תמונה בלבד. נתבו את האודיו של הסרטון אל ההתקן הווירטואלי, והוא יעבור יחד עם הקול שלכם.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>שני מיקרופונים, ערוץ אחד</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>מראיינים מישהו באותו חדר, או עובדים עם אוזניות עם מיקרופון לצד מיקרופון שולחני — שניהם יכולים להזין פלט אחד.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>הקליטו את כל השיחה</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>מקליט שמופנה אל ההתקן הווירטואלי קולט רצועה אחת שכבר מכילה את כל המקורות שמיזגתם.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>אפליקציות בלי ניתוב אודיו</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>רוב אפליקציות ההודעות מציגות רשימת מיקרופונים ותו לא. הרשימה הזו היא כל מה שהדרייבר הזה צריך.</p>
       </div>
     </div>
   </div>
@@ -751,10 +751,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">מהו התקן אודיו וירטואלי?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">מיקרופון שקיים רק בתוכנה.</h2>
+        <p>התקן אודיו וירטואלי הוא דרייבר שמוסיף ל-macOS כניסת אודיו שאין מאחוריה חומרה. אפליקציות לא מבחינות בהבדל — CoreAudio מוסר להן בדיוק את אותו סוג של תיאור התקן שהוא מוסר על מיקרופון USB, ולכן ההתקן הווירטואלי מופיע ברשימת המיקרופונים לצד החומרה האמיתית שלכם.</p>
+        <p>מה שהופך אותו לשימושי הוא שצד הכניסה שלו פתוח. מיקסר — SplitCam, למשל — יכול להזרים לתוכו כמה אותות בבת אחת: הקול שלכם, הקול שה-Mac עצמו משמיע, נגן מוזיקה, האודיו של סרטון שאתם מציגים. האפליקציה בצד השני עדיין בטוחה שהיא מאזינה למיקרופון רגיל אחד.</p>
+        <p><strong style="color:var(--text)">זהו תוסף CoreAudio HAL, לא הרחבת ליבה.</strong> הוא רץ במרחב המשתמש, אינו דורש אתחול עם הגדרת אבטחה מופחתת, ואפשר להסיר אותו על ידי מחיקת תיקייה אחת.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -804,31 +804,31 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
         <p>תוכנה שמוסיפה ל-macOS התקן אודיו בלי שיש חומרה מאחוריו. אפליקציות לא מבחינות בינו לבין מיקרופון אמיתי — הוא מופיע ברשימת המיקרופונים כמו כל כניסה אחרת, כך שכל מה שמנותב אליו אפשר לשלוח לשיחה, לשידור או להקלטה.</p>
       </details>
       <details class="faq-item">
-        <summary>Which Macs does it support?</summary>
+        <summary>באילו מחשבי Mac זה נתמך?</summary>
         <p>מחשבי Mac עם Apple Silicon — M1, M2, M3, M4 ומעלה — שמריצים macOS 12 Monterey ומעלה. קובץ הדרייבר נבנה ל-arm64 בלבד, ולכן מחשבי Mac עם Intel אינם נתמכים.</p>
       </details>
       <details class="faq-item">
-        <summary>באילו מחשבי Mac זה נתמך?</summary>
+        <summary>צריך את זה אם כבר יש לי SplitCam ל-Mac?</summary>
         <p>בדרך כלל לא. אפליקציית macOS כבר מכילה את הדרייבר הזה ומתקינה אותו בשבילכם. החבילה העצמאית קיימת למקרים שבהם צריך להתקין או לתקן את התקן האודיו בנפרד.</p>
       </details>
       <details class="faq-item">
-        <summary>צריך את זה אם כבר יש לי SplitCam ל-Mac?</summary>
+        <summary>האם זו הרחבת ליבה של מערכת ההפעלה?</summary>
         <p>לא. זהו תוסף CoreAudio HAL שיושב ב-<code>/Library/Audio/Plug-Ins/HAL</code> ורץ במרחב המשתמש. אין מה לאשר במצב שחזור ואין הגדרת אבטחה מופחתת להפעיל.</p>
       </details>
       <details class="faq-item">
-        <summary>האם זו הרחבת ליבה של מערכת ההפעלה?</summary>
+        <summary>למה macOS מבקש את הסיסמה שלי?</summary>
         <p>תיקיית תוספי האודיו של המערכת שייכת ל-macOS, ולכן כתיבה אליה דורשת הרשאות מנהל. החבילה חתומה בתעודת Apple Developer ID ואושרה נוטריונית על ידי Apple, ולכן Gatekeeper מעביר אותה בלי אזהרה.</p>
       </details>
       <details class="faq-item">
-        <summary>למה macOS מבקש את הסיסמה שלי?</summary>
+        <summary>איך מסירים את הדרייבר?</summary>
         <p>מחקו את <code>SplitCamVirtualAudio.driver</code> מתוך <code>/Library/Audio/Plug-Ins/HAL</code>, ואז הפעילו מחדש את ה-Mac או את שירות האודיו. ההתקן הווירטואלי נעלם מרשימת המיקרופונים.</p>
       </details>
       <details class="faq-item">
-        <summary>Is there a virtual camera too?</summary>
+        <summary>יש גם מצלמה וירטואלית?</summary>
         <p>כן — ל-SplitCam יש <a href="https://splitcam.com/he/virtual-camera" style="color:var(--blue)">מצלמה וירטואלית</a> על אותו עיקרון, שמאפשרת לסצנה שבניתם להחליף את מצלמת הרשת שלכם ב-Zoom, ב-Teams, ב-Meet ובעשרות אפליקציות נוספות.</p>
       </details>
       <details class="faq-item">
-        <summary>Does it cost anything?</summary>
+        <summary>זה עולה משהו?</summary>
         <p>לא. הדרייבר חינמי, כמו SplitCam עצמה. אין חשבון ליצור, אין למה להירשם ואין סימן מים על האודיו.</p>
       </details>
     </div>

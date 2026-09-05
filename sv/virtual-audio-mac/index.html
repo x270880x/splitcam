@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "Gratis virtuell ljuddrivrutin för macOS. Den lägger till en virtuell ljudenhet som andra appar ser som en vanlig mikrofon, så att en mix av din mikrofon, systemljud, musik och videoljud kan skickas till Microsoft Teams, Telegram, Discord, Zoom eller vilken app som helst med mikrofoningång.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "virtuell ljuddrivrutin mac, virtuell ljudenhet mac, virtuell mikrofon mac, ljudmixer mac, mixa ljudkällor mac, loopback ljud mac, systemljud till mikrofon mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "How do I uninstall it?",
+          "name": "Hur avinstallerar jag den?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ta bort SplitCamVirtualAudio.driver från /Library/Audio/Plug-Ins/HAL och starta sedan om datorn eller ljudtjänsten. Den virtuella enheten försvinner ur mikrofonlistan."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Hur avinstallerar jag den?",
+          "name": "Finns det en virtuell kamera också?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ja — SplitCam har en virtuell kamera byggd på samma princip, som låter en färdig scen ersätta din webbkamera i Zoom, Teams, Meet och dussintals andra appar."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Finns det en virtuell kamera också?",
+          "name": "Kostar den något?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nej. Drivrutinen är gratis, precis som SplitCam självt. Det finns inget konto att skapa, ingenting att prenumerera på och ingen vattenstämpel läggs på ljudet."
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Spela musik in i ett samtal</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>Rösten och spåret kommer fram tillsammans, på de nivåer du ställt in, utan att motparten hör laptopens högtalare genom din mikrofon.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Dela det din Mac spelar upp</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>Systemljudet går in i samma flöde, så att en demo, en video eller ett aviseringsljud hörs precis som du hör det — inte via rummet.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Visa en video utan att tappa ljudet</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>Skärmdelning skickar ofta bara bilden. Dirigera in klippets ljud i den virtuella enheten, så följer det med din röst.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>Två mikrofoner, en kanal</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Intervjuar du någon i samma rum, eller använder du ett headset plus en bordsmikrofon — båda kan mata en och samma utgång.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Spela in hela samtalet</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>Ett inspelningsprogram som är inställt på den virtuella enheten spelar in ett enda spår som redan innehåller alla källor du mixat.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Appar utan egen ljuddirigering</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>De flesta meddelandeappar har en mikrofonlista och inget mer. Den listan är allt den här drivrutinen behöver.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Vad är en virtuell ljudenhet?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">En mikrofon som bara finns i mjukvaran.</h2>
+        <p>En virtuell ljudenhet är en drivrutin som lägger till en ljudingång i macOS utan någon hårdvara bakom sig. Appar märker ingen skillnad — CoreAudio ger dem samma sorts enhetsbeskrivning som för en USB-mikrofon, så den virtuella enheten dyker upp i mikrofonlistan bredvid din riktiga hårdvara.</p>
+        <p>Det som gör den användbar är att ingångssidan är öppen. En mixer — SplitCam, till exempel — kan mata in flera signaler i den samtidigt: din röst, ljudet som din Mac själv spelar upp, en musikspelare, ljudet från ett klipp du visar. Appen i andra änden tror fortfarande att den lyssnar på en helt vanlig mikrofon.</p>
+        <p><strong style="color:var(--text)">Det här är en CoreAudio HAL-insticksmodul, inte ett kernel-tillägg.</strong> Den körs i användarläge, kräver ingen omstart med sänkt säkerhetsnivå och tas bort genom att du raderar en enda mapp.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -813,15 +813,15 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
         <p>Systemets mapp för ljudinsticksmoduler tillhör macOS, så att skriva i den kräver administratörsbehörighet. Paketet är signerat med ett Apple Developer ID-certifikat och notariserat av Apple, och därför släpper Gatekeeper igenom det utan varning.</p>
       </details>
       <details class="faq-item">
-        <summary>How do I uninstall it?</summary>
+        <summary>Hur avinstallerar jag den?</summary>
         <p>Ta bort <code>SplitCamVirtualAudio.driver</code> från <code>/Library/Audio/Plug-Ins/HAL</code> och starta sedan om datorn eller ljudtjänsten. Den virtuella enheten försvinner ur mikrofonlistan.</p>
       </details>
       <details class="faq-item">
-        <summary>Hur avinstallerar jag den?</summary>
+        <summary>Finns det en virtuell kamera också?</summary>
         <p>Ja — SplitCam har en <a href="https://splitcam.com/sv/virtual-camera" style="color:var(--blue)">virtuell kamera</a> byggd på samma princip, som låter en färdig scen ersätta din webbkamera i Zoom, Teams, Meet och dussintals andra appar.</p>
       </details>
       <details class="faq-item">
-        <summary>Finns det en virtuell kamera också?</summary>
+        <summary>Kostar den något?</summary>
         <p>Nej. Drivrutinen är gratis, precis som SplitCam självt. Det finns inget konto att skapa, ingenting att prenumerera på och ingen vattenstämpel läggs på ljudet.</p>
       </details>
     </div>

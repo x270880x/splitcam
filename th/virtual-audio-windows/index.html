@@ -174,7 +174,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which programs can use it?",
+          "name": "โปรแกรมไหนใช้มันได้บ้าง?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "โปรแกรมใดก็ตามที่ให้คุณเลือกไมโครโฟนหรืออินพุตเสียงได้ มันปรากฏในรายการอินพุตของ Windows ข้าง ๆ ซาวด์การ์ดของคุณ แอปโทร โปรแกรมอัดเสียง เบราว์เซอร์ และ OBS จึงเข้าถึงมันได้ด้วยวิธีเดียวกันหมด"
@@ -182,7 +182,7 @@
         },
         {
           "@type": "Question",
-          "name": "โปรแกรมไหนใช้มันได้บ้าง?",
+          "name": "ใช้มันแล้วเสียงที่ผู้ชมได้ยินเปลี่ยนไปไหม?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "ไม่ สตรีมและการบันทึกของคุณยังรับเสียงจากมิกเซอร์เหมือนเดิม ไมโครโฟนเสมือนเป็นผู้ฟังที่เพิ่มเข้ามา ไม่ใช่ตัวที่มาแทนของเดิม"
@@ -190,7 +190,7 @@
         },
         {
           "@type": "Question",
-          "name": "ใช้มันแล้วสิ่งที่ผู้ชมได้ยินเปลี่ยนไปไหม?",
+          "name": "อุปกรณ์ไม่ขึ้นในรายการ ต้องทำอย่างไร?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "SplitCam จะตรวจตอนเปิดโปรแกรมว่าไดรเวอร์โหลดขึ้นมาหรือไม่ และแสดงคำเตือนถ้าไม่ขึ้น ในกรณีนั้นโปรแกรมยังทำงานต่อได้ แต่อุปกรณ์จะใช้ไม่ได้ ถ้าไม่มีคำเตือนขึ้นเลย เป็นไปได้ว่าโปรแกรมปลายทางสร้างรายการอินพุตของมันไว้ก่อนที่จะติดตั้ง SplitCam — ให้เปิดการตั้งค่าเสียงของโปรแกรมนั้นใหม่"
@@ -198,7 +198,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it free?",
+          "name": "ใช้ฟรีไหม?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "ฟรี มันเป็นส่วนหนึ่งของ SplitCam เวอร์ชัน Windows ไม่ใช่ส่วนเสริม จึงไม่มีอะไรเกี่ยวกับมันที่ต้องใช้คีย์ลิขสิทธิ์หรือบัญชีผู้ใช้"
@@ -664,12 +664,12 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎚</div>
         <h3>มิกเซอร์เสียง — ภายใน SplitCam</h3>
-        <p>A strip per source, each with its own volume, mute and monitoring. Noise suppression on the microphone, and filters that belong to the individual source: VST plug-ins, Delay, Sound Offset and the Audio Compressor.</p>
+        <p>หนึ่งช่องสัญญาณต่อหนึ่งแหล่งสัญญาณ แต่ละช่องมีระดับเสียง ปุ่มปิดเสียง และการมอนิเตอร์ของตัวเอง มีระบบลดเสียงรบกวนให้ไมโครโฟน และมีฟิลเตอร์ที่เป็นของแต่ละแหล่งสัญญาณโดยเฉพาะ: ปลั๊กอิน VST, Delay, Sound Offset และ Audio Compressor</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎙</div>
         <h3>ไมโครโฟนเสมือน — ที่ระดับ Windows</h3>
-        <p>An audio input registered with Windows, sitting in the same list as your sound card and your headset. Programs do not integrate with it one by one; they enumerate the inputs Windows reports, and this is one of them.</p>
+        <p>อินพุตเสียงที่ลงทะเบียนไว้กับ Windows อยู่ในรายการเดียวกับซาวด์การ์ดและหูฟังพร้อมไมค์ของคุณ โปรแกรมต่าง ๆ ไม่ต้องไปเชื่อมต่อกับมันทีละตัว แค่ไล่อ่านรายการอินพุตที่ Windows รายงานมา แล้วตัวนี้ก็เป็นหนึ่งในรายการนั้น</p>
       </div>
     </div>
   </div>
@@ -707,22 +707,22 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">💬</div>
         <h3>การประชุมและสายสนทนา</h3>
-        <p>A conference program gives you one input and no way to add a second track to it. Selecting SplitCam turns that single input into everything you have balanced — the voice, the clip you are reacting to, the page you are demonstrating.</p>
+        <p>โปรแกรมประชุมให้คุณใช้อินพุตได้ทางเดียว และไม่มีทางเพิ่มแทร็กที่สองเข้าไปในนั้น พอเลือก SplitCam อินพุตทางเดียวนั้นก็กลายเป็นทุกอย่างที่คุณปรับสมดุลไว้ — เสียงพูด คลิปที่คุณกำลังรีแอคอยู่ และหน้าเว็บที่คุณกำลังสาธิต</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">⏺</div>
         <h3>โปรแกรมอัดเสียงและตัวจดบันทึก</h3>
-        <p>Anything that records from a microphone can capture the assembled session instead of just the room, which keeps a walkthrough and its sound in one file rather than two that have to be lined up afterwards.</p>
+        <p>อะไรก็ตามที่บันทึกเสียงจากไมโครโฟนได้ ก็เก็บเซสชันที่ประกอบเสร็จแล้วได้ แทนที่จะได้แค่เสียงในห้อง คลิปสาธิตขั้นตอนกับเสียงของมันจึงอยู่ในไฟล์เดียว ไม่ใช่สองไฟล์ที่ต้องมาไล่ให้ตรงกันทีหลัง</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🌐</div>
         <h3>แท็บเบราว์เซอร์</h3>
-        <p>Web apps ask the browser for a microphone and get the same Windows list. A recording page, a web meeting or a voice widget can take the SplitCam device without installing anything.</p>
+        <p>เว็บแอปขอไมโครโฟนจากเบราว์เซอร์ แล้วได้รายการเดียวกันของ Windows กลับมา หน้าเว็บสำหรับอัดเสียง การประชุมผ่านเว็บ หรือวิดเจ็ตรับเสียง จึงเลือกอุปกรณ์ SplitCam ได้โดยไม่ต้องติดตั้งอะไรเพิ่ม</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎛</div>
         <h3>ซอฟต์แวร์ออกอากาศตัวอื่น</h3>
-        <p>If you also run OBS or a similar tool, it can add the SplitCam device as an audio input capture and treat the assembled sound as a single source instead of rebuilding the same routing twice.</p>
+        <p>ถ้าคุณใช้ OBS หรือเครื่องมือคล้ายกันอยู่ด้วย ก็เพิ่มอุปกรณ์ SplitCam เข้าไปเป็น audio input capture ได้ แล้วมองเสียงที่ประกอบเสร็จแล้วเป็นแหล่งสัญญาณเดียว แทนที่จะต้องมาสร้างเส้นทางเสียงชุดเดิมซ้ำอีกรอบ</p>
       </div>
     </div>
   </div>
@@ -800,19 +800,19 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
         <p>มิกเซอร์เสียงคือที่ที่คุณรวมแหล่งสัญญาณต่าง ๆ ไว้ภายใน SplitCam และเสียงที่รวมแล้วนั้นคือสิ่งที่สตรีมและการบันทึกของคุณพาไป ส่วนไมโครโฟนเสมือนเป็นเอาต์พุตเพิ่มอีกทางของเซสชันเดียวกัน มันทำให้เสียงนั้นปรากฏต่อ Windows ในฐานะอุปกรณ์อินพุต โปรแกรมที่ไม่รู้จัก SplitCam เลยจึงเลือกมันแล้วฟังได้</p>
       </details>
       <details class="faq-item">
-        <summary>Which programs can use it?</summary>
+        <summary>โปรแกรมไหนใช้มันได้บ้าง?</summary>
         <p>โปรแกรมใดก็ตามที่ให้คุณเลือกไมโครโฟนหรืออินพุตเสียงได้ มันปรากฏในรายการอินพุตของ Windows ข้าง ๆ ซาวด์การ์ดของคุณ แอปโทร โปรแกรมอัดเสียง เบราว์เซอร์ และ OBS จึงเข้าถึงมันได้ด้วยวิธีเดียวกันหมด</p>
       </details>
       <details class="faq-item">
-        <summary>โปรแกรมไหนใช้มันได้บ้าง?</summary>
+        <summary>ใช้มันแล้วเสียงที่ผู้ชมได้ยินเปลี่ยนไปไหม?</summary>
         <p>ไม่ สตรีมและการบันทึกของคุณยังรับเสียงจากมิกเซอร์เหมือนเดิม ไมโครโฟนเสมือนเป็นผู้ฟังที่เพิ่มเข้ามา ไม่ใช่ตัวที่มาแทนของเดิม</p>
       </details>
       <details class="faq-item">
-        <summary>ใช้มันแล้วสิ่งที่ผู้ชมได้ยินเปลี่ยนไปไหม?</summary>
+        <summary>อุปกรณ์ไม่ขึ้นในรายการ ต้องทำอย่างไร?</summary>
         <p>SplitCam จะตรวจตอนเปิดโปรแกรมว่าไดรเวอร์โหลดขึ้นมาหรือไม่ และแสดงคำเตือนถ้าไม่ขึ้น ในกรณีนั้นโปรแกรมยังทำงานต่อได้ แต่อุปกรณ์จะใช้ไม่ได้ ถ้าไม่มีคำเตือนขึ้นเลย เป็นไปได้ว่าโปรแกรมปลายทางสร้างรายการอินพุตของมันไว้ก่อนที่จะติดตั้ง SplitCam — ให้เปิดการตั้งค่าเสียงของโปรแกรมนั้นใหม่</p>
       </details>
       <details class="faq-item">
-        <summary>Is it free?</summary>
+        <summary>ใช้ฟรีไหม?</summary>
         <p>ฟรี มันเป็นส่วนหนึ่งของ SplitCam เวอร์ชัน Windows ไม่ใช่ส่วนเสริม จึงไม่มีอะไรเกี่ยวกับมันที่ต้องใช้คีย์ลิขสิทธิ์หรือบัญชีผู้ใช้</p>
       </details>
     </div>

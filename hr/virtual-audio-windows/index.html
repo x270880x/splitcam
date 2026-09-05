@@ -166,7 +166,7 @@
         },
         {
           "@type": "Question",
-          "name": "How is this different from the Audio Mixer?",
+          "name": "Po čemu se to razlikuje od Audio miksera?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Audio mikser je mjesto gdje izvore spajate unutar SplitCama, i taj spoj nose vaš stream i vaša snimka. Virtualni mikrofon dodatni je izlaz iste sesije: čini zvuk dostupnim Windowsima kao ulazni uređaj, pa ga može odabrati i slušati program koji o SplitCamu ne zna ništa."
@@ -174,7 +174,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which programs can use it?",
+          "name": "Koji ga programi mogu koristiti?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Svaki program koji vam daje da odaberete mikrofon ili audio ulaz. Pojavljuje se na popisu ulaza u Windowsima pokraj vaše zvučne kartice, pa do njega jednako dolaze aplikacije za pozive, snimači, preglednici i OBS."
@@ -182,7 +182,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does using it change what my viewers hear?",
+          "name": "Mijenja li se ono što čuju moji gledatelji ako ga koristim?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ne. Vaš stream i vaša snimka i dalje uzimaju zvuk iz miksera kao i prije. Virtualni mikrofon dodatni je slušatelj, a ne zamjena."
@@ -190,7 +190,7 @@
         },
         {
           "@type": "Question",
-          "name": "The device is missing from the list. What now?",
+          "name": "Uređaja nema na popisu. Što sad?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "SplitCam pri pokretanju provjerava je li se upravljački program učitao i prikazuje upozorenje ako nije; u tom slučaju program nastavlja raditi, ali uređaj je nedostupan. Ako upozorenja nije bilo, program primatelj možda je složio svoj popis ulaza prije nego što je SplitCam instaliran — ponovno otvorite njegove audio postavke."
@@ -198,7 +198,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it free?",
+          "name": "Je li besplatan?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Da. Dio je verzije za Windows, a ne dodatak, pa ništa u vezi s njim ne stoji iza licencnog ključa ni računa."
@@ -664,12 +664,12 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎚</div>
         <h3>Audio mikser — unutar SplitCama</h3>
-        <p>A strip per source, each with its own volume, mute and monitoring. Noise suppression on the microphone, and filters that belong to the individual source: VST plug-ins, Delay, Sound Offset and the Audio Compressor.</p>
+        <p>Po jedan kanal za svaki izvor, svaki s vlastitom glasnoćom, utišavanjem i praćenjem. Potiskivanje šuma na mikrofonu i filtri koji pripadaju pojedinom izvoru: VST dodaci, Delay, Sound Offset i Audio Compressor.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎙</div>
         <h3>Virtualni mikrofon — na razini Windowsa</h3>
-        <p>An audio input registered with Windows, sitting in the same list as your sound card and your headset. Programs do not integrate with it one by one; they enumerate the inputs Windows reports, and this is one of them.</p>
+        <p>Audio ulaz prijavljen samim Windowsima, na istom popisu na kojem su vaša zvučna kartica i slušalice s mikrofonom. Programi se s njim ne integriraju jedan po jedan; popisuju ulaze koje Windows nudi, a ovaj je jedan od njih.</p>
       </div>
     </div>
   </div>
@@ -707,22 +707,22 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">💬</div>
         <h3>Sastanci i pozivi</h3>
-        <p>A conference program gives you one input and no way to add a second track to it. Selecting SplitCam turns that single input into everything you have balanced — the voice, the clip you are reacting to, the page you are demonstrating.</p>
+        <p>Program za videosastanke daje vam jedan ulaz, a drugi zapis nemate kamo dodati. Odabirom SplitCama taj jedan ulaz postaje sve što ste izbalansirali — glas, video na koji reagirate, stranica koju pokazujete.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">⏺</div>
         <h3>Snimači i alati za bilješke</h3>
-        <p>Anything that records from a microphone can capture the assembled session instead of just the room, which keeps a walkthrough and its sound in one file rather than two that have to be lined up afterwards.</p>
+        <p>Sve što snima s mikrofona može uhvatiti sastavljenu sesiju, a ne samo ono što se čuje u prostoriji — pa vodič korak po korak i njegov zvuk ostaju u jednoj datoteci, a ne u dvije koje se poslije moraju poravnati.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🌐</div>
         <h3>Kartice preglednika</h3>
-        <p>Web apps ask the browser for a microphone and get the same Windows list. A recording page, a web meeting or a voice widget can take the SplitCam device without installing anything.</p>
+        <p>Web aplikacije od preglednika traže mikrofon i dobiju isti popis koji vodi Windows. Stranica za snimanje, sastanak u pregledniku ili glasovni widget mogu uzeti SplitCamov uređaj bez ikakve instalacije.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎛</div>
         <h3>Drugi programi za streaming</h3>
-        <p>If you also run OBS or a similar tool, it can add the SplitCam device as an audio input capture and treat the assembled sound as a single source instead of rebuilding the same routing twice.</p>
+        <p>Ako uz to koristite OBS ili sličan alat, on može dodati SplitCamov uređaj kao Audio Input Capture i sastavljeni zvuk tretirati kao jedan izvor, umjesto da isto usmjeravanje slažete po drugi put.</p>
       </div>
     </div>
   </div>
@@ -796,23 +796,23 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
         <p>Ne. Audio uređaj prijavljuje SplitCamova vlastita instalacija, pa je instaliranje SplitCama za Windows cijeli posao. Nema zasebnog paketa koji treba preuzeti.</p>
       </details>
       <details class="faq-item">
-        <summary>How is this different from the Audio Mixer?</summary>
+        <summary>Po čemu se to razlikuje od Audio miksera?</summary>
         <p>Audio mikser je mjesto gdje izvore spajate unutar SplitCama, i taj spoj nose vaš stream i vaša snimka. Virtualni mikrofon dodatni je izlaz iste sesije: čini zvuk dostupnim Windowsima kao ulazni uređaj, pa ga može odabrati i slušati program koji o SplitCamu ne zna ništa.</p>
       </details>
       <details class="faq-item">
-        <summary>Which programs can use it?</summary>
+        <summary>Koji ga programi mogu koristiti?</summary>
         <p>Svaki program koji vam daje da odaberete mikrofon ili audio ulaz. Pojavljuje se na popisu ulaza u Windowsima pokraj vaše zvučne kartice, pa do njega jednako dolaze aplikacije za pozive, snimači, preglednici i OBS.</p>
       </details>
       <details class="faq-item">
-        <summary>Does using it change what my viewers hear?</summary>
+        <summary>Mijenja li se ono što čuju moji gledatelji ako ga koristim?</summary>
         <p>Ne. Vaš stream i vaša snimka i dalje uzimaju zvuk iz miksera kao i prije. Virtualni mikrofon dodatni je slušatelj, a ne zamjena.</p>
       </details>
       <details class="faq-item">
-        <summary>The device is missing from the list. What now?</summary>
+        <summary>Uređaja nema na popisu. Što sad?</summary>
         <p>SplitCam pri pokretanju provjerava je li se upravljački program učitao i prikazuje upozorenje ako nije; u tom slučaju program nastavlja raditi, ali uređaj je nedostupan. Ako upozorenja nije bilo, program primatelj možda je složio svoj popis ulaza prije nego što je SplitCam instaliran — ponovno otvorite njegove audio postavke.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it free?</summary>
+        <summary>Je li besplatan?</summary>
         <p>Da. Dio je verzije za Windows, a ne dodatak, pa ništa u vezi s njim ne stoji iza licencnog ključa ni računa.</p>
       </details>
     </div>

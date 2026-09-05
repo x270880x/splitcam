@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "Ingyenes virtuális hangillesztőprogram macOS-re. Olyan virtuális hangeszközt ad hozzá, amelyet a többi alkalmazás közönséges mikrofonként lát, így a mikrofonod, a rendszerhang, a zene és a videók hangjának keveréke elküldhető a Microsoft Teamsbe, a Telegramba, a Discordra, a Zoomba vagy bármely mikrofonbemenettel rendelkező alkalmazásba.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "virtuális hangeszköz mac, virtuális mikrofon mac, virtuális hangillesztőprogram mac, mac hangmixer, hangforrások keverése mac, rendszerhang mikrofonba mac, loopback hang mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is a virtual audio driver?",
+          "name": "Mi az a virtuális hangillesztőprogram?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Olyan szoftver, amely úgy ad hangeszközt a macOS-hez, hogy nincs mögötte hardver. Az alkalmazások nem tudják megkülönböztetni egy valódi mikrofontól — ugyanúgy megjelenik a mikrofonlistában, mint bármelyik másik bemenet, így minden, amit ráirányítasz, elküldhető egy hívásba, egy streambe vagy egy felvételbe."
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Mi az a virtuális hangillesztőprogram?",
+          "name": "Milyen Maceket támogat?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Az Apple Silicon chipes Macek — M1, M2, M3, M4 és újabbak —, amelyeken macOS 12 Monterey vagy újabb fut. Az illesztőprogram csak arm64-re készült, így az Intel-Maceket nem támogatja."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Do I need it if I already have SplitCam for Mac?",
+          "name": "Szükségem van rá, ha már megvan a Mac-es SplitCam?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Általában nem. A macOS-alkalmazás már tartalmazza ezt az illesztőprogramot, és telepíti is helyetted. A különálló csomag azokra az esetekre való, amikor a hangeszközt önmagában kell telepíteni vagy megjavítani."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Milyen Maceket támogat?",
+          "name": "Kernelbővítmény ez?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nem. Ez egy CoreAudio HAL-bővítmény, amely a /Library/Audio/Plug-Ins/HAL mappában él, és felhasználói módban fut. Semmit nem kell engedélyezni helyreállítási módban, és nem kell csökkentett biztonsági beállítást bekapcsolni."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Why does macOS ask for my password?",
+          "name": "Miért kéri a macOS a jelszavamat?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "A rendszer hangbővítmény-mappája a macOS-hez tartozik, ezért az írásához rendszergazdai jog kell. A csomag Apple Developer ID-tanúsítvánnyal van aláírva, és az Apple hitelesítette — ezért engedi át a Gatekeeper figyelmeztetés nélkül."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "Szükségem van rá, ha már van SplitCam a Macemen?",
+          "name": "Hogyan távolíthatom el?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Töröld a SplitCamVirtualAudio.driver fájlt a /Library/Audio/Plug-Ins/HAL mappából, majd indítsd újra a Macet vagy a hangszolgáltatást. A virtuális eszköz eltűnik a mikrofonlistából."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Kernelbővítmény?",
+          "name": "Van virtuális kamera is?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Igen — a SplitCam ugyanezen az elven virtuális kamerát is kínál, amellyel egy összeállított jelenet léphet a webkamerád helyébe a Zoomban, a Teamsben, a Meetben és több tucat további alkalmazásban."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Miért kéri a macOS a jelszavamat?",
+          "name": "Kerül valamibe?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nem. Az illesztőprogram ingyenes, és maga a SplitCam is az. Nem kell fiókot létrehozni, nincs mire előfizetni, és nem kerül vízjel a hangra."
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Zene a hívásba</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>A hangod és a zene együtt érkezik meg, az általad beállított szinteken, anélkül hogy a másik oldal a laptop hangszóróját hallaná a mikrofonodon keresztül.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Oszd meg, amit a Mac lejátszik</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>A rendszerhang ugyanabba a sávba kerül, így egy bemutató, egy videó vagy egy értesítés pontosan úgy hallatszik, ahogyan te hallod — nem pedig a szobán át.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Videó úgy, hogy a hang is átmenjen</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>A képernyőmegosztás gyakran csak a képet küldi tovább. Irányítsd a videó hangját a virtuális eszközbe, és a hangoddal együtt megy át.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>Két mikrofon, egy csatorna</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Interjú valakivel ugyanabban a szobában, vagy egy headset és egy asztali mikrofon együtt — mindkettő ugyanazt az egyetlen kimenetet táplálhatja.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Rögzítsd a teljes beszélgetést</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>A virtuális eszközre irányított hangrögzítő egyetlen sávot vesz fel, amelyben már benne van minden forrás, amit összekevertél.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Alkalmazások hangútvonal-beállítás nélkül</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>A legtöbb üzenetküldőben csak egy mikrofonválasztó legördülő menü van, semmi több. Ennek az illesztőprogramnak pontosan ennyi is elég.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Mi az a virtuális hangeszköz?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">Mikrofon, amely csak szoftverben létezik.</h2>
+        <p>A virtuális hangeszköz olyan illesztőprogram, amely úgy ad hangbemenetet a macOS-hez, hogy nincs mögötte hardver. Az alkalmazások nem látják a különbséget — a CoreAudio ugyanolyan eszközleírást ad át nekik, mint amilyet egy USB-mikrofonról adna, így a virtuális eszköz ott jelenik meg a mikrofonlistában a valódi hardvered mellett.</p>
+        <p>Attól hasznos, hogy a bemeneti oldala nyitva áll. Egy mixer — például a SplitCam — egyszerre több jelet is belevezethet: a hangodat, azt a hangot, amit maga a Mac ad ki, egy zenelejátszót, annak a videónak a hangját, amit épp mutatsz. A túloldali alkalmazás közben végig azt hiszi, hogy egyetlen közönséges mikrofont hallgat.</p>
+        <p><strong style="color:var(--text)">Ez egy CoreAudio HAL-bővítmény, nem kernelbővítmény.</strong> Felhasználói módban fut, nem kell hozzá csökkentett biztonsági beállítással indítani a gépet, és egyetlen mappa törlésével eltávolítható.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -793,35 +793,35 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Minden, amit érdemes tudni a telepítés előtt.</p>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>What is a virtual audio driver?</summary>
+        <summary>Mi az a virtuális hangillesztőprogram?</summary>
         <p>Olyan szoftver, amely úgy ad hangeszközt a macOS-hez, hogy nincs mögötte hardver. Az alkalmazások nem tudják megkülönböztetni egy valódi mikrofontól — ugyanúgy megjelenik a mikrofonlistában, mint bármelyik másik bemenet, így minden, amit ráirányítasz, elküldhető egy hívásba, egy streambe vagy egy felvételbe.</p>
       </details>
       <details class="faq-item">
-        <summary>Mi az a virtuális hangillesztőprogram?</summary>
+        <summary>Milyen Maceket támogat?</summary>
         <p>Az Apple Silicon chipes Macek — M1, M2, M3, M4 és újabbak —, amelyeken macOS 12 Monterey vagy újabb fut. Az illesztőprogram csak arm64-re készült, így az Intel-Maceket nem támogatja.</p>
       </details>
       <details class="faq-item">
-        <summary>Do I need it if I already have SplitCam for Mac?</summary>
+        <summary>Szükségem van rá, ha már megvan a Mac-es SplitCam?</summary>
         <p>Általában nem. A macOS-alkalmazás már tartalmazza ezt az illesztőprogramot, és telepíti is helyetted. A különálló csomag azokra az esetekre való, amikor a hangeszközt önmagában kell telepíteni vagy megjavítani.</p>
       </details>
       <details class="faq-item">
-        <summary>Milyen Maceket támogat?</summary>
+        <summary>Kernelbővítmény ez?</summary>
         <p>Nem. Ez egy CoreAudio HAL-bővítmény, amely a <code>/Library/Audio/Plug-Ins/HAL</code> mappában él, és felhasználói módban fut. Semmit nem kell engedélyezni helyreállítási módban, és nem kell csökkentett biztonsági beállítást bekapcsolni.</p>
       </details>
       <details class="faq-item">
-        <summary>Why does macOS ask for my password?</summary>
+        <summary>Miért kéri a macOS a jelszavamat?</summary>
         <p>A rendszer hangbővítmény-mappája a macOS-hez tartozik, ezért az írásához rendszergazdai jog kell. A csomag Apple Developer ID-tanúsítvánnyal van aláírva, és az Apple hitelesítette — ezért engedi át a Gatekeeper figyelmeztetés nélkül.</p>
       </details>
       <details class="faq-item">
-        <summary>Szükségem van rá, ha már van SplitCam a Macemen?</summary>
+        <summary>Hogyan távolíthatom el?</summary>
         <p>Töröld a <code>SplitCamVirtualAudio.driver</code> fájlt a <code>/Library/Audio/Plug-Ins/HAL</code> mappából, majd indítsd újra a Macet vagy a hangszolgáltatást. A virtuális eszköz eltűnik a mikrofonlistából.</p>
       </details>
       <details class="faq-item">
-        <summary>Kernelbővítmény?</summary>
+        <summary>Van virtuális kamera is?</summary>
         <p>Igen — a SplitCam ugyanezen az elven <a href="https://splitcam.com/hu/virtual-camera" style="color:var(--blue)">virtuális kamerát</a> is kínál, amellyel egy összeállított jelenet léphet a webkamerád helyébe a Zoomban, a Teamsben, a Meetben és több tucat további alkalmazásban.</p>
       </details>
       <details class="faq-item">
-        <summary>Miért kéri a macOS a jelszavamat?</summary>
+        <summary>Kerül valamibe?</summary>
         <p>Nem. Az illesztőprogram ingyenes, és maga a SplitCam is az. Nem kell fiókot létrehozni, nincs mire előfizetni, és nem kerül vízjel a hangra.</p>
       </details>
     </div>

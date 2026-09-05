@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "برنامج تشغيل صوت افتراضي مجاني لنظام macOS. يضيف جهاز صوت افتراضيًا تراه التطبيقات الأخرى ميكروفونًا عاديًا، فيمكن إرسال مزيج من الميكروفون وصوت النظام والموسيقى وصوت الفيديو إلى Microsoft Teams أو Telegram أو Discord أو Zoom أو أي تطبيق فيه مدخل ميكروفون.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "برنامج تشغيل صوت افتراضي Mac, جهاز صوت افتراضي للماك, ميكروفون افتراضي Mac, خلّاط صوت للماك, دمج مصادر الصوت على Mac, صوت النظام إلى الميكروفون Mac, لوب باك صوت Mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which Macs does it support?",
+          "name": "أي أجهزة Mac يدعمها؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "أجهزة Mac بمعالجات Apple Silicon — M1 وM2 وM3 وM4 وما بعدها — التي تعمل بنظام macOS 12 Monterey أو أحدث. وبرنامج التشغيل مبني لمعمارية arm64 وحدها، لذا أجهزة Mac بمعالج Intel غير مدعومة."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "أي أجهزة Mac يدعمها؟",
+          "name": "هل أحتاج إليه إن كان لديّ SplitCam لـ Mac بالفعل؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "غالبًا لا. فتطبيق macOS يحتوي برنامج التشغيل هذا ويثبّته نيابةً عنك. أما الحزمة المستقلّة فموجودة للحالات التي يلزم فيها تثبيت جهاز الصوت أو إصلاحه وحده."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "هل أحتاج إليه إن كان لديّ SplitCam لـ Mac؟",
+          "name": "هل هو امتداد نواة؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "لا. إنه إضافة CoreAudio HAL توجد في /Library/Audio/Plug-Ins/HAL وتعمل في فضاء المستخدم. فلا شيء تسمح به في وضع الاسترداد، ولا إعداد أمان مخفَّض تفعّله."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "هل هو امتداد نواة؟",
+          "name": "لماذا يطلب macOS كلمة المرور؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "مجلّد إضافات الصوت في النظام ملكٌ لـ macOS، لذا تتطلّب الكتابة فيه صلاحيات المسؤول. والحزمة موقَّعة بشهادة Apple Developer ID وموثَّقة لدى Apple، ولهذا يمرّرها Gatekeeper دون تحذير."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "لماذا يطلب macOS كلمة المرور؟",
+          "name": "كيف أزيل تثبيته؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "احذف SplitCamVirtualAudio.driver من /Library/Audio/Plug-Ins/HAL، ثم أعِد تشغيل الـ Mac أو خدمة الصوت. عندها يختفي الجهاز الافتراضي من قائمة الميكروفونات."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is there a virtual camera too?",
+          "name": "هل توجد كاميرا افتراضية أيضًا؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "نعم — يقدّم SplitCam كاميرا افتراضية بالمبدأ نفسه، تجعل مشهدًا مركَّبًا يحلّ محلّ كاميرا الويب لديك في Zoom وTeams وMeet وعشرات التطبيقات الأخرى."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does it cost anything?",
+          "name": "هل يكلّف شيئًا؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "لا. برنامج التشغيل مجاني، وكذلك SplitCam نفسه. لا حساب تنشئه، ولا اشتراك، ولا علامة مائية توضع على الصوت."
@@ -661,32 +661,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>شغّل الموسيقى داخل المكالمة</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>يصل صوتك والمقطع الموسيقي معًا، بالمستويات التي تضبطها، دون أن يلتقط ميكروفونك صوت مكبّرات الحاسوب المحمول فيسمعه الطرف الآخر.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>شارك ما يشغّله Mac</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>يدخل صوت النظام إلى التدفّق نفسه، فيُسمَع العرض التوضيحي أو الفيديو أو التنبيه تمامًا كما تسمعه أنت — لا كما يلتقطه الميكروفون من الغرفة.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>اعرض فيديو دون فقدان صوته</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>كثيرًا ما ترسل مشاركة الشاشة الصورة وحدها. وجِّه صوت المقطع إلى الجهاز الافتراضي، فينتقل مع صوتك.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>ميكروفونان، قناة واحدة</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>تُجري مقابلة مع شخص في الغرفة نفسها، أو تجمع بين سمّاعة رأس وميكروفون مكتبي — وفي الحالتين يستطيع الميكروفونان أن يغذّيا مخرجًا واحدًا.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>سجّل المحادثة كاملة</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>يكفي أن توجّه مسجّلًا إلى الجهاز الافتراضي ليلتقط مسارًا واحدًا يحمل كل المصادر التي مزجتها مجتمعةً.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>تطبيقات لا توفّر توجيه صوت</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>معظم تطبيقات المراسلة تعرض قائمة ميكروفونات منسدلة ولا شيء غيرها. وهذه القائمة وحدها هي كل ما يحتاج إليه برنامج التشغيل هذا.</p>
       </div>
     </div>
   </div>
@@ -751,10 +751,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">ما هو جهاز الصوت الافتراضي؟</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">ميكروفون لا وجود له إلا في البرمجيات.</h2>
+        <p>جهاز الصوت الافتراضي برنامج تشغيل يضيف إلى macOS مدخل صوت دون عتاد خلفه. ولا تلاحظ التطبيقات فرقًا — إذ يصفه لها CoreAudio بالطريقة نفسها التي يصف بها ميكروفون USB، فيظهر الجهاز الافتراضي في قائمة الميكروفونات المنسدلة إلى جانب عتادك الحقيقي.</p>
+        <p>وما يجعله مفيدًا أن مدخله مفتوح. فبإمكان خلّاط صوت — SplitCam مثلًا — أن يصبّ فيه عدّة إشارات في آن واحد: صوتك، والصوت الذي يشغّله الـ Mac نفسه، ومشغّل موسيقى، وصوت مقطع تعرضه. ويظلّ التطبيق في الطرف الآخر يظنّ أنه يستمع إلى ميكروفون واحد عادي.</p>
+        <p><strong style="color:var(--text)">هذه إضافة CoreAudio HAL، لا امتداد نواة.</strong> تعمل في فضاء المستخدم، ولا تحتاج إلى إقلاع بأمان مخفَّض، ويمكن إزالتها بحذف مجلّد واحد.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -797,38 +797,38 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
   <div class="section-inner">
     <span class="eyebrow center-h" style="text-align:center;display:block">Frequently asked</span>
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">Virtual audio questions.</h2>
-    <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Everything worth knowing before you install it.</p>
+    <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">كل ما يستحقّ أن تعرفه قبل تثبيته.</p>
     <div class="faq-list">
       <details class="faq-item">
         <summary>ما هو برنامج تشغيل الصوت الافتراضي؟</summary>
         <p>برنامج يضيف جهاز صوت إلى macOS دون عتاد خلفه. ولا تستطيع التطبيقات تمييزه عن ميكروفون حقيقي — فهو يظهر في قائمة الميكروفونات مثل أي مدخل آخر، وبذلك يمكن إرسال كل ما يُوجَّه إليه إلى مكالمة أو بثّ أو تسجيل.</p>
       </details>
       <details class="faq-item">
-        <summary>Which Macs does it support?</summary>
+        <summary>أي أجهزة Mac يدعمها؟</summary>
         <p>أجهزة Mac بمعالجات Apple Silicon — M1 وM2 وM3 وM4 وما بعدها — التي تعمل بنظام macOS 12 Monterey أو أحدث. وبرنامج التشغيل مبني لمعمارية arm64 وحدها، لذا أجهزة Mac بمعالج Intel غير مدعومة.</p>
       </details>
       <details class="faq-item">
-        <summary>أي أجهزة Mac يدعمها؟</summary>
+        <summary>هل أحتاج إليه إن كان لديّ SplitCam لـ Mac بالفعل؟</summary>
         <p>غالبًا لا. فتطبيق macOS يحتوي برنامج التشغيل هذا ويثبّته نيابةً عنك. أما الحزمة المستقلّة فموجودة للحالات التي يلزم فيها تثبيت جهاز الصوت أو إصلاحه وحده.</p>
       </details>
       <details class="faq-item">
-        <summary>هل أحتاج إليه إن كان لديّ SplitCam لـ Mac؟</summary>
+        <summary>هل هو امتداد نواة؟</summary>
         <p>لا. إنه إضافة CoreAudio HAL توجد في <code>/Library/Audio/Plug-Ins/HAL</code> وتعمل في فضاء المستخدم. فلا شيء تسمح به في وضع الاسترداد، ولا إعداد أمان مخفَّض تفعّله.</p>
       </details>
       <details class="faq-item">
-        <summary>هل هو امتداد نواة؟</summary>
+        <summary>لماذا يطلب macOS كلمة المرور؟</summary>
         <p>مجلّد إضافات الصوت في النظام ملكٌ لـ macOS، لذا تتطلّب الكتابة فيه صلاحيات المسؤول. والحزمة موقَّعة بشهادة Apple Developer ID وموثَّقة لدى Apple، ولهذا يمرّرها Gatekeeper دون تحذير.</p>
       </details>
       <details class="faq-item">
-        <summary>لماذا يطلب macOS كلمة المرور؟</summary>
+        <summary>كيف أزيل تثبيته؟</summary>
         <p>احذف <code>SplitCamVirtualAudio.driver</code> من <code>/Library/Audio/Plug-Ins/HAL</code>، ثم أعِد تشغيل الـ Mac أو خدمة الصوت. عندها يختفي الجهاز الافتراضي من قائمة الميكروفونات.</p>
       </details>
       <details class="faq-item">
-        <summary>Is there a virtual camera too?</summary>
+        <summary>هل توجد كاميرا افتراضية أيضًا؟</summary>
         <p>نعم — يقدّم SplitCam <a href="https://splitcam.com/ar/virtual-camera" style="color:var(--blue)">كاميرا افتراضية</a> بالمبدأ نفسه، تجعل مشهدًا مركَّبًا يحلّ محلّ كاميرا الويب لديك في Zoom وTeams وMeet وعشرات التطبيقات الأخرى.</p>
       </details>
       <details class="faq-item">
-        <summary>Does it cost anything?</summary>
+        <summary>هل يكلّف شيئًا؟</summary>
         <p>لا. برنامج التشغيل مجاني، وكذلك SplitCam نفسه. لا حساب تنشئه، ولا اشتراك، ولا علامة مائية توضع على الصوت.</p>
       </details>
     </div>

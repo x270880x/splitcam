@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "Pemacu audio maya percuma untuk macOS. Ia menambah peranti audio maya yang dilihat aplikasi lain sebagai mikrofon biasa, jadi campuran mikrofon, audio sistem, muzik dan audio video anda boleh dihantar ke Microsoft Teams, Telegram, Discord, Zoom atau mana-mana aplikasi yang mempunyai input mikrofon.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "pemacu audio maya mac, peranti audio maya mac, mikrofon maya mac, pencampur audio mac, gabung sumber audio mac, audio sistem ke mikrofon mac, loopback audio mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is a virtual audio driver?",
+          "name": "Apa itu pemacu audio maya?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Perisian yang menambah peranti audio pada macOS tanpa sebarang perkakasan di belakangnya. Aplikasi tidak dapat membezakannya daripada mikrofon sebenar — ia muncul dalam senarai mikrofon seperti mana-mana input lain, jadi apa sahaja yang dihalakan ke dalamnya boleh dihantar ke panggilan, siaran atau rakaman."
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Apa itu pemacu audio maya?",
+          "name": "Mac yang mana disokong?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Mac dengan Apple Silicon — M1, M2, M3, M4 dan lebih baharu — yang menjalankan macOS 12 Monterey atau lebih baharu. Binari pemacu dibina untuk arm64 sahaja, jadi Mac Intel tidak disokong."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Mac yang mana disokong?",
+          "name": "Perlukah saya memasangnya jika sudah ada SplitCam untuk Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Biasanya tidak. Aplikasi macOS sudah mengandungi pemacu ini dan memasangnya untuk anda. Pakej berasingan ini wujud untuk keadaan di mana peranti audio itu perlu dipasang atau dibaiki secara berasingan."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Perlukah saya jika sudah ada SplitCam untuk Mac?",
+          "name": "Adakah ia sambungan kernel?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Tidak. Ia ialah plug-in CoreAudio HAL yang berada dalam /Library/Audio/Plug-Ins/HAL dan berjalan dalam ruang pengguna. Tiada apa-apa yang perlu dibenarkan dalam mod Recovery dan tiada tetapan keselamatan rendah yang perlu dihidupkan."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Adakah ia sambungan kernel?",
+          "name": "Kenapa macOS meminta kata laluan saya?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Folder plug-in audio sistem milik macOS, jadi menulis ke dalamnya memerlukan hak pentadbir. Pakej ini ditandatangani dengan sijil Apple Developer ID dan telah dinotarikan oleh Apple, sebab itulah Gatekeeper membenarkannya tanpa amaran."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "Kenapa macOS meminta kata laluan saya?",
+          "name": "Bagaimana cara menyahpasangnya?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Padamkan SplitCamVirtualAudio.driver daripada /Library/Audio/Plug-Ins/HAL, kemudian mulakan semula Mac atau perkhidmatan audio. Peranti maya itu akan hilang daripada senarai mikrofon."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Bagaimana cara nyahpasang?",
+          "name": "Ada kamera maya juga?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ya — SplitCam menyediakan kamera maya atas prinsip yang sama, membolehkan scene yang anda susun menggantikan webcam anda dalam Zoom, Teams, Meet dan berpuluh aplikasi lain."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Ada kamera maya juga?",
+          "name": "Adakah ia berbayar?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Tidak. Pemacu ini percuma, begitu juga SplitCam sendiri. Tiada akaun untuk didaftarkan, tiada langganan dan tiada tera air pada audio."
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Mainkan muzik dalam panggilan</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>Suara dan lagu sampai serentak, pada aras yang anda tetapkan, tanpa pihak sana terdengar bunyi pembesar suara komputer riba melalui mikrofon anda.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Kongsi apa yang Mac anda mainkan</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>Audio sistem masuk ke dalam suapan yang sama, jadi demo, video atau bunyi pemberitahuan kedengaran betul-betul seperti yang anda dengar sendiri — bukan melalui udara bilik.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Tayang video tanpa hilang bunyi</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>Perkongsian skrin selalunya menghantar gambar sahaja. Halakan audio klip itu ke dalam peranti maya, dan ia terus mengalir bersama suara anda.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>Dua mikrofon, satu saluran</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Menemu bual seseorang dalam bilik yang sama, atau menggunakan headset bersama mik meja — kedua-duanya boleh menyuap satu output yang sama.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Rakam keseluruhan perbualan</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>Perakam yang dituding ke peranti maya merakam satu trek yang sudah pun mengandungi setiap sumber yang anda campurkan.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Aplikasi yang tiada penghalaan audio</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>Kebanyakan aplikasi pemesejan hanya menawarkan senarai mikrofon, tidak lebih daripada itu. Senarai itulah sahaja yang diperlukan oleh pemacu ini.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Apa itu peranti audio maya?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">Mikrofon yang wujud dalam perisian sahaja.</h2>
+        <p>Peranti audio maya ialah pemacu yang menambah input audio pada macOS tanpa sebarang perkakasan di belakangnya. Aplikasi tidak dapat membezakannya — CoreAudio memberikan aplikasi jenis keterangan peranti yang sama seperti yang diberikannya untuk mikrofon USB, jadi peranti maya itu muncul dalam senarai mikrofon di sebelah perkakasan sebenar anda.</p>
+        <p>Apa yang menjadikannya berguna ialah bahagian inputnya terbuka. Sebuah pencampur — SplitCam, contohnya — boleh menyalurkan beberapa isyarat ke dalamnya serentak: suara anda, bunyi yang sedang dimainkan Mac itu sendiri, pemain muzik dan audio klip yang sedang anda tayangkan. Aplikasi di hujung sana tetap menyangka ia sedang mendengar satu mikrofon biasa.</p>
+        <p><strong style="color:var(--text)">Ini ialah plug-in CoreAudio HAL, bukan sambungan kernel.</strong> Ia berjalan dalam ruang pengguna, tidak memerlukan Mac dimulakan dalam mod keselamatan rendah dan boleh dibuang dengan memadamkan satu folder sahaja.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -793,35 +793,35 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Semua yang perlu anda tahu sebelum memasangnya.</p>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>What is a virtual audio driver?</summary>
+        <summary>Apa itu pemacu audio maya?</summary>
         <p>Perisian yang menambah peranti audio pada macOS tanpa sebarang perkakasan di belakangnya. Aplikasi tidak dapat membezakannya daripada mikrofon sebenar — ia muncul dalam senarai mikrofon seperti mana-mana input lain, jadi apa sahaja yang dihalakan ke dalamnya boleh dihantar ke panggilan, siaran atau rakaman.</p>
       </details>
       <details class="faq-item">
-        <summary>Apa itu pemacu audio maya?</summary>
+        <summary>Mac yang mana disokong?</summary>
         <p>Mac dengan Apple Silicon — M1, M2, M3, M4 dan lebih baharu — yang menjalankan macOS 12 Monterey atau lebih baharu. Binari pemacu dibina untuk arm64 sahaja, jadi Mac Intel tidak disokong.</p>
       </details>
       <details class="faq-item">
-        <summary>Mac yang mana disokong?</summary>
+        <summary>Perlukah saya memasangnya jika sudah ada SplitCam untuk Mac?</summary>
         <p>Biasanya tidak. Aplikasi macOS sudah mengandungi pemacu ini dan memasangnya untuk anda. Pakej berasingan ini wujud untuk keadaan di mana peranti audio itu perlu dipasang atau dibaiki secara berasingan.</p>
       </details>
       <details class="faq-item">
-        <summary>Perlukah saya jika sudah ada SplitCam untuk Mac?</summary>
+        <summary>Adakah ia sambungan kernel?</summary>
         <p>Tidak. Ia ialah plug-in CoreAudio HAL yang berada dalam <code>/Library/Audio/Plug-Ins/HAL</code> dan berjalan dalam ruang pengguna. Tiada apa-apa yang perlu dibenarkan dalam mod Recovery dan tiada tetapan keselamatan rendah yang perlu dihidupkan.</p>
       </details>
       <details class="faq-item">
-        <summary>Adakah ia sambungan kernel?</summary>
+        <summary>Kenapa macOS meminta kata laluan saya?</summary>
         <p>Folder plug-in audio sistem milik macOS, jadi menulis ke dalamnya memerlukan hak pentadbir. Pakej ini ditandatangani dengan sijil Apple Developer ID dan telah dinotarikan oleh Apple, sebab itulah Gatekeeper membenarkannya tanpa amaran.</p>
       </details>
       <details class="faq-item">
-        <summary>Kenapa macOS meminta kata laluan saya?</summary>
+        <summary>Bagaimana cara menyahpasangnya?</summary>
         <p>Padamkan <code>SplitCamVirtualAudio.driver</code> daripada <code>/Library/Audio/Plug-Ins/HAL</code>, kemudian mulakan semula Mac atau perkhidmatan audio. Peranti maya itu akan hilang daripada senarai mikrofon.</p>
       </details>
       <details class="faq-item">
-        <summary>Bagaimana cara nyahpasang?</summary>
+        <summary>Ada kamera maya juga?</summary>
         <p>Ya — SplitCam menyediakan <a href="https://splitcam.com/ms/virtual-camera" style="color:var(--blue)">kamera maya</a> atas prinsip yang sama, membolehkan scene yang anda susun menggantikan webcam anda dalam Zoom, Teams, Meet dan berpuluh aplikasi lain.</p>
       </details>
       <details class="faq-item">
-        <summary>Ada kamera maya juga?</summary>
+        <summary>Adakah ia berbayar?</summary>
         <p>Tidak. Pemacu ini percuma, begitu juga SplitCam sendiri. Tiada akaun untuk didaftarkan, tiada langganan dan tiada tera air pada audio.</p>
       </details>
     </div>

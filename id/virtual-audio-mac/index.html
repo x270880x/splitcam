@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "Driver audio virtual gratis untuk macOS. Ia menambahkan perangkat audio virtual yang dilihat aplikasi lain sebagai mikrofon biasa, jadi campuran mikrofon, audio sistem, musik, dan audio video kamu bisa dikirim ke Microsoft Teams, Telegram, Discord, Zoom, atau aplikasi apa pun yang punya input mikrofon.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "driver audio virtual mac, perangkat audio virtual mac, mikrofon virtual mac, audio mixer mac, gabung sumber audio mac, loopback audio mac, audio sistem ke mikrofon mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is a virtual audio driver?",
+          "name": "Apa itu driver audio virtual?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Software yang menambahkan perangkat audio ke macOS tanpa perangkat keras di baliknya. Aplikasi tidak bisa membedakannya dari mikrofon sungguhan — ia muncul di daftar mikrofon seperti input lainnya, jadi apa pun yang dialirkan ke dalamnya bisa dikirim ke panggilan, stream, atau rekaman."
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which Macs does it support?",
+          "name": "Mac apa saja yang didukung?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Mac dengan Apple Silicon — M1, M2, M3, M4, dan yang lebih baru — yang menjalankan macOS 12 Monterey ke atas. Biner driver-nya dibangun khusus untuk arm64, jadi Mac Intel tidak didukung."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Do I need it if I already have SplitCam for Mac?",
+          "name": "Apakah saya masih perlu memasangnya kalau sudah punya SplitCam untuk Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Biasanya tidak. Aplikasi macOS sudah memuat driver ini dan memasangnya untuk kamu. Paket mandiri ini ada untuk kasus ketika perangkat audionya harus dipasang atau diperbaiki secara terpisah."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it a kernel extension?",
+          "name": "Apakah ini kernel extension?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Bukan. Ini plug-in HAL CoreAudio yang tinggal di /Library/Audio/Plug-Ins/HAL dan berjalan di user space. Tidak ada yang perlu diizinkan di Recovery mode dan tidak ada pengaturan keamanan yang perlu diturunkan."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Why does macOS ask for my password?",
+          "name": "Kenapa macOS meminta kata sandi saya?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Folder plug-in audio sistem adalah milik macOS, jadi menulis ke dalamnya butuh hak administrator. Paketnya ditandatangani dengan sertifikat Apple Developer ID dan dinotarisasi Apple, karena itu Gatekeeper meloloskannya tanpa peringatan."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "How do I uninstall it?",
+          "name": "Bagaimana cara menghapusnya?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Hapus SplitCamVirtualAudio.driver dari /Library/Audio/Plug-Ins/HAL, lalu restart Mac atau layanan audionya. Perangkat virtual itu akan hilang dari daftar mikrofon."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is there a virtual camera too?",
+          "name": "Apakah ada kamera virtual juga?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ya — SplitCam menyediakan kamera virtual dengan prinsip yang sama, sehingga scene yang kamu susun bisa menggantikan webcam di Zoom, Teams, Meet, dan puluhan aplikasi lainnya."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Apa itu driver audio virtual?",
+          "name": "Apakah ada biayanya?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Tidak. Driver-nya gratis, sama seperti SplitCam sendiri. Tidak ada akun yang perlu dibuat, tidak ada langganan, dan tidak ada watermark pada audionya."
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Putar musik ke dalam panggilan</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>Suaramu dan lagunya sampai bersamaan, di level yang kamu atur, tanpa lawan bicara ikut mendengar speaker laptop lewat mikrofonmu.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Bagikan apa yang sedang diputar Mac kamu</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>Audio sistem masuk ke jalur yang sama, jadi demo, video, atau notifikasi terdengar persis seperti yang kamu dengar — bukan suara ruangan yang tertangkap mikrofon.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Tunjukkan video tanpa kehilangan suaranya</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>Share screen sering kali cuma mengirim gambar. Arahkan audio klipnya ke perangkat virtual, dan audionya ikut mengalir bersama suaramu.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>Dua mikrofon, satu jalur</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Mewawancarai seseorang di ruangan yang sama, atau memakai headset plus mik meja — keduanya bisa masuk ke satu output yang sama.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Rekam seluruh percakapan</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>Perekam yang diarahkan ke perangkat virtual menangkap satu trek yang sudah berisi semua sumber yang kamu campur.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Aplikasi yang tak punya routing audio</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>Kebanyakan aplikasi chat cuma menyediakan daftar mikrofon, tidak lebih dari itu. Daftar itu saja sudah cukup untuk driver ini.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Apa itu perangkat audio virtual?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">Mikrofon yang hanya ada di dalam software.</h2>
+        <p>Perangkat audio virtual adalah driver yang menambahkan input audio ke macOS tanpa perangkat keras di baliknya. Aplikasi tidak bisa membedakannya — CoreAudio menyerahkan deskripsi perangkat yang jenisnya sama dengan yang dipakai untuk mikrofon USB, jadi perangkat virtual itu muncul di daftar mikrofon, di samping perangkat keras aslimu.</p>
+        <p>Yang membuatnya berguna adalah sisi inputnya yang terbuka. Sebuah mixer — SplitCam, misalnya — bisa mengalirkan beberapa sinyal ke dalamnya sekaligus: suaramu, suara yang sedang diputar Mac itu sendiri, pemutar musik, dan audio klip yang sedang kamu tunjukkan. Aplikasi di ujung sana tetap yakin ia sedang mendengarkan satu mikrofon biasa.</p>
+        <p><strong style="color:var(--text)">Ini plug-in HAL CoreAudio, bukan kernel extension.</strong> Ia berjalan di user space, tidak perlu booting dengan pengaturan keamanan yang diturunkan, dan bisa dicopot cukup dengan menghapus satu folder.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -793,35 +793,35 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Semua yang perlu kamu tahu sebelum memasangnya.</p>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>What is a virtual audio driver?</summary>
+        <summary>Apa itu driver audio virtual?</summary>
         <p>Software yang menambahkan perangkat audio ke macOS tanpa perangkat keras di baliknya. Aplikasi tidak bisa membedakannya dari mikrofon sungguhan — ia muncul di daftar mikrofon seperti input lainnya, jadi apa pun yang dialirkan ke dalamnya bisa dikirim ke panggilan, stream, atau rekaman.</p>
       </details>
       <details class="faq-item">
-        <summary>Which Macs does it support?</summary>
+        <summary>Mac apa saja yang didukung?</summary>
         <p>Mac dengan Apple Silicon — M1, M2, M3, M4, dan yang lebih baru — yang menjalankan macOS 12 Monterey ke atas. Biner driver-nya dibangun khusus untuk arm64, jadi Mac Intel tidak didukung.</p>
       </details>
       <details class="faq-item">
-        <summary>Do I need it if I already have SplitCam for Mac?</summary>
+        <summary>Apakah saya masih perlu memasangnya kalau sudah punya SplitCam untuk Mac?</summary>
         <p>Biasanya tidak. Aplikasi macOS sudah memuat driver ini dan memasangnya untuk kamu. Paket mandiri ini ada untuk kasus ketika perangkat audionya harus dipasang atau diperbaiki secara terpisah.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it a kernel extension?</summary>
+        <summary>Apakah ini kernel extension?</summary>
         <p>Bukan. Ini plug-in HAL CoreAudio yang tinggal di <code>/Library/Audio/Plug-Ins/HAL</code> dan berjalan di user space. Tidak ada yang perlu diizinkan di Recovery mode dan tidak ada pengaturan keamanan yang perlu diturunkan.</p>
       </details>
       <details class="faq-item">
-        <summary>Why does macOS ask for my password?</summary>
+        <summary>Kenapa macOS meminta kata sandi saya?</summary>
         <p>Folder plug-in audio sistem adalah milik macOS, jadi menulis ke dalamnya butuh hak administrator. Paketnya ditandatangani dengan sertifikat Apple Developer ID dan dinotarisasi Apple, karena itu Gatekeeper meloloskannya tanpa peringatan.</p>
       </details>
       <details class="faq-item">
-        <summary>How do I uninstall it?</summary>
+        <summary>Bagaimana cara menghapusnya?</summary>
         <p>Hapus <code>SplitCamVirtualAudio.driver</code> dari <code>/Library/Audio/Plug-Ins/HAL</code>, lalu restart Mac atau layanan audionya. Perangkat virtual itu akan hilang dari daftar mikrofon.</p>
       </details>
       <details class="faq-item">
-        <summary>Is there a virtual camera too?</summary>
+        <summary>Apakah ada kamera virtual juga?</summary>
         <p>Ya — SplitCam menyediakan <a href="https://splitcam.com/id/virtual-camera" style="color:var(--blue)">kamera virtual</a> dengan prinsip yang sama, sehingga scene yang kamu susun bisa menggantikan webcam di Zoom, Teams, Meet, dan puluhan aplikasi lainnya.</p>
       </details>
       <details class="faq-item">
-        <summary>Apa itu driver audio virtual?</summary>
+        <summary>Apakah ada biayanya?</summary>
         <p>Tidak. Driver-nya gratis, sama seperti SplitCam sendiri. Tidak ada akun yang perlu dibuat, tidak ada langganan, dan tidak ada watermark pada audionya.</p>
       </details>
     </div>

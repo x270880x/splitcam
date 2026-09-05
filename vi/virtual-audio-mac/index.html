@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "Driver âm thanh ảo miễn phí cho macOS. Nó thêm một thiết bị âm thanh ảo mà các ứng dụng khác nhìn thấy như một micro thông thường, nên bản trộn gồm micro, âm thanh hệ thống, nhạc và tiếng video có thể gửi tới Microsoft Teams, Telegram, Discord, Zoom hay mọi ứng dụng có đầu vào micro.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "driver âm thanh ảo cho mac, thiết bị âm thanh ảo mac, micro ảo cho mac, bộ trộn âm thanh trên mac, gộp nguồn âm thanh mac, loopback âm thanh mac, đưa âm thanh hệ thống vào micro mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Nó có phải phần mở rộng nhân không?",
+          "name": "Nó có phải là phần mở rộng nhân không?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Không. Đây là plug-in CoreAudio HAL nằm trong /Library/Audio/Plug-Ins/HAL và chạy ở không gian người dùng. Không có gì phải cho phép trong chế độ Recovery, cũng không có thiết lập giảm bảo mật nào phải bật."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does it cost anything?",
+          "name": "Nó có mất phí gì không?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Không. Driver miễn phí, cũng như chính SplitCam. Không phải tạo tài khoản, không có gì để đăng ký thuê bao và không có hình mờ nào áp lên âm thanh."
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Phát nhạc vào cuộc gọi</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>Giọng nói và bản nhạc đi cùng nhau, ở đúng mức bạn đặt, mà phía bên kia không nghe thấy tiếng loa laptop vọng vào micro của bạn.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Chia sẻ thứ máy Mac đang phát</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>Âm thanh hệ thống đi vào cùng một luồng, nên bản demo, video hay tiếng thông báo đều được nghe đúng như bạn đang nghe — chứ không phải vọng qua căn phòng.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Chiếu video mà không mất tiếng</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>Chia sẻ màn hình thường chỉ gửi đi hình. Hãy dẫn tiếng của đoạn video vào thiết bị ảo, và nó sẽ đi cùng giọng nói của bạn.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>Hai micro, một kênh</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Phỏng vấn một người ngồi cùng phòng, hay vừa dùng tai nghe có micro vừa dùng micro để bàn — cả hai đều đổ chung được vào một đầu ra duy nhất.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Ghi lại trọn cuộc trò chuyện</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>Phần mềm ghi âm trỏ vào thiết bị ảo sẽ cho ra một bản thu duy nhất, trong đó đã có sẵn mọi nguồn bạn trộn vào.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Ứng dụng không cho định tuyến âm thanh</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>Phần lớn ứng dụng nhắn tin chỉ đưa ra một mục chọn micro, không có gì hơn. Mục chọn đó là tất cả những gì driver này cần.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Thiết bị âm thanh ảo là gì?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">Một chiếc micro chỉ tồn tại trong phần mềm.</h2>
+        <p>Thiết bị âm thanh ảo là một driver thêm vào macOS một đầu vào âm thanh không có phần cứng nào phía sau. Các ứng dụng không nhận ra khác biệt nào — CoreAudio đưa cho chúng đúng loại mô tả thiết bị như với một micro USB, nên thiết bị ảo hiện ra trong danh sách micro ngay cạnh phần cứng thật của bạn.</p>
+        <p>Điều làm nó hữu ích là phía đầu vào của nó để mở. Một bộ trộn — chẳng hạn SplitCam — có thể đổ nhiều tín hiệu vào đó cùng lúc: giọng nói của bạn, tiếng do chính máy Mac phát ra, một trình phát nhạc, phần tiếng của đoạn video bạn đang chiếu. Ứng dụng ở đầu bên kia vẫn tin rằng nó đang nghe một chiếc micro bình thường.</p>
+        <p><strong style="color:var(--text)">Đây là một plug-in CoreAudio HAL, không phải phần mở rộng nhân.</strong> Nó chạy ở không gian người dùng, không cần khởi động ở chế độ giảm bảo mật, và muốn gỡ thì chỉ cần xóa một thư mục duy nhất.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -805,7 +805,7 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
         <p>Thường là không. Ứng dụng macOS đã chứa sẵn driver này và tự cài giúp bạn. Gói độc lập có mặt cho những trường hợp cần cài hoặc sửa riêng thiết bị âm thanh.</p>
       </details>
       <details class="faq-item">
-        <summary>Nó có phải phần mở rộng nhân không?</summary>
+        <summary>Nó có phải là phần mở rộng nhân không?</summary>
         <p>Không. Đây là plug-in CoreAudio HAL nằm trong <code>/Library/Audio/Plug-Ins/HAL</code> và chạy ở không gian người dùng. Không có gì phải cho phép trong chế độ Recovery, cũng không có thiết lập giảm bảo mật nào phải bật.</p>
       </details>
       <details class="faq-item">
@@ -821,7 +821,7 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
         <p>Có — SplitCam còn có <a href="https://splitcam.com/vi/virtual-camera" style="color:var(--blue)">camera ảo</a> theo đúng nguyên lý ấy, để một cảnh đã dựng sẵn thay chỗ webcam của bạn trong Zoom, Teams, Meet và hàng chục ứng dụng khác.</p>
       </details>
       <details class="faq-item">
-        <summary>Does it cost anything?</summary>
+        <summary>Nó có mất phí gì không?</summary>
         <p>Không. Driver miễn phí, cũng như chính SplitCam. Không phải tạo tài khoản, không có gì để đăng ký thuê bao và không có hình mờ nào áp lên âm thanh.</p>
       </details>
     </div>

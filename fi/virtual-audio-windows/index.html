@@ -158,7 +158,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Do I have to download a virtual audio driver for Windows?",
+          "name": "Pitääkö minun ladata virtuaalinen ääniajuri Windowsille?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ei tarvitse. Äänilaitteen rekisteröi SplitCamin oma asennusohjelma, joten SplitCam Windowsille -asennus riittää. Erillistä pakettia ei tarvitse hakea mistään."
@@ -166,7 +166,7 @@
         },
         {
           "@type": "Question",
-          "name": "How is this different from the Audio Mixer?",
+          "name": "Miten tämä eroaa Äänimikseristä?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Äänimikseri on paikka, jossa lähteet yhdistetään SplitCamin sisällä, ja juuri se yhdistelmä kulkee striimissäsi ja tallennuksessasi. Virtuaalimikrofoni on saman istunnon ylimääräinen lähtö: se tarjoaa äänen Windowsille tulolaitteena, joten ohjelma, joka ei tiedä SplitCamista mitään, voi valita sen ja kuunnella."
@@ -174,7 +174,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which programs can use it?",
+          "name": "Mitkä ohjelmat voivat käyttää sitä?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Mikä tahansa ohjelma, jossa voi valita mikrofonin tai äänitulon. Se näkyy Windowsin tulolistassa äänikorttisi vieressä, joten puhelusovellukset, tallentimet, selaimet ja OBS tavoittavat sen kaikki samalla tavalla."
@@ -182,7 +182,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does using it change what my viewers hear?",
+          "name": "Muuttaako sen käyttö sitä, mitä katsojani kuulevat?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ei muuta. Striimisi ja tallennuksesi ottavat äänensä mikseristä kuten ennenkin. Virtuaalimikrofoni on lisäkuuntelija, ei korvaaja."
@@ -190,7 +190,7 @@
         },
         {
           "@type": "Question",
-          "name": "The device is missing from the list. What now?",
+          "name": "Laite puuttuu listasta. Mitä nyt?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "SplitCam tarkistaa käynnistyessään, latautuiko ajuri, ja näyttää varoituksen, jos ei latautunut; silloin ohjelma toimii edelleen, mutta laite ei ole käytettävissä. Jos varoitusta ei tullut, vastaanottava ohjelma on ehkä koonnut tulolistansa ennen SplitCamin asennusta — avaa sen ääniasetukset uudelleen."
@@ -198,7 +198,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it free?",
+          "name": "Onko se ilmainen?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Kyllä. Se kuuluu Windows-versioon eikä ole lisäosa, joten mikään siinä ei ole lisenssiavaimen tai tilin takana."
@@ -664,12 +664,12 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎚</div>
         <h3>Äänimikseri — SplitCamin sisällä</h3>
-        <p>A strip per source, each with its own volume, mute and monitoring. Noise suppression on the microphone, and filters that belong to the individual source: VST plug-ins, Delay, Sound Offset and the Audio Compressor.</p>
+        <p>Yksi kanavasäädin lähdettä kohti, kullakin oma äänenvoimakkuus, mykistys ja kuuntelu. Kohinanvaimennus mikrofonille ja lähdekohtaiset suotimet: VST-liitännäiset, Delay, Sound Offset ja Audio Compressor.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎙</div>
         <h3>Virtuaalimikrofoni — Windowsin tasolla</h3>
-        <p>An audio input registered with Windows, sitting in the same list as your sound card and your headset. Programs do not integrate with it one by one; they enumerate the inputs Windows reports, and this is one of them.</p>
+        <p>Windowsiin rekisteröity äänitulo, joka on samassa listassa kuin äänikorttisi ja kuulokemikrofonisi. Ohjelmia ei integroida siihen yksi kerrallaan; ne lukevat Windowsin ilmoittamat tulot, ja tämä on yksi niistä.</p>
       </div>
     </div>
   </div>
@@ -707,22 +707,22 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">💬</div>
         <h3>Kokoukset ja puhelut</h3>
-        <p>A conference program gives you one input and no way to add a second track to it. Selecting SplitCam turns that single input into everything you have balanced — the voice, the clip you are reacting to, the page you are demonstrating.</p>
+        <p>Kokousohjelmassa on yksi tulo eikä mitään keinoa lisätä siihen toista raitaa. Kun valitset SplitCamin, tuosta yhdestä tulosta tulee kaikki se, minkä olet tasapainottanut — puhe, reagoimasi klippi ja esittelemäsi sivu.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">⏺</div>
         <h3>Tallentimet ja muistiinpanotyökalut</h3>
-        <p>Anything that records from a microphone can capture the assembled session instead of just the room, which keeps a walkthrough and its sound in one file rather than two that have to be lined up afterwards.</p>
+        <p>Mikä tahansa mikrofonista tallentava ohjelma saa talteen kootun istunnon pelkän huoneen sijaan, jolloin läpikäynti ja sen ääni pysyvät yhdessä tiedostossa eivätkä kahdessa, jotka pitää jälkikäteen kohdistaa keskenään.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🌐</div>
         <h3>Selaimen välilehdet</h3>
-        <p>Web apps ask the browser for a microphone and get the same Windows list. A recording page, a web meeting or a voice widget can take the SplitCam device without installing anything.</p>
+        <p>Verkkosovellukset pyytävät selaimelta mikrofonia ja saavat saman Windowsin listan. Tallennussivu, verkkokokous tai äänivimpain voi ottaa SplitCamin laitteen käyttöön asentamatta mitään.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎛</div>
         <h3>Muut lähetysohjelmat</h3>
-        <p>If you also run OBS or a similar tool, it can add the SplitCam device as an audio input capture and treat the assembled sound as a single source instead of rebuilding the same routing twice.</p>
+        <p>Jos käytät myös OBS:ää tai vastaavaa työkalua, se voi lisätä SplitCamin laitteen Audio Input Capture -lähteeksi ja käsitellä koottua ääntä yhtenä lähteenä sen sijaan, että sama reititys rakennettaisiin kahteen kertaan.</p>
       </div>
     </div>
   </div>
@@ -792,27 +792,27 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Mitä laite on ja mitä se ei ole.</p>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>Do I have to download a virtual audio driver for Windows?</summary>
+        <summary>Pitääkö minun ladata virtuaalinen ääniajuri Windowsille?</summary>
         <p>Ei tarvitse. Äänilaitteen rekisteröi SplitCamin oma asennusohjelma, joten SplitCam Windowsille -asennus riittää. Erillistä pakettia ei tarvitse hakea mistään.</p>
       </details>
       <details class="faq-item">
-        <summary>How is this different from the Audio Mixer?</summary>
+        <summary>Miten tämä eroaa Äänimikseristä?</summary>
         <p>Äänimikseri on paikka, jossa lähteet yhdistetään SplitCamin sisällä, ja juuri se yhdistelmä kulkee striimissäsi ja tallennuksessasi. Virtuaalimikrofoni on saman istunnon ylimääräinen lähtö: se tarjoaa äänen Windowsille tulolaitteena, joten ohjelma, joka ei tiedä SplitCamista mitään, voi valita sen ja kuunnella.</p>
       </details>
       <details class="faq-item">
-        <summary>Which programs can use it?</summary>
+        <summary>Mitkä ohjelmat voivat käyttää sitä?</summary>
         <p>Mikä tahansa ohjelma, jossa voi valita mikrofonin tai äänitulon. Se näkyy Windowsin tulolistassa äänikorttisi vieressä, joten puhelusovellukset, tallentimet, selaimet ja OBS tavoittavat sen kaikki samalla tavalla.</p>
       </details>
       <details class="faq-item">
-        <summary>Does using it change what my viewers hear?</summary>
+        <summary>Muuttaako sen käyttö sitä, mitä katsojani kuulevat?</summary>
         <p>Ei muuta. Striimisi ja tallennuksesi ottavat äänensä mikseristä kuten ennenkin. Virtuaalimikrofoni on lisäkuuntelija, ei korvaaja.</p>
       </details>
       <details class="faq-item">
-        <summary>The device is missing from the list. What now?</summary>
+        <summary>Laite puuttuu listasta. Mitä nyt?</summary>
         <p>SplitCam tarkistaa käynnistyessään, latautuiko ajuri, ja näyttää varoituksen, jos ei latautunut; silloin ohjelma toimii edelleen, mutta laite ei ole käytettävissä. Jos varoitusta ei tullut, vastaanottava ohjelma on ehkä koonnut tulolistansa ennen SplitCamin asennusta — avaa sen ääniasetukset uudelleen.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it free?</summary>
+        <summary>Onko se ilmainen?</summary>
         <p>Kyllä. Se kuuluu Windows-versioon eikä ole lisäosa, joten mikään siinä ei ole lisenssiavaimen tai tilin takana.</p>
       </details>
     </div>

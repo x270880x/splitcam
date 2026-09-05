@@ -158,7 +158,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Do I have to download a virtual audio driver for Windows?",
+          "name": "هل عليّ تنزيل برنامج تشغيل صوت افتراضي لـ Windows؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "لا. فمُثبِّت SplitCam نفسه هو من يسجّل جهاز الصوت، وبذلك يكون تثبيت SplitCam لـ Windows هو المهمّة كلها. ولا توجد حزمة منفصلة تجلبها."
@@ -166,7 +166,7 @@
         },
         {
           "@type": "Question",
-          "name": "هل عليّ تنزيل برنامج تشغيل صوت افتراضي لـ Windows؟",
+          "name": "بم يختلف هذا عن خلّاط الصوت؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "خلّاط الصوت هو المكان الذي تجمع فيه المصادر داخل SplitCam، وهذا المزيج هو ما يحمله بثّك وتسجيلك. أما الميكروفون الافتراضي فمخرج إضافي للجلسة نفسها: يجعل الصوت متاحًا لـ Windows كجهاز مدخل، فيستطيع برنامج لا يعرف شيئًا عن SplitCam أن يختاره ويستمع إليه."
@@ -174,7 +174,7 @@
         },
         {
           "@type": "Question",
-          "name": "بم يختلف هذا عن خلّاط الصوت؟",
+          "name": "أي البرامج يمكنها استخدامه؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "أي برنامج يتيح لك اختيار ميكروفون أو مدخل صوت. فهو يظهر في قائمة مدخلات Windows إلى جانب كرت الصوت لديك، وبذلك تصل إليه تطبيقات المكالمات والمسجّلات والمتصفّحات وOBS بالطريقة نفسها."
@@ -182,7 +182,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does using it change what my viewers hear?",
+          "name": "هل يغيّر استخدامه ما يسمعه مشاهدو بثّي؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "لا. يظلّ بثّك وتسجيلك يأخذان صوتهما من الخلّاط كما كان. فالميكروفون الافتراضي مستمعٌ إضافي، لا بديل."
@@ -190,7 +190,7 @@
         },
         {
           "@type": "Question",
-          "name": "أي البرامج تستطيع استخدامه؟",
+          "name": "الجهاز لا يظهر في القائمة. ماذا أفعل؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "يتحقّق SplitCam عند بدء التشغيل من تحميل برنامج التشغيل ويعرض تحذيرًا إن لم يُحمَّل؛ وعندها يواصل البرنامج عمله لكن الجهاز يبقى غير متاح. وإن لم يظهر أي تحذير، فربما بنى البرنامج المستقبِل قائمة مدخلاته قبل تثبيت SplitCam — أعِد فتح إعدادات الصوت فيه."
@@ -198,7 +198,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it free?",
+          "name": "هل هو مجاني؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "نعم. فهو جزء من نسخة Windows لا إضافة منفصلة، ولذلك لا شيء فيه خلف مفتاح ترخيص أو حساب."
@@ -671,12 +671,12 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎚</div>
         <h3>خلّاط الصوت — داخل SplitCam</h3>
-        <p>A strip per source, each with its own volume, mute and monitoring. Noise suppression on the microphone, and filters that belong to the individual source: VST plug-ins, Delay, Sound Offset and the Audio Compressor.</p>
+        <p>شريحة لكل مصدر، لكلٍّ منها منزلق مستواها وزرّ كتمها ومفتاح مراقبتها. كتم الضوضاء على الميكروفون، وفلاتر تخصّ كل مصدر على حدة: إضافات VST وDelay وSound Offset وAudio Compressor.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎙</div>
         <h3>الميكروفون الافتراضي — على مستوى Windows</h3>
-        <p>An audio input registered with Windows, sitting in the same list as your sound card and your headset. Programs do not integrate with it one by one; they enumerate the inputs Windows reports, and this is one of them.</p>
+        <p>مدخل صوت مسجَّل لدى Windows، يظهر في القائمة نفسها إلى جانب كرت الصوت وسمّاعة الرأس لديك. ولا حاجة إلى تكامل خاص معه في كل برنامج على حدة؛ فالبرامج تسرد المدخلات التي يعلنها Windows، وهذا واحد منها.</p>
       </div>
     </div>
   </div>
@@ -714,22 +714,22 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">💬</div>
         <h3>الاجتماعات والمكالمات</h3>
-        <p>A conference program gives you one input and no way to add a second track to it. Selecting SplitCam turns that single input into everything you have balanced — the voice, the clip you are reacting to, the page you are demonstrating.</p>
+        <p>يمنحك برنامج الاجتماعات مدخلًا واحدًا، ولا يتيح لك أن تضيف إليه مسارًا ثانيًا. وباختيارك SplitCam يحمل ذلك المدخل الواحد كل ما وازنته — صوتك، والمقطع الذي تتفاعل معه، والصفحة التي تعرضها.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">⏺</div>
         <h3>المسجّلات ومدوّنات الملاحظات</h3>
-        <p>Anything that records from a microphone can capture the assembled session instead of just the room, which keeps a walkthrough and its sound in one file rather than two that have to be lined up afterwards.</p>
+        <p>كل ما يسجّل من ميكروفون يستطيع التقاط الجلسة المجمَّعة بدل صوت الغرفة وحده، فيبقى الشرح وصوته في ملف واحد لا في ملفّين عليك محاذاتهما لاحقًا.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🌐</div>
         <h3>تبويبات المتصفّح</h3>
-        <p>Web apps ask the browser for a microphone and get the same Windows list. A recording page, a web meeting or a voice widget can take the SplitCam device without installing anything.</p>
+        <p>تطلب تطبيقات الويب ميكروفونًا من المتصفّح، فتحصل على قائمة Windows نفسها. وتستطيع صفحة تسجيل أو اجتماع عبر الويب أو أداة صوتية أن تأخذ جهاز SplitCam دون تثبيت أي شيء.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎛</div>
         <h3>برامج البث الأخرى</h3>
-        <p>If you also run OBS or a similar tool, it can add the SplitCam device as an audio input capture and treat the assembled sound as a single source instead of rebuilding the same routing twice.</p>
+        <p>إن كنت تشغّل أيضًا OBS أو أداة مشابهة، فبإمكانها إضافة جهاز SplitCam بوصفه مدخل التقاط صوت، والتعامل مع الصوت المجمَّع كمصدر واحد بدل أن تبني التوجيه نفسه مرّتين.</p>
       </div>
     </div>
   </div>
@@ -799,27 +799,27 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">ما هو هذا الجهاز، وما ليس هو.</p>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>Do I have to download a virtual audio driver for Windows?</summary>
+        <summary>هل عليّ تنزيل برنامج تشغيل صوت افتراضي لـ Windows؟</summary>
         <p>لا. فمُثبِّت SplitCam نفسه هو من يسجّل جهاز الصوت، وبذلك يكون تثبيت SplitCam لـ Windows هو المهمّة كلها. ولا توجد حزمة منفصلة تجلبها.</p>
       </details>
       <details class="faq-item">
-        <summary>هل عليّ تنزيل برنامج تشغيل صوت افتراضي لـ Windows؟</summary>
+        <summary>بم يختلف هذا عن خلّاط الصوت؟</summary>
         <p>خلّاط الصوت هو المكان الذي تجمع فيه المصادر داخل SplitCam، وهذا المزيج هو ما يحمله بثّك وتسجيلك. أما الميكروفون الافتراضي فمخرج إضافي للجلسة نفسها: يجعل الصوت متاحًا لـ Windows كجهاز مدخل، فيستطيع برنامج لا يعرف شيئًا عن SplitCam أن يختاره ويستمع إليه.</p>
       </details>
       <details class="faq-item">
-        <summary>بم يختلف هذا عن خلّاط الصوت؟</summary>
+        <summary>أي البرامج يمكنها استخدامه؟</summary>
         <p>أي برنامج يتيح لك اختيار ميكروفون أو مدخل صوت. فهو يظهر في قائمة مدخلات Windows إلى جانب كرت الصوت لديك، وبذلك تصل إليه تطبيقات المكالمات والمسجّلات والمتصفّحات وOBS بالطريقة نفسها.</p>
       </details>
       <details class="faq-item">
-        <summary>Does using it change what my viewers hear?</summary>
+        <summary>هل يغيّر استخدامه ما يسمعه مشاهدو بثّي؟</summary>
         <p>لا. يظلّ بثّك وتسجيلك يأخذان صوتهما من الخلّاط كما كان. فالميكروفون الافتراضي مستمعٌ إضافي، لا بديل.</p>
       </details>
       <details class="faq-item">
-        <summary>أي البرامج تستطيع استخدامه؟</summary>
+        <summary>الجهاز لا يظهر في القائمة. ماذا أفعل؟</summary>
         <p>يتحقّق SplitCam عند بدء التشغيل من تحميل برنامج التشغيل ويعرض تحذيرًا إن لم يُحمَّل؛ وعندها يواصل البرنامج عمله لكن الجهاز يبقى غير متاح. وإن لم يظهر أي تحذير، فربما بنى البرنامج المستقبِل قائمة مدخلاته قبل تثبيت SplitCam — أعِد فتح إعدادات الصوت فيه.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it free?</summary>
+        <summary>هل هو مجاني؟</summary>
         <p>نعم. فهو جزء من نسخة Windows لا إضافة منفصلة، ولذلك لا شيء فيه خلف مفتاح ترخيص أو حساب.</p>
       </details>
     </div>

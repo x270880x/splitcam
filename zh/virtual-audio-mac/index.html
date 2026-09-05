@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "适用于 macOS 的免费虚拟音频驱动。它会添加一个虚拟音频设备，其他应用会把它当作普通麦克风，因此你可以把麦克风、系统声音、音乐和视频伴音混成一路，送到 Microsoft Teams、Telegram、Discord、Zoom 或任何带麦克风输入的应用。",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "mac 虚拟音频驱动, mac 虚拟音频设备, mac 虚拟麦克风, mac 音频混音器, mac 声音路由, mac 系统声音当麦克风, mac 内录声音, loopback 音频 mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which Macs does it support?",
+          "name": "它支持哪些 Mac？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "搭载 Apple Silicon 的 Mac——M1、M2、M3、M4 及更新机型——并运行 macOS 12 Monterey 或更高版本。驱动只编译了 arm64 版本，因此不支持 Intel 芯片的 Mac。"
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Do I need it if I already have SplitCam for Mac?",
+          "name": "已经装了 Mac 版 SplitCam，还需要它吗？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "通常不需要。macOS 版应用已经包含这个驱动，并会替你安装好。独立安装包只是为了应对需要单独安装或修复该音频设备的情况。"
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "它支持哪些 Mac？",
+          "name": "它是内核扩展吗？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "不是。它是一个 CoreAudio HAL 插件，位于 /Library/Audio/Plug-Ins/HAL，运行在用户空间。不需要在恢复模式里放行，也不用打开任何降低安全性的选项。"
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Why does macOS ask for my password?",
+          "name": "为什么 macOS 会要求输入密码？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "系统音频插件目录属于 macOS，往里写入需要管理员权限。安装包使用 Apple Developer ID 证书签名，并通过了 Apple 公证，所以 Gatekeeper 会直接放行，不会发出警告。"
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "How do I uninstall it?",
+          "name": "如何卸载它？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "从 /Library/Audio/Plug-Ins/HAL 中删除 SplitCamVirtualAudio.driver，然后重启 Mac 或重启音频服务。虚拟设备就会从麦克风列表中消失。"
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "已经装了 Mac 版 SplitCam，还需要它吗？",
+          "name": "也有虚拟摄像头吗？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "有——SplitCam 按同样的原理提供了虚拟摄像头，让你合成好的场景在 Zoom、Teams、Meet 以及数十款其他应用中代替网络摄像头出镜。"
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "它是内核扩展吗？",
+          "name": "它收费吗？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "不收费。驱动是免费的，SplitCam 本身也是。无需注册账号，无需订阅，也不会在音频上加任何水印。"
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>在通话里播放音乐</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>人声和音乐一起送到对面，音量按你调好的来，也不会让对方从你的麦克风里听到笔记本外放的声音。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>分享 Mac 正在播放的声音</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>系统声音也走这同一路信号，所以一段演示、一个视频或一声提示音，对方听到的和你听到的完全一样——而不是隔着房间的空气传过去。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>放视频不丢声音</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>屏幕共享往往只传画面。把视频的伴音送进虚拟设备，它就会跟着你的人声一起传过去。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>两个麦克风，一条通道</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>在同一个房间里采访别人，或者耳麦加桌面麦克风一起用——两个麦克风都能汇进同一路输出。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>录下整段对话</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>把录音工具指向虚拟设备，它录下的那条音轨里已经包含你混进去的每一路音源。</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>没有音频路由功能的应用</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>多数聊天软件只给出一个麦克风下拉菜单，除此之外什么都没有。而这个驱动需要的，恰恰只是那个下拉菜单。</p>
       </div>
     </div>
   </div>
@@ -743,11 +743,11 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
   <div class="section-inner">
     <div class="def-block">
       <div>
-        <span class="eyebrow">What is a virtual audio device?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <span class="eyebrow">什么是虚拟音频设备？</span>
+        <h2 class="def-diag-h">一个只存在于软件里的麦克风。</h2>
+        <p>虚拟音频设备是一个驱动：它在 macOS 里添加一个音频输入，而这个输入背后并没有硬件。应用分辨不出区别——CoreAudio 交给它们的设备描述，和一个 USB 麦克风的完全是同一类，所以这个虚拟设备会出现在麦克风下拉菜单里，就排在你的真实硬件旁边。</p>
+        <p>它之所以有用，是因为输入端是敞开的。混音器——比如 SplitCam——可以同时把好几路信号灌进去：你的人声、Mac 自己正在播放的声音、一个音乐播放器、你正在展示的那段视频的伴音。而另一端的应用始终以为自己听的只是一个普通麦克风。</p>
+        <p><strong style="color:var(--text)">这是一个 CoreAudio HAL 插件，不是内核扩展。</strong>它运行在用户空间，不需要以降低安全性的方式启动，删掉一个文件夹就能卸载。</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -790,38 +790,38 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
   <div class="section-inner">
     <span class="eyebrow center-h" style="text-align:center;display:block">Frequently asked</span>
     <h2 class="sec-h" style="text-align:center;margin:0 auto 14px;max-width:600px">虚拟音频常见问题。</h2>
-    <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Everything worth knowing before you install it.</p>
+    <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">安装之前值得了解的一切。</p>
     <div class="faq-list">
       <details class="faq-item">
         <summary>什么是虚拟音频驱动？</summary>
         <p>一种在 macOS 中添加音频设备的软件，背后并没有任何硬件。应用无法把它和真实麦克风区分开——它会像其他输入设备一样出现在麦克风列表里，因此送进它的任何声音都能进入通话、直播或录制。</p>
       </details>
       <details class="faq-item">
-        <summary>Which Macs does it support?</summary>
+        <summary>它支持哪些 Mac？</summary>
         <p>搭载 Apple Silicon 的 Mac——M1、M2、M3、M4 及更新机型——并运行 macOS 12 Monterey 或更高版本。驱动只编译了 arm64 版本，因此不支持 Intel 芯片的 Mac。</p>
       </details>
       <details class="faq-item">
-        <summary>Do I need it if I already have SplitCam for Mac?</summary>
+        <summary>已经装了 Mac 版 SplitCam，还需要它吗？</summary>
         <p>通常不需要。macOS 版应用已经包含这个驱动，并会替你安装好。独立安装包只是为了应对需要单独安装或修复该音频设备的情况。</p>
       </details>
       <details class="faq-item">
-        <summary>它支持哪些 Mac？</summary>
+        <summary>它是内核扩展吗？</summary>
         <p>不是。它是一个 CoreAudio HAL 插件，位于 <code>/Library/Audio/Plug-Ins/HAL</code>，运行在用户空间。不需要在恢复模式里放行，也不用打开任何降低安全性的选项。</p>
       </details>
       <details class="faq-item">
-        <summary>Why does macOS ask for my password?</summary>
+        <summary>为什么 macOS 会要求输入密码？</summary>
         <p>系统音频插件目录属于 macOS，往里写入需要管理员权限。安装包使用 Apple Developer ID 证书签名，并通过了 Apple 公证，所以 Gatekeeper 会直接放行，不会发出警告。</p>
       </details>
       <details class="faq-item">
-        <summary>How do I uninstall it?</summary>
+        <summary>如何卸载它？</summary>
         <p>从 <code>/Library/Audio/Plug-Ins/HAL</code> 中删除 <code>SplitCamVirtualAudio.driver</code>，然后重启 Mac 或重启音频服务。虚拟设备就会从麦克风列表中消失。</p>
       </details>
       <details class="faq-item">
-        <summary>已经装了 Mac 版 SplitCam，还需要它吗？</summary>
+        <summary>也有虚拟摄像头吗？</summary>
         <p>有——SplitCam 按同样的原理提供了<a href="https://splitcam.com/zh/virtual-camera" style="color:var(--blue)">虚拟摄像头</a>，让你合成好的场景在 Zoom、Teams、Meet 以及数十款其他应用中代替网络摄像头出镜。</p>
       </details>
       <details class="faq-item">
-        <summary>它是内核扩展吗？</summary>
+        <summary>它收费吗？</summary>
         <p>不收费。驱动是免费的，SplitCam 本身也是。无需注册账号，无需订阅，也不会在音频上加任何水印。</p>
       </details>
     </div>

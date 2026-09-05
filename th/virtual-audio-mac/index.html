@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "ไดรเวอร์เสียงเสมือนฟรีสำหรับ macOS มันเพิ่มอุปกรณ์เสียงเสมือนที่แอปอื่นมองเห็นเป็นไมโครโฟนทั่วไป คุณจึงส่งเสียงที่มิกซ์จากไมโครโฟน เสียงระบบ เพลง และเสียงวิดีโอ ไปยัง Microsoft Teams, Telegram, Discord, Zoom หรือแอปใดก็ได้ที่มีช่องไมโครโฟน",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "ไดรเวอร์เสียงเสมือน mac, อุปกรณ์เสียงเสมือน mac, ไมโครโฟนเสมือน mac, มิกเซอร์เสียง mac, รวมเสียงหลายแหล่ง mac, ส่งเสียงระบบเข้าไมโครโฟน mac, virtual audio driver mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which Macs does it support?",
+          "name": "รองรับ Mac รุ่นไหนบ้าง?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Mac ที่ใช้ชิป Apple Silicon — M1, M2, M3, M4 และรุ่นใหม่กว่า ที่รัน macOS 12 Monterey ขึ้นไป ไฟล์ไดรเวอร์สร้างมาสำหรับ arm64 เท่านั้น จึงไม่รองรับ Mac ที่ใช้ชิป Intel"
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "รองรับ Mac รุ่นไหนบ้าง?",
+          "name": "ถ้ามี SplitCam สำหรับ Mac อยู่แล้ว ยังต้องใช้ไหม?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "ส่วนใหญ่ไม่ต้อง แอปพลิเคชันบน macOS มีไดรเวอร์ตัวนี้อยู่แล้วและติดตั้งให้คุณเอง ชุดติดตั้งแยกมีไว้สำหรับกรณีที่ต้องติดตั้งหรือซ่อมอุปกรณ์เสียงตัวนี้ต่างหากเท่านั้น"
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "ถ้ามี SplitCam สำหรับ Mac อยู่แล้ว ยังต้องใช้ไหม?",
+          "name": "มันเป็นส่วนขยายเคอร์เนลหรือเปล่า?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "ไม่ใช่ มันคือปลั๊กอิน CoreAudio HAL ที่อยู่ใน /Library/Audio/Plug-Ins/HAL และทำงานในระดับผู้ใช้ ไม่มีอะไรต้องอนุญาตในโหมดกู้คืน และไม่ต้องเปิดการตั้งค่าความปลอดภัยแบบลดระดับ"
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "มันเป็นส่วนขยายเคอร์เนลหรือเปล่า?",
+          "name": "ทำไม macOS ถึงขอรหัสผ่าน?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "โฟลเดอร์ปลั๊กอินเสียงของระบบเป็นของ macOS การเขียนไฟล์ลงไปจึงต้องใช้สิทธิ์ผู้ดูแลระบบ ชุดติดตั้งเซ็นด้วยใบรับรอง Apple Developer ID และผ่านการรับรองจาก Apple แล้ว Gatekeeper จึงปล่อยผ่านโดยไม่ขึ้นคำเตือน"
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "ทำไม macOS ถึงขอรหัสผ่าน?",
+          "name": "ถอนการติดตั้งอย่างไร?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "ลบ SplitCamVirtualAudio.driver ออกจาก /Library/Audio/Plug-Ins/HAL แล้วรีสตาร์ต Mac หรือรีสตาร์ตบริการเสียง อุปกรณ์เสมือนจะหายไปจากรายการไมโครโฟน"
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "ถอนการติดตั้งอย่างไร?",
+          "name": "มีกล้องเสมือนด้วยไหม?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "มี — SplitCam มี กล้องเสมือน ที่ทำงานบนหลักการเดียวกัน ให้ฉากที่คุณจัดไว้ทำหน้าที่แทนเว็บแคมใน Zoom, Teams, Meet และแอปอื่นอีกหลายสิบตัว"
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "มีกล้องเสมือนด้วยไหม?",
+          "name": "มีค่าใช้จ่ายไหม?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "ไม่มีค่าใช้จ่าย ไดรเวอร์ตัวนี้ฟรี เช่นเดียวกับตัว SplitCam เอง ไม่ต้องสมัครบัญชี ไม่ต้องจ่ายค่าสมาชิก และไม่มีลายน้ำใด ๆ ในเสียง"
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>เปิดเพลงเข้าไปในสายสนทนา</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>เสียงพูดกับเพลงไปถึงพร้อมกัน ในระดับเสียงที่คุณตั้งไว้ โดยที่อีกฝ่ายไม่ได้ยินเสียงลำโพงแล็ปท็อปย้อนเข้าไมโครโฟนของคุณ</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>แชร์เสียงที่ Mac กำลังเล่นอยู่</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>เสียงระบบเข้าไปในสายเดียวกัน การสาธิต วิดีโอ หรือเสียงแจ้งเตือน จึงไปถึงอีกฝ่ายเหมือนที่คุณได้ยินทุกประการ — ไม่ใช่เสียงที่ลอยผ่านห้องเข้าไมค์</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>เปิดวิดีโอโดยไม่เสียเสียง</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>การแชร์หน้าจอมักส่งไปแค่ภาพ ให้จัดเส้นทางเสียงของคลิปเข้าอุปกรณ์เสมือน แล้วเสียงนั้นจะไปพร้อมกับเสียงพูดของคุณ</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>ไมค์สองตัว ช่องเดียว</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>สัมภาษณ์คนที่อยู่ในห้องเดียวกัน หรือใช้หูฟังพร้อมไมค์ควบคู่กับไมค์ตั้งโต๊ะ — ไมค์ทั้งสองตัวป้อนเข้าเอาต์พุตเดียวกันได้</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>บันทึกบทสนทนาทั้งวง</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>โปรแกรมอัดเสียงที่ตั้งให้รับจากอุปกรณ์เสมือนจะได้แทร็กเดียวที่มีทุกแหล่งสัญญาณที่คุณมิกซ์ไว้อยู่ครบแล้ว</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>แอปที่ไม่มีระบบจัดเส้นทางเสียง</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>แอปแชทส่วนใหญ่มีให้แค่ช่องเลือกไมโครโฟน ไม่มีอะไรมากกว่านั้น และไดรเวอร์ตัวนี้ก็ขอแค่ช่องเลือกนั้น</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">อุปกรณ์เสียงเสมือนคืออะไร</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">ไมโครโฟนที่มีอยู่แค่ในซอฟต์แวร์</h2>
+        <p>อุปกรณ์เสียงเสมือนคือไดรเวอร์ที่เพิ่มอินพุตเสียงให้ macOS โดยไม่มีฮาร์ดแวร์อยู่เบื้องหลัง แอปพลิเคชันแยกความต่างไม่ออก — CoreAudio ยื่นคำอธิบายอุปกรณ์แบบเดียวกับที่ใช้กับไมโครโฟน USB ให้แอป อุปกรณ์เสมือนจึงโผล่ขึ้นมาในรายการไมโครโฟนข้าง ๆ ฮาร์ดแวร์ตัวจริงของคุณ</p>
+        <p>สิ่งที่ทำให้มันมีประโยชน์คือฝั่งอินพุตที่เปิดกว้าง มิกเซอร์ — เช่น SplitCam — ป้อนสัญญาณหลายเส้นเข้าไปพร้อมกันได้: เสียงพูดของคุณ เสียงที่ Mac กำลังเล่นเอง โปรแกรมเล่นเพลง และเสียงของคลิปที่คุณกำลังเปิดให้ดู ส่วนแอปพลิเคชันที่ปลายอีกด้านก็ยังเชื่อว่ามันกำลังฟังไมโครโฟนธรรมดาตัวเดียวอยู่</p>
+        <p><strong style="color:var(--text)">นี่คือปลั๊กอิน CoreAudio HAL ไม่ใช่ส่วนขยายเคอร์เนล</strong> มันทำงานในระดับผู้ใช้ ไม่ต้องบูตเข้าโหมดที่ลดระดับความปลอดภัย และถอนออกได้ด้วยการลบโฟลเดอร์เดียวทิ้ง</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -797,31 +797,31 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
         <p>ซอฟต์แวร์ที่เพิ่มอุปกรณ์เสียงให้ macOS โดยไม่มีฮาร์ดแวร์อยู่เบื้องหลัง แอปพลิเคชันแยกมันออกจากไมโครโฟนจริงไม่ได้ — มันปรากฏในรายการไมโครโฟนเหมือนอินพุตทั่วไป สิ่งที่ส่งเข้าไปในนั้นจึงส่งต่อไปยังสายสนทนา สตรีม หรือการบันทึกได้</p>
       </details>
       <details class="faq-item">
-        <summary>Which Macs does it support?</summary>
+        <summary>รองรับ Mac รุ่นไหนบ้าง?</summary>
         <p>Mac ที่ใช้ชิป Apple Silicon — M1, M2, M3, M4 และรุ่นใหม่กว่า ที่รัน macOS 12 Monterey ขึ้นไป ไฟล์ไดรเวอร์สร้างมาสำหรับ arm64 เท่านั้น จึงไม่รองรับ Mac ที่ใช้ชิป Intel</p>
       </details>
       <details class="faq-item">
-        <summary>รองรับ Mac รุ่นไหนบ้าง?</summary>
+        <summary>ถ้ามี SplitCam สำหรับ Mac อยู่แล้ว ยังต้องใช้ไหม?</summary>
         <p>ส่วนใหญ่ไม่ต้อง แอปพลิเคชันบน macOS มีไดรเวอร์ตัวนี้อยู่แล้วและติดตั้งให้คุณเอง ชุดติดตั้งแยกมีไว้สำหรับกรณีที่ต้องติดตั้งหรือซ่อมอุปกรณ์เสียงตัวนี้ต่างหากเท่านั้น</p>
       </details>
       <details class="faq-item">
-        <summary>ถ้ามี SplitCam สำหรับ Mac อยู่แล้ว ยังต้องใช้ไหม?</summary>
+        <summary>มันเป็นส่วนขยายเคอร์เนลหรือเปล่า?</summary>
         <p>ไม่ใช่ มันคือปลั๊กอิน CoreAudio HAL ที่อยู่ใน <code>/Library/Audio/Plug-Ins/HAL</code> และทำงานในระดับผู้ใช้ ไม่มีอะไรต้องอนุญาตในโหมดกู้คืน และไม่ต้องเปิดการตั้งค่าความปลอดภัยแบบลดระดับ</p>
       </details>
       <details class="faq-item">
-        <summary>มันเป็นส่วนขยายเคอร์เนลหรือเปล่า?</summary>
+        <summary>ทำไม macOS ถึงขอรหัสผ่าน?</summary>
         <p>โฟลเดอร์ปลั๊กอินเสียงของระบบเป็นของ macOS การเขียนไฟล์ลงไปจึงต้องใช้สิทธิ์ผู้ดูแลระบบ ชุดติดตั้งเซ็นด้วยใบรับรอง Apple Developer ID และผ่านการรับรองจาก Apple แล้ว Gatekeeper จึงปล่อยผ่านโดยไม่ขึ้นคำเตือน</p>
       </details>
       <details class="faq-item">
-        <summary>ทำไม macOS ถึงขอรหัสผ่าน?</summary>
+        <summary>ถอนการติดตั้งอย่างไร?</summary>
         <p>ลบ <code>SplitCamVirtualAudio.driver</code> ออกจาก <code>/Library/Audio/Plug-Ins/HAL</code> แล้วรีสตาร์ต Mac หรือรีสตาร์ตบริการเสียง อุปกรณ์เสมือนจะหายไปจากรายการไมโครโฟน</p>
       </details>
       <details class="faq-item">
-        <summary>ถอนการติดตั้งอย่างไร?</summary>
+        <summary>มีกล้องเสมือนด้วยไหม?</summary>
         <p>มี — SplitCam มี <a href="https://splitcam.com/th/virtual-camera" style="color:var(--blue)">กล้องเสมือน</a> ที่ทำงานบนหลักการเดียวกัน ให้ฉากที่คุณจัดไว้ทำหน้าที่แทนเว็บแคมใน Zoom, Teams, Meet และแอปอื่นอีกหลายสิบตัว</p>
       </details>
       <details class="faq-item">
-        <summary>มีกล้องเสมือนด้วยไหม?</summary>
+        <summary>มีค่าใช้จ่ายไหม?</summary>
         <p>ไม่มีค่าใช้จ่าย ไดรเวอร์ตัวนี้ฟรี เช่นเดียวกับตัว SplitCam เอง ไม่ต้องสมัครบัญชี ไม่ต้องจ่ายค่าสมาชิก และไม่มีลายน้ำใด ๆ ในเสียง</p>
       </details>
     </div>

@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "Besplatan virtuelni audio drajver za macOS. Dodaje virtuelni audio uređaj koji druge aplikacije vide kao običan mikrofon, pa se miks mikrofona, zvuka sistema, muzike i zvuka iz videa može poslati u Microsoft Teams, Telegram, Discord, Zoom ili bilo koju aplikaciju s ulazom za mikrofon.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "virtuelni audio drajver mac, virtuelni mikrofon mac, virtuelni audio uređaj mac, audio mikser za mac, kako spojiti zvuk i mikrofon mac, zvuk sistema u mikrofon mac, loopback audio mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which Macs does it support?",
+          "name": "Koje Mac računare podržava?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Mac računari s Apple Silicon čipom — M1, M2, M3, M4 i noviji — sa macOS-om 12 Monterey ili novijim. Drajver je građen samo za arm64, pa Mac računari s Intelom nisu podržani."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Do I need it if I already have SplitCam for Mac?",
+          "name": "Treba li mi ako već imam SplitCam za Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Obično ne. Aplikacija za macOS već sadrži ovaj drajver i sama ga instalira. Zaseban paket postoji za slučajeve kada audio uređaj treba instalirati ili popraviti samostalno."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it a kernel extension?",
+          "name": "Da li je to ekstenzija kernela?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ne. To je CoreAudio HAL dodatak koji stoji u /Library/Audio/Plug-Ins/HAL i radi u korisničkom prostoru. Nema šta da se dozvoljava u režimu oporavka niti ima smanjene bezbednosti koju treba uključiti."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Why does macOS ask for my password?",
+          "name": "Zašto macOS traži moju lozinku?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Sistemska fascikla audio dodataka pripada macOS-u, pa upis u nju traži administratorska prava. Paket je potpisan Apple Developer ID sertifikatom i notarizovan kod Apple-a, zbog čega ga Gatekeeper propušta bez upozorenja."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "How do I uninstall it?",
+          "name": "Kako da ga deinstaliram?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Obriši SplitCamVirtualAudio.driver iz /Library/Audio/Plug-Ins/HAL, pa ponovo pokreni Mac ili audio servis. Virtuelni uređaj nestaje iz liste mikrofona."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is there a virtual camera too?",
+          "name": "Postoji li i virtuelna kamera?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Da — SplitCam po istom principu daje i virtuelnu kameru, tako da sklopljena scena može da zameni tvoju web kameru u Zoom-u, Teams-u, Meet-u i još desetinama aplikacija."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does it cost anything?",
+          "name": "Da li se nešto plaća?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ne. Drajver je besplatan, kao i sam SplitCam. Nema naloga koji treba otvoriti, nema pretplate i nema vodenog žiga na zvuku."
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Pusti muziku u poziv</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>Glas i numera stižu zajedno, na nivoima koje podesiš, a da druga strana ne čuje zvučnik laptopa kroz tvoj mikrofon.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Podeli ono što Mac pušta</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>Zvuk sistema ide u isti kanal, pa se demonstracija, video ili zvučno obaveštenje čuje tačno onako kako ga i sam čuješ — a ne kroz sobu.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Prikaži video bez gubitka zvuka</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>Deljenje ekrana često šalje samo sliku. Usmeri zvuk videa u virtuelni uređaj i on putuje zajedno s tvojim glasom.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>Dva mikrofona, jedan kanal</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Intervjuišeš nekoga u istoj sobi ili koristiš slušalice s mikrofonom uz stoni mikrofon — oba mogu da hrane isti izlaz.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Snimi ceo razgovor</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>Snimač podešen na virtuelni uređaj hvata jedan zapis u kojem su već svi izvori koje miksuješ.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Aplikacije bez usmeravanja zvuka</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>Većina aplikacija za dopisivanje nudi padajuću listu mikrofona i ništa više. Ta padajuća lista je sve što ovom drajveru treba.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Šta je virtuelni audio uređaj?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">Mikrofon koji postoji samo u softveru.</h2>
+        <p>Virtuelni audio uređaj je drajver koji macOS-u dodaje audio ulaz bez ijednog komada hardvera iza njega. Aplikacije ne vide razliku — CoreAudio im predaje isti onakav opis uređaja kakav bi dao i za USB mikrofon, pa se virtuelni pojavljuje u padajućoj listi mikrofona pored tvog pravog hardvera.</p>
+        <p>Koristan je zato što mu je ulazna strana otvorena. Mikser — recimo SplitCam — može u njega da slije više signala odjednom: tvoj glas, zvuk koji sam Mac pušta, muzički plejer, zvuk videa koji prikazuješ. Aplikacija na drugom kraju i dalje veruje da sluša jedan običan mikrofon.</p>
+        <p><strong style="color:var(--text)">Ovo je CoreAudio HAL dodatak, a ne ekstenzija kernela.</strong> Radi u korisničkom prostoru, ne traži pokretanje u režimu smanjene bezbednosti i uklanja se brisanjem jedne jedine fascikle.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -797,31 +797,31 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
         <p>Softver koji macOS-u dodaje audio uređaj bez ijednog komada hardvera iza njega. Aplikacije ga ne razlikuju od pravog mikrofona — pojavljuje se u listi mikrofona kao svaki drugi ulaz, pa se sve što se u njega usmeri može poslati u poziv, strim ili snimak.</p>
       </details>
       <details class="faq-item">
-        <summary>Which Macs does it support?</summary>
+        <summary>Koje Mac računare podržava?</summary>
         <p>Mac računari s Apple Silicon čipom — M1, M2, M3, M4 i noviji — sa macOS-om 12 Monterey ili novijim. Drajver je građen samo za arm64, pa Mac računari s Intelom nisu podržani.</p>
       </details>
       <details class="faq-item">
-        <summary>Do I need it if I already have SplitCam for Mac?</summary>
+        <summary>Treba li mi ako već imam SplitCam za Mac?</summary>
         <p>Obično ne. Aplikacija za macOS već sadrži ovaj drajver i sama ga instalira. Zaseban paket postoji za slučajeve kada audio uređaj treba instalirati ili popraviti samostalno.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it a kernel extension?</summary>
+        <summary>Da li je to ekstenzija kernela?</summary>
         <p>Ne. To je CoreAudio HAL dodatak koji stoji u <code>/Library/Audio/Plug-Ins/HAL</code> i radi u korisničkom prostoru. Nema šta da se dozvoljava u režimu oporavka niti ima smanjene bezbednosti koju treba uključiti.</p>
       </details>
       <details class="faq-item">
-        <summary>Why does macOS ask for my password?</summary>
+        <summary>Zašto macOS traži moju lozinku?</summary>
         <p>Sistemska fascikla audio dodataka pripada macOS-u, pa upis u nju traži administratorska prava. Paket je potpisan Apple Developer ID sertifikatom i notarizovan kod Apple-a, zbog čega ga Gatekeeper propušta bez upozorenja.</p>
       </details>
       <details class="faq-item">
-        <summary>How do I uninstall it?</summary>
+        <summary>Kako da ga deinstaliram?</summary>
         <p>Obriši <code>SplitCamVirtualAudio.driver</code> iz <code>/Library/Audio/Plug-Ins/HAL</code>, pa ponovo pokreni Mac ili audio servis. Virtuelni uređaj nestaje iz liste mikrofona.</p>
       </details>
       <details class="faq-item">
-        <summary>Is there a virtual camera too?</summary>
+        <summary>Postoji li i virtuelna kamera?</summary>
         <p>Da — SplitCam po istom principu daje i <a href="https://splitcam.com/sr/virtual-camera" style="color:var(--blue)">virtuelnu kameru</a>, tako da sklopljena scena može da zameni tvoju web kameru u Zoom-u, Teams-u, Meet-u i još desetinama aplikacija.</p>
       </details>
       <details class="faq-item">
-        <summary>Does it cost anything?</summary>
+        <summary>Da li se nešto plaća?</summary>
         <p>Ne. Drajver je besplatan, kao i sam SplitCam. Nema naloga koji treba otvoriti, nema pretplate i nema vodenog žiga na zvuku.</p>
       </details>
     </div>

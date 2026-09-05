@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "Pilote audio virtuel gratuit pour macOS. Il ajoute un périphérique audio que les autres applis voient comme un microphone ordinaire : un mélange de votre micro, du son système, de la musique et du son des vidéos peut ainsi partir vers Microsoft Teams, Telegram, Discord, Zoom ou toute appli dotée d'une entrée micro.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "pilote audio virtuel mac, périphérique audio virtuel mac, micro virtuel mac, mixeur audio mac, combiner sources audio mac, loopback audio mac, son système vers micro mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is a virtual audio driver?",
+          "name": "Qu'est-ce qu'un pilote audio virtuel ?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Un logiciel qui ajoute à macOS un périphérique audio sans aucun matériel derrière. Les applications ne le distinguent pas d'un vrai microphone : il apparaît dans la liste des microphones comme n'importe quelle autre entrée, si bien que tout ce qui y est routé peut partir dans un appel, un stream ou un enregistrement."
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Qu'est-ce qu'un pilote audio virtuel ?",
+          "name": "Quels Mac sont pris en charge ?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Les Mac équipés d'Apple Silicon — M1, M2, M3, M4 et plus récents — sous macOS 12 Monterey ou version ultérieure. Le binaire du pilote est compilé uniquement pour arm64 : les Mac Intel ne sont pas pris en charge."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Quels Mac sont pris en charge ?",
+          "name": "En ai-je besoin si j'ai déjà SplitCam pour Mac ?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "En général, non. L'application macOS contient déjà ce pilote et l'installe pour vous. Le paquet autonome existe pour les cas où le périphérique audio doit être installé ou réparé séparément."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "En ai-je besoin si j'ai déjà SplitCam pour Mac ?",
+          "name": "Est-ce une extension du noyau ?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Non. C'est un plug-in CoreAudio HAL installé dans /Library/Audio/Plug-Ins/HAL, qui tourne en espace utilisateur. Rien à autoriser en mode Recovery, aucun réglage de sécurité réduite à activer."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Why does macOS ask for my password?",
+          "name": "Pourquoi macOS demande-t-il mon mot de passe ?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Le dossier des plug-ins audio du système appartient à macOS : y écrire demande des droits administrateur. Le paquet est signé avec un certificat Apple Developer ID et notarisé par Apple, ce qui permet à Gatekeeper de le laisser passer sans avertissement."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "Est-ce une extension noyau ?",
+          "name": "Comment le désinstaller ?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Supprimez SplitCamVirtualAudio.driver de /Library/Audio/Plug-Ins/HAL, puis redémarrez le Mac ou le service audio. Le périphérique virtuel disparaît de la liste des microphones."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Pourquoi macOS demande-t-il mon mot de passe ?",
+          "name": "Existe-t-il aussi une caméra virtuelle ?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Oui — SplitCam propose une caméra virtuelle bâtie sur le même principe : une scène composée remplace votre webcam dans Zoom, Teams, Meet et des dizaines d'autres applications."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Comment le désinstaller ?",
+          "name": "Est-ce payant ?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Non. Le pilote est gratuit, tout comme SplitCam. Aucun compte à créer, aucun abonnement, aucun filigrane ajouté au son."
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Diffuser de la musique dans un appel</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>La voix et le morceau arrivent ensemble, aux niveaux que vous avez réglés, sans que votre interlocuteur entende le son des haut-parleurs du portable repris par votre micro.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Partager ce que joue votre Mac</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>Le son système passe dans le même flux : une démo, une vidéo ou une alerte s'entend exactement comme vous l'entendez — et non comme un son repris à travers la pièce.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Montrer une vidéo sans perdre le son</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>Le partage d'écran n'envoie bien souvent que l'image. Routez le son de la vidéo vers le périphérique virtuel, et il part avec votre voix.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>Deux micros, un seul canal</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Interviewer quelqu'un dans la même pièce ou utiliser un casque et un micro de table — les deux micros peuvent alimenter une seule et même sortie.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Enregistrer toute la conversation</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>Un enregistreur réglé sur le périphérique virtuel capte une seule piste, qui contient déjà toutes les sources que vous avez mixées.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Les applis sans routage audio</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>La plupart des messageries n'offrent qu'une liste déroulante de microphones, rien de plus. C'est tout ce qu'il faut à ce pilote.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Qu'est-ce qu'un périphérique audio virtuel ?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">Un microphone purement logiciel.</h2>
+        <p>Un périphérique audio virtuel est un pilote qui ajoute à macOS une entrée audio sans aucun matériel derrière. Les applications ne font pas la différence — CoreAudio leur transmet le même type de description de périphérique que pour un microphone USB, si bien que le périphérique virtuel apparaît dans la liste déroulante des microphones, à côté de votre matériel réel.</p>
+        <p>Ce qui le rend utile, c'est que son entrée reste ouverte. Un mixeur — SplitCam, par exemple — peut y envoyer plusieurs signaux à la fois : votre voix, le son que le Mac produit lui-même, un lecteur de musique, le son d'une vidéo que vous montrez. À l'autre bout, l'application croit toujours écouter un simple microphone.</p>
+        <p><strong style="color:var(--text)">C'est un plug-in CoreAudio HAL, pas une extension noyau.</strong> Il tourne en espace utilisateur, ne demande aucun démarrage en sécurité réduite, et il suffit de supprimer un seul dossier pour le retirer.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -793,35 +793,35 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Tout ce qu'il faut savoir avant d'installer.</p>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>What is a virtual audio driver?</summary>
+        <summary>Qu'est-ce qu'un pilote audio virtuel ?</summary>
         <p>Un logiciel qui ajoute à macOS un périphérique audio sans aucun matériel derrière. Les applications ne le distinguent pas d'un vrai microphone : il apparaît dans la liste des microphones comme n'importe quelle autre entrée, si bien que tout ce qui y est routé peut partir dans un appel, un stream ou un enregistrement.</p>
       </details>
       <details class="faq-item">
-        <summary>Qu'est-ce qu'un pilote audio virtuel ?</summary>
+        <summary>Quels Mac sont pris en charge ?</summary>
         <p>Les Mac équipés d'Apple Silicon — M1, M2, M3, M4 et plus récents — sous macOS 12 Monterey ou version ultérieure. Le binaire du pilote est compilé uniquement pour arm64 : les Mac Intel ne sont pas pris en charge.</p>
       </details>
       <details class="faq-item">
-        <summary>Quels Mac sont pris en charge ?</summary>
+        <summary>En ai-je besoin si j'ai déjà SplitCam pour Mac ?</summary>
         <p>En général, non. L'application macOS contient déjà ce pilote et l'installe pour vous. Le paquet autonome existe pour les cas où le périphérique audio doit être installé ou réparé séparément.</p>
       </details>
       <details class="faq-item">
-        <summary>En ai-je besoin si j'ai déjà SplitCam pour Mac ?</summary>
+        <summary>Est-ce une extension du noyau ?</summary>
         <p>Non. C'est un plug-in CoreAudio HAL installé dans <code>/Library/Audio/Plug-Ins/HAL</code>, qui tourne en espace utilisateur. Rien à autoriser en mode Recovery, aucun réglage de sécurité réduite à activer.</p>
       </details>
       <details class="faq-item">
-        <summary>Why does macOS ask for my password?</summary>
+        <summary>Pourquoi macOS demande-t-il mon mot de passe ?</summary>
         <p>Le dossier des plug-ins audio du système appartient à macOS : y écrire demande des droits administrateur. Le paquet est signé avec un certificat Apple Developer ID et notarisé par Apple, ce qui permet à Gatekeeper de le laisser passer sans avertissement.</p>
       </details>
       <details class="faq-item">
-        <summary>Est-ce une extension noyau ?</summary>
+        <summary>Comment le désinstaller ?</summary>
         <p>Supprimez <code>SplitCamVirtualAudio.driver</code> de <code>/Library/Audio/Plug-Ins/HAL</code>, puis redémarrez le Mac ou le service audio. Le périphérique virtuel disparaît de la liste des microphones.</p>
       </details>
       <details class="faq-item">
-        <summary>Pourquoi macOS demande-t-il mon mot de passe ?</summary>
+        <summary>Existe-t-il aussi une caméra virtuelle ?</summary>
         <p>Oui — SplitCam propose une <a href="https://splitcam.com/fr/virtual-camera" style="color:var(--blue)">caméra virtuelle</a> bâtie sur le même principe : une scène composée remplace votre webcam dans Zoom, Teams, Meet et des dizaines d'autres applications.</p>
       </details>
       <details class="faq-item">
-        <summary>Comment le désinstaller ?</summary>
+        <summary>Est-ce payant ?</summary>
         <p>Non. Le pilote est gratuit, tout comme SplitCam. Aucun compte à créer, aucun abonnement, aucun filigrane ajouté au son.</p>
       </details>
     </div>

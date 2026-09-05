@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "Bezplatný virtuálny zvukový ovládač pre macOS. Pridá virtuálne zvukové zariadenie, ktoré ostatné aplikácie vidia ako bežný mikrofón, takže mix vášho mikrofónu, systémového zvuku, hudby a zvuku z videa môžete poslať do Microsoft Teams, Telegramu, Discordu, Zoomu alebo do ktorejkoľvek aplikácie so vstupom pre mikrofón.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "virtuálny zvukový ovládač mac, virtuálne zvukové zariadenie mac, virtuálny mikrofón mac, zvukový mixér mac, systémový zvuk do mikrofónu mac, mixovanie zvuku mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -176,7 +176,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is a virtual audio driver?",
+          "name": "Čo je virtuálny zvukový ovládač?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Softvér, ktorý do macOS pridá zvukové zariadenie bez akéhokoľvek hardvéru za ním. Aplikácie ho nerozoznajú od skutočného mikrofónu — v zozname mikrofónov sa objaví ako každý iný vstup, takže všetko, čo doň nasmerujete, môžete poslať do hovoru, do streamu aj do nahrávky."
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which Macs does it support?",
+          "name": "Ktoré Macy podporuje?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Macy s čipom Apple Silicon — M1, M2, M3, M4 a novšie — so systémom macOS 12 Monterey alebo novším. Binárka ovládača je zostavená iba pre arm64, takže Macy s procesorom Intel podporované nie sú."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Do I need it if I already have SplitCam for Mac?",
+          "name": "Potrebujem ho, ak už mám SplitCam pre Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Väčšinou nie. Aplikácia pre macOS tento ovládač už obsahuje a nainštaluje ho za vás. Samostatný balík je tu pre prípady, keď treba zvukové zariadenie nainštalovať alebo opraviť zvlášť."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it a kernel extension?",
+          "name": "Je to rozšírenie jadra?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nie. Je to zásuvný modul CoreAudio HAL, ktorý sídli v priečinku /Library/Audio/Plug-Ins/HAL a beží v používateľskom priestore. Nič nemusíte povoľovať v režime obnovy a nemusíte zapínať žiadne znížené zabezpečenie."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "Why does macOS ask for my password?",
+          "name": "Prečo si macOS pýta heslo?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Systémový priečinok zvukových zásuvných modulov patrí macOS, takže zápis doň vyžaduje práva správcu. Balík je podpísaný certifikátom Apple Developer ID a notarizovaný spoločnosťou Apple, a preto ho Gatekeeper pustí bez varovania."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "How do I uninstall it?",
+          "name": "Ako ho odinštalujem?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Vymažte SplitCamVirtualAudio.driver z priečinka /Library/Audio/Plug-Ins/HAL a potom reštartujte Mac alebo zvukovú službu. Virtuálne zariadenie zo zoznamu mikrofónov zmizne."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is there a virtual camera too?",
+          "name": "Existuje aj virtuálna kamera?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Áno — SplitCam ponúka na rovnakom princípe aj virtuálnu kameru, vďaka ktorej poskladaná scéna zastúpi vašu webkameru v Zoome, Teams, Meete a v desiatkach ďalších aplikácií."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does it cost anything?",
+          "name": "Stojí to niečo?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nie. Ovládač je zadarmo, rovnako ako samotný SplitCam. Nemusíte si vytvárať účet, nič si nepredplácate a na zvuk sa nepridáva žiadny vodoznak."
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Pustiť hudbu do hovoru</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>Hlas aj skladba dorazia spolu a v úrovniach, ktoré ste nastavili, bez toho, aby druhá strana cez váš mikrofón počula reproduktor notebooku.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Zdieľať, čo hrá váš Mac</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>Systémový zvuk ide do toho istého kanála, takže ukážku, video či upozornenie počuť presne tak, ako to počujete vy — nie okľukou cez miestnosť.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Premietnuť video aj so zvukom</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>Zdieľanie obrazovky často prenáša iba obraz. Nasmerujte zvuk klipu do virtuálneho zariadenia a pôjde spolu s vaším hlasom.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>Dva mikrofóny, jeden kanál</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Robíte rozhovor s niekým v tej istej miestnosti alebo máte slúchadlá s mikrofónom aj stolový mikrofón — oba môžu napájať jediný výstup.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Nahrať celý rozhovor</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>Nahrávací program nastavený na virtuálne zariadenie zachytí jedinú stopu, ktorá už obsahuje všetky zdroje, ktoré ste zmixovali.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Aplikácie bez smerovania zvuku</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>Väčšina komunikátorov ponúka zoznam mikrofónov a nič viac. Práve taký zoznam je všetko, čo tento ovládač potrebuje.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Čo je virtuálne zvukové zariadenie?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">Mikrofón, ktorý existuje iba v softvéri.</h2>
+        <p>Virtuálne zvukové zariadenie je ovládač, ktorý do macOS pridá zvukový vstup bez akéhokoľvek hardvéru za ním. Aplikácie ho nerozoznajú od skutočného — CoreAudio im podá rovnaký popis zariadenia, aký by dostali pri USB mikrofóne, takže sa virtuálne zariadenie objaví v zozname mikrofónov hneď vedľa vášho skutočného hardvéru.</p>
+        <p>Užitočným ho robí to, že jeho vstupná strana je otvorená. Mixér — napríklad SplitCam — doň dokáže naraz pustiť niekoľko signálov: váš hlas, zvuk, ktorý prehráva samotný Mac, hudobný prehrávač, zvuk klipu, ktorý práve ukazujete. Aplikácia na druhom konci je stále presvedčená, že počúva jeden obyčajný mikrofón.</p>
+        <p><strong style="color:var(--text)">Ide o zásuvný modul CoreAudio HAL, nie o rozšírenie jadra.</strong> Beží v používateľskom priestore, nevyžaduje spustenie so zníženým zabezpečením a odstránite ho zmazaním jediného priečinka.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -793,35 +793,35 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Všetko, čo sa oplatí vedieť pred inštaláciou.</p>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>What is a virtual audio driver?</summary>
+        <summary>Čo je virtuálny zvukový ovládač?</summary>
         <p>Softvér, ktorý do macOS pridá zvukové zariadenie bez akéhokoľvek hardvéru za ním. Aplikácie ho nerozoznajú od skutočného mikrofónu — v zozname mikrofónov sa objaví ako každý iný vstup, takže všetko, čo doň nasmerujete, môžete poslať do hovoru, do streamu aj do nahrávky.</p>
       </details>
       <details class="faq-item">
-        <summary>Which Macs does it support?</summary>
+        <summary>Ktoré Macy podporuje?</summary>
         <p>Macy s čipom Apple Silicon — M1, M2, M3, M4 a novšie — so systémom macOS 12 Monterey alebo novším. Binárka ovládača je zostavená iba pre arm64, takže Macy s procesorom Intel podporované nie sú.</p>
       </details>
       <details class="faq-item">
-        <summary>Do I need it if I already have SplitCam for Mac?</summary>
+        <summary>Potrebujem ho, ak už mám SplitCam pre Mac?</summary>
         <p>Väčšinou nie. Aplikácia pre macOS tento ovládač už obsahuje a nainštaluje ho za vás. Samostatný balík je tu pre prípady, keď treba zvukové zariadenie nainštalovať alebo opraviť zvlášť.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it a kernel extension?</summary>
+        <summary>Je to rozšírenie jadra?</summary>
         <p>Nie. Je to zásuvný modul CoreAudio HAL, ktorý sídli v priečinku <code>/Library/Audio/Plug-Ins/HAL</code> a beží v používateľskom priestore. Nič nemusíte povoľovať v režime obnovy a nemusíte zapínať žiadne znížené zabezpečenie.</p>
       </details>
       <details class="faq-item">
-        <summary>Why does macOS ask for my password?</summary>
+        <summary>Prečo si macOS pýta heslo?</summary>
         <p>Systémový priečinok zvukových zásuvných modulov patrí macOS, takže zápis doň vyžaduje práva správcu. Balík je podpísaný certifikátom Apple Developer ID a notarizovaný spoločnosťou Apple, a preto ho Gatekeeper pustí bez varovania.</p>
       </details>
       <details class="faq-item">
-        <summary>How do I uninstall it?</summary>
+        <summary>Ako ho odinštalujem?</summary>
         <p>Vymažte <code>SplitCamVirtualAudio.driver</code> z priečinka <code>/Library/Audio/Plug-Ins/HAL</code> a potom reštartujte Mac alebo zvukovú službu. Virtuálne zariadenie zo zoznamu mikrofónov zmizne.</p>
       </details>
       <details class="faq-item">
-        <summary>Is there a virtual camera too?</summary>
+        <summary>Existuje aj virtuálna kamera?</summary>
         <p>Áno — SplitCam ponúka na rovnakom princípe aj <a href="https://splitcam.com/sk/virtual-camera" style="color:var(--blue)">virtuálnu kameru</a>, vďaka ktorej poskladaná scéna zastúpi vašu webkameru v Zoome, Teams, Meete a v desiatkach ďalších aplikácií.</p>
       </details>
       <details class="faq-item">
-        <summary>Does it cost anything?</summary>
+        <summary>Stojí to niečo?</summary>
         <p>Nie. Ovládač je zadarmo, rovnako ako samotný SplitCam. Nemusíte si vytvárať účet, nič si nepredplácate a na zvuk sa nepridáva žiadny vodoznak.</p>
       </details>
     </div>

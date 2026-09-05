@@ -174,7 +174,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which programs can use it?",
+          "name": "Hvilke programmer kan bruge den?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ethvert program, hvor du kan vælge en mikrofon eller en lydindgang. Den dukker op i Windows' indgangsliste ved siden af dit lydkort, så opkaldsapps, optagere, browsere og OBS når den alle sammen på samme måde."
@@ -182,7 +182,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does using it change what my viewers hear?",
+          "name": "Ændrer det lyden for mine seere, at jeg bruger den?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nej. Dit stream og din optagelse henter fortsat lyden fra mixeren som før. Den virtuelle mikrofon er en ekstra lytter, ikke en erstatning."
@@ -190,7 +190,7 @@
         },
         {
           "@type": "Question",
-          "name": "Hvilke programmer kan bruge den?",
+          "name": "Enheden mangler på listen. Hvad gør jeg nu?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "SplitCam tjekker ved opstart, om driveren blev indlæst, og viser en advarsel, hvis den ikke blev; i så fald kører programmet videre, men enheden er utilgængelig. Kom der ingen advarsel, har det modtagende program måske bygget sin indgangsliste, før SplitCam blev installeret — åbn dets lydindstillinger igen."
@@ -198,7 +198,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it free?",
+          "name": "Er den gratis?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ja. Den er en del af Windows-versionen og ikke et tilvalg, så intet ved den ligger bag en licensnøgle eller en konto."
@@ -664,12 +664,12 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎚</div>
         <h3>Lydmixer — inde i SplitCam</h3>
-        <p>A strip per source, each with its own volume, mute and monitoring. Noise suppression on the microphone, and filters that belong to the individual source: VST plug-ins, Delay, Sound Offset and the Audio Compressor.</p>
+        <p>Én strimmel pr. kilde, hver med sin egen lydstyrke, mute og medhør. Støjreduktion på mikrofonen og filtre, der hører til den enkelte kilde: VST-plugins, Delay, Sound Offset og Audio Compressor.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎙</div>
         <h3>Virtuel mikrofon — på Windows-niveau</h3>
-        <p>An audio input registered with Windows, sitting in the same list as your sound card and your headset. Programs do not integrate with it one by one; they enumerate the inputs Windows reports, and this is one of them.</p>
+        <p>En lydindgang, der er registreret i Windows og ligger på samme liste som dit lydkort og dit headset. Programmerne skal ikke integrere med den én for én; de læser de indgange, Windows melder, og den her er en af dem.</p>
       </div>
     </div>
   </div>
@@ -707,22 +707,22 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">💬</div>
         <h3>Møder og opkald</h3>
-        <p>A conference program gives you one input and no way to add a second track to it. Selecting SplitCam turns that single input into everything you have balanced — the voice, the clip you are reacting to, the page you are demonstrating.</p>
+        <p>Et konferenceprogram giver dig én indgang og ingen mulighed for at lægge endnu et spor oveni. Vælger du SplitCam, bliver den ene indgang til alt det, du har balanceret — stemmen, klippet, du reagerer på, og siden, du demonstrerer.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">⏺</div>
         <h3>Optagere og referatværktøjer</h3>
-        <p>Anything that records from a microphone can capture the assembled session instead of just the room, which keeps a walkthrough and its sound in one file rather than two that have to be lined up afterwards.</p>
+        <p>Alt, der optager fra en mikrofon, kan fange den samlede session i stedet for kun rummet, så en gennemgang og dens lyd ligger i én fil frem for i to, der skal synkroniseres bagefter.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🌐</div>
         <h3>Browserfaner</h3>
-        <p>Web apps ask the browser for a microphone and get the same Windows list. A recording page, a web meeting or a voice widget can take the SplitCam device without installing anything.</p>
+        <p>Webapps beder browseren om en mikrofon og får den samme Windows-liste. En optageside, et webmøde eller en stemme-widget kan tage SplitCam-enheden uden at installere noget.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎛</div>
         <h3>Andet streamingsoftware</h3>
-        <p>If you also run OBS or a similar tool, it can add the SplitCam device as an audio input capture and treat the assembled sound as a single source instead of rebuilding the same routing twice.</p>
+        <p>Kører du også OBS eller et lignende værktøj, kan det tilføje SplitCam-enheden som en lydindgang og behandle den samlede lyd som én kilde i stedet for at bygge den samme routing op to gange.</p>
       </div>
     </div>
   </div>
@@ -800,19 +800,19 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
         <p>Lydmixeren er der, hvor du kombinerer kilder inde i SplitCam, og det er den kombination, dit stream og din optagelse bærer. Den virtuelle mikrofon er en ekstra udgang for den samme session: den stiller lyden til rådighed for Windows som en indgangsenhed, så et program, der intet ved om SplitCam, kan vælge den og lytte med.</p>
       </details>
       <details class="faq-item">
-        <summary>Which programs can use it?</summary>
+        <summary>Hvilke programmer kan bruge den?</summary>
         <p>Ethvert program, hvor du kan vælge en mikrofon eller en lydindgang. Den dukker op i Windows' indgangsliste ved siden af dit lydkort, så opkaldsapps, optagere, browsere og OBS når den alle sammen på samme måde.</p>
       </details>
       <details class="faq-item">
-        <summary>Does using it change what my viewers hear?</summary>
+        <summary>Ændrer det lyden for mine seere, at jeg bruger den?</summary>
         <p>Nej. Dit stream og din optagelse henter fortsat lyden fra mixeren som før. Den virtuelle mikrofon er en ekstra lytter, ikke en erstatning.</p>
       </details>
       <details class="faq-item">
-        <summary>Hvilke programmer kan bruge den?</summary>
+        <summary>Enheden mangler på listen. Hvad gør jeg nu?</summary>
         <p>SplitCam tjekker ved opstart, om driveren blev indlæst, og viser en advarsel, hvis den ikke blev; i så fald kører programmet videre, men enheden er utilgængelig. Kom der ingen advarsel, har det modtagende program måske bygget sin indgangsliste, før SplitCam blev installeret — åbn dets lydindstillinger igen.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it free?</summary>
+        <summary>Er den gratis?</summary>
         <p>Ja. Den er en del af Windows-versionen og ikke et tilvalg, så intet ved den ligger bag en licensnøgle eller en konto.</p>
       </details>
     </div>

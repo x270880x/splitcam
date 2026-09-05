@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "macOS için ücretsiz sanal ses sürücüsü. Diğer uygulamaların sıradan bir mikrofon olarak gördüğü bir sanal ses cihazı ekler; böylece mikrofonunuzun, sistem sesinin, müziğin ve video sesinin karışımını Microsoft Teams, Telegram, Discord, Zoom ya da mikrofon girişi olan her uygulamaya gönderebilirsiniz.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "mac sanal ses sürücüsü, mac sanal ses cihazı, mac sanal mikrofon, mac ses mikseri, mac ses kaynaklarını birleştirme, mac loopback ses, mac sistem sesini mikrofona verme",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "Mac için SplitCam zaten bendeyse buna ihtiyacım var mı?",
+          "name": "Mac için SplitCam'im zaten varsa buna ihtiyacım var mı?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Genellikle hayır. macOS uygulaması bu sürücüyü zaten içerir ve sizin yerinize kurar. Bağımsız paket, ses cihazının tek başına kurulması ya da onarılması gereken durumlar için var."
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Görüşmeye müzik verin</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>Sesiniz ve parça, ayarladığınız seviyelerde birlikte gider; karşı taraf dizüstünüzün hoparlörünü mikrofonunuzdan duymaz.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Mac'inizin çaldığını paylaşın</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>Sistem sesi de aynı akışa girer; böylece bir tanıtım, bir video ya da bir bildirim sesi tam olarak sizin duyduğunuz gibi karşı tarafa ulaşır — odadan geçerek değil.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Sesi kaybetmeden video gösterin</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>Ekran paylaşımı çoğu zaman yalnızca görüntü gönderir. Videonun sesini sanal cihaza yönlendirin, o da sesinizle birlikte gider.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>İki mikrofon, tek kanal</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Aynı odadaki biriyle röportaj yapıyor ya da kulaklığınızın yanı sıra bir masa mikrofonu kullanıyor olun — ikisi de tek bir çıkışı besleyebilir.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Konuşmanın tamamını kaydedin</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>Sanal cihazı dinleyen bir kayıt programı, karıştırdığınız bütün kaynakları zaten içeren tek bir kanal kaydeder.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Ses yönlendirmesi sunmayan uygulamalar</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>Çoğu mesajlaşma uygulaması bir mikrofon listesinden fazlasını sunmaz. Bu sürücünün ihtiyaç duyduğu tek şey de o listedir.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Sanal ses cihazı nedir?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">Yalnızca yazılımda var olan bir mikrofon.</h2>
+        <p>Sanal ses cihazı, macOS'a arkasında donanım olmayan bir ses girişi ekleyen bir sürücüdür. Uygulamalar aradaki farkı anlayamaz — CoreAudio onlara bir USB mikrofonunkiyle aynı türde bir cihaz tanımı verir; sanal cihaz da bu yüzden gerçek donanımınızın yanında mikrofon listesinde beliriverir.</p>
+        <p>Onu kullanışlı kılan, giriş tarafının açık olmasıdır. Bir mikser — örneğin SplitCam — aynı anda birden çok sinyali onun içine aktarabilir: sesiniz, Mac'in kendi çaldığı ses, bir müzik uygulaması, gösterdiğiniz bir videonun sesi. Diğer uçtaki uygulama ise hâlâ sıradan tek bir mikrofonu dinlediğini sanır.</p>
+        <p><strong style="color:var(--text)">Bu bir CoreAudio HAL eklentisidir, çekirdek uzantısı değil.</strong> Kullanıcı alanında çalışır, düşük güvenlikli bir açılış gerektirmez ve tek bir klasör silinerek kaldırılabilir.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -801,7 +801,7 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
         <p>Apple Silicon'lu Mac'ler — M1, M2, M3, M4 ve sonrası — macOS 12 Monterey veya üzeriyle. Sürücü yalnızca arm64 için derlenmiştir, bu yüzden Intel Mac'ler desteklenmez.</p>
       </details>
       <details class="faq-item">
-        <summary>Mac için SplitCam zaten bendeyse buna ihtiyacım var mı?</summary>
+        <summary>Mac için SplitCam'im zaten varsa buna ihtiyacım var mı?</summary>
         <p>Genellikle hayır. macOS uygulaması bu sürücüyü zaten içerir ve sizin yerinize kurar. Bağımsız paket, ses cihazının tek başına kurulması ya da onarılması gereken durumlar için var.</p>
       </details>
       <details class="faq-item">

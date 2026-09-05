@@ -158,7 +158,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Do I have to download a virtual audio driver for Windows?",
+          "name": "Muss ich für Windows einen virtuellen Audio-Treiber herunterladen?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nein. Das Audiogerät wird vom Setup von SplitCam selbst angemeldet — SplitCam für Windows zu installieren ist also schon die ganze Arbeit. Es gibt kein separates Paket zum Herunterladen."
@@ -166,7 +166,7 @@
         },
         {
           "@type": "Question",
-          "name": "How is this different from the Audio Mixer?",
+          "name": "Worin unterscheidet sich das vom Audio-Mixer?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Im Audio-Mixer kombinierst du die Quellen innerhalb von SplitCam, und genau diese Kombination übertragen dein Stream und deine Aufnahme. Das virtuelle Mikrofon ist ein zusätzlicher Ausgang derselben Session: Es stellt den Ton Windows als Eingangsgerät bereit, sodass auch ein Programm, das von SplitCam nichts weiß, es auswählen und mithören kann."
@@ -174,7 +174,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which programs can use it?",
+          "name": "Welche Programme können es nutzen?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Jedes Programm, in dem du ein Mikrofon oder einen Audio-Eingang auswählen kannst. Es erscheint in der Windows-Eingangsliste neben deiner Soundkarte — Meeting-Apps, Aufnahmeprogramme, Browser und OBS erreichen es also alle auf dieselbe Weise."
@@ -182,7 +182,7 @@
         },
         {
           "@type": "Question",
-          "name": "Muss ich für Windows einen virtuellen Audio-Treiber herunterladen?",
+          "name": "Ändert sich dadurch, was meine Zuschauer hören?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nein. Dein Stream und deine Aufnahme holen sich den Ton weiterhin aus dem Mixer. Das virtuelle Mikrofon hört zusätzlich mit, es ersetzt nichts."
@@ -190,7 +190,7 @@
         },
         {
           "@type": "Question",
-          "name": "The device is missing from the list. What now?",
+          "name": "Das Gerät fehlt in der Liste. Was jetzt?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "SplitCam prüft beim Start, ob der Treiber geladen wurde, und zeigt eine Warnung, wenn nicht — das Programm läuft dann weiter, das Gerät bleibt aber unerreichbar. Kam keine Warnung, hat das empfangende Programm seine Eingangsliste womöglich aufgebaut, bevor SplitCam installiert war: Öffne dessen Audio-Einstellungen noch einmal."
@@ -198,7 +198,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it free?",
+          "name": "Ist es kostenlos?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ja. Es gehört zum Windows-Build und ist kein Add-on — nichts daran hängt an einem Lizenzschlüssel oder einem Konto."
@@ -664,12 +664,12 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎚</div>
         <h3>Audio-Mixer — in SplitCam</h3>
-        <p>A strip per source, each with its own volume, mute and monitoring. Noise suppression on the microphone, and filters that belong to the individual source: VST plug-ins, Delay, Sound Offset and the Audio Compressor.</p>
+        <p>Ein Kanalzug pro Quelle, jeder mit eigener Lautstärke, Stummschaltung und Monitoring. Rauschunterdrückung fürs Mikrofon, dazu Filter, die zur jeweiligen Quelle gehören: VST-Plug-ins, Delay, Sound Offset und der Audio Compressor.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎙</div>
         <h3>Virtuelles Mikrofon — auf Windows-Ebene</h3>
-        <p>An audio input registered with Windows, sitting in the same list as your sound card and your headset. Programs do not integrate with it one by one; they enumerate the inputs Windows reports, and this is one of them.</p>
+        <p>Ein Audio-Eingang, der bei Windows angemeldet ist und in derselben Liste steht wie deine Soundkarte und dein Headset. Programme müssen ihn nicht einzeln einbinden; sie lesen die Eingänge aus, die Windows meldet, und dieser ist einer davon.</p>
       </div>
     </div>
   </div>
@@ -707,22 +707,22 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">💬</div>
         <h3>Meetings und Calls</h3>
-        <p>A conference program gives you one input and no way to add a second track to it. Selecting SplitCam turns that single input into everything you have balanced — the voice, the clip you are reacting to, the page you are demonstrating.</p>
+        <p>Ein Konferenzprogramm gibt dir genau einen Eingang und keine Möglichkeit, eine zweite Spur dazuzulegen. Wählst du SplitCam aus, wird aus diesem einen Eingang alles, was du abgemischt hast — die Stimme, der Clip, auf den du reagierst, die Seite, die du gerade vorführst.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">⏺</div>
         <h3>Aufnahmeprogramme und Notiz-Tools</h3>
-        <p>Anything that records from a microphone can capture the assembled session instead of just the room, which keeps a walkthrough and its sound in one file rather than two that have to be lined up afterwards.</p>
+        <p>Alles, was von einem Mikrofon aufnimmt, kann die fertig zusammengestellte Session mitschneiden statt nur den Raum — so bleiben eine Vorführung und ihr Ton in einer Datei statt in zwei Dateien, die man hinterher erst synchronisieren muss.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🌐</div>
         <h3>Browser-Tabs</h3>
-        <p>Web apps ask the browser for a microphone and get the same Windows list. A recording page, a web meeting or a voice widget can take the SplitCam device without installing anything.</p>
+        <p>Web-Apps fragen den Browser nach einem Mikrofon und bekommen dieselbe Windows-Liste. Eine Aufnahmeseite, ein Web-Meeting oder ein Sprach-Widget kann das SplitCam-Gerät auswählen, ohne dass du dafür irgendetwas installieren musst.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎛</div>
         <h3>Andere Streaming-Software</h3>
-        <p>If you also run OBS or a similar tool, it can add the SplitCam device as an audio input capture and treat the assembled sound as a single source instead of rebuilding the same routing twice.</p>
+        <p>Wenn bei dir zusätzlich OBS oder ein ähnliches Programm läuft, kann es das SplitCam-Gerät als Audioeingangsaufnahme hinzufügen und den fertig zusammengestellten Ton als eine einzige Quelle behandeln, statt dasselbe Routing ein zweites Mal aufzubauen.</p>
       </div>
     </div>
   </div>
@@ -792,27 +792,27 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <p class="sec-p" style="text-align:center;margin:0 auto 48px;max-width:560px">Was das Gerät ist — und was nicht.</p>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>Do I have to download a virtual audio driver for Windows?</summary>
+        <summary>Muss ich für Windows einen virtuellen Audio-Treiber herunterladen?</summary>
         <p>Nein. Das Audiogerät wird vom Setup von SplitCam selbst angemeldet — SplitCam für Windows zu installieren ist also schon die ganze Arbeit. Es gibt kein separates Paket zum Herunterladen.</p>
       </details>
       <details class="faq-item">
-        <summary>How is this different from the Audio Mixer?</summary>
+        <summary>Worin unterscheidet sich das vom Audio-Mixer?</summary>
         <p>Im Audio-Mixer kombinierst du die Quellen innerhalb von SplitCam, und genau diese Kombination übertragen dein Stream und deine Aufnahme. Das virtuelle Mikrofon ist ein zusätzlicher Ausgang derselben Session: Es stellt den Ton Windows als Eingangsgerät bereit, sodass auch ein Programm, das von SplitCam nichts weiß, es auswählen und mithören kann.</p>
       </details>
       <details class="faq-item">
-        <summary>Which programs can use it?</summary>
+        <summary>Welche Programme können es nutzen?</summary>
         <p>Jedes Programm, in dem du ein Mikrofon oder einen Audio-Eingang auswählen kannst. Es erscheint in der Windows-Eingangsliste neben deiner Soundkarte — Meeting-Apps, Aufnahmeprogramme, Browser und OBS erreichen es also alle auf dieselbe Weise.</p>
       </details>
       <details class="faq-item">
-        <summary>Muss ich für Windows einen virtuellen Audio-Treiber herunterladen?</summary>
+        <summary>Ändert sich dadurch, was meine Zuschauer hören?</summary>
         <p>Nein. Dein Stream und deine Aufnahme holen sich den Ton weiterhin aus dem Mixer. Das virtuelle Mikrofon hört zusätzlich mit, es ersetzt nichts.</p>
       </details>
       <details class="faq-item">
-        <summary>The device is missing from the list. What now?</summary>
+        <summary>Das Gerät fehlt in der Liste. Was jetzt?</summary>
         <p>SplitCam prüft beim Start, ob der Treiber geladen wurde, und zeigt eine Warnung, wenn nicht — das Programm läuft dann weiter, das Gerät bleibt aber unerreichbar. Kam keine Warnung, hat das empfangende Programm seine Eingangsliste womöglich aufgebaut, bevor SplitCam installiert war: Öffne dessen Audio-Einstellungen noch einmal.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it free?</summary>
+        <summary>Ist es kostenlos?</summary>
         <p>Ja. Es gehört zum Windows-Build und ist kein Add-on — nichts daran hängt an einem Lizenzschlüssel oder einem Konto.</p>
       </details>
     </div>

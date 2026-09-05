@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "درایور صدای مجازی رایگان برای macOS. یک دستگاه صدای مجازی اضافه می‌کند که برنامه‌های دیگر آن را یک میکروفون معمولی می‌بینند، بنابراین می‌توانید میکسی از میکروفون، صدای سیستم، موسیقی و صدای ویدئو را به Microsoft Teams، Telegram، Discord، Zoom یا هر برنامه‌ای با ورودی میکروفون بفرستید.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "درایور صدای مجازی مک, دستگاه صدای مجازی Mac, میکروفون مجازی مک, میکسر صدا برای مک, ترکیب منابع صدا در Mac, فرستادن صدای سیستم به میکروفون مک, لوپ‌بک صدا مک",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -184,7 +184,7 @@
         },
         {
           "@type": "Question",
-          "name": "Which Macs does it support?",
+          "name": "از کدام مدل‌های Mac پشتیبانی می‌کند؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "مدل‌های Mac با Apple Silicon — M1، M2، M3، M4 و جدیدتر — که macOS 12 Monterey یا بالاتر دارند. باینری درایور فقط برای arm64 ساخته شده، بنابراین از Mac با پردازنده Intel پشتیبانی نمی‌شود."
@@ -192,7 +192,7 @@
         },
         {
           "@type": "Question",
-          "name": "از کدام مدل‌های Mac پشتیبانی می‌کند؟",
+          "name": "اگر SplitCam برای Mac را دارم، باز هم به آن نیاز دارم؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "معمولاً نه. برنامه macOS از قبل این درایور را در خود دارد و آن را برایتان نصب می‌کند. بسته مستقل برای مواردی است که دستگاه صدا باید جداگانه نصب یا ترمیم شود."
@@ -200,7 +200,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it a kernel extension?",
+          "name": "آیا افزونه‌ای در سطح کرنل است؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "نه. این یک افزونه CoreAudio HAL است که در /Library/Audio/Plug-Ins/HAL قرار می‌گیرد و در فضای کاربر اجرا می‌شود. چیزی برای مجاز کردن در حالت ریکاوری وجود ندارد و هیچ تنظیم امنیتی کاهش‌یافته‌ای را نباید روشن کنید."
@@ -208,7 +208,7 @@
         },
         {
           "@type": "Question",
-          "name": "اگر SplitCam برای Mac را دارم، باز هم به آن نیاز دارم؟",
+          "name": "چرا macOS رمز عبور می‌خواهد؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "پوشه افزونه‌های صوتی سیستم متعلق به macOS است، پس نوشتن در آن به دسترسی مدیر نیاز دارد. بسته با گواهی Apple Developer ID امضا شده و Apple آن را نوتاریزه کرده و به همین دلیل Gatekeeper بدون هشدار عبورش می‌دهد."
@@ -216,7 +216,7 @@
         },
         {
           "@type": "Question",
-          "name": "How do I uninstall it?",
+          "name": "چطور آن را حذف کنم؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "فایل SplitCamVirtualAudio.driver را از /Library/Audio/Plug-Ins/HAL حذف کنید، سپس Mac یا سرویس صدا را دوباره راه‌اندازی کنید. دستگاه مجازی از فهرست میکروفون‌ها ناپدید می‌شود."
@@ -224,7 +224,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is there a virtual camera too?",
+          "name": "آیا دوربین مجازی هم هست؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "بله — SplitCam با همین اصل یک دوربین مجازی هم دارد که می‌گذارد یک صحنه ساخته‌شده جای وب‌کم شما را در Zoom، Teams، Meet و ده‌ها برنامه دیگر بگیرد."
@@ -232,7 +232,7 @@
         },
         {
           "@type": "Question",
-          "name": "Does it cost anything?",
+          "name": "آیا هزینه‌ای دارد؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "نه. درایور رایگان است، مثل خود SplitCam. نه حسابی برای ساختن، نه اشتراکی برای خریدن و نه واترمارکی روی صدا."
@@ -661,32 +661,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>پخش موسیقی در یک تماس</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>صدای شما و آهنگ با هم منتقل می‌شوند، هرکدام با همان سطحی که تنظیم کرده‌اید، بدون اینکه طرف مقابل صدای بلندگوی لپ‌تاپ را از راه میکروفون شما بشنود.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>به اشتراک گذاشتن آنچه Mac پخش می‌کند</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>صدای سیستم وارد همان کانال می‌شود، پس دمو، ویدئو یا صدای اعلان دقیقاً همان‌طور شنیده می‌شود که شما می‌شنوید — نه از راه فضای اتاق.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>نمایش ویدئو بدون از دست دادن صدا</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>اشتراک صفحه اغلب فقط تصویر را می‌فرستد. صدای کلیپ را به دستگاه مجازی هدایت کنید تا همراه صدای شما برود.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>دو میکروفون، یک کانال</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>مصاحبه با کسی در همان اتاق، یا استفاده از هدست به‌همراه یک میکروفون رومیزی — هر دو می‌توانند در یک خروجی واحد جمع شوند.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>ضبط کل گفتگو</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>ضبط‌کننده‌ای که ورودی‌اش را روی دستگاه مجازی بگذارید یک تراک واحد ضبط می‌کند که همه منابع میکس‌شده شما را از پیش در خود دارد.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>برنامه‌هایی که مسیردهی صدا ندارند</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>بیشتر پیام‌رسان‌ها بیش از یک فهرست کشویی میکروفون در اختیارتان نمی‌گذارند. همین فهرست تنها چیزی است که این درایور لازم دارد.</p>
       </div>
     </div>
   </div>
@@ -751,10 +751,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">دستگاه صدای مجازی چیست؟</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">میکروفونی که فقط در نرم‌افزار وجود دارد.</h2>
+        <p>دستگاه صدای مجازی درایوری است که یک ورودی صدا به macOS اضافه می‌کند بی‌آنکه سخت‌افزاری پشتش باشد. برنامه‌ها نمی‌توانند تفاوت را تشخیص دهند — CoreAudio همان نوع توصیف دستگاه را به آن‌ها می‌دهد که برای یک میکروفون USB می‌داد، پس دستگاه مجازی کنار سخت‌افزار واقعی شما در فهرست میکروفون‌ها ظاهر می‌شود.</p>
+        <p>چیزی که آن را مفید می‌کند، باز بودن سمت ورودی‌اش است. یک میکسر — مثلاً SplitCam — می‌تواند چند سیگنال را هم‌زمان در آن بریزد: صدای خودتان، صدایی که خود Mac پخش می‌کند، یک پخش‌کننده موسیقی، صدای کلیپی که دارید نشان می‌دهید. برنامه سمت مقابل همچنان فکر می‌کند دارد به یک میکروفون ساده گوش می‌دهد.</p>
+        <p><strong style="color:var(--text)">این یک افزونه CoreAudio HAL است، نه یک افزونه کرنل.</strong> در فضای کاربر اجرا می‌شود، نیازی به راه‌اندازی با امنیت کاهش‌یافته ندارد و برای حذفش کافی است یک پوشه را پاک کنید.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -804,31 +804,31 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
         <p>نرم‌افزاری که یک دستگاه صدا را بدون هیچ سخت‌افزاری پشت آن به macOS اضافه می‌کند. برنامه‌ها نمی‌توانند آن را از یک میکروفون واقعی تشخیص دهند — مثل هر ورودی دیگری در فهرست میکروفون‌ها ظاهر می‌شود، پس هر چه به آن هدایت شود می‌تواند به یک تماس، یک استریم یا یک ضبط برود.</p>
       </details>
       <details class="faq-item">
-        <summary>Which Macs does it support?</summary>
+        <summary>از کدام مدل‌های Mac پشتیبانی می‌کند؟</summary>
         <p>مدل‌های Mac با Apple Silicon — M1، M2، M3، M4 و جدیدتر — که macOS 12 Monterey یا بالاتر دارند. باینری درایور فقط برای arm64 ساخته شده، بنابراین از Mac با پردازنده Intel پشتیبانی نمی‌شود.</p>
       </details>
       <details class="faq-item">
-        <summary>از کدام مدل‌های Mac پشتیبانی می‌کند؟</summary>
+        <summary>اگر SplitCam برای Mac را دارم، باز هم به آن نیاز دارم؟</summary>
         <p>معمولاً نه. برنامه macOS از قبل این درایور را در خود دارد و آن را برایتان نصب می‌کند. بسته مستقل برای مواردی است که دستگاه صدا باید جداگانه نصب یا ترمیم شود.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it a kernel extension?</summary>
+        <summary>آیا افزونه‌ای در سطح کرنل است؟</summary>
         <p>نه. این یک افزونه CoreAudio HAL است که در <code>/Library/Audio/Plug-Ins/HAL</code> قرار می‌گیرد و در فضای کاربر اجرا می‌شود. چیزی برای مجاز کردن در حالت ریکاوری وجود ندارد و هیچ تنظیم امنیتی کاهش‌یافته‌ای را نباید روشن کنید.</p>
       </details>
       <details class="faq-item">
-        <summary>اگر SplitCam برای Mac را دارم، باز هم به آن نیاز دارم؟</summary>
+        <summary>چرا macOS رمز عبور می‌خواهد؟</summary>
         <p>پوشه افزونه‌های صوتی سیستم متعلق به macOS است، پس نوشتن در آن به دسترسی مدیر نیاز دارد. بسته با گواهی Apple Developer ID امضا شده و Apple آن را نوتاریزه کرده و به همین دلیل Gatekeeper بدون هشدار عبورش می‌دهد.</p>
       </details>
       <details class="faq-item">
-        <summary>How do I uninstall it?</summary>
+        <summary>چطور آن را حذف کنم؟</summary>
         <p>فایل <code>SplitCamVirtualAudio.driver</code> را از <code>/Library/Audio/Plug-Ins/HAL</code> حذف کنید، سپس Mac یا سرویس صدا را دوباره راه‌اندازی کنید. دستگاه مجازی از فهرست میکروفون‌ها ناپدید می‌شود.</p>
       </details>
       <details class="faq-item">
-        <summary>Is there a virtual camera too?</summary>
+        <summary>آیا دوربین مجازی هم هست؟</summary>
         <p>بله — SplitCam با همین اصل یک <a href="https://splitcam.com/fa/virtual-camera" style="color:var(--blue)">دوربین مجازی</a> هم دارد که می‌گذارد یک صحنه ساخته‌شده جای وب‌کم شما را در Zoom، Teams، Meet و ده‌ها برنامه دیگر بگیرد.</p>
       </details>
       <details class="faq-item">
-        <summary>Does it cost anything?</summary>
+        <summary>آیا هزینه‌ای دارد؟</summary>
         <p>نه. درایور رایگان است، مثل خود SplitCam. نه حسابی برای ساختن، نه اشتراکی برای خریدن و نه واترمارکی روی صدا.</p>
       </details>
     </div>

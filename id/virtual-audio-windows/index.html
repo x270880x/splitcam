@@ -166,7 +166,7 @@
         },
         {
           "@type": "Question",
-          "name": "How is this different from the Audio Mixer?",
+          "name": "Apa bedanya dengan Audio Mixer?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Audio Mixer adalah tempat kamu menggabungkan sumber di dalam SplitCam, dan gabungan itulah yang dibawa stream dan rekamanmu. Mikrofon virtual adalah output tambahan untuk sesi yang sama: ia membuat suaranya tersedia untuk Windows sebagai perangkat input, jadi program yang sama sekali tidak tahu soal SplitCam bisa memilihnya dan ikut mendengarkan."
@@ -174,7 +174,7 @@
         },
         {
           "@type": "Question",
-          "name": "Apa bedanya dengan Audio Mixer?",
+          "name": "Program apa saja yang bisa memakainya?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Program apa pun yang membiarkan kamu memilih mikrofon atau input audio. Ia muncul di daftar input Windows di samping sound card kamu, jadi aplikasi panggilan, perekam, browser, dan OBS semuanya menjangkaunya dengan cara yang sama."
@@ -182,7 +182,7 @@
         },
         {
           "@type": "Question",
-          "name": "Program apa saja yang bisa memakainya?",
+          "name": "Apakah memakainya mengubah apa yang didengar penonton saya?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Tidak. Stream dan rekamanmu tetap mengambil audionya dari mixer seperti sebelumnya. Mikrofon virtual itu pendengar tambahan, bukan pengganti."
@@ -190,7 +190,7 @@
         },
         {
           "@type": "Question",
-          "name": "The device is missing from the list. What now?",
+          "name": "Perangkatnya tidak muncul di daftar. Harus bagaimana?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "SplitCam memeriksa saat dijalankan apakah driver-nya termuat dan menampilkan peringatan kalau tidak; dalam kasus itu program tetap berjalan tapi perangkatnya tidak tersedia. Kalau tidak ada peringatan, mungkin program penerimanya sudah menyusun daftar inputnya sebelum SplitCam terpasang — buka ulang pengaturan audionya."
@@ -198,7 +198,7 @@
         },
         {
           "@type": "Question",
-          "name": "Is it free?",
+          "name": "Apakah ini gratis?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ya. Ini bagian dari versi Windows, bukan add-on, jadi tidak ada bagiannya yang terkunci di balik kunci lisensi atau akun."
@@ -664,12 +664,12 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎚</div>
         <h3>Audio Mixer — di dalam SplitCam</h3>
-        <p>A strip per source, each with its own volume, mute and monitoring. Noise suppression on the microphone, and filters that belong to the individual source: VST plug-ins, Delay, Sound Offset and the Audio Compressor.</p>
+        <p>Satu strip per sumber, masing-masing punya volume, bisukan, dan monitoring sendiri. Peredam bising pada mikrofon, plus filter yang melekat pada tiap sumber: plug-in VST, Delay, Sound Offset, dan Audio Compressor.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🎙</div>
         <h3>Mikrofon virtual — di level Windows</h3>
-        <p>An audio input registered with Windows, sitting in the same list as your sound card and your headset. Programs do not integrate with it one by one; they enumerate the inputs Windows reports, and this is one of them.</p>
+        <p>Sebuah input audio yang didaftarkan ke Windows, berada di daftar yang sama dengan sound card dan headset kamu. Program tidak berintegrasi dengannya satu per satu; program cuma membaca daftar input yang dilaporkan Windows, dan perangkat ini salah satunya.</p>
       </div>
     </div>
   </div>
@@ -707,22 +707,22 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">💬</div>
         <h3>Meeting dan panggilan</h3>
-        <p>A conference program gives you one input and no way to add a second track to it. Selecting SplitCam turns that single input into everything you have balanced — the voice, the clip you are reacting to, the page you are demonstrating.</p>
+        <p>Program meeting cuma memberimu satu input, dan tidak ada cara menambahkan trek kedua ke dalamnya. Begitu SplitCam dipilih, satu input itu berubah jadi semua yang sudah kamu seimbangkan — suaramu, klip yang sedang kamu tanggapi, dan halaman yang sedang kamu demokan.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">⏺</div>
         <h3>Perekam dan pencatat rapat</h3>
-        <p>Anything that records from a microphone can capture the assembled session instead of just the room, which keeps a walkthrough and its sound in one file rather than two that have to be lined up afterwards.</p>
+        <p>Apa pun yang merekam dari mikrofon bisa menangkap sesi yang sudah tersusun itu, bukan cuma suara ruangan — jadi rekaman panduan dan suaranya tersimpan dalam satu file, bukan dua file yang harus disinkronkan belakangan.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🌐</div>
         <h3>Tab browser</h3>
-        <p>Web apps ask the browser for a microphone and get the same Windows list. A recording page, a web meeting or a voice widget can take the SplitCam device without installing anything.</p>
+        <p>Aplikasi web meminta mikrofon ke browser dan menerima daftar Windows yang sama. Halaman perekam, meeting berbasis web, atau widget suara bisa memakai perangkat SplitCam tanpa perlu memasang apa pun.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎛</div>
         <h3>Software siaran lainnya</h3>
-        <p>If you also run OBS or a similar tool, it can add the SplitCam device as an audio input capture and treat the assembled sound as a single source instead of rebuilding the same routing twice.</p>
+        <p>Kalau kamu juga menjalankan OBS atau alat sejenis, ia bisa menambahkan perangkat SplitCam sebagai audio input capture dan memperlakukan suara yang sudah tersusun itu sebagai satu sumber, ketimbang membangun ulang routing yang sama dua kali.</p>
       </div>
     </div>
   </div>
@@ -796,23 +796,23 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
         <p>Tidak. Perangkat audionya didaftarkan oleh setup SplitCam sendiri, jadi memasang SplitCam untuk Windows sudah cukup. Tidak ada paket terpisah yang perlu diambil.</p>
       </details>
       <details class="faq-item">
-        <summary>How is this different from the Audio Mixer?</summary>
+        <summary>Apa bedanya dengan Audio Mixer?</summary>
         <p>Audio Mixer adalah tempat kamu menggabungkan sumber di dalam SplitCam, dan gabungan itulah yang dibawa stream dan rekamanmu. Mikrofon virtual adalah output tambahan untuk sesi yang sama: ia membuat suaranya tersedia untuk Windows sebagai perangkat input, jadi program yang sama sekali tidak tahu soal SplitCam bisa memilihnya dan ikut mendengarkan.</p>
       </details>
       <details class="faq-item">
-        <summary>Apa bedanya dengan Audio Mixer?</summary>
+        <summary>Program apa saja yang bisa memakainya?</summary>
         <p>Program apa pun yang membiarkan kamu memilih mikrofon atau input audio. Ia muncul di daftar input Windows di samping sound card kamu, jadi aplikasi panggilan, perekam, browser, dan OBS semuanya menjangkaunya dengan cara yang sama.</p>
       </details>
       <details class="faq-item">
-        <summary>Program apa saja yang bisa memakainya?</summary>
+        <summary>Apakah memakainya mengubah apa yang didengar penonton saya?</summary>
         <p>Tidak. Stream dan rekamanmu tetap mengambil audionya dari mixer seperti sebelumnya. Mikrofon virtual itu pendengar tambahan, bukan pengganti.</p>
       </details>
       <details class="faq-item">
-        <summary>The device is missing from the list. What now?</summary>
+        <summary>Perangkatnya tidak muncul di daftar. Harus bagaimana?</summary>
         <p>SplitCam memeriksa saat dijalankan apakah driver-nya termuat dan menampilkan peringatan kalau tidak; dalam kasus itu program tetap berjalan tapi perangkatnya tidak tersedia. Kalau tidak ada peringatan, mungkin program penerimanya sudah menyusun daftar inputnya sebelum SplitCam terpasang — buka ulang pengaturan audionya.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it free?</summary>
+        <summary>Apakah ini gratis?</summary>
         <p>Ya. Ini bagian dari versi Windows, bukan add-on, jadi tidak ada bagiannya yang terkunci di balik kunci lisensi atau akun.</p>
       </details>
     </div>

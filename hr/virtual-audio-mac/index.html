@@ -129,7 +129,7 @@
         "priceCurrency": "USD"
       },
       "description": "Besplatan upravljački program za virtualni audio na macOS-u. Dodaje virtualni audio uređaj koji druge aplikacije vide kao običan mikrofon, pa se miks vašeg mikrofona, zvuka sustava, glazbe i zvuka videa može poslati u Microsoft Teams, Telegram, Discord, Zoom ili bilo koju aplikaciju s mikrofonskim ulazom.",
-      "keywords": "virtual audio driver mac, virtual audio device, virtual microphone, mac audio mixer, system sound to microphone",
+      "keywords": "virtualni audio mac, virtualni audio uređaj mac, virtualni mikrofon mac, audio mikser za mac, upravljački program za zvuk mac, spajanje audio izvora mac, zvuk sustava u mikrofon mac",
       "featureList": [
         "Adds a virtual audio device that any macOS app sees as a microphone",
         "Mix microphone, system sound, music and video audio into one output",
@@ -654,32 +654,32 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(40,120,252,.6))">🎧</div>
         <h3>Pustite glazbu u poziv</h3>
-        <p>Voice and track arrive together, at the levels you set, without the other side hearing a laptop speaker through your microphone.</p>
+        <p>Glas i pjesma stižu zajedno, na razinama koje sami postavite, a da druga strana kroz vaš mikrofon ne čuje zvučnik laptopa.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(46,204,113,.6))">🖥</div>
         <h3>Podijelite ono što Mac svira</h3>
-        <p>System sound goes into the same feed, so a demo, a video or an alert is heard exactly as you hear it — not through the room.</p>
+        <p>Zvuk sustava ulazi u isti kanal, pa se demonstracija, video ili obavijest čuju točno onako kako ih čujete vi — a ne kroz prostoriju.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(243,156,18,.6))">🎬</div>
         <h3>Prikažite video bez gubitka zvuka</h3>
-        <p>Screen sharing frequently sends picture only. Route the clip's audio into the virtual device and it travels with your voice.</p>
+        <p>Dijeljenje zaslona često šalje samo sliku. Usmjerite zvuk videa u virtualni uređaj i on putuje zajedno s vašim glasom.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(167,139,250,.6))">🎙</div>
         <h3>Dva mikrofona, jedan kanal</h3>
-        <p>Interviewing someone in the same room, or using a headset plus a desk mic — both can feed a single output.</p>
+        <p>Intervjuirate nekoga u istoj prostoriji ili koristite slušalice s mikrofonom uz stolni mikrofon — oba mikrofona mogu hraniti jedan izlaz.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(236,72,153,.6))">🔴</div>
         <h3>Snimite cijeli razgovor</h3>
-        <p>A recorder pointed at the virtual device captures one track that already contains every source you mixed.</p>
+        <p>Snimač usmjeren na virtualni uređaj hvata jedan zapis koji već sadrži svaki izvor koji ste umiksali.</p>
       </div>
       <div class="uc-card">
         <div class="uc-ico" style="filter:drop-shadow(0 0 10px rgba(231,76,60,.6))">🧩</div>
         <h3>Aplikacije bez usmjeravanja zvuka</h3>
-        <p>Most messengers expose a microphone dropdown and nothing more. That dropdown is all this driver needs.</p>
+        <p>Većina aplikacija za poruke nudi popis mikrofona i ništa više. Taj je popis sve što ovom upravljačkom programu treba.</p>
       </div>
     </div>
   </div>
@@ -744,10 +744,10 @@ code{font-family:'Geist Mono',ui-monospace,monospace;font-size:.92em;background:
     <div class="def-block">
       <div>
         <span class="eyebrow">Što je virtualni audio uređaj?</span>
-        <h2 class="def-diag-h">A microphone that exists only in software.</h2>
-        <p>A virtual audio device is a driver that adds an audio input to macOS which has no hardware behind it. Applications cannot tell the difference — CoreAudio hands them the same kind of device description it would for a USB microphone, so the virtual one turns up in the microphone dropdown next to your real hardware.</p>
-        <p>What makes it useful is that its input side is open. A mixer — SplitCam, for example — can pour several signals into it at once: your voice, the sound the Mac itself is playing, a music player, the audio of a clip you are showing. The application on the other end still believes it is listening to one plain microphone.</p>
-        <p><strong style="color:var(--text)">This is a CoreAudio HAL plug-in, not a kernel extension.</strong> It runs in user space, needs no reduced-security boot and can be removed by deleting a single folder.</p>
+        <h2 class="def-diag-h">Mikrofon koji postoji samo u softveru.</h2>
+        <p>Virtualni audio uređaj upravljački je program koji macOS-u dodaje audio ulaz bez ikakva hardvera iza sebe. Aplikacije ne vide razliku — CoreAudio im predaje istu vrstu opisa uređaja kakvu bi predao za USB mikrofon, pa se virtualni pojavljuje na popisu mikrofona pokraj vašeg pravog hardvera.</p>
+        <p>Koristan je zato što mu je ulazna strana otvorena. Mikser — recimo SplitCam — može u njega istodobno uliti više signala: vaš glas, zvuk koji svira sam Mac, glazbeni reproduktor, zvuk videa koji prikazujete. Aplikacija na drugom kraju i dalje vjeruje da sluša jedan običan mikrofon.</p>
+        <p><strong style="color:var(--text)">Riječ je o CoreAudio HAL dodatku, a ne o proširenju jezgre.</strong> Radi u korisničkom prostoru, ne traži pokretanje sa smanjenom razinom sigurnosti, a uklanja se brisanjem jedne jedine mape.</p>
       </div>
       <div class="va-vis">
         <div style="display:flex;flex-direction:column;gap:10px">
