@@ -40,6 +40,9 @@ title, description, тегами, H1, перелинковкой и хлебны
   T22 🔴 title или description локали дословно = EN (не локализовано); fil/hi — исключение
   T23 🟡 RTL-локаль без блока <!--RTLCSS-->
   T24 🔴 H1 локали дословно = EN H1 (fil/hi — исключение)
+  T25 🔴 комментарии в <head> не врут о странице: «SEO targeting» перечисляет ключи, которых нет
+         ни в keywords локали, ни в EN (хвост шаблона, с которого страницу копировали);
+         «Schema.org: …» перечисляет не те @type, что реально лежат в JSON-LD
 """
 import re, os, sys, json, difflib, html as _html
 from collections import defaultdict
@@ -64,6 +67,9 @@ EN_ONLY = {"download/"}                               # по замыслу то
 HOST_MANAGED = ("win-download/", "mac-download/", "ver.txt", "ver.php", ".well-known/")   # вне git, живут на хосте
 CJK = {"ja", "zh", "ko"}                              # полноширинные символы: в сниппет входит вдвое меньше
 GA = "G-S1THLDP1XV"
+SCHEMA_TYPES = {"BreadcrumbList", "SoftwareApplication", "FAQPage", "HowTo", "ItemList", "WebPage",
+                "WebSite", "Organization", "ContactPage", "TechArticle", "VideoObject", "Product",
+                "Article", "Review", "AggregateRating", "Person", "ImageObject"}
 FORBIDDEN = [re.compile(r"peer[\s-]*to[\s-]*peer", re.I), re.compile(r"\bP2P\b")]
 EN_WORDS = re.compile(r"\b(the|and|with|your|from|this|that|which|when|without|into)\b")
 BLOCK = {'div','section','table','thead','tbody','tr','td','th','ul','ol','li','h1','h2','h3','h4',
@@ -329,6 +335,20 @@ def audit(pages, locs, quiet=False):
                 if p.h1 and en.h1 and p.h1[0] == en.h1[0]: F("🔴", loc, page, "T24", "H1 = EN (не локализован)")
             # T23
             if loc in RTL_LANGS and "<!--RTLCSS-->" not in p.h: F("🟡", loc, page, "T23", "нет блока RTLCSS")
+            # T25 — комментарии в <head> сверяются со страницей, а не с шаблоном, с которого её копировали
+            cm = re.search(r'<!--\s*SEO targeting:(.*?)-->', p.head, re.S)
+            if cm:
+                keys = re.findall(r'"([^"]+)"', cm.group(1))
+                kws = (p.kw + " " + (en.kw if en.exists else "")).lower()
+                if keys and not any(k.lower() in kws for k in keys):
+                    F("🔴", loc, page, "T25", f"комментарий SEO targeting не про эту страницу: {keys[:3]} нет в keywords")
+            cm = re.search(r'<!--\s*Schema\.org:([^>]*?)-->', p.head)
+            if cm:
+                real = {x.get("@type") for x in p.ld if x.get("@type")}
+                voc = real | SCHEMA_TYPES
+                claimed = {t for t in voc if re.search(r'\b' + re.escape(t) + r'\b', cm.group(1))}
+                if claimed != real:
+                    F("🔴", loc, page, "T25", f"комментарий Schema.org: заявлено {sorted(claimed)}, в JSON-LD {sorted(real)}")
             titles[loc].append(p.title); descs[loc].append(p.desc)
     # уникальность title/description внутри локали по всему сайту
     for loc in locs:
