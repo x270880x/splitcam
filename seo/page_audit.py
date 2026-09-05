@@ -41,11 +41,17 @@ title, description, тегами, H1, перелинковкой и хлебны
   T23 🟡 RTL-локаль без блока <!--RTLCSS-->
   T24 🔴 H1 локали дословно = EN H1 (fil/hi — исключение)
   T25 🔴 комментарии в <head> не врут о странице: «SEO targeting» перечисляет ключи, которых нет
+  T26 🔴 FAQ локали: вопрос дословно равен английскому при переведённом ответе, либо два одинаковых
+         вопроса на странице. Найдено 2026-09-05: на virtual-audio-* в 31 локали 190 вопросов остались
+         английскими при переведённых ответах, а часть переведённых стояла НЕ В СВОИХ слотах —
+         `faq_sync` этого не видит, потому что подгоняет разметку под видимый текст, а испорчен был он.
+  T27 🟡 строка JSON-LD дословно равна английской в поле, которое обязано переводиться
+         (name/description/featureList/keywords/text) — непереведённая структурированная разметка
          ни в keywords локали, ни в EN (хвост шаблона, с которого страницу копировали);
          «Schema.org: …» перечисляет не те @type, что реально лежат в JSON-LD
 """
 import re, os, sys, json, difflib, html as _html
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "seo"))
@@ -77,6 +83,31 @@ BLOCK = {'div','section','table','thead','tbody','tr','td','th','ul','ol','li','
 SKIPR = re.compile(r'<!--(LD|HL|AD|RTLCSS)-->.*?<!--/\1-->', re.S)
 
 strip = lambda s: _html.unescape(re.sub(r'\s+', ' ', re.sub('<[^>]*>', '', s))).strip()
+
+LD_TRANSLATABLE = {"name", "description", "featureList", "keywords", "text"}
+
+def _ld_strings(h):
+    """Строки JSON-LD в полях, которые обязаны переводиться. Названия продуктов и версий
+       (alternateName, softwareVersion, …) сюда не попадают — они одинаковы во всех языках."""
+    out = []
+    for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', h, re.S):
+        try:
+            g = json.loads(m.group(1))
+        except Exception:
+            continue
+        def walk(o, k=""):
+            if isinstance(o, dict):
+                for kk, v in o.items(): walk(v, kk)
+            elif isinstance(o, list):
+                for v in o: walk(v, k)
+            elif isinstance(o, str):
+                v = re.sub(r'\s+', ' ', o).strip()
+                if (k in LD_TRANSLATABLE and len(v) > 25 and not v.startswith("http")
+                        and re.search(r"[A-Za-z]", v)
+                        and not (k == "name" and v.startswith("SplitCam") and len(v) < 60)):
+                    out.append((k, v))                    # имя продукта «SplitCam … for iOS» одинаково во всех языках
+        walk(g)
+    return out
 
 def fpath(loc, page):
     return os.path.join(ROOT, LANG_PATH[loc], page, "index.html") if page else os.path.join(ROOT, LANG_PATH[loc], "index.html")
@@ -349,6 +380,20 @@ def audit(pages, locs, quiet=False):
                 claimed = {t for t in voc if re.search(r'\b' + re.escape(t) + r'\b', cm.group(1))}
                 if claimed != real:
                     F("🔴", loc, page, "T25", f"комментарий Schema.org: заявлено {sorted(claimed)}, в JSON-LD {sorted(real)}")
+            # T26 — вопрос FAQ против английского и против соседей по странице
+            if loc != "en" and en.exists and loc not in ENGLISH_TECH and p.faq:
+                en_q = {q for q, _ in en.faq}
+                for i, (q, a) in enumerate(p.faq, 1):
+                    if q in en_q and i <= len(en.faq) and a != en.faq[i - 1][1]:
+                        F("🔴", loc, page, "T26", f"вопрос {i} остался английским при переведённом ответе: «{q[:55]}»")
+                dup = [q for q, n in Counter(q for q, _ in p.faq).items() if n > 1]
+                if dup: F("🔴", loc, page, "T26", f"вопрос повторяется на странице: «{dup[0][:55]}»")
+            # T27 — непереведённая структурированная разметка
+            if loc != "en" and en.exists and loc not in ENGLISH_TECH:
+                en_ld = {v for _, v in _ld_strings(en.h)}
+                same = [(k, v) for k, v in _ld_strings(p.h) if v in en_ld]
+                if same:
+                    F("🟡", loc, page, "T27", f"строк JSON-LD не переведено: {len(same)}, первая — {same[0][0]}: «{same[0][1][:55]}»")
             titles[loc].append(p.title); descs[loc].append(p.desc)
     # уникальность title/description внутри локали по всему сайту
     for loc in locs:
