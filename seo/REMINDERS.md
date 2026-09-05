@@ -373,3 +373,5 @@ Compare DR / ranked keyword count / traffic estimate vs baseline in `seo/reports
 prefix»): 85 URL отдавали 404 при 137 530 показах за 90 дней (бонгакамс — 111 997 на позиции 5.2).
 Проверить в консоли: показы по /help-ru/* и /ayuda/* должны уйти, а camstreamguide.com/ru/… и
 /ru/help — получить. Если бонгакамс потерял позицию — это переезд на другой домен, не ошибка.
+
+- **2026-10-05 — перепроверить после исправления BreadcrumbList/FAQ/мета (2026-09-05):** `python3 seo/page_audit.py --quiet` должен быть 0 🔴; в Search Console → «Улучшения → Строки навигации» ошибок быть не должно; сравнить CTR локальных страниц с новыми title/description (окно 09-06…10-04) с базой `seo/data/gsc_locale_queries.json`.
