@@ -236,7 +236,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .h1{font-size:clamp(36px,4.5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin:0 auto 18px;max-width:820px;position:relative;z-index:1;overflow-wrap:break-word}
 .h1 .accent{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .sub{font-size:18px;color:var(--text-sub);max-width:680px;line-height:1.6;margin:0 auto 28px;position:relative;z-index:1}
-.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;position:relative;z-index:1;justify-content:center}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;margin-bottom:6px;position:relative;z-index:1;justify-content:center}
 .h-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(255,255,255,.035);border:1px solid var(--app-border);border-radius:99px;font-size:12px;color:var(--text-sub);font-weight:500}
 .h-badge::before{content:'✓';color:var(--blue);font-weight:700}
 
@@ -458,19 +458,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="hero-cta">
     <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ <span data-dl-label>免费下载</span></a>
   </div>
-  <div class="hero-badges">
-    <span class="h-badge">永久免费</span>
-    <span class="h-badge">无水印</span>
-    <span class="h-badge">Windows · macOS · iOS · Android</span>
-    <span class="h-badge">自 2003 年持续打造</span>
-  </div>
 </section>
 
 <!-- FEATURE GRID -->
 <section class="section" id="all-features">
-  <span class="sec-eyebrow">工具箱</span>
   <h2 class="sec-h">开播所需，应有尽有</h2>
-  <p class="sec-p">摄像头、画面合成、特效、声音再加多平台直播——别的软件分散在各种插件和付费墙后的工具，全都内置在一个免费的 SplitCam 里。</p>
 
   <div class="product-grid">
 
@@ -597,7 +589,13 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </div>
 
   </div>
-</section>
+  <div class="hero-badges">
+    <span class="h-badge">永久免费</span>
+    <span class="h-badge">无水印</span>
+    <span class="h-badge">Windows · macOS · iOS · Android</span>
+    <span class="h-badge">自 2003 年持续打造</span>
+  </div>
+  </section>
 
 <!-- REMOTE PANEL -->
 <section class="section">

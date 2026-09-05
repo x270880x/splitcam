@@ -164,18 +164,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .breadcrumbs .sep{margin:0 8px}
 
 /* HERO */
-.hero{padding:32px 40px 40px;max-width:1100px;margin:0 auto;position:relative;text-align:center;overflow-x: clip; overflow-y: visible}
+.hero{padding:32px 40px 20px;max-width:1100px;margin:0 auto;position:relative;text-align:center;overflow-x: clip; overflow-y: visible}
 .hero-glow{position:absolute;top:-50px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(40,120,252,.12),transparent 70%);pointer-events:none;z-index:0}
 .eyebrow{display:inline-block;padding:5px 12px;background:var(--blue-dim);color:var(--blue);font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:18px;position:relative;z-index:1}
 .h1{font-size:clamp(36px,4.5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin:0 auto 18px;max-width:820px;position:relative;z-index:1;overflow-wrap:break-word}
 .h1 .accent{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .sub{font-size:18px;color:var(--text-sub);max-width:680px;line-height:1.6;margin:0 auto 28px;position:relative;z-index:1}
-.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;position:relative;z-index:1;justify-content:center}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;margin-bottom:6px;position:relative;z-index:1;justify-content:center}
 .h-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(255,255,255,.035);border:1px solid var(--app-border);border-radius:99px;font-size:12px;color:var(--text-sub);font-weight:500}
 .h-badge::before{content:'✓';color:var(--blue);font-weight:700}
 
 /* Section */
-.section{padding:40px 40px 10px;max-width:1100px;margin:0 auto}
+.section{padding:16px 40px 10px;max-width:1100px;margin:0 auto}
 .sec-eyebrow{display:inline-block;padding:4px 10px;background:rgba(255,255,255,.04);color:var(--text-sub);font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:99px;margin-bottom:14px}
 .sec-h{font-size:32px;font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:14px;overflow-wrap:break-word}
 .sec-p{font-size:16px;color:var(--text-sub);line-height:1.7;margin-bottom:30px;max-width:680px}
@@ -291,18 +291,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <span class="eyebrow">Casos de uso</span>
   <h1 class="h1">Configure o SplitCam do jeito que <span class="accent">você</span> entra ao vivo.</h1>
   <p class="sub">Um criador do YouTube, a equipe de áudio e vídeo de uma igreja e um VTuber recorrem ao mesmo estúdio grátis — e o usam de formas completamente diferentes. Escolha o seu público abaixo e encontre um guia escrito para exatamente esse tipo de transmissão.</p>
-  <div class="hero-badges">
-    <span class="h-badge">Grátis para sempre</span>
-    <span class="h-badge">Sem marca-d'água</span>
-    <span class="h-badge">Windows · macOS · iOS · Android</span>
-  </div>
 </section>
 
 <!-- USE-CASE GRID -->
 <section class="section">
-  <span class="sec-eyebrow">Escolha sua configuração</span>
   <h2 class="sec-h">Guias por tipo de público</h2>
-  <p class="sec-p">Cada guia percorre um fluxo do início ao fim: as fontes a adicionar, as configurações que importam e os passos para entrar ao vivo. Comece pelo seu.</p>
 
   <div class="hub-grid">
 
@@ -356,7 +349,12 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </div>
 
   </div>
-</section>
+  <div class="hero-badges">
+    <span class="h-badge">Grátis para sempre</span>
+    <span class="h-badge">Sem marca-d'água</span>
+    <span class="h-badge">Windows · macOS · iOS · Android</span>
+  </div>
+  </section>
 
 <!-- CTA -->
 <section class="cta-block">
