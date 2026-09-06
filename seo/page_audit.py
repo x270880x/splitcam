@@ -45,6 +45,9 @@ title, description, тегами, H1, перелинковкой и хлебны
          вопроса на странице. Найдено 2026-09-05: на virtual-audio-* в 31 локали 190 вопросов остались
          английскими при переведённых ответах, а часть переведённых стояла НЕ В СВОИХ слотах —
          `faq_sync` этого не видит, потому что подгоняет разметку под видимый текст, а испорчен был он.
+  T28 🔴 в тексте локали символы чужого письма (китайский иероглиф на вьетнамской странице и т.п.).
+         Найдено 2026-09-06 носителем: «camera ảo,一 micro ảo» — иероглиф вместо слова «một».
+         Ни одна прежняя проверка этого не видела: HTML цел, JSON-LD парсится, длины в норме.
   T27 🟡 строка JSON-LD дословно равна английской в поле, которое обязано переводиться
          (name/description/featureList/keywords/text) — непереведённая структурированная разметка
          ни в keywords локали, ни в EN (хвост шаблона, с которого страницу копировали);
@@ -85,6 +88,22 @@ SKIPR = re.compile(r'<!--(LD|HL|AD|RTLCSS)-->.*?<!--/\1-->', re.S)
 strip = lambda s: _html.unescape(re.sub(r'\s+', ' ', re.sub('<[^>]*>', '', s))).strip()
 
 LD_TRANSLATABLE = {"name", "description", "featureList", "keywords", "text"}
+
+# Какое письмо законно в какой локали. Всё остальное в видимом тексте — почти наверняка
+# артефакт перевода: у нас так появился китайский иероглиф внутри вьетнамской фразы.
+_SCRIPTS = {
+    "CJK":        lambda c: "\u4e00" <= c <= "\u9fff" or "\u3040" <= c <= "\u30ff" or "\uac00" <= c <= "\ud7af",
+    "кириллица":  lambda c: "\u0400" <= c <= "\u04ff",
+    "арабица":    lambda c: "\u0600" <= c <= "\u06ff",
+    "иврит":      lambda c: "\u0590" <= c <= "\u05ff",
+    "греческий":  lambda c: "\u0370" <= c <= "\u03ff",
+    "деванагари": lambda c: "\u0900" <= c <= "\u097f",
+    "тайский":    lambda c: "\u0e00" <= c <= "\u0e7f",
+}
+_SCRIPT_OK = {"ja": {"CJK"}, "zh": {"CJK"}, "ko": {"CJK"},
+              "ru": {"кириллица"}, "uk": {"кириллица"}, "bg": {"кириллица"}, "sr": {"кириллица"},
+              "ar": {"арабица"}, "fa": {"арабица"}, "he": {"иврит"}, "el": {"греческий"},
+              "hi": {"деванагари"}, "th": {"тайский"}}
 
 def _ld_strings(h):
     """Строки JSON-LD в полях, которые обязаны переводиться. Названия продуктов и версий
@@ -380,6 +399,15 @@ def audit(pages, locs, quiet=False):
                 claimed = {t for t in voc if re.search(r'\b' + re.escape(t) + r'\b', cm.group(1))}
                 if claimed != real:
                     F("🔴", loc, page, "T25", f"комментарий Schema.org: заявлено {sorted(claimed)}, в JSON-LD {sorted(real)}")
+            # T28 — чужое письмо в видимом тексте локали
+            if loc != "en":
+                ok = _SCRIPT_OK.get(loc, set())
+                for name, fn in _SCRIPTS.items():
+                    if name in ok: continue
+                    hitc = [c for c in p.text if fn(c)]
+                    if hitc:
+                        i = p.text.find(hitc[0])
+                        F("🔴", loc, page, "T28", f"{name} в тексте ×{len(hitc)}: …{p.text[max(0, i-30):i+25]}…")
             # T26 — вопрос FAQ против английского и против соседей по странице
             if loc != "en" and en.exists and loc not in ENGLISH_TECH and p.faq:
                 en_q = {q for q, _ in en.faq}
