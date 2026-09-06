@@ -4,7 +4,19 @@
    from seo.gsc_lite import query
    rows = query(["query"], start="2026-06-05", end="2026-09-02")
 """
-import json, subprocess, time, base64, urllib.request, urllib.parse, tempfile, os
+import json, subprocess, time, base64, urllib.request, urllib.parse, tempfile, os, ssl
+
+# Системный python3 на этой машине идёт без набора корневых сертификатов, и любой вызов падает с
+# CERTIFICATE_VERIFY_FAILED. Дважды (2026-09-06) это тормозило проверяющих, которым приходилось
+# самим подставлять SSL_CERT_FILE. Берём набор из certifi, если он есть, иначе — стандартный.
+def _ctx():
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except Exception:
+        return ssl.create_default_context()
+
+_SSL = _ctx()
 SA   = os.path.expanduser("~/.gsc_service_account.json")
 SITE = "sc-domain:splitcam.com"
 _tok = {"v": None, "exp": 0}
@@ -24,7 +36,7 @@ def _token():
                          capture_output=True, check=True).stdout
     os.unlink(kf.name); os.unlink(df.name)
     jwt = si + b"." + base64.urlsafe_b64encode(sig).rstrip(b'=')
-    r = urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token",
+    r = urllib.request.urlopen(context=_SSL, url=urllib.request.Request("https://oauth2.googleapis.com/token",
         data=urllib.parse.urlencode({"grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
                                      "assertion": jwt.decode()}).encode()))
     d = json.load(r)
@@ -40,7 +52,7 @@ def query(dimensions, start, end, filters=None, limit=25000, start_row=0):
         + urllib.parse.quote(SITE, safe="") + "/searchAnalytics/query",
         data=json.dumps(body).encode(),
         headers={"Authorization": "Bearer " + _token(), "Content-Type": "application/json"})
-    return json.load(urllib.request.urlopen(r)).get("rows", [])
+    return json.load(urllib.request.urlopen(r, context=_SSL)).get("rows", [])
 
 def query_all(dimensions, start, end, filters=None):
     """Все строки, постранично по 25 000 — API больше за раз не отдаёт."""
