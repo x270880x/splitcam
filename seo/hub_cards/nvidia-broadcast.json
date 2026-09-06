@@ -1,0 +1,212 @@
+{
+ "en": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Needs an RTX card",
+  "p": "NVIDIA Broadcast is free but wants a GeForce RTX 2060 or better and Windows. See what changes when background removal asks for no particular card.",
+  "go": "Compare SplitCam vs NVIDIA Broadcast →"
+ },
+ "ru": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Нужна карта RTX",
+  "p": "NVIDIA Broadcast бесплатный, но ему нужны видеокарта не ниже GeForce RTX 2060 и Windows. Посмотрим, что меняется, когда фон убирают без оглядки на видеокарту.",
+  "go": "Альтернатива NVIDIA Broadcast: полное сравнение →"
+ },
+ "es": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Requiere tarjeta RTX",
+  "p": "NVIDIA Broadcast es gratis, pero pide una GeForce RTX 2060 o superior y Windows. Mira qué cambia cuando la eliminación de fondo no exige ninguna tarjeta concreta.",
+  "go": "Comparar SplitCam vs NVIDIA Broadcast →"
+ },
+ "de": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Nur mit RTX-Karte",
+  "p": "NVIDIA Broadcast ist kostenlos, verlangt aber eine GeForce RTX 2060 oder besser und Windows. Sieh, was sich ändert, wenn die Hintergrundentfernung nicht nach deiner Grafikkarte fragt.",
+  "go": "SplitCam vs NVIDIA Broadcast vergleichen →"
+ },
+ "fr": {
+  "go": "Comparer SplitCam et NVIDIA Broadcast →",
+  "h3": "NVIDIA Broadcast",
+  "meta": "Carte RTX requise",
+  "p": "NVIDIA Broadcast est gratuit, mais il lui faut au minimum une GeForce RTX 2060 et Windows. Voyez ce qui change quand la suppression de l'arrière-plan n'exige aucune carte particulière."
+ },
+ "pt": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Exige placa RTX",
+  "p": "O NVIDIA Broadcast é grátis, mas pede uma GeForce RTX 2060 ou melhor e o Windows. Veja o que muda quando a remoção de fundo não exige placa nenhuma.",
+  "go": "Comparar SplitCam vs NVIDIA Broadcast →"
+ },
+ "tr": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "RTX kartı gerekli",
+  "p": "NVIDIA Broadcast ücretsizdir ama GeForce RTX 2060 ya da üstü bir kart ve Windows gerektirir. Arka plan kaldırma belirli bir kart istemediğinde nelerin değiştiğini görün.",
+  "go": "SplitCam ile NVIDIA Broadcast'i karşılaştır →"
+ },
+ "fil": {
+  "go": "Ikumpara ang SplitCam vs NVIDIA Broadcast →",
+  "h3": "NVIDIA Broadcast",
+  "meta": "Kailangan ng RTX card",
+  "p": "Libre ang NVIDIA Broadcast pero humihingi ito ng GeForce RTX 2060 at ng Windows. Tingnan kung ano ang nagbabago kapag walang hinihinging partikular na card ang background removal."
+ },
+ "uk": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Потрібна відеокарта RTX",
+  "p": "NVIDIA Broadcast безкоштовний, але просить GeForce RTX 2060 чи потужнішу та Windows. Подивимося, що зміниться, коли для видалення фону не потрібна жодна конкретна відеокарта.",
+  "go": "Альтернатива NVIDIA Broadcast: повне порівняння →"
+ },
+ "it": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Serve una scheda RTX",
+  "p": "NVIDIA Broadcast è gratis, ma chiede almeno una GeForce RTX 2060 e Windows. Vedi che cosa cambia quando la rimozione dello sfondo non pretende nessuna scheda particolare.",
+  "go": "Confronta SplitCam vs NVIDIA Broadcast →"
+ },
+ "vi": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Cần card RTX",
+  "p": "NVIDIA Broadcast miễn phí nhưng đòi GeForce RTX 2060 trở lên và Windows. Xem SplitCam xoá phông ra sao khi không có card RTX, và khi nào NVIDIA Broadcast vẫn đáng cài.",
+  "go": "So sánh SplitCam với NVIDIA Broadcast →"
+ },
+ "id": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Butuh kartu RTX",
+  "p": "NVIDIA Broadcast gratis, tapi ia minta kartu GeForce RTX 2060 ke atas dan Windows. Lihat apa yang berubah kalau penghapusan background tidak menuntut kartu tertentu.",
+  "go": "Bandingkan SplitCam vs NVIDIA Broadcast →"
+ },
+ "nl": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "RTX-kaart vereist",
+  "p": "NVIDIA Broadcast is gratis, maar vraagt om een GeForce RTX 2060 of beter en om Windows. Zie wat er verandert als achtergrondverwijdering geen eisen stelt aan je grafische kaart.",
+  "go": "SplitCam vs NVIDIA Broadcast vergelijken →"
+ },
+ "ro": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Cere placă RTX",
+  "p": "NVIDIA Broadcast e gratuit, dar cere cel puțin o GeForce RTX 2060 și Windows. Vezi ce se schimbă când eliminarea fundalului nu depinde de o anumită placă video.",
+  "go": "Alternativă la NVIDIA Broadcast: comparația completă →"
+ },
+ "hi": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Needs an RTX card",
+  "p": "NVIDIA Broadcast free है पर वह GeForce RTX 2060 या उससे बेहतर card और Windows माँगता है. देखिए तब क्या बदलता है जब background removal के लिए किसी ख़ास card की ज़रूरत ही न हो.",
+  "go": "SplitCam बनाम NVIDIA Broadcast देखें →"
+ },
+ "ja": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "RTX カード必須",
+  "p": "NVIDIA Broadcast は無料ですが、GeForce RTX 2060 以上と Windows が必要です。特定のカードが不要な背景除去で何が変わるか、見てみましょう。",
+  "go": "SplitCam と NVIDIA Broadcast を比較 →"
+ },
+ "ms": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Perlu kad RTX",
+  "p": "NVIDIA Broadcast percuma tetapi memerlukan GeForce RTX 2060 ke atas dan Windows. Lihat apa yang berubah apabila buang latar belakang berjalan tanpa syarat kad grafik.",
+  "go": "Banding SplitCam lwn NVIDIA Broadcast →"
+ },
+ "bg": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Само за RTX видеокарти",
+  "p": "NVIDIA Broadcast е безплатен, но иска поне GeForce RTX 2060 и Windows. Ще видим какво се променя, когато премахването на фона не изисква определена видеокарта.",
+  "go": "Алтернатива на NVIDIA Broadcast: пълно сравнение →"
+ },
+ "ar": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "يتطلّب كرت RTX",
+  "p": "NVIDIA Broadcast مجاني لكنه يطلب كرت GeForce RTX 2060 فما فوق ونظام Windows. شاهد ما الذي يتغيّر حين لا تشترط إزالة الخلفية كرتًا بعينه.",
+  "go": "قارن SplitCam بـ NVIDIA Broadcast →"
+ },
+ "ko": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "RTX 카드 필수",
+  "p": "NVIDIA Broadcast는 무료지만 GeForce RTX 2060 이상과 Windows가 필요합니다. 그래픽카드를 가리지 않는 SplitCam의 배경 제거는 무엇이 다른지 살펴보세요.",
+  "go": "NVIDIA Broadcast 대안: 전체 비교 →"
+ },
+ "th": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "ต้องมีการ์ด RTX",
+  "p": "NVIDIA Broadcast ฟรีก็จริง แต่ขอ GeForce RTX 2060 ขึ้นไป และ Windows มาดูกันว่าอะไรเปลี่ยนไป เมื่อการลบพื้นหลังไม่ต้องใช้การ์ดจอรุ่นไหนเป็นพิเศษ",
+  "go": "เปรียบเทียบ SplitCam กับ NVIDIA Broadcast →"
+ },
+ "pl": {
+  "go": "Porównaj SplitCam kontra NVIDIA Broadcast →",
+  "h3": "NVIDIA Broadcast",
+  "meta": "Wymagana karta RTX",
+  "p": "NVIDIA Broadcast jest darmowy, ale wymaga karty GeForce RTX 2060 lub lepszej oraz Windowsa. Zobacz, co się zmienia, gdy usuwanie tła nie wymaga żadnej konkretnej karty."
+ },
+ "hu": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "RTX-kártyát igényel",
+  "p": "Az NVIDIA Broadcast ingyenes, de GeForce RTX 2060-at vagy erősebbet és Windowst kér. Nézd meg, mi változik, ha a háttéreltávolításhoz nem kell semmilyen konkrét kártya.",
+  "go": "NVIDIA Broadcast-alternatíva — teljes összehasonlítás →"
+ },
+ "sv": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Kräver RTX-kort",
+  "p": "NVIDIA Broadcast är gratis men förutsätter ett GeForce RTX 2060 eller bättre och Windows. Se vad som blir möjligt när bakgrundsborttagningen inte ställer några krav på grafikkortet.",
+  "go": "Jämför SplitCam vs NVIDIA Broadcast →"
+ },
+ "zh": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "需要 RTX 显卡",
+  "p": "NVIDIA Broadcast 免费，但要求 GeForce RTX 2060 及以上显卡，系统也必须是 Windows。看看背景去除不挑显卡时会有什么不同。",
+  "go": "查看 SplitCam 对比 NVIDIA Broadcast 完整报告 →"
+ },
+ "el": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Απαιτεί κάρτα RTX",
+  "p": "Το NVIDIA Broadcast είναι δωρεάν, αλλά ζητάει GeForce RTX 2060 ή καλύτερη και τρέχει μόνο σε Windows. Θα δούμε τι αλλάζει όταν η αφαίρεση φόντου δεν απαιτεί καμία συγκεκριμένη κάρτα.",
+  "go": "Εναλλακτική NVIDIA Broadcast: πλήρης σύγκριση →"
+ },
+ "cs": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Vyžaduje RTX kartu",
+  "p": "NVIDIA Broadcast je zdarma, ale chce GeForce RTX 2060 nebo lepší a Windows. Ukážeme, co se změní, když odstranění pozadí žádnou konkrétní kartu nepotřebuje.",
+  "go": "SplitCam vs NVIDIA Broadcast: úplné srovnání →"
+ },
+ "he": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "דורש כרטיס RTX",
+  "p": "NVIDIA Broadcast חינמי, אבל מצריך כרטיס GeForce RTX 2060 ומעלה ורץ רק על Windows. נראה מה משתנה כשהסרת הרקע לא דורשת כרטיס מסך מסוים.",
+  "go": "חלופה ל-NVIDIA Broadcast: השוואה מלאה →"
+ },
+ "sr": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Samo uz RTX karticu",
+  "p": "NVIDIA Broadcast je besplatan, ali traži Windows i GeForce RTX 2060 ili jaču karticu. Pogledajte šta se menja kada uklanjanje pozadine radi i bez posebne kartice.",
+  "go": "Alternativa za NVIDIA Broadcast: puno poređenje →"
+ },
+ "hr": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Samo za RTX kartice",
+  "p": "NVIDIA Broadcast je besplatan, ali traži barem GeForce RTX 2060 i Windows. Vidjet ćemo što se mijenja kada uklanjanje pozadine ne traži nikakvu posebnu karticu.",
+  "go": "Alternativa za NVIDIA Broadcast: potpuna usporedba →"
+ },
+ "da": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Kræver RTX-kort",
+  "p": "NVIDIA Broadcast er gratis, men kræver et GeForce RTX 2060 eller bedre og Windows. Se, hvad der ændrer sig, når baggrundsfjernelsen ikke stiller krav om et bestemt grafikkort.",
+  "go": "Sammenlign SplitCam vs NVIDIA Broadcast →"
+ },
+ "fi": {
+  "go": "Vertaa SplitCam vs NVIDIA Broadcast →",
+  "h3": "NVIDIA Broadcast",
+  "meta": "Vaatii RTX-kortin",
+  "p": "NVIDIA Broadcast on ilmainen, mutta vaatii vähintään GeForce RTX 2060:n ja Windowsin. Katso, mikä muuttuu, kun taustanpoisto ei vaadi mitään tiettyä korttia."
+ },
+ "no": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Krever RTX-kort",
+  "p": "NVIDIA Broadcast er gratis, men forutsetter et GeForce RTX 2060-kort eller bedre og Windows. Se hva som endrer seg når fjerning av bakgrunn ikke krever noe bestemt grafikkort.",
+  "go": "Sammenlign SplitCam med NVIDIA Broadcast →"
+ },
+ "sk": {
+  "h3": "NVIDIA Broadcast",
+  "meta": "Vyžaduje kartu RTX",
+  "p": "NVIDIA Broadcast je zadarmo, no žiada si GeForce RTX 2060 alebo lepšiu a Windows. Pozrite, čo sa zmení, keď si odstránenie pozadia nežiada konkrétnu grafickú kartu.",
+  "go": "Porovnať SplitCam vs NVIDIA Broadcast →"
+ },
+ "fa": {
+  "go": "مقایسه SplitCam با NVIDIA Broadcast →",
+  "h3": "NVIDIA Broadcast",
+  "meta": "نیازمند کارت RTX",
+  "p": "NVIDIA Broadcast رایگان است اما GeForce RTX 2060 یا بالاتر و Windows می‌خواهد. ببینید وقتی حذف پس‌زمینه به کارت گرافیک خاصی نیاز نداشته باشد، چه چیزی عوض می‌شود."
+ }
+}

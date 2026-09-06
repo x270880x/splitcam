@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """Выпуск подготовленной страницы /alternatives/<slug>/ из скрытого состояния в живое.
 
-   python3 seo/release_page.py <slug> <hub_cards.json> [--dry]
+   python3 seo/release_page.py <slug> [--dry]
+
+Тексты карточек хаба лежат в seo/hub_cards/<slug>.json (35 локалей, вычитаны носителями).
 
 Страницы собираются заранее и лежат закрытыми (noindex, без карточки в хабе, вне PAGE_PATHS
 и карты сайта). Этот скрипт открывает одну страницу целиком и во всех 35 локалях сразу —
@@ -49,7 +51,10 @@ def run(cmd):
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     dry = "--dry" in sys.argv
-    slug, cards_file = args[0], args[1]
+    slug = args[0]
+    cards_file = args[1] if len(args) > 1 else os.path.join(ROOT, "seo", "hub_cards", slug + ".json")
+    if not os.path.exists(cards_file):
+        print(f"  🔴 нет текстов карточки: {cards_file}"); raise SystemExit(1)
     cards = json.load(open(cards_file, encoding="utf-8"))          # {loc: {h3, meta, p, go}}
     key = slug.replace("-", "_")
     problems, opened, carded = [], 0, 0

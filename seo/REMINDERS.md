@@ -63,8 +63,8 @@ done
 ### Как открывать — одной командой, а не руками
 
 ```bash
-python3 seo/release_page.py snap-camera <hub_cards.json> --dry   # посмотреть, что произойдёт
-python3 seo/release_page.py snap-camera <hub_cards.json>         # открыть
+python3 seo/release_page.py snap-camera --dry   # посмотреть, что произойдёт
+python3 seo/release_page.py snap-camera         # открыть
 ```
 
 Скрипт снимает `noindex` со всех 35 файлов, вставляет карточку в хаб во всех 35 локалях, вносит путь
