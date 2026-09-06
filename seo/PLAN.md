@@ -112,7 +112,7 @@ manycam 50 (18) · vmix 30 (14).
 | кандидат | спрос/мес | KD | вердикт | почему |
 |---|---|---|---|---|
 | `/for/streamers/` | 8764 | 0–91 measured | отклонено | "build_later" is a deferral whose unblocking condition can never be met, because the blocker is structural rather than measurement-dependent: /for/ind |
-| `/for/gamers/` | 840 | 12–68 (US database, Ahrefs | **делать** | The decisive blocker is self-inflicted |
+| `/for/gamers/` | 840 | 12–68 (US, кэш Ahrefs) | ~~делать~~ → **отклонено** | утренний вердикт был условным и требовал перемера по локалям; перемер сделан вечером 06.09 и вердикт перевернул — см. раздел «DroidCam и /for/gamers/ — обе отклонены» ниже |
 | `/ai-background/` | 0 | not measured — no KD retri | отклонено | The decisive measurement was not missing — it was already in the repo, paid for and unmined, and it says reject, not "wait and re-measure |
 | `/scenes-and-layers/` | 0 | Not measured — no KD figur | отклонено | The analysis declared the demand question unmeasurable while a working instrument sat unused, and that instrument inverts the one finding that kept th |
 | `/effects-and-filters/` | 950 | 28-66 (US database, median | отклонено | STRONGEST OBJECTION: the honest angle and the arriving demand do not overlap, and the colleague's own data proves it |
@@ -216,6 +216,34 @@ Semrush отдаёт «does not have enough API units» на всех инстр
 2. **NVIDIA Broadcast** — собрана по-английски 2026-09-06, локализуется.
 
 Прежний список из одиннадцати сократился до двух. Девять кандидатов отклонены измерениями, а не вкусом.
+
+
+### 📋 Полный реестр рассмотренных кандидатов (на 2026-09-06)
+
+Рассмотрено около тридцати. **Построено две.** Реестр нужен, чтобы не рассматривать одно и то же
+дважды и чтобы было видно, какие отказы окончательные, а какие можно пересмотреть.
+
+| статус | кандидаты |
+|---|---|
+| **построены, лежат закрытыми** | Snap Camera · NVIDIA Broadcast |
+| **отказ окончательный — не наш продукт** | Loom (480) · Descript (210) · Wowza (50, KD 2) · Camtasia (90) · Bandicam (70) · ShareX (50) |
+| **отказ окончательный — дублирует свою же страницу** | `/scenes-and-layers/` = `/multi-camera/` · `/audio-mixer/` внутри `/virtual-audio-windows/` · `/ai-background/` карточка в `/features/` · `/for/streamers/` = главная |
+| **отказ структурный — одно предложение не тянет две страницы** | DroidCam (900) против `/phone-as-webcam/` |
+| **отказ по несовпадению намерения** | `/effects-and-filters/` (950) — спрос на AR-линзы, их у нас нет · `/screen-capture/` (77 500) — 92% один запрос, который нельзя таргетировать |
+| **отказ по новизне, не по правде** | `/for/gamers/` (840) — все четыре опоры подтверждены в продукте, но уже опубликованы на главной во всех локалях |
+| **можно пересмотреть при смене условий** | Streamlabs (90) · Twitch Studio (20, продукт мёртв с 30.05.2024) · XSplit · Ecamm · Wirecast · YouCam · ChromaCam · iVCam · Camo · Iriun · Lightstream · Prism · Larix · Riverside · Switcher · Castr · mmhmm · VTube Studio · Animaze — все ≤70/мес, ниже порога окупаемости страницы × 35 локалей |
+
+**Очередь пуста.** После выпуска второй страницы строить нечего, пока не найдены новые кандидаты.
+Квоты: Semrush отказывает по юнитам, Ahrefs сбрасывается **2026-09-22** — с этой даты можно искать.
+
+**Метод, которым найден Snap Camera, стоит применить снова:** сначала искать УМЕРШИЕ продукты, где
+спрос осиротел, а вендор выдачу не защищает. 260 запросов в месяц по мёртвому продукту дороже
+480 по живому чужому классу. Twitch Studio в списке выше — мёртвый, но спрос не сошёлся на слове
+«alternative»; стоит перепроверить, не изменилось ли это за прошедший год.
+
+**Альтернатива постройке новых страниц, которую скептик предлагал дважды:** усиливать уже живые.
+`/phone-as-webcam/` и `/multi-camera/` построены 2026-09-04 и ещё ни разу не мерились — их первый
+замер стоит в плане на 2026-10-04.
 
 ## 🎯 НОВЫЕ ОТКРЫТИЯ ИЗ ПОСЛЕДНЕГО АНАЛИЗА
 
