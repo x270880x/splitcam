@@ -86,7 +86,13 @@ def build(slug, loc, S, base="alternatives", donor_page="alternatives/obs"):
                      ("sec_eyebrow", r'(<span class="sec-eyebrow">)(.*?)(</span>)'),
                      ("steps",       r'(<div class="sc-step"><span>)(.*?)(</span></div>)'),
                      ("demo_out",    r'(<p class="sc-out"><span>)(.*?)(</span>)'),
-                     ("demo_alt",    r'(<svg[^>]*aria-label=")([^"]*)(")')):
+                     ("demo_alt",    r'(<svg[^>]*aria-label=")([^"]*)(")'),
+                     ("pipe_cap",    r'(<div class="nb-cap">)([^<]*)(</div>)'),
+                     ("pipe_gate",   r'(<span class="nb-gate">)([^<]*)(</span>)'),
+                     ("pipe_out",    r'(<span class="nb-out">)([^<]*)(</span>)'),
+                     ("pipe_note",   r'(<p class="nb-note">)(.*?)(</p>)'),
+                     ("pipe_src",    r'(<span class="nb-src">(?:<svg.*?</svg>)?)([^<]*)(</span>)'),
+                     ("pipe_p",      r'(<div class="nb-box[^"]*">\s*<div class="nb-cap">[^<]*</div>\s*<p>)(.*?)(</p>)')):
         if key in S: nb = rep_all(pat, S[key], nb)
     if "cards" in S:
         it = iter(S["cards"])

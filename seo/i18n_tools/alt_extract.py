@@ -51,9 +51,57 @@ def extract(slug, base="alternatives"):
     d["steps"]       = re.findall(r'<div class="sc-step"><span>(.*?)</span></div>', b, re.S)
     d["demo_out"]    = re.findall(r'<p class="sc-out"><span>(.*?)</span>', b, re.S)
     d["demo_alt"]    = re.findall(r'<svg[^>]*aria-label="([^"]*)"', b)
+    # Схема-конвейер (появилась на nvidia-broadcast 2026-09-06)
+    d["pipe_cap"]  = re.findall(r'<div class="nb-cap">([^<]*)</div>', b)
+    d["pipe_p"]    = re.findall(r'<div class="nb-box[^"]*">\s*<div class="nb-cap">[^<]*</div>\s*<p>(.*?)</p>', b, re.S)
+    d["pipe_src"]  = re.findall(r'<span class="nb-src">(?:<svg.*?</svg>)?([^<]*)</span>', b, re.S)
+    d["pipe_gate"] = re.findall(r'<span class="nb-gate">([^<]*)</span>', b)
+    d["pipe_out"]  = re.findall(r'<span class="nb-out">([^<]*)</span>', b)
+    d["pipe_note"] = re.findall(r'<p class="nb-note">(.*?)</p>', b, re.S)
     d["cta"]     = [re.search(r'<section class="cta-block">\s*<h2>(.*?)</h2>', b, re.S).group(1),
                     re.search(r'<section class="cta-block">.*?<p>(.*?)</p>', b, re.S).group(1)]
     return d
+
+# Строки, которые НЕ извлекаются намеренно: кнопки, заголовок related и подпись LIVE берутся
+# сборщиком локали у страницы-донора и уже переведены там; названия площадок и продуктов
+# одинаковы во всех языках.
+DONOR_OR_BRAND = re.compile(
+    r'^(Free Download|See the table|Jump to comparison|Related guides|LIVE|YouTube|Twitch|Facebook|Kick|Zoom|Teams|'
+    r'Microsoft Teams|Google Meet|Meet|Discord|OBS|SplitCam|Snapchat|Snap Camera|Lens Studio|'
+    r'NVIDIA Broadcast|NVIDIA|Windows|macOS|Mac)$')
+
+BASELINE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "coverage_baseline.json")
+
+def _baseline():
+    try: return json.load(open(BASELINE, encoding="utf-8"))
+    except Exception: return {}
+
+def coverage(slug, d, base="alternatives"):
+    """Что на странице видно, но не извлеклось. Ловит ЛЮБОЙ новый блок, а не только известные.
+
+    Появилось 2026-09-06: две подряд собранные страницы получили собственные секции
+    (анимированный кадр камеры, схема-конвейер), и текст обеих извлекатель не видел —
+    он остался бы английским во всех 34 локалях, ничем себя не выдав."""
+    path = os.path.join(ROOT, base, slug, "index.html") if base else os.path.join(ROOT, slug, "index.html")
+    h = open(path, encoding="utf-8").read()
+    b = h[h.find('<div class="breadcrumbs">'):h.find("<footer")]
+    b = re.sub(r'<script.*?</script>|<style.*?</style>', '', b, flags=re.S)
+    b = re.sub(r'<details class="lang[^"]*".*?</details>', '', b, flags=re.S)
+    norm = lambda s: re.sub(r'\s+', ' ', re.sub('<[^>]*>', ' ', s)).strip()
+    covered = " ".join(norm(x) for x in re.findall(r'"([^"]*)"', json.dumps(d, ensure_ascii=False)))
+    out, seen = [], set()
+    for m in re.finditer(r'>([^<>]{4,})<', b):
+        t = norm(m.group(1))
+        if len(re.findall(r"[A-Za-z]", t)) < 4: continue      # значки, числа, разделители
+        # стрелки и значки в подписях кнопок («⬇ Free Download», «See the table ↓») — не текст
+        bare = re.sub(r'^[^\w(]+|[^\w).]+$', '', t).strip()
+        if t in covered or DONOR_OR_BRAND.match(bare): continue
+        if t not in seen: seen.add(t); out.append(t)
+    # Храповик: строки, уже принятые для этой страницы, не считаются. Страницы, собранные до
+    # появления проверки (obs — рукописный шаблон, manycam), переведены другим путём: проверено
+    # 2026-09-06, в локалях этот текст НЕ английский. Новое непокрытие падает.
+    known = set(_baseline().get(slug, []))
+    return [t for t in out if t not in known]
 
 def check(slug, d):
     """Контроль длин — единственное, что ловит «съевшую полстраницы» регулярку."""
@@ -69,12 +117,22 @@ def check(slug, d):
     # Пустой список — тихая потеря целого блока текста. Страница Restream писалась
     # вручную и использовала <h4> в карточках вместо <h3>: извлеклось 0 карточек,
     # и текст остался бы английским во всех 34 локалях, никак себя не выдав.
+    waived = set(_baseline().get("_waive_checks", {}).get(slug, []))
     for key in ("cards", "faq", "badges", "qa", "sec_h", "sec_p", "table_head", "cta"):
+        if key in waived: continue
         if not d.get(key): bad.append(f"{key}: ПУСТО — блок не извлёкся")
     # блок live-look есть не на всех страницах; если он есть — обязан извлечься целиком
-    if "sc-step" in open(os.path.join(ROOT, "alternatives", slug, "index.html"), encoding="utf-8").read():
+    src = open(os.path.join(ROOT, "alternatives", slug, "index.html"), encoding="utf-8").read()
+    if "sc-step" in src:
         for key, want in (("steps", 4), ("demo_out", 1), ("demo_alt", 1), ("sec_eyebrow", 1)):
             if len(d.get(key, [])) < want: bad.append(f"{key}: извлечено {len(d.get(key, []))}, ожидалось {want}")
+    if "nb-cap" in src:
+        for key in ("pipe_cap", "pipe_p", "pipe_src", "pipe_gate", "pipe_out", "pipe_note"):
+            if not d.get(key): bad.append(f"{key}: ПУСТО — схема-конвейер не извлеклась")
+    left = coverage(slug, d)
+    if left:
+        bad.append(f"НЕ ПОКРЫТО извлечением ({len(left)}): " + " | ".join(x[:52] for x in left[:4])
+                   + f"  → если это законно, внеси в {os.path.basename(BASELINE)}")
     return bad
 
 if __name__ == "__main__":
