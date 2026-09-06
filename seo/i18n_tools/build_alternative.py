@@ -169,6 +169,7 @@ if __name__ == "__main__":
     slug, mod = sys.argv[1], sys.argv[2]
     # третий аргумент — базовый путь; "" означает корень сайта
     base = sys.argv[3] if len(sys.argv) > 3 else "alternatives"
-    sys.path.insert(0, "/private/tmp/claude-501/-Users-splitcam/0a408cc5-b8ac-48fc-817d-fc231da57ac6/scratchpad")
+    sys.path.insert(0, os.path.join(ROOT, "seo", "i18n_tools"))   # copy-модули живут здесь
+    sys.path.insert(0, os.environ.get("SCRATCH", "/tmp"))
     C = importlib.import_module(mod).COPY
     print(f"  {slug}: собрано {build(slug, C, base)} байт")
