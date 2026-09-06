@@ -131,7 +131,7 @@
           "name": "मैं कितने cameras इस्तेमाल कर सकता हूँ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SplitCam कोई fixed limit publish नहीं करता, और हम यहाँ कोई गढ़ेंगे नहीं. एक scene में तीन या ज़्यादा IP cameras एक documented configuration है; असल में सीमा आपके computer का CPU, GPU और USB bandwidth है, software में लिखा कोई number नहीं."
+            "text": "SplitCam कोई fixed limit publish नहीं करता, और हम यहाँ कोई नहीं गढ़ेंगे. एक scene में तीन या उससे ज़्यादा IP cameras एक documented configuration है; असल में सीमा आपके computer का CPU, GPU और USB bandwidth है, software में लिखा कोई number नहीं."
           }
         },
         {
@@ -155,7 +155,7 @@
           "name": "क्या यह हर camera को अलग से record करता है?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "नहीं. Recording composed scene को एक file की तरह capture करती है. अगर आपको editing के लिए हर camera उसकी अपनी अलग file में चाहिए, तो वह ISO recording है, और उसके लिए vMix जैसा broadcast switcher चाहिए."
+            "text": "नहीं. Recording composed scene को एक ही file में capture करती है. अगर आपको editing के लिए हर camera उसकी अपनी अलग file में चाहिए, तो वह ISO recording है, और उसके लिए vMix जैसा broadcast switcher चाहिए."
           }
         },
         {
@@ -431,11 +431,11 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="hero-glow"></div>
   <span class="eyebrow">Multi-camera streaming</span>
   <h1 class="h1">Free multi-camera live streaming software — <span class="accent">cameras के बीच switch करें, या सबको एक साथ दिखाएँ</span>.</h1>
-  <p class="sub">«Multi-camera» का मतलब दो अलग चीज़ें हैं, और लोग दोनों को एक ही शब्दों से search करते हैं. एक है switching: frame में एक camera, और आप चुनते हैं कौन सा. दूसरा है composing: frame में दो cameras एक साथ. SplitCam दोनों एक ही दो ideas से करता है — scene के अंदर layers, और scenes जिनके बीच आप live switch करते हैं — Windows और macOS पर, free.</p>
+  <p class="sub">«Multi-camera» के दो अलग-अलग मतलब हैं, और लोग दोनों को एक ही शब्दों से search करते हैं. एक है switching: frame में एक camera, और कौन सा — यह आप चुनते हैं. दूसरा है composing: frame में दो cameras एक साथ. SplitCam दोनों एक ही दो ideas से करता है — scene के अंदर layers, और scenes जिनके बीच आप live switch करते हैं — Windows और macOS पर, free.</p>
   <div class="hero-badges"><span class="h-badge">Free, कोई watermark नहीं</span><span class="h-badge">Webcam, IP, NDI, phone</span><span class="h-badge">Windows और macOS</span><span class="h-badge">Hotkeys और Stream Deck</span></div>
   <div class="hero-cta">
     <a href="https://splitcam.com/download" class="btn-primary btn-lg" data-dl-primary>⬇ Free Download</a>
-    <a href="#compare" class="btn-ghost btn-lg">कैसे काम करता है</a>
+    <a href="#compare" class="btn-ghost btn-lg">तालिका देखें ↓</a>
   </div>
 </section>
 
@@ -444,7 +444,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="qa-box">
     <div class="qa-h">चार steps में setup</div>
     <div class="qa-text"><ol>
-        <li><strong>अपने cameras को layers की तरह जोड़ें.</strong> USB webcams, RTSP पर IP cameras, कोई NDI source, या Phone Camera source के ज़रिए आपका phone. हर एक एक layer बन जाता है जिसे आप कहीं भी रख और resize कर सकते हैं.</li>
+        <li><strong>अपने cameras को layers की तरह जोड़ें.</strong> USB webcams, RTSP पर IP cameras, कोई NDI source, या Phone Camera source के ज़रिए आपका phone. इनमें से हर एक layer बन जाता है जिसे आप कहीं भी रख और resize कर सकते हैं.</li>
         <li><strong>हर shot के लिए एक scene बनाएँ.</strong> एक wide shot, एक close-up, कोने में छोटे camera वाली एक slide. Scene बस layers की एक arrangement है; जितनी आपके show को चाहिए, उतनी बनाएँ.</li>
         <li><strong>Scenes को live switch करें.</strong> Scene पर click करें, उसकी hotkey दबाएँ, या Stream Deck पर या अपने phone पर SplitCam Remote app में button दबाएँ. Transition चुनें: cut, fade, slide, wipe या stinger.</li>
         <li><strong>नतीजा कहीं भी भेजें.</strong> एक साथ 84+ platforms पर, recording में, या virtual camera के ज़रिए Zoom, Teams और Meet में — उन्हें वही scene दिखती है जो live है.</li>
@@ -466,12 +466,12 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
         <p>Cut, fade, slide, swipe, luma wipe, या stinger — आपका अपना animated wipe. Transition switch की property है, इसलिए एक ही scene में अलग-अलग जगहों से अलग-अलग तरह से जाया जा सकता है.</p>
       </div>
       <div class="reason">
-        <h3>Mouse के बिना switch</h3>
+        <h3>Mouse के बिना switching</h3>
         <p>हर scene को hotkey पर रखें, Windows या macOS पर. अगर आपके पास Stream Deck है, तो Windows पर उसके लिए SplitCam का official plugin है (SplitCam 10.8.25 या नया). iPhone पर free SplitCam Remote app कमरे के दूसरे छोर से यही करता है.</p>
       </div>
       <div class="reason">
         <h3>एक show में कई IP cameras</h3>
-        <p>एक scene में तीन या ज़्यादा IP cameras एक documented, tested configuration है. हर एक एक layer है; हर एक जितनी चाहें उतनी scenes में हो सकता है.</p>
+        <p>एक scene में तीन या उससे ज़्यादा IP cameras एक documented, tested configuration है. इनमें से हर एक layer है; हर एक जितनी चाहें उतनी scenes में हो सकता है.</p>
       </div>
   </div>
 </section>
@@ -479,7 +479,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- SECTION 2 -->
 <section class="section">
   <h2 class="sec-h">Composing: frame में दो cameras एक साथ</h2>
-  <p class="sec-p">Picture-in-picture, side by side, screen share के ऊपर camera. कोई switching नहीं — यह एक scene के अंदर एक के ऊपर एक रखी layers हैं.</p>
+  <p class="sec-p">Picture-in-picture, side by side, screen share के ऊपर camera. कोई switching नहीं — ये एक scene के अंदर एक के ऊपर एक रखी layers हैं.</p>
   <div class="reasons-grid">
       <div class="reason">
         <h3>Stack करें, रखें, resize करें</h3>
@@ -503,7 +503,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
 <!-- HONEST: WHERE THE RIVAL WINS -->
 <section class="section">
   <h2 class="sec-h">Multi-camera काम के लिए SplitCam क्या नहीं करता</h2>
-  <p class="sec-p">उस पर show खड़ा करने से पहले सीमा साफ़ जान लें. कोई Preview/Program नहीं है — आप सीधे scene पर switch करते हैं, उसे पहले cue नहीं करते — और source previews की कोई multiview wall नहीं. Recording composed scene को एक file की तरह capture करती है, edit के लिए हर camera अलग से नहीं. कुछ भी आपके लिए camera को pan, tilt या zoom नहीं करता. NDI अंदर आता है, बाहर नहीं जाता. जो बोल रहा है उस पर कोई automatic switching नहीं, और remote guest के लिए कोई browser link नहीं. अगर आपके production को इनमें से कुछ भी चाहिए, तो उसे broadcast switcher चाहिए — Windows पर vMix, या hardware ATEM — और यह page आपको उससे रोकने की कोशिश नहीं करेगा. अगर उसे scenes में cameras और साफ़ तरीके से switch होती scenes चाहिए, तो ठीक वही यहाँ है.</p>
+  <p class="sec-p">उस पर show खड़ा करने से पहले सीमा साफ़ जान लें. कोई Preview/Program नहीं है — आप सीधे scene पर switch करते हैं, उसे पहले cue नहीं करते — और source previews की कोई multiview wall नहीं. Recording composed scene को एक ही file में capture करती है, edit के लिए हर camera अलग से नहीं. कुछ भी आपके लिए camera को pan, tilt या zoom नहीं करता. NDI अंदर आता है, बाहर नहीं जाता. जो बोल रहा है उस पर कोई automatic switching नहीं, और remote guest के लिए कोई browser link नहीं. अगर आपके production को इनमें से कुछ भी चाहिए, तो उसे broadcast switcher चाहिए — Windows पर vMix, या hardware ATEM — और यह page आपको उससे रोकने की कोशिश नहीं करेगा. अगर उसे scenes में cameras और साफ़ तरीके से switch होती scenes चाहिए, तो ठीक वही यहाँ है.</p>
 </section>
 
 <!-- COMPARE -->
@@ -517,7 +517,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <tbody>
       <tr><td>USB webcams</td><td class="yes">हाँ</td><td class="yes">हाँ</td></tr>
       <tr><td>RTSP पर IP cameras</td><td class="yes">हाँ</td><td class="yes">हाँ</td></tr>
-      <tr><td>NDI (input की तरह)</td><td class="yes">हाँ</td><td class="yes">हाँ</td></tr>
+      <tr><td>NDI (input के रूप में)</td><td class="yes">हाँ</td><td class="yes">हाँ</td></tr>
       <tr><td>Phone Camera (browser, QR)</td><td class="yes">हाँ</td><td class="yes">हाँ</td></tr>
       <tr><td>Screen और window capture</td><td class="yes">हाँ</td><td class="yes">हाँ</td></tr>
       <tr><td>Browser page, images, video files</td><td class="yes">हाँ</td><td class="yes">हाँ</td></tr>
@@ -538,7 +538,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>मैं कितने cameras इस्तेमाल कर सकता हूँ?</summary>
-        <p>SplitCam कोई fixed limit publish नहीं करता, और हम यहाँ कोई गढ़ेंगे नहीं. एक scene में तीन या ज़्यादा IP cameras एक documented configuration है; असल में सीमा आपके computer का CPU, GPU और USB bandwidth है, software में लिखा कोई number नहीं.</p>
+        <p>SplitCam कोई fixed limit publish नहीं करता, और हम यहाँ कोई नहीं गढ़ेंगे. एक scene में तीन या उससे ज़्यादा IP cameras एक documented configuration है; असल में सीमा आपके computer का CPU, GPU और USB bandwidth है, software में लिखा कोई number नहीं.</p>
       </details>
       <details class="faq-item">
         <summary>Switching और दो cameras एक साथ दिखाने में क्या फ़र्क़ है?</summary>
@@ -550,7 +550,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </details>
       <details class="faq-item">
         <summary>क्या यह हर camera को अलग से record करता है?</summary>
-        <p>नहीं. Recording composed scene को एक file की तरह capture करती है. अगर आपको editing के लिए हर camera उसकी अपनी अलग file में चाहिए, तो वह ISO recording है, और उसके लिए vMix जैसा broadcast switcher चाहिए.</p>
+        <p>नहीं. Recording composed scene को एक ही file में capture करती है. अगर आपको editing के लिए हर camera उसकी अपनी अलग file में चाहिए, तो वह ISO recording है, और उसके लिए vMix जैसा broadcast switcher चाहिए.</p>
       </details>
       <details class="faq-item">
         <summary>क्या phone camera के लिए कोई app चाहिए?</summary>
