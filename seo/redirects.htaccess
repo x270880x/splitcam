@@ -344,6 +344,20 @@ RedirectMatch 301 ^/es/gira(/.*)?$                       https://splitcam.com/es
 # Keep this block LAST. mod_rewrite; requires AllowOverride FileInfo.
 # --- pre-10.8 installers live on GitHub (x270880x/splitcam-release); old URLs 301
 # to the SAME version's GitHub asset (user 2026-07-06: serve the old version, not the new) ---
+# --- Removed sections under /win-download/ (найдено 2026-09-06 через seo/deadlinks.py) ---
+# Каталогов archive/, reports/ и images/ на хосте больше нет, но Google их помнит: за 90 дней
+# 1745 показов и 115 кликов уходили в тупик. Часть отдавала 404 сразу, часть — 301 на 404, что в
+# отчётах выглядит здоровым. Правила ставятся ДО RewriteEngine, иначе канонизация слеша успевает
+# снять слеш и отправить запрос в 404 раньше.
+#   archive/ — 329 показов, 29 кликов. Старые установщики переехали на GitHub
+#              x270880x/splitcam-release, поэтому ведём на страницу загрузки, а не на файл.
+#   reports/ — отчёты о разработке 2022–2025, около 500 показов. Ближайший честный адрес — история версий.
+# Каталоги images/ и update/ НЕ трогаем намеренно: у первых почти нет кликов и позиции 25–64
+# (картиночный поиск), перенаправление картинок на страницы читается как дорвейный приём;
+# 403 на update/ — штатный запрет листинга (Options -Indexes).
+RedirectMatch 301 ^/win-download/archive(/.*)?$   https://splitcam.com/download
+RedirectMatch 301 ^/win-download/reports(/.*)?$   https://splitcam.com/changelog
+
 RedirectMatch 301 ^/win-download/update/10\.3\.42_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.3.42/10.3.42_x64.msi
 RedirectMatch 301 ^/win-download/update/10\.3\.78_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.3.78/10.3.78_x64.msi
 RedirectMatch 301 ^/win-download/update/10\.3\.85_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.3.85/10.3.85_x64.msi
