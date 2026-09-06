@@ -98,6 +98,62 @@ manycam 50 (18) · vmix 30 (14).
 
 ---
 
+
+## 🆕 Разбор аудиторий и функциональных страниц — 2026-09-06
+
+Считано по Semrush по многим рынкам, затем каждый вывод атакован отдельным скептиком с доступом
+к тем же инструментам и к репозиторию. **Скептик отклонил шесть кандидатов из семи и, наоборот,
+поднял один.** Это ровно тот случай, ради которого проверка и заводилась: цифры были большие,
+а страницы не нужны.
+
+| кандидат | спрос/мес | KD | вердикт | почему |
+|---|---|---|---|---|
+| `/for/streamers/` | 8764 | 0–91 measured | отклонено | "build_later" is a deferral whose unblocking condition can never be met, because the blocker is structural rather than measurement-dependent: /for/ind |
+| `/for/gamers/` | 840 | 12–68 (US database, Ahrefs | **делать** | The decisive blocker is self-inflicted |
+| `/ai-background/` | 0 | not measured — no KD retri | отклонено | The decisive measurement was not missing — it was already in the repo, paid for and unmined, and it says reject, not "wait and re-measure |
+| `/scenes-and-layers/` | 0 | Not measured — no KD figur | отклонено | The analysis declared the demand question unmeasurable while a working instrument sat unused, and that instrument inverts the one finding that kept th |
+| `/effects-and-filters/` | 950 | 28-66 (US database, median | отклонено | STRONGEST OBJECTION: the honest angle and the arriving demand do not overlap, and the colleague's own data proves it |
+| `/audio-mixer/` | 0 | Not measured — no KD retri | отклонено | build_later is wrong because it treats missing volume as the only blocker, when the analysis's own findings contain two blockers that no future measur |
+| `/screen-capture/` | 77500 | 35-86 measured (US); the f | отклонено | The 77,500 is not a demand pool for this page — it is 91 |
+
+### Что решило дело
+
+**`/for/streamers/` отклонена, несмотря на 8764 запроса в месяц.** Весь этот спрос — уже
+объявленная цель ГЛАВНОЙ страницы: её title «Free Live Streaming Software for PC & Mac», а в
+`seo/I18N-KEYWORDS.md` обобщённый запрос про «программу для стрима» стоит в строке `/` во всех
+волнах и для ru и es прямо помечен «homepage PRIMARY». Строить такую страницу — значит
+раздваивать головной запрос сильнейшей страницы домена на 35 локалях. Вдобавок хаб `/for/`
+сам озаглавлен «SplitCam for Streamers…», то есть ярлык уже занят. Остаток, который страница
+имела бы право таргетировать, измерен в 20 запросов в месяц.
+
+**`/screen-capture/` отклонена, несмотря на 77 500.** Из них 91,6% — один запрос, который
+странице таргетировать нельзя, а остаток около 2300 конкурирует с `/for/educators/`, где
+раздел про захват экрана уже есть и написан честно.
+
+**`/effects-and-filters/` отклонена по несовпадению намерения.** Спрос за этими запросами —
+AR-линзы и Snap Camera, а именно этого у нас нет и заявлять нельзя. Показательно, что тот же
+спрос честно обслуживает построенная 2026-09-06 страница `/alternatives/snap-camera/`, где
+отсутствие каталога линз прямо проговорено.
+
+**`/ai-background/`, `/scenes-and-layers/`, `/audio-mixer/` отклонены как дубликаты своих же
+страниц.** Карточка ИИ-фона уже живёт в `/features/`; `/scenes-and-layers/` — это и есть
+`/multi-camera/` под другим URL; аудиомикшер описан внутри `/virtual-audio-windows/`.
+
+**`/for/gamers/` поднята до «делать».** Головной запрос `twitch streaming software` 600/мес,
+`best streaming software for twitch` 200. Честная опора конкретна и проверяется по продукту:
+отдельный источник Game Capture для DirectX и OpenGL, аппаратное кодирование NVENC / QuickSync /
+AMF, источник Replay на горячую клавишу, встроенный Tip Notifier. Хаб `/for/` уже держит для неё
+карточку «Soon». 🔴 Перед постройкой перемерить спрос по локалям через Search Console на уже
+существующих страницах — скептик справедливо указал, что консоль отвечает на вопрос
+«по каким запросам домен уже показывается в этой стране», и этот источник не был использован.
+
+### Итоговый список к постройке (заменяет прежний из одиннадцати)
+
+1. **Snap Camera** — собрана 2026-09-06, лежит закрытой.
+2. **NVIDIA Broadcast** — сначала подтвердить требование RTX.
+3. **DroidCam** — после развода запросов с `/phone-as-webcam/`.
+4. **For Gamers** — после перемера по локалям в Search Console.
+
 ## 🎯 НОВЫЕ ОТКРЫТИЯ ИЗ ПОСЛЕДНЕГО АНАЛИЗА
 
 > ⚠️ Раздел от 2026-05-20, оставлен как история. Волновая схема запуска (Wave 1/2/3 ниже)

@@ -82,7 +82,11 @@ def build(slug, loc, S, base="alternatives", donor_page="alternatives/obs"):
                      ("qa",     r'(<li>)(.*?)(</li>)'),
                      ("sec_h",  r'(<h2 class="sec-h">)(.*?)(</h2>)'),
                      ("sec_p",  r'(<p class="sec-p">)(.*?)(</p>)'),
-                     ("table_head", r'(<th>)(.*?)(</th>)')):
+                     ("table_head", r'(<th>)(.*?)(</th>)'),
+                     ("sec_eyebrow", r'(<span class="sec-eyebrow">)(.*?)(</span>)'),
+                     ("steps",       r'(<div class="sc-step"><span>)(.*?)(</span></div>)'),
+                     ("demo_out",    r'(<p class="sc-out"><span>)(.*?)(</span>)'),
+                     ("demo_alt",    r'(<svg[^>]*aria-label=")([^"]*)(")')):
         if key in S: nb = rep_all(pat, S[key], nb)
     if "cards" in S:
         it = iter(S["cards"])

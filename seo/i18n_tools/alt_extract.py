@@ -44,6 +44,13 @@ def extract(slug, base="alternatives"):
     d["related"] = [[m.group(1), m.group(2), m.group(3)] for m in
                     re.finditer(r'<a class="related-card"[^>]*>\s*<span class="eyebrow">([^<]*)</span>'
                                 r'\s*<h4>([^<]*)</h4>\s*<p>([^<]*)</p>', b)]
+    # Анимированный блок live-look (появился на snap-camera 2026-09-06). Без этих ключей
+    # его текст молча остался бы английским во всех 34 локалях — ровно тот случай, о котором
+    # предупреждает комментарий про <h4> на странице Restream.
+    d["sec_eyebrow"] = re.findall(r'<span class="sec-eyebrow">([^<]*)</span>', b)
+    d["steps"]       = re.findall(r'<div class="sc-step"><span>(.*?)</span></div>', b, re.S)
+    d["demo_out"]    = re.findall(r'<p class="sc-out"><span>(.*?)</span>', b, re.S)
+    d["demo_alt"]    = re.findall(r'<svg[^>]*aria-label="([^"]*)"', b)
     d["cta"]     = [re.search(r'<section class="cta-block">\s*<h2>(.*?)</h2>', b, re.S).group(1),
                     re.search(r'<section class="cta-block">.*?<p>(.*?)</p>', b, re.S).group(1)]
     return d
@@ -64,6 +71,10 @@ def check(slug, d):
     # и текст остался бы английским во всех 34 локалях, никак себя не выдав.
     for key in ("cards", "faq", "badges", "qa", "sec_h", "sec_p", "table_head", "cta"):
         if not d.get(key): bad.append(f"{key}: ПУСТО — блок не извлёкся")
+    # блок live-look есть не на всех страницах; если он есть — обязан извлечься целиком
+    if "sc-step" in open(os.path.join(ROOT, "alternatives", slug, "index.html"), encoding="utf-8").read():
+        for key, want in (("steps", 4), ("demo_out", 1), ("demo_alt", 1), ("sec_eyebrow", 1)):
+            if len(d.get(key, [])) < want: bad.append(f"{key}: извлечено {len(d.get(key, []))}, ожидалось {want}")
     return bad
 
 if __name__ == "__main__":
