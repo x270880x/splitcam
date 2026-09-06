@@ -14,7 +14,7 @@ they only ever list locales where THAT page actually exists on disk:
 Usage:  python3 seo/i18n_wire.py            # wire + rewrite sitemap
         python3 seo/i18n_wire.py --check     # report only, no writes
 """
-import os, re, sys
+import os, re, sys, subprocess
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import i18n
 
@@ -31,7 +31,43 @@ PAGE_PATHS = ["", "products/", "features/", "download/", "virtual-camera/", "vir
 PRIO = {"": "1.0", "multistreaming/": "0.9", "virtual-camera/": "0.9", "virtual-audio-mac/": "0.8", "virtual-audio-windows/": "0.8", "products/": "0.9", "features/": "0.9", "download/": "0.9",
         "changelog/": "0.6", "help/": "0.6", "donate-us/": "0.3", "privacy-policy/": "0.3", "license-agreement/": "0.3"}
 FREQ = {"": "weekly", "download/": "weekly", "changelog/": "weekly", "donate-us/": "yearly", "privacy-policy/": "yearly", "license-agreement/": "yearly"}
-LASTMOD = "2026-07-18"
+LASTMOD_FALLBACK = "2026-07-18"     # только если git недоступен
+
+# 🔴 Дата изменения раньше была КОНСТАНТОЙ на все 877 адресов. К 2026-09-06 она отстала на два
+# месяца: страниц, изменённых после неё, набралось 984, часть правилась в тот же день. Карта
+# сообщала поисковику, что на сайте не менялось ничего, ровно когда переписали почти каждую
+# страницу. Поле <lastmod> для того и нужно, чтобы направлять переобход; одинаковое и устаревшее
+# оно обесценивает само себя. Теперь дата берётся у git по каждому файлу — ОДНИМ проходом по
+# истории: 877 отдельных запросов к git заняли бы минуты.
+_LASTMOD_CACHE = None
+
+
+def _lastmod_map():
+    """{путь от корня репозитория: YYYY-MM-DD последнего коммита, тронувшего файл}."""
+    global _LASTMOD_CACHE
+    if _LASTMOD_CACHE is not None:
+        return _LASTMOD_CACHE
+    m = {}
+    try:
+        out = subprocess.run(["git", "-C", ROOT, "log", "--date=short",
+                              "--pretty=format:@%ad", "--name-only"],
+                             capture_output=True, text=True, timeout=180).stdout
+        cur = None
+        for line in out.splitlines():
+            if line.startswith("@"):
+                cur = line[1:]
+            elif line.strip() and cur and line not in m:
+                m[line] = cur          # первое попадание = самый свежий коммит
+    except Exception:
+        pass
+    _LASTMOD_CACHE = m
+    return m
+
+
+def lastmod_for(path):
+    """path — абсолютный или относительный путь к файлу; git знает только относительные."""
+    rel = os.path.relpath(path, ROOT) if os.path.isabs(path) else path
+    return _lastmod_map().get(rel) or LASTMOD_FALLBACK
 # (path, priority, changefreq) — EN-only pages outside the 35-locale matrix
 EXTRA_EN_ONLY = [("/plugins/", "0.5", "yearly")]
 
@@ -155,7 +191,7 @@ def build_sitemap():
             for L in avail) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{i18n.page_url("", page)}"/>\n'
         for L in avail:
             loc = i18n.page_url(i18n.LANG_PATH[L], page)
-            out.append(f'  <url>\n    <loc>{loc}</loc>\n    <lastmod>{LASTMOD}</lastmod>\n'
+            out.append(f'  <url>\n    <loc>{loc}</loc>\n    <lastmod>{lastmod_for(file_for(L, page))}</lastmod>\n'
                        f'    <changefreq>{FREQ.get(page, "monthly")}</changefreq>\n'
                        f'    <priority>{PRIO.get(page, "0.7")}</priority>\n{alts}  </url>')
     # EN-only extras that live outside the locale matrix. /plugins/ is the mirrored
@@ -164,7 +200,7 @@ def build_sitemap():
     for extra, prio, freq in EXTRA_EN_ONLY:
         if os.path.isfile(os.path.join(ROOT, extra.strip("/"), "index.html")):
             out.append(f'  <url>\n    <loc>https://splitcam.com{extra}</loc>\n'
-                       f'    <lastmod>{LASTMOD}</lastmod>\n'
+                       f'    <lastmod>{lastmod_for(os.path.join(extra.strip("/"), "index.html"))}</lastmod>\n'
                        f'    <changefreq>{freq}</changefreq>\n'
                        f'    <priority>{prio}</priority>\n  </url>')
     out.append("</urlset>")
