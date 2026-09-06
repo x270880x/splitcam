@@ -630,6 +630,7 @@ makes the calls. Execute over endless planning.
 | Stream Deck | **есть — официальный плагин** | Elgato Marketplace, автор @splitcam, Windows 10+, SD 6.9+, v1.2 (10.07.2026); действия: Start/Stop Stream, Switch Scene, Start/Stop Recording, Pause Scene, Mute, Snapshot; changelog Win 10.8.25 (18.01.2025). В инсталляторе плагина нет. Ролик youtube WCfaMpOlFDY. Открытые вопросы — scratchpad/stream-deck-вопросы-разработчику.md (копия в seo/) |
 | Пульт с телефона | **есть** | `/products/`: «SplitCam Remote, a phone companion that controls your desktop stream without touching the keyboard»; iOS id6760961594 |
 | Минимальная macOS | **13+** | подтверждено владельцем; по сайту было 11+/12/13+/Mojave — сведено к 13+ |
+| ИИ-удаление фона без RTX | **работает** | подтверждено владельцем 2026-09-06 на прямой вопрос: работает ли ИИ-фон на картах без RTX (встроенная графика, GeForce GTX) и есть ли он в сборке macOS. Ответ «да работает». Это ключевое отличие от NVIDIA Broadcast, которому официально нужна RTX 2060+ и Windows 10 (nvidia.com, проверено 2026-09-06) |
 
 Отдельной страницы про SplitCam Remote нет, а «Added Stream Deck support» лежит
 единственной строкой в changelog и не упомянуто ни на одной витринной странице.
