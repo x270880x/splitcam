@@ -241,9 +241,11 @@ def main():
     ap.add_argument("--transport", choices=["ssh", "smtp"], default="ssh",
                     help="ssh = sendmail на сервере (шлёт наружу); smtp = туннель, только локальные адреса")
     ap.add_argument("--ssh-wrapper", default="", help="expect-обёртка для SSH с паролем")
+    ap.add_argument("--copy", default=str(COPY_JSON),
+                    help="JSON с текстами; по умолчанию tester-email-i18n.json")
     a = ap.parse_args()
 
-    copy = json.loads(COPY_JSON.read_text(encoding="utf-8"))
+    copy = json.loads(pathlib.Path(a.copy).read_text(encoding="utf-8"))
 
     if a.test_to:
         loc = a.only_locale or a.default_locale
