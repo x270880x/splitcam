@@ -1,7 +1,11 @@
 User-agent: *
-Allow: /
-
-# Archived A/B variant — not for indexing
+# Archived A/B variant — not for indexing.
+# ⚠️ Two traps, both hit on 2026-09-07. First: a blank line ENDS a robots.txt group, so a
+# directive placed after one belongs to no user-agent and is silently ignored — this Disallow
+# sat below a blank line and was inert. Second: order matters for parsers that take the first
+# match (Python's robotparser among them), while Google takes the longest match. Keeping
+# Disallow ABOVE "Allow: /" satisfies both readings.
 Disallow: /v2/
+Allow: /
 
 Sitemap: https://splitcam.com/sitemap.xml
