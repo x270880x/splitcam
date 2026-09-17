@@ -93,11 +93,15 @@ never touched):
    time. It will ride along with the next submission (e.g. the 1.2 build / when the site
    button ships).
 
-   **Caveat for whoever adds website signups next:** the list EXISTS but its ATTACHMENT to
+   ~~**Caveat for whoever adds website signups next:** the list EXISTS but its ATTACHMENT to
    the RC-1 track is still staged. Emails added to `web-testers` are not live testers until
-   that attach is published. Either submit the staged change once the feedback-URL review
-   finishes, or bundle it with the next release. (Meanwhile, to make a signup live
-   immediately, add them to the already-attached `test` list instead.)
+   that attach is published.~~
+
+   ✅ **Снято 2026-09-17.** Привязка опубликована (Publishing overview: last published
+   2026-09-07, изменений на ревью нет). `web-testers` в списке трека отмечен галочкой и
+   живой. Проверено добавлением 11 адресов: счётчик 1 → 12, применилось сразу, ничего
+   на ревью не встало. Добавлять заявки с сайта теперь можно прямо в `web-testers`.
+   Радиокнопку Email lists / Google Groups по-прежнему НЕ трогать.
 
 ## The opt-in URL (read from Play Console 2026-07-17)
 
@@ -124,6 +128,7 @@ Play Console, checked 2026-07-17 (app `com.splitcam.remote`, track RC-1):
 | | |
 |---|---|
 | Emails already on tester lists | **77** (of-live 25, spli_cam_remote 18, test 34) |
+| ↑ то же на 2026-09-17 | **211** (07.09.2026 33, Jack-testers 53, Jack-testers-2 35, of-live 25, spli_cam_remote 18, test 35, web-testers 12) |
 | Opted in | **12** |
 | **Actually installed** | **1** |
 | Testing feedback, all time | **1 entry** ("super", v1.0, 2026-05-06, unanswered) |
