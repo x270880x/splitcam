@@ -264,6 +264,35 @@ download split-button radii, vc-arrow connector) injected per RTL page by
 - Full SEO plan: `seo/PLAN.md`. Recommended IA: `seo/SITEMAP.md`.
   Schedule & follow-ups: `seo/REMINDERS.md` (open it in any SEO chat).
 
+
+## 🔴 /auth — ЗАМОРОЖЕНА. Не менять никогда (правило владельца, 2026-09-17)
+
+От `https://splitcam.com/auth` зависит вход через **Twitch и Kick в мобильном приложении**.
+Провайдер присылает браузер на `/auth?code=…&state=…`, страница обязана вернуть пользователя в
+приложение по схеме `splitcam://auth` с ТЕМИ ЖЕ параметрами. При редизайне она уже пропадала и
+молча ломала вход — второй раз этого быть не должно.
+
+**Устройство, которое менять нельзя:**
+- файл **`auth.html` в корне**, НЕ каталог `auth/index.html` (как каталог `mod_dir` отдаёт 301 на
+  `/auth/` раньше, чем сработает rewrite — лишний хоп посреди OAuth);
+- правило сразу после `RewriteEngine On`:
+  `RewriteRule ^(?:[a-z]{2,3}/)?auth/?$ /auth.html [L,QSA]`;
+- заголовки «не кэшировать» — через `<Files "auth.html">`, НЕ через `<If>` (LiteSpeed здесь
+  игнорирует `<If>` молча);
+- тело — минимальный HTML **без шаблона сайта и без скрипта автоопределения языка**: любой такой
+  скрипт уведёт браузер с `/auth` и сломает возврат. Адрес считается в браузере из `location.search`;
+- **вне `PAGE_PATHS`, вне sitemap, `noindex`.**
+
+**Нельзя:** подключать к шаблону, добавлять в хабы и перелинковку, вносить в `PAGE_PATHS`,
+превращать в каталог, трогать `/.well-known/assetlinks.json`.
+
+**После любой правки сайта или `.htaccess` проверять** (с УНИКАЛЬНЫМ query — LiteSpeed кэширует и 404):
+```bash
+curl -sI 'https://splitcam.com/auth?code=x&state=y' | head -1   # HTTP/2 200
+curl -s  'https://splitcam.com/auth?code=x&state=y' | grep 'splitcam://auth'
+```
+Полная история и грабли — `seo/REMINDERS.md`, раздел «2026-09-17 — восстановлен /auth».
+
 ## RTL trap — never add CSS right after `<!--/RTLCSS-->`
 
 The RTL locales (`ar`, `he`, `fa`) carry a `<!--RTLCSS-->` … `<!--/RTLCSS-->` marker region
