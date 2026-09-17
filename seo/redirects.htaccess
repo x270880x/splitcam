@@ -405,6 +405,23 @@ AddType application/x-msi .msi
 
 AddType application/manifest+json .webmanifest
 
+# --- /auth — страница возврата OAuth для мобильных приложений (восстановлена 2026-09-17) ---
+# Провайдеры (Twitch, Kick) присылают браузер на https://splitcam.com/auth?code=…&state=…,
+# а страница обязана вернуть пользователя в приложение по схеме splitcam://auth с ТЕМИ ЖЕ
+# параметрами. После редизайна маршрут пропал и отдавал 404 — вход в Android-приложении ломался.
+# Кэшировать нельзя: закэшированный 404 или старый ответ снова сломает вход.
+# Кэшировать нельзя: закэшированный ответ (а до 2026-09-17 здесь был 404) снова ломает вход.
+# Условный блок <If> на этом хосте НЕ работает — LiteSpeed игнорирует его молча, оригин отдавал
+# ответ вообще без Cache-Control (проверено). <Files> он исполняет.
+<IfModule mod_headers.c>
+  <Files "auth.html">
+    Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
+    Header always set CDN-Cache-Control "no-store"
+  </Files>
+</IfModule>
+
 # --- custom 404 (branded page, added 2026-07-02; GitHub Pages picks /404.html automatically) ---
 ErrorDocument 404 /404.html
 
@@ -468,6 +485,17 @@ RedirectMatch 301 ^/ayuda(/.*)?$ https://splitcam.com/es/help
 RedirectMatch 301 ^/((?:[a-z]{2,3})/)?alternatives/stream\-deck/?$ https://splitcam.com/$1stream-deck
 
 RewriteEngine On
+
+# --- OAuth return page: /auth must answer 200, with the query string untouched -----------
+# 🔴 Страница лежит ФАЙЛОМ /auth.html, а не каталогом /auth/index.html — и это принципиально.
+# Пока это был каталог, mod_dir (DirectorySlash) успевал раньше mod_rewrite и отдавал 301 на
+# /auth/, то есть лишний хоп посреди OAuth-обмена. Файла это не касается: добавлять слеш не к чему.
+# Проверено на живом 2026-09-17: каталог давал 301, файл отдаёт 200 сразу.
+# QSA сохраняет ?code=…&state=…&scope=… как есть.
+# Локальный префикс тоже принимаем: /ru/auth ведёт себя как /auth (провайдер может быть настроен
+# на любой из вариантов). Страница носит noindex и в sitemap не входит.
+RewriteRule ^(?:[a-z]{2,3}/)?auth/?$ /auth.html [L,QSA]
+
 # 0) Force https for plain-http visitors. Behind Cloudflare the origin always gets an
 #    https connection, so detect the VISITOR scheme via the CF-Visitor header (Cloudflare
 #    sets it on every proxied request). Our CF token lacks Zone-Settings rights to flip

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Returning to SplitCam…</title>
+<script>
+  var target = "splitcam://auth" + location.search;
+  location.replace(target);
+</script>
+</head>
+<body style="font-family:sans-serif;text-align:center;padding:40px">
+  <p>Returning to SplitCam…</p>
+  <p><a id="open" href="#">Open SplitCam</a></p>
+  <script>document.getElementById("open").href = target;</script>
+</body>
+</html>
