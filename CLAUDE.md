@@ -73,7 +73,12 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
 
 ## Current state
 
-- 🔴 **THE SERVER MOVED. Verified on the box 2026-08-12: web AND mail are both on
+- 🔴 **SERVER MOVED AGAIN 2026-09-18: web AND mail are on `pl-rocket-da4` = `88.218.29.75`**,
+  panel `https://pl-rocket-da4.hostsila.org:2222/`, SSH `lwanngbs@88.218.29.75:22`, same
+  password. DNS switched the same day via CF API; full record and checks in
+  `seo/MIGRATION-2026-09-18.md`. **Never hard-code the server IP** — take it from the
+  `splitcam.com` A record in Cloudflare (the deploy skill does). The bullet below is history.
+- *(history, superseded 2026-09-18)* **THE SERVER MOVED. Verified on the box 2026-08-12: web AND mail are both on
   `77.83.100.153`, panel `https://pl-rocket-da3.hostsila.org:2222/`, SSH
   `lwanngbs@77.83.100.153:22`, creds `~/.hostsila_da_ssh`, docroot
   `/home/lwanngbs/domains/splitcam.com/public_html`.** Confirmed live, not a staging copy:

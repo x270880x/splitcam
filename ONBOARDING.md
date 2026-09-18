@@ -1,8 +1,27 @@
 # SplitCam — Project Onboarding
 
-*Last updated: 2026-08-12. Open this at the start of any new chat to get up to speed.*
+*Last updated: 2026-09-18. Open this at the start of any new chat to get up to speed.*
 
-> # 🔴 THE SERVER MOVED — every IP below this box is stale (verified on the box 2026-08-12)
+> # 🔴 SERVER MOVED AGAIN on 2026-09-18 — web AND mail now on `88.218.29.75`
+>
+> ```
+> Panel:   https://pl-rocket-da4.hostsila.org:2222/
+> SSH:     lwanngbs@88.218.29.75, port 22, same password (~/.hostsila_da_ssh)
+> Docroot: /home/lwanngbs/domains/splitcam.com/public_html
+> Mail:    Exim 4.95 + Dovecot; mailboxes admin, support, pola
+> ```
+>
+> HostPro moved the account from `pl-rocket-da3` (`77.83.100.153`, being decommissioned)
+> and asked us to repoint DNS. Done the same day via the Cloudflare API: A `splitcam.com`,
+> `www`, `mail`, `webmail` → `88.218.29.75`; `ip4:88.218.29.75` added to SPF. Full record
+> with every check: **`seo/MIGRATION-2026-09-18.md`** (1432 live URLs checked three ways,
+> 0 regressions; mailboxes identical).
+>
+> **Never hard-code the server IP again** — three moves in three months, one of them
+> unrecorded. Read it from the `splitcam.com` A record in Cloudflare (the deploy skill
+> does exactly that since 2026-09-18). The box below is history.
+
+> # (history, superseded 2026-09-18) THE SERVER MOVED — verified on the box 2026-08-12
 >
 > **Web AND mail are both on `77.83.100.153`.** Not `185.67.3.44`, not `rocket-da4`, not
 > either cPanel.

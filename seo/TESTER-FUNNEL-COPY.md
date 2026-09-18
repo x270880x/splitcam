@@ -46,7 +46,7 @@ plausible-looking address; it was never real. Verified 2026-07-17:
 - ~~splitcam.com does accept mail (MX -> mail.splitcam.com -> 91.223.223.113, the old cPanel),
   but whether a `support@` mailbox exists could not be confirmed.~~ **Settled 2026-08-12 on the
   server: the `support@splitcam.com` mailbox EXISTS** (alongside `admin@` and `pola@`) on the
-  current host `77.83.100.153` — `MX -> mail.splitcam.com -> 77.83.100.153`, Exim 4.99.4
+  host at the time `77.83.100.153` (since 2026-09-18: `88.218.29.75`, see `seo/MIGRATION-2026-09-18.md`) — `MX -> mail.splitcam.com -> 77.83.100.153`, Exim 4.99.4
   listening on 25/465/587, external mail demonstrably arriving. It is the sender for the
   tester mailout; see `seo/REMOTE-TESTER-MAILOUT.md`.
 - The real, publicly listed addresses on the live `com.splitcam` Play listing are
