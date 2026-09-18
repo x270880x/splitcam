@@ -373,6 +373,28 @@ RedirectMatch 301 ^/win-download/update/10\.7\.24_x64\.msi$ https://github.com/x
 RedirectMatch 301 ^/win-download/update/10\.7\.32_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.7.32/10.7.32_x64.msi
 RedirectMatch 301 ^/win-download/update/10\.7\.38_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.7.38/10.7.38_x64.msi
 RedirectMatch 301 ^/win-download/update/10\.7\.44_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.7.44/10.7.44_x64.msi
+# 10.8.x (добавлено 2026-09-18): те же правила «старый адрес -> ТА ЖЕ версия на GitHub».
+# Не включены: 10.8.70 (лежит на хосте), 10.8.62 (на GitHub только restream_test-сборка),
+# 10.8.13 (нет нигде — 404 верен).
+RedirectMatch 301 ^/win-download/update/10\.8\.2_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.2/10.8.2_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.8\.3_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.3/10.8.3_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.8\.5_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.5/10.8.5_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.8\.25_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.25/10.8.25_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.8\.50_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.50/10.8.50_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.8\.55_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.55/10.8.55_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.8\.60_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.60/10.8.60_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.8\.61_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.61/10.8.61_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.8\.64_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.64/10.8.64_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.8\.65_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.65/10.8.65_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.8\.66_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.66/10.8.66_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.8\.67_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.67/10.8.67_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.8\.68_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.68/10.8.68_x64.msi
+RedirectMatch 301 ^/win-download/update/10\.8\.69_x64\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.8.69/10.8.69_x64.msi
+
+# /<язык>/null -> главная этого языка (добавлено 2026-09-18). Такие адреса собирают краулеры
+# из переключателя языка go(lang): "/"+lang+"/"+slug при пустом slug. ~75 запросов/сут.
+RedirectMatch 301 ^/(ru|es|de|fr|pt|tr|fil|uk|it|vi|id|nl|ro|hi|ja|ms|bg|ar|ko|th|pl|hu|sv|zh|el|cs|he|sr|hr|da|fi|no|sk|fa)/null/?$ https://splitcam.com/$1/
+RedirectMatch 301 ^/null/?$ https://splitcam.com/
 RedirectMatch 301 ^/win-download/update/9\.0\.9\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v9.0.9/9.0.9.msi
 RedirectMatch 301 ^/win-download/update/10\.0\.58\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.0.58/10.0.58.msi
 RedirectMatch 301 ^/win-download/update/10\.1\.4\.msi$ https://github.com/x270880x/splitcam-release/releases/download/v10.1.4/10.1.4.msi
