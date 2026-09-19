@@ -302,7 +302,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .product-features li::before{content:'·';position:absolute;left:7px;color:var(--blue);font-weight:700;font-size:18px;line-height:1}
 .product-features li.soon{color:var(--text-dim)}
 .product-features li.soon::before{color:var(--text-dim)}
-.product-features li.soon .soon-tag{display:inline-block;margin-left:5px;padding:0 5px;border-radius:99px;font-size:8px;font-weight:600;letter-spacing:.15px;background:rgba(255,164,64,.1);color:#ffa372;border:1px solid rgba(255,164,64,.28);vertical-align:2px}
+.product-features li.soon .soon-tag{display:inline-block;margin-inline-start:5px;padding:0 5px;border-radius:99px;font-size:8px;font-weight:600;letter-spacing:.15px;background:rgba(255,164,64,.1);color:#ffa372;border:1px solid rgba(255,164,64,.28);vertical-align:2px}
+.product-features li.new .new-tag{display:inline-block;margin-inline-start:5px;padding:0 5px;border-radius:99px;font-size:8px;font-weight:600;letter-spacing:.15px;background:rgba(94,229,114,.12);color:var(--green);border:1px solid rgba(94,229,114,.3);vertical-align:2px}
 .product-cta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;position:relative;z-index:1;margin-top:auto}
 .btn-store{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;background:#fff;color:#000;font-size:13px;font-weight:600;transition:transform .15s,box-shadow .15s}
 .btn-store:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(255,255,255,.1)}
@@ -627,11 +628,12 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       </div>
       <p class="product-desc">استوديو بث للجوال. ابثّ مباشرةً عموديًا (Reels/Shorts) أو أفقيًا من هاتفك، مع تحسين التجميل وشات مباشر من كل المنصات في وقت واحد.</p>
       <ul class="product-features">
+        <li class="new">Remote Camera — حوّل iPhone إلى كاميرا لاسلكية بدقة 4K لـ SplitCam على Mac<span class="new-tag">جديد</span></li>
         <li>بث متعدد إلى عدة منصات + RTMP</li>
         <li>لوحة عمودية 9:16 وأفقية 16:9</li>
         <li>حتى دقة 4K، وشات موحّد من كل المنصات داخل التطبيق</li>
+        <li class="new">صورة داخل صورة — يستمرّ البث وأنت تستخدم تطبيقات أخرى<span class="new-tag">جديد</span></li>
         <li class="soon" title="مخطّط لإصدار iOS مستقبلي">فلاتر الواقع المعزّز ومؤثرات بصرية لحظية<span class="soon-tag">قيد التطوير</span></li>
-        <li class="soon" title="مخطّط لإصدار iOS مستقبلي">صورة داخل صورة — يستمرّ البث وأنت تتصفّح<span class="soon-tag">قيد التطوير</span></li>
       </ul>
       <div class="product-cta">
         <a href="https://apps.apple.com/us/app/splitcam-live-streaming-app/id1543666414" class="btn-store" target="_blank" rel="noopener">
