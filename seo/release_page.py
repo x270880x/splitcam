@@ -114,7 +114,12 @@ def main():
                       ("ссылки",     "python3 seo/linkcheck.py --no-network")):
         code, out = run(cmd)
         tail = [l for l in out.strip().splitlines() if l.strip()][-1:] or [""]
-        red = "🔴" in out or (step == "аудит" and code != 0)
+        if step == "аудит":
+            # page_audit --quiet печатает «🔴 N» в КАЖДОЙ строке, включая нулевые:
+            # искать сам символ здесь — значит всегда падать. Считаем числа.
+            red = code != 0 or any(int(n) for n in re.findall(r"🔴\s+(\d+)", out))
+        else:
+            red = "🔴" in out
         print(f"  {'🔴' if red else '✅'} {step}: {tail[0][:110]}")
         if red: problems.append((step, "красные находки"))
     # карточки в сетке по три: остаток 1 оставляет сироту в последнем ряду
