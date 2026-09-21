@@ -184,6 +184,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Hub card grid */
 .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hub-grid>.hub-card:last-child:nth-child(3n+1){grid-column:1/-1}
 .hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
 a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
 .hub-card.soon{opacity:.62}
@@ -339,6 +340,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="hub-meta">虚拟摄像头工具</div>
       <p>ManyCam 专注于摄像头特效和虚拟摄像头输出。对比两者的功能集、支持平台及定价。</p>
       <div class="hub-go">查看 SplitCam 对比 ManyCam 完整报告 →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/zh/alternatives/snap-camera">
+      <div class="hub-ico vs">vs</div>
+      <h3>Snap Camera</h3>
+      <div class="hub-meta">2023 年已停运</div>
+      <p>Snap 关停了这款应用，服务器也一并关掉了。看看滤镜、美颜和背景去除这些真正用得上的功能，现在还有什么能免费做到。</p>
+      <div class="hub-go">查看 SplitCam 对比 Snap Camera 完整报告 →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/zh/alternatives/nvidia-broadcast">
+      <div class="hub-ico vs">vs</div>
+      <h3>NVIDIA Broadcast</h3>
+      <div class="hub-meta">需要 RTX 显卡</div>
+      <p>NVIDIA Broadcast 免费，但要求 GeForce RTX 2060 及以上显卡，系统也必须是 Windows。看看背景去除不挑显卡时会有什么不同。</p>
+      <div class="hub-go">查看 SplitCam 对比 NVIDIA Broadcast 完整报告 →</div>
     </a>
 
   </div>

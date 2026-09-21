@@ -183,6 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Hub card grid */
 .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hub-grid>.hub-card:last-child:nth-child(3n+1){grid-column:1/-1}
 .hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
 a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
 .hub-card.soon{opacity:.62}
@@ -338,6 +339,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="hub-meta">เครื่องมือกล้องเสมือน</div>
       <p>ManyCam เน้นเอฟเฟกต์เว็บแคมและการส่งออกผ่านกล้องเสมือน มาเทียบชุดฟีเจอร์ แพลตฟอร์มที่รองรับ และราคากับ SplitCam กัน</p>
       <div class="hub-go">เปรียบเทียบ SplitCam กับ ManyCam →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/th/alternatives/snap-camera">
+      <div class="hub-ico vs">vs</div>
+      <h3>Snap Camera</h3>
+      <div class="hub-meta">เลิกให้บริการเมื่อปี 2023</div>
+      <p>Snap ปิดแอปและปิดเซิร์ฟเวอร์ทิ้งไปแล้ว มาดูกันว่ายังมีอะไรที่ใส่ฟิลเตอร์และมาสก์ ปรับผิวให้เนียน และลบพื้นหลังให้คุณได้อยู่ ฟรี</p>
+      <div class="hub-go">เปรียบเทียบ SplitCam กับ Snap Camera →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/th/alternatives/nvidia-broadcast">
+      <div class="hub-ico vs">vs</div>
+      <h3>NVIDIA Broadcast</h3>
+      <div class="hub-meta">ต้องมีการ์ด RTX</div>
+      <p>NVIDIA Broadcast ฟรีก็จริง แต่ขอ GeForce RTX 2060 ขึ้นไป และ Windows มาดูกันว่าอะไรเปลี่ยนไป เมื่อการลบพื้นหลังไม่ต้องใช้การ์ดจอรุ่นไหนเป็นพิเศษ</p>
+      <div class="hub-go">เปรียบเทียบ SplitCam กับ NVIDIA Broadcast →</div>
     </a>
 
   </div>

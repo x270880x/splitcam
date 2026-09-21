@@ -191,6 +191,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Hub card grid */
 .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hub-grid>.hub-card:last-child:nth-child(3n+1){grid-column:1/-1}
 .hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
 a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
 .hub-card.soon{opacity:.62}
@@ -340,6 +341,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="hub-meta">Virtuele camera-tool</div>
       <p>ManyCam richt zich op webcam-effecten en de uitvoer via een virtuele camera. Vergelijk het functiepakket, de ondersteunde platforms en de prijs met SplitCam.</p>
       <div class="hub-go">SplitCam vs ManyCam vergelijken →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/nl/alternatives/snap-camera">
+      <div class="hub-ico vs">vs</div>
+      <h3>Snap Camera</h3>
+      <div class="hub-meta">Stopgezet in 2023</div>
+      <p>Snap zette de app stop en schakelde de servers uit. Zie welke app de filters, de beauty-retouche en de achtergronden nog wél doet — gratis.</p>
+      <div class="hub-go">SplitCam vs Snap Camera vergelijken →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/nl/alternatives/nvidia-broadcast">
+      <div class="hub-ico vs">vs</div>
+      <h3>NVIDIA Broadcast</h3>
+      <div class="hub-meta">RTX-kaart vereist</div>
+      <p>NVIDIA Broadcast is gratis, maar vraagt om een GeForce RTX 2060 of beter en om Windows. Zie wat er verandert als achtergrondverwijdering geen eisen stelt aan je grafische kaart.</p>
+      <div class="hub-go">SplitCam vs NVIDIA Broadcast vergelijken →</div>
     </a>
 
   </div>

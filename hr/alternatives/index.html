@@ -183,6 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Hub card grid */
 .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hub-grid>.hub-card:last-child:nth-child(3n+1){grid-column:1/-1}
 .hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
 a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
 .hub-card.soon{opacity:.62}
@@ -338,6 +339,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="hub-meta">Alat za virtualnu kameru</div>
       <p>ManyCam se oslanja na efekte za web kameru i izlaz putem virtualne kamere. Usporedimo skup funkcija, podržane platforme i cijene sa SplitCamom.</p>
       <div class="hub-go">Alternativa za ManyCam: potpuna usporedba →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/hr/alternatives/snap-camera">
+      <div class="hub-ico vs">vs</div>
+      <h3>Snap Camera</h3>
+      <div class="hub-meta">Ugašena 2023.</div>
+      <p>Snap je ugasio aplikaciju i isključio poslužitelje preko kojih je učitavala leće. Pogledat ćemo što danas odrađuje isti posao — filtre, beauty retuš i pozadine, besplatno.</p>
+      <div class="hub-go">Alternativa za Snap Cameru: potpuna usporedba →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/hr/alternatives/nvidia-broadcast">
+      <div class="hub-ico vs">vs</div>
+      <h3>NVIDIA Broadcast</h3>
+      <div class="hub-meta">Samo za RTX kartice</div>
+      <p>NVIDIA Broadcast je besplatan, ali traži barem GeForce RTX 2060 i Windows. Vidjet ćemo što se mijenja kada uklanjanje pozadine ne traži nikakvu posebnu karticu.</p>
+      <div class="hub-go">Alternativa za NVIDIA Broadcast: potpuna usporedba →</div>
     </a>
 
   </div>

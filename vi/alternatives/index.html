@@ -183,6 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Hub card grid */
 .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hub-grid>.hub-card:last-child:nth-child(3n+1){grid-column:1/-1}
 .hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
 a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
 .hub-card.soon{opacity:.62}
@@ -338,6 +339,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="hub-meta">Công cụ camera ảo</div>
       <p>ManyCam tập trung vào hiệu ứng webcam và xuất ra camera ảo. So bộ tính năng, nền tảng hỗ trợ và giá với SplitCam.</p>
       <div class="hub-go">So sánh SplitCam với ManyCam →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/vi/alternatives/snap-camera">
+      <div class="hub-ico vs">vs</div>
+      <h3>Snap Camera</h3>
+      <div class="hub-meta">Ngừng hoạt động năm 2023</div>
+      <p>Snap đã khai tử ứng dụng này và tắt luôn máy chủ của nó. Xem SplitCam lo phần bộ lọc, làm đẹp và phông nền ra sao — miễn phí.</p>
+      <div class="hub-go">So sánh SplitCam với Snap Camera →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/vi/alternatives/nvidia-broadcast">
+      <div class="hub-ico vs">vs</div>
+      <h3>NVIDIA Broadcast</h3>
+      <div class="hub-meta">Cần card RTX</div>
+      <p>NVIDIA Broadcast miễn phí nhưng đòi GeForce RTX 2060 trở lên và Windows. Xem SplitCam xoá phông ra sao khi không có card RTX, và khi nào NVIDIA Broadcast vẫn đáng cài.</p>
+      <div class="hub-go">So sánh SplitCam với NVIDIA Broadcast →</div>
     </a>
 
   </div>

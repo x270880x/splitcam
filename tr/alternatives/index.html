@@ -183,6 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Hub card grid */
 .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hub-grid>.hub-card:last-child:nth-child(3n+1){grid-column:1/-1}
 .hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
 a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
 .hub-card.soon{opacity:.62}
@@ -338,6 +339,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="hub-meta">Sanal kamera aracı</div>
       <p>ManyCam, web kamerası efektlerine ve sanal kamera çıkışına odaklanır. Özellik setini, desteklenen platformları ve fiyatlandırmayı SplitCam ile karşılaştırın.</p>
       <div class="hub-go">SplitCam ile ManyCam'i karşılaştır →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/tr/alternatives/snap-camera">
+      <div class="hub-ico vs">vs</div>
+      <h3>Snap Camera</h3>
+      <div class="hub-meta">Ocak 2023'te kapandı</div>
+      <p>Snap, uygulamanın fişini çekti ve lenslerini yükleyen sunucuları kapattı. Filtreleri, güzellik rötuşunu ve arka plan kaldırmayı hâlâ hangi aracın yaptığını görün — ücretsiz.</p>
+      <div class="hub-go">SplitCam ile Snap Camera'yı karşılaştır →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/tr/alternatives/nvidia-broadcast">
+      <div class="hub-ico vs">vs</div>
+      <h3>NVIDIA Broadcast</h3>
+      <div class="hub-meta">RTX kartı gerekli</div>
+      <p>NVIDIA Broadcast ücretsizdir ama GeForce RTX 2060 ya da üstü bir kart ve Windows gerektirir. Arka plan kaldırma belirli bir kart istemediğinde nelerin değiştiğini görün.</p>
+      <div class="hub-go">SplitCam ile NVIDIA Broadcast'i karşılaştır →</div>
     </a>
 
   </div>

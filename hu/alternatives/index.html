@@ -183,6 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Hub card grid */
 .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hub-grid>.hub-card:last-child:nth-child(3n+1){grid-column:1/-1}
 .hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
 a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
 .hub-card.soon{opacity:.62}
@@ -338,6 +339,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="hub-meta">Virtuáliskamera-eszköz</div>
       <p>A ManyCam a webkamerás effektekre és a virtuális kamerás kimenetre összpontosít. Hasonlítsd össze a funkciókészletet, a támogatott platformokat és az árazást a SplitCammel.</p>
       <div class="hub-go">ManyCam-alternatíva — teljes összehasonlítás →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/hu/alternatives/snap-camera">
+      <div class="hub-ico vs">vs</div>
+      <h3>Snap Camera</h3>
+      <div class="hub-meta">2023-ban megszűnt</div>
+      <p>A Snap Camera 2023 januárjában megszűnt — a Snap lekapcsolta mögüle a szervereket. Nézd meg, mi hozza ma is ingyen a szűrőket, a szépítést és a háttércserét.</p>
+      <div class="hub-go">Snap Camera-alternatíva — teljes összehasonlítás →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/hu/alternatives/nvidia-broadcast">
+      <div class="hub-ico vs">vs</div>
+      <h3>NVIDIA Broadcast</h3>
+      <div class="hub-meta">RTX-kártyát igényel</div>
+      <p>Az NVIDIA Broadcast ingyenes, de GeForce RTX 2060-at vagy erősebbet és Windowst kér. Nézd meg, mi változik, ha a háttéreltávolításhoz nem kell semmilyen konkrét kártya.</p>
+      <div class="hub-go">NVIDIA Broadcast-alternatíva — teljes összehasonlítás →</div>
     </a>
 
   </div>

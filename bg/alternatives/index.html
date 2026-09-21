@@ -183,6 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Hub card grid */
 .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hub-grid>.hub-card:last-child:nth-child(3n+1){grid-column:1/-1}
 .hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
 a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
 .hub-card.soon{opacity:.62}
@@ -338,6 +339,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="hub-meta">Инструмент за виртуална камера</div>
       <p>ManyCam залага на ефекти за уеб камера и изход през виртуална камера. Ще сравним набора от функции, поддържаните платформи и цените със SplitCam.</p>
       <div class="hub-go">Алтернатива на ManyCam: пълно сравнение →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/bg/alternatives/snap-camera">
+      <div class="hub-ico vs">vs</div>
+      <h3>Snap Camera</h3>
+      <div class="hub-meta">Закрита през 2023 г.</div>
+      <p>Snap закри приложението и изключи сървърите му, така че преинсталирането вече не помага. SplitCam поема филтрите, beauty ретуша и фоновете — безплатно.</p>
+      <div class="hub-go">Алтернатива на Snap Camera: пълно сравнение →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/bg/alternatives/nvidia-broadcast">
+      <div class="hub-ico vs">vs</div>
+      <h3>NVIDIA Broadcast</h3>
+      <div class="hub-meta">Само за RTX видеокарти</div>
+      <p>NVIDIA Broadcast е безплатен, но иска поне GeForce RTX 2060 и Windows. Ще видим какво се променя, когато премахването на фона не изисква определена видеокарта.</p>
+      <div class="hub-go">Алтернатива на NVIDIA Broadcast: пълно сравнение →</div>
     </a>
 
     </div>

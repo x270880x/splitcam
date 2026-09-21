@@ -183,6 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Hub card grid */
 .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hub-grid>.hub-card:last-child:nth-child(3n+1){grid-column:1/-1}
 .hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
 a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
 .hub-card.soon{opacity:.62}
@@ -338,6 +339,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="hub-meta">Εργαλείο εικονικής κάμερας</div>
       <p>Το ManyCam εστιάζει σε εφέ webcam και έξοδο μέσω εικονικής κάμερας. Θα συγκρίνουμε το σύνολο λειτουργιών, τις υποστηριζόμενες πλατφόρμες και τις τιμές με το SplitCam.</p>
       <div class="hub-go">Εναλλακτική ManyCam: πλήρης σύγκριση →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/el/alternatives/snap-camera">
+      <div class="hub-ico vs">vs</div>
+      <h3>Snap Camera</h3>
+      <div class="hub-meta">Διακόπηκε το 2023</div>
+      <p>Η Snap έκλεισε την εφαρμογή τον Ιανουάριο του 2023 και απενεργοποίησε τους διακομιστές που φόρτωναν τα lenses. Θα δούμε ποιο εργαλείο δίνει ακόμα φίλτρα, εφέ ομορφιάς και αφαίρεση φόντου — δωρεάν.</p>
+      <div class="hub-go">Εναλλακτική Snap Camera: πλήρης σύγκριση →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/el/alternatives/nvidia-broadcast">
+      <div class="hub-ico vs">vs</div>
+      <h3>NVIDIA Broadcast</h3>
+      <div class="hub-meta">Απαιτεί κάρτα RTX</div>
+      <p>Το NVIDIA Broadcast είναι δωρεάν, αλλά ζητάει GeForce RTX 2060 ή καλύτερη και τρέχει μόνο σε Windows. Θα δούμε τι αλλάζει όταν η αφαίρεση φόντου δεν απαιτεί καμία συγκεκριμένη κάρτα.</p>
+      <div class="hub-go">Εναλλακτική NVIDIA Broadcast: πλήρης σύγκριση →</div>
     </a>
 
     </div>

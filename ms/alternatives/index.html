@@ -183,6 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Hub card grid */
 .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hub-grid>.hub-card:last-child:nth-child(3n+1){grid-column:1/-1}
 .hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
 a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
 .hub-card.soon{opacity:.62}
@@ -338,6 +339,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="hub-meta">Alat kamera maya</div>
       <p>ManyCam menumpukan pada kesan webcam dan output kamera maya. Banding set ciri, platform yang disokong dan harga dengan SplitCam.</p>
       <div class="hub-go">Banding SplitCam lwn ManyCam →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/ms/alternatives/snap-camera">
+      <div class="hub-ico vs">vs</div>
+      <h3>Snap Camera</h3>
+      <div class="hub-meta">Ditutup pada 2023</div>
+      <p>Snap menutup aplikasi itu dan mematikan pelayannya. Lihat apa yang masih mengendalikan filter, beauty dan buang latar belakang — percuma.</p>
+      <div class="hub-go">Banding SplitCam lwn Snap Camera →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/ms/alternatives/nvidia-broadcast">
+      <div class="hub-ico vs">vs</div>
+      <h3>NVIDIA Broadcast</h3>
+      <div class="hub-meta">Perlu kad RTX</div>
+      <p>NVIDIA Broadcast percuma tetapi memerlukan GeForce RTX 2060 ke atas dan Windows. Lihat apa yang berubah apabila buang latar belakang berjalan tanpa syarat kad grafik.</p>
+      <div class="hub-go">Banding SplitCam lwn NVIDIA Broadcast →</div>
     </a>
 
   </div>

@@ -183,6 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Hub card grid */
 .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hub-grid>.hub-card:last-child:nth-child(3n+1){grid-column:1/-1}
 .hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
 a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
 .hub-card.soon{opacity:.62}
@@ -338,6 +339,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="hub-meta">バーチャルカメラツール</div>
       <p>ManyCam はウェブカメラのエフェクトとバーチャルカメラ出力に特化。機能セット・対応プラットフォーム・価格を SplitCam と比べてみましょう。</p>
       <div class="hub-go">SplitCam と ManyCam を比較 →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/ja/alternatives/snap-camera">
+      <div class="hub-ico vs">vs</div>
+      <h3>Snap Camera</h3>
+      <div class="hub-meta">2023年に提供終了</div>
+      <p>Snap は2023年1月にアプリの提供を終了し、レンズを読み込むためのサーバーも停止しました。フィルター・美顔・AI背景が今も使える無料ツールを見てみましょう。</p>
+      <div class="hub-go">SplitCam と Snap Camera を比較 →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/ja/alternatives/nvidia-broadcast">
+      <div class="hub-ico vs">vs</div>
+      <h3>NVIDIA Broadcast</h3>
+      <div class="hub-meta">RTX カード必須</div>
+      <p>NVIDIA Broadcast は無料ですが、GeForce RTX 2060 以上と Windows が必要です。特定のカードが不要な背景除去で何が変わるか、見てみましょう。</p>
+      <div class="hub-go">SplitCam と NVIDIA Broadcast を比較 →</div>
     </a>
 
   </div>

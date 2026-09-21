@@ -183,6 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Hub card grid */
 .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hub-grid>.hub-card:last-child:nth-child(3n+1){grid-column:1/-1}
 .hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
 a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
 .hub-card.soon{opacity:.62}
@@ -338,6 +339,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="hub-meta">가상 카메라 도구</div>
       <p>ManyCam은 웹캠 효과와 가상 카메라 출력에 집중합니다. 기능 구성, 지원 플랫폼, 가격을 SplitCam과 비교해 보세요.</p>
       <div class="hub-go">ManyCam 대안: 전체 비교 →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/ko/alternatives/snap-camera">
+      <div class="hub-ico vs">vs</div>
+      <h3>Snap Camera</h3>
+      <div class="hub-meta">2023년 서비스 종료</div>
+      <p>Snap이 앱 서비스를 종료하면서 렌즈를 불러오던 서버까지 껐습니다. 필터와 뷰티 보정, 배경 제거는 SplitCam에서 지금도 그대로 됩니다 — 무료로.</p>
+      <div class="hub-go">Snap Camera 대안: 전체 비교 →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/ko/alternatives/nvidia-broadcast">
+      <div class="hub-ico vs">vs</div>
+      <h3>NVIDIA Broadcast</h3>
+      <div class="hub-meta">RTX 카드 필수</div>
+      <p>NVIDIA Broadcast는 무료지만 GeForce RTX 2060 이상과 Windows가 필요합니다. 그래픽카드를 가리지 않는 SplitCam의 배경 제거는 무엇이 다른지 살펴보세요.</p>
+      <div class="hub-go">NVIDIA Broadcast 대안: 전체 비교 →</div>
     </a>
 
   </div>

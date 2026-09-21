@@ -183,6 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* Hub card grid */
 .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hub-grid>.hub-card:last-child:nth-child(3n+1){grid-column:1/-1}
 .hub-card{position:relative;display:flex;flex-direction:column;padding:26px 24px;background:var(--app-panel);border:1px solid var(--app-border);border-radius:16px;transition:transform .2s,border-color .2s}
 a.hub-card:hover{border-color:var(--app-border2);transform:translateY(-3px)}
 .hub-card.soon{opacity:.62}
@@ -338,6 +339,22 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <div class="hub-meta">Nástroj pro virtuální kameru</div>
       <p>ManyCam se soustředí na efekty webkamery a výstup přes virtuální kameru. Srovnáme sadu funkcí, podporované platformy a ceny se SplitCamem.</p>
       <div class="hub-go">SplitCam vs ManyCam: úplné srovnání →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/cs/alternatives/snap-camera">
+      <div class="hub-ico vs">vs</div>
+      <h3>Snap Camera</h3>
+      <div class="hub-meta">Ukončena v roce 2023</div>
+      <p>Snap aplikaci ukončil a vypnul její servery, takže přestala fungovat všem. Ukážeme, kde dnes najdete filtry, zkrášlení pleti i AI pozadí — zdarma.</p>
+      <div class="hub-go">SplitCam vs Snap Camera: úplné srovnání →</div>
+    </a>
+
+    <a class="hub-card" href="https://splitcam.com/cs/alternatives/nvidia-broadcast">
+      <div class="hub-ico vs">vs</div>
+      <h3>NVIDIA Broadcast</h3>
+      <div class="hub-meta">Vyžaduje RTX kartu</div>
+      <p>NVIDIA Broadcast je zdarma, ale chce GeForce RTX 2060 nebo lepší a Windows. Ukážeme, co se změní, když odstranění pozadí žádnou konkrétní kartu nepotřebuje.</p>
+      <div class="hub-go">SplitCam vs NVIDIA Broadcast: úplné srovnání →</div>
     </a>
 
   </div>
