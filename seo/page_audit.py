@@ -289,7 +289,11 @@ def audit(pages, locs, quiet=False):
             if p.og.get("image"):
                 tf = to_file(p.og["image"], loc)
                 if tf and not os.path.exists(tf): F("🔴", loc, page, "T07", f"og:image нет на диске: {p.og['image']}")
-            if p.og.get("title") and p.og["title"] != p.title and _html.unescape(p.og["title"]) != p.title:
+            # Сравнивать через ту же нормализацию, что прошёл <title>: `strip` схлопывает
+            # \s+ в обычный пробел, а \s в Python включает U+00A0. Без этого неразрывный
+            # пробел (обязателен во французском перед «:») давал ложное «og:title ≠ title»
+            # при побайтово одинаковых строках — поймано 2026-09-22 на fr/multistreaming.
+            if p.og.get("title") and strip(p.og["title"]) != p.title:
                 F("🟡", loc, page, "T07", "og:title ≠ title")
             # T08
             if not p.kw.strip(): F("🟡", loc, page, "T08", "нет keywords")
