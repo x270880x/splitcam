@@ -65,16 +65,27 @@ def submit(urls, dry=False):
     for i in range(0, len(urls), BATCH):
         part = urls[i:i + BATCH]
         payload = json.dumps({"host": HOST, "key": KEY, "keyLocation": KEY_URL, "urlList": part}).encode()
-        req = urllib.request.Request(ENDPOINT, data=payload,
-                                     headers={"Content-Type": "application/json; charset=utf-8"})
+        # 🔴 Через curl, а НЕ urllib: у python 3.14 на этой машине нет набора корневых
+        # сертификатов, и urlopen падает с CERTIFICATE_VERIFY_FAILED ещё до отправки
+        # (поймано 2026-09-22 — 71 адрес молча не ушёл). То же правило в скилле деплоя.
+        import tempfile
+        with tempfile.NamedTemporaryFile("wb", suffix=".json", delete=False) as fh:
+            fh.write(payload); body = fh.name
         try:
-            with urllib.request.urlopen(req, timeout=60) as r:
-                print(f"  партия {i//BATCH+1}: {len(part)} адресов → HTTP {r.status} {r.reason}")
+            r = subprocess.run(["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}",
+                                "-X", "POST", ENDPOINT,
+                                "-H", "Content-Type: application/json; charset=utf-8",
+                                "--data", "@" + body], capture_output=True, text=True, timeout=90)
+            code = (r.stdout or "").strip()
+            if code in ("200", "202"):
+                print(f"  партия {i//BATCH+1}: {len(part)} адресов → HTTP {code}")
                 sent += len(part)
-        except urllib.error.HTTPError as e:
-            print(f"  🔴 партия {i//BATCH+1}: HTTP {e.code} {e.reason} — {e.read()[:200]}")
+            else:
+                print(f"  🔴 партия {i//BATCH+1}: HTTP {code or '—'} {r.stderr[:160]}")
         except Exception as e:
             print(f"  🔴 партия {i//BATCH+1}: {e}")
+        finally:
+            os.unlink(body)
     print(f"  отправлено: {sent}/{len(urls)}")
     print("  коды: 200 принято · 202 принято, ключ проверяется · 400 некорректный запрос · 403 ключ не совпал")
     return 0
