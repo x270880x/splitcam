@@ -82,7 +82,8 @@ def build(loc):
     out.write_text(head + card + mid + foot + tail)
 
     # --- Раздел в политику: перед третьим <h2> карточки.
-    pp = src
+    # Прежний раздел снимаем целиком и ставим заново — иначе правки перевода не доходят.
+    pp = re.sub(r"\s*" + re.escape(MARK) + r".*?" + re.escape(MARK) + r"\n\n    ", "\n\n    ", src, count=1, flags=re.S)
     if MARK not in pp:
         a = pp.index('<div class="legal-card">')
         h2s = [m.start() for m in re.finditer(r"<h2>", pp[a:])]
