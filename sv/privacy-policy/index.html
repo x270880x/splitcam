@@ -299,6 +299,32 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <h2>Insamling av information</h2>
     <p>Vi samlar in uppgifter som IP-adresser, webbläsartyp, internetleverantör (ISP), hänvisande och avslutande sidor, operativsystem, datum/tidsstämpel och klickströmdata via Google Analytics — för att använda vår webbplats och vårt program behöver du godkänna <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googles integritetspolicy</a>. Vi samlar <strong>inte</strong> in personligt identifierbar information ("PII") om våra besökare. Ingen annan information om besökare samlas in utöver information på webbläsarnivå för statistik- och analysändamål.</p>
 
+    <!--dd-section-->
+    <h2>Inloggning med streamingplattformar</h2>
+    <p>I mobilappen SplitCam kan du ansluta dina konton på streamingplattformar (Facebook, YouTube, Twitch, Kick) så att appen kan starta livesändningar och visa din livechatt. När du ansluter ett konto visar plattformen exakt vilka behörigheter SplitCam begär, och du kan neka vilken som helst av dem.</p>
+
+    <h3>Vad vi får från Facebook</h3>
+    <p>Om du loggar in med Facebook får SplitCam ditt namn, din profilbild och ett appspecifikt användar-ID; en lista över de Facebooksidor som du har valt att dela med SplitCam, med en åtkomsttoken för var och en av dem; samt en åtkomsttoken för ditt konto. Med ditt tillstånd använder SplitCam dessa uppgifter enbart för att:</p>
+    <ul>
+      <li>skapa en livevideo på din profil eller på en sida som du har valt, skicka videoströmmen dit och avsluta den när du stoppar sändningen;</li>
+      <li>läsa kommentarer på livevideon och visa dem i SplitCam-chatten;</li>
+      <li>publicera en kommentar från din sida när du svarar i SplitCam-chatten.</li>
+    </ul>
+    <p>SplitCam läser inte dina inlägg, foton, vänner eller meddelanden, publicerar ingenting för din räkning utöver livevideon och de svar du själv skriver, och använder inte Facebook-data för reklam.</p>
+
+    <h3>Var uppgifterna lagras</h3>
+    <p>Kontonamn, bilder och åtkomsttokens lagras enbart i appens privata lagringsutrymme på din enhet. De skickas inte till SplitCams servrar och ingår inte i enhetens säkerhetskopior. Din video går normalt direkt från telefonen till varje plattform. Endast om du väljer läget Restream och streamar till flera plattformar samtidigt passerar videon och varje mottagares streamnyckel SplitCams reläserver, som vidarebefordrar videon till plattformarna. Inloggningssidan splitcam.com/auth lämnar bara över engångskoden för inloggning till appen; koden sparas inte av SplitCam och kan inte återanvändas.</p>
+
+    <h3>Hur länge</h3>
+    <p>Tills du tar bort kanalen i appen, loggar ut eller avinstallerar appen. Åtkomsttokens upphör dessutom att gälla efter en tid, och du kan när som helst återkalla dem hos plattformen.</p>
+
+    <h3>Andra tjänster i appen</h3>
+    <p>Appen använder Firebase Crashlytics (kraschrapporter) och Firebase Analytics (anonym användningsstatistik) från Google. Facebook SDK används bara för inloggning; dess automatiska händelseloggning och insamling av annons-ID är avstängda.</p>
+
+    <h3>Radera dina uppgifter</h3>
+    <p>Se <a href="https://splitcam.com/sv/data-deletion">Radering av data</a> – om hur du tar bort dina uppgifter från appen och återkallar SplitCams åtkomst på varje plattform.</p>
+    <!--dd-section-->
+
     <h2>Cookies</h2>
     <p>En cookie, även känd som webbcookie, webbläsarcookie eller HTTP-cookie, är ett textstycke som lagras av användarens webbläsare. En cookie kan användas för autentisering, lagring av webbplatsinställningar, kundkorgsinnehåll, sessionsidentifierare på serversidan eller allt annat som kan åstadkommas genom lagring av textdata. En cookie består av ett eller flera namn-värde-par som innehåller informationsbitar, vilka kan krypteras av integritets- och datasäkerhetsskäl. Cookien skickas som ett HTTP-huvud från en webbserver till en webbläsare och skickas sedan tillbaka oförändrad av webbläsaren varje gång den ansluter till servern. Vi använder cookies från Google Analytics för statistik- och analysändamål.</p>
 
@@ -336,6 +362,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <a href="https://splitcam.com/plugins/">Utvecklare</a>
       <a href="https://splitcam.com/sv/license-agreement">Licensavtal</a>
       <a href="https://splitcam.com/sv/privacy-policy" class="active">Integritetspolicy</a>
+      <a href="https://splitcam.com/sv/data-deletion">Radering av data</a>
     </div>
   </div>
 </footer>

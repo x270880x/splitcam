@@ -26,11 +26,11 @@ PAGE_PATHS = ["", "products/", "features/", "download/", "virtual-camera/", "vir
               "alternatives/obs/", "alternatives/manycam/", "alternatives/restream/",
               "alternatives/streamyard/", "stream-deck/", "alternatives/vmix/", "alternatives/nvidia-broadcast/", "alternatives/snap-camera/", "phone-as-webcam/", "multi-camera/",
               "for/", "for/youtubers/", "for/churches/", "for/educators/", "help/",
-              "changelog/", "donate-us/", "privacy-policy/", "license-agreement/"]
+              "changelog/", "donate-us/", "privacy-policy/", "data-deletion/", "license-agreement/"]
 # changelog/privacy/license sit at priority 0.6/0.3; rest from i18n weighting.
 PRIO = {"": "1.0", "multistreaming/": "0.9", "virtual-camera/": "0.9", "virtual-audio-mac/": "0.8", "virtual-audio-windows/": "0.8", "products/": "0.9", "features/": "0.9", "download/": "0.9",
-        "changelog/": "0.6", "help/": "0.6", "donate-us/": "0.3", "privacy-policy/": "0.3", "license-agreement/": "0.3"}
-FREQ = {"": "weekly", "download/": "weekly", "changelog/": "weekly", "donate-us/": "yearly", "privacy-policy/": "yearly", "license-agreement/": "yearly"}
+        "changelog/": "0.6", "help/": "0.6", "donate-us/": "0.3", "privacy-policy/": "0.3", "data-deletion/": "0.3", "license-agreement/": "0.3"}
+FREQ = {"": "weekly", "download/": "weekly", "changelog/": "weekly", "donate-us/": "yearly", "privacy-policy/": "yearly", "data-deletion/": "yearly", "license-agreement/": "yearly"}
 LASTMOD_FALLBACK = "2026-07-18"     # только если git недоступен
 
 # 🔴 Дата изменения раньше была КОНСТАНТОЙ на все 877 адресов. К 2026-09-06 она отстала на два

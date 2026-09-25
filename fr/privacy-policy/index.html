@@ -298,6 +298,32 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     <h2>Collecte des informations</h2>
     <p>Nous recueillons des données telles que les adresses IP, le type de navigateur, le fournisseur d'accès à Internet (FAI), les pages d'entrée et de sortie, le système d'exploitation, l'horodatage de la date et de l'heure ainsi que les données de parcours de navigation à l'aide de Google Analytics — pour utiliser notre site et notre logiciel, vous devez accepter la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de confidentialité de Google</a>. Nous ne collectons <strong>pas</strong> d'informations personnelles identifiables (« PII ») concernant nos visiteurs. Aucune autre information sur nos visiteurs, au-delà des informations au niveau du navigateur à des fins de statistiques et d'analyse.</p>
 
+    <!--dd-section-->
+    <h2>Connexion avec les plateformes de streaming</h2>
+    <p>L'application mobile SplitCam vous permet de connecter vos comptes de plateformes de streaming (Facebook, YouTube, Twitch, Kick) afin de lancer des diffusions en direct et d'afficher votre chat en direct. Lorsque vous connectez un compte, la plateforme vous indique précisément les autorisations demandées par SplitCam, et vous pouvez refuser chacune d'elles.</p>
+
+    <h3>Ce que nous recevons de Facebook</h3>
+    <p>Si vous vous connectez avec Facebook, SplitCam reçoit votre nom, votre photo de profil et un identifiant utilisateur propre à l'application ; la liste des Pages Facebook que vous avez choisi de partager avec SplitCam et un jeton d'accès pour chacune d'elles ; ainsi qu'un jeton d'accès pour votre compte. Avec votre autorisation, SplitCam les utilise uniquement pour :</p>
+    <ul>
+      <li>créer une vidéo en direct sur votre profil ou sur une Page que vous avez sélectionnée, y envoyer le flux vidéo et y mettre fin lorsque vous arrêtez la diffusion ;</li>
+      <li>lire les commentaires de cette vidéo en direct et les afficher dans le chat SplitCam ;</li>
+      <li>publier un commentaire au nom de votre Page lorsque vous répondez dans le chat SplitCam.</li>
+    </ul>
+    <p>SplitCam ne lit pas vos publications, vos photos, vos amis ni vos messages, ne publie rien en votre nom en dehors de la vidéo en direct et des réponses que vous rédigez vous-même, et n'utilise pas les données Facebook à des fins publicitaires.</p>
+
+    <h3>Où elles sont stockées</h3>
+    <p>Les noms de compte, les photos et les jetons d'accès sont stockés uniquement dans l'espace de stockage privé de l'application sur votre appareil. Ils ne sont pas envoyés aux serveurs de SplitCam et ne sont pas inclus dans les sauvegardes de l'appareil. En règle générale, votre vidéo part directement de votre téléphone vers chaque plateforme. Ce n'est que si vous choisissez le mode Restream pour diffuser sur plusieurs plateformes à la fois que la vidéo et la clé de stream de chaque destination transitent par le serveur relais de SplitCam, qui transmet la vidéo aux plateformes. La page de connexion splitcam.com/auth se contente de renvoyer à l'application le code de connexion à usage unique ; SplitCam ne conserve pas ce code, qui ne peut pas être réutilisé.</p>
+
+    <h3>Durée de conservation</h3>
+    <p>Jusqu'à ce que vous supprimiez la chaîne dans l'application, que vous vous déconnectiez ou que vous désinstalliez l'application. Les jetons d'accès expirent par ailleurs, et vous pouvez les révoquer à tout moment depuis la plateforme.</p>
+
+    <h3>Autres services dans l'application</h3>
+    <p>L'application utilise Firebase Crashlytics (rapports de plantage) et Firebase Analytics (statistiques d'utilisation anonymes), fournis par Google. Le Facebook SDK sert uniquement à la connexion ; la journalisation automatique des événements et la collecte de l'identifiant publicitaire y sont désactivées.</p>
+
+    <h3>Suppression de vos données</h3>
+    <p>Consultez la page <a href="https://splitcam.com/fr/data-deletion">Suppression des données</a> : comment supprimer vos données de l'application et révoquer l'accès de SplitCam sur chaque plateforme.</p>
+    <!--dd-section-->
+
     <h2>Cookies</h2>
     <p>Un cookie, également appelé cookie web, cookie de navigateur ou cookie HTTP, est un fragment de texte stocké par le navigateur web de l'utilisateur. Un cookie peut être utilisé pour l'authentification, le stockage des préférences du site, le contenu d'un panier d'achat, l'identifiant d'une session côté serveur, ou tout autre usage réalisable par le stockage de données textuelles. Un cookie est constitué d'une ou plusieurs paires « nom-valeur » contenant des fragments d'information, qui peuvent être chiffrés à des fins de confidentialité des informations et de sécurité des données. Le cookie est envoyé sous forme d'en-tête HTTP par un serveur web à un navigateur web, puis renvoyé inchangé par le navigateur à chaque accès à ce serveur. Nous utilisons des cookies de Google Analytics à des fins de statistiques et d'analyse.</p>
 
@@ -335,6 +361,7 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
       <a href="https://splitcam.com/plugins/">Développeurs</a>
       <a href="https://splitcam.com/fr/license-agreement">Contrat de licence</a>
       <a href="https://splitcam.com/fr/privacy-policy" class="active">Confidentialité</a>
+      <a href="https://splitcam.com/fr/data-deletion">Suppression des données</a>
     </div>
   </div>
 </footer>
