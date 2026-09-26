@@ -107,7 +107,7 @@
       "operatingSystem": "Windows, macOS, iOS, Android",
       "url": "https://splitcam.com/da/",
       "downloadUrl": "https://splitcam.com/download",
-      "softwareVersion": "10.9.2",
+      "softwareVersion": "11.0.11",
       "datePublished": "2003-01-01",
       "releaseNotes": "https://splitcam.com/da/changelog",
       "offers": {
@@ -118,13 +118,13 @@
     },
     {
       "@type": "SoftwareApplication",
-      "name": "SplitCam for Windows v10.9.2",
+      "name": "SplitCam for Windows v11.0.11",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Windows 10, Windows 11",
-      "softwareVersion": "10.9.2",
-      "datePublished": "2026-03-18",
-      "url": "https://splitcam.com/da/changelog#win-v10.9.2",
-      "releaseNotes": "Nyt — lodret lærred til streaming og optagelse (det vandrette og lodrette lærred er helt uafhængige og opsættes hver for sig, inklusive lydkilder); kommandoen Fill Canvas i lagmenuen; Amateur.tv som ny streaming-kanal; videoeffekten Blusher-maske; animerede GIF-filer i slideshow-lag; internethastighedstest til Rusland; forbedret landegenkendelse, hvor geoapi.info er blokeret; valg af restream-server fra en liste i Restream Settings. Forbedret — drag-and-drop af URL-links uden sti, caching af oversættelser af tekstlag, en ramme til ændring af størrelse omkring hovedvinduet, generering af miniaturer af scener, dynamisk skriftstørrelse ved scener på pause, synkronisering med OnlyFans, GPU-genkendelse, mere stabil HTTP-transport til restream-serverne (i stedet for WSS). Rettet — opdatering af stream-elementet efter redigering.",
+      "softwareVersion": "11.0.11",
+      "datePublished": "2026-09-25",
+      "url": "https://splitcam.com/da/changelog#win-v11.0.11",
+      "releaseNotes": "New — Remote Control for switching scenes, controlling streaming and recording, adjusting audio and managing sources from a connected device; new virtual cameras for Windows 11 with separate horizontal and vertical outputs; a separate vertical DirectShow virtual camera for Windows 10; Replay actions in Remote Control and Stream Deck; crash reporting. Updated — virtual camera compatibility with multiple applications and native components for Windows on ARM64, smoother video with less processing when virtual cameras are not in use, recovery after graphics device failures (the project is saved before restarting), an installer that selects compatible virtual cameras with fewer restart prompts, interface translations, SplitCam named as the encoding application in streams and recordings, live browser audio mixing without playback delays. Fixed — clicks and distortion in the virtual microphone and audio monitoring, virtual camera resolution, stale frames and reconnection, Stinger transitions, Replay and nested scenes across horizontal and vertical canvases, crashes and hangs when loading projects, removing scenes or exiting.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -379,13 +379,13 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
   <div class="hero-glow"></div>
   <span class="eyebrow">Versionshistorik</span>
   <h1 class="h1">Hver <span class="accent">version</span>, hver udgivelse.</h1>
-  <p class="sub">Komplet versionshistorik for SplitCam på alle platforme — Windows (<strong>64 udgivelser</strong> siden januar 2020) og macOS (<strong>31 udgivelser</strong> siden juni 2019). For iOS, Android og SplitCam Remote kommer changeloggen senere.</p>
+  <p class="sub">Komplet versionshistorik for SplitCam på alle platforme — Windows (<strong>66 udgivelser</strong> siden januar 2020) og macOS (<strong>33 udgivelser</strong> siden juni 2019). For iOS, Android og SplitCam Remote kommer changeloggen senere.</p>
 </section>
 
 <!-- TABS -->
 <div class="tabs-wrap">
   <div class="tabs" role="tablist">
-    <button class="tab active" role="tab" aria-selected="true" data-target="panel-win">Windows<span class="tab-count">65</span></button>
+    <button class="tab active" role="tab" aria-selected="true" data-target="panel-win">Windows<span class="tab-count">66</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="panel-mac">macOS<span class="tab-count">33</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="panel-ios">iOS<span class="tab-count">snart</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="panel-and">Android<span class="tab-count">snart</span></button>
@@ -402,6 +402,53 @@ footer{padding:40px;border-top:1px solid var(--app-border);background:var(--app-
     </div>
   </div>
   <div class="releases">
+        <article class="release open" id="win-v11.0.11">
+      <header class="rel-head">
+        <a class="rel-ver" href="https://github.com/x270880x/splitcam-release/releases/download/v11.0.11/11.0.11_x64.msi" title="Download v11.0.11 installer (.msi)" target="_blank" rel="noopener" onclick="event.stopPropagation()">v11.0.11<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
+        <time class="rel-date">September 25, 2026</time>
+      </header>
+      <div class="rel-sec new">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>Nyt</h4>
+        <ul class="rel-ul">
+        <li>Added Remote Control for switching scenes, controlling streaming and recording, adjusting audio and managing sources from a connected device.</li>
+        <li>Added new virtual cameras for Windows 11, with separate horizontal and vertical outputs.</li>
+        <li>Added a separate vertical virtual camera for applications using DirectShow on Windows 10.</li>
+        <li>Added Replay actions to Remote Control and Stream Deck.</li>
+        <li>Added crash reporting to help diagnose and resolve application failures.</li>
+        </ul>
+      </div>
+      <div class="rel-sec updated">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>Forbedret</h4>
+        <ul class="rel-ul">
+        <li>Improved virtual camera compatibility with multiple applications and added native virtual camera components for Windows on ARM64.</li>
+        <li>Improved video smoothness and reduced unnecessary processing when virtual cameras are not in use.</li>
+        <li>Improved recovery after graphics device failures, including saving the project before restarting.</li>
+        <li>The installer now automatically selects compatible virtual cameras and handles upgrades with fewer unnecessary restart prompts.</li>
+        <li>Updated interface translations.</li>
+        <li>Streams and recordings now identify SplitCam as the encoding application instead of FFmpeg.</li>
+        <li>Improved live browser audio mixing to prevent playback delays when audio input is interrupted.</li>
+        <li>Recover mislabeled Cyrillic audio metadata conservatively.</li>
+        </ul>
+      </div>
+      <div class="rel-sec fixed">
+        <h4 class="rel-h"><span class="rel-h-dot"></span>Rettet</h4>
+        <ul class="rel-ul">
+        <li>Fixed clicks and distorted audio in the virtual microphone and audio monitoring. The virtual microphone now receives audio only from the horizontal scene.</li>
+        <li>Fixed virtual camera resolution selection, stale frames and reconnection problems. Camera names are now preserved across sign-ins, and portrait output uses a matching placeholder.</li>
+        <li>Fixed Stinger transitions failing to play or restart, and transitions getting stuck when a scene contains another scene.</li>
+        <li>Fixed Replay and nested scene sources not working correctly across horizontal and vertical canvases.</li>
+        <li>Fixed video playback completion and screen capture cropping being reset when switching scenes.</li>
+        <li>Improved IP camera reconnection after interrupted streams and corrected color conversion.</li>
+        <li>Fixed crashes and hangs when loading projects, removing scenes, closing previews or exiting SplitCam.</li>
+        <li>Fixed microphone recovery after reconnection and several stability issues with slideshows and video effects.</li>
+        <li>Fixed the initial size of color fill and browser sources on horizontal and vertical canvases.</li>
+        <li>Fixed vertical video and audio sources remaining after deleting the last scene.</li>
+        <li>Fixed scene layer scaling when loading a project saved at a different canvas resolution.</li>
+        <li>Fix mono audio playlist resampling layout.</li>
+        </ul>
+      </div>
+    </article>
+
         <article class="release open" id="win-v10.9.4">
       <header class="rel-head">
         <a class="rel-ver" href="https://github.com/x270880x/splitcam-release/releases/download/v10.9.4/10.9.4_x64.msi" title="Download v10.9.4 beta installer (.msi)" target="_blank" rel="noopener" onclick="event.stopPropagation()">v10.9.4<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></a>
