@@ -70,6 +70,25 @@
 >   3 CF `.cfg` transform rules** after 48h. Details: `seo/REMINDERS-LOG.md` "DA CUTOVER EXECUTED".
 
 ## ⭐ Current state (read first)
+- **Windows 11.0.11 — stable, published 2026-09-26** on the owner's «да», in this order: GitHub
+  release `v11.0.11` → host `update/11.0.11_x64.msi` + `SplitCamSetup_x64.msi` (md5
+  `c1540fc4ce299d245310ab3dc2e53b32`, 497 927 168 B, pulled from GitHub) → site deploy + purge. Built
+  2026-09-25: MSI ProductVersion 11.0.11, signed by URBAN SOFTWARE DOO (same EV signer and
+  UpgradeCode as 10.9.4), ClamAV clean. The developer hands builds over at
+  `splitstream.com/splitcam-update/<ver>_x64.msi` + `history.txt`. Site: changelog entry ×35,
+  site-wide v11.0.11, changelog header counts = real entries (66 Windows / 33 macOS; were stale
+  at 64/31), only the top 3 Windows entries expanded (10.8.70/10.8.60 folded to `<details>`).
+  **10 days later (2026-10-06), after a separate «да»:** `ver.txt` ×3 → 11.0.11 together with
+  `update/history.txt`, then **purge** — the zone is cache-everything for 24 h and only
+  `update/ver.txt` bypasses it. Facts behind that plan (checked 2026-09-26): the Windows app
+  polls only `win-download/update/ver.txt` (~10k/month, UA `SplitCam`) and fetches
+  `update/history.txt?rnd=…` (~120/month); root `/ver.txt` and the light channel had **zero**
+  app requests in Aug–Sep; the light updater would ask for `update/light/<ver>_x64.msi`; only
+  `10.4.75_x64.msi` is there (with the 10.9.2 bytes), so since 10.4.75 that channel is dead, not "slow".
+  `mac-download/update/versions.json` is read by the **macOS** app only (UA `SplitCam/<build>
+  CFNetwork`); its `windows` block (still 10.9.2) has no known reader — 11.0.11's exe contains
+  no `versions.json`. Fallback update hosts compiled into 11.0.11 (`splitstream.com/splitcam-update/`,
+  `multi-stream.io/splitcam/update/`, `vdo2.splitstream.com/update/`) serve no `ver.txt` (404/HTML).
 - Site is live in **all 35 languages**. Disk math (self-checking): **528** total
   `index.html` = 34 locales × 15 pages (510) + 18 EN-root pages, **minus 2 `noindex`**
   (`v2/` archived, `for/vtubers/` draft) = **526 indexable** = **526 `<loc>` in
@@ -111,7 +130,7 @@
   `~/.hostsila_ssh`. A DirectAdmin trial (`185.67.3.44`) is staged as a cheaper replacement
   (not cut over) — details in `seo/REMINDERS.md`.
 - **`ver.txt` policy — RESOLVED (host-managed).** The earlier weekly-ramp idea was
-  dropped. All three `ver.txt` track the **current** release and are set to **10.9.2**:
+  dropped. All three `ver.txt` track the **current** release and are set to **10.9.2** (→ **11.0.11** on 2026-10-06, 10 days after the site switch):
   root `/ver.txt`, `win-download/update/ver.txt`, `win-download/update/light/ver.txt`.
   They live **only on the host** (root `/ver.txt` was removed from the git repo so an
   overlay re-deploy can't reset it); edit them on the host via SSH. ~~`ver.php` echoes root
@@ -176,7 +195,7 @@ Both repos live under `/Users/splitcam/Documents/Проекты/SplitCam/SplitCa
 | **cam-streaming-guides** (adult-cam guides) | `SplitCam сайт/cam-streaming-guides/` | `x270880x/cam-streaming-guides` | https://x270880x.github.io/cam-streaming-guides/ |
 
 Both are static HTML deployed via GitHub Pages (auto-deploy 30–90 sec after push).
-**Workflow rule:** after meaningful edits, commit + push immediately — don't ask.
+**Workflow rule (owner, 2026-09 — replaces the old "push without asking"):** commit locally, but push/deploy only after showing the change and getting an explicit «да».
 
 ---
 
@@ -184,7 +203,7 @@ Both are static HTML deployed via GitHub Pages (auto-deploy 30–90 sec after pu
 
 Marketing site for SplitCam — free streaming / virtual-camera software. Static HTML/CSS/JS.
 The redesign destined to replace the real **splitcam.com** (see `seo/MIGRATION.md`).
-Platforms: **Win · macOS · iOS · Android**. Version **v10.9.2** site-wide.
+Platforms: **Win · macOS · iOS · Android**. Version **v11.0.11** site-wide (since 2026-09-26).
 
 ## Pages deployed (15 localized page-types + `/download` (EN-only) = 16 public URL-types; + 2 `noindex`)
 
@@ -252,7 +271,7 @@ trailing-slash rule first to avoid redirect loops. `/download` is KEPT (not redi
    stripped from every page's JSON-LD (0 present) to avoid a self-asserted-rating structured-
    data manual action. Real source ratings: Softonic 4.7, UpdateStar 4.0, G2.
 7. LIVE badges blink (badge opacity + red dot pulse).
-8. Current version is **v10.9.2** — used site-wide, the only app version present. No
+8. Current version is **v11.0.11** — used site-wide (the homepage "What's new" block and its footer link deliberately still say v10.9.2: its cards describe features up to 10.9.2). No
    installer size shown ("~85 MB" was removed as unverified). ("FFMPEG 7.1" / "version 6.1"
    are dependency mentions, not SplitCam's version.)
 
@@ -315,7 +334,7 @@ commit the secret value.**
 
 ### GitHub repositories
 - **`x270880x/splitcam`** (public) — this repo; GitHub Pages staging https://x270880x.github.io/splitcam/ (auto-deploy 30–90 s after push to main).
-- **`x270880x/splitcam-release`** (public) — Windows `.msi` releases (`v9.0.9` → `v10.9.2`, + `v10.8.62-restream-test` prerelease), plus a `legacy-archive` release and a **v10.9.4 beta** added later. **`v10.9.2` is still Latest** — per the standing rule, a build the user calls *beta* is changelog-only and never moves the latest pointers, even when its number is higher. Canonical latest URL: `releases/download/v10.9.2/10.9.2_x64.msi`.
+- **`x270880x/splitcam-release`** (public) — Windows `.msi` releases (`v9.0.9` → `v11.0.11`, + `v10.8.62-restream-test` prerelease), plus a `legacy-archive` release and the **v10.9.4 beta** (prerelease). **`v11.0.11` is the current stable** (2026-09-25) — per the standing rule, a build the user calls *beta* is changelog-only and never moves the latest pointers, even when its number is higher. Canonical latest URL: `releases/download/v11.0.11/11.0.11_x64.msi`. The repo also carries Android debug prereleases (`android-6.9.*`) and macOS releases (`mac-v*`).
 - **`x270880x/old_splitcam_site`** (**PRIVATE 🔒**) — full backup of the old splitcam.com `public_html` as `old_splitcam_site.tar.gz` (~1.4 GB) on release `backup-2026-05-23`. Contains `wp-config.php` DB creds — **never make public**.
 
 ### ⚠️ SUPERSEDED — the cPanel host below is NO LONGER the deploy target
@@ -342,8 +361,8 @@ commit the secret value.**
 - Creds (chmod 600): password `~/.splitcam_old_ssh`; Ed25519 key `~/.ssh/splitcam_deploy` (Mac-local, never copy off).
 
 ### Cloudflare
-- Fronts the domains (DNS/CDN, Free plan). API token `~/.cloudflare_token` (chmod 600); scope includes Analytics Read + Firewall/Rulesets Edit + Cache Rules Edit (Cache Purge **not** granted). Three zones (see Domain portfolio). Anti-bot custom firewall rule (block) on splitcam.com + splitcamera.com; splitstream.com has none yet.
-- Cache rule caches `win-download/SplitCamSetup_x64.msi` (1-day TTL) → **purge on every new installer release**.
+- Fronts the domains (DNS/CDN, Free plan). API token `~/.cloudflare_token` (chmod 600); scope includes Analytics Read + Firewall/Rulesets Edit + Cache Rules Edit + Cache Purge (purge_everything has succeeded on every deploy since at least 2026-08-25; the old "purge not granted" note was stale). Three zones (see Domain portfolio). Anti-bot custom firewall rule (block) on splitcam.com + splitcamera.com; splitstream.com has none yet.
+- Page rule `*splitcam.com/*` = **cache everything, edge + browser TTL 24 h**; cache rules bypass only `win-download/update/ver.txt`, `ingests.cfg`, `ofcf-turnstile.php`, `css/overrides.css`, `/win-download/reports/*`, `/splitcam-changes-win` (checked 2026-09-26). So installers, `history.txt`, root and light `ver.txt`, `versions.json` and even 404s sit at the edge for a day → **purge after every installer or update-file change**, and check without a query string (`?cb=` bypasses the cache and gives a false "fresh").
 
 ### Ahrefs
 - Token `~/.ahrefs_token` (chmod 600). Use with `seo/ahrefs.py`: `AHREFS_TOKEN=$(cat ~/.ahrefs_token) python3 ahrefs.py`. Lite plan, 100k units/mo.
@@ -360,7 +379,7 @@ cd "/Users/splitcam/Documents/Проекты/SplitCam/SplitCam сайт/<repo>"
 git add . && git commit -m "..." && git push origin main
 ```
 Revert: `git revert HEAD --no-edit && git push`.
-**Auto-push:** after meaningful complete edits, commit + push `origin main` without asking; still ask before destructive git ops (force push, `reset --hard`, revert of published commits, branch deletion).
+**Auto-push — CANCELLED by the owner (2026-09):** commit locally, but push/deploy only after showing the change and getting an explicit «да»/«пушь». (Old text: after meaningful complete edits, commit + push `origin main` without asking; still ask before destructive git ops (force push, `reset --hard`, revert of published commits, branch deletion)).
 
 ## Session log — 2026-07-02 → 07-06 (CUTOVER + mail + SEO fixes + UI hardening + installer split + DA trial)
 

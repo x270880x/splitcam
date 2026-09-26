@@ -60,13 +60,13 @@ git add . && git commit -m "..." && git push origin main
 ```
 
 Revert: `git revert HEAD --no-edit && git push`.
-**Workflow rule:** after meaningful edits, commit + push immediately — don't ask.
+**Workflow rule (owner, 2026-09 — replaces the old "push without asking"):** commit locally, but push/deploy only after showing the change and getting an explicit «да».
 
 **Release rule (user, 2026-07-14):** a build the user calls **beta** is **changelog-only** —
 never touch the homepage version, never overwrite the latest pointers
 (`win-download/SplitCamSetup_x64.msi`, `mac-download/SplitCam.dmg`), never bump `ver.txt` /
 `macver.plist` / `versions.json`. **Applies even if the beta's number is higher than the
-current stable.** Full rule + the stable-release flow: the **`splitcam-release` skill**
+current stable.** Full rule + the stable-release flow: the **`splitcam-release` skill** (Windows fast path: `seo/release_windows.py`)
 (it loads when you publish a build; `seo/REMINDERS.md` keeps only the summary).
 Commit individually so any single change is easy to revert. After a push, share
 the live URL and remind about `Cmd+Shift+R` (browser cache).
@@ -103,17 +103,17 @@ the live URL and remind about `Cmd+Shift+R` (browser cache).
   Earlier cutovers (07-02 → cPanel `91.223.223.113`, 07-06 → DA `185.67.3.44`) and the
   rollback recipes for them: `seo/REMINDERS-LOG.md`.
 - Homepage A/B resolved (2026-05-22): Variant A is final, `/v2/` archived.
-- Site-wide version is **v10.9.2**. No installer size shown.
+- Site-wide version is **v11.0.11** (stable, released 2026-09-25, on the site 2026-09-26). No installer size shown.
 - **Deploy is site-wide via GitHub tarball → host overlay-copy** (not GitHub Pages, though
   that still auto-builds as staging). After any redirect change, keep the host docroot
   `.htaccess` = `seo/redirects.htaccess` and **purge Cloudflare cache**.
-- Installers: host keeps 10.8.x–10.9.2 only; ≤10.7 + 4.x–8.x museum live on GitHub
+- Installers: host keeps 10.8.70, 10.9.2, 10.9.4 (beta) and 11.0.11; ≤10.8.69 + 4.x–8.x museum live on GitHub
   `x270880x/splitcam-release` (old URLs 301 to the same version's GitHub asset).
 
 ## Infrastructure access (set up 2026-05-22 / 23)
 
-- **GitHub: `x270880x/splitcam-release`** (public) — 36 releases, all Windows
-  `.msi` installers from `splitcam.com/win-download/update/` (9.0.9 → 10.9.2)
+- **GitHub: `x270880x/splitcam-release`** (public) — Windows `.msi` releases
+  from `splitcam.com/win-download/update/` (9.0.9 → 11.0.11; also macOS `mac-v*` and Android debug prereleases)
   + the `10.8.62-restream-test` prerelease. Each release has the matching
   changelog from `splitcam-changes-win` / `history.txt` in its notes (24 with
   full changelog, 11 interim builds with a generic note + link).
@@ -575,7 +575,7 @@ meta), verify all four before committing:
   for (YouTube creator vs church AV volunteer vs OBS migrator). Don't leak
   generic copy that narrows or widens the audience by accident.
 - **(e) SEO rules by code** — `python3 seo/page_audit.py <page>/` must show 0 🔴 in all 35 locales.
-- **(d) Factual correctness & cross-page consistency** — versions (v10.9.2),
+- **(d) Factual correctness & cross-page consistency** — versions (v11.0.11),
   feature names, platform lists (Win · macOS · iOS · Android), and numbers (e.g.
   "84+ platforms") must be correct AND identical across every page. One feature =
   one name everywhere. Check neighbouring untouched text still agrees with the
