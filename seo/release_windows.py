@@ -6,6 +6,7 @@
    ... --no-installer      номер версии без ссылки (установщика ещё нет на GitHub)
    ... --notes out.md      заодно записать текст релиза для gh release create
    ... --notes out.md --notes-only    только текст релиза, сайт не трогать
+   python3 seo/release_windows.py --collapse-only                  только свернуть лишние раскрытые записи
 
 <history.txt> — файл разработчика (https://splitstream.com/splitcam-update/history.txt).
 Берётся верхний блок: «SplitCam vX», строка из дефисов, дата «Month D, YYYY», разделы
@@ -55,6 +56,28 @@ def plural_word(loc, n, word):
     return word                                                     # остальные: форма от числа не зависит
 
 
+CHEV = ('<svg class="rel-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" '
+        'stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>')
+
+
+def collapse_extra_open(s, keep=3):
+    """В панели Windows раскрытыми остаются только верхние `keep` записей (так обещает вводный текст
+    «Top 3 expanded by default» во всех локалях). Остальные open-<article> превращаются в <details>
+    ровно как это делали выпуски macOS (коммиты 1d6409ac, 2ccd44c1)."""
+    pw, pm = s.index('id="panel-win"'), s.index('id="panel-mac"')
+    blocks = list(re.finditer(r'<article class="release open" id="win-v[\d.]+">.*?</article>', s[pw:pm], re.S))
+    for b in reversed(blocks[keep:]):
+        t = b.group(0)
+        t = t.replace('<article class="release open"', '<details class="release"', 1)
+        t = t.replace('<header class="rel-head">', '<summary class="rel-head">', 1)
+        t, n = re.subn(r'\n([ \t]*)</header>', lambda m: f"\n{m.group(1)}  {CHEV}\n{m.group(1)}</summary>", t, count=1)
+        assert n == 1
+        t = t[: -len("</article>")] + "</details>"
+        a, e = pw + b.start(), pw + b.end()
+        s = s[:a] + t + s[e:]
+    return s, max(0, len(blocks) - keep)
+
+
 def parse_history(path):
     txt = open(path, encoding="utf-8", errors="replace").read().replace("\r\n", "\n")  # в старых записях есть байт cp1252
     top = re.split(r"\n(?=SplitCam v\d)", txt.lstrip("﻿"))[0]
@@ -81,6 +104,14 @@ def parse_history(path):
 
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if "--collapse-only" in sys.argv:                               # разовая починка без нового релиза
+        for loc in LANG_ORDER:
+            f = LANG_PATH[loc] + "changelog/index.html"
+            t, n = collapse_extra_open(open(f, encoding="utf-8").read())
+            if n:
+                open(f, "w", encoding="utf-8").write(t)
+            print(f"  {loc}: свёрнуто {n}")
+        return
     beta, no_inst = "--beta" in sys.argv, "--no-installer" in sys.argv
     ver, date, iso, secs = parse_history(args[0])
     home = open("index.html", encoding="utf-8").read()
@@ -141,6 +172,7 @@ def main():
                 new = pat.sub("", new)                              # раздела нет в этом релизе
         assert tv not in new and (beta or "beta" not in new.lower()), (f, "остаток шаблона")
         s = s[:m.start()] + "\n" + indent + new + "\n\n" + indent + tmpl + s[m.end():]
+        s, _ = collapse_extra_open(s)                               # раскрытыми остаются 3 верхние
 
         # счётчики: вкладка Windows + шапка («N releases» для Windows и macOS)
         pw, pm = s.index('id="panel-win"'), s.index('id="panel-mac"')
@@ -200,9 +232,10 @@ def main():
             assert n, f"{f}: версия {old} не найдена — разметка поменялась, проверить вручную"
             open(f, "w", encoding="utf-8").write(s); total += n; files += 1
         print(f"  /{page:28} {files:2} файлов, замен {total}")
-    s = open("404.html", encoding="utf-8").read()
-    if old in s:
-        open("404.html", "w", encoding="utf-8").write(s.replace(old, ver)); print("  /404.html")
+    for f in ("404.html", "seo/i18n_tools/restream_copy.py"):      # restream_copy — исходник сборщика /alternatives/restream
+        s = open(f, encoding="utf-8").read()
+        if old in s:
+            open(f, "w", encoding="utf-8").write(s.replace(old, ver)); print(f"  {f}")
     sys.stdout.flush()
     print(f"Остались упоминания {old} (ожидаемо: запись {old} в changelog, «What's new» на главной + ссылка в подвале):")
     os.system(f"grep -rl --include='*.html' '{re.escape(old)}' . | grep -vE '^\\./(seo|v2)/' | sed 's#^\\./##' "

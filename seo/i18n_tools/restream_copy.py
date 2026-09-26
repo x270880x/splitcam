@@ -94,7 +94,7 @@ COPY = {
     "doing at the time."),
    ("Is there a catch with the free version?",
     "No account to create, no time limit and no watermark. SplitCam has been free since 2003 and the "
-    "current version is v10.9.2."),
+    "current version is v11.0.11."),
  ],
  "cta_h": "Multistream without the monthly bill",
  "cta_p": ("Free download, Windows 10/11 and macOS 13+. Check your upload with the built-in speed test, paste "

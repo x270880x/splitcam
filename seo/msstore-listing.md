@@ -3,7 +3,7 @@
 Product: **SplitCam Live Multi-Streaming** · Store ID `xp9ldd8rh8n231`
 Publisher: KSANF LTD. · Category: Photo & video · Age: ESRB Everyone
 Live listing: https://apps.microsoft.com/detail/xp9ldd8rh8n231
-Last store update: 2024-10-13 → **needs refresh** (app is now Windows v10.9.2, 2026-03-18)
+Last store update: 2024-10-13 → **needs refresh** (app is now Windows v11.0.11, 2026-09-25; section 6 below still carries the 10.9.2 notes — replace from the developer's history.txt)
 
 This is the ready-to-paste EN master. Localize into RU/ES/DE/etc. as a follow-up.
 
