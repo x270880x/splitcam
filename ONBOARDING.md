@@ -85,9 +85,9 @@
   `update/history.txt?rnd=…` (~120/month); root `/ver.txt` and the light channel had **zero**
   app requests in Aug–Sep; the light updater would ask for `update/light/<ver>_x64.msi`; only
   `10.4.75_x64.msi` is there (with the 10.9.2 bytes), so since 10.4.75 that channel is dead, not "slow".
-  `mac-download/update/versions.json` is read by the **macOS** app only (UA `SplitCam/<build>
-  CFNetwork`); its `windows` block (still 10.9.2) has no known reader — 11.0.11's exe contains
-  no `versions.json`. Fallback update hosts compiled into 11.0.11 (`splitstream.com/splitcam-update/`,
+  `mac-download/update/versions.json` is **macOS only — owner's decision 2026-09-26**: Windows
+  releases never touch it (the app reading it is macOS, UA `SplitCam/<build> CFNetwork`; 11.0.11's
+  exe contains no `versions.json`; its stale `windows` block is left as is). Fallback update hosts compiled into 11.0.11 (`splitstream.com/splitcam-update/`,
   `multi-stream.io/splitcam/update/`, `vdo2.splitstream.com/update/`) serve no `ver.txt` (404/HTML).
 - Site is live in **all 35 languages**. Disk math (self-checking): **528** total
   `index.html` = 34 locales × 15 pages (510) + 18 EN-root pages, **minus 2 `noindex`**
