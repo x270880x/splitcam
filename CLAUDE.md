@@ -204,7 +204,7 @@ Built by Ahrefs "splitcam" demand: top 18 first (2026-06-13), then the remaining
 17 (Waves 4–7 — ≤10/mo demand, mostly 0) completed 2026-06-15 for brand
 completeness. `seo/i18n.py` `waves()` confirms 0 left. **RTL** (ar/he/fa) is
 handled by `i18n.RTL_CSS` (forward-arrow flip via `svg:has(use[href="#i-arr"])`,
-download split-button radii, vc-arrow connector) injected per RTL page by
+download split-button radii, vc-arrow connector, What's-new card badge moved to the left) injected per RTL page by
 `i18n_wire.py` into a regenerated `<!--RTLCSS-->` marker region.
 
 > **Wave 4–7 build note (2026-06-15):** an earlier unattended run mass-translated

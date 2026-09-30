@@ -711,7 +711,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .feat-grid{grid-template-columns:1fr;}
   .usecase-grid{grid-template-columns:1fr;}
   .testi-grid{grid-template-columns:1fr;}
-  .new-grid{grid-template-columns:1fr;}
+  .new-grid{grid-template-columns:1fr;grid-auto-rows:auto;}
   .quickstart-grid{grid-template-columns:1fr;}
   .qs-step:not(:last-child)::after{display:none;}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
@@ -1332,44 +1332,44 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <div class="section-inner">
     <p class="eyebrow">Najnovija izdanja</p>
     <h2 class="sec-h">Šest unapređenja isporučenih ove godine.</h2>
-    <p class="sec-p">Usredsređeno na ono što su strimeri zaista tražili — izdvojeno iz nedavnih SplitCam izdanja, do v10.9.2.</p>
+    <p class="sec-p">Usredsređeno na ono što su strimeri zaista tražili — novosti u v11.0.11 i najbolje iz v10.9.2.</p>
 
     <div class="new-grid">
       <div class="new-card">
         <span class="new-badge">NOVO</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg></div>
-        <div class="new-h">Izbor restream servera</div>
-        <p class="new-p">Izaberi ulazni restream server sa dostupne liste — odaberi najbliži region za manje kašnjenje i manje izgubljenih kadrova na strimovima na više platformi.</p>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="20" x="6" y="2" rx="2"/><path d="M11 18h2"/><path d="M10.5 8.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
+        <div class="new-h">Daljinsko upravljanje</div>
+        <p class="new-p">Vodi strim sa telefona pomoću aplikacije SplitCam Remote: prebacuj scene, pokreći i zaustavljaj striming i snimanje, podešavaj zvuk i upravljaj izvorima, a da ne dodirneš tastaturu.</p>
       </div>
       <div class="new-card">
         <span class="new-badge">NOVO</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="13" height="8.5" x="1.5" y="8" rx="1.5"/><rect width="6.5" height="12" x="16" y="6" rx="1.5"/><path d="M6 20h4"/><path d="M8 16.5V20"/></svg></div>
+        <div class="new-h">Vodoravne i uspravne virtuelne kamere</div>
+        <p class="new-p">Na Windows 11 dve nove virtuelne kamere šalju vodoravnu i uspravnu sliku odvojeno, u više aplikacija odjednom. Windows 10 dobija uspravnu kameru za DirectShow aplikacije, a na Windows računarima sa ARM procesorom virtuelne kamere rade nativno.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NOVO</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M10.5 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
+        <div class="new-h">Replay sa telefona ili Stream Deck-a</div>
+        <p class="new-p">Pusti instant replay iz aplikacije SplitCam Remote ili jednim tasterom na Stream Deck-u. Replay Source čuva poslednjih 5–10 sekundi scene i sada radi i na vodoravnom i na uspravnom kadru.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NOVO</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div class="new-h">Glađi i pouzdaniji rad</div>
+        <p class="new-p">Glađi video i manje obrade dok se virtuelne kamere ne koriste. Ako grafički drajver otkaže, SplitCam će sačuvati tvoj projekat pre ponovnog pokretanja, a ugrađeni izveštaji o padu programa pomažu da se uzrok otkloni.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">v10.9.2</span>
         <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="20" x="6" y="2" rx="2"/><path d="M12 7v10"/><path d="m9.5 9.5 2.5-2.5 2.5 2.5"/><path d="m9.5 14.5 2.5 2.5 2.5-2.5"/></svg></div>
         <div class="new-h">Uspravni kadar</div>
         <p class="new-p">Prebaci na kadar 9:16 za TikTok Live, Reels, Shorts i uspravni Instagram Live. Vodoravne i uspravne postavke ostaju potpuno nezavisne, uključujući zvuk.</p>
       </div>
       <div class="new-card">
-        <span class="new-badge">NOVO</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M10.5 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
-        <div class="new-h">Replay Source</div>
-        <p class="new-p">Uhvati poslednjih 5–10 sekundi bilo koje scene jednim tasterom. Instant usporeni snimci tokom igranja ili savršeni izdvojeni momenti usred strima.</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">NOVO</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
-        <div class="new-h">3D Transform efekat</div>
-        <p class="new-p">Rotiraj bilo koji sloj vodoravno ili uspravno sa pravom perspektivom. Nagni kameru, titl ili oblogu da dodaš dubinu sceni.</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">NOVO</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
-        <div class="new-h">Luma Wipe, Slide i Swipe</div>
-        <p class="new-p">Tri nova prelaza scena: Luma Wipe za filmske rezove maskom (sa unapred instaliranim poluprovidnim fajlovima), Slide i Swipe za čiste vodoravne prelaze između segmenata.</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">NOVO</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8.5" cy="11" r="6"/><circle cx="8.5" cy="11" r="2.2"/><path d="M5 21h7"/><path d="M8.5 17v4"/><path d="M14 7h6"/><path d="m17 4 3 3-3 3"/><path d="M14 14h6"/><path d="m17 11 3 3-3 3"/></svg></div>
-        <div class="new-h">Rutiranje virtuelne kamere</div>
-        <p class="new-p">Pošalji bilo koju scenu — ili pojedinačni sloj iz bilo koje scene — na svoju virtuelnu kameru u Zoom-u, Teams-u ili Meet-u. Izaberi tačan izlaz u SplitCam podešavanjima.</p>
+        <span class="new-badge">v10.9.2</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg></div>
+        <div class="new-h">Izbor restream servera</div>
+        <p class="new-p">Izaberi ulazni restream server sa dostupne liste — odaberi najbliži region za manje kašnjenje i manje izgubljenih kadrova na strimovima na više platformi.</p>
       </div>
     </div>
   </div>
@@ -1452,7 +1452,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </a>
       <p>Besplatan program za striming uživo i studio za multistriming za Windows, macOS, iOS i Android. Od 2003.</p>
     </div>
-    <div class="foot-col"><h5>Proizvod</h5><ul><li><a href="https://splitcam.com/sr/features">Mogućnosti</a></li><li><a href="https://splitcam.com/sr/multistreaming">Multistriming</a></li><li><a href="https://splitcam.com/sr/virtual-camera">Virtuelna kamera</a></li><li><a href="https://splitcam.com/sr/products">Proizvodi i preuzimanja</a></li><li><a href="https://splitcam.com/sr/alternatives">Alternative</a></li><li><a href="https://splitcam.com/sr/for">Primene</a></li><li><a href="#whats-new">Šta je novo · v10.9.2</a></li><li><a href="https://splitcam.com/plugins/">Programeri</a></li><li><a href="https://splitcam.com/sr/changelog">Istorija verzija</a></li></ul></div>
+    <div class="foot-col"><h5>Proizvod</h5><ul><li><a href="https://splitcam.com/sr/features">Mogućnosti</a></li><li><a href="https://splitcam.com/sr/multistreaming">Multistriming</a></li><li><a href="https://splitcam.com/sr/virtual-camera">Virtuelna kamera</a></li><li><a href="https://splitcam.com/sr/products">Proizvodi i preuzimanja</a></li><li><a href="https://splitcam.com/sr/alternatives">Alternative</a></li><li><a href="https://splitcam.com/sr/for">Primene</a></li><li><a href="#whats-new">Šta je novo · v11.0.11</a></li><li><a href="https://splitcam.com/plugins/">Programeri</a></li><li><a href="https://splitcam.com/sr/changelog">Istorija verzija</a></li></ul></div>
     <div class="foot-col"><h5>Podrška</h5><ul><li><a href="https://splitcam.com/sr/help">Pomoć</a></li><li><a href="https://splitcam.com/sr/donate-us">Donacije</a></li><li><a href="https://t.me/splitcam" target="_blank" rel="noopener">Telegram ćaskanje</a></li></ul></div>
     <div class="foot-col"><h5>Kompanija</h5><ul><li><a href="https://splitcam.com/sr/privacy-policy">Politika privatnosti</a></li><li><a href="https://splitcam.com/sr/license-agreement">Licencni ugovor</a></li><li><a href="https://splitcam.com/" target="_blank" rel="noopener">SplitCam.com</a></li></ul></div>
   </div>

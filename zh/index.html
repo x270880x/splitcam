@@ -703,7 +703,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .feat-grid{grid-template-columns:1fr;}
   .usecase-grid{grid-template-columns:1fr;}
   .testi-grid{grid-template-columns:1fr;}
-  .new-grid{grid-template-columns:1fr;}
+  .new-grid{grid-template-columns:1fr;grid-auto-rows:auto;}
   .quickstart-grid{grid-template-columns:1fr;}
   .qs-step:not(:last-child)::after{display:none;}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
@@ -1330,44 +1330,44 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <div class="section-inner">
     <p class="eyebrow">最近更新</p>
     <h2 class="sec-h">今年推出的六项升级。</h2>
-    <p class="sec-p">专注于主播们真正想要的功能——SplitCam 近期版本的亮点，一直更新到 v10.9.2。</p>
+    <p class="sec-p">专注于主播们真正想要的功能——v11.0.11 带来的新变化，外加 v10.9.2 的精华亮点。</p>
 
     <div class="new-grid">
       <div class="new-card">
         <span class="new-badge">新</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg></div>
-        <div class="new-h">转推服务器选择器</div>
-        <p class="new-p">从可用列表中选择转推接入服务器——挑最近的区域，在多平台直播时获得更低延迟、更少丢帧。</p>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="20" x="6" y="2" rx="2"/><path d="M11 18h2"/><path d="M10.5 8.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
+        <div class="new-h">手机遥控</div>
+        <p class="new-p">用 SplitCam Remote 在手机上掌控直播：切换场景、开始和停止直播与录制、调节音频、管理素材源，全程不用碰键盘。</p>
       </div>
       <div class="new-card">
         <span class="new-badge">新</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="13" height="8.5" x="1.5" y="8" rx="1.5"/><rect width="6.5" height="12" x="16" y="6" rx="1.5"/><path d="M6 20h4"/><path d="M8 16.5V20"/></svg></div>
+        <div class="new-h">横屏 + 竖屏虚拟摄像头</div>
+        <p class="new-p">在 Windows 11 上，两个全新的虚拟摄像头分别输出横屏和竖屏画面，可供多个应用同时使用。Windows 10 新增一个单独的竖屏虚拟摄像头，供使用 DirectShow 的应用调用；在 ARM 版 Windows 上，虚拟摄像头则以原生方式运行。</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">新</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M10.5 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
+        <div class="new-h">用手机或 Stream Deck 触发回放</div>
+        <p class="new-p">在 SplitCam Remote 上点一下，或按一下 Stream Deck 按键，即可触发即时回放。回放素材源会捕获场景的最近 5–10 秒，如今在横屏和竖屏画布上都能正常工作。</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">新</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div class="new-h">更流畅、更安心的直播</div>
+        <p class="new-p">画面更流畅；虚拟摄像头闲置时，不必要的处理也更少。显卡驱动出错时，SplitCam 会在重启前保存你的项目，内置的崩溃报告功能则有助于查明并修复原因。</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">v10.9.2</span>
         <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="20" x="6" y="2" rx="2"/><path d="M12 7v10"/><path d="m9.5 9.5 2.5-2.5 2.5 2.5"/><path d="m9.5 14.5 2.5 2.5 2.5-2.5"/></svg></div>
         <div class="new-h">竖屏画布</div>
         <p class="new-p">切换到 9:16 画布，用于 TikTok Live、Reels、Shorts 和竖屏 Instagram 直播。横屏与竖屏布局（连同音频）保持完全独立。</p>
       </div>
       <div class="new-card">
-        <span class="new-badge">新</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M10.5 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
-        <div class="new-h">回放素材源</div>
-        <p class="new-p">用快捷键捕获任意场景的最近 5–10 秒。游戏中即时慢动作回放，或直播途中的完美高光时刻。</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">新</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
-        <div class="new-h">3D 变换特效</div>
-        <p class="new-p">以真实透视将任意图层横向或纵向旋转。让摄像头、下方字幕条或叠加层倾斜，为场景增添纵深感。</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">新</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
-        <div class="new-h">Luma Wipe、Slide 和 Swipe</div>
-        <p class="new-p">三种新的场景转场：Luma Wipe 用于电影级遮罩切换（自带预装的半透明文件），Slide 和 Swipe 用于段落之间干净利落的横向切换。</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">新</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8.5" cy="11" r="6"/><circle cx="8.5" cy="11" r="2.2"/><path d="M5 21h7"/><path d="M8.5 17v4"/><path d="M14 7h6"/><path d="m17 4 3 3-3 3"/><path d="M14 14h6"/><path d="m17 11 3 3-3 3"/></svg></div>
-        <div class="new-h">虚拟摄像头路由</div>
-        <p class="new-p">把任意场景——或任意场景中的单个图层——发送到 Zoom、Teams 或 Meet 里的虚拟摄像头。在 SplitCam 设置中选择具体的输出。</p>
+        <span class="new-badge">v10.9.2</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg></div>
+        <div class="new-h">转推服务器选择器</div>
+        <p class="new-p">从可用列表中选择转推接入服务器——挑最近的区域，在多平台直播时获得更低延迟、更少丢帧。</p>
       </div>
     </div>
   </div>
@@ -1450,7 +1450,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </a>
       <p>适用于 Windows、macOS、iOS 和 Android 的免费直播软件和多平台同步直播工作室。自 2003 年起。</p>
     </div>
-    <div class="foot-col"><h5>产品</h5><ul><li><a href="https://splitcam.com/zh/features">功能</a></li><li><a href="https://splitcam.com/zh/multistreaming">多平台直播</a></li><li><a href="https://splitcam.com/zh/virtual-camera">虚拟摄像头</a></li><li><a href="https://splitcam.com/zh/products">产品与下载</a></li><li><a href="https://splitcam.com/zh/alternatives">替代方案</a></li><li><a href="https://splitcam.com/zh/for">应用场景</a></li><li><a href="#whats-new">最新动态 · v10.9.2</a></li><li><a href="https://splitcam.com/plugins/">开发者</a></li><li><a href="https://splitcam.com/zh/changelog">更新日志</a></li></ul></div>
+    <div class="foot-col"><h5>产品</h5><ul><li><a href="https://splitcam.com/zh/features">功能</a></li><li><a href="https://splitcam.com/zh/multistreaming">多平台直播</a></li><li><a href="https://splitcam.com/zh/virtual-camera">虚拟摄像头</a></li><li><a href="https://splitcam.com/zh/products">产品与下载</a></li><li><a href="https://splitcam.com/zh/alternatives">替代方案</a></li><li><a href="https://splitcam.com/zh/for">应用场景</a></li><li><a href="#whats-new">最新动态 · v11.0.11</a></li><li><a href="https://splitcam.com/plugins/">开发者</a></li><li><a href="https://splitcam.com/zh/changelog">更新日志</a></li></ul></div>
     <div class="foot-col"><h5>支持</h5><ul><li><a href="https://splitcam.com/zh/help">帮助</a></li><li><a href="https://splitcam.com/zh/donate-us">捐助</a></li><li><a href="https://t.me/splitcam" target="_blank" rel="noopener">Telegram 群聊</a></li></ul></div>
     <div class="foot-col"><h5>公司</h5><ul><li><a href="https://splitcam.com/zh/privacy-policy">隐私政策</a></li><li><a href="https://splitcam.com/zh/license-agreement">许可协议</a></li><li><a href="https://splitcam.com/" target="_blank" rel="noopener">SplitCam.com</a></li></ul></div>
   </div>

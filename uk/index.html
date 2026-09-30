@@ -702,7 +702,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .feat-grid{grid-template-columns:1fr;}
   .usecase-grid{grid-template-columns:1fr;}
   .testi-grid{grid-template-columns:1fr;}
-  .new-grid{grid-template-columns:1fr;}
+  .new-grid{grid-template-columns:1fr;grid-auto-rows:auto;}
   .quickstart-grid{grid-template-columns:1fr;}
   .qs-step:not(:last-child)::after{display:none;}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
@@ -1329,44 +1329,44 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <div class="section-inner">
     <p class="eyebrow">Останні релізи</p>
     <h2 class="sec-h">Шість оновлень за цей рік.</h2>
-    <p class="sec-p">Зосереджені на тому, про що справді просили стрімери — головне з останніх релізів SplitCam, аж до v10.9.2.</p>
+    <p class="sec-p">Зосереджені на тому, про що справді просили стрімери — нове у v11.0.11, а також найкраще з v10.9.2.</p>
 
     <div class="new-grid">
       <div class="new-card">
         <span class="new-badge">НОВЕ</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg></div>
-        <div class="new-h">Restream Server Picker <span style="color:var(--text-sub);font-weight:400">— вибір сервера рестріму</span></div>
-        <p class="new-p">Обирайте сервер прийому рестріму зі списку доступних — беріть найближчий регіон для меншої затримки й меншої кількості втрачених кадрів на мультиплатформних трансляціях.</p>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="20" x="6" y="2" rx="2"/><path d="M11 18h2"/><path d="M10.5 8.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
+        <div class="new-h">Remote Control <span style="color:var(--text-sub);font-weight:400">— дистанційне керування</span></div>
+        <p class="new-p">Ведіть ефір з телефона через SplitCam Remote: перемикайте сцени, запускайте й зупиняйте трансляцію та запис, регулюйте звук і керуйте джерелами, не торкаючись клавіатури.</p>
       </div>
       <div class="new-card">
         <span class="new-badge">НОВЕ</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="13" height="8.5" x="1.5" y="8" rx="1.5"/><rect width="6.5" height="12" x="16" y="6" rx="1.5"/><path d="M6 20h4"/><path d="M8 16.5V20"/></svg></div>
+        <div class="new-h">Horizontal + Vertical Virtual Cameras <span style="color:var(--text-sub);font-weight:400">— горизонтальна й вертикальна віртуальні камери</span></div>
+        <p class="new-p">У Windows 11 дві нові віртуальні камери окремо передають горизонтальну й вертикальну картинку — одночасно в кілька застосунків. У Windows 10 з'явилася окрема вертикальна камера для застосунків на DirectShow, а на Windows on ARM камери працюють нативно.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">НОВЕ</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M10.5 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
+        <div class="new-h">Replay from Phone or Stream Deck <span style="color:var(--text-sub);font-weight:400">— повтори з телефона чи зі Stream Deck</span></div>
+        <p class="new-p">Запускайте миттєвий повтор із SplitCam Remote або клавішею Stream Deck. Джерело повторів зберігає останні 5–10 секунд сцени й тепер працює як на горизонтальному, так і на вертикальному полотні.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">НОВЕ</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div class="new-h">Smoother, Safer Sessions <span style="color:var(--text-sub);font-weight:400">— плавніша й надійніша робота</span></div>
+        <p class="new-p">Плавніше відео й менше зайвої обробки, поки віртуальні камери не використовуються. Якщо графічний драйвер дає збій, SplitCam зберігає ваш проєкт перед перезапуском, а вбудовані звіти про збої допомагають знайти й усунути причину.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">v10.9.2</span>
         <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="20" x="6" y="2" rx="2"/><path d="M12 7v10"/><path d="m9.5 9.5 2.5-2.5 2.5 2.5"/><path d="m9.5 14.5 2.5 2.5 2.5-2.5"/></svg></div>
         <div class="new-h">Vertical Canvas <span style="color:var(--text-sub);font-weight:400">— вертикальне полотно</span></div>
         <p class="new-p">Перемикайтеся на полотно 9:16 для TikTok Live, Reels, Shorts і вертикального Instagram Live. Горизонтальне й вертикальне налаштування лишаються повністю незалежними, разом зі звуком.</p>
       </div>
       <div class="new-card">
-        <span class="new-badge">НОВЕ</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M10.5 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
-        <div class="new-h">Replay Source <span style="color:var(--text-sub);font-weight:400">— джерело повторів</span></div>
-        <p class="new-p">Захопіть останні 5–10 секунд будь-якої сцени гарячою клавішею. Миттєві слоу-мо повтори під час гри або ідеальні хайлайти просто в ефірі.</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">НОВЕ</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
-        <div class="new-h">3D Transform Effect <span style="color:var(--text-sub);font-weight:400">— ефект 3D-трансформації</span></div>
-        <p class="new-p">Обертайте будь-який шар горизонтально чи вертикально зі справжньою перспективою. Нахиліть камеру, нижню третину чи оверлей, щоб додати сцені глибини.</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">НОВЕ</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
-        <div class="new-h">Luma Wipe, Slide & Swipe <span style="color:var(--text-sub);font-weight:400">— нові переходи</span></div>
-        <p class="new-p">Три нові переходи між сценами: Luma Wipe для кінематографічних зрізів по масці (з попередньо встановленими напівпрозорими файлами), Slide і Swipe для чистих горизонтальних переходів між сегментами.</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">НОВЕ</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8.5" cy="11" r="6"/><circle cx="8.5" cy="11" r="2.2"/><path d="M5 21h7"/><path d="M8.5 17v4"/><path d="M14 7h6"/><path d="m17 4 3 3-3 3"/><path d="M14 14h6"/><path d="m17 11 3 3-3 3"/></svg></div>
-        <div class="new-h">Virtual Camera Routing <span style="color:var(--text-sub);font-weight:400">— маршрутизація віртуальної камери</span></div>
-        <p class="new-p">Надсилайте будь-яку сцену — чи окремий шар із будь-якої сцени — у вашу віртуальну камеру в Zoom, Teams або Meet. Оберіть точний вивід у налаштуваннях SplitCam.</p>
+        <span class="new-badge">v10.9.2</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg></div>
+        <div class="new-h">Restream Server Picker <span style="color:var(--text-sub);font-weight:400">— вибір сервера рестріму</span></div>
+        <p class="new-p">Обирайте сервер прийому рестріму зі списку доступних — беріть найближчий регіон для меншої затримки й меншої кількості втрачених кадрів на мультиплатформних трансляціях.</p>
       </div>
     </div>
   </div>
@@ -1449,7 +1449,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </a>
       <p>Безкоштовна програма для стрімінгу та студія мультистріму для Windows, macOS, iOS та Android. З 2003 року.</p>
     </div>
-    <div class="foot-col"><h5>Продукт</h5><ul><li><a href="https://splitcam.com/uk/features">Можливості</a></li><li><a href="https://splitcam.com/uk/multistreaming">Мультистрім</a></li><li><a href="https://splitcam.com/uk/virtual-camera">Віртуальна камера</a></li><li><a href="https://splitcam.com/uk/products">Продукти та завантаження</a></li><li><a href="https://splitcam.com/uk/alternatives">Альтернативи</a></li><li><a href="https://splitcam.com/uk/for">Сценарії</a></li><li><a href="#whats-new">Що нового · v10.9.2</a></li><li><a href="https://splitcam.com/plugins/">Розробникам</a></li><li><a href="https://splitcam.com/uk/changelog">Журнал змін</a></li></ul></div>
+    <div class="foot-col"><h5>Продукт</h5><ul><li><a href="https://splitcam.com/uk/features">Можливості</a></li><li><a href="https://splitcam.com/uk/multistreaming">Мультистрім</a></li><li><a href="https://splitcam.com/uk/virtual-camera">Віртуальна камера</a></li><li><a href="https://splitcam.com/uk/products">Продукти та завантаження</a></li><li><a href="https://splitcam.com/uk/alternatives">Альтернативи</a></li><li><a href="https://splitcam.com/uk/for">Сценарії</a></li><li><a href="#whats-new">Що нового · v11.0.11</a></li><li><a href="https://splitcam.com/plugins/">Розробникам</a></li><li><a href="https://splitcam.com/uk/changelog">Журнал змін</a></li></ul></div>
     <div class="foot-col"><h5>Підтримка</h5><ul><li><a href="https://splitcam.com/uk/help">Довідка</a></li><li><a href="https://splitcam.com/uk/donate-us">Підтримати</a></li><li><a href="https://t.me/splitcam" target="_blank" rel="noopener">Чат у Telegram</a></li></ul></div>
     <div class="foot-col"><h5>Компанія</h5><ul><li><a href="https://splitcam.com/uk/privacy-policy">Політика конфіденційності</a></li><li><a href="https://splitcam.com/uk/license-agreement">Ліцензійна угода</a></li><li><a href="https://splitcam.com/" target="_blank" rel="noopener">SplitCam.com</a></li></ul></div>
   </div>

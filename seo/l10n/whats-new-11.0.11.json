@@ -1,0 +1,2397 @@
+[
+ {
+  "code": "fil",
+  "tr": {
+   "sec_p": "Naka-focus sa talagang hinihingi ng mga streamer — ang bago sa v11.0.11, plus ang pinakamagaganda mula sa v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Patakbuhin ang stream mula sa phone mo gamit ang SplitCam Remote: i-switch ang scenes, simulan o ihinto ang streaming at recording, i-adjust ang audio at i-manage ang sources nang hindi hinahawakan ang keyboard."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Sa Windows 11, dalawang bagong virtual camera ang nagpapadala ng landscape at portrait nang magkahiwalay, sa maraming app nang sabay-sabay. May vertical camera na ang Windows 10 para sa DirectShow apps, at tumatakbo na nang native ang virtual cameras sa Windows on ARM."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Mag-trigger ng instant replay mula sa SplitCam Remote o sa isang Stream Deck key. Itinatabi ng Replay Source ang huling 5–10 segundo ng isang scene, at gumagana na ito sa parehong horizontal at vertical na canvas."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Mas smooth na video, at mas kaunting processing habang hindi ginagamit ang virtual cameras. Kapag bumagsak ang graphics driver, sine-save ng SplitCam ang project mo bago ito mag-restart, at tumutulong ang built-in na crash reporting para maayos ang sanhi."
+    }
+   ],
+   "convention": "In the fil whats-new block, all six existing card titles are plain English with no gloss and no parentheses (Restream Server Picker, Vertical Canvas, Replay Source, 3D Transform Effect, Luma Wipe, Slide & Swipe, Virtual Camera Routing). So all four new titles stay in English exactly as the source has them. The descriptions and sub-line use the page's Taglish in the informal register (\"mo\"). The sub-line keeps the existing opening \"Naka-focus sa talagang hinihingi ng mga streamer —\" and uses \"plus\" the way the homepage does. Terms reused from the fil pages: virtual camera/virtual cameras, scene/scenes, sources, canvas with \"horizontal at vertical\" and \"landscape/portrait\" (homepage and virtual-camera page), stream/streaming, recording, \"simulan o ihinto\" (stream-deck page), \"i-switch\" and \"i-adjust\" (homepage and products page), \"phone mo\" (the homepage's word for phone), \"nang hindi hinahawakan ang keyboard\" (multi-camera page), \"Stream Deck key\" (stream-deck page alt text), \"Replay Source\" (the name this block's own card uses), \"huling 5–10 segundo\" (the existing Replay card), \"nang sabay-sabay\" (the site's usual phrase for \"at once\"), \"bumagsak\" (multistreaming page's word for a failure), and \"crash\" (Taglish, as used on for/educators). Kept untranslated: SplitCam, SplitCam Remote, Stream Deck, Windows 11, Windows 10, DirectShow, ARM, v11.0.11, v10.9.2."
+  },
+  "rv": {
+   "sec_p": "Naka-focus sa talagang hinihingi ng mga streamer — ang bago sa v11.0.11, plus ang pinakamagaganda mula sa v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Kontrolin ang stream mula sa phone mo gamit ang SplitCam Remote: i-switch ang scenes, simulan o ihinto ang streaming at recording, i-adjust ang audio at i-manage ang sources nang hindi hinahawakan ang keyboard."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Sa Windows 11, dalawang bagong virtual camera ang nagpapadala ng landscape at portrait nang magkahiwalay, sa ilang app nang sabay-sabay. May vertical camera na ang Windows 10 para sa DirectShow apps, at tumatakbo na nang native ang virtual cameras sa Windows on ARM."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Mag-trigger ng instant replay mula sa SplitCam Remote o sa isang Stream Deck key. Itinatabi ng Replay source ang huling 5–10 segundo ng isang scene, at gumagana na ito sa parehong horizontal at vertical na canvas."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Mas smooth na video, at mas kaunting processing habang hindi ginagamit ang virtual cameras. Kapag bumagsak ang graphics driver, sine-save ng SplitCam ang project mo bago ito mag-restart, at tumutulong ang built-in na crash reporting para maayos ang sanhi."
+    }
+   ],
+   "changes": [
+    {
+     "was": "Patakbuhin ang stream mula sa phone mo",
+     "now": "Kontrolin ang stream mula sa phone mo",
+     "why": "\"Patakbuhin ang stream\" is a word-for-word calque of \"run the stream\". \"Kontrolin\" is what the fil stream-deck page already uses (\"Kontrolin ang SplitCam mula sa Stream Deck\"), and it matches the Remote Control fact."
+    },
+    {
+     "was": "sa maraming app nang sabay-sabay",
+     "now": "sa ilang app nang sabay-sabay",
+     "why": "\"Maraming\" means \"many\", which claims more than the source's \"several\". \"Ilang\" says the same thing as \"several\" and adds nothing."
+    },
+    {
+     "was": "Itinatabi ng Replay Source",
+     "now": "Itinatabi ng Replay source",
+     "why": "In running text the fil pages write \"ang Replay source\" with a lowercase \"source\". \"Replay Source\" with a capital S is only used as the card title."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "fr",
+  "tr": {
+   "sec_p": "Ce que les streamers ont vraiment demandé — les nouveautés de la v11.0.11, plus le meilleur de la v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Pilotez le stream depuis votre téléphone avec SplitCam Remote : changez de scène, lancez ou arrêtez le direct et l'enregistrement, réglez l'audio et gérez les sources sans toucher au clavier."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Sous Windows 11, deux nouvelles caméras virtuelles envoient séparément l'image paysage et l'image portrait, vers plusieurs applis à la fois. Windows 10 gagne une caméra virtuelle verticale pour les applis DirectShow, et sous Windows sur ARM, les caméras virtuelles tournent en natif."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Déclenchez un replay instantané depuis SplitCam Remote ou une touche Stream Deck. La source Replay garde les 5 à 10 dernières secondes d'une scène et fonctionne désormais sur les deux canvas, horizontal et vertical."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Une vidéo plus fluide et moins de traitements inutiles quand les caméras virtuelles ne servent pas. En cas de défaillance du pilote graphique, SplitCam enregistre votre projet avant de redémarrer, et le rapport de plantage intégré aide à en trouver et corriger la cause."
+    }
+   ],
+   "convention": "fr keeps all card titles in English with no gloss and no parentheses (the existing six are Restream Server Picker, Vertical Canvas, Replay Source, 3D Transform Effect, Luma Wipe, Slide & Swipe, Virtual Camera Routing), so the four new titles stay English too. Descriptions use formal 'vous' with imperatives, a plain space before the colon, 'la v…' for versions, and an em dash in the sub-line. Terms reused from the page: caméra(s) virtuelle(s) (homepage and /virtual-camera/); scène; source; canvas (the homepage block says 'canvas'; /virtual-camera/ and /multistreaming/ say 'canevas'); paysage/portrait (/virtual-camera/); stream / direct; 'lancez ou arrêtez le direct et l'enregistrement' (the /stream-deck/ page wording for what SplitCam Remote does); touche Stream Deck; la source Replay; téléphone; applis; pilote (from 'pilote de caméra virtuelle' on /virtual-camera/, here 'pilote graphique'); 'rapport de plantage' is new, because no page has a word for crash yet. Note: the sub-line is phrased without 'Centrées' so it does not depend on the heading's gender; if the heading stays 'Six améliorations…', 'Centrées sur ce que les streamers ont vraiment demandé — …' also works. In card 2, 'Windows on ARM' is written 'Windows sur ARM', the usual French form, with ARM itself unchanged."
+  },
+  "rv": {
+   "sec_p": "Au plus près de ce que les streamers ont vraiment demandé — les nouveautés de la v11.0.11 et le meilleur de la v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Pilotez votre stream depuis votre téléphone avec SplitCam Remote : changez de scène, lancez ou arrêtez le direct et l'enregistrement, réglez l'audio et gérez les sources sans toucher au clavier."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Sous Windows 11, deux nouvelles caméras virtuelles envoient séparément l'image paysage et l'image portrait, et plusieurs applis peuvent les utiliser en même temps. Windows 10 gagne une caméra virtuelle verticale pour les applis DirectShow, et les caméras virtuelles tournent en natif sous Windows sur ARM."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Déclenchez un replay instantané depuis SplitCam Remote ou une touche Stream Deck. La source Replay garde les 5 à 10 dernières secondes d'une scène et fonctionne désormais sur les deux canvas, horizontal et vertical."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Une vidéo plus fluide et moins de traitements inutiles quand les caméras virtuelles ne servent pas. En cas de défaillance du pilote graphique, SplitCam enregistre votre projet avant de redémarrer, et le rapport de plantage intégré aide à diagnostiquer et corriger le problème."
+    }
+   ],
+   "changes": [
+    {
+     "was": "Ce que les streamers ont vraiment demandé — …",
+     "now": "Au plus près de ce que les streamers ont vraiment demandé — …",
+     "why": "Sans le mot d'entrée, la phrase restait sans verbe et perdait l'idée de « Focused on ». « Au plus près de » rend ce sens et ne s'accorde pas avec le titre, donc la ligne reste correcte quel que soit le genre du titre."
+    },
+    {
+     "was": "…de la v11.0.11, plus le meilleur de la v10.9.2.",
+     "now": "…de la v11.0.11 et le meilleur de la v10.9.2.",
+     "why": "Ici, « plus » comme conjonction de coordination est un calque de l'anglais « plus ». « et » est plus naturel dans un texte soigné."
+    },
+    {
+     "was": "Pilotez le stream depuis votre téléphone",
+     "now": "Pilotez votre stream depuis votre téléphone",
+     "why": "La page /stream-deck/ dit « piloter votre stream ». L'article possessif est la tournure naturelle, et « le stream » sonnait comme une traduction."
+    },
+    {
+     "was": "…l'image paysage et l'image portrait, vers plusieurs applis à la fois.",
+     "now": "…l'image paysage et l'image portrait, et plusieurs applis peuvent les utiliser en même temps.",
+     "why": "Le complément détaché « , vers plusieurs applis » était bancal. La nouvelle version reprend la tournure de /virtual-camera/ (« Plusieurs applis peuvent-elles utiliser SplitCam en même temps ? ») et suit exactement le fait « usable by several applications at the same time »."
+    },
+    {
+     "was": "…, et sous Windows sur ARM, les caméras virtuelles tournent en natif.",
+     "now": "…, et les caméras virtuelles tournent en natif sous Windows sur ARM.",
+     "why": "Cela évite deux « sous Windows » l'un après l'autre et une incise en milieu de phrase. La phrase coule mieux, et le sens ne change pas."
+    },
+    {
+     "was": "…et le rapport de plantage intégré aide à en trouver et corriger la cause.",
+     "now": "…et le rapport de plantage intégré aide à diagnostiquer et corriger le problème.",
+     "why": "Dans « en trouver », on ne voit pas à quoi renvoie « en ». Avec un seul « à » pour deux infinitifs, la phrase boitait. « diagnostiquer et corriger » suit exactement le fait de la release note (« help diagnose and resolve failures »)."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "pt",
+  "tr": {
+   "sec_p": "Focadas no que os streamers realmente pediram — as novidades da v11.0.11 e o melhor da v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Controle a sua live pelo celular com o SplitCam Remote: troque de cena, inicie ou pare a transmissão e a gravação, ajuste o áudio e gerencie as fontes sem encostar no teclado."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "No Windows 11, duas novas câmeras virtuais entregam a saída horizontal e a vertical separadamente, para vários apps ao mesmo tempo. O Windows 10 ganha uma câmera vertical para apps que usam DirectShow e, no Windows on ARM, as câmeras virtuais rodam de forma nativa."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Dispare um replay instantâneo pelo SplitCam Remote ou por uma tecla do Stream Deck. A Fonte de Replay guarda os últimos 5 a 10 segundos de uma cena e agora funciona tanto no canvas horizontal quanto no vertical."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Vídeo mais fluido e menos processamento enquanto as câmeras virtuais não estão em uso. Se o driver gráfico falhar, o SplitCam salva o seu projeto antes de reiniciar, e os relatórios de falhas integrados ajudam a identificar e corrigir a causa."
+    }
+   ],
+   "convention": "pt keeps card titles as the plain English feature name, with no gloss span and no parentheses (the existing six are all English: Restream Server Picker, Vertical Canvas, Replay Source, 3D Transform Effect, Luma Wipe, Slide & Swipe, Virtual Camera Routing), so all four new titles stay in English. The descriptions use informal \"você/seu\" and \"Focadas\" to match the current sub-line. Terms reused from the site: câmera(s) virtual(is), cena, fontes, canvas horizontal/vertical, transmissão/live, gravação, Fonte de Replay (the homepage's name for the Replay source), tecla (Stream Deck), celular, \"sem encostar no teclado\" (from the stream-deck page), driver, \"relatórios de falhas\" (from the privacy policy), saída (from the Virtual Camera Routing card), \"5 a 10 segundos\", \"ao mesmo tempo\", apps. v11.0.11, v10.9.2, SplitCam Remote, Stream Deck, Windows 11/10, DirectShow and Windows on ARM are left as written."
+  },
+  "rv": {
+   "sec_p": "Focadas no que os streamers realmente pediram — as novidades da v11.0.11 e o melhor da v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Controle a sua live pelo celular com o SplitCam Remote: troque de cena, inicie ou pare a transmissão e a gravação, ajuste o áudio e gerencie as fontes sem encostar no teclado."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "No Windows 11, duas novas câmeras virtuais enviam a saída horizontal e a vertical separadamente, para vários apps ao mesmo tempo. O Windows 10 ganha uma câmera virtual vertical para apps que usam DirectShow e, no Windows on ARM, elas rodam de forma nativa."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Dispare um replay instantâneo pelo SplitCam Remote ou por uma tecla do Stream Deck. A Fonte de Replay guarda os últimos 5 a 10 segundos de uma cena e agora funciona tanto no canvas horizontal quanto no vertical."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Vídeo mais fluido e menos processamento enquanto as câmeras virtuais não estão em uso. Se o driver gráfico falhar, o SplitCam salva o seu projeto antes de reiniciar, e os relatórios de falhas integrados ajudam a identificar e corrigir a causa."
+    }
+   ],
+   "changes": [
+    {
+     "was": "duas novas câmeras virtuais entregam a saída horizontal e a vertical",
+     "now": "duas novas câmeras virtuais enviam a saída horizontal e a vertical",
+     "why": "\"entregar\" para uma saída de vídeo é decalque de \"deliver\". A página já usa \"Envie qualquer cena… para sua câmera virtual\" (card Virtual Camera Routing), por isso aqui fica o mesmo verbo."
+    },
+    {
+     "was": "O Windows 10 ganha uma câmera vertical para apps que usam DirectShow",
+     "now": "O Windows 10 ganha uma câmera virtual vertical para apps que usam DirectShow",
+     "why": "Pelos fatos, é uma câmera VIRTUAL vertical. Sem \"virtual\", o leitor pode achar que se trata de uma câmera física ou de uma webcam. O fato continua o mesmo, só fica mais claro."
+    },
+    {
+     "was": "e, no Windows on ARM, as câmeras virtuais rodam de forma nativa",
+     "now": "e, no Windows on ARM, elas rodam de forma nativa",
+     "why": "Evita repetir \"câmeras virtuais\" três vezes em duas frases, porque agora o termo já aparece na frase anterior. O pronome retoma o termo sem ambiguidade."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "de",
+  "tr": {
+   "sec_p": "Fokussiert auf das, was Streamer wirklich gefragt haben — die Neuheiten in v11.0.11, dazu das Beste aus v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Steuere deinen Stream vom Handy aus mit SplitCam Remote: Szenen wechseln, Streaming und Aufnahme starten oder stoppen, Audio anpassen und Quellen verwalten — ohne die Tastatur anzufassen."
+    },
+    {
+     "h": "Horizontale + vertikale virtuelle Kameras",
+     "p": "Unter Windows 11 geben zwei neue virtuelle Kameras Quer- und Hochformat getrennt aus, an mehrere Apps gleichzeitig. Windows 10 bekommt eine eigene vertikale Kamera für DirectShow-Apps, und unter Windows on ARM laufen sie nativ."
+    },
+    {
+     "h": "Replay vom Handy oder Stream Deck",
+     "p": "Löse ein sofortiges Replay über SplitCam Remote oder eine Taste am Stream Deck aus. Die Replay-Quelle hält die letzten 5–10 Sekunden einer Szene fest und funktioniert jetzt auf der horizontalen wie auf der vertikalen Leinwand."
+    },
+    {
+     "h": "Flüssigere, sicherere Sessions",
+     "p": "Flüssigeres Video und weniger Rechenlast, solange virtuelle Kameras ungenutzt sind. Fällt der Grafiktreiber aus, speichert SplitCam dein Projekt vor dem Neustart, und integrierte Absturzberichte helfen, die Ursache zu beheben."
+    }
+   ],
+   "convention": "The de block uses no gloss span and no parentheses. Established feature names stay in English as-is (Restream Server Picker, Vertical Canvas, Replay Source, Luma Wipe, Slide & Swipe). Descriptive titles are in German or German-English hybrids (3D-Transform-Effekt, Virtual-Camera-Routing). So I kept the feature name \"Remote Control\" in English and put the three descriptive titles in German. The page uses informal \"du\", which I kept. Terms reused from de/index.html, de/virtual-camera/ and de/multistreaming/: virtuelle Kamera(s), Szene(n), Quellen, Leinwand (horizontal/vertikal), Querformat/Hochformat, Streaming, Aufnahme, Replay-Quelle (for the Replay source; no Hotkey was needed here), Handy (for the phone), Treiber (as in Kamera-Treiber, here Grafiktreiber), mehrere Apps gleichzeitig. \"Crash\" has no earlier wording on these pages, so I rendered it as \"Absturzberichte\". Stream Deck is not hyphenated into a compound (\"Taste am Stream Deck\"). Version strings are unchanged."
+  },
+  "rv": {
+   "sec_p": "Fokussiert auf das, was sich Streamer wirklich gewünscht haben — die Neuheiten in v11.0.11, dazu das Beste aus v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Steuere deinen Stream vom Handy aus mit SplitCam Remote: Szenen wechseln, Streaming und Aufnahme starten oder stoppen, Audio anpassen und Quellen verwalten — ohne die Tastatur anzufassen."
+    },
+    {
+     "h": "Horizontale + vertikale virtuelle Kameras",
+     "p": "Unter Windows 11 geben zwei neue virtuelle Kameras Quer- und Hochformat getrennt aus — auch an mehrere Apps gleichzeitig. Windows 10 bekommt eine eigene vertikale Kamera für DirectShow-Apps, und unter Windows on ARM laufen die virtuellen Kameras nativ."
+    },
+    {
+     "h": "Replay per Handy oder Stream Deck",
+     "p": "Löse ein sofortiges Replay über SplitCam Remote oder eine Taste am Stream Deck aus. Die Replay-Quelle hält die letzten 5–10 Sekunden einer Szene fest und funktioniert jetzt auf der horizontalen wie auf der vertikalen Leinwand."
+    },
+    {
+     "h": "Flüssigere, stabilere Sessions",
+     "p": "Flüssigeres Bild und weniger Rechenlast, solange virtuelle Kameras ungenutzt sind. Fällt der Grafiktreiber aus, speichert SplitCam dein Projekt vor dem Neustart, und integrierte Absturzberichte helfen, die Ursache zu finden und zu beheben."
+    }
+   ],
+   "changes": [
+    {
+     "was": "was Streamer wirklich gefragt haben",
+     "now": "was sich Streamer wirklich gewünscht haben",
+     "why": "Ein Calque von \"asked for\": \"fragen\" braucht \"nach\" (\"wonach … gefragt\"). \"Etwas fragen\" ohne \"nach\" ist falsch, und \"sich wünschen\" ist die natürliche Wendung für \"asked for\"."
+    },
+    {
+     "was": "getrennt aus, an mehrere Apps gleichzeitig",
+     "now": "getrennt aus — auch an mehrere Apps gleichzeitig",
+     "why": "Der angehängte Teil las sich wie eine lose Apposition. Mit Gedankenstrich und \"auch\" wird er flüssig, und der Fakt bleibt unverändert."
+    },
+    {
+     "was": "und unter Windows on ARM laufen sie nativ",
+     "now": "und unter Windows on ARM laufen die virtuellen Kameras nativ",
+     "why": "\"sie\" war mehrdeutig, weil es sich grammatisch auf die DirectShow-Apps beziehen lässt. Laut Fakten sind die Komponenten der virtuellen Kamera nativ für ARM64."
+    },
+    {
+     "was": "Replay vom Handy oder Stream Deck",
+     "now": "Replay per Handy oder Stream Deck",
+     "why": "\"per\" ist die übliche Streamer-Wendung für das auslösende Gerät, so wie auf der Seite schon \"per Hotkey\". \"vom … oder Stream Deck\" hinkte ohne zweiten Artikel."
+    },
+    {
+     "was": "Flüssigere, sicherere Sessions",
+     "now": "Flüssigere, stabilere Sessions",
+     "why": "\"sicherere\" klingt holprig und würde auf Deutsch eher Datensicherheit meinen. Gemeint sind Wiederherstellung nach Ausfällen und Absturzberichte, also Stabilität."
+    },
+    {
+     "was": "Flüssigeres Video",
+     "now": "Flüssigeres Bild",
+     "why": "Beim Bild sagen deutsche Streamer \"flüssiges Bild\". \"Flüssigeres Video\" ist ein Calque."
+    },
+    {
+     "was": "helfen, die Ursache zu beheben",
+     "now": "helfen, die Ursache zu finden und zu beheben",
+     "why": "Die Fakten nennen Diagnose und Behebung (\"diagnose and resolve\"). Eine Ursache \"behebt\" man im Deutschen auch nicht allein, man findet sie und behebt dann den Fehler."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "tr",
+  "tr": {
+   "sec_p": "Yayıncıların gerçekten istediği şeylere odaklandık — v11.0.11'deki yenilikler ve v10.9.2'nin en iyileri.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Yayını SplitCam Remote ile telefonunuzdan idare edin: klavyeye dokunmadan sahneleri değiştirin, yayını ve kaydı başlatıp durdurun, sesi ayarlayın ve kaynakları yönetin."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Windows 11'de iki yeni sanal kamera, yatay ve dikey görüntüyü ayrı ayrı ve aynı anda birden fazla uygulamaya gönderir. Windows 10'da DirectShow kullanan uygulamalar için dikey bir sanal kamera var; ARM tabanlı Windows'ta ise sanal kameralar yerel olarak çalışır."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Anında tekrarı SplitCam Remote'tan veya bir Stream Deck tuşuyla başlatın. Replay Source, bir sahnenin son 5–10 saniyesini tutar ve artık hem yatay hem de dikey tuvallerde çalışır."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Daha akıcı video ve sanal kameralar kullanılmadığında daha az işlem yükü. Grafik sürücüsü hata verirse SplitCam yeniden başlamadan önce projenizi kaydeder; yerleşik çökme raporlaması da nedenin bulunup giderilmesine yardımcı olur."
+    }
+   ],
+   "convention": "Title convention: in the tr whats-new block all six card titles stay in plain English with no gloss and no parentheses (\"Restream Server Picker\", \"Vertical Canvas\", \"Replay Source\", \"3D Transform Effect\", \"Luma Wipe, Slide & Swipe\", \"Virtual Camera Routing\"). So all four new titles are also plain English. This also means \"Smoother, Safer Sessions\" stays in English, which reads least naturally of the four. Register: the block uses formal \"siz\" imperatives (seçin, geçin, yakalayın, gönderin), so the new text does too. The Replay source is written \"Replay Source\", as in this block's existing title and in the tr /for/ pages (\"SplitCam'in Replay Source'u\"). Note that the homepage body elsewhere calls it \"Tekrar Kaynağı\" instead. Terms reused from tr pages: sanal kamera, sahne, kaynak, tuval (yatay/dikey tuval), yayın, kayıt/kaydı, kısayol/tuş (Stream Deck tuşu, as in \"Stream Deck'teki\"), sürücü (grafik sürücüsü), çökme/çökerse, telefon, uygulama, yerel olarak. Case suffixes follow how each number is read aloud: v11.0.11'deki (on bir → -de), v10.9.2'nin (iki → -nin, matching the existing v10.9.2'ye), Windows 11'de, Windows 10'da (on → -da), SplitCam Remote'tan, Windows'ta. \"Windows on ARM\" is rendered as \"ARM tabanlı Windows\" and keeps \"ARM\" untranslated. The first sentence of card 1 uses \"idare edin\" so it does not repeat \"yönetin\" from the end of the sentence. Source file read and not modified: /Users/splitcam/Documents/Проекты/SplitCam/SplitCam сайт/splitcam/tr/index.html"
+  },
+  "rv": {
+   "sec_p": "Yayıncıların gerçekten istediği şeylere odaklandık — v11.0.11'deki yenilikler ve v10.9.2'den öne çıkanlar.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Yayını SplitCam Remote ile telefonunuzdan idare edin: klavyeye dokunmadan sahneleri değiştirin, yayını ve kaydı başlatıp durdurun, sesi ayarlayın ve kaynakları yönetin."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Windows 11'de iki yeni sanal kamera, yatay ve dikey görüntüyü ayrı ayrı ve aynı anda birden fazla uygulamaya gönderir. Windows 10'a DirectShow kullanan uygulamalar için ayrı bir dikey sanal kamera geldi; ARM tabanlı Windows'ta ise sanal kameralar yerel olarak çalışır."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Anında tekrarı SplitCam Remote'tan veya bir Stream Deck tuşuyla başlatın. Replay Source, bir sahnenin son 5–10 saniyesini tutar ve artık hem yatay hem de dikey tuvallerde çalışır."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Daha akıcı video ve sanal kameralar kullanılmadığında daha az gereksiz işlem yükü. Grafik sürücüsü hata verirse SplitCam yeniden başlamadan önce projenizi kaydeder; yerleşik çökme raporlaması da nedenin bulunup giderilmesine yardımcı olur."
+    }
+   ],
+   "changes": [
+    {
+     "was": "v10.9.2'nin en iyileri",
+     "now": "v10.9.2'den öne çıkanlar",
+     "why": "'en iyileri' sounds colloquial here. The block's current sub-line already says 'öne çıkanlar', so reuse that. The suffix follows the spoken 'iki': ikiden, so 'den'."
+    },
+    {
+     "was": "Windows 10'da DirectShow kullanan uygulamalar için dikey bir sanal kamera var",
+     "now": "Windows 10'a DirectShow kullanan uygulamalar için ayrı bir dikey sanal kamera geldi",
+     "why": "'var' reads flat in a what's-new card, and 'geldi' matches 'gets'. 'ayrı' restores the release-note fact that this is a SEPARATE vertical camera. The suffix follows the spoken 'on': ona, so 'a'."
+    },
+    {
+     "was": "daha az işlem yükü",
+     "now": "daha az gereksiz işlem yükü",
+     "why": "The release notes say 'less unnecessary processing'. 'gereksiz' keeps the claim exact and does not make it stronger."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "uk",
+  "tr": {
+   "sec_p": "Зосереджені на тому, про що справді просили стрімери — нове у v11.0.11, а також найкраще з v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control <span style=\"color:var(--text-sub);font-weight:400\">— дистанційне керування</span>",
+     "p": "Ведіть ефір з телефона через SplitCam Remote: перемикайте сцени, запускайте й зупиняйте трансляцію та запис, регулюйте звук і керуйте джерелами, не торкаючись клавіатури."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras <span style=\"color:var(--text-sub);font-weight:400\">— горизонтальна й вертикальна віртуальні камери</span>",
+     "p": "У Windows 11 дві нові віртуальні камери окремо передають горизонтальну й вертикальну картинку — одночасно в кілька застосунків. Windows 10 отримує окрему вертикальну камеру для застосунків на DirectShow, а на Windows on ARM камери працюють нативно."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck <span style=\"color:var(--text-sub);font-weight:400\">— повтори з телефона чи зі Stream Deck</span>",
+     "p": "Запускайте миттєвий повтор із SplitCam Remote або клавішею Stream Deck. Джерело повторів зберігає останні 5–10 секунд сцени й тепер працює як на горизонтальному, так і на вертикальному полотні."
+    },
+    {
+     "h": "Smoother, Safer Sessions <span style=\"color:var(--text-sub);font-weight:400\">— плавніші й надійніші сесії</span>",
+     "p": "Плавніше відео й менше зайвої обробки, поки віртуальні камери не використовуються. Якщо графічний драйвер дає збій, SplitCam зберігає ваш проєкт перед перезапуском, а вбудовані звіти про збої допомагають знайти й усунути причину."
+    }
+   ],
+   "convention": "uk follows the same pattern as ru: the English feature name stays as the title, followed by a gloss in a span. One difference: uk/index.html uses font-weight:400 in that span, not 500, so I used 400 to match the existing six cards (e.g. \"Replay Source — джерело повторів\"). Terms taken from existing uk pages: віртуальна камера (homepage and /virtual-camera/); сцена, джерело; Джерело повторів as the name of the Replay source (homepage); горизонтальне/вертикальне полотно (homepage and /multistreaming/); трансляція та запис and \"запускає й зупиняє трансляцію та запис\" (/stream-deck/); ефір (\"посеред ефіру\", \"просто в ефірі\"); з телефона, genitive in -а (/stream-deck/, homepage); зі Stream Deck (/stream-deck/); клавіша; застосунок/застосунків and \"одночасно в кілька застосунків\" (/virtual-camera/: \"Вивід у кілька застосунків\", \"одночасно\"); драйвер (/virtual-camera/); проєкт; звук; збій (/multistreaming/: \"при збоях\"); перезапуск (/virtual-camera/). Register is formal plural imperative (Обирайте, Перемикайтеся, so here Ведіть, перемикайте, запускайте). Version strings are unchanged. In the sub-line I wrote \"у v11.0.11\" rather than \"в v11.0.11\" to avoid \"в v\". Card 4 says \"менше зайвої обробки\" because the release notes say \"unnecessary processing\". This matches the facts and does not strengthen the claim. No files edited."
+  },
+  "rv": {
+   "sec_p": "Зосереджені на тому, про що справді просили стрімери — нове у v11.0.11, а також найкраще з v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control <span style=\"color:var(--text-sub);font-weight:400\">— дистанційне керування</span>",
+     "p": "Ведіть ефір з телефона через SplitCam Remote: перемикайте сцени, запускайте й зупиняйте трансляцію та запис, регулюйте звук і керуйте джерелами, не торкаючись клавіатури."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras <span style=\"color:var(--text-sub);font-weight:400\">— горизонтальна й вертикальна віртуальні камери</span>",
+     "p": "У Windows 11 дві нові віртуальні камери окремо передають горизонтальну й вертикальну картинку — одночасно в кілька застосунків. У Windows 10 з'явилася окрема вертикальна камера для застосунків на DirectShow, а на Windows on ARM камери працюють нативно."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck <span style=\"color:var(--text-sub);font-weight:400\">— повтори з телефона чи зі Stream Deck</span>",
+     "p": "Запускайте миттєвий повтор із SplitCam Remote або клавішею Stream Deck. Джерело повторів зберігає останні 5–10 секунд сцени й тепер працює як на горизонтальному, так і на вертикальному полотні."
+    },
+    {
+     "h": "Smoother, Safer Sessions <span style=\"color:var(--text-sub);font-weight:400\">— плавніша й надійніша робота</span>",
+     "p": "Плавніше відео й менше зайвої обробки, поки віртуальні камери не використовуються. Якщо графічний драйвер дає збій, SplitCam зберігає ваш проєкт перед перезапуском, а вбудовані звіти про збої допомагають знайти й усунути причину."
+    }
+   ],
+   "changes": [
+    {
+     "was": "Windows 10 отримує окрему вертикальну камеру для застосунків на DirectShow",
+     "now": "У Windows 10 з'явилася окрема вертикальна камера для застосунків на DirectShow",
+     "why": "\"Windows 10 отримує\" is a calque of English \"gets\". The new wording is the natural Ukrainian way to announce a feature, and it mirrors the \"У Windows 11 …\" construction earlier in the same sentence. The facts are unchanged."
+    },
+    {
+     "was": "— плавніші й надійніші сесії",
+     "now": "— плавніша й надійніша робота",
+     "why": "\"сесії\" copies English \"sessions\". Ukrainian streamers don't use it that way, and it appears nowhere on the uk pages. The card covers the virtual cameras as well as the broadcast, so \"робота\" fits better than \"ефіри\" or \"стріми\"."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "ru",
+  "tr": {
+   "sec_p": "Сделано ровно то, о чём просили стримеры: новое в v11.0.11 и лучшее из v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control <span style=\"color:var(--text-sub);font-weight:500\">— управление с телефона</span>",
+     "p": "Ведите эфир с телефона через SplitCam Remote: переключайте сцены, запускайте и останавливайте трансляцию и запись, регулируйте звук и управляйте источниками, не касаясь клавиатуры."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras <span style=\"color:var(--text-sub);font-weight:500\">— горизонтальная и вертикальная виртуальные камеры</span>",
+     "p": "В Windows 11 две новые виртуальные камеры отдают горизонтальное и вертикальное видео раздельно, причём сразу в несколько приложений. В Windows 10 появилась вертикальная камера для приложений на DirectShow, а на ARM-версии Windows виртуальные камеры работают нативно."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck <span style=\"color:var(--text-sub);font-weight:500\">— мгновенный повтор с телефона или со Stream Deck</span>",
+     "p": "Запускайте мгновенный повтор из SplitCam Remote или кнопкой Stream Deck. Источник Replay захватывает последние 5–10 секунд сцены и теперь работает и на горизонтальном, и на вертикальном холсте."
+    },
+    {
+     "h": "Smoother, Safer Sessions <span style=\"color:var(--text-sub);font-weight:500\">— плавнее и надёжнее</span>",
+     "p": "Более плавное видео и меньше лишней обработки, пока виртуальные камеры простаивают. При сбое видеодрайвера SplitCam сохраняет ваш проект перед перезапуском, а встроенные отчёты о сбоях помогают найти и устранить причину."
+    }
+   ],
+   "convention": "ru keeps the English feature name as the title, followed by a Russian gloss in <span style=\"color:var(--text-sub);font-weight:500\">— …</span> (like the existing 'Replay — мгновенный повтор' and 'Virtual Camera Routing — маршрутизация виртуальной камеры'). I used this for all four titles and translated none of the English names. The sec_p keeps the opening of the current sub-line ('Сделано ровно то, о чём просили стримеры'). The copy addresses the reader with plural/formal 'вы' in the imperative (Ведите, Запускайте), as the page already does. Terms reused from the site: виртуальная камера; сцены; источники; холст (горизонтальный/вертикальный); эфир / трансляция и запись, from the stream-deck page's 'запускает и останавливает трансляцию и запись'; звук; телефон; 'отдают … видео', from the virtual-camera page's 'SplitCam будет отдавать вертикальное видео'; 'сразу в несколько приложений'; 'со Stream Deck', from the stream-deck page; 'Источник Replay', as the stream-deck page names the Replay source, plus 'мгновенный повтор' and 'захватывает последние 5–10 секунд' from the existing Replay card; сбой / отчёты о сбоях; драйвер (as видеодрайвер). Untranslated: SplitCam, SplitCam Remote, Stream Deck, Windows 11, Windows 10, DirectShow, ARM, v11.0.11, v10.9.2. The sub-line and descriptions contain no HTML."
+  },
+  "rv": {
+   "sec_p": "Сделано ровно то, о чём просили стримеры: новое в v11.0.11 и лучшее из v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control <span style=\"color:var(--text-sub);font-weight:500\">— управление с телефона</span>",
+     "p": "Ведите эфир с телефона через SplitCam Remote: переключайте сцены, запускайте и останавливайте трансляцию и запись, регулируйте звук и управляйте источниками, не касаясь клавиатуры."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras <span style=\"color:var(--text-sub);font-weight:500\">— горизонтальная и вертикальная виртуальные камеры</span>",
+     "p": "В Windows 11 две новые виртуальные камеры отдают горизонтальное и вертикальное видео раздельно, причём сразу в несколько приложений. В Windows 10 появилась вертикальная камера для приложений на DirectShow, а в Windows для ARM виртуальные камеры работают нативно."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck <span style=\"color:var(--text-sub);font-weight:500\">— мгновенный повтор с телефона или со Stream Deck</span>",
+     "p": "Запускайте мгновенный повтор из SplitCam Remote или кнопкой Stream Deck. Источник Replay захватывает последние 5–10 секунд сцены и теперь работает и на горизонтальном, и на вертикальном холсте."
+    },
+    {
+     "h": "Smoother, Safer Sessions <span style=\"color:var(--text-sub);font-weight:500\">— плавнее и надёжнее</span>",
+     "p": "Более плавное видео и меньше лишней обработки, пока виртуальные камеры простаивают. При сбое видеодрайвера SplitCam сохраняет ваш проект перед перезапуском, а встроенные отчёты о сбоях помогают найти и устранить причину."
+    }
+   ],
+   "changes": [
+    {
+     "was": "а на ARM-версии Windows виртуальные камеры работают нативно",
+     "now": "а в Windows для ARM виртуальные камеры работают нативно",
+     "why": "«на версии» звучит неестественно, по-русски говорят «в версии». «В Windows для ARM» к тому же повторяет конструкцию из того же абзаца («В Windows 11», «В Windows 10»)."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "it",
+  "tr": {
+   "sec_p": "Concentrati su ciò che gli streamer hanno davvero chiesto — le novità della v11.0.11, più il meglio della v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Guida la trasmissione dal telefono con SplitCam Remote: cambia le scene, avvia o ferma diretta e registrazione, regola l'audio e gestisci le fonti senza toccare la tastiera."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Su Windows 11 due nuove webcam virtuali forniscono separatamente l'uscita orizzontale e quella verticale, a più app contemporaneamente. Windows 10 ottiene una webcam virtuale verticale dedicata per le app DirectShow, e su Windows ARM funzionano in modo nativo."
+    },
+    {
+     "h": "Replay da telefono o Stream Deck",
+     "p": "Lancia un replay istantaneo da SplitCam Remote o da un tasto di Stream Deck. La fonte Replay conserva gli ultimi 5–10 secondi di una scena e ora funziona sia sulla tela orizzontale sia su quella verticale."
+    },
+    {
+     "h": "Sessioni più fluide e sicure",
+     "p": "Video più fluido e meno elaborazione quando le webcam virtuali non sono in uso. Se il driver grafico va in errore, SplitCam salva il progetto prima del riavvio, e la segnalazione integrata dei crash aiuta a individuarne e risolverne la causa."
+    }
+   ],
+   "convention": "In the it whats-new block, titles keep the English feature or product name as-is, with no gloss span (Restream Server Picker, Vertical Canvas, Replay Source, 3D Transform Effect, Virtual Camera Routing). Only plain connecting words are Italian, as in \"Luma Wipe, Slide e Swipe\". I applied the same rule to all four new titles. Feature names stay English: \"Remote Control\" and \"Horizontal + Vertical Virtual Cameras\". Where a title is ordinary wording, the words are Italian: \"Replay da telefono o Stream Deck\" keeps Replay and Stream Deck, and \"Sessioni più fluide e sicure\" has no feature name in it. One thing to check: the it stream-deck page calls the app setting \"Controllo remoto\", while this block keeps English names, so the title uses \"Remote Control\". The page uses informal \"tu\", and the translation does too (Guida, cambia, gestisci, Lancia). The sub-line reuses the existing opening \"Concentrati su ciò che gli streamer hanno davvero chiesto\". Terms reused from the homepage and the virtual-camera, multistreaming and stream-deck pages: webcam virtuale; scena/scene; fonte/fonti and \"fonte Replay\" (the homepage uses \"fonte\", not \"sorgente\"); tela orizzontale/verticale; diretta and trasmissione for stream; registrazione; telefono; tasto di Stream Deck; più app contemporaneamente; driver; replay istantaneo. Kept verbatim: SplitCam, SplitCam Remote, Stream Deck, Windows 11/10, DirectShow, ARM, v11.0.11 and v10.9.2. \"Windows on ARM\" is shortened to \"Windows ARM\" so that \"su Windows su ARM\" does not repeat \"su\"."
+  },
+  "rv": {
+   "sec_p": "Concentrati su ciò che gli streamer hanno davvero chiesto — le novità della v11.0.11 e il meglio della v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Comanda la trasmissione dal telefono con SplitCam Remote: cambia le scene, avvia e ferma diretta e registrazione, regola l'audio e gestisci le fonti senza toccare la tastiera."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Su Windows 11 arrivano due nuove webcam virtuali con uscite orizzontale e verticale separate, che più app possono usare contemporaneamente. Su Windows 10 c'è una webcam virtuale verticale dedicata alle app DirectShow, e su Windows ARM funzionano in modo nativo."
+    },
+    {
+     "h": "Replay dal telefono o dallo Stream Deck",
+     "p": "Lancia un replay istantaneo da SplitCam Remote o da un tasto dello Stream Deck. La fonte Replay conserva gli ultimi 5–10 secondi di una scena e ora funziona sia sulla tela orizzontale sia su quella verticale."
+    },
+    {
+     "h": "Sessioni più fluide e sicure",
+     "p": "Video più fluido e meno elaborazione quando le webcam virtuali non sono in uso. Se il driver grafico va in errore, SplitCam salva il progetto prima del riavvio, e la segnalazione integrata dei crash aiuta a individuarne e correggerne la causa."
+    }
+   ],
+   "changes": [
+    {
+     "was": "le novità della v11.0.11, più il meglio della v10.9.2",
+     "now": "le novità della v11.0.11 e il meglio della v10.9.2",
+     "why": "\"più\" copies the English \"plus\". In Italian prose \"e\" is the natural connector."
+    },
+    {
+     "was": "Guida la trasmissione dal telefono",
+     "now": "Comanda la trasmissione dal telefono",
+     "why": "\"Guidare\" for \"run\" is a calque. The it stream-deck page already says \"SplitCam Remote comanda SplitCam\" and \"comandare soltanto la tua diretta\"."
+    },
+    {
+     "was": "avvia o ferma diretta e registrazione",
+     "now": "avvia e ferma diretta e registrazione",
+     "why": "The stream-deck page uses this exact wording for SplitCam Remote and Stream Deck (\"avvia e ferma diretta e registrazione\"), so the page stays consistent."
+    },
+    {
+     "was": "due nuove webcam virtuali forniscono separatamente l'uscita orizzontale e quella verticale, a più app contemporaneamente",
+     "now": "arrivano due nuove webcam virtuali con uscite orizzontale e verticale separate, che più app possono usare contemporaneamente",
+     "why": "\"forniscono ... a più app\" is clumsy. The new wording states both facts clearly: the outputs are separate and several apps can use them at the same time."
+    },
+    {
+     "was": "Windows 10 ottiene una webcam virtuale verticale dedicata per le app DirectShow",
+     "now": "Su Windows 10 c'è una webcam virtuale verticale dedicata alle app DirectShow",
+     "why": "\"ottiene\" is a calque of \"gets\". Italian uses \"dedicata a\", not \"dedicata per\". The sentence now matches the \"Su Windows 11\" structure."
+    },
+    {
+     "was": "Replay da telefono o Stream Deck",
+     "now": "Replay dal telefono o dallo Stream Deck",
+     "why": "Italian needs the articulated prepositions here. The site already writes \"lo Stream Deck\"."
+    },
+    {
+     "was": "da un tasto di Stream Deck",
+     "now": "da un tasto dello Stream Deck",
+     "why": "The article is added to match the title and the site's own usage (\"lo Stream Deck\")."
+    },
+    {
+     "was": "aiuta a individuarne e risolverne la causa",
+     "now": "aiuta a individuarne e correggerne la causa",
+     "why": "In Italian you fix a cause (\"correggere\"), you don't \"resolve\" it. The meaning stays the same: helps find and fix failures."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "vi",
+  "tr": {
+   "sec_p": "Tập trung vào đúng thứ streamer yêu cầu — những gì mới trong v11.0.11, cùng những điểm nổi bật nhất của v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Điều khiển buổi phát từ điện thoại bằng SplitCam Remote: chuyển cảnh, bắt đầu hoặc dừng luồng phát và ghi hình, chỉnh âm thanh và quản lý nguồn mà không cần chạm vào bàn phím."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Trên Windows 11, hai camera ảo mới xuất riêng hình ngang và hình dọc, tới nhiều ứng dụng cùng lúc. Windows 10 có thêm camera ảo dọc cho các ứng dụng dùng DirectShow, còn trên Windows ARM, camera ảo chạy gốc."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Kích hoạt phát lại tức thì từ SplitCam Remote hoặc bằng một phím Stream Deck. Nguồn Replay giữ lại 5–10 giây cuối của một cảnh và giờ hoạt động trên cả khung ngang lẫn khung dọc."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Video mượt hơn và bớt xử lý thừa khi camera ảo không được dùng. Nếu driver đồ họa gặp lỗi, SplitCam lưu dự án của bạn trước khi khởi động lại, còn tính năng báo cáo sự cố tích hợp giúp tìm ra nguyên nhân để khắc phục."
+    }
+   ],
+   "convention": "vi keeps all six existing whats-new titles as plain English feature names with no gloss span and no parentheses (Restream Server Picker, Vertical Canvas, Replay Source, 3D Transform Effect, Luma Wipe, Slide & Swipe, Virtual Camera Routing), so the four new titles also stay in English, unchanged. I took these terms from vi/index.html, vi/virtual-camera/, vi/multistreaming/ and vi/stream-deck/: camera ảo (virtual camera), cảnh (scene), nguồn (source), nguồn Replay (the Replay source, lowercase nguồn plus English Replay, as in the page body), khung ngang / khung dọc (horizontal/vertical canvas, from 'Khung dọc và ngang' and 'khung vẽ'), luồng phát / ghi hình (streaming / recording, from the stream-deck page), điện thoại (phone), phím tắt (hotkey), driver (kept in English, as on the virtual-camera page), đồ họa (graphics), dự án (project, as in 'nhập dự án OBS'), ứng dụng (app), and 'không cần chạm vào bàn phím' (without touching the keyboard, as on the stream-deck page). The site never translates 'crash', so I used the standard term báo cáo sự cố (crash reporting). Tone matches the page: neutral informal 'bạn'. SplitCam, SplitCam Remote, Stream Deck, Windows 11/10, DirectShow, ARM, v11.0.11 and v10.9.2 are left as written. I edited no files."
+  },
+  "rv": {
+   "sec_p": "Tập trung vào đúng thứ streamer yêu cầu — những gì mới trong v11.0.11, cùng những điểm nổi bật nhất của v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Điều khiển buổi phát từ điện thoại bằng SplitCam Remote: chuyển cảnh, bắt đầu hoặc dừng luồng phát và ghi hình, chỉnh âm thanh và quản lý nguồn mà không cần chạm vào bàn phím."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Trên Windows 11, hai camera ảo mới xuất riêng hình ngang và hình dọc tới nhiều ứng dụng cùng lúc. Windows 10 có thêm camera ảo dọc cho các ứng dụng dùng DirectShow, còn Windows trên ARM có camera ảo gốc."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Kích hoạt phát lại tức thì từ SplitCam Remote hoặc bằng một phím Stream Deck. Nguồn Replay giữ lại 5–10 giây cuối của một cảnh và giờ đây hoạt động trên cả khung ngang lẫn khung dọc."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Video mượt hơn và bớt xử lý thừa khi không dùng camera ảo. Nếu driver đồ họa gặp lỗi, SplitCam lưu dự án của bạn trước khi khởi động lại, còn tính năng báo cáo sự cố tích hợp sẵn giúp tìm ra nguyên nhân để khắc phục."
+    }
+   ],
+   "changes": [
+    {
+     "was": "xuất riêng hình ngang và hình dọc, tới nhiều ứng dụng cùng lúc",
+     "now": "xuất riêng hình ngang và hình dọc tới nhiều ứng dụng cùng lúc",
+     "why": "The comma splits the verb from its destination. That follows English punctuation, not Vietnamese."
+    },
+    {
+     "was": "còn trên Windows ARM, camera ảo chạy gốc.",
+     "now": "còn Windows trên ARM có camera ảo gốc.",
+     "why": "'chạy gốc' is a calque of 'runs natively'. The vi virtual-camera page already says 'camera ảo gốc cho macOS', so this reuses that phrase. 'Windows trên ARM' is the natural way to name the platform. The claim is unchanged: native components for ARM64."
+    },
+    {
+     "was": "và giờ hoạt động trên cả khung ngang lẫn khung dọc",
+     "now": "và giờ đây hoạt động trên cả khung ngang lẫn khung dọc",
+     "why": "A bare 'giờ' sounds like casual speech. 'giờ đây' is the usual word for 'now' in release copy."
+    },
+    {
+     "was": "khi camera ảo không được dùng",
+     "now": "khi không dùng camera ảo",
+     "why": "The passive 'không được dùng' copies English 'are not in use'. The active form is how Vietnamese says it."
+    },
+    {
+     "was": "tính năng báo cáo sự cố tích hợp",
+     "now": "tính năng báo cáo sự cố tích hợp sẵn",
+     "why": "A bare 'tích hợp' after 'sự cố' can be misread as describing the crash. 'tích hợp sẵn' clearly means 'built-in' and is already used on the vi multistreaming page ('khung dọc tích hợp sẵn')."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "id",
+  "tr": {
+   "sec_p": "Berfokus pada apa yang benar-benar diminta streamer — yang baru di v11.0.11, plus yang terbaik dari v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Kendalikan siaran dari HP kamu dengan SplitCam Remote: ganti scene, mulai atau hentikan stream dan rekaman, atur audio, dan kelola source tanpa menyentuh keyboard."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Di Windows 11, dua kamera virtual baru mengirim gambar lanskap dan potret secara terpisah, ke beberapa aplikasi sekaligus. Windows 10 mendapat kamera virtual vertikal untuk aplikasi DirectShow, dan di Windows on ARM kamera virtual berjalan secara native."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Picu replay instan dari SplitCam Remote atau tombol Stream Deck. Replay Source menyimpan 5–10 detik terakhir dari sebuah scene dan kini berfungsi di canvas horizontal maupun vertikal."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Video lebih mulus, dan pemrosesan lebih ringan saat kamera virtual tidak dipakai. Jika driver grafis gagal, SplitCam menyimpan proyek kamu sebelum memulai ulang, dan pelaporan crash bawaan membantu memperbaiki penyebabnya."
+    }
+   ],
+   "convention": "id block keeps card titles in English with no gloss and no parentheses (existing: \"Restream Server Picker\", \"Vertical Canvas\", \"Replay Source\", \"3D Transform Effect\", \"Virtual Camera Routing\"), so all four new titles stay in English. Descriptions use informal \"kamu\". Terms reused from the id homepage, stream-deck, virtual-camera and multistreaming pages: kamera virtual, scene, source (homepage form; stream-deck also uses it), Replay Source (how the homepage names the source), canvas horizontal/vertikal (whats-new block form; other pages write \"kanvas\"), lanskap/potret, stream, siaran, rekaman, \"mulai atau hentikan\" (stream-deck page), HP (homepage and stream-deck page), tombol Stream Deck, \"tanpa menyentuh keyboard\" (stream-deck page), driver, aplikasi, sekaligus. \"crash\" is not used anywhere in id yet, so I used the common loanword (\"pelaporan crash\"). \"native\" is also a loanword."
+  },
+  "rv": {
+   "sec_p": "Berfokus pada apa yang benar-benar diminta streamer — yang baru di v11.0.11, plus yang terbaik dari v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Kendalikan siaran dari HP kamu dengan SplitCam Remote: ganti scene, mulai atau hentikan streaming dan rekaman, atur audio, dan kelola source tanpa menyentuh keyboard."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Di Windows 11, dua kamera virtual baru mengirim gambar lanskap dan potret secara terpisah, ke beberapa aplikasi sekaligus. Windows 10 mendapat kamera virtual vertikal untuk aplikasi DirectShow, dan di Windows on ARM kamera virtual berjalan secara native."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Putar replay instan dari SplitCam Remote atau tombol Stream Deck. Replay Source menyimpan 5–10 detik terakhir dari sebuah scene dan kini berfungsi di canvas horizontal maupun vertikal."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Video lebih mulus dan pemrosesan lebih ringan saat kamera virtual tidak dipakai. Jika driver grafis error, SplitCam menyimpan proyek kamu sebelum memulai ulang, dan pelaporan crash bawaan membantu menemukan dan memperbaiki penyebabnya."
+    }
+   ],
+   "changes": [
+    {
+     "was": "mulai atau hentikan stream dan rekaman",
+     "now": "mulai atau hentikan streaming dan rekaman",
+     "why": "The id stream-deck page says \"memulai dan menghentikan streaming serta rekaman\", and \"streaming\" is the word used for the activity. Bare \"stream\" here reads like a noun copied from English."
+    },
+    {
+     "was": "Picu replay instan",
+     "now": "Putar replay instan",
+     "why": "\"Picu\" is a literal copy of English \"trigger/fire\" and streamers don't say it. The homepage already says \"putar ulang 10 detik terakhir lewat hotkey\", so \"putar\" is the page's own verb."
+    },
+    {
+     "was": "Video lebih mulus, dan pemrosesan",
+     "now": "Video lebih mulus dan pemrosesan",
+     "why": "Indonesian doesn't put a comma before \"dan\" when it joins two short noun phrases. The comma was carried over from the English."
+    },
+    {
+     "was": "Jika driver grafis gagal",
+     "now": "Jika driver grafis error",
+     "why": "\"Driver gagal\" reads as translated. Streamers say a driver \"error\"s, which fits the informal \"kamu\" register. It describes the same failure and makes it no bigger."
+    },
+    {
+     "was": "membantu memperbaiki penyebabnya",
+     "now": "membantu menemukan dan memperbaiki penyebabnya",
+     "why": "The release notes say crash reporting helps \"diagnose and resolve\" failures. The draft left out the diagnose part. \"Menemukan\" puts it back without claiming more than the notes do."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "nl",
+  "tr": {
+   "sec_p": "Gericht op wat streamers echt vroegen — wat er nieuw is in v11.0.11, plus het beste van v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Bestuur je stream vanaf je telefoon met SplitCam Remote: wissel van scène, start of stop de stream en de opname, regel het geluid en beheer je bronnen zonder het toetsenbord aan te raken."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Op Windows 11 sturen twee nieuwe virtuele camera's liggend en staand beeld apart door, naar meerdere apps tegelijk. Windows 10 krijgt een verticale camera voor DirectShow-apps, en onder Windows op ARM draaien ze native."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Vuur een directe replay af vanuit SplitCam Remote of met een Stream Deck-toets. De Replay-bron bewaart de laatste 5–10 seconden van een scène en werkt nu op zowel het horizontale als het verticale canvas."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Vloeiender beeld en minder verwerking zolang de virtuele camera's niet in gebruik zijn. Valt de grafische driver uit, dan bewaart SplitCam je project voordat het opnieuw opstart, en ingebouwde crashrapporten helpen de oorzaak op te sporen en te verhelpen."
+    }
+   ],
+   "convention": "nl keeps every card title in plain English with no gloss span and no parenthetical: all six current titles (Restream Server Picker, Vertical Canvas, Replay Source, 3D Transform Effect, Luma Wipe, Slide & Swipe, Virtual Camera Routing) are English. So the four new titles stay English too. \"Remote Control\" also matches the settings tab name the nl stream-deck page already uses. Descriptions use informal \"je\". Terms reused from nl pages: virtuele camera('s); scène / wissel van scène; bronnen; Replay-bron (the body-text name for the Replay source); liggend / staand (16:9 / 9:16); horizontale / verticale + canvas; de stream en de opname (from the stream-deck page); regel het geluid and het toetsenbord aanraken (products page); Stream Deck-toets and \"vuur ... af\" (stream-deck page); driver (virtual-camera page); crashrapporten (privacy-policy page). \"Windows on ARM\" is written \"Windows op ARM\", with ARM kept."
+  },
+  "rv": {
+   "sec_p": "Gericht op wat streamers echt vroegen — wat er nieuw is in v11.0.11, plus het beste van v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Bestuur je stream vanaf je telefoon met SplitCam Remote: wissel van scène, start of stop de stream en de opname, regel het geluid en beheer je bronnen zonder het toetsenbord aan te raken."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Op Windows 11 sturen twee nieuwe virtuele camera's liggend en staand beeld apart door, naar meerdere apps tegelijk. Windows 10 krijgt een verticale camera voor DirectShow-apps, en onder Windows op ARM draaien de virtuele camera's native."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Vuur een directe replay af vanuit SplitCam Remote of met een Stream Deck-toets. De Replay-bron bewaart de laatste 5–10 seconden van een scène en werkt nu op zowel het horizontale als het verticale canvas."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Vloeiender beeld en minder verwerking zolang de virtuele camera's niet in gebruik zijn. Valt de grafische driver uit, dan slaat SplitCam je project op voordat het opnieuw opstart, en ingebouwde crashrapporten helpen de oorzaak te vinden en het probleem op te lossen."
+    }
+   ],
+   "changes": [
+    {
+     "was": "en onder Windows op ARM draaien ze native.",
+     "now": "en onder Windows op ARM draaien de virtuele camera's native.",
+     "why": "Het dichtstbijzijnde meervoud vóór 'ze' is 'DirectShow-apps', dus de zin leest alsof de apps native draaien. Volgens de release notes gaat het om de onderdelen van de virtuele camera. Door het zelfstandig naamwoord te noemen is de dubbelzinnigheid weg."
+    },
+    {
+     "was": "dan bewaart SplitCam je project",
+     "now": "dan slaat SplitCam je project op",
+     "why": "In Nederlandse software heet 'save' altijd 'opslaan' (knop Opslaan). 'Bewaren' leest hier minder als een programmafunctie."
+    },
+    {
+     "was": "ingebouwde crashrapporten helpen de oorzaak op te sporen en te verhelpen",
+     "now": "ingebouwde crashrapporten helpen de oorzaak te vinden en het probleem op te lossen",
+     "why": "Je verhelpt een probleem of fout, niet een oorzaak. De nieuwe zin sluit ook precies aan op het feit 'diagnose and resolve failures'. De term 'crashrapporten' blijft staan omdat de privacypagina hem al gebruikt."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "es",
+  "tr": {
+   "sec_p": "Centradas en lo que los streamers pidieron de verdad — lo nuevo de la v11.0.11 y lo mejor de la v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Control remoto: lleva el directo desde tu móvil con SplitCam Remote — cambia de escena, inicia o detén la transmisión y la grabación, ajusta el audio y gestiona las fuentes sin tocar el teclado."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Cámaras virtuales horizontal y vertical: en Windows 11, dos cámaras nuevas envían la imagen horizontal y la vertical por separado, a varias apps a la vez. Windows 10 suma una cámara vertical para las apps con DirectShow, y Windows en ARM las ejecuta de forma nativa."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Repetición desde el móvil o Stream Deck: lanza una repetición instantánea con SplitCam Remote o con una tecla de Stream Deck. La fuente de repetición captura los últimos 5–10 segundos de una escena y ahora funciona tanto en el lienzo horizontal como en el vertical."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Sesiones más fluidas y seguras: video más suave y menos procesamiento cuando las cámaras virtuales no están en uso. Si el driver gráfico falla, SplitCam guarda tu proyecto antes de reiniciarse, y los informes de fallos integrados ayudan a dar con la causa y corregirla."
+    }
+   ],
+   "convention": "es block keeps the English feature name as the card title verbatim (Restream Server Picker, Vertical Canvas, Replay Source, 3D Transform, Virtual Camera Routing; only 'Luma Wipe, Slide y Swipe' swaps the conjunction), with no gloss span in the title; instead each description opens with a Spanish rendering of the title followed by a colon ('Lienzo vertical: ...', 'Fuente de repetición: ...'). Applied the same to all four new cards: English titles, Spanish gloss + colon at the start of each p. The 'Control remoto' gloss matches the app's settings tab name used on es/stream-deck/. sec_p keeps the feminine 'Centradas' that agrees with the heading 'Seis mejoras'. Terms reused from es homepage, /virtual-camera/, /multistreaming/, /stream-deck/: cámara(s) virtual(es), escena, fuente, lienzo horizontal/vertical, directo / transmisión, grabación, fuente de repetición (the Replay source as this block names it), tecla (Stream Deck key), móvil, apps, a la vez, video (spelled without an accent, as the site does), driver (as in 'driver de cámara virtual'), proyecto. Informal tú register kept (lleva, cambia, inicia o detén, ajusta, gestiona, lanza, tu proyecto). Version strings v11.0.11 and v10.9.2 are unchanged. No HTML in any string."
+  },
+  "rv": {
+   "sec_p": "Centradas en lo que los streamers pidieron de verdad — lo nuevo de la v11.0.11 y lo mejor de la v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Control remoto: lleva el directo desde tu móvil con SplitCam Remote — cambia de escena, inicia o detén la transmisión y la grabación, ajusta el audio y gestiona las fuentes sin tocar el teclado."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Cámaras virtuales horizontal y vertical: en Windows 11, dos cámaras nuevas envían la imagen horizontal y la vertical por separado, a varias apps a la vez. Windows 10 suma una cámara virtual vertical aparte para las apps que usan DirectShow, y Windows en ARM las ejecuta de forma nativa."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "Repetición desde el móvil o Stream Deck: lanza una repetición instantánea con SplitCam Remote o con una tecla de Stream Deck. La fuente de repetición captura los últimos 5–10 segundos de una escena y ahora funciona tanto en el lienzo horizontal como en el vertical."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "Sesiones más fluidas y seguras: video más suave y menos procesamiento cuando las cámaras virtuales no están en uso. Si el driver gráfico falla, SplitCam guarda tu proyecto antes de reiniciarse, y los informes de fallos integrados ayudan a dar con la causa y corregirla."
+    }
+   ],
+   "changes": [
+    {
+     "was": "Windows 10 suma una cámara vertical para las apps con DirectShow",
+     "now": "Windows 10 suma una cámara virtual vertical aparte para las apps que usan DirectShow",
+     "why": "The fact is a separate vertical virtual camera. Saying just \"cámara\" could read as a physical camera, and \"aparte\" carries the English \"separate\". \"Apps con DirectShow\" is vague, while \"apps que usan DirectShow\" is how the release notes put it (\"applications using DirectShow\")."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "ro",
+  "tr": {
+   "sec_p": "Concentrate pe ce au cerut chiar streamerii — noutățile din v11.0.11, plus cele mai bune din v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control <span style=\"color:var(--text-sub);font-weight:500\">— control de la distanță</span>",
+     "p": "Controlezi stream-ul de pe telefon cu SplitCam Remote: schimbi scenele, pornești sau oprești transmisia și înregistrarea, ajustezi sunetul și gestionezi sursele fără să atingi tastatura."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras <span style=\"color:var(--text-sub);font-weight:500\">— camere virtuale orizontale și verticale</span>",
+     "p": "Pe Windows 11, două camere virtuale noi trimit separat imaginea orizontală și cea verticală, către mai multe aplicații deodată. Windows 10 primește o cameră virtuală verticală pentru aplicațiile DirectShow, iar pe Windows pentru ARM camerele rulează nativ."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck <span style=\"color:var(--text-sub);font-weight:500\">— reluare de pe telefon sau de pe Stream Deck</span>",
+     "p": "Declanșezi o reluare instant din SplitCam Remote sau cu o tastă de pe Stream Deck. Sursa Replay păstrează ultimele 5–10 secunde dintr-o scenă și acum funcționează atât pe pânza orizontală, cât și pe cea verticală."
+    },
+    {
+     "h": "Smoother, Safer Sessions <span style=\"color:var(--text-sub);font-weight:500\">— sesiuni mai fluide și mai sigure</span>",
+     "p": "Imagine mai fluidă și mai puțină procesare cât timp camerele virtuale nu sunt folosite. Dacă driverul grafic cedează, SplitCam îți salvează proiectul înainte să repornească, iar rapoartele de crash integrate ajută la depistarea și remedierea cauzei."
+    }
+   ],
+   "convention": "ro keeps the English feature name in the title and adds a Romanian gloss in <span style=\"color:var(--text-sub);font-weight:500\">— …</span> (as in the existing \"Vertical Canvas — pânză verticală\", \"Replay Source — sursă de reluare\"); informal \"tu\" register with 2nd-person verbs (Comuți, Capturezi, Alegi). Reused terms: cameră/camere virtuală(e), scenă/scene, sursă/surse, sursa Replay, pânza orizontală/verticală, stream-ul, transmisie, înregistrare, tastă (Stream Deck page), tastatură, telefon, driver, SplitCam Remote; \"Control de la distanță\" matches the Settings tab name used on ro/stream-deck; sec_p keeps the existing opening \"Concentrate pe ce au cerut chiar streamerii —\" (agrees with feminine \"îmbunătățiri\" in the heading)."
+  },
+  "rv": {
+   "sec_p": "Concentrate pe ce au cerut chiar streamerii — noutățile din v11.0.11, plus cele mai bune din v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control <span style=\"color:var(--text-sub);font-weight:500\">— control de la distanță</span>",
+     "p": "Controlezi stream-ul de pe telefon cu SplitCam Remote: schimbi scenele, pornești sau oprești transmisia și înregistrarea, ajustezi sunetul și gestionezi sursele fără să atingi tastatura."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras <span style=\"color:var(--text-sub);font-weight:500\">— camere virtuale orizontale și verticale</span>",
+     "p": "Pe Windows 11, două camere virtuale noi trimit separat imaginea orizontală și pe cea verticală către mai multe aplicații deodată. Windows 10 primește o cameră virtuală verticală pentru aplicațiile care folosesc DirectShow, iar pe Windows pentru ARM camerele virtuale rulează nativ."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck <span style=\"color:var(--text-sub);font-weight:500\">— reluare de pe telefon sau de pe Stream Deck</span>",
+     "p": "Declanșezi o reluare instant din SplitCam Remote sau cu o tastă de pe Stream Deck. Sursa Replay păstrează ultimele 5–10 secunde dintr-o scenă și acum funcționează atât pe pânza orizontală, cât și pe cea verticală."
+    },
+    {
+     "h": "Smoother, Safer Sessions <span style=\"color:var(--text-sub);font-weight:500\">— sesiuni mai fluide și mai sigure</span>",
+     "p": "Imagine mai fluidă și, cât timp camerele virtuale nu sunt folosite, mai puțină procesare. Dacă driverul grafic cedează, SplitCam îți salvează proiectul înainte să repornească, iar rapoartele de crash integrate ajută la depistarea și remedierea cauzei."
+    }
+   ],
+   "changes": [
+    {
+     "was": "trimit separat imaginea orizontală și cea verticală, către mai multe aplicații deodată",
+     "now": "trimit separat imaginea orizontală și pe cea verticală către mai multe aplicații deodată",
+     "why": "Grammar: the pronoun „cea” is a direct object here, so it needs „pe” in front of it (imaginea orizontală și pe cea verticală). The comma before „către” broke the verb from its complement."
+    },
+    {
+     "was": "pentru aplicațiile DirectShow",
+     "now": "pentru aplicațiile care folosesc DirectShow",
+     "why": "„aplicațiile DirectShow” copies the English noun-adjunct pattern. The release note says applications that use DirectShow, and the relative clause is the natural Romanian way to say it."
+    },
+    {
+     "was": "iar pe Windows pentru ARM camerele rulează nativ",
+     "now": "iar pe Windows pentru ARM camerele virtuale rulează nativ",
+     "why": "Makes clear these are the virtual cameras (the fact is native virtual-camera components) and not any camera. It also matches „cameră/camere virtuală(e)” used everywhere on the page."
+    },
+    {
+     "was": "Imagine mai fluidă și mai puțină procesare cât timp camerele virtuale nu sunt folosite.",
+     "now": "Imagine mai fluidă și, cât timp camerele virtuale nu sunt folosite, mai puțină procesare.",
+     "why": "Fact check: the smoother video is a general improvement. Only the reduced processing depends on the virtual cameras being unused. The old word order tied both to „cât timp…”, which made the smoother video sound conditional."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "hi",
+  "tr": {
+   "sec_p": "वही जो streamers ने सच में माँगा — v11.0.11 में क्या नया है, और साथ में v10.9.2 की सबसे अच्छी बातें.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "SplitCam Remote के साथ अपने phone से stream चलाइए: scenes switch कीजिए, streaming और recording start या stop कीजिए, audio adjust कीजिए और sources manage कीजिए — keyboard छुए बिना."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Windows 11 पर दो नई virtual cameras landscape और portrait को अलग-अलग भेजती हैं, एक साथ कई apps को. Windows 10 को DirectShow apps के लिए एक vertical camera मिलती है, और Windows on ARM पर ये natively चलती हैं."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "SplitCam Remote से या Stream Deck की एक key से instant replay चलाइए. Replay Source किसी scene के last 5–10 seconds रखता है और अब horizontal और vertical, दोनों canvases पर काम करता है."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "ज़्यादा smooth video, और virtual cameras use में न हों तो कम processing. Graphics driver fail हो जाए तो SplitCam restart होने से पहले आपका project save कर लेता है, और built-in crash reporting से वजह ढूँढकर ठीक करने में मदद मिलती है."
+    }
+   ],
+   "convention": "hi keeps card titles fully in English (all six existing titles are plain English feature names: Restream Server Picker, Vertical Canvas, Replay Source, etc.), with no gloss span and no parenthetical — so all four new titles stay English. Descriptions are Hinglish in formal आप register with -इए/-कीजिए imperatives (चुनिए, switch कीजिए), Western period at sentence end. Reused terms from hi/index.html, hi/virtual-camera/ and hi/multistreaming/: virtual camera (feminine, as in 'अपनी virtual camera' in this block and 'SplitCam की virtual camera ... कर देती है'), scene/scenes, source/sources (masculine), Replay Source (the source name as used in this block and in 'Replay Source — hotkey पर instant 5-10 second highlights'), horizontal/vertical canvas, stream, streaming, recording, phone, audio, apps, project (from 'OBS Studio projects'), driver (from 'virtual camera driver'), 'last 5–10 seconds' (same phrasing as the existing Replay Source card), landscape/portrait (used on the virtual-camera page). No existing Hindi word for crash on these pages, so 'crash reporting' stays English per the page's tech-term convention."
+  },
+  "rv": {
+   "sec_p": "वही जो streamers ने सच में माँगा — v11.0.11 में नया क्या है, और साथ में v10.9.2 की खास बातें.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "SplitCam Remote के ज़रिए अपने phone से stream चलाइए: scenes switch कीजिए, streaming और recording start या stop कीजिए, audio adjust कीजिए और sources manage कीजिए — keyboard छुए बिना."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras",
+     "p": "Windows 11 पर दो नई virtual cameras landscape और portrait video अलग-अलग भेजती हैं — एक साथ कई apps में. Windows 10 को DirectShow apps के लिए एक अलग vertical virtual camera मिलती है, और Windows on ARM पर ये natively चलती हैं."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck",
+     "p": "SplitCam Remote से या Stream Deck की एक key से instant replay चलाइए. Replay Source किसी scene के last 5–10 seconds रखता है और अब horizontal और vertical, दोनों canvases पर काम करता है."
+    },
+    {
+     "h": "Smoother, Safer Sessions",
+     "p": "ज़्यादा smooth video, और virtual cameras use में न हों तो कम processing. Graphics driver fail हो जाए तो SplitCam restart होने से पहले आपका project save कर लेता है, और built-in crash reporting से वजह ढूँढकर ठीक करने में मदद मिलती है."
+    }
+   ],
+   "changes": [
+    {
+     "was": "v11.0.11 में क्या नया है, और साथ में v10.9.2 की सबसे अच्छी बातें.",
+     "now": "v11.0.11 में नया क्या है, और साथ में v10.9.2 की खास बातें.",
+     "why": "The current sub-line in this block already says 'खास बातें' for highlights, so reusing it is better than the literal 'सबसे अच्छी बातें' (a calque of 'the best of'). 'नया क्या है' also works better as a heading-style phrase than the question word order."
+    },
+    {
+     "was": "SplitCam Remote के साथ अपने phone से stream चलाइए",
+     "now": "SplitCam Remote के ज़रिए अपने phone से stream चलाइए",
+     "why": "'के साथ' is a word-for-word copy of English 'with'. Here the app is the tool you control the stream through, so 'के ज़रिए' (by means of) is the natural Hindi."
+    },
+    {
+     "was": "landscape और portrait को अलग-अलग भेजती हैं, एक साथ कई apps को.",
+     "now": "landscape और portrait video अलग-अलग भेजती हैं — एक साथ कई apps में.",
+     "why": "The trailing 'एक साथ कई apps को' after a comma copies the English word order. The page already sends to a destination with 'में' ('Zoom, Teams या Meet में ... भेजिए'). Adding 'video' gives landscape/portrait a noun to describe instead of leaving them hanging."
+    },
+    {
+     "was": "Windows 10 को DirectShow apps के लिए एक vertical camera मिलती है",
+     "now": "Windows 10 को DirectShow apps के लिए एक अलग vertical virtual camera मिलती है",
+     "why": "The release notes say this is a SEPARATE vertical virtual camera. 'vertical camera' on its own could be read as a physical camera. 'अलग' comes from the facts and is not a new claim."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "ja",
+  "tr": {
+   "sec_p": "配信者が本当に求めていたものに集中 — v11.0.11 の新機能に、v10.9.2 の選りすぐりを加えました。",
+   "cards": [
+    {
+     "h": "Remote Control（リモートコントロール）",
+     "p": "SplitCam Remote でスマホから配信を操作。キーボードに触れずに、シーンの切り替え、配信と録画の開始・停止、音声の調整、ソースの管理ができます。"
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras（横型・縦型バーチャルカメラ）",
+     "p": "Windows 11 では、2つの新しいバーチャルカメラが横型と縦型の映像を別々に出力し、複数のアプリで同時に使えます。Windows 10 には DirectShow を使うアプリ向けの縦型カメラが加わり、Windows on ARM ではバーチャルカメラがネイティブで動作します。"
+    },
+    {
+     "h": "Replay from Phone or Stream Deck（スマホ・Stream Deck からリプレイ）",
+     "p": "SplitCam Remote や Stream Deck のキーから、即座にリプレイを再生。リプレイソースはシーンの直近5〜10秒を保持し、横型・縦型どちらのキャンバスでも動作するようになりました。"
+    },
+    {
+     "h": "Smoother, Safer Sessions（より滑らかで安心な配信）",
+     "p": "映像がより滑らかになり、バーチャルカメラを使っていないときの不要な処理も減りました。グラフィックドライバーに障害が起きても、SplitCam は再起動の前にプロジェクトを保存。内蔵のクラッシュレポートが、原因の特定と修正に役立ちます。"
+    }
+   ],
+   "convention": "ja keeps the English feature name followed by a Japanese gloss in full-width parentheses （…） directly in the title text, with no span (e.g. 'Restream Server Picker（中継サーバー選択）', 'Replay Source（リプレイソース）'). Polite です/ます register mixed with noun-ending phrases. Reused terms: バーチャルカメラ, シーン, ソース, キャンバス, 横型/縦型, 配信, 録画, 開始・停止 (from stream-deck page), リプレイソース, スマホ, 音声, ドライバー (virtual-camera page), 5〜10秒, 同時に, 複数のアプリ."
+  },
+  "rv": {
+   "sec_p": "配信者が本当に求めていたものに集中 — v11.0.11 の新機能に、v10.9.2 の選りすぐりを加えました。",
+   "cards": [
+    {
+     "h": "Remote Control（リモートコントロール）",
+     "p": "SplitCam Remote でスマホから配信を操作。キーボードに触れずに、シーンの切り替え、配信と録画の開始・停止、音声の調整、ソースの管理ができます。"
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras（横型・縦型バーチャルカメラ）",
+     "p": "Windows 11 では、2つの新しいバーチャルカメラが横型と縦型の映像を別々に出力し、複数のアプリで同時に使えます。Windows 10 には DirectShow を使うアプリ向けの縦型バーチャルカメラが加わり、Windows on ARM ではバーチャルカメラがネイティブで動作します。"
+    },
+    {
+     "h": "Replay from Phone or Stream Deck（スマホや Stream Deck からリプレイ）",
+     "p": "SplitCam Remote から、または Stream Deck のキーから、すぐにリプレイを再生。リプレイソースはシーンの直近5〜10秒を保持し、横型・縦型どちらのキャンバスでも動作するようになりました。"
+    },
+    {
+     "h": "Smoother, Safer Sessions（より滑らかで安心な配信）",
+     "p": "映像がより滑らかになり、バーチャルカメラを使っていないときの不要な処理も減りました。グラフィックドライバーに障害が起きても、SplitCam は再起動の前にプロジェクトを保存。内蔵のクラッシュレポートが、原因の特定と修正に役立ちます。"
+    }
+   ],
+   "changes": [
+    {
+     "was": "DirectShow を使うアプリ向けの縦型カメラが加わり",
+     "now": "DirectShow を使うアプリ向けの縦型バーチャルカメラが加わり",
+     "why": "The fact is a separate vertical virtual camera. A bare 縦型カメラ could be read as a physical camera, and the page consistently says バーチャルカメラ (27 times on the homepage, 59 on /virtual-camera/)."
+    },
+    {
+     "was": "スマホ・Stream Deck からリプレイ",
+     "now": "スマホや Stream Deck からリプレイ",
+     "why": "The middle dot between a Japanese noun and a Latin brand name reads stiffly. や is the natural way to list alternatives in a gloss. Elsewhere on the page ・ is used only between katakana items (Zoom・Teams・Meet is a list of names, not a choice)."
+    },
+    {
+     "was": "SplitCam Remote や Stream Deck のキーから、即座にリプレイを再生。",
+     "now": "SplitCam Remote から、または Stream Deck のキーから、すぐにリプレイを再生。",
+     "why": "In the old wording, 「A や B のキー」 can be parsed as 'keys of SplitCam Remote or Stream Deck', which is wrong because the app has no keys. Splitting it into two から phrases matches the facts (a Replay action in Remote Control and in Stream Deck). すぐに is more conversational than the stiff 即座に."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "ms",
+  "tr": {
+   "sec_p": "Fokus pada apa yang streamer betul-betul minta — apa yang baharu dalam v11.0.11, serta yang terbaik daripada v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control <span style=\"color:var(--text-sub);font-weight:400\">— kawalan jauh</span>",
+     "p": "Kendalikan stream dari telefon anda dengan SplitCam Remote: tukar scene, mula atau henti siaran dan rakaman, laraskan audio dan urus source tanpa menyentuh papan kekunci."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras <span style=\"color:var(--text-sub);font-weight:400\">— kamera maya mendatar + menegak</span>",
+     "p": "Pada Windows 11, dua kamera maya baharu menghantar output landskap dan potret secara berasingan, kepada beberapa aplikasi serentak. Windows 10 mendapat kamera maya menegak untuk aplikasi DirectShow, dan Windows pada ARM menjalankannya secara asli."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck <span style=\"color:var(--text-sub);font-weight:400\">— ulang tayang dari telefon atau Stream Deck</span>",
+     "p": "Cetuskan ulang tayang serta-merta dari SplitCam Remote atau kekunci Stream Deck. Replay Source menyimpan 5–10 saat terakhir sesuatu scene dan kini berfungsi pada kedua-dua kanvas mendatar dan menegak."
+    },
+    {
+     "h": "Smoother, Safer Sessions <span style=\"color:var(--text-sub);font-weight:400\">— sesi lebih lancar, lebih selamat</span>",
+     "p": "Video lebih lancar, dan kurang pemprosesan semasa kamera maya tidak digunakan. Jika pemacu grafik gagal, SplitCam menyimpan projek anda sebelum ia dimulakan semula, dan laporan ranap terbina dalam membantu agar puncanya dapat dibetulkan."
+    }
+   ],
+   "convention": "The ms block keeps the English feature name in each title and adds a Malay gloss in <span style=\"color:var(--text-sub);font-weight:400\">— …</span>. The weight here is 400, not 500 as in ru. Examples already in the block: \"Vertical Canvas — kanvas menegak\" and \"Replay Source — source ulang tayang\". Register is formal \"anda\". Reused terms: \"kamera maya\" and \"pemacu\" (homepage and /virtual-camera/); \"scene\", \"source\", \"stream\" and \"hotkey\" left in English, as the homepage does; \"kanvas mendatar/menegak\"; \"landskap/potret\" (/virtual-camera/); \"siaran\" and \"rakaman\" (homepage and /stream-deck/); \"ulang tayang serta-merta\" (homepage); \"kekunci\" (/stream-deck/); \"serentak\" and \"terbina dalam\" (homepage); \"secara asli\" (/multistreaming/); \"laporan ranap\" (privacy-policy); \"telefon\"; \"projek\". The Replay source is named \"Replay Source\", as the homepage names it. Untranslated: SplitCam, SplitCam Remote, Stream Deck, Windows 11/10, DirectShow, ARM (\"Windows pada ARM\"), v11.0.11 and v10.9.2. The eyebrow \"Keluaran terkini\" and the heading are not part of this output. Because they are not updated, the heading still reads \"Enam naik taraf dihantar tahun ini.\" Separately, the nav link on the page still reads \"Apa yang baharu · v10.9.2\" and needs updating to v11.0.11."
+  },
+  "rv": {
+   "sec_p": "Fokus pada apa yang streamer betul-betul minta — yang baharu dalam v11.0.11, serta yang terbaik daripada v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control <span style=\"color:var(--text-sub);font-weight:400\">— kawalan jauh</span>",
+     "p": "Kendalikan stream dari telefon anda dengan SplitCam Remote: tukar scene, mula atau henti siaran dan rakaman, laraskan audio dan urus source tanpa menyentuh papan kekunci."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras <span style=\"color:var(--text-sub);font-weight:400\">— kamera maya mendatar + menegak</span>",
+     "p": "Pada Windows 11, dua kamera maya baharu menghantar output landskap dan potret secara berasingan, dan boleh digunakan oleh beberapa aplikasi serentak. Windows 10 pula mendapat kamera maya menegak untuk aplikasi DirectShow, dan Windows pada ARM menjalankannya secara asli."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck <span style=\"color:var(--text-sub);font-weight:400\">— ulang tayang dari telefon atau Stream Deck</span>",
+     "p": "Cetuskan ulang tayang serta-merta dari SplitCam Remote atau kekunci Stream Deck. Replay Source menyimpan 5–10 saat terakhir sesuatu scene dan kini berfungsi pada kedua-dua kanvas mendatar dan menegak."
+    },
+    {
+     "h": "Smoother, Safer Sessions <span style=\"color:var(--text-sub);font-weight:400\">— sesi lebih lancar, lebih selamat</span>",
+     "p": "Video lebih lancar dan kurang pemprosesan semasa kamera maya tidak digunakan. Jika pemacu grafik gagal, SplitCam menyimpan projek anda sebelum dimulakan semula, dan laporan ranap terbina dalam membantu mengenal pasti serta membetulkan puncanya."
+    }
+   ],
+   "changes": [
+    {
+     "was": "— apa yang baharu dalam v11.0.11",
+     "now": "— yang baharu dalam v11.0.11",
+     "why": "The sentence already has 'apa yang streamer betul-betul minta', so a second 'apa yang' right after it sounds clunky in Malay. The shorter 'yang baharu' reads naturally."
+    },
+    {
+     "was": "secara berasingan, kepada beberapa aplikasi serentak",
+     "now": "secara berasingan, dan boleh digunakan oleh beberapa aplikasi serentak",
+     "why": "A bare comma followed by 'kepada' copies the English phrasing and makes it unclear what goes to several apps. Saying the cameras 'can be used by several apps at once' matches the fact exactly."
+    },
+    {
+     "was": "Windows 10 mendapat kamera maya menegak",
+     "now": "Windows 10 pula mendapat kamera maya menegak",
+     "why": "'pula' is the natural Malay way to move from Windows 11 to Windows 10. Without it the sentence reads like a word-for-word copy of 'Windows 10 gets'."
+    },
+    {
+     "was": "Video lebih lancar, dan kurang pemprosesan",
+     "now": "Video lebih lancar dan kurang pemprosesan",
+     "why": "Malay does not put a comma before 'dan' in a short list of two items. The comma was carried over from the English."
+    },
+    {
+     "was": "sebelum ia dimulakan semula",
+     "now": "sebelum dimulakan semula",
+     "why": "With 'ia' the sentence could mean either SplitCam or the project is restarted. The passive without a subject is the idiomatic form and refers back to SplitCam."
+    },
+    {
+     "was": "membantu agar puncanya dapat dibetulkan",
+     "now": "membantu mengenal pasti serta membetulkan puncanya",
+     "why": "'membantu agar ... dapat dibetulkan' is a stiff calque. The new wording is more natural and follows the release notes, which say crash reporting helps diagnose and resolve failures, without claiming anything more."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "bg",
+  "tr": {
+   "sec_p": "Фокусирани върху това, което стриймърите наистина поискаха — новото във v11.0.11 плюс най-доброто от v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control (дистанционно управление)",
+     "p": "Водете стрийма от телефона си със SplitCam Remote: превключвайте сцени, пускайте и спирайте стрийма и записа, настройвайте звука и управлявайте източниците, без да докосвате клавиатурата."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras (хоризонтални и вертикални виртуални камери)",
+     "p": "В Windows 11 две нови виртуални камери подават хоризонталната и вертикалната картина поотделно, към няколко приложения едновременно. Windows 10 получава вертикална камера за приложения с DirectShow, а на Windows за ARM те работят нативно."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck (повторение от телефон или Stream Deck)",
+     "p": "Пуснете мигновено повторение от SplitCam Remote или с бутон на Stream Deck. Replay източникът пази последните 5–10 секунди от сцената и вече работи както на хоризонталното, така и на вертикалното платно."
+    },
+    {
+     "h": "Smoother, Safer Sessions (по-плавни и по-надеждни сесии)",
+     "p": "По-плавно видео и по-малко излишна обработка, докато виртуалните камери не се използват. Ако графичният драйвер откаже, SplitCam запазва проекта ви преди рестартиране, а вградените отчети за сривове помагат причината да се открие и отстрани."
+    }
+   ],
+   "convention": "bg block keeps the English feature name and adds a Bulgarian gloss in plain parentheses (e.g. \"Vertical Canvas (вертикално платно)\", \"Replay Source (повторение)\", \"Restream Server Picker (избор на сървър)\"); no gloss span. All four new titles follow that pattern. Formal plural \"вие\" imperatives as on the page. Reused terms: виртуална камера, сцена/сцени, източник/източници, хоризонтално/вертикално платно, стрийм, запис, звук, Replay източник (homepage form), бутон на Stream Deck (multi-camera page), телефон, драйвер, отчети за сривове (privacy-policy), нативно (virtual-camera page), \"пускайте и спирайте стрийма и записа\" (stream-deck page). SplitCam Remote treated as a neuter app name, no agreement needed here; \"със SplitCam Remote\" and \"във v11.0.11\" use the euphonic forms of the prepositions."
+  },
+  "rv": {
+   "sec_p": "Фокусирани върху това, което стриймърите наистина поискаха — новото във v11.0.11 плюс най-доброто от v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control (дистанционно управление)",
+     "p": "Водете стрийма от телефона си със SplitCam Remote: превключвайте сцени, пускайте и спирайте стрийма и записа, настройвайте звука и управлявайте източниците, без да докосвате клавиатурата."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras (хоризонтални и вертикални виртуални камери)",
+     "p": "В Windows 11 две нови виртуални камери подават хоризонталната и вертикалната картина поотделно към няколко приложения едновременно. За Windows 10 има вертикална камера за приложения с DirectShow, а в Windows на ARM камерите работят нативно."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck (повторение от телефон или Stream Deck)",
+     "p": "Пуснете мигновено повторение от SplitCam Remote или с бутон на Stream Deck. Replay източникът пази последните 5–10 секунди от сцената и вече работи както на хоризонталното, така и на вертикалното платно."
+    },
+    {
+     "h": "Smoother, Safer Sessions (по-плавна и по-надеждна работа)",
+     "p": "По-плавно видео и по-малко излишна обработка, докато виртуалните камери не се използват. Ако графичният драйвер откаже, SplitCam запазва проекта ви, преди да се рестартира, а вградените отчети за сривове помагат да се открие и отстрани причината."
+    }
+   ],
+   "changes": [
+    {
+     "was": "подават хоризонталната и вертикалната картина поотделно, към няколко приложения едновременно",
+     "now": "подават хоризонталната и вертикалната картина поотделно към няколко приложения едновременно",
+     "why": "Запетаята пред обстоятелственото пояснение \"към няколко приложения\" е калка от английската пунктуация. На български тя разкъсва изречението."
+    },
+    {
+     "was": "Windows 10 получава вертикална камера за приложения с DirectShow",
+     "now": "За Windows 10 има вертикална камера за приложения с DirectShow",
+     "why": "\"получава\" е буквален превод на \"gets\". Естественият български израз е \"за Windows 10 има\"."
+    },
+    {
+     "was": "а на Windows за ARM те работят нативно",
+     "now": "а в Windows на ARM камерите работят нативно",
+     "why": "\"те\" е двусмислено: може да се отнася и за камерите, и за приложенията, а по факти нативни са компонентите на виртуалната камера. Предлогът \"в\" е същият като в \"В Windows 11\", а \"Windows на ARM\" е обичайното име на платформата."
+    },
+    {
+     "was": "(по-плавни и по-надеждни сесии)",
+     "now": "(по-плавна и по-надеждна работа)",
+     "why": "\"сесии\" е калка от \"sessions\". Никъде на страницата това не се казва така, а стриймърите говорят за работата на програмата. Кратката описателна глоса е в същия стил като \"(избор на сървър)\" и \"(вертикално платно)\"."
+    },
+    {
+     "was": "запазва проекта ви преди рестартиране",
+     "now": "запазва проекта ви, преди да се рестартира",
+     "why": "Подчинено изречение с глагол звучи по-естествено от отглаголното съществително. Така е ясно и че се рестартира самата програма, както пише в английския текст."
+    },
+    {
+     "was": "помагат причината да се открие и отстрани",
+     "now": "помагат да се открие и отстрани причината",
+     "why": "Изнасянето на \"причината\" пред \"да се\" е неестествен словоред. Нормалният словоред поставя допълнението след глагола."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "ar",
+  "tr": {
+   "sec_p": "مُركَّزة على ما طلبه المُبثّون فعلًا — الجديد في v11.0.11، إلى جانب أفضل ما في v10.9.2.",
+   "cards": [
+    {
+     "h": "التحكّم عن بُعد",
+     "p": "تحكّم في البث من هاتفك عبر SplitCam Remote: بدّل المشاهد، وابدأ البث والتسجيل أو أوقفهما، واضبط الصوت، وأدِر المصادر دون أن تلمس لوحة المفاتيح."
+    },
+    {
+     "h": "كاميرات افتراضية أفقية وعمودية",
+     "p": "على Windows 11، ترسل كاميرتان افتراضيتان جديدتان الصورة الأفقية والعمودية كلًّا على حدة، إلى عدة تطبيقات في وقت واحد. ويحصل Windows 10 على كاميرا افتراضية عمودية لتطبيقات DirectShow، ويشغّلها Windows على ARM أصليًّا."
+    },
+    {
+     "h": "الإعادة الفورية من الهاتف أو Stream Deck",
+     "p": "أطلِق إعادة فورية من SplitCam Remote أو بضغطة مفتاح على Stream Deck. يحتفظ مصدر الإعادة (Replay Source) بآخر 5–10 ثوانٍ من المشهد، ويعمل الآن على لوحتي العرض الأفقية والعمودية كلتيهما."
+    },
+    {
+     "h": "جلسات أسلس وأكثر أمانًا",
+     "p": "فيديو أكثر سلاسة، ومعالجة أقل حين لا تكون الكاميرات الافتراضية قيد الاستخدام. وإذا تعطّل تعريف بطاقة الرسوميات، يحفظ SplitCam مشروعك قبل إعادة التشغيل، ويساعد الإبلاغ المدمج عن الأعطال على تحديد السبب وإصلاحه."
+    }
+   ],
+   "convention": "The Arabic block mixes styles. Only card 1 uses an English name with a gloss span (\"Restream Server Picker — اختيار خادم إعادة البث\"). \"Vertical Canvas\", \"Replay Source\" and \"Luma Wipe وSlide وSwipe\" stay in English as UI names. Descriptive feature titles are translated into Arabic with no span (\"مؤثّر التحويل ثلاثي الأبعاد\", \"توجيه الكاميرا الافتراضية\"). All four new titles use that translated-title style: fully Arabic, no gloss span, no HTML, and Latin script only for product names (Stream Deck). Terms reused from the page: كاميرا افتراضية / الكاميرات الافتراضية; المشاهد; المصادر; البث; التسجيل; أفقي/عمودي; لوحة العرض (the homepage's word for canvas; the virtual-camera and multistreaming pages say لوحة العمل instead); الهاتف / هاتفك; لوحة المفاتيح. The Replay source is named the way this homepage already names it, \"مصدر الإعادة (Replay Source)\". \"تحكّم في … من الهاتف\" and \"بدّل المشاهد، وابدأ البث والتسجيل أو أوقفهما\" follow the ar/stream-deck page. تعريف (driver) comes from ar/virtual-camera, and رسوميات from the homepage FAQ. The page has no word for crash, so it is new here: الأعطال, in \"الإبلاغ المدمج عن الأعطال\". Register stays as the page has it: informal singular imperatives (بدّل، أدِر، أطلِق), with the page's own diacritics. Western digits throughout; v11.0.11, v10.9.2, 5–10, Windows 11/10, DirectShow, ARM, SplitCam and SplitCam Remote are left unchanged."
+  },
+  "rv": {
+   "sec_p": "مُركَّزة على ما طلبه المُبثّون فعلًا — الجديد في v11.0.11، إلى جانب أفضل ما في v10.9.2.",
+   "cards": [
+    {
+     "h": "التحكّم عن بُعد",
+     "p": "تحكّم في البث من هاتفك عبر SplitCam Remote: بدّل المشاهد، وابدأ البث والتسجيل أو أوقفهما، واضبط الصوت، وأدِر المصادر دون أن تلمس لوحة المفاتيح."
+    },
+    {
+     "h": "كاميرات افتراضية أفقية وعمودية",
+     "p": "على Windows 11، ترسل كاميرتان افتراضيتان جديدتان الصورة الأفقية والعمودية كلًّا على حدة، إلى عدة تطبيقات في وقت واحد. وفي Windows 10 كاميرا افتراضية عمودية منفصلة لتطبيقات DirectShow، وعلى أجهزة Windows بمعالجات ARM تعمل الكاميرات الافتراضية أصليًّا."
+    },
+    {
+     "h": "الإعادة الفورية من الهاتف أو Stream Deck",
+     "p": "أطلِق إعادة فورية من SplitCam Remote أو بضغطة مفتاح على Stream Deck. يحتفظ مصدر الإعادة (Replay Source) بآخر 5–10 ثوانٍ من المشهد، ويعمل الآن على لوحتي العرض الأفقية والعمودية كلتيهما."
+    },
+    {
+     "h": "جلسات أسلس وأكثر أمانًا",
+     "p": "فيديو أكثر سلاسة، ومعالجة أقل حين لا تكون الكاميرات الافتراضية قيد الاستخدام. وإذا تعطّل تعريف بطاقة الرسوميات، يحفظ SplitCam مشروعك قبل إعادة التشغيل، ويساعد الإبلاغ المدمج عن الأعطال على تحديد السبب وإصلاحه."
+    }
+   ],
+   "changes": [
+    {
+     "was": "ويحصل Windows 10 على كاميرا افتراضية عمودية لتطبيقات DirectShow",
+     "now": "وفي Windows 10 كاميرا افتراضية عمودية منفصلة لتطبيقات DirectShow",
+     "why": "«يحصل على» is a calque of English \"gets\". The fronted-predicate nominal sentence reads natively. «منفصلة» comes from the release-notes fact (a separate vertical camera), so it adds nothing new."
+    },
+    {
+     "was": "ويشغّلها Windows على ARM أصليًّا",
+     "now": "وعلى أجهزة Windows بمعالجات ARM تعمل الكاميرات الافتراضية أصليًّا",
+     "why": "«Windows على ARM» is a literal rendering of \"Windows on ARM\". The pronoun in «يشغّلها» was also ambiguous and could mean only the Windows 10 camera. The fact is native virtual-camera components on ARM64, so the subject is now the virtual cameras, running natively on Windows machines with ARM processors."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "ko",
+  "tr": {
+   "sec_p": "스트리머들이 실제로 요청한 기능에 집중했습니다 — v11.0.11의 새 기능과 함께 v10.9.2의 대표 기능까지 모았습니다.",
+   "cards": [
+    {
+     "h": "원격 제어",
+     "p": "SplitCam Remote로 휴대폰에서 방송을 진행하세요: 키보드에 손대지 않고도 장면을 전환하고, 방송과 녹화를 시작·중지하고, 오디오를 조절하고, 소스를 관리할 수 있습니다."
+    },
+    {
+     "h": "가로 + 세로 가상 카메라",
+     "p": "Windows 11에서는 새 가상 카메라 두 개가 가로와 세로 영상을 따로 출력하며, 여러 앱에서 동시에 사용할 수 있습니다. Windows 10에서는 DirectShow를 쓰는 앱용 세로 가상 카메라를 따로 제공하고, ARM 기반 Windows에서는 가상 카메라가 네이티브로 작동합니다."
+    },
+    {
+     "h": "휴대폰·Stream Deck에서 Replay",
+     "p": "SplitCam Remote나 Stream Deck 키로 즉석 리플레이를 실행하세요. Replay 소스는 장면의 최근 5~10초를 저장하며, 이제 가로·세로 캔버스 모두에서 작동합니다."
+    },
+    {
+     "h": "더 부드럽고 안전한 방송",
+     "p": "영상은 더 부드러워지고, 가상 카메라를 쓰지 않을 때는 불필요한 처리가 줄었습니다. 그래픽 드라이버에 문제가 생기면 SplitCam이 다시 시작하기 전에 프로젝트를 저장하며, 내장된 충돌 보고 기능이 원인을 찾아 해결하는 데 도움을 줍니다."
+    }
+   ],
+   "convention": "ko translates card titles fully into Korean, with no gloss span and no English name in parentheses. English stays only for proper and feature names, as the block already does with \"Replay 소스\" and \"Luma Wipe, Slide, Swipe\". Titles are short noun phrases with no final period. Descriptions use the polite -세요 / -습니다 register and 5~10초 with a tilde. Terms reused from the page and the locale: 원격 제어 (the name of the Remote Control tab on the products and stream-deck pages), 휴대폰 (phone, as on the stream-deck and products pages), 방송과 녹화를 시작·중지 (start/stop streaming and recording, as on stream-deck), 장면 (scene), 소스 (source), 가상 카메라 (virtual camera), 가로·세로 캔버스 (horizontal/vertical canvas, as on multistreaming), 가로 + 세로 (header pattern from virtual-camera), Replay 소스 (the Replay source), 즉석 리플레이 (instant replay, as on /for/), Stream Deck 키 (Stream Deck key), 앱 (app), 그래픽 드라이버에 문제가 생기면 (if the graphics driver fails, modeled on virtual-audio-windows). The locale has no existing word for crash reporting, so it is rendered 충돌 보고 기능, the standard Korean software term. Particles are checked against the names: SplitCam Remote로/나 and Stream Deck으로/에서."
+  },
+  "rv": {
+   "sec_p": "스트리머들이 실제로 요청한 기능에 집중했습니다 — v11.0.11의 새 기능과 함께 v10.9.2의 대표 기능까지 모았습니다.",
+   "cards": [
+    {
+     "h": "원격 제어",
+     "p": "SplitCam Remote로 휴대폰에서 방송을 제어하세요 — 키보드에 손대지 않고도 장면을 전환하고, 방송과 녹화를 시작·중지하고, 오디오를 조절하고, 소스를 관리할 수 있습니다."
+    },
+    {
+     "h": "가로·세로 가상 카메라",
+     "p": "Windows 11에서는 새 가상 카메라 두 개가 가로와 세로 영상을 따로 출력하며, 여러 앱에서 동시에 사용할 수 있습니다. Windows 10에서는 DirectShow를 쓰는 앱용 세로 가상 카메라를 따로 제공하고, ARM 기반 Windows에서는 가상 카메라가 네이티브로 작동합니다."
+    },
+    {
+     "h": "휴대폰·Stream Deck으로 리플레이",
+     "p": "SplitCam Remote나 Stream Deck 키로 즉석 리플레이를 바로 띄우세요. Replay 소스는 장면의 최근 5~10초를 저장하며, 이제 가로·세로 캔버스 모두에서 작동합니다."
+    },
+    {
+     "h": "더 부드럽고 안정적인 방송",
+     "p": "영상은 더 부드러워지고, 가상 카메라를 쓰지 않을 때는 불필요한 처리가 줄었습니다. 그래픽 드라이버에 문제가 생기면 SplitCam이 다시 시작하기 전에 프로젝트를 저장하며, 내장 크래시 리포트 기능이 원인을 찾아 해결하는 데 도움을 줍니다."
+    }
+   ],
+   "changes": [
+    {
+     "was": "SplitCam Remote로 휴대폰에서 방송을 진행하세요: 키보드에…",
+     "now": "SplitCam Remote로 휴대폰에서 방송을 제어하세요 — 키보드에…",
+     "why": "'방송을 진행하다' reads as hosting/MC-ing the show, not operating it. The page already uses '제어' (the stream-deck page title is 'SplitCam 제어'). A colon after a -세요 sentence is an English calque. This block already uses ' — ' in the same spot ('직접 고르세요 — 가장 가까운…')."
+    },
+    {
+     "was": "가로 + 세로 가상 카메라",
+     "now": "가로·세로 가상 카메라",
+     "why": "The claimed source is wrong: the virtual-camera page says '세로 + 가로', not '가로 + 세로'. The homepage itself, including this block's 3D card, writes '가로·세로', so the title should follow the host page."
+    },
+    {
+     "was": "휴대폰·Stream Deck에서 Replay",
+     "now": "휴대폰·Stream Deck으로 리플레이",
+     "why": "'Replay' is only kept in English as the source name ('Replay 소스'). A bare English 'Replay' ending the title is a calque of 'Replay from Phone'. The action is '리플레이', as in '즉석 리플레이' on the homepage and /for/. '으로' says what the replay is triggered with and matches 'Stream Deck 키로' in the description. Deck ends in ㄱ, so 으로 is correct."
+    },
+    {
+     "was": "즉석 리플레이를 실행하세요",
+     "now": "즉석 리플레이를 바로 띄우세요",
+     "why": "'리플레이를 띄우다' is what Korean streamers actually say. '실행' sounds like launching a program. '바로' carries the 'fire' immediacy without adding any claim."
+    },
+    {
+     "was": "더 부드럽고 안전한 방송",
+     "now": "더 부드럽고 안정적인 방송",
+     "why": "The card is about recovering from failures and crash reporting, which is reliability (안정성), not safety. '안전한 방송' suggests content or security safety. '안정적인' is the usual word, used elsewhere on the locale ('안정적인 프레임', '긴 방송도 안정적으로')."
+    },
+    {
+     "was": "내장된 충돌 보고 기능이",
+     "now": "내장 크래시 리포트 기능이",
+     "why": "'충돌' for a program crash is a known awkward calque, and on this locale it appears only in the legal phrase '법률 충돌'. Korean streamers and gamers say '크래시' / '크래시 리포트'. The claim is unchanged."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "th",
+  "tr": {
+   "sec_p": "มุ่งไปที่สิ่งที่สตรีมเมอร์ขอมาจริง ๆ — สิ่งใหม่ใน v11.0.11 พร้อมไฮไลต์ที่ดีที่สุดจาก v10.9.2",
+   "cards": [
+    {
+     "h": "Remote Control (ควบคุมระยะไกล)",
+     "p": "ควบคุมสตรีมจากมือถือด้วย SplitCam Remote: สลับฉาก เริ่มหรือหยุดการสตรีมและการบันทึก ปรับเสียง และจัดการแหล่งภาพ โดยไม่ต้องแตะคีย์บอร์ด"
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras (กล้องเสมือนแนวนอน + แนวตั้ง)",
+     "p": "บน Windows 11 กล้องเสมือนใหม่สองตัวส่งภาพแนวนอนและแนวตั้งแยกกัน ให้หลายแอปใช้ได้พร้อมกัน ส่วน Windows 10 ได้กล้องเสมือนแนวตั้งแยกสำหรับแอปที่ใช้ DirectShow และบน Windows on ARM กล้องเสมือนทำงานแบบเนทีฟ"
+    },
+    {
+     "h": "Replay from Phone or Stream Deck (รีเพลย์จากมือถือหรือ Stream Deck)",
+     "p": "สั่งรีเพลย์แบบทันทีจาก SplitCam Remote หรือปุ่มบน Stream Deck แหล่งภาพ Replay เก็บ 5–10 วินาทีล่าสุดของฉาก และตอนนี้ใช้งานได้ทั้งบนแคนวาสแนวนอนและแนวตั้ง"
+    },
+    {
+     "h": "Smoother, Safer Sessions (ลื่นขึ้น ปลอดภัยขึ้น)",
+     "p": "วิดีโอลื่นขึ้น และลดการประมวลผลที่ไม่จำเป็นขณะไม่ได้ใช้กล้องเสมือน หากไดรเวอร์การ์ดจอทำงานล้มเหลว SplitCam จะบันทึกโปรเจกต์ของคุณก่อนรีสตาร์ต และระบบรายงานข้อขัดข้องในตัวช่วยให้หาสาเหตุและแก้ไขปัญหาได้"
+    }
+   ],
+   "convention": "th block titles follow the pattern \"English feature name (Thai gloss in parentheses)\", e.g. \"Restream Server Picker (เลือกเซิร์ฟเวอร์)\", \"Replay Source (เล่นซ้ำ)\", \"Virtual Camera Routing (กำหนดเส้นทาง)\". All four new titles use that pattern, with no span markup, since the th block does not use the ru-style gloss span. Terms reused from the site: กล้องเสมือน (virtual camera), ฉาก / สลับฉาก (scene / switch scenes), แหล่งภาพ and \"แหล่งภาพ Replay\" (source, Replay source), แคนวาสแนวนอน/แนวตั้ง (horizontal/vertical canvas), สตรีม (stream), การบันทึก (recording, as the homepage says it), คีย์ลัด (hotkey), มือถือ (phone; the features page describes SplitCam Remote as control \"จากมือถือ\"), ไดรเวอร์ (driver), การ์ดจอ (graphics card), โปรเจกต์ (project), รีสตาร์ต (restart spelling used on the site), รายงานข้อขัดข้อง (crash reporting, from privacy-policy for Crashlytics), เนทีฟ (native), รีเพลย์แบบทันที (instant replay, from the current Replay card). The Remote Control gloss การควบคุมระยะไกล matches the settings name on /products/. The page addresses the reader as คุณ in a neutral, informal-friendly register. The sub-line keeps the opening from the current sub-line and states that v11.0.11 is new."
+  },
+  "rv": {
+   "sec_p": "มุ่งไปที่สิ่งที่สตรีมเมอร์ขอมาจริง ๆ — มีอะไรใหม่ใน v11.0.11 พร้อมไฮไลต์เด่นจาก v10.9.2",
+   "cards": [
+    {
+     "h": "Remote Control (ควบคุมระยะไกล)",
+     "p": "ควบคุมสตรีมจากมือถือด้วย SplitCam Remote: สลับฉาก เริ่มหรือหยุดสตรีมและการบันทึก ปรับเสียง และจัดการแหล่งภาพ โดยไม่ต้องแตะคีย์บอร์ด"
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras (กล้องเสมือนแนวนอน + แนวตั้ง)",
+     "p": "บน Windows 11 กล้องเสมือนใหม่สองตัวส่งภาพแนวนอนและแนวตั้งแยกกัน ให้หลายแอปใช้ได้พร้อมกัน ส่วน Windows 10 ได้กล้องเสมือนแนวตั้งแยกสำหรับแอปที่ใช้ DirectShow และบน Windows on ARM กล้องเสมือนทำงานแบบเนทีฟ"
+    },
+    {
+     "h": "Replay from Phone or Stream Deck (รีเพลย์จากมือถือหรือ Stream Deck)",
+     "p": "สั่งรีเพลย์แบบทันทีจาก SplitCam Remote หรือปุ่มบน Stream Deck แหล่งภาพ Replay เก็บ 5–10 วินาทีล่าสุดของฉาก และตอนนี้ใช้งานได้ทั้งบนแคนวาสแนวนอนและแนวตั้ง"
+    },
+    {
+     "h": "Smoother, Safer Sessions (ลื่นขึ้น ปลอดภัยขึ้น)",
+     "p": "วิดีโอลื่นขึ้น และลดการประมวลผลที่ไม่จำเป็นขณะไม่ได้ใช้กล้องเสมือน หากไดรเวอร์การ์ดจอล่ม SplitCam จะบันทึกโปรเจกต์ของคุณก่อนรีสตาร์ต และระบบรายงานข้อขัดข้องในตัวช่วยให้หาสาเหตุและแก้ไขปัญหาได้"
+    }
+   ],
+   "changes": [
+    {
+     "was": "— สิ่งใหม่ใน v11.0.11 พร้อมไฮไลต์ที่ดีที่สุดจาก v10.9.2",
+     "now": "— มีอะไรใหม่ใน v11.0.11 พร้อมไฮไลต์เด่นจาก v10.9.2",
+     "why": "\"ไฮไลต์ที่ดีที่สุด\" is a calque of \"the best of\" and says the same thing twice. \"ไฮไลต์เด่น\" is the natural phrase. \"มีอะไรใหม่ใน\" is the usual Thai way to say \"what's new in\"."
+    },
+    {
+     "was": "เริ่มหรือหยุดการสตรีมและการบันทึก",
+     "now": "เริ่มหรือหยุดสตรีมและการบันทึก",
+     "why": "Streamers say \"เริ่ม/หยุดสตรีม\" without the nominalizer, and the page's hotkey list uses the same verb pattern (\"เริ่ม / หยุดบันทึก\"). Having two \"การ\" in a row read stiff."
+    },
+    {
+     "was": "หากไดรเวอร์การ์ดจอทำงานล้มเหลว",
+     "now": "หากไดรเวอร์การ์ดจอล่ม",
+     "why": "\"ทำงานล้มเหลว\" is a formal, translated-sounding phrase. \"ล่ม\" is what Thai streamers actually say when a driver fails. The fact stays the same (a graphics-device failure)."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "pl",
+  "tr": {
+   "sec_p": "Skupione na tym, o co naprawdę prosili streamerzy — nowości w v11.0.11 i to, co najlepsze z v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control <span style=\"color:var(--text-sub);font-weight:500\">— sterowanie zdalne</span>",
+     "p": "Prowadź transmisję z telefonu w aplikacji SplitCam Remote: przełączaj sceny, startuj i zatrzymuj stream oraz nagrywanie, reguluj dźwięk i zarządzaj źródłami bez dotykania klawiatury."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras <span style=\"color:var(--text-sub);font-weight:500\">— poziome i pionowe kamery wirtualne</span>",
+     "p": "Na Windows 11 dwie nowe kamery wirtualne podają osobno obraz poziomy i pionowy — do kilku aplikacji jednocześnie. Windows 10 zyskuje pionową kamerę wirtualną dla aplikacji korzystających z DirectShow, a na komputerach z Windows na ARM kamery działają natywnie."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck <span style=\"color:var(--text-sub);font-weight:500\">— powtórka z telefonu lub ze Stream Deck</span>",
+     "p": "Uruchom natychmiastową powtórkę ze SplitCam Remote albo klawiszem Stream Deck. Źródło Replay odtwarza ostatnie 5–10 sekund sceny i teraz działa zarówno na poziomej, jak i na pionowej kanwie."
+    },
+    {
+     "h": "Smoother, Safer Sessions <span style=\"color:var(--text-sub);font-weight:500\">— płynniejsze i bezpieczniejsze sesje</span>",
+     "p": "Płynniejsze wideo i mniej zbędnego przetwarzania, kiedy kamery wirtualne nie są używane. Jeśli sterownik karty graficznej zawiedzie, SplitCam zapisuje Twój projekt przed ponownym uruchomieniem, a wbudowane raporty o awariach pomagają znaleźć i usunąć przyczynę."
+    }
+   ],
+   "convention": "pl block keeps the English feature name and adds a Polish gloss in <span style=\"color:var(--text-sub);font-weight:500\">— …</span> inside the title (e.g. \"Vertical Canvas — pionowa kanwa\", \"Replay Source — natychmiastowa powtórka\"); applied to all four new titles. Informal capitalized Ty (Twój projekt), imperatives as in existing cards. Reused terms: kamera wirtualna (homepage), kanwa pozioma/pionowa (homepage block), sceny/źródła, stream + nagrywanie and \"startuj i zatrzymuj\" (from /pl/stream-deck/), \"Sterowanie zdalne\" (Remote Control tab name on /pl/stream-deck/ and /pl/products/), źródło Replay / natychmiastowa powtórka (homepage), klawisz Stream Deck and \"ze SplitCam\" (stream-deck page), karta graficzna / sterownik (site-wide), raporty o awariach (privacy-policy), telefon, dźwięk. Sub-line mirrors the existing \"Skupione na tym, o co naprawdę prosili streamerzy — ...\" opening. Note: /pl/virtual-camera/ and /pl/multistreaming/ say \"obszar roboczy\" for canvas, but this homepage block already uses \"kanwa\", so I kept \"kanwa\"."
+  },
+  "rv": {
+   "sec_p": "Skupione na tym, o co naprawdę prosili streamerzy — nowości w v11.0.11 i to, co najlepsze z v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control <span style=\"color:var(--text-sub);font-weight:500\">— sterowanie zdalne</span>",
+     "p": "Prowadź transmisję z telefonu przez aplikację SplitCam Remote: przełączaj sceny, startuj i zatrzymuj stream oraz nagrywanie, reguluj dźwięk i zarządzaj źródłami bez dotykania klawiatury."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras <span style=\"color:var(--text-sub);font-weight:500\">— poziome i pionowe kamery wirtualne</span>",
+     "p": "Na Windows 11 dwie nowe kamery wirtualne wysyłają osobno obraz poziomy i pionowy — do kilku aplikacji jednocześnie. Windows 10 zyskuje pionową kamerę wirtualną dla aplikacji korzystających z DirectShow, a na komputerach z Windows na ARM kamery działają natywnie."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck <span style=\"color:var(--text-sub);font-weight:500\">— powtórka z telefonu lub ze Stream Deck</span>",
+     "p": "Uruchom natychmiastową powtórkę ze SplitCam Remote albo klawiszem Stream Deck. Źródło Replay odtwarza ostatnie 5–10 sekund sceny i teraz działa zarówno na poziomej, jak i na pionowej kanwie."
+    },
+    {
+     "h": "Smoother, Safer Sessions <span style=\"color:var(--text-sub);font-weight:500\">— płynniejsze i stabilniejsze sesje</span>",
+     "p": "Płynniejsze wideo i mniej zbędnego przetwarzania, kiedy kamery wirtualne nie są używane. Jeśli sterownik karty graficznej zawiedzie, SplitCam zapisuje Twój projekt przed ponownym uruchomieniem, a wbudowane raporty o awariach pomagają znaleźć i usunąć przyczynę."
+    }
+   ],
+   "changes": [
+    {
+     "was": "Prowadź transmisję z telefonu w aplikacji SplitCam Remote",
+     "now": "Prowadź transmisję z telefonu przez aplikację SplitCam Remote",
+     "why": "Przy sterowaniu z telefonu naturalniej brzmi „przez aplikację” (środek, którym się steruje). „W aplikacji” sugeruje, że wszystko dzieje się wewnątrz samej aplikacji."
+    },
+    {
+     "was": "dwie nowe kamery wirtualne podają osobno obraz poziomy i pionowy",
+     "now": "dwie nowe kamery wirtualne wysyłają osobno obraz poziomy i pionowy",
+     "why": "„Podają” brzmi sztucznie. Ta sama strona główna mówi już „Wysyłaj dowolną scenę … do kamery wirtualnej” (karta Virtual Camera Routing), więc użyto tego samego czasownika."
+    },
+    {
+     "was": "— płynniejsze i bezpieczniejsze sesje",
+     "now": "— płynniejsze i stabilniejsze sesje",
+     "why": "„Bezpieczniejsze” w kontekście oprogramowania czyta się jak bezpieczeństwo (security). Według faktów chodzi o wychodzenie z awarii karty graficznej i raporty o awariach, czyli o stabilność. „Stabilniejsze” oddaje sens „Safer” bez przesady."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "hu",
+  "tr": {
+   "sec_p": "Arra fókuszálva, amit a streamerek valóban kértek — a v11.0.11 újdonságai, plusz a v10.9.2 legjava.",
+   "cards": [
+    {
+     "h": "Remote Control (távvezérlés)",
+     "p": "Vezéreld az adást a telefonodról a SplitCam Remote-tal: válts jelenetet, indítsd el vagy állítsd le a streamet és a felvételt, szabályozd a hangot, kezeld a forrásokat — anélkül, hogy a billentyűzethez nyúlnál."
+    },
+    {
+     "h": "Vízszintes és függőleges virtuális kamerák",
+     "p": "Windows 11-en két új virtuális kamera külön küldi a fekvő és az álló képet, egyszerre több alkalmazásnak. A Windows 10 külön függőleges kamerát kap a DirectShow-t használó alkalmazásokhoz, az ARM-alapú Windowson pedig a kamerák natívan futnak."
+    },
+    {
+     "h": "Replay telefonról vagy Stream Deckről",
+     "p": "Indíts azonnali visszajátszást a SplitCam Remote-ból vagy egy Stream Deck-gombbal. A Replay-forrás megőrzi egy jelenet utolsó 5–10 másodpercét, és most már vízszintes és függőleges vásznon egyaránt működik."
+    },
+    {
+     "h": "Gördülékenyebb, megbízhatóbb munkamenetek",
+     "p": "Gördülékenyebb videó és kevesebb feldolgozás, amikor a virtuális kamerák nincsenek használatban. Ha a grafikus illesztőprogram leáll, a SplitCam az újraindulás előtt elmenti a projektedet, a beépített összeomlási jelentések pedig segítenek feltárni és kijavítani a hiba okát."
+    }
+   ],
+   "convention": "Title convention: the hu block translates titles into Hungarian with no gloss span. Where a title is an English product/UI name, it keeps that name and adds a lowercase Hungarian gloss in parentheses, e.g. \"Restream Server Picker (szerverválasztó)\" and \"Virtual Camera Routing (útválasztás)\". Otherwise the title is plain Hungarian, e.g. \"Függőleges vászon\" and \"Replay-forrás\". Only card 1 is an English UI name (\"Remote Control\" is the literal tab name in SplitCam Settings, as the hu stream-deck page shows: \"Remote Control fülén\"), so it gets the gloss \"(távvezérlés)\". This matches the products page heading \"Távvezérlés\". The other three are descriptive and are translated, keeping Replay and Stream Deck. Terms reused from the homepage, virtual-camera and multistreaming pages: virtuális kamera, jelenet, forrás, Replay-forrás, vízszintes/függőleges vászon, fekvő/álló (landscape/portrait, as on virtual-camera), stream/felvétel, illesztőprogram (as in virtuáliskamera-illesztőprogram), munkamenet. \"Összeomlási jelentések\" comes from the hu privacy-policy page. Informal \"te\" imperatives, as in the page. Suffixes follow how the words are read aloud: Windows 11-en (tizenegyen), Remote-tal / Remote-ból (rimót), DirectShow-t, Stream Deckről. \"ARM-alapú Windowson\" avoids an awkward \"Windows on ARM-on\". sec_p says \"a v10.9.2 legjava\", so no case suffix sits on a version number. Both version strings are exactly as written."
+  },
+  "rv": {
+   "sec_p": "Arra fókuszálva, amit a streamerek valóban kértek — a v11.0.11 újdonságai, valamint a v10.9.2 legjava.",
+   "cards": [
+    {
+     "h": "Remote Control (távvezérlés)",
+     "p": "Vezéreld az adást a telefonodról a SplitCam Remote-tal: válts jelenetet, indítsd el vagy állítsd le a streamet és a felvételt, szabályozd a hangot, kezeld a forrásokat — anélkül, hogy a billentyűzethez nyúlnál."
+    },
+    {
+     "h": "Vízszintes és függőleges virtuális kamerák",
+     "p": "Windows 11-en két új virtuális kamera külön küldi a fekvő és az álló képet, egyszerre több alkalmazásnak. A Windows 10 külön függőleges kamerát kap a DirectShow-t használó alkalmazásokhoz, az ARM-alapú Windowson pedig a kamerák natívan futnak."
+    },
+    {
+     "h": "Replay telefonról vagy Stream Deckről",
+     "p": "Indíts azonnali visszajátszást a SplitCam Remote-ból vagy egy Stream Deck-gombbal. A Replay-forrás megőrzi egy jelenet utolsó 5–10 másodpercét, és most már vízszintes és függőleges vásznon egyaránt működik."
+    },
+    {
+     "h": "Gördülékenyebb, megbízhatóbb munkamenetek",
+     "p": "Gördülékenyebb videó és kevesebb felesleges feldolgozás, amikor a virtuális kamerák nincsenek használatban. Ha a grafikus illesztőprogram leáll, a SplitCam az újraindulás előtt elmenti a projektedet, a beépített összeomlási jelentések pedig segítenek feltárni és kijavítani a hiba okát."
+    }
+   ],
+   "changes": [
+    {
+     "was": "a v11.0.11 újdonságai, plusz a v10.9.2 legjava",
+     "now": "a v11.0.11 újdonságai, valamint a v10.9.2 legjava",
+     "why": "Using \"plusz\" as a connector copies the English \"plus\" and sounds too casual in running copy. The sub-line keeps the page's neutral, polished register, so \"valamint\" (or \"és\") reads as native."
+    },
+    {
+     "was": "kevesebb feldolgozás, amikor a virtuális kamerák nincsenek használatban",
+     "now": "kevesebb felesleges feldolgozás, amikor a virtuális kamerák nincsenek használatban",
+     "why": "The release fact is \"less unnecessary processing\". Without \"felesleges\" the line suggests SplitCam just does less work in general. This is a faithfulness fix and does not add anything the release does not claim."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "sv",
+  "tr": {
+   "sec_p": "Fokus på det streamarna faktiskt efterfrågade — nyheterna i v11.0.11, plus det bästa från v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control (fjärrstyrning)",
+     "p": "Styr sändningen från din telefon med SplitCam Remote: växla scener, starta eller stoppa sändning och inspelning, justera ljudet och hantera källor utan att röra tangentbordet."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras (horisontella och vertikala virtuella kameror)",
+     "p": "På Windows 11 skickar två nya virtuella kameror liggande och stående bild separat, till flera appar samtidigt. Windows 10 får en egen vertikal kamera för DirectShow-appar, och Windows på ARM kör dem nativt."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck (repris från telefon eller Stream Deck)",
+     "p": "Starta en omedelbar repris från SplitCam Remote eller med en Stream Deck-knapp. Replay-källan fångar de senaste 5–10 sekunderna av en scen och fungerar nu på både horisontell och vertikal duk."
+    },
+    {
+     "h": "Smoother, Safer Sessions (jämnare och säkrare sessioner)",
+     "p": "Jämnare video och mindre bearbetning när de virtuella kamerorna inte används. Om grafikdrivrutinen slutar fungera sparar SplitCam ditt projekt innan programmet startar om, och inbyggd kraschrapportering hjälper till att hitta och åtgärda orsaken."
+    }
+   ],
+   "convention": "sv block convention: English feature name followed by a short Swedish gloss in plain parentheses, no span (existing: \"Restream Server Picker (serverval)\", \"Vertical Canvas (vertikal duk)\", \"Replay Source (uppspelning)\", \"Virtual Camera Routing (dirigering)\"); applied to all four new titles. Informal \"du/din\" register as on the page. Reused terms: virtuell kamera / virtuella kameror, scen/scener, källa/källor, Replay-källa(n), duk + horisontell/vertikal (canvas), liggande/stående (landscape/portrait, from /virtual-camera/), sändning/sända (streaming), inspelning, ljudet, telefon, appar, samtidigt, flera appar, drivrutin (kameradrivrutin -> grafikdrivrutinen), projekt, bearbetning, sessioner (from /multistreaming/), Stream Deck-knapp. No existing sv term for crash/Remote/Stream Deck/DirectShow/ARM on the site; used \"kraschrapportering\", \"Windows på ARM\", \"DirectShow-appar\". Eyebrow on page is \"Senaste versionerna\", badge \"NYTT\"; footer link reads \"Nyheter · v10.9.2\" (will need its version bumped separately)."
+  },
+  "rv": {
+   "sec_p": "Fokus på det streamarna faktiskt efterfrågade — nyheterna i v11.0.11 och det bästa från v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control (fjärrstyrning)",
+     "p": "Styr sändningen från telefonen med SplitCam Remote: växla scener, starta eller stoppa sändning och inspelning, justera ljudet och hantera källor utan att röra tangentbordet."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras (virtuella kameror)",
+     "p": "På Windows 11 skickar två nya virtuella kameror liggande och stående bild var för sig, till flera appar samtidigt. Windows 10 får en egen vertikal kamera för DirectShow-appar, och Windows på ARM kör dem nativt."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck (repris)",
+     "p": "Starta en omedelbar repris från SplitCam Remote eller med en Stream Deck-knapp. Replay-källan fångar de senaste 5–10 sekunderna av en scen och fungerar nu på både horisontell och vertikal duk."
+    },
+    {
+     "h": "Smoother, Safer Sessions (jämnare och tryggare)",
+     "p": "Jämnare video och mindre bearbetning när de virtuella kamerorna inte används. Om grafikdrivrutinen slutar fungera sparar SplitCam ditt projekt innan programmet startar om, och inbyggd kraschrapportering hjälper till att hitta och åtgärda orsaken."
+    }
+   ],
+   "changes": [
+    {
+     "was": "nyheterna i v11.0.11, plus det bästa från v10.9.2.",
+     "now": "nyheterna i v11.0.11 och det bästa från v10.9.2.",
+     "why": "\"plus\" som konjunktion är en direkt översättning från engelskan. \"och\" låter mer som vanlig svenska i löptext."
+    },
+    {
+     "was": "Styr sändningen från din telefon",
+     "now": "Styr sändningen från telefonen",
+     "why": "Bestämd form utan possessiv är det idiomatiska valet på svenska. \"från din telefon\" följer engelskans \"your\"."
+    },
+    {
+     "was": "Horizontal + Vertical Virtual Cameras (horisontella och vertikala virtuella kameror)",
+     "now": "Horizontal + Vertical Virtual Cameras (virtuella kameror)",
+     "why": "Blocket använder korta glosor på ett till två ord, t.ex. (serverval), (vertikal duk), (uppspelning) och (dirigering). Glosan var en hel omöversättning, och rubriken blev för lång för kortet. Horizontal och Vertical förstås direkt på svenska."
+    },
+    {
+     "was": "Replay from Phone or Stream Deck (repris från telefon eller Stream Deck)",
+     "now": "Replay from Phone or Stream Deck (repris)",
+     "why": "Samma korta glosformat som i resten av blocket. Stream Deck skulle annars stå två gånger i samma rubrik."
+    },
+    {
+     "was": "Smoother, Safer Sessions (jämnare och säkrare sessioner)",
+     "now": "Smoother, Safer Sessions (jämnare och tryggare)",
+     "why": "Kortare glos i blockets stil. I mjukvarusammanhang får \"säkrare\" läsaren att tänka på IT-säkerhet, men här gäller det stabilitet och att projektet sparas vid fel. \"tryggare\" betyder precis det och påstår inte mer."
+    },
+    {
+     "was": "liggande och stående bild separat",
+     "now": "liggande och stående bild var för sig",
+     "why": "\"var för sig\" är det naturliga svenska uttrycket. \"separat\" som adverb efter objektet låter som översatt text."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "zh",
+  "tr": {
+   "sec_p": "专注于主播们真正想要的功能——v11.0.11 带来的新变化，外加 v10.9.2 的精华亮点。",
+   "cards": [
+    {
+     "h": "手机遥控",
+     "p": "用 SplitCam Remote 在手机上掌控直播：切换场景、开始或停止直播与录制、调节音频、管理素材源，全程不用碰键盘。"
+    },
+    {
+     "h": "横屏 + 竖屏虚拟摄像头",
+     "p": "在 Windows 11 上，两个全新的虚拟摄像头分别输出横屏和竖屏画面，可供多个应用同时使用。Windows 10 新增一个单独的竖屏虚拟摄像头，供使用 DirectShow 的应用调用；ARM 版 Windows 上则以原生方式运行虚拟摄像头。"
+    },
+    {
+     "h": "用手机或 Stream Deck 触发回放",
+     "p": "在 SplitCam Remote 上点一下，或按一下 Stream Deck 按键，即可触发即时回放。回放素材源会捕获场景的最近 5–10 秒，现在在横屏和竖屏画布上都能正常工作。"
+    },
+    {
+     "h": "更流畅、更安心的直播",
+     "p": "画面更流畅；虚拟摄像头闲置时，不必要的处理也更少。显卡驱动出错时，SplitCam 会在重启前保存你的项目，内置的崩溃报告功能则有助于查明并修复原因。"
+    }
+   ],
+   "convention": "zh translates card titles fully into Chinese: no English name in parentheses, no gloss span. English stays only for UI or product names, as in the existing card \"Luma Wipe、Slide 和 Swipe\". The Replay source is named 回放素材源, as in the existing card on this homepage. Terms reused from zh/index.html, zh/virtual-camera/, zh/multistreaming/ and zh/stream-deck/: 虚拟摄像头, 场景, 素材源, 横屏/竖屏, 画布 (竖屏画布), 直播 (开始直播), 录制, 回放, 手机, 显卡, 驱动, 多个应用同时使用, and 应用 for apps. 手机遥控 is the zh/stream-deck/ name for the phone remote. 开始和停止直播与录制 and 全程不用碰键盘 are phrasings from zh/stream-deck/. Register is informal 你. The block's typography is kept: full-width punctuation (——, 、, ；), spaces around Latin names and numbers (\"SplitCam 设置\", \"5–10 秒\"), Western digits, and the version strings v11.0.11 and v10.9.2 exactly as written."
+  },
+  "rv": {
+   "sec_p": "专注于主播们真正想要的功能——v11.0.11 带来的新变化，外加 v10.9.2 的精华亮点。",
+   "cards": [
+    {
+     "h": "手机遥控",
+     "p": "用 SplitCam Remote 在手机上掌控直播：切换场景、开始和停止直播与录制、调节音频、管理素材源，全程不用碰键盘。"
+    },
+    {
+     "h": "横屏 + 竖屏虚拟摄像头",
+     "p": "在 Windows 11 上，两个全新的虚拟摄像头分别输出横屏和竖屏画面，可供多个应用同时使用。Windows 10 新增一个单独的竖屏虚拟摄像头，供使用 DirectShow 的应用调用；在 ARM 版 Windows 上，虚拟摄像头则以原生方式运行。"
+    },
+    {
+     "h": "用手机或 Stream Deck 触发回放",
+     "p": "在 SplitCam Remote 上点一下，或按一下 Stream Deck 按键，即可触发即时回放。回放素材源会捕获场景的最近 5–10 秒，如今在横屏和竖屏画布上都能正常工作。"
+    },
+    {
+     "h": "更流畅、更安心的直播",
+     "p": "画面更流畅；虚拟摄像头闲置时，不必要的处理也更少。显卡驱动出错时，SplitCam 会在重启前保存你的项目，内置的崩溃报告功能则有助于查明并修复原因。"
+    }
+   ],
+   "changes": [
+    {
+     "was": "开始或停止直播与录制",
+     "now": "开始和停止直播与录制",
+     "why": "zh/stream-deck/ 页面原文就是「开始和停止直播与录制」（译者注释里也这么写），改成一致的说法。"
+    },
+    {
+     "was": "ARM 版 Windows 上则以原生方式运行虚拟摄像头。",
+     "now": "在 ARM 版 Windows 上，虚拟摄像头则以原生方式运行。",
+     "why": "补上「在」，和前一句「在 Windows 11 上」对应；让「虚拟摄像头」做主语，读起来更顺，意思不变（ARM64 上的原生组件）。"
+    },
+    {
+     "was": "现在在横屏和竖屏画布上都能正常工作",
+     "now": "如今在横屏和竖屏画布上都能正常工作",
+     "why": "去掉「现在在」这种相邻重字，读起来别扭。"
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "el",
+  "tr": {
+   "sec_p": "Με επίκεντρο αυτά που πραγματικά ζήτησαν οι streamers — τι νέο φέρνει η v11.0.11, συν τα καλύτερα της v10.9.2.",
+   "cards": [
+    {
+     "h": "Απομακρυσμένος έλεγχος",
+     "p": "Ελέγξτε το stream από το κινητό σας με το SplitCam Remote: αλλάξτε σκηνές, ξεκινήστε ή σταματήστε τη μετάδοση και την εγγραφή, ρυθμίστε τον ήχο και διαχειριστείτε τις πηγές χωρίς να αγγίξετε το πληκτρολόγιο."
+    },
+    {
+     "h": "Οριζόντιες και κατακόρυφες εικονικές κάμερες",
+     "p": "Στα Windows 11, δύο νέες εικονικές κάμερες στέλνουν ξεχωριστά την οριζόντια και την κατακόρυφη εικόνα, σε πολλές εφαρμογές ταυτόχρονα. Τα Windows 10 αποκτούν κατακόρυφη κάμερα για εφαρμογές DirectShow, ενώ στα Windows σε ARM οι κάμερες τρέχουν εγγενώς."
+    },
+    {
+     "h": "Replay από το κινητό ή το Stream Deck",
+     "p": "Ενεργοποιήστε ένα στιγμιαίο replay από το SplitCam Remote ή από ένα πλήκτρο του Stream Deck. Η πηγή Replay κρατά τα τελευταία 5–10 δευτερόλεπτα μιας σκηνής και πλέον λειτουργεί τόσο στον οριζόντιο όσο και στον κατακόρυφο καμβά."
+    },
+    {
+     "h": "Ομαλότερες, ασφαλέστερες συνεδρίες",
+     "p": "Πιο ομαλό βίντεο και λιγότερη επεξεργασία όσο οι εικονικές κάμερες δεν χρησιμοποιούνται. Αν ο οδηγός γραφικών παρουσιάσει σφάλμα, το SplitCam αποθηκεύει το έργο σας πριν από την επανεκκίνηση, και οι ενσωματωμένες αναφορές κατάρρευσης βοηθούν να διορθωθεί η αιτία."
+    }
+   ],
+   "convention": "el block: no gloss <span> and no English-in-parentheses. Titles are either plain English feature names (\"Restream Server Picker\", \"Replay Source\", \"Virtual Camera Routing\") or Greek with English UI/product names kept inside (\"Κατακόρυφος καμβάς\", \"Εφέ 3D Transform\", \"Luma Wipe, Slide και Swipe\"). To keep all four new titles consistent I used Greek throughout, keeping only the product/source names SplitCam Remote, Stream Deck and Replay. Remote Control becomes \"Απομακρυσμένος έλεγχος\", the Greek name the el/products page gives this setting. Note: el/stream-deck keeps \"καρτέλα Remote Control\" in English, so plain \"Remote Control\" would also match the site if the orchestrator prefers the English-feature-name style. Formal plural imperative as on the page (Επιλέξτε/Αλλάξτε → Ελέγξτε/Ενεργοποιήστε). The sec_p uses \"Με επίκεντρο\" instead of \"Επικεντρωμένες\" so it doesn't have to agree with a heading that may change. Versions stay feminine (\"η v11.0.11\", \"της v10.9.2\") after the page's \"την v10.9.2\". Terms reused from el pages: εικονική κάμερα, σκηνή/σκηνές, πηγή/πηγές, πηγή Replay, οριζόντιος/κατακόρυφος καμβάς, μετάδοση, stream (as in products \"ελέγχετε το stream από το κινητό\"), εγγραφή, κινητό, ήχος, έργο (project), οδηγός (driver, as in \"οδηγός εικονικής κάμερας\"), κατάρρευση (crash, from for/educators), εγγενώς (from \"εγγενή εικονική κάμερα\"), συν. Replay is neuter indeclinable (\"ένα στιγμιαίο replay\", after the page's \"Στιγμιαία replay\"). \"5–10\" keeps the en dash from the EN source. The existing card uses a hyphen (\"5-10\"), so the dash can be switched to match the page."
+  },
+  "rv": {
+   "sec_p": "Με επίκεντρο αυτά που πραγματικά ζήτησαν οι streamers — τι νέο φέρνει η v11.0.11, συν τα καλύτερα της v10.9.2.",
+   "cards": [
+    {
+     "h": "Απομακρυσμένος έλεγχος",
+     "p": "Χειριστείτε το stream από το κινητό σας με το SplitCam Remote: αλλάξτε σκηνές, ξεκινήστε ή σταματήστε τη μετάδοση και την εγγραφή, ρυθμίστε τον ήχο και διαχειριστείτε τις πηγές χωρίς να αγγίξετε το πληκτρολόγιο."
+    },
+    {
+     "h": "Οριζόντιες και κατακόρυφες εικονικές κάμερες",
+     "p": "Στα Windows 11, δύο νέες εικονικές κάμερες στέλνουν ξεχωριστά την οριζόντια και την κατακόρυφη εικόνα, σε πολλές εφαρμογές ταυτόχρονα. Τα Windows 10 αποκτούν κατακόρυφη κάμερα για εφαρμογές DirectShow, ενώ στα Windows σε ARM οι κάμερες τρέχουν εγγενώς."
+    },
+    {
+     "h": "Replay από το κινητό ή το Stream Deck",
+     "p": "Ενεργοποιήστε ένα στιγμιαίο replay από το SplitCam Remote ή από ένα πλήκτρο του Stream Deck. Η πηγή Replay κρατά τα τελευταία 5-10 δευτερόλεπτα μιας σκηνής και πλέον λειτουργεί τόσο στον οριζόντιο όσο και στον κατακόρυφο καμβά."
+    },
+    {
+     "h": "Πιο ομαλή, πιο αξιόπιστη λειτουργία",
+     "p": "Πιο ομαλό βίντεο και λιγότερη περιττή επεξεργασία όσο οι εικονικές κάμερες δεν χρησιμοποιούνται. Αν ο οδηγός γραφικών παρουσιάσει σφάλμα, το SplitCam αποθηκεύει το έργο σας πριν από την επανεκκίνηση, και οι ενσωματωμένες αναφορές κατάρρευσης βοηθούν να εντοπιστεί και να διορθωθεί η αιτία."
+    }
+   ],
+   "changes": [
+    {
+     "was": "Ελέγξτε το stream από το κινητό σας",
+     "now": "Χειριστείτε το stream από το κινητό σας",
+     "why": "The aorist imperative «Ελέγξτε» mostly reads as \"check / verify\". «Χειριστείτε» clearly means operating the stream remotely."
+    },
+    {
+     "was": "5–10 δευτερόλεπτα",
+     "now": "5-10 δευτερόλεπτα",
+     "why": "The existing Replay Source card and the hero on the same page write «5-10» with a hyphen, so this matches the block."
+    },
+    {
+     "was": "Ομαλότερες, ασφαλέστερες συνεδρίες",
+     "now": "Πιο ομαλή, πιο αξιόπιστη λειτουργία",
+     "why": "«Συνεδρίες» is a calque of \"sessions\" and in Greek means a meeting or therapy session, not a streaming session. «Ασφαλέστερες» suggests security. The facts are about smoothness and recovery or reliability, and «αξιόπιστη» says that without overstating it."
+    },
+    {
+     "was": "λιγότερη επεξεργασία όσο οι εικονικές κάμερες δεν χρησιμοποιούνται",
+     "now": "λιγότερη περιττή επεξεργασία όσο οι εικονικές κάμερες δεν χρησιμοποιούνται",
+     "why": "Matches the facts (\"less unnecessary processing\"). Without «περιττή» the text reads as a general cut in processing."
+    },
+    {
+     "was": "βοηθούν να διορθωθεί η αιτία",
+     "now": "βοηθούν να εντοπιστεί και να διορθωθεί η αιτία",
+     "why": "The facts say crash reporting helps diagnose AND resolve failures. The draft left out the diagnosis part."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "cs",
+  "tr": {
+   "sec_p": "Zaměřená na to, co si streameři opravdu přáli — novinky ve v11.0.11 a k tomu to nejlepší z v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control (vzdálené ovládání)",
+     "p": "Ovládejte stream z telefonu pomocí SplitCam Remote: přepínejte scény, spouštějte a zastavujte vysílání i nahrávání, upravujte zvuk a spravujte zdroje — bez sahání na klávesnici."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras (vodorovné a svislé virtuální kamery)",
+     "p": "Na Windows 11 posílají dvě nové virtuální kamery obraz na šířku a na výšku zvlášť, a to do několika aplikací současně. Windows 10 dostává svislou kameru pro aplikace s DirectShow a na Windows na ARM běží virtuální kamery nativně."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck (opakování z telefonu nebo Stream Decku)",
+     "p": "Spusťte okamžité opakování ze SplitCam Remote nebo klávesou na Stream Decku. Zdroj Replay uchovává posledních 5–10 sekund scény a nově funguje na vodorovném i svislém plátně."
+    },
+    {
+     "h": "Smoother, Safer Sessions (plynulejší a spolehlivější relace)",
+     "p": "Plynulejší video a méně zbytečného zpracování, když se virtuální kamery nepoužívají. Pokud selže grafický ovladač, SplitCam uloží váš projekt dřív, než se restartuje, a vestavěné hlášení pádů pomáhá dohledat a opravit příčinu."
+    }
+   ],
+   "convention": "cs whats-new block keeps the English feature name and adds a lowercase Czech gloss in parentheses, e.g. \"Vertical Canvas (svislé plátno)\", \"Replay Source (opakování)\", \"Virtual Camera Routing (směrování)\". All four new titles follow that pattern with plain text, no span. The gloss for Remote Control reuses \"Vzdálené ovládání\", the name of the settings tab on cs/stream-deck. Terms reused from the page: virtuální kamera; scéna; zdroj (zdroj Replay); vodorovné/svislé plátno; na šířku / na výšku (from cs/virtual-camera); vysílání i nahrávání (from cs/stream-deck: \"spouští a zastavuje vysílání i nahrávání\"); zvuk; klávesa na Stream Decku; \"bez sahání na klávesnici\" (from cs/stream-deck); aplikace; telefon; relace (from cs/stream-deck). New Czech terms: \"hlášení pádů\" for crash reporting and \"grafický ovladač\" for graphics driver. Formal vy imperatives match the page. SplitCam declines as SplitCamu, as the existing sec-p does. Windows takes singular agreement (\"Windows 10 dostává\"), matching \"Windows obvykle dává\" on cs/virtual-camera. Prepositions change before the letters they meet: \"ve v11.0.11\" and \"ze SplitCam Remote\". sec_p keeps neuter plural \"Zaměřená\", which agrees with \"Šest vylepšení\" in the heading. One mismatch between sources: card 4 follows the English copy's \"graphics driver\", but the release-note fact says \"graphics-device failures\". If you want to match the release note, use \"Pokud selže grafické zařízení\"."
+  },
+  "rv": {
+   "sec_p": "Zaměřená na to, co si streameři opravdu přáli — novinky ve v11.0.11 a k tomu to nejlepší z v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control (vzdálené ovládání)",
+     "p": "Ovládejte stream z telefonu pomocí SplitCam Remote: přepínejte scény, spouštějte a zastavujte vysílání i nahrávání, upravujte zvuk a spravujte zdroje — bez sahání na klávesnici."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras (vodorovné a svislé virtuální kamery)",
+     "p": "Na Windows 11 posílají dvě nové virtuální kamery obraz na šířku a na výšku zvlášť, a to do několika aplikací současně. Windows 10 dostává svislou virtuální kameru pro aplikace využívající DirectShow a na počítačích s Windows a procesorem ARM běží virtuální kamery nativně."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck (opakování z telefonu nebo Stream Decku)",
+     "p": "Spusťte okamžité opakování ze SplitCam Remote nebo klávesou na Stream Decku. Zdroj Replay uchovává posledních 5–10 sekund scény a nově funguje na vodorovném i svislém plátně."
+    },
+    {
+     "h": "Smoother, Safer Sessions (plynulejší a spolehlivější relace)",
+     "p": "Plynulejší video a méně zbytečného zpracování, když se virtuální kamery nepoužívají. Když selže grafické zařízení, SplitCam se lépe zotaví a před restartem uloží váš projekt; vestavěné hlášení pádů pomáhá dohledat a opravit příčinu."
+    }
+   ],
+   "changes": [
+    {
+     "was": "Windows 10 dostává svislou kameru pro aplikace s DirectShow",
+     "now": "Windows 10 dostává svislou virtuální kameru pro aplikace využívající DirectShow",
+     "why": "The fact says a vertical virtual camera, so 'virtuální' belongs here, as it does everywhere else on the page. 'aplikace s DirectShow' is a calque. 'využívající DirectShow' is the natural Czech for apps that use DirectShow."
+    },
+    {
+     "was": "a na Windows na ARM běží virtuální kamery nativně",
+     "now": "a na počítačích s Windows a procesorem ARM běží virtuální kamery nativně",
+     "why": "'na Windows na ARM' stacks two 'na' prepositions and reads like English 'Windows on ARM' copied word for word. The new wording is idiomatic, keeps ARM untranslated and makes the same claim."
+    },
+    {
+     "was": "Pokud selže grafický ovladač",
+     "now": "Když selže grafické zařízení",
+     "why": "The release-note fact is about graphics-device failures, and a driver is a different and narrower thing. The facts list wins over the English copy, as the translator's own note also points out."
+    },
+    {
+     "was": "SplitCam uloží váš projekt dřív, než se restartuje, a vestavěné hlášení pádů…",
+     "now": "SplitCam se lépe zotaví a před restartem uloží váš projekt; vestavěné hlášení pádů…",
+     "why": "The fact is 'better recovery after failures, including saving the project', and the translation had dropped the better-recovery part, so it is restored without claiming anything extra. 'před restartem' also removes a doubt about who restarts, SplitCam or the device, which 'dřív, než se restartuje' left open."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "he",
+  "tr": {
+   "sec_p": "ממוקדים במה שסטרימרים באמת ביקשו — החידושים ב-v11.0.11, ולצדם המיטב של v10.9.2.",
+   "cards": [
+    {
+     "h": "שליטה מרחוק (Remote Control)",
+     "p": "שלטו בשידור מהטלפון עם SplitCam Remote: החליפו סצנות, התחילו או עצרו את השידור ואת ההקלטה, כווננו את האודיו ונהלו מקורות — בלי לגעת במקלדת."
+    },
+    {
+     "h": "מצלמות וירטואליות אופקית ואנכית (Horizontal + Vertical)",
+     "p": "ב-Windows 11 שתי מצלמות וירטואליות חדשות שולחות וידאו אופקי ואנכי בנפרד, לכמה אפליקציות בו-זמנית. ב-Windows 10 נוספה מצלמה אנכית לאפליקציות שעובדות עם DirectShow, ובמחשבי Windows עם מעבד ARM הן פועלות באופן מקורי."
+    },
+    {
+     "h": "חזרה מיידית (Replay) מהטלפון או מ-Stream Deck",
+     "p": "הפעילו חזרה מיידית מ-SplitCam Remote או בלחיצה על מקש ב-Stream Deck. מקור Replay שומר את 5–10 השניות האחרונות של הסצנה, ועכשיו עובד גם בקנבס האופקי וגם בקנבס האנכי."
+    },
+    {
+     "h": "סשנים חלקים ובטוחים יותר (Smoother, Safer Sessions)",
+     "p": "וידאו חלק יותר ופחות עיבוד כשהמצלמות הווירטואליות לא בשימוש. אם דרייבר כרטיס המסך נכשל, SplitCam שומרת את הפרויקט שלכם לפני שהיא מופעלת מחדש, ודוחות הקריסה המובנים עוזרים לאתר את הגורם ולתקן אותו."
+    }
+   ],
+   "convention": "In this block, he/index.html gives each title in Hebrew with the English feature name in parentheses, as in the existing \"בורר שרת שידור (Server Picker)\", \"קנבס אנכי (Vertical Canvas)\" and \"ניתוב מצלמה וירטואלית (Routing)\". All four new titles follow that pattern and there is no gloss span. Card 3 puts \"(Replay)\" straight after the term it explains instead of at the end: a parenthesis directly after Latin text at the end of an RTL line (\"Stream Deck (Replay)\") renders mirrored and broken. Every other parenthesis sits between Hebrew and Latin text, so it renders correctly. The copy addresses the reader informally in the plural, as the page already does (שלטו, החליפו, הפעילו, שלכם). SplitCam takes feminine agreement (שומרת, היא מופעלת מחדש). Terms reused from the page and the locale's other pages: שליטה מרחוק and the Remote Control tab name (products/, phone-as-webcam/); מצלמה/מצלמות וירטואליות; אופקי/אנכי and קנבס (homepage, multistreaming/); סצנות; מקורות; שידור; הקלטה; אודיו; מקור Replay, exactly as the homepage names the source; חזרה מיידית, taken from the page's \"חזרות איטיות מיידיות\"; מקש/כפתור ב-Stream Deck (stream-deck/); דרייבר (virtual-camera/); כרטיס המסך for the GPU; דוחות קריסה (privacy text); פרויקט; באופן מקורי; בו-זמנית; סשנים (multistreaming/). SplitCam, SplitCam Remote, Stream Deck, Windows 11/10, DirectShow, ARM, v11.0.11 and v10.9.2 are left untranslated. The English copy's \"Windows on ARM\" is written as \"במחשבי Windows עם מעבד ARM\"."
+  },
+  "rv": {
+   "sec_p": "ממוקדים במה שסטרימרים באמת ביקשו — החידושים ב-v11.0.11, ולצדם המיטב של v10.9.2.",
+   "cards": [
+    {
+     "h": "שליטה מרחוק (Remote Control)",
+     "p": "שלטו בשידור מהטלפון עם SplitCam Remote: החליפו סצנות, התחילו או עצרו את השידור ואת ההקלטה, כווננו את האודיו ונהלו מקורות — בלי לגעת במקלדת."
+    },
+    {
+     "h": "מצלמה וירטואלית אופקית ואנכית (Horizontal + Vertical)",
+     "p": "ב-Windows 11 שתי מצלמות וירטואליות חדשות שולחות וידאו אופקי ואנכי בנפרד, לכמה אפליקציות בו-זמנית. ב-Windows 10 נוספה מצלמה וירטואלית אנכית נפרדת לאפליקציות שעובדות עם DirectShow, ובמחשבי Windows עם מעבד ARM הן פועלות באופן מקורי."
+    },
+    {
+     "h": "חזרה מיידית (Replay) מהטלפון או מ-Stream Deck",
+     "p": "הפעילו חזרה מיידית מ-SplitCam Remote או בלחיצה על מקש ב-Stream Deck. מקור Replay שומר את 5–10 השניות האחרונות של הסצנה, ועכשיו הוא עובד גם בקנבס האופקי וגם בקנבס האנכי."
+    },
+    {
+     "h": "סשנים חלקים ובטוחים יותר (Smoother, Safer Sessions)",
+     "p": "וידאו חלק יותר ופחות עיבוד כשהמצלמות הווירטואליות לא בשימוש. אם דרייבר כרטיס המסך נכשל, SplitCam שומרת את הפרויקט שלכם לפני שהיא מופעלת מחדש, ודיווח הקריסות המובנה עוזר לאתר את הגורם ולתקן אותו."
+    }
+   ],
+   "changes": [
+    {
+     "was": "מצלמות וירטואליות אופקית ואנכית (Horizontal + Vertical)",
+     "now": "מצלמה וירטואלית אופקית ואנכית (Horizontal + Vertical)",
+     "why": "The number doesn't agree: the singular adjectives אופקית/אנכית sit on the plural noun מצלמות. A generic singular reads naturally (compare 'קנבס אופקי ואנכי' on the page) and the card text still says there are two cameras."
+    },
+    {
+     "was": "ב-Windows 10 נוספה מצלמה אנכית לאפליקציות",
+     "now": "ב-Windows 10 נוספה מצלמה וירטואלית אנכית נפרדת לאפליקציות",
+     "why": "The facts say a separate vertical virtual camera. Plain 'מצלמה אנכית' reads like a physical camera and drops 'separate'."
+    },
+    {
+     "was": "ועכשיו עובד גם בקנבס האופקי",
+     "now": "ועכשיו הוא עובד גם בקנבס האופקי",
+     "why": "After a comma and a new clause a native reader expects the subject pronoun. Without it the clause reads as clipped telegraphese."
+    },
+    {
+     "was": "ודוחות הקריסה המובנים עוזרים",
+     "now": "ודיווח הקריסות המובנה עוזר",
+     "why": "The feature being described is crash reporting, a mechanism added in this release, not a set of existing reports. 'דיווח קריסות' names the feature, and the verb is now singular to agree with it."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "sr",
+  "tr": {
+   "sec_p": "Usredsređeno na ono što su strimeri zaista tražili — novosti u v11.0.11 i najbolje iz v10.9.2.",
+   "cards": [
+    {
+     "h": "Daljinsko upravljanje",
+     "p": "Vodi strim sa telefona pomoću aplikacije SplitCam Remote: prebacuj scene, pokreći i zaustavljaj striming i snimanje, podešavaj zvuk i upravljaj izvorima bez dodirivanja tastature."
+    },
+    {
+     "h": "Vodoravne i uspravne virtuelne kamere",
+     "p": "Na Windows 11 dve nove virtuelne kamere šalju vodoravnu i uspravnu sliku odvojeno, u više aplikacija odjednom. Windows 10 dobija uspravnu kameru za DirectShow aplikacije, a na Windows računarima sa ARM procesorom rade nativno."
+    },
+    {
+     "h": "Replay sa telefona ili Stream Deck-a",
+     "p": "Pusti instant ponavljanje iz aplikacije SplitCam Remote ili jednim tasterom na Stream Deck-u. Replay Source čuva poslednjih 5–10 sekundi scene i sada radi i na vodoravnom i na uspravnom kadru."
+    },
+    {
+     "h": "Glađe i sigurnije sesije",
+     "p": "Glađi video i manje obrade dok se virtuelne kamere ne koriste. Ako grafički drajver otkaže, SplitCam sačuva tvoj projekat pre nego što se ponovo pokrene, a ugrađeno prijavljivanje padova pomaže da se uzrok otkloni."
+    }
+   ],
+   "convention": "In this block the sr page translates card titles into Serbian (\"Izbor restream servera\", \"Uspravni kadar\", \"Rutiranje virtuelne kamere\"). It uses no gloss <span> and no English name in parentheses. English is kept only for in-app names: Replay Source, 3D Transform, Luma Wipe/Slide/Swipe. So the four new titles are plain Serbian, with Replay/Stream Deck left untranslated. Register is informal \"ti\" (Izaberi, Prebaci, tvoj), as on the homepage. Terms reused from the page: virtuelna kamera; scena/scene; izvor/izvori; kadar for canvas (\"Uspravni kadar\", \"Prebaci kadar na 9:16\"); vodoravni/uspravni for horizontal/vertical (the homepage uses these, not vertikalni/horizontalni); strim/striming; snimanje; zvuk; taster (\"jednim tasterom\"); telefon; aplikacija; obrada; drajver (from /virtual-camera/). The Replay source is named \"Replay Source\", as in the homepage card and feature list. Stream Deck is inflected with a hyphen (Stream Deck-a, Stream Deck-u), matching the page's Zoom-u/Teams-u. \"Windows 11\"/\"Windows 10\" stay undeclined, as on the homepage (\"za Windows\"). \"Crash\" had no existing term, so it is rendered as \"prijavljivanje padova\"."
+  },
+  "rv": {
+   "sec_p": "Usredsređeno na ono što su strimeri zaista tražili — novosti u v11.0.11 i najbolje iz v10.9.2.",
+   "cards": [
+    {
+     "h": "Daljinsko upravljanje",
+     "p": "Vodi strim sa telefona pomoću aplikacije SplitCam Remote: prebacuj scene, pokreći i zaustavljaj striming i snimanje, podešavaj zvuk i upravljaj izvorima, a da ne dodirneš tastaturu."
+    },
+    {
+     "h": "Vodoravne i uspravne virtuelne kamere",
+     "p": "Na Windows 11 dve nove virtuelne kamere šalju vodoravnu i uspravnu sliku odvojeno, u više aplikacija odjednom. Windows 10 dobija uspravnu kameru za DirectShow aplikacije, a na Windows računarima sa ARM procesorom virtuelne kamere rade nativno."
+    },
+    {
+     "h": "Replay sa telefona ili Stream Deck-a",
+     "p": "Pusti instant replay iz aplikacije SplitCam Remote ili jednim tasterom na Stream Deck-u. Replay Source čuva poslednjih 5–10 sekundi scene i sada radi i na vodoravnom i na uspravnom kadru."
+    },
+    {
+     "h": "Glađi i pouzdaniji rad",
+     "p": "Glađi video i manje obrade dok se virtuelne kamere ne koriste. Ako grafički drajver otkaže, SplitCam će sačuvati tvoj projekat pre ponovnog pokretanja, a ugrađeni izveštaji o padu programa pomažu da se uzrok otkloni."
+    }
+   ],
+   "changes": [
+    {
+     "was": "bez dodirivanja tastature",
+     "now": "a da ne dodirneš tastaturu",
+     "why": "The verbal-noun phrase is stiff and bureaucratic. The personal 'ti' clause matches the page's informal register (Izaberi, Prebaci, tvoj) and is how a streamer would say it."
+    },
+    {
+     "was": "a na Windows računarima sa ARM procesorom rade nativno.",
+     "now": "a na Windows računarima sa ARM procesorom virtuelne kamere rade nativno.",
+     "why": "The plural 'rade' had no subject, because the last noun before it is the singular 'uspravnu kameru', so the sentence read as broken. Naming the subject makes it clear that the virtual cameras run natively on ARM, which is the claim in the facts."
+    },
+    {
+     "was": "Pusti instant ponavljanje",
+     "now": "Pusti instant replay",
+     "why": "'Instant ponavljanje' is a literal calque. Serbian streamers say 'replay', and the card title and the page's Replay Source already keep the English word."
+    },
+    {
+     "was": "Glađe i sigurnije sesije",
+     "now": "Glađi i pouzdaniji rad",
+     "why": "'Sesije' is a calque of 'sessions' and sounds unnatural in a title. 'Sigurnije' reads as security, not stability. 'Pouzdaniji rad' covers the real claims (smoothness, recovery, crash diagnosis) without overstating them."
+    },
+    {
+     "was": "SplitCam sačuva tvoj projekat pre nego što se ponovo pokrene",
+     "now": "SplitCam će sačuvati tvoj projekat pre ponovnog pokretanja",
+     "why": "A perfective present in the main clause of a conditional sounds colloquial and slightly off. The future tense is the standard form after 'Ako ... otkaže', and the noun phrase is also shorter."
+    },
+    {
+     "was": "a ugrađeno prijavljivanje padova pomaže",
+     "now": "a ugrađeni izveštaji o padu programa pomažu",
+     "why": "'Izveštaj o padu (programa)' is the usual Serbian term for a crash report. 'Prijavljivanje padova' sounds literal and could be read as the user reporting the problem manually. The meaning stays the same: the reports help diagnose and fix the cause."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "hr",
+  "tr": {
+   "sec_p": "Usredotočeno na ono što su streameri stvarno zatražili — novosti u v11.0.11 i ono najbolje iz v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control (daljinsko upravljanje)",
+     "p": "Vodite stream s telefona uz SplitCam Remote: mijenjajte scene, pokrenite ili zaustavite stream i snimanje, podesite zvuk i upravljajte izvorima, a da ne dotaknete tipkovnicu."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras (horizontalne i vertikalne kamere)",
+     "p": "U sustavu Windows 11 dvije nove virtualne kamere zasebno šalju horizontalnu i vertikalnu sliku, i to u više aplikacija istovremeno. Windows 10 dobiva vertikalnu kameru za DirectShow aplikacije, a u sustavu Windows za ARM kamere rade izvorno."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck (ponavljanje s telefona ili Stream Decka)",
+     "p": "Pokrenite trenutačno ponavljanje iz aplikacije SplitCam Remote ili tipkom na Stream Decku. Izvor Replay čuva zadnjih 5–10 sekundi scene i sada radi i na horizontalnom i na vertikalnom platnu."
+    },
+    {
+     "h": "Smoother, Safer Sessions (glađi i sigurniji rad)",
+     "p": "Glađi video i manje obrade dok virtualne kamere miruju. Ako upravljački program grafičke kartice zakaže, SplitCam sprema vaš projekt prije ponovnog pokretanja, a ugrađena prijava rušenja pomaže da se uzrok otkloni."
+    }
+   ],
+   "convention": "In the hr whats-new block, each title keeps the English feature name and adds a short Croatian gloss in parentheses, with no span. Examples from the block: \"Restream Server Picker (odabir servera)\", \"Vertical Canvas (vertikalno platno)\", \"Replay Source (ponavljanje)\", \"Virtual Camera Routing (usmjeravanje)\". All four new titles follow this pattern, and \"ponavljanje\" is reused for Replay. The page addresses the reader formally (vi, e.g. Odaberite/Pošaljite). Terms reused from hr/index.html, virtual-camera, multistreaming, stream-deck and phone-as-webcam: virtualna kamera; scena; izvor, with the Replay source written as \"izvor Replay\"; horizontalno/vertikalno platno; stream, from \"pokreće i zaustavlja stream i snimanje\" on the stream-deck page; snimanje; zvuk; aplikacije; istovremeno; upravljački program for driver; telefon; \"tipke\" and \"Stream Decka/Stream Decku\" for Stream Deck keys; \"daljinski upravljač/upravljanje\" for remote control; \"trenutačni\" for instant. The pages had no existing word for crash, so I used \"prijava rušenja\" for crash reporting. Windows 11, Windows 10 and SplitCam Remote are left uninflected (\"U sustavu Windows 11\", \"iz aplikacije SplitCam Remote\"). SplitCam, DirectShow, ARM, v11.0.11 and v10.9.2 are kept exactly as written."
+  },
+  "rv": {
+   "sec_p": "Usredotočeno na ono što su streameri stvarno zatražili — novosti u v11.0.11 i ono najbolje iz v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control (daljinsko upravljanje)",
+     "p": "Vodite stream s telefona uz SplitCam Remote: mijenjajte scene, pokrenite ili zaustavite stream i snimanje, podesite zvuk i upravljajte izvorima, a da ne dotaknete tipkovnicu."
+    },
+    {
+     "h": "Horizontal + Vertical Virtual Cameras (horizontalne i vertikalne virtualne kamere)",
+     "p": "U sustavu Windows 11 dvije nove virtualne kamere zasebno šalju horizontalnu i vertikalnu sliku, i to u više aplikacija istovremeno. Windows 10 dobiva vertikalnu virtualnu kameru za DirectShow aplikacije, a Windows za ARM ih pokreće izvorno."
+    },
+    {
+     "h": "Replay from Phone or Stream Deck (ponavljanje s telefona ili Stream Decka)",
+     "p": "Pokrenite trenutačno ponavljanje iz aplikacije SplitCam Remote ili tipkom na Stream Decku. Izvor Replay čuva zadnjih 5–10 sekundi scene i sada radi i na horizontalnom i na vertikalnom platnu."
+    },
+    {
+     "h": "Smoother, Safer Sessions (glađi i sigurniji rad)",
+     "p": "Glađi video i manje obrade dok se virtualne kamere ne koriste. Ako upravljački program grafičke kartice zakaže, SplitCam sprema vaš projekt prije ponovnog pokretanja, a ugrađena izvješća o rušenju pomažu da se uzrok otkloni."
+    }
+   ],
+   "changes": [
+    {
+     "was": "(horizontalne i vertikalne kamere)",
+     "now": "(horizontalne i vertikalne virtualne kamere)",
+     "why": "Samo „kamere“ čitatelj može shvatiti kao fizičke web kamere. Cijela stranica govori „virtualna kamera“, a ovdje je riječ upravo o novim virtualnim kamerama."
+    },
+    {
+     "was": "Windows 10 dobiva vertikalnu kameru za DirectShow aplikacije",
+     "now": "Windows 10 dobiva vertikalnu virtualnu kameru za DirectShow aplikacije",
+     "why": "Iz istog razloga: činjenica govori o zasebnoj vertikalnoj VIRTUALNOJ kameri, a termin ostaje isti kao na ostatku stranice."
+    },
+    {
+     "was": "a u sustavu Windows za ARM kamere rade izvorno",
+     "now": "a Windows za ARM ih pokreće izvorno",
+     "why": "Ponavljao se „u sustavu“ i opet „kamere“. Nova rečenica teče prirodnije, prati izvornik („runs them natively“) i ništa ne dodaje činjenicama."
+    },
+    {
+     "was": "dok virtualne kamere miruju",
+     "now": "dok se virtualne kamere ne koriste",
+     "why": "Činjenica je „kad se virtualne kamere ne koriste“. „Miruju“ je doslovni prijevod riječi idle i zvuči pomalo neobično za softversku komponentu."
+    },
+    {
+     "was": "a ugrađena prijava rušenja pomaže da se uzrok otkloni",
+     "now": "a ugrađena izvješća o rušenju pomažu da se uzrok otkloni",
+     "why": "U hrvatskom softverskom jeziku uobičajeno je „izvješće o rušenju“ (crash report). „Prijava rušenja“ zvuči kao prijava incidenta. Glagol je usklađen s množinom."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "da",
+  "tr": {
+   "sec_p": "Fokuseret på det streamere rent faktisk bad om — nyt i v11.0.11 plus det bedste fra v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Styr streamen fra din telefon med SplitCam Remote: skift scener, start eller stop streamen og optagelsen, juster lyden og administrer kilder uden at røre tastaturet."
+    },
+    {
+     "h": "Horisontale + vertikale virtuelle kameraer",
+     "p": "På Windows 11 sender to nye virtuelle kameraer det horisontale og det vertikale billede hver for sig, til flere apps på én gang. Windows 10 får et separat vertikalt kamera til DirectShow-apps, og på ARM-computere med Windows kører de nativt."
+    },
+    {
+     "h": "Replay fra telefon eller Stream Deck",
+     "p": "Udløs en øjeblikkelig genafspilning fra SplitCam Remote eller en Stream Deck-tast. Replay Source gemmer de sidste 5–10 sekunder af en scene og virker nu på både det horisontale og det vertikale lærred."
+    },
+    {
+     "h": "Mere flydende og sikrere sessioner",
+     "p": "Mere flydende video og mindre unødvendig behandling, når de virtuelle kameraer ikke er i brug. Hvis grafikdriveren svigter, gemmer SplitCam dit projekt, før programmet genstarter, og indbyggede nedbrudsrapporter hjælper med at finde og rette årsagen."
+    }
+   ],
+   "convention": "The da whats-new block uses no gloss span and no parentheses. Names of features in the app stay in English as plain titles (\"Restream Server Picker\", \"Vertical Canvas\", \"Replay Source\", \"Virtual Camera Routing\"). Any surrounding descriptive words are in Danish (\"3D Transform-effekt\", \"Luma Wipe, Slide og Swipe\"). I applied the same rule to all four new titles. \"Remote Control\" (the tab name in SplitCam Settings, also kept in English on da/stream-deck) and \"Replay\" stay in English, and the descriptive parts are Danish. The page uses informal \"du/din\" and imperatives without accents (Importer, Roter), so I wrote juster and administrer. Terms reused from the page: virtuelt kamera / virtuelle kameraer (index, virtual-camera); lærred and horisontal/vertikal (from this same block); scener, kilder, streamen, optagelsen, \"start eller stop streamen og optagelsen\", \"uden at røre tastaturet\" (index, stream-deck, products); Replay Source as the name of the source (index); Stream Deck-tast, since da/stream-deck calls the keys \"taster\"; nedbrudsrapporter (privacy-policy); projekt, genstart, telefon. Version strings are unchanged. Two facts are worded to match the release notes more closely than the English copy does: Windows 10 gets a \"separat\" vertical camera, and the processing saved is \"unødvendig\"."
+  },
+  "rv": {
+   "sec_p": "Fokuseret på det streamere rent faktisk bad om — det nye i v11.0.11 plus det bedste fra v10.9.2.",
+   "cards": [
+    {
+     "h": "Remote Control",
+     "p": "Styr streamen fra din telefon med SplitCam Remote: skift scener, start eller stop streamen og optagelsen, juster lyden og administrer kilder uden at røre tastaturet."
+    },
+    {
+     "h": "Horisontale + vertikale virtuelle kameraer",
+     "p": "På Windows 11 sender to nye virtuelle kameraer det horisontale og det vertikale billede hver for sig, til flere apps på én gang. Windows 10 får et separat vertikalt kamera til DirectShow-apps, og på ARM-computere med Windows kører de nativt."
+    },
+    {
+     "h": "Replay fra telefon eller Stream Deck",
+     "p": "Udløs en øjeblikkelig genafspilning fra SplitCam Remote eller en Stream Deck-tast. Replay Source gemmer de sidste 5–10 sekunder af en scene og virker nu på både det horisontale og det vertikale lærred."
+    },
+    {
+     "h": "Mere flydende og sikrere sessioner",
+     "p": "Mere flydende video og mindre unødvendig behandling, når de virtuelle kameraer ikke er i brug. Hvis grafikdriveren svigter, gemmer SplitCam dit projekt, før programmet genstarter, og indbyggede nedbrudsrapporter hjælper med at finde årsagen og få den rettet."
+    }
+   ],
+   "changes": [
+    {
+     "was": "— nyt i v11.0.11 plus det bedste fra v10.9.2.",
+     "now": "— det nye i v11.0.11 plus det bedste fra v10.9.2.",
+     "why": "A bare \"nyt i\" set against \"det bedste fra\" reads like a telegraphic calque of \"what's new\". \"det nye i\" gives the two halves the same shape (det nye / det bedste), which is how a Danish writer would put it."
+    },
+    {
+     "was": "hjælper med at finde og rette årsagen",
+     "now": "hjælper med at finde årsagen og få den rettet",
+     "why": "\"rette årsagen\" is an awkward collocation. \"få den rettet\" also matches the English \"helps get the cause fixed\" and the facts (help diagnose and resolve) more closely, without suggesting the user fixes it."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "fi",
+  "tr": {
+   "sec_p": "Keskitytty siihen, mitä striimaajat todella pyysivät — version v11.0.11 uutuudet sekä parhaat palat versiosta v10.9.2.",
+   "cards": [
+    {
+     "h": "Etäohjaus",
+     "p": "Ohjaa lähetystä puhelimestasi SplitCam Remote -sovelluksella: vaihda näkymiä, aloita tai lopeta lähetys ja tallennus, säädä ääntä ja hallitse lähteitä koskematta näppäimistöön."
+    },
+    {
+     "h": "Vaaka- ja pystysuuntaiset virtuaalikamerat",
+     "p": "Windows 11:ssä on kaksi uutta virtuaalikameraa, jotka lähettävät vaaka- ja pystykuvan erikseen useaan sovellukseen samanaikaisesti. Windows 10 saa erillisen pystysuuntaisen virtuaalikameran DirectShow-sovelluksille, ja Windows on ARM -laitteissa virtuaalikamerat toimivat natiivisti."
+    },
+    {
+     "h": "Replay puhelimesta tai Stream Deckistä",
+     "p": "Käynnistä pikauusinta SplitCam Remote -sovelluksesta tai Stream Deckin näppäimellä. Replay-lähde toistaa näkymän viimeiset 5–10 sekuntia ja toimii nyt sekä vaaka- että pystykanvaksessa."
+    },
+    {
+     "h": "Sujuvammat ja varmemmat sessiot",
+     "p": "Sujuvampi video ja vähemmän turhaa käsittelyä, kun virtuaalikamerat eivät ole käytössä. Näytönohjaimen häiriön sattuessa SplitCam tallentaa projektisi ennen uudelleenkäynnistystä, ja sisäänrakennettu kaatumisraportointi auttaa selvittämään ja korjaamaan vikojen syyt."
+    }
+   ],
+   "convention": "fi translates card titles fully into Finnish, with no gloss span and no English name in parentheses (e.g. \"Restream-palvelimen valinta\", \"Pystysuora kanvas\", \"Virtuaalikameran reititys\"). English is kept only for proper or UI names (\"Replay-lähde\", \"Luma Wipe, Slide ja Swipe\"). All four new titles follow that, and the page's informal \"sinä\" imperatives are kept. Terms reused from fi/index.html, virtual-camera and multistreaming: näkymä (scene), lähde / Replay-lähde (source), kanvas / pysty- ja vaakakanvas, declined kanvakse- (canvas), virtuaalikamera (virtual camera), lähetys (stream), tallennus (recording), puhelin (phone), näytönohjain (graphics device), sovellus and \"useaan sovellukseen samanaikaisesti\" (several apps at once), natiivisti (natively), striimaajat (streamers). \"Windows 11:ssä\" follows the spoken form \"yhdessätoista\". Version numbers never take a case suffix: \"version v11.0.11\", \"versiosta v10.9.2\". No existing fi term was found for crash or driver. \"kaatumisraportointi\" is the standard Finnish term for crash reporting. The facts say \"graphics-device failures\", so the text says \"näytönohjaimen häiriö\" rather than naming a driver."
+  },
+  "rv": {
+   "sec_p": "Keskitytty siihen, mitä striimaajat todella pyysivät — version v11.0.11 uutuudet sekä parhaat palat versiosta v10.9.2.",
+   "cards": [
+    {
+     "h": "Etäohjaus",
+     "p": "Ohjaa lähetystä puhelimestasi SplitCam Remote -sovelluksella: vaihda näkymiä, aloita tai lopeta lähetys ja tallennus, säädä ääntä ja hallitse lähteitä koskematta näppäimistöön."
+    },
+    {
+     "h": "Vaaka- ja pystysuuntaiset virtuaalikamerat",
+     "p": "Windows 11:ssä on kaksi uutta virtuaalikameraa, jotka lähettävät vaaka- ja pystykuvan erikseen useaan sovellukseen samanaikaisesti. Windows 10 saa erillisen pystysuuntaisen virtuaalikameran DirectShow-sovelluksille, ja Windows on ARM -laitteissa virtuaalikamerat toimivat natiivisti."
+    },
+    {
+     "h": "Replay puhelimesta tai Stream Deckistä",
+     "p": "Käynnistä pikauusinta SplitCam Remote -sovelluksesta tai Stream Deckin näppäimellä. Replay-lähde toistaa näkymän viimeiset 5–10 sekuntia ja toimii nyt sekä vaaka- että pystykanvaksella."
+    },
+    {
+     "h": "Sujuvampaa ja vakaampaa striimausta",
+     "p": "Sujuvampi video ja vähemmän turhaa käsittelyä, kun virtuaalikamerat eivät ole käytössä. Jos näytönohjain pettää, SplitCam tallentaa projektisi ennen uudelleenkäynnistystä, ja sisäänrakennettu kaatumisraportointi auttaa selvittämään ja korjaamaan vikojen syyt."
+    }
+   ],
+   "changes": [
+    {
+     "was": "toimii nyt sekä vaaka- että pystykanvaksessa",
+     "now": "toimii nyt sekä vaaka- että pystykanvaksella",
+     "why": "A canvas is a surface, so Finnish uses the adessive (-lla), as with 'kankaalla'. The page already uses the adessive ('pystykanvaalla', misspelled there); kanvas declines as kanvakse-, so the correct form is 'pystykanvaksella'."
+    },
+    {
+     "was": "Sujuvammat ja varmemmat sessiot",
+     "now": "Sujuvampaa ja vakaampaa striimausta",
+     "why": "'sessiot' is a calque of 'sessions' and appears nowhere on the fi pages. For software, 'vakaampi' is the natural word for 'more stable/safer'. The striimaus word family is already established on the page (striimaajat, striimisi, pelistriimaukseen)."
+    },
+    {
+     "was": "Näytönohjaimen häiriön sattuessa SplitCam tallentaa",
+     "now": "Jos näytönohjain pettää, SplitCam tallentaa",
+     "why": "'häiriö' (a disturbance) understates the fact, which is a graphics-device failure. 'häiriön sattuessa' also sounds bookish. 'Jos näytönohjain pettää' is how streamers would say it and matches the fact exactly. It keeps näytönohjain, the page's own term."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "no",
+  "tr": {
+   "sec_p": "Fokusert på det streamere faktisk ba om — nytt i v11.0.11, pluss det beste fra v10.9.2.",
+   "cards": [
+    {
+     "h": "Fjernstyring",
+     "p": "Styr sendingen fra telefonen med SplitCam Remote: bytt scener, start eller stopp strømming og opptak, juster lyden og administrer kildene uten å røre tastaturet."
+    },
+    {
+     "h": "Horisontale + vertikale virtuelle kameraer",
+     "p": "På Windows 11 sender to nye virtuelle kameraer liggende og stående bilde hver for seg, til flere apper samtidig. Windows 10 får et vertikalt kamera for DirectShow-apper, og på Windows på ARM kjører de nativt."
+    },
+    {
+     "h": "Replay fra telefon eller Stream Deck",
+     "p": "Utløs en umiddelbar reprise fra SplitCam Remote eller med en tast på Stream Deck. Replay-kilden tar vare på de siste 5–10 sekundene av en scene og fungerer nå på både horisontalt og vertikalt lerret."
+    },
+    {
+     "h": "Jevnere, tryggere økter",
+     "p": "Jevnere video og mindre prosessering mens de virtuelle kameraene ikke er i bruk. Hvis grafikkdriveren svikter, lagrer SplitCam prosjektet ditt før omstart, og innebygd krasjrapportering hjelper til med å få årsaken rettet."
+    }
+   ],
+   "convention": "The no/ whats-new block translates card titles fully into Norwegian, in sentence case, with no English name in parentheses and no gloss span (existing titles: \"Velger for restream-server\", \"Vertikalt lerret\", \"Replay-kilde\", \"Ruting til virtuelt kamera\"). The informal \"du\" register is kept. Terms reused from the site: \"Fjernstyring\" (the name of the in-app tab in the Stream Deck page's QR steps, and the heading on products/), virtuelt kamera / virtuelle kameraer, scener, kilder/kildene, lerret (vertikalt/horisontalt), liggende/stående (from virtual-camera/), strømming og opptak (from stream-deck/), sendingen, hurtigtast/tast (stream-deck/), telefonen, reprise (homepage \"repriser\"), Replay-kilde/Replay-kilden (the homepage's name for the source), apper, nativt, omstart, krasj-/krasjrapporter (privacy-policy), økter (stream-deck/multistreaming), tastaturet. SplitCam, SplitCam Remote, Stream Deck, Windows 11/10, DirectShow, ARM, v11.0.11 and v10.9.2 are unchanged. One choice to check: \"Windows on ARM\" is written as \"Windows på ARM\", which is the name Microsoft uses in Norwegian. Only the homepage block was read for this. No files were edited."
+  },
+  "rv": {
+   "sec_p": "Fokusert på det streamere faktisk ba om — det som er nytt i v11.0.11, pluss det beste fra v10.9.2.",
+   "cards": [
+    {
+     "h": "Fjernstyring",
+     "p": "Styr sendingen fra telefonen med SplitCam Remote: bytt scener, start eller stopp strømming og opptak, juster lyden og administrer kildene uten å røre tastaturet."
+    },
+    {
+     "h": "Horisontale + vertikale virtuelle kameraer",
+     "p": "På Windows 11 sender to nye virtuelle kameraer liggende og stående bilde hver for seg, til flere apper samtidig. Windows 10 får et vertikalt kamera for DirectShow-apper, og på Windows på ARM kjører kameraene nativt."
+    },
+    {
+     "h": "Reprise fra telefon eller Stream Deck",
+     "p": "Utløs en umiddelbar reprise fra SplitCam Remote eller med en tast på Stream Deck. Replay-kilden tar vare på de siste 5–10 sekundene av en scene og fungerer nå på både horisontalt og vertikalt lerret."
+    },
+    {
+     "h": "Jevnere, tryggere økter",
+     "p": "Jevnere video og mindre prosessering mens de virtuelle kameraene ikke er i bruk. Hvis grafikkdriveren svikter, lagrer SplitCam prosjektet ditt før omstart, og innebygd krasjrapportering gjør det lettere å finne og rette feilen."
+    }
+   ],
+   "changes": [
+    {
+     "was": "nytt i v11.0.11, pluss det beste fra v10.9.2",
+     "now": "det som er nytt i v11.0.11, pluss det beste fra v10.9.2",
+     "why": "Det er ellipsen «nytt i» som gjør at det leses som en overskrift. «det som er nytt» står parallelt med «det beste fra» og passer til den løpende setningen i sub-linjen."
+    },
+    {
+     "was": "og på Windows på ARM kjører de nativt",
+     "now": "og på Windows på ARM kjører kameraene nativt",
+     "why": "«de» kommer rett etter «DirectShow-apper» og kan leses som om appene er det som kjører nativt. Med «kameraene» er det klart hva som menes, og det stemmer med faktum 2 (native komponenter for virtuelt kamera på ARM64). «Windows på ARM» beholdes."
+    },
+    {
+     "was": "Replay fra telefon eller Stream Deck",
+     "now": "Reprise fra telefon eller Stream Deck",
+     "why": "Blokken oversetter titlene, og siden bruker allerede «repriser» om selve handlingen. Det engelske navnet «Replay» brukes bare om kilden («Replay-kilde»), og det står fortsatt i beskrivelsen."
+    },
+    {
+     "was": "hjelper til med å få årsaken rettet",
+     "now": "gjør det lettere å finne og rette feilen",
+     "why": "Man retter ikke en «årsak» på norsk, man retter en feil, så formuleringen er en kalk. «finne og rette» dekker nøyaktig «diagnose and resolve» i faktum 4 og lover ikke mer enn det."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "sk",
+  "tr": {
+   "sec_p": "Zamerané na to, čo streameri naozaj žiadali — novinky vo v11.0.11 a k tomu to najlepšie z v10.9.2.",
+   "cards": [
+    {
+     "h": "Diaľkové ovládanie",
+     "p": "Ovládajte stream z telefónu cez SplitCam Remote: prepínajte scény, spúšťajte a zastavujte streamovanie aj nahrávanie, upravujte zvuk a spravujte zdroje bez toho, aby ste sa dotkli klávesnice."
+    },
+    {
+     "h": "Horizontálne + vertikálne virtuálne kamery",
+     "p": "Na Windows 11 posielajú dve nové virtuálne kamery horizontálny a vertikálny výstup samostatne, a to do viacerých aplikácií naraz. Windows 10 dostáva vertikálnu kameru pre aplikácie s DirectShow a na Windows pre ARM bežia virtuálne kamery natívne."
+    },
+    {
+     "h": "Replay z telefónu alebo zo Stream Decku",
+     "p": "Spustite okamžité opakovanie zo SplitCam Remote alebo klávesom Stream Decku. Replay Source uchováva posledných 5 – 10 sekúnd scény a teraz funguje na horizontálnom aj vertikálnom plátne."
+    },
+    {
+     "h": "Plynulejšia a bezpečnejšia práca",
+     "p": "Plynulejšie video a menej spracovania, keď sa virtuálne kamery nepoužívajú. Ak zlyhá grafický ovládač, SplitCam pred reštartom uloží váš projekt a vstavané hlásenie pádov pomáha príčinu odhaliť a opraviť."
+    }
+   ],
+   "convention": "sk translates card titles into plain Slovak, with no gloss span and no English name in parentheses (e.g. \"Výber restream servera\", \"Vertikálne plátno\", \"Smerovanie virtuálnej kamery\"). Only proper feature names stay in English: \"Replay Source\", \"Luma Wipe, Slide a Swipe\". The page uses formal plural imperatives (Vyberte si, Prepnite, Zachyťte), so the new copy does too. Terms reused from the sk homepage and the sk /stream-deck/ and /virtual-camera/ pages: virtuálna kamera; scéna/scény; zdroj/zdroje; plátno (horizontálne/vertikálne); stream/streamovanie; nahrávanie; zvuk; ovládač (driver); telefón; Stream Decku as the genitive; \"spúšťa a zastavuje streamovanie aj nahrávanie\"; \"Replay Source\" as on this homepage. Range format is \"5 – 10\" with spaces, as the existing Replay card writes it. Version phrasing follows the old \"až po v10.9.2\" pattern: \"vo v11.0.11\" / \"z v10.9.2\". The site has no established Slovak word for crash, so \"hlásenie pádov\" is new. \"Remote Control\" has no Slovak rendering anywhere on sk pages (the English tab name appears only in untranslated changelog text), so the title was translated as \"Diaľkové ovládanie\" to match the translated-title convention."
+  },
+  "rv": {
+   "sec_p": "Zamerané na to, čo streameri naozaj žiadali — novinky vo v11.0.11 a k tomu to najlepšie z v10.9.2.",
+   "cards": [
+    {
+     "h": "Diaľkové ovládanie",
+     "p": "Ovládajte stream z telefónu cez SplitCam Remote: prepínajte scény, spúšťajte a zastavujte streamovanie aj nahrávanie, upravujte zvuk a spravujte zdroje bez toho, aby ste sa dotkli klávesnice."
+    },
+    {
+     "h": "Horizontálne + vertikálne virtuálne kamery",
+     "p": "Vo Windows 11 posielajú dve nové virtuálne kamery obraz na šírku a na výšku samostatne, a to do viacerých aplikácií naraz. Windows 10 dostáva vertikálnu virtuálnu kameru pre aplikácie využívajúce DirectShow a na Windows pre ARM bežia virtuálne kamery natívne."
+    },
+    {
+     "h": "Replay z telefónu alebo zo Stream Decku",
+     "p": "Spustite okamžité opakovanie zo SplitCam Remote alebo tlačidlom na Stream Decku. Replay Source uchováva posledných 5 – 10 sekúnd scény a teraz funguje na horizontálnom aj vertikálnom plátne."
+    },
+    {
+     "h": "Plynulejšia a spoľahlivejšia práca",
+     "p": "Plynulejšie video a menej spracovania, keď sa virtuálne kamery nepoužívajú. Ak zlyhá grafický ovládač, SplitCam pred reštartom uloží váš projekt a vstavané hlásenie pádov pomáha príčinu odhaliť a opraviť."
+    }
+   ],
+   "changes": [
+    {
+     "was": "Na Windows 11 posielajú dve nové virtuálne kamery horizontálny a vertikálny výstup samostatne",
+     "now": "Vo Windows 11 posielajú dve nové virtuálne kamery obraz na šírku a na výšku samostatne",
+     "why": "The sk /virtual-camera/ page consistently says \"na šírku / na výšku\" for landscape/portrait output. \"Horizontálny výstup\" is a calque. \"Vo Windows 11\" is the natural preposition when you mean inside that OS."
+    },
+    {
+     "was": "Windows 10 dostáva vertikálnu kameru pre aplikácie s DirectShow",
+     "now": "Windows 10 dostáva vertikálnu virtuálnu kameru pre aplikácie využívajúce DirectShow",
+     "why": "The fact is a separate vertical VIRTUAL camera, and a bare \"kamera\" can be read as a physical webcam. \"Aplikácie s DirectShow\" is clumsy. \"Využívajúce DirectShow\" matches the fact (\"applications using DirectShow\")."
+    },
+    {
+     "was": "alebo klávesom Stream Decku",
+     "now": "alebo tlačidlom na Stream Decku",
+     "why": "The sk /stream-deck/ page calls Stream Deck keys \"tlačidlá\" everywhere. \"Kláves\" means a keyboard key and clashes with \"klávesová skratka\" in the existing Replay Source card."
+    },
+    {
+     "was": "Plynulejšia a bezpečnejšia práca",
+     "now": "Plynulejšia a spoľahlivejšia práca",
+     "why": "In Slovak, \"bezpečná práca\" instantly suggests occupational safety (BOZP) or security. The card is about stability and recovery after failures, so \"spoľahlivejšia\" is accurate and claims no more than the facts."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ },
+ {
+  "code": "fa",
+  "tr": {
+   "sec_p": "متمرکز بر همان چیزهایی که استریمرها واقعاً خواستند — تازه‌های نسخه v11.0.11، به‌علاوه بهترین‌های نسخه v10.9.2.",
+   "cards": [
+    {
+     "h": "کنترل از راه دور",
+     "p": "استریم را از گوشی‌تان با SplitCam Remote اداره کنید: صحنه‌ها را عوض کنید، پخش زنده و ضبط را شروع یا متوقف کنید، صدا را تنظیم کنید و منابع را مدیریت کنید، بی‌آنکه دست به کیبورد بزنید."
+    },
+    {
+     "h": "وب‌کم‌های مجازی افقی + عمودی",
+     "p": "روی Windows 11، دو وب‌کم مجازی تازه تصویر افقی و عمودی را جداگانه و هم‌زمان به چند برنامه می‌فرستند. به Windows 10 یک وب‌کم عمودی برای برنامه‌های DirectShow اضافه شده، و روی Windows مبتنی بر ARM این وب‌کم‌ها به‌صورت بومی اجرا می‌شوند."
+    },
+    {
+     "h": "بازپخش از گوشی یا Stream Deck",
+     "p": "یک بازپخش فوری را از SplitCam Remote یا با یک کلید Stream Deck اجرا کنید. منبع بازپخش آخر ۵ تا ۱۰ ثانیه یک صحنه را نگه می‌دارد و حالا روی هر دو بوم افقی و عمودی کار می‌کند."
+    },
+    {
+     "h": "جلسه‌های روان‌تر و مطمئن‌تر",
+     "p": "ویدیوی روان‌تر، و پردازش کمتر وقتی وب‌کم‌های مجازی در حال استفاده نیستند. اگر درایور گرافیک از کار بیفتد، SplitCam پیش از راه‌اندازی مجدد پروژه‌تان را ذخیره می‌کند، و گزارش‌دهی داخلی کرش‌ها کمک می‌کند علت مشکل پیدا و رفع شود."
+    }
+   ],
+   "convention": "fa translates card titles fully into Persian: no gloss span and no English name in parentheses. Latin script stays only for product or proper names such as Luma Wipe, Slide, Swipe and Stream Deck. The tone is formal (کنید, ‌تان). Numbers in body text use Persian digits (existing card: ۵ تا ۱۰, ۹:۱۶), while v11.0.11, v10.9.2, Windows 11 and Windows 10 keep Western digits. Terms reused from the page and its sister pages: وب‌کم مجازی for virtual camera. This is the homepage and whats-new card 6 term, used about 30 times; /virtual-camera/ uses دوربین مجازی instead, but I followed the homepage. Also: وب‌کم عمودی (/virtual-camera/), صحنه, منبع/منابع, بوم افقی/عمودی (home and /multistreaming/), استریم and پخش زنده, ضبط, گوشی, منبع بازپخش for the Replay source (existing card title), آخر ۵ تا ۱۰ ثانیه (existing card wording), درایور (/virtual-camera/), به‌صورت بومی for natively (/multistreaming/), and ویدیو spelled as on the homepage. Remote Control is کنترل از راه دور, as the /stream-deck/ page names that settings section. Start/stop streaming and recording follows the /stream-deck/ wording: پخش زنده و ضبط را شروع/متوقف. Session is جلسه, as in /stream-deck/ (زمان جلسه). The site had no existing word for crash, so I used کرش, the common loanword. I rendered Safer as مطمئن‌تر (more reliable), not امن‌تر, so it does not read as a security claim."
+  },
+  "rv": {
+   "sec_p": "متمرکز بر همان چیزهایی که استریمرها واقعاً خواستند — تازه‌های نسخه v11.0.11، به‌علاوه بهترین‌های نسخه v10.9.2.",
+   "cards": [
+    {
+     "h": "کنترل از راه دور",
+     "p": "استریم را از گوشی‌تان با SplitCam Remote اداره کنید: صحنه‌ها را عوض کنید، پخش زنده و ضبط را شروع یا متوقف کنید، صدا را تنظیم و منابع را مدیریت کنید، بی‌آنکه دست به کیبورد بزنید."
+    },
+    {
+     "h": "وب‌کم‌های مجازی افقی و عمودی",
+     "p": "روی Windows 11، دو وب‌کم مجازی تازه تصویر افقی و عمودی را جداگانه و هم‌زمان به چند برنامه می‌فرستند. برای Windows 10 یک وب‌کم مجازی عمودی جداگانه ویژه برنامه‌های DirectShow اضافه شده و روی Windows مبتنی بر ARM این وب‌کم‌ها به‌صورت بومی اجرا می‌شوند."
+    },
+    {
+     "h": "بازپخش از گوشی یا Stream Deck",
+     "p": "بازپخش فوری را از SplitCam Remote یا با یک کلید Stream Deck اجرا کنید. منبع بازپخش آخر ۵ تا ۱۰ ثانیه یک صحنه را نگه می‌دارد و حالا روی هر دو بوم افقی و عمودی کار می‌کند."
+    },
+    {
+     "h": "عملکرد روان‌تر و مطمئن‌تر",
+     "p": "ویدیوی روان‌تر و پردازش کمتر وقتی وب‌کم‌های مجازی استفاده نمی‌شوند. اگر درایور گرافیک از کار بیفتد، SplitCam پیش از راه‌اندازی مجدد پروژه‌تان را ذخیره می‌کند و گزارش کرش داخلی به پیدا کردن و رفع علت مشکل کمک می‌کند."
+    }
+   ],
+   "changes": [
+    {
+     "was": "صدا را تنظیم کنید و منابع را مدیریت کنید",
+     "now": "صدا را تنظیم و منابع را مدیریت کنید",
+     "why": "Four کنید in a row sounds heavy. Sharing the verb across the last pair is normal written Persian and cuts the repetition."
+    },
+    {
+     "was": "وب‌کم‌های مجازی افقی + عمودی",
+     "now": "وب‌کم‌های مجازی افقی و عمودی",
+     "why": "A plus sign between two Persian adjectives reads like a copy of the English. None of the other card titles on this page use symbols. Persian joins them with و."
+    },
+    {
+     "was": "به Windows 10 یک وب‌کم عمودی برای برنامه‌های DirectShow اضافه شده، و",
+     "now": "برای Windows 10 یک وب‌کم مجازی عمودی جداگانه ویژه برنامه‌های DirectShow اضافه شده و",
+     "why": "The facts say a separate vertical virtual camera. Plain «وب‌کم عمودی» could be read as a physical webcam, so مجازی and جداگانه go back in. «برای ... اضافه شده» is more natural than «به Windows 10 ... اضافه شده». A comma before و is not Persian punctuation."
+    },
+    {
+     "was": "یک بازپخش فوری را از SplitCam Remote",
+     "now": "بازپخش فوری را از SplitCam Remote",
+     "why": "«یک ... را» (an indefinite noun with را) copies the English \"an instant replay\" and sounds stiff. The definite form is what a streamer would say."
+    },
+    {
+     "was": "جلسه‌های روان‌تر و مطمئن‌تر",
+     "now": "عملکرد روان‌تر و مطمئن‌تر",
+     "why": "In Persian جلسه means a meeting first. The /virtual-camera/ page uses it for Zoom and Teams meetings, so the title reads as \"smoother meetings\". The card is about how the app runs (video, idle processing, recovery), and عملکرد says that. «مطمئن‌تر» stays so it does not sound like a security claim."
+    },
+    {
+     "was": "ویدیوی روان‌تر، و پردازش کمتر وقتی وب‌کم‌های مجازی در حال استفاده نیستند.",
+     "now": "ویدیوی روان‌تر و پردازش کمتر وقتی وب‌کم‌های مجازی استفاده نمی‌شوند.",
+     "why": "Removed the English-style comma before و. «استفاده نمی‌شوند» is shorter and more idiomatic than «در حال استفاده نیستند»."
+    },
+    {
+     "was": "پروژه‌تان را ذخیره می‌کند، و گزارش‌دهی داخلی کرش‌ها کمک می‌کند علت مشکل پیدا و رفع شود.",
+     "now": "پروژه‌تان را ذخیره می‌کند و گزارش کرش داخلی به پیدا کردن و رفع علت مشکل کمک می‌کند.",
+     "why": "Removed the comma before و. «گزارش‌دهی داخلی کرش‌ها» is clumsy, and «گزارش کرش» is the everyday term. The passive «کمک می‌کند ... پیدا و رفع شود» becomes the natural «به پیدا کردن و رفع ... کمک می‌کند». The claim is unchanged: it helps diagnose and fix, with no promise of automatic fixes."
+    }
+   ],
+   "verdict": "remarks",
+   "reads_natural": true
+  }
+ }
+]

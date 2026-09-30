@@ -181,10 +181,13 @@ DROPDOWN_CSS = """.lang-dl{position:relative;display:inline-block}
 #     still point right; mirror them.
 #  2. the download split-button's corner rounding doesn't swap, so the main button +
 #     dropdown toggle stop reading as one joined control. Re-mirror the radii.
+#  3. the What's-new card badge is pinned with `right:16px`; in RTL the card's icon sits on
+#     the right too, so the badge covered it (seen 2026-09-30). Move the badge to the left.
 RTL_CSS = """[dir="rtl"] svg:has(use[href="#i-arr"]){transform:scaleX(-1)}
 [dir="rtl"] .dl>[data-dl-primary]{border-radius:0 8px 8px 0}
 [dir="rtl"] .dl>.dl-toggle{border-radius:8px 0 0 8px}
-[dir="rtl"] .vc-arrow{transform:scaleX(-1)}"""
+[dir="rtl"] .vc-arrow{transform:scaleX(-1)}
+[dir="rtl"] .new-badge{right:auto;left:16px}"""
 
 
 if __name__ == "__main__":

@@ -271,7 +271,7 @@ trailing-slash rule first to avoid redirect loops. `/download` is KEPT (not redi
    stripped from every page's JSON-LD (0 present) to avoid a self-asserted-rating structured-
    data manual action. Real source ratings: Softonic 4.7, UpdateStar 4.0, G2.
 7. LIVE badges blink (badge opacity + red dot pulse).
-8. Current version is **v11.0.11** — used site-wide (the homepage "What's new" block and its footer link deliberately still say v10.9.2: its cards describe features up to 10.9.2). No
+8. Current version is **v11.0.11** — used site-wide. The homepage "What's new" block (rebuilt 2026-09-30, all 35 locales, native-reviewed) shows 4 cards badged NEW from 11.0.11 — Remote Control, horizontal + vertical virtual cameras, Replay from phone / Stream Deck, smoother & safer sessions — plus 2 kept from v10.9.2 (Vertical Canvas, Restream Server Picker) badged `v10.9.2`; sub-line "what's new in v11.0.11, plus the best of v10.9.2", footer link "What's new · v11.0.11". `release_windows.py` does not touch this block: on the next stable release, rebuild it the same way (keep the best, badge the new ones NEW, the kept ones with their version). No
    installer size shown ("~85 MB" was removed as unverified). ("FFMPEG 7.1" / "version 6.1"
    are dependency mentions, not SplitCam's version.)
 

@@ -703,7 +703,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .feat-grid{grid-template-columns:1fr;}
   .usecase-grid{grid-template-columns:1fr;}
   .testi-grid{grid-template-columns:1fr;}
-  .new-grid{grid-template-columns:1fr;}
+  .new-grid{grid-template-columns:1fr;grid-auto-rows:auto;}
   .quickstart-grid{grid-template-columns:1fr;}
   .qs-step:not(:last-child)::after{display:none;}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
@@ -1330,44 +1330,44 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <div class="section-inner">
     <p class="eyebrow">Sorties récentes</p>
     <h2 class="sec-h">Six améliorations livrées cette année.</h2>
-    <p class="sec-p">Centrées sur ce que les streamers ont vraiment demandé — les temps forts des sorties récentes de SplitCam, jusqu'à la v10.9.2.</p>
+    <p class="sec-p">Au plus près de ce que les streamers ont vraiment demandé — les nouveautés de la v11.0.11 et le meilleur de la v10.9.2.</p>
 
     <div class="new-grid">
       <div class="new-card">
         <span class="new-badge">NOUVEAU</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg></div>
-        <div class="new-h">Restream Server Picker</div>
-        <p class="new-p">Choisissez le serveur d'entrée du restream dans la liste disponible — prenez la région la plus proche pour moins de latence et moins d'images perdues sur les streams multiplateformes.</p>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="20" x="6" y="2" rx="2"/><path d="M11 18h2"/><path d="M10.5 8.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
+        <div class="new-h">Remote Control</div>
+        <p class="new-p">Pilotez votre stream depuis votre téléphone avec SplitCam Remote : changez de scène, lancez ou arrêtez le direct et l'enregistrement, réglez l'audio et gérez les sources sans toucher au clavier.</p>
       </div>
       <div class="new-card">
         <span class="new-badge">NOUVEAU</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="13" height="8.5" x="1.5" y="8" rx="1.5"/><rect width="6.5" height="12" x="16" y="6" rx="1.5"/><path d="M6 20h4"/><path d="M8 16.5V20"/></svg></div>
+        <div class="new-h">Horizontal + Vertical Virtual Cameras</div>
+        <p class="new-p">Sous Windows 11, deux nouvelles caméras virtuelles envoient séparément l'image paysage et l'image portrait, et plusieurs applis peuvent les utiliser en même temps. Windows 10 gagne une caméra virtuelle verticale pour les applis DirectShow, et les caméras virtuelles tournent en natif sous Windows sur ARM.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NOUVEAU</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M10.5 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
+        <div class="new-h">Replay from Phone or Stream Deck</div>
+        <p class="new-p">Déclenchez un replay instantané depuis SplitCam Remote ou une touche Stream Deck. La source Replay garde les 5 à 10 dernières secondes d'une scène et fonctionne désormais sur les deux canvas, horizontal et vertical.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NOUVEAU</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div class="new-h">Smoother, Safer Sessions</div>
+        <p class="new-p">Une vidéo plus fluide et moins de traitements inutiles quand les caméras virtuelles ne servent pas. En cas de défaillance du pilote graphique, SplitCam enregistre votre projet avant de redémarrer, et le rapport de plantage intégré aide à diagnostiquer et corriger le problème.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">v10.9.2</span>
         <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="20" x="6" y="2" rx="2"/><path d="M12 7v10"/><path d="m9.5 9.5 2.5-2.5 2.5 2.5"/><path d="m9.5 14.5 2.5 2.5 2.5-2.5"/></svg></div>
         <div class="new-h">Vertical Canvas</div>
         <p class="new-p">Passez sur un canvas 9:16 pour TikTok Live, Reels, Shorts et Instagram Live vertical. Les configs horizontale et verticale restent totalement indépendantes, audio compris.</p>
       </div>
       <div class="new-card">
-        <span class="new-badge">NOUVEAU</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M10.5 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
-        <div class="new-h">Replay Source</div>
-        <p class="new-p">Capturez les 5 à 10 dernières secondes de n'importe quelle scène d'un raccourci. Ralentis instantanés en plein gameplay ou temps forts parfaits en plein stream.</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">NOUVEAU</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
-        <div class="new-h">3D Transform Effect</div>
-        <p class="new-p">Faites pivoter n'importe quel calque, à l'horizontale ou à la verticale, avec une vraie perspective. Inclinez une cam, un titre ou un overlay pour donner de la profondeur à votre scène.</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">NOUVEAU</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
-        <div class="new-h">Luma Wipe, Slide & Swipe</div>
-        <p class="new-p">Trois nouvelles transitions de scène : Luma Wipe pour des coupes en masque cinématiques (avec des fichiers semi-transparents préinstallés), Slide et Swipe pour des passages horizontaux nets entre les segments.</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">NOUVEAU</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8.5" cy="11" r="6"/><circle cx="8.5" cy="11" r="2.2"/><path d="M5 21h7"/><path d="M8.5 17v4"/><path d="M14 7h6"/><path d="m17 4 3 3-3 3"/><path d="M14 14h6"/><path d="m17 11 3 3-3 3"/></svg></div>
-        <div class="new-h">Virtual Camera Routing</div>
-        <p class="new-p">Envoyez n'importe quelle scène — ou un seul calque de n'importe quelle scène — vers votre caméra virtuelle dans Zoom, Teams ou Meet. Choisissez la sortie exacte dans les Réglages de SplitCam.</p>
+        <span class="new-badge">v10.9.2</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg></div>
+        <div class="new-h">Restream Server Picker</div>
+        <p class="new-p">Choisissez le serveur d'entrée du restream dans la liste disponible — prenez la région la plus proche pour moins de latence et moins d'images perdues sur les streams multiplateformes.</p>
       </div>
     </div>
   </div>
@@ -1450,7 +1450,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </a>
       <p>Logiciel de streaming en direct gratuit et studio de multistream pour Windows, macOS, iOS et Android. Depuis 2003.</p>
     </div>
-    <div class="foot-col"><h5>Produit</h5><ul><li><a href="https://splitcam.com/fr/features">Fonctionnalités</a></li><li><a href="https://splitcam.com/fr/multistreaming">Multistream</a></li><li><a href="https://splitcam.com/fr/virtual-camera">Caméra virtuelle</a></li><li><a href="https://splitcam.com/fr/products">Produits et téléchargements</a></li><li><a href="https://splitcam.com/fr/alternatives">Alternatives</a></li><li><a href="https://splitcam.com/fr/for">Cas d'usage</a></li><li><a href="#whats-new">Nouveautés · v10.9.2</a></li><li><a href="https://splitcam.com/plugins/">Développeurs</a></li><li><a href="https://splitcam.com/fr/changelog">Journal des modifications</a></li></ul></div>
+    <div class="foot-col"><h5>Produit</h5><ul><li><a href="https://splitcam.com/fr/features">Fonctionnalités</a></li><li><a href="https://splitcam.com/fr/multistreaming">Multistream</a></li><li><a href="https://splitcam.com/fr/virtual-camera">Caméra virtuelle</a></li><li><a href="https://splitcam.com/fr/products">Produits et téléchargements</a></li><li><a href="https://splitcam.com/fr/alternatives">Alternatives</a></li><li><a href="https://splitcam.com/fr/for">Cas d'usage</a></li><li><a href="#whats-new">Nouveautés · v11.0.11</a></li><li><a href="https://splitcam.com/plugins/">Développeurs</a></li><li><a href="https://splitcam.com/fr/changelog">Journal des modifications</a></li></ul></div>
     <div class="foot-col"><h5>Assistance</h5><ul><li><a href="https://splitcam.com/fr/help">Aide</a></li><li><a href="https://splitcam.com/fr/donate-us">Faire un don</a></li><li><a href="https://t.me/splitcam" target="_blank" rel="noopener">Chat Telegram</a></li></ul></div>
     <div class="foot-col"><h5>Entreprise</h5><ul><li><a href="https://splitcam.com/fr/privacy-policy">Politique de confidentialité</a></li><li><a href="https://splitcam.com/fr/license-agreement">Contrat de licence</a></li><li><a href="https://splitcam.com/" target="_blank" rel="noopener">SplitCam.com</a></li></ul></div>
   </div>

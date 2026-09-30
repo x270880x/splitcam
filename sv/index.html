@@ -702,7 +702,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   .feat-grid{grid-template-columns:1fr;}
   .usecase-grid{grid-template-columns:1fr;}
   .testi-grid{grid-template-columns:1fr;}
-  .new-grid{grid-template-columns:1fr;}
+  .new-grid{grid-template-columns:1fr;grid-auto-rows:auto;}
   .quickstart-grid{grid-template-columns:1fr;}
   .qs-step:not(:last-child)::after{display:none;}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
@@ -1329,44 +1329,44 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
   <div class="section-inner">
     <p class="eyebrow">Senaste versionerna</p>
     <h2 class="sec-h">Sex förbättringar släppta i år.</h2>
-    <p class="sec-p">Fokus på det streamarna faktiskt efterfrågade — höjdpunkter från de senaste SplitCam-versionerna, ända upp till v10.9.2.</p>
+    <p class="sec-p">Fokus på det streamarna faktiskt efterfrågade — nyheterna i v11.0.11 och det bästa från v10.9.2.</p>
 
     <div class="new-grid">
       <div class="new-card">
         <span class="new-badge">NYTT</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg></div>
-        <div class="new-h">Restream Server Picker (serverval)</div>
-        <p class="new-p">Välj ingest-servern från den tillgängliga listan — välj den närmaste regionen för lägre latens och färre tappade bildrutor vid streaming till flera plattformar.</p>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="20" x="6" y="2" rx="2"/><path d="M11 18h2"/><path d="M10.5 8.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
+        <div class="new-h">Remote Control (fjärrstyrning)</div>
+        <p class="new-p">Styr sändningen från telefonen med SplitCam Remote: växla scener, starta eller stoppa sändning och inspelning, justera ljudet och hantera källor utan att röra tangentbordet.</p>
       </div>
       <div class="new-card">
         <span class="new-badge">NYTT</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="13" height="8.5" x="1.5" y="8" rx="1.5"/><rect width="6.5" height="12" x="16" y="6" rx="1.5"/><path d="M6 20h4"/><path d="M8 16.5V20"/></svg></div>
+        <div class="new-h">Horizontal + Vertical Virtual Cameras (virtuella kameror)</div>
+        <p class="new-p">På Windows 11 skickar två nya virtuella kameror liggande och stående bild var för sig, till flera appar samtidigt. Windows 10 får en egen vertikal kamera för DirectShow-appar, och Windows på ARM kör dem nativt.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NYTT</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M10.5 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
+        <div class="new-h">Replay from Phone or Stream Deck (repris)</div>
+        <p class="new-p">Starta en omedelbar repris från SplitCam Remote eller med en Stream Deck-knapp. Replay-källan fångar de senaste 5–10 sekunderna av en scen och fungerar nu på både horisontell och vertikal duk.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">NYTT</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div class="new-h">Smoother, Safer Sessions (jämnare och tryggare)</div>
+        <p class="new-p">Jämnare video och mindre bearbetning när de virtuella kamerorna inte används. Om grafikdrivrutinen slutar fungera sparar SplitCam ditt projekt innan programmet startar om, och inbyggd kraschrapportering hjälper till att hitta och åtgärda orsaken.</p>
+      </div>
+      <div class="new-card">
+        <span class="new-badge">v10.9.2</span>
         <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="20" x="6" y="2" rx="2"/><path d="M12 7v10"/><path d="m9.5 9.5 2.5-2.5 2.5 2.5"/><path d="m9.5 14.5 2.5 2.5 2.5-2.5"/></svg></div>
         <div class="new-h">Vertical Canvas (vertikal duk)</div>
         <p class="new-p">Växla till en 9:16-duk för TikTok Live, Reels, Shorts och vertikala Instagram-sändningar. Den horisontella och vertikala uppsättningen förblir helt oberoende, ljudet inkluderat.</p>
       </div>
       <div class="new-card">
-        <span class="new-badge">NYTT</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M10.5 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></div>
-        <div class="new-h">Replay Source (uppspelning)</div>
-        <p class="new-p">Fånga de senaste 5–10 sekunderna av valfri scen med ett kortkommando. Direkta slow motion-repriser under spel eller perfekta höjdpunkter mitt i sändningen.</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">NYTT</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
-        <div class="new-h">3D Transform-effekt</div>
-        <p class="new-p">Rotera valfritt lager horisontellt eller vertikalt med äkta perspektiv. Luta en kamera, en nedre tredjedel eller ett överlägg för att ge din scen djup.</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">NYTT</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
-        <div class="new-h">Luma Wipe, Slide och Swipe</div>
-        <p class="new-p">Tre nya scenövergångar: Luma Wipe för filmiska maskklipp (med förinstallerade halvtransparenta filer), Slide och Swipe för rena horisontella övergångar mellan segment.</p>
-      </div>
-      <div class="new-card">
-        <span class="new-badge">NYTT</span>
-        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8.5" cy="11" r="6"/><circle cx="8.5" cy="11" r="2.2"/><path d="M5 21h7"/><path d="M8.5 17v4"/><path d="M14 7h6"/><path d="m17 4 3 3-3 3"/><path d="M14 14h6"/><path d="m17 11 3 3-3 3"/></svg></div>
-        <div class="new-h">Virtual Camera Routing (dirigering)</div>
-        <p class="new-p">Skicka valfri scen — eller ett enda lager från vilken scen som helst — till din virtuella kamera i Zoom, Teams eller Meet. Välj den exakta utgången i SplitCams inställningar.</p>
+        <span class="new-badge">v10.9.2</span>
+        <div class="new-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg></div>
+        <div class="new-h">Restream Server Picker (serverval)</div>
+        <p class="new-p">Välj ingest-servern från den tillgängliga listan — välj den närmaste regionen för lägre latens och färre tappade bildrutor vid streaming till flera plattformar.</p>
       </div>
     </div>
   </div>
@@ -1449,7 +1449,7 @@ footer { border-top: 1px solid var(--app-border); padding: 52px 40px 28px; }
       </a>
       <p>Gratis program för livestreaming och multistreaming-studio för Windows, macOS, iOS och Android. Sedan 2003.</p>
     </div>
-    <div class="foot-col"><h5>Produkt</h5><ul><li><a href="https://splitcam.com/sv/features">Funktioner</a></li><li><a href="https://splitcam.com/sv/multistreaming">Multistreaming</a></li><li><a href="https://splitcam.com/sv/virtual-camera">Virtuell kamera</a></li><li><a href="https://splitcam.com/sv/products">Produkter och nedladdningar</a></li><li><a href="https://splitcam.com/sv/alternatives">Alternativ</a></li><li><a href="https://splitcam.com/sv/for">Användningsområden</a></li><li><a href="#whats-new">Nyheter · v10.9.2</a></li><li><a href="https://splitcam.com/plugins/">Utvecklare</a></li><li><a href="https://splitcam.com/sv/changelog">Ändringslogg</a></li></ul></div>
+    <div class="foot-col"><h5>Produkt</h5><ul><li><a href="https://splitcam.com/sv/features">Funktioner</a></li><li><a href="https://splitcam.com/sv/multistreaming">Multistreaming</a></li><li><a href="https://splitcam.com/sv/virtual-camera">Virtuell kamera</a></li><li><a href="https://splitcam.com/sv/products">Produkter och nedladdningar</a></li><li><a href="https://splitcam.com/sv/alternatives">Alternativ</a></li><li><a href="https://splitcam.com/sv/for">Användningsområden</a></li><li><a href="#whats-new">Nyheter · v11.0.11</a></li><li><a href="https://splitcam.com/plugins/">Utvecklare</a></li><li><a href="https://splitcam.com/sv/changelog">Ändringslogg</a></li></ul></div>
     <div class="foot-col"><h5>Support</h5><ul><li><a href="https://splitcam.com/sv/help">Hjälp</a></li><li><a href="https://splitcam.com/sv/donate-us">Donera</a></li><li><a href="https://t.me/splitcam" target="_blank" rel="noopener">Telegram-chatt</a></li></ul></div>
     <div class="foot-col"><h5>Företag</h5><ul><li><a href="https://splitcam.com/sv/privacy-policy">Integritetspolicy</a></li><li><a href="https://splitcam.com/sv/license-agreement">Licensavtal</a></li><li><a href="https://splitcam.com/" target="_blank" rel="noopener">SplitCam.com</a></li></ul></div>
   </div>
